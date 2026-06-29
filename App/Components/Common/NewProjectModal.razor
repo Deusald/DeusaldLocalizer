@@ -1,0 +1,212 @@
+﻿@using System.Text.RegularExpressions
+@using DeusaldLocalizerCommon
+
+@if (_Visible)
+{
+    <div class="modal-backdrop" @onclick="Cancel"></div>
+
+    <div class="modal-box" @onclick:stopPropagation="true">
+
+        <div class="modal-header">
+            <span class="modal-title">New project</span>
+            <button class="modal-close" @onclick="Cancel" title="Close">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+
+        <div class="modal-body">
+
+            @* ── Project name ──────────────────────────────────────────── *@
+            <div class="modal-field">
+                <label class="modal-label">Project name</label>
+                <input class="modal-input"
+                       type="text"
+                       placeholder="My Awesome Game"
+                       value="@_Name"
+                       @oninput="OnNameInput"
+                       maxlength="100"/>
+            </div>
+
+            @* ── Slug ──────────────────────────────────────────────────── *@
+            <div class="modal-field">
+                <label class="modal-label">
+                    Slug
+                    <span class="modal-label-hint">used in file names and APIs</span>
+                </label>
+                <input class="modal-input modal-input-mono"
+                       type="text"
+                       placeholder="my-awesome-game"
+                       @bind="_Slug"
+                       @bind:event="oninput"
+                       maxlength="80"/>
+                @if (!string.IsNullOrEmpty(_Slug) && !IsValidSlug(_Slug))
+                {
+                    <div class="modal-field-error">Only lowercase letters, numbers and hyphens</div>
+                }
+            </div>
+
+            @* ── Description ───────────────────────────────────────────── *@
+            <div class="modal-field">
+                <label class="modal-label">
+                    Description
+                    <span class="modal-label-hint">optional</span>
+                </label>
+                <textarea class="modal-input modal-textarea"
+                          placeholder="A short description of the project…"
+                          @bind="_Description"
+                          @bind:event="oninput"
+                          rows="2"
+                          maxlength="500"></textarea>
+            </div>
+
+            @* ── Main language ─────────────────────────────────────────── *@
+            <div class="modal-field">
+                <label class="modal-label">Main language</label>
+                <div class="modal-lang-picker">
+                    <div class="modal-lang-search-wrap">
+                        <i class="bi bi-search modal-lang-search-icon"></i>
+                        <input class="modal-input modal-lang-search"
+                               type="text"
+                               placeholder="Search language…"
+                               @bind="_LangQuery"
+                               @bind:event="oninput"
+                               @onfocus="() => _LangOpen = true"/>
+                        @if (_SelectedCulture != null)
+                        {
+                            <span class="modal-lang-selected-badge">
+                                @_SelectedCulture.FlagEmoji @_SelectedCulture.Code
+                            </span>
+                        }
+                    </div>
+
+                    @if (_LangOpen)
+                    {
+                        <div class="modal-lang-dropdown">
+                            @{ var results = CultureService.Search(_LangQuery); }
+                            @if (results.Count == 0)
+                            {
+                                <div class="modal-lang-empty">No languages found</div>
+                            }
+                            else
+                            {
+                                @foreach (var c in results.Take(80))
+                                {
+                                    var  entry  = c;
+                                    bool active = _SelectedCulture?.Code == entry.Code;
+                                    <button class="modal-lang-item @(active ? "active" : "")"
+                                            @onclick="() => SelectLanguage(entry)"
+                                            @onclick:preventDefault="true">
+                                        <span class="modal-lang-flag">@entry.FlagEmoji</span>
+                                        <span class="modal-lang-name">@entry.EnglishName</span>
+                                        <span class="modal-lang-code">@entry.Code</span>
+                                        @if (active)
+                                        {
+                                            <i class="bi bi-check2 modal-lang-check"></i>
+                                        }
+                                    </button>
+                                }
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+            <button class="modal-btn modal-btn-ghost" @onclick="Cancel">Cancel</button>
+            <button class="modal-btn modal-btn-primary"
+                    @onclick="Confirm"
+                    disabled="@(!_CanConfirm)">
+                Create project
+            </button>
+        </div>
+
+    </div>
+}
+
+@code {
+    [Parameter] public EventCallback<NewProjectArgs> OnConfirm { get; set; }
+    [Parameter] public EventCallback                 OnCancel  { get; set; }
+
+    // ── State ──────────────────────────────────────────────────────────────
+
+    private bool          _Visible;
+    private string        _Name        = "";
+    private string        _Slug        = "";
+    private string        _Description = "";
+    private string        _LangQuery   = "";
+    private bool          _LangOpen;
+    private CultureEntry? _SelectedCulture;
+
+    // ── Public API ─────────────────────────────────────────────────────────
+
+    public void Show()
+    {
+        _Name            = "";
+        _Slug            = "";
+        _Description     = "";
+        _LangQuery       = "";
+        _LangOpen        = false;
+        _SelectedCulture = CultureService.FindByCode("en-US"); // sensible default
+        _Visible         = true;
+        StateHasChanged();
+    }
+
+    // ── Validation ─────────────────────────────────────────────────────────
+
+    private bool _CanConfirm =>
+        !string.IsNullOrWhiteSpace(_Name) &&
+        !string.IsNullOrWhiteSpace(_Slug) &&
+        IsValidSlug(_Slug) &&
+        _SelectedCulture != null;
+
+    private static bool IsValidSlug(string s) =>
+        !string.IsNullOrEmpty(s) && Regex.IsMatch(s, @"^[a-z0-9]+(-[a-z0-9]+)*$");
+
+    // ── Handlers ───────────────────────────────────────────────────────────
+
+    private void OnNameInput(ChangeEventArgs e)
+    {
+        _Name = e.Value?.ToString() ?? "";
+        // Auto-generate slug only while the user hasn't manually edited it
+        _Slug = GenerateSlug(_Name);
+    }
+
+    private static string GenerateSlug(string name) =>
+        Regex.Replace(
+            Regex.Replace(name.ToLowerInvariant().Trim(), @"[^a-z0-9\s-]", ""),
+            @"\s+", "-").Trim('-');
+
+    private void SelectLanguage(CultureEntry entry)
+    {
+        _SelectedCulture = entry;
+        _LangQuery       = "";
+        _LangOpen        = false;
+    }
+
+    private async Task Confirm()
+    {
+        if (!_CanConfirm) return;
+        _Visible = false;
+        await OnConfirm.InvokeAsync(new NewProjectArgs(
+            _Name.Trim(),
+            _Slug.Trim(),
+            _Description.Trim(),
+            _SelectedCulture!.Code));
+    }
+
+    private async Task Cancel()
+    {
+        _Visible = false;
+        await OnCancel.InvokeAsync();
+    }
+
+    /// <summary>Result passed back to the parent when the user confirms.</summary>
+    public record NewProjectArgs(
+        string Name,
+        string Slug,
+        string Description,
+        string MainLanguageCode);
+
+}

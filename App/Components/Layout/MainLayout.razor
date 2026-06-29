@@ -1,0 +1,76 @@
+﻿@using DeusaldLocalizerCommon
+@inherits LayoutComponentBase
+@inject ProjectStateService ProjectState
+@inject NavigationManager Nav
+
+<div class="app-layout">
+
+    @if (ProjectState.HasProject)
+    {
+        <aside class="app-sidebar">
+
+            <div class="sidebar-brand">
+                <div class="sidebar-brand-icon"><i class="bi bi-translate"></i></div>
+                <span class="sidebar-brand-name">DL</span>
+            </div>
+
+            <div class="sidebar-section">Project</div>
+
+            <button class="sidebar-item @NavClass("/")" @onclick='() => Nav.NavigateTo("/")'>
+                <span class="nav-icon"><i class="bi bi-grid-1x2"></i></span>Overview
+            </button>
+            <button class="sidebar-item @NavClass("/keys")" @onclick='() => Nav.NavigateTo("/keys")'>
+                <span class="nav-icon"><i class="bi bi-key"></i></span>Keys
+            </button>
+            <button class="sidebar-item @NavClass("/suggestions")" @onclick='() => Nav.NavigateTo("/suggestions")'>
+                <span class="nav-icon"><i class="bi bi-chat-left-text"></i></span>Suggestions
+            </button>
+
+            <div class="sidebar-section">Manage</div>
+
+            <button class="sidebar-item @NavClass("/languages")" @onclick='() => Nav.NavigateTo("/languages")'>
+                <span class="nav-icon"><i class="bi bi-translate"></i></span>Languages
+            </button>
+            <button class="sidebar-item @NavClass("/categories")" @onclick='() => Nav.NavigateTo("/categories")'>
+                <span class="nav-icon"><i class="bi bi-folder"></i></span>Categories
+            </button>
+            <button class="sidebar-item @NavClass("/members")" @onclick='() => Nav.NavigateTo("/members")'>
+                <span class="nav-icon"><i class="bi bi-people"></i></span>Members
+            </button>
+
+            <div class="sidebar-section">Data</div>
+
+            <button class="sidebar-item @NavClass("/import-export")" @onclick='() => Nav.NavigateTo("/import-export")'>
+                <span class="nav-icon"><i class="bi bi-arrow-left-right"></i></span>Import / Export
+            </button>
+
+            <div style="flex:1"></div>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-footer-name">@ProjectState.CurrentProject!.Name</div>
+                <div class="sidebar-footer-meta">
+                    @ProjectState.CurrentProject.Keys.Count keys
+                    @if (ProjectState.IsDirty)
+                    {
+                        <span style="color: var(--dl-warning)"> · unsaved</span>
+                    }
+                </div>
+            </div>
+
+        </aside>
+    }
+
+    <main class="app-content">
+        @Body
+    </main>
+
+</div>
+
+@code {
+    private string NavClass(string href)
+    {
+        var current = Nav.ToBaseRelativePath(Nav.Uri);
+        var target  = href.TrimStart('/');
+        return (current == target || (target == "" && current == "")) ? "active" : "";
+    }
+}

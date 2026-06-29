@@ -1,0 +1,326 @@
+﻿@page "/"
+@using global::App.Components.Layout
+@layout MainLayout
+@inject ProjectStateService _ProjectState
+@inject DlocFileService     _DlocService
+@inject NavigationManager   _Nav
+@using DeusaldLocalizerCommon
+@using global::App.Components.Common
+
+@implements IDisposable
+
+<div class="home-root">
+
+    @* ── Left panel ───────────────────────────────────────────────────── *@
+    <div class="home-left">
+        <div>
+            <div class="home-logo">
+                <div class="home-logo-orbs">
+                    <div class="home-orb home-orb-1"></div>
+                    <div class="home-orb home-orb-2"></div>
+                    <div class="home-orb home-orb-3"></div>
+                </div>
+                <div>
+                    <div class="home-logo-text-name">Deusald Localizer</div>
+                    <div class="home-logo-text-sub">COMMUNITY LOCALIZATION</div>
+                </div>
+            </div>
+
+            <h1 class="home-headline">Translate your game,<br/>together.</h1>
+            <p class="home-sub">Edit strings, propose alternatives, and let the community vote on the best translation for every key.</p>
+        </div>
+
+        <div>
+            @if (_ErrorMessage is not null)
+            {
+                <div class="dl-alert dl-alert-error home-error">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <span>@_ErrorMessage</span>
+                </div>
+            }
+
+            <div class="home-actions">
+                <button class="home-btn home-btn-primary"
+                        @onclick="OpenNewProjectModal" disabled="@_IsLoading">
+                    <span class="home-btn-icon">+</span>
+                    <span>New project</span>
+                </button>
+
+                <button class="home-btn home-btn-secondary"
+                        @onclick="PickFile" disabled="@_IsLoading">
+                    @if (_IsLoading)
+                    {
+                        <span class="dl-spinner" style="width:14px;height:14px;flex-shrink:0;"></span>
+                        <span>Opening…</span>
+                    }
+                    else
+                    {
+                        <span class="home-btn-icon"><i class="bi bi-folder2-open"></i></span>
+                        <span>Open project…</span>
+                    }
+                </button>
+
+                <button class="home-btn home-btn-secondary" disabled="disabled">
+                    <span class="home-btn-dot"></span>
+                    <span>Connect to server…</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    @* ── Right panel ──────────────────────────────────────────────────── *@
+    <div class="home-right">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;">
+            <div class="home-recents-label" style="margin-bottom:0;">Recent projects</div>
+            @if (_RecentProjects.Count > 0)
+            {
+                <button class="home-clear-btn" @onclick="ClearRecentProjects">Clear</button>
+            }
+        </div>
+
+        @if (_RecentProjects.Count == 0)
+        {
+            <div class="home-empty">
+                <div class="home-empty-title">No recent projects</div>
+                <div class="home-empty-sub">Projects you open will appear here<br/>so you can get back to them quickly.</div>
+            </div>
+        }
+        else
+        {
+            <div class="home-recent-list">
+                @{ string[] swatches = ["#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa"]; }
+                @for (int i = 0; i < _RecentProjects.Count; i++)
+                {
+                    RecentProjectEntry recent  = _RecentProjects[i];
+                    string             initial = recent.ProjectName.Length > 0 ? recent.ProjectName[0].ToString().ToUpper() : "P";
+                    string             swatch  = swatches[i % swatches.Length];
+                    int                pct     = recent.TranslationPct;
+                    string meta = recent.KeyCount > 0
+                                      ? $"{recent.KeyCount} keys · {recent.LangCount} langs · {recent.LastOpenedLabel}"
+                                      : recent.LastOpenedLabel;
+
+                    <button class="home-recent-item"
+                            @onclick="() => LoadRecentProject(recent.FilePath)"
+                            disabled="@_IsLoading">
+                        <div class="home-recent-swatch" style="background: @swatch">@initial</div>
+                        <div class="home-recent-meta">
+                            <div class="home-recent-top">
+                                <span class="home-recent-name">@recent.ProjectName</span>
+                                @if (recent.IsRemote)
+                                {
+                                    <span class="home-recent-tag-remote">REMOTE</span>
+                                }
+                            </div>
+                            <div class="home-recent-sub">@meta</div>
+                        </div>
+                        @if (recent.KeyCount > 0)
+                        {
+                            <div class="home-recent-progress">
+                                <div class="home-recent-progress-top">
+                                    <span>@recent.LangCount langs</span>
+                                    <span class="home-recent-progress-pct">@pct%</span>
+                                </div>
+                                <div class="home-recent-progress-bar">
+                                    <div class="home-recent-progress-fill" style="width: @pct%"></div>
+                                </div>
+                            </div>
+                        }
+                        <i class="bi bi-chevron-right home-recent-arrow"></i>
+                    </button>
+                }
+            </div>
+        }
+    </div>
+    
+    <NewProjectModal OnConfirm="OnNewProjectConfirmed" @ref="_NewProjectModal"/>
+    
+</div>
+
+@code {
+    // ── State ─────────────────────────────────────────────────────────────
+
+    private bool                     _IsLoading;
+    private string?                  _ErrorMessage;
+    private List<RecentProjectEntry> _RecentProjects = [];
+
+    // ── Lifecycle ─────────────────────────────────────────────────────────
+
+    protected override void OnInitialized()
+    {
+        _ProjectState.ProjectChanged += OnProjectChanged;
+        LoadRecentProjects();
+    }
+
+    public void Dispose() => _ProjectState.ProjectChanged -= OnProjectChanged;
+
+    private void OnProjectChanged() => InvokeAsync(StateHasChanged);
+
+    // ── File operations ───────────────────────────────────────────────────
+
+    private async Task PickFile()
+    {
+        _ErrorMessage = null;
+        try
+        {
+            FileResult? result = await FilePicker.Default.PickAsync(new PickOptions
+            {
+                PickerTitle = "Open Localizer Project",
+                FileTypes = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
+                {
+                    [DevicePlatform.WinUI]       = [".dloc"],
+                    [DevicePlatform.macOS]       = [".dloc"],
+                    [DevicePlatform.MacCatalyst] = [".dloc"],
+                }),
+            });
+
+            if (result is not null)
+                await LoadFromPath(result.FullPath);
+        }
+        catch (Exception ex)
+        {
+            _ErrorMessage = $"Could not open file picker: {ex.Message}";
+        }
+    }
+
+    private async Task LoadFromPath(string path)
+    {
+        _IsLoading    = true;
+        _ErrorMessage = null;
+        StateHasChanged();
+
+        try
+        {
+            ProjectDto project = await _DlocService.LoadAsync(path);
+            _ProjectState.LoadProject(project, path);
+            AddToRecentProjects(project.Name, path);
+        }
+        catch (DlocFormatException ex)
+        {
+            _ErrorMessage = $"Invalid project file: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            _ErrorMessage = $"Failed to load project: {ex.Message}";
+        }
+        finally
+        {
+            _IsLoading = false;
+        }
+    }
+
+    private async Task LoadRecentProject(string filePath) => await LoadFromPath(filePath);
+
+    private NewProjectModal? _NewProjectModal;
+
+    private void OpenNewProjectModal() => _NewProjectModal?.Show();
+
+    private void OnNewProjectConfirmed(NewProjectModal.NewProjectArgs args)
+    {
+        ProjectDto project = new ProjectDto
+        {
+            Name        = args.Name,
+            Slug        = args.Slug,
+            Description = args.Description,
+            Members =
+            [
+                new ProjectMemberDto
+                {
+                    UserId      = _ProjectState.CurrentUser.Id,
+                    DisplayName = _ProjectState.CurrentUser.DisplayName,
+                    Permissions = PermissionFlags.Admin,
+                }
+            ],
+        };
+
+        project.Languages.Add(args.MainLanguageCode);
+        project.MainLanguageId = args.MainLanguageCode;
+
+        _ProjectState.CreateNewProject(project);
+        _Nav.NavigateTo("/languages");
+    }
+
+    // ── Recent projects (persisted to Preferences) ────────────────────────
+
+    private const string _RECENT_PROJECTS_KEY = "RecentProjects";
+    private const int    _MAX_RECENT_PROJECTS = 5;
+
+    private void ClearRecentProjects()
+    {
+        _RecentProjects.Clear();
+        Preferences.Default.Remove(_RECENT_PROJECTS_KEY);
+    }
+
+    private void LoadRecentProjects()
+    {
+        try
+        {
+            string json = Preferences.Default.Get<string>(_RECENT_PROJECTS_KEY, "[]");
+            _RecentProjects = System.Text.Json.JsonSerializer.Deserialize<List<RecentProjectEntry>>(json) ?? [];
+        }
+        catch
+        {
+            _RecentProjects = [];
+        }
+    }
+
+    private void AddToRecentProjects(string name, string path)
+    {
+        ProjectDto? project = _ProjectState.CurrentProject;
+
+        // Calculate translation % across all non-main languages
+        int pct = 0;
+        if (project != null && project.Languages.Count > 1 && project.Keys.Count > 0)
+        {
+            int nonMainLangs = project.Languages.Count - 1;
+            int totalSlots   = project.Keys.Count * nonMainLangs;
+            int translated = project.Keys
+                                     .SelectMany(k => k.Translations)
+                                     .Count(t => t.LanguageId != project.MainLanguageId
+                                                 && t.Status == TranslationStatus.Approved
+                                                 && !string.IsNullOrEmpty(t.Text));
+            pct = totalSlots > 0 ? (int)Math.Round(translated * 100.0 / totalSlots) : 0;
+        }
+
+        _RecentProjects.RemoveAll(r => r.FilePath == path);
+        _RecentProjects.Insert(0, new RecentProjectEntry
+        {
+            ProjectName    = name,
+            FilePath       = path,
+            KeyCount       = project?.Keys.Count ?? 0,
+            LangCount      = project?.Languages.Count ?? 0,
+            TranslationPct = pct,
+            LastOpened     = DateTime.Now,
+            IsRemote       = false,
+        });
+        if (_RecentProjects.Count > _MAX_RECENT_PROJECTS)
+            _RecentProjects = _RecentProjects.GetRange(0, _MAX_RECENT_PROJECTS);
+
+        Preferences.Default.Set(_RECENT_PROJECTS_KEY,
+            System.Text.Json.JsonSerializer.Serialize(_RecentProjects));
+    }
+
+    private record RecentProjectEntry
+    {
+        public string   ProjectName    { get; init; } = "";
+        public string   FilePath       { get; init; } = "";
+        public int      KeyCount       { get; init; }
+        public int      LangCount      { get; init; }
+        public int      TranslationPct { get; init; }
+        public DateTime LastOpened     { get; init; } = DateTime.Now;
+        public bool     IsRemote       { get; init; }
+
+        public string LastOpenedLabel
+        {
+            get
+            {
+                TimeSpan diff = DateTime.Now - LastOpened;
+                if (diff.TotalMinutes < 2) return "just now";
+                if (diff.TotalHours < 1) return $"{(int)diff.TotalMinutes}m ago";
+                if (diff.TotalDays < 1) return $"{(int)diff.TotalHours}h ago";
+                if (diff.TotalDays < 7) return $"{(int)diff.TotalDays}d ago";
+                return LastOpened.ToString("MMM d");
+            }
+        }
+    }
+
+}
