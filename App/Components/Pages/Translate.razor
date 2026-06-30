@@ -18,16 +18,16 @@
 
     <div class="tr-columns">
 
-        <LanguagesColumn SelectedLanguage="_SelectedLanguage"
+        <LanguagesColumn SelectedLanguage="@_SelectedLanguage"
                          OnLanguageSelected="OnLanguageSelected"/>
 
-        <KeysColumn SelectedLanguage="_SelectedLanguage"
+        <KeysColumn SelectedLanguage="@_SelectedLanguage"
                     SelectedCategoryIds="_SelectedCategoryIds"
                     OnCategoryFilterChanged="OnCategoryFilterChanged"
                     SelectedKeyId="_SelectedKeyId"
                     OnKeySelected="OnKeySelected"/>
 
-        <KeyDetailColumn SelectedLanguage="_SelectedLanguage"
+        <KeyDetailColumn SelectedLanguage="@_SelectedLanguage"
                          SelectedKeyId="_SelectedKeyId"/>
 
     </div>

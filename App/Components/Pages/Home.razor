@@ -1,12 +1,11 @@
 ﻿@page "/"
-@using global::App.Components.Layout
 @layout MainLayout
+@using global::App.Components.Common.Home
+@using global::App.Components.Layout
+@using global::DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
 @inject DlocFileService     _DlocService
 @inject NavigationManager   _Nav
-@using DeusaldLocalizerCommon
-@using global::App.Components.Common
-
 @implements IDisposable
 
 <div class="home-root">
@@ -89,11 +88,11 @@
         {
             <div class="home-recent-list">
                 @{ string[] swatches = ["#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa"]; }
-                @for (int i = 0; i < _RecentProjects.Count; i++)
+                @for (int x = 0; x < _RecentProjects.Count; ++x)
                 {
-                    RecentProjectEntry recent  = _RecentProjects[i];
+                    RecentProjectEntry recent  = _RecentProjects[x];
                     string             initial = recent.ProjectName.Length > 0 ? recent.ProjectName[0].ToString().ToUpper() : "P";
-                    string             swatch  = swatches[i % swatches.Length];
+                    string             swatch  = swatches[x % swatches.Length];
                     int                pct     = recent.TranslationPct;
                     string meta = recent.KeyCount > 0
                                       ? $"{recent.KeyCount} keys · {recent.LangCount} langs · {recent.LastOpenedLabel}"
@@ -131,9 +130,9 @@
             </div>
         }
     </div>
-    
+
     <NewProjectModal OnConfirm="OnNewProjectConfirmed" @ref="_NewProjectModal"/>
-    
+
 </div>
 
 @code {
@@ -148,7 +147,7 @@
     protected override void OnInitialized()
     {
         _ProjectState.ProjectChanged += OnProjectChanged;
-        LoadRecentProjects();
+        _RecentProjects = RecentProjectsService.LoadRecentProjects();
     }
 
     public void Dispose() => _ProjectState.ProjectChanged -= OnProjectChanged;
@@ -192,7 +191,7 @@
         {
             ProjectDto project = await _DlocService.LoadAsync(path);
             _ProjectState.LoadProject(project, path);
-            AddToRecentProjects(project.Name, path);
+            _RecentProjects = RecentProjectsService.UpdateRecentProjects(project, path);
             _Nav.NavigateTo("/translate");
         }
         catch (DlocFormatException ex)
@@ -239,89 +238,10 @@
         _ProjectState.CreateNewProject(project);
         _Nav.NavigateTo("/translate");
     }
-
-    // ── Recent projects (persisted to Preferences) ────────────────────────
-
-    private const string _RECENT_PROJECTS_KEY = "RecentProjects";
-    private const int    _MAX_RECENT_PROJECTS = 5;
-
+    
     private void ClearRecentProjects()
     {
         _RecentProjects.Clear();
-        Preferences.Default.Remove(_RECENT_PROJECTS_KEY);
+        RecentProjectsService.ClearRecentProjects();
     }
-
-    private void LoadRecentProjects()
-    {
-        try
-        {
-            string json = Preferences.Default.Get<string>(_RECENT_PROJECTS_KEY, "[]");
-            _RecentProjects = System.Text.Json.JsonSerializer.Deserialize<List<RecentProjectEntry>>(json) ?? [];
-        }
-        catch
-        {
-            _RecentProjects = [];
-        }
-    }
-
-    private void AddToRecentProjects(string name, string path)
-    {
-        ProjectDto? project = _ProjectState.CurrentProject;
-
-        // Calculate translation % across all non-main languages
-        int pct = 0;
-        if (project != null && project.Languages.Count > 1 && project.Keys.Count > 0)
-        {
-            int nonMainLangs = project.Languages.Count - 1;
-            int totalSlots   = project.Keys.Count * nonMainLangs;
-            int translated = project.Keys
-                                     .SelectMany(k => k.Translations)
-                                     .Count(t => t.LanguageId != project.MainLanguageId
-                                                 && t.Status == TranslationStatus.Approved
-                                                 && !string.IsNullOrEmpty(t.Text));
-            pct = totalSlots > 0 ? (int)Math.Round(translated * 100.0 / totalSlots) : 0;
-        }
-
-        _RecentProjects.RemoveAll(r => r.FilePath == path);
-        _RecentProjects.Insert(0, new RecentProjectEntry
-        {
-            ProjectName    = name,
-            FilePath       = path,
-            KeyCount       = project?.Keys.Count ?? 0,
-            LangCount      = project?.Languages.Count ?? 0,
-            TranslationPct = pct,
-            LastOpened     = DateTime.Now,
-            IsRemote       = false,
-        });
-        if (_RecentProjects.Count > _MAX_RECENT_PROJECTS)
-            _RecentProjects = _RecentProjects.GetRange(0, _MAX_RECENT_PROJECTS);
-
-        Preferences.Default.Set(_RECENT_PROJECTS_KEY,
-            System.Text.Json.JsonSerializer.Serialize(_RecentProjects));
-    }
-
-    private record RecentProjectEntry
-    {
-        public string   ProjectName    { get; init; } = "";
-        public string   FilePath       { get; init; } = "";
-        public int      KeyCount       { get; init; }
-        public int      LangCount      { get; init; }
-        public int      TranslationPct { get; init; }
-        public DateTime LastOpened     { get; init; } = DateTime.Now;
-        public bool     IsRemote       { get; init; }
-
-        public string LastOpenedLabel
-        {
-            get
-            {
-                TimeSpan diff = DateTime.Now - LastOpened;
-                if (diff.TotalMinutes < 2) return "just now";
-                if (diff.TotalHours < 1) return $"{(int)diff.TotalMinutes}m ago";
-                if (diff.TotalDays < 1) return $"{(int)diff.TotalHours}h ago";
-                if (diff.TotalDays < 7) return $"{(int)diff.TotalDays}d ago";
-                return LastOpened.ToString("MMM d");
-            }
-        }
-    }
-
 }
