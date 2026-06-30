@@ -24,7 +24,7 @@
                        placeholder="My Awesome Game"
                        value="@_Name"
                        @oninput="OnNameInput"
-                       maxlength="100"/>
+                       maxlength="100" />
             </div>
 
             @* ── Slug ──────────────────────────────────────────────────── *@
@@ -38,29 +38,15 @@
                        placeholder="my-awesome-game"
                        @bind="_Slug"
                        @bind:event="oninput"
-                       maxlength="80"/>
+                       maxlength="80" />
                 @if (!string.IsNullOrEmpty(_Slug) && !IsValidSlug(_Slug))
                 {
                     <div class="modal-field-error">Only lowercase letters, numbers and hyphens</div>
                 }
             </div>
 
-            @* ── Description ───────────────────────────────────────────── *@
-            <div class="modal-field">
-                <label class="modal-label">
-                    Description
-                    <span class="modal-label-hint">optional</span>
-                </label>
-                <textarea class="modal-input modal-textarea"
-                          placeholder="A short description of the project…"
-                          @bind="_Description"
-                          @bind:event="oninput"
-                          rows="2"
-                          maxlength="500"></textarea>
-            </div>
-
             @* ── Main language ─────────────────────────────────────────── *@
-            <div class="modal-field">
+            <div class="modal-field @(_LangOpen ? "modal-field-grow" : "")">
                 <label class="modal-label">Main language</label>
                 <div class="modal-lang-picker">
                     <div class="modal-lang-search-wrap">
@@ -70,7 +56,8 @@
                                placeholder="Search language…"
                                @bind="_LangQuery"
                                @bind:event="oninput"
-                               @onfocus="() => _LangOpen = true"/>
+                               @onfocus="() => _LangOpen = true"
+                               @onblur="OnLangBlur" />
                         @if (_SelectedCulture != null)
                         {
                             <span class="modal-lang-selected-badge">
@@ -91,7 +78,7 @@
                             {
                                 @foreach (var c in results.Take(80))
                                 {
-                                    var  entry  = c;
+                                    var entry = c;
                                     bool active = _SelectedCulture?.Code == entry.Code;
                                     <button class="modal-lang-item @(active ? "active" : "")"
                                             @onclick="() => SelectLanguage(entry)"
@@ -111,6 +98,23 @@
                 </div>
             </div>
 
+            @* ── Description ───────────────────────────────────────────── *@
+            @if (!_LangOpen)
+            {
+                <div class="modal-field">
+                    <label class="modal-label">
+                        Description
+                        <span class="modal-label-hint">optional</span>
+                    </label>
+                    <textarea class="modal-input modal-textarea"
+                              placeholder="A short description of the project…"
+                              @bind="_Description"
+                              @bind:event="oninput"
+                              rows="2"
+                              maxlength="500"></textarea>
+                </div>
+            }
+
         </div>
 
         <div class="modal-footer">
@@ -127,7 +131,7 @@
 
 @code {
     [Parameter] public EventCallback<NewProjectArgs> OnConfirm { get; set; }
-    [Parameter] public EventCallback                 OnCancel  { get; set; }
+    [Parameter] public EventCallback               OnCancel  { get; set; }
 
     // ── State ──────────────────────────────────────────────────────────────
 
@@ -143,13 +147,13 @@
 
     public void Show()
     {
-        _Name            = "";
-        _Slug            = "";
-        _Description     = "";
-        _LangQuery       = "";
-        _LangOpen        = false;
+        _Name           = "";
+        _Slug           = "";
+        _Description    = "";
+        _LangQuery      = "";
+        _LangOpen       = false;
         _SelectedCulture = CultureService.FindByCode("en-US"); // sensible default
-        _Visible         = true;
+        _Visible        = true;
         StateHasChanged();
     }
 
@@ -185,6 +189,15 @@
         _LangOpen        = false;
     }
 
+    private async Task OnLangBlur()
+    {
+        // Small delay so a click on a dropdown item (which blurs the input)
+        // still has time to register via SelectLanguage before we close.
+        await Task.Delay(150);
+        _LangOpen = false;
+        StateHasChanged();
+    }
+
     private async Task Confirm()
     {
         if (!_CanConfirm) return;
@@ -208,5 +221,4 @@
         string Slug,
         string Description,
         string MainLanguageCode);
-
 }
