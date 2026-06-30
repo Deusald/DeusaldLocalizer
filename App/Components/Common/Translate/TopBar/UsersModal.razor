@@ -35,9 +35,9 @@
             <div class="um-section-label">Members (@_ProjectState.CurrentProject!.Members.Count)</div>
 
             <div class="um-member-list">
-                @foreach (var member in _ProjectState.CurrentProject.Members)
+                @foreach (ProjectMemberDto member in _ProjectState.CurrentProject.Members)
                 {
-                    var isSelf = member.UserId == _ProjectState.CurrentUser.Id;
+                    bool isSelf = member.UserId == _ProjectState.CurrentUser.Id;
                     <div class="um-member-row">
                         <div class="um-member-avatar" style="background:@AvatarColor(member.UserId)">
                             @Initial(member.DisplayName)
@@ -55,8 +55,9 @@
                         @if (_IsAdmin)
                         {
                             <div class="um-perm-flags">
-                                @foreach (var flag in _AllFlags)
+                                @foreach (PermissionFlags flag in DeusaldSharp.EnumExtensions.IterateAllValues<PermissionFlags>())
                                 {
+                                    if (!DeusaldSharp.EnumExtensions.IsSingleFlagOn(flag)) continue;
                                     bool active = (member.Permissions & flag) == flag;
                                     <button class="um-perm-chip @(active ? "active" : "")"
                                             @onclick="() => TogglePermission(member, flag)"
@@ -90,14 +91,6 @@
     private string _NewPassword = "";
     private string? _PasswordMessage;
 
-    private static readonly PermissionFlags[] _AllFlags =
-    [
-        PermissionFlags.Voter,
-        PermissionFlags.Contributor,
-        PermissionFlags.Reviewer,
-        PermissionFlags.Admin
-    ];
-
     private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
 
     public void Show()
@@ -118,7 +111,7 @@
 
     private static string AvatarColor(Guid userId)
     {
-        var idx = Math.Abs(userId.GetHashCode()) % _AvatarPalette.Length;
+        int idx = Math.Abs(userId.GetHashCode()) % _AvatarPalette.Length;
         return _AvatarPalette[idx];
     }
 
@@ -134,9 +127,13 @@
     private static string PermissionsSummary(PermissionFlags flags)
     {
         if (flags == PermissionFlags.None) return "No access";
-        var labels = new List<string>();
-        foreach (var f in _AllFlags)
+        List<string> labels = new List<string>();
+        foreach (PermissionFlags f in DeusaldSharp.EnumExtensions.IterateAllValues<PermissionFlags>())
+        {
+            if (!DeusaldSharp.EnumExtensions.IsSingleFlagOn(f)) continue;
             if ((flags & f) == f) labels.Add(FlagLabel(f));
+        }
+            
         return string.Join(", ", labels);
     }
 

@@ -6,7 +6,7 @@
 @inject DlocFileService     _DlocService
 @inject NavigationManager   _Nav
 
-@if (_ProjectState.CurrentProject != null)
+@if (_ProjectState.HasProject)
 {
     <div class="ttb-root">
 
@@ -23,13 +23,20 @@
             <span class="ttb-project-name">@_ProjectState.CurrentProject?.Name</span>
             <span class="ttb-sep">/</span>
             <span class="ttb-translating">
-                Translating into <strong>@LanguageLabel</strong>
+                Translating into <strong>@_LanguageLabel</strong>
             </span>
         </div>
 
         <div class="ttb-right">
 
-            @if (!_ProjectState.IsOnline)
+            @if (_ProjectState.IsOnline)
+            {
+                <span class="ttb-status-pill @(_ProjectState.IsDirty ? "ttb-status-warn" : "ttb-status-ok")">
+                    <span class="ttb-status-dot"></span>
+                    @(_ProjectState.IsDirty ? "Syncing…" : "Synced")
+                </span>
+            }
+            else
             {
                 @if (_ProjectState.IsDirty)
                 {
@@ -42,24 +49,17 @@
                     @(_ProjectState.IsDirty ? "Unsaved" : "Saved")
                 </span>
             }
-            else
-            {
-                <span class="ttb-status-pill @(_ProjectState.IsDirty ? "ttb-status-warn" : "ttb-status-ok")">
-                    <span class="ttb-status-dot"></span>
-                    @(_ProjectState.IsDirty ? "Syncing…" : "Synced")
-                </span>
-            }
 
             <div class="ttb-avatars" @onclick="OpenUsersModal">
-                @foreach (var member in _VisibleMembers)
+                @foreach (ProjectMemberDto member in _VisibleMembers)
                 {
                     <div class="ttb-avatar" style="background:@AvatarColor(member.UserId)" title="@member.DisplayName">
                         @Initial(member.DisplayName)
                     </div>
                 }
-                @if (ExtraMemberCount > 0)
+                @if (_ExtraMemberCount > 0)
                 {
-                    <div class="ttb-avatar ttb-avatar-extra">+@ExtraMemberCount</div>
+                    <div class="ttb-avatar ttb-avatar-extra">+@_ExtraMemberCount</div>
                 }
             </div>
 
@@ -77,35 +77,35 @@
     private UsersModal?        _UsersModal;
     private ConfirmLeaveModal? _ConfirmLeaveModal;
 
-    private const int MaxVisibleAvatars = 3;
+    private const int _MAX_VISIBLE_AVATARS = 3;
 
-    private string LanguageLabel
+    private string _LanguageLabel
     {
         get
         {
-            var entry = CultureService.FindByCode(SelectedLanguage);
+            CultureEntry? entry = CultureService.FindByCode(SelectedLanguage);
             return entry?.EnglishName ?? SelectedLanguage;
         }
     }
 
     private List<ProjectMemberDto> _VisibleMembers =>
-        _ProjectState.CurrentProject!.Members.Count <= MaxVisibleAvatars
+        _ProjectState.CurrentProject!.Members.Count <= _MAX_VISIBLE_AVATARS
             ? _ProjectState.CurrentProject.Members
-            : _ProjectState.CurrentProject.Members.GetRange(0, MaxVisibleAvatars);
+            : _ProjectState.CurrentProject.Members.GetRange(0, _MAX_VISIBLE_AVATARS);
 
-    private int ExtraMemberCount =>
-        Math.Max(0, _ProjectState.CurrentProject!.Members.Count - MaxVisibleAvatars);
+    private int _ExtraMemberCount =>
+        Math.Max(0, _ProjectState.CurrentProject!.Members.Count - _MAX_VISIBLE_AVATARS);
 
     private static string Initial(string name) =>
         string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();
 
-    private static readonly string[] AvatarPalette =
+    private static readonly string[] _AvatarPalette =
         { "#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0" };
 
     private static string AvatarColor(Guid userId)
     {
-        var idx = Math.Abs(userId.GetHashCode()) % AvatarPalette.Length;
-        return AvatarPalette[idx];
+        int idx = Math.Abs(userId.GetHashCode()) % _AvatarPalette.Length;
+        return _AvatarPalette[idx];
     }
 
     private void OpenUsersModal() => _UsersModal?.Show();
@@ -146,17 +146,17 @@
 
     private async Task SaveCore()
     {
-        var project = _ProjectState.CurrentProject!;
+        ProjectDto project = _ProjectState.CurrentProject!;
 
         if (string.IsNullOrEmpty(_ProjectState.CurrentFilePath))
         {
             // Never saved to disk yet — ask where to put it.
-            using var stream = new MemoryStream();
+            using MemoryStream stream = new MemoryStream();
             await _DlocService.SaveToStreamAsync(project, stream);
             stream.Position = 0;
 
-            var fileName = string.IsNullOrEmpty(project.Slug) ? "project" : project.Slug;
-            var result   = await FileSaver.Default.SaveAsync($"{fileName}{DlocFileService.FILE_EXTENSION}", stream);
+            string          fileName = string.IsNullOrEmpty(project.Slug) ? "project" : project.Slug;
+            FileSaverResult result   = await FileSaver.Default.SaveAsync($"{fileName}{DlocFileService.FILE_EXTENSION}", stream);
             if (result.IsSuccessful)
             {
                 _ProjectState.UpdateFilePath(result.FilePath);
@@ -168,6 +168,9 @@
             await _DlocService.SaveAsync(project, _ProjectState.CurrentFilePath);
             _ProjectState.MarkClean();
         }
+
+        if (!string.IsNullOrEmpty(_ProjectState.CurrentFilePath)) RecentProjectsService.UpdateRecentProjects(project, _ProjectState.CurrentFilePath!);
+        StateHasChanged();
     }
 
 }

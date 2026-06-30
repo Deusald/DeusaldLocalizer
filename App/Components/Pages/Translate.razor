@@ -1,10 +1,9 @@
 ﻿@page "/translate"
+@using DeusaldLocalizerCommon
 @using global::App.Components.Layout
 @using global::App.Components.Translate
 @layout EmptyLayout
-@using DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
-@inject NavigationManager   _Nav
 
 @if (!_ProjectState.HasProject)
 {
@@ -41,7 +40,7 @@
 
     protected override void OnInitialized()
     {
-        var project = _ProjectState.CurrentProject!;
+        ProjectDto project = _ProjectState.CurrentProject!;
         // Default to the first non-main language, or main if that's all there is
         _SelectedLanguage = project.Languages.Find(l => l != project.MainLanguageId)
                             ?? project.MainLanguageId;
