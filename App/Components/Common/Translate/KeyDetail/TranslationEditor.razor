@@ -99,6 +99,12 @@
     private Guid?  _LoadedForKeyId;
     private string _LoadedForLanguage = "";
 
+    // Snapshots of the last text we knew was saved on the DTO. Used to detect
+    // external changes (e.g. a suggestion being accepted elsewhere) so the
+    // draft can be re-synced, without clobbering genuine unsaved local edits.
+    private string _LastKnownSourceText      = "";
+    private string _LastKnownTranslationText = "";
+
     private string _SourceLangCode           => _ProjectState.CurrentProject!.MainLanguageId;
     private bool   _IsSourceLanguageSelected => SelectedLanguage == _SourceLangCode;
 
@@ -113,18 +119,38 @@
 
     protected override void OnParametersSet()
     {
-        // Reload drafts whenever the selected key or language changes
-        if (_LoadedForKeyId != Key.Id || _LoadedForLanguage != SelectedLanguage)
-        {
-            TranslationDto? source = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
-            _SourceDraft = source?.Text ?? "";
+        bool keyOrLanguageChanged = _LoadedForKeyId != Key.Id || _LoadedForLanguage != SelectedLanguage;
 
-            TranslationDto? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
-            _TranslationDraft = translation?.Text ?? "";
+        TranslationDto? source            = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        string          currentSourceText = source?.Text ?? "";
+
+        TranslationDto? translation            = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        string          currentTranslationText = translation?.Text ?? "";
+
+        if (keyOrLanguageChanged)
+        {
+            _SourceDraft      = currentSourceText;
+            _TranslationDraft = currentTranslationText;
 
             _LoadedForKeyId    = Key.Id;
             _LoadedForLanguage = SelectedLanguage;
         }
+        else
+        {
+            // Same key/language as before — if the saved text changed since we
+            // last saw it (e.g. a suggestion was accepted elsewhere) and the
+            // draft still matches what we last knew, it's safe to resync.
+            // If the draft differs from what we last knew, the user has typed
+            // something unsaved, so leave their draft alone.
+            if (currentSourceText != _LastKnownSourceText && _SourceDraft == _LastKnownSourceText)
+                _SourceDraft = currentSourceText;
+
+            if (currentTranslationText != _LastKnownTranslationText && _TranslationDraft == _LastKnownTranslationText)
+                _TranslationDraft = currentTranslationText;
+        }
+
+        _LastKnownSourceText      = currentSourceText;
+        _LastKnownTranslationText = currentTranslationText;
     }
 
     private bool _HasSourceChanges

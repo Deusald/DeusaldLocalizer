@@ -2,7 +2,7 @@
 @using DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
 
-@{ var suggestions = _SuggestionsForLanguage; }
+@{ List<SuggestionDto> suggestions = _SuggestionsForLanguage; }
 
 @if (suggestions.Count > 0)
 {
@@ -10,12 +10,12 @@
         <div class="ss-label">Community suggestions</div>
 
         <div class="ss-list">
-            @foreach (var suggestion in suggestions)
+            @foreach (SuggestionDto suggestion in suggestions)
             {
-                var s = suggestion;
-                var score = s.Votes.Sum(v => v.Value);
-                var myVote = s.Votes.Find(v => v.UserId == _ProjectState.CurrentUser.Id)?.Value ?? 0;
-                var preview = SmartFormatPreviewService.Render(s.Text, Key.Variables);
+                SuggestionDto s = suggestion;
+                int score = s.Votes.Sum(v => v.Value);
+                int myVote = s.Votes.Find(v => v.UserId == _ProjectState.CurrentUser.Id)?.Value ?? 0;
+                string preview = SmartFormatPreviewService.Render(s.Text, Key.Variables);
 
                 <div class="ss-item">
                     <div class="ss-vote">
@@ -44,7 +44,10 @@
 
                     @if (_CanAccept)
                     {
-                        <button class="ss-accept-btn" @onclick="() => Accept(s)">Accept</button>
+                        <div class="ss-review-actions">
+                            <button class="ss-accept-btn" @onclick="() => Accept(s)">Accept</button>
+                            <button class="ss-reject-btn" @onclick="() => Reject(s)">Reject</button>
+                        </div>
                     }
                 </div>
             }
@@ -68,7 +71,7 @@
 
     private void Vote(SuggestionDto suggestion, int value)
     {
-        var existing = suggestion.Votes.Find(v => v.UserId == _ProjectState.CurrentUser.Id);
+        SuggestionVoteDto? existing = suggestion.Votes.Find(v => v.UserId == _ProjectState.CurrentUser.Id);
         if (existing != null)
         {
             if (existing.Value == value)
@@ -111,20 +114,28 @@
         OnChanged.InvokeAsync();
     }
 
+    private void Reject(SuggestionDto suggestion)
+    {
+        suggestion.Status = SuggestionStatus.Rejected;
+        Key.UpdatedAt = DateTime.UtcNow;
+
+        _ProjectState.MarkDirty();
+        OnChanged.InvokeAsync();
+    }
+
     private static string Initial(string name) => string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();
 
-    private static readonly string[] _AvatarPalette =
-        { "#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0" };
+    private static readonly string[] _AvatarPalette = ["#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0"];
 
     private static string AvatarColor(Guid userId)
     {
-        var idx = Math.Abs(userId.GetHashCode()) % _AvatarPalette.Length;
+        int idx = Math.Abs(userId.GetHashCode()) % _AvatarPalette.Length;
         return _AvatarPalette[idx];
     }
 
     private static string RelativeTime(DateTime time)
     {
-        var diff = DateTime.UtcNow - time;
+        TimeSpan diff = DateTime.UtcNow - time;
         if (diff.TotalMinutes < 1)  return "just now";
         if (diff.TotalHours   < 1)  return $"{(int)diff.TotalMinutes}m";
         if (diff.TotalDays    < 1)  return $"{(int)diff.TotalHours}h";

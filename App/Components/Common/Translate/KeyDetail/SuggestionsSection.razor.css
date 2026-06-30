@@ -104,10 +104,16 @@
 .ss-dot { color: #3a3b44; font-size: 11px; }
 .ss-time { font-size: 11px; color: #5a5b63; }
 
-/* ── Accept ───────────────────────────────────────────────────────────────── */
+/* ── Accept / Reject ──────────────────────────────────────────────────────── */
+
+.ss-review-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+}
 
 .ss-accept-btn {
-    flex-shrink: 0;
     padding: 6px 13px;
     background: transparent;
     border: 1px solid rgba(91,108,255,.4);
@@ -119,3 +125,16 @@
     transition: background .12s;
 }
 .ss-accept-btn:hover { background: rgba(91,108,255,.12); }
+
+.ss-reject-btn {
+    padding: 6px 13px;
+    background: transparent;
+    border: 1px solid rgba(255,69,58,.35);
+    border-radius: 7px;
+    color: #ff6b6b;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .12s;
+}
+.ss-reject-btn:hover { background: rgba(255,69,58,.12); }
