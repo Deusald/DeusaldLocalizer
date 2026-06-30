@@ -29,9 +29,6 @@ namespace DeusaldLocalizerCommon
         /// <summary>All translations for this key across every language.</summary>
         public List<TranslationDto> Translations { get; set; } = new();
 
-        /// <summary>All suggestions for this key across every language.</summary>
-        public List<SuggestionDto> Suggestions { get; set; } = new();
-
         /// <summary>Full audit history for this key.</summary>
         public List<HistoryEntryDto> History { get; set; } = new();
     }

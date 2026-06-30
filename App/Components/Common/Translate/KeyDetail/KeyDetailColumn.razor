@@ -98,8 +98,8 @@
             LocalizationKeyDto key = _SelectedKey!;
             if (key.Flags.Any(f => f.Type == FlagType.NeedsReview)) return "Needs review";
             TranslationDto? t = key.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
-            if (t == null || string.IsNullOrEmpty(t.Text)) return "Untranslated";
-            if (t.NeedsAttention) return "Needs review";
+            if (t == null || (string.IsNullOrEmpty(t.Text) && t.Suggestions.Count == 0)) return "Untranslated";
+            if (!string.IsNullOrEmpty(t.Text) && t.NeedsAttention) return "Needs review";
             return t.Status switch
             {
                 TranslationStatus.Approved  => "Approved",

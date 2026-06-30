@@ -39,7 +39,7 @@
                 LocalizationKeyDto k               = key;
                 bool               active          = k.Id == SelectedKeyId;
                 TranslationDto?    translation     = k.Translations.Find(t => t.LanguageId == SelectedLanguage);
-                int                suggestionCount = k.Suggestions.Count(s => s.LanguageId == SelectedLanguage && s.Status == SuggestionStatus.Pending);
+                int                suggestionCount = k.Translations.Where(t => t.LanguageId == SelectedLanguage).SelectMany(t => t.Suggestions).Count(s => s.Status == SuggestionStatus.Pending);
 
                 @if (_EditMode)
                 {

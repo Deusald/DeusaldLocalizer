@@ -3,18 +3,18 @@
 @inject ProjectStateService _ProjectState
 
 <div class="ktb-root">
-    @if (Key.Tags.Count == 0 && !IsAdmin)
+    @if (Key.Tags.Count == 0 && !_IsAdmin)
     {
         <span class="ktb-empty">No tags</span>
     }
     else
     {
-        @foreach (var tag in Key.Tags)
+        @foreach (string tag in Key.Tags)
         {
-            var t = tag;
+            string t = tag;
             <span class="ktb-tag" @onmouseenter="() => _Hovered = t" @onmouseleave="() => _Hovered = null">
                 #@t
-                @if (IsAdmin && _Hovered == t)
+                @if (_IsAdmin && _Hovered == t)
                 {
                     <button class="ktb-tag-remove" @onclick="() => RemoveTag(t)">
                         <i class="bi bi-x"></i>
@@ -23,7 +23,7 @@
             </span>
         }
 
-        @if (IsAdmin)
+        @if (_IsAdmin)
         {
             <button class="ktb-add-btn" @onclick="() => _AddTagModal?.Show()">
                 <i class="bi bi-plus"></i>
@@ -41,7 +41,7 @@
     private string?      _Hovered;
     private AddTagModal? _AddTagModal;
 
-    private bool IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
 
     private async Task OnAdded() => await OnChanged.InvokeAsync();
 

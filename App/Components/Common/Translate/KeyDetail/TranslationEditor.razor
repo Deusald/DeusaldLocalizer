@@ -1,0 +1,267 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+<div class="te-root">
+
+    @if (_IsSourceLanguageSelected)
+    {
+        <div class="te-block">
+            <div class="te-label-row">
+                <label class="te-label">Source · @_SourceLangCode</label>
+                <span class="te-hint">{placeholders} supported</span>
+            </div>
+            <textarea class="te-textarea @((_CanEditSource || _CanEditTranslation) ? "" : "te-readonly")"
+                      @bind="_SourceDraft" @bind:event="oninput"
+                      readonly="@(!_CanEditSource && !_CanEditTranslation)"
+                      rows="4"
+                      placeholder="Source text…"></textarea>
+        </div>
+
+        @if (_CanEditSource)
+        {
+            <div class="te-actions">
+                <button class="te-btn te-btn-primary" @onclick="SaveSourceText" disabled="@(!_HasSourceChanges)">
+                    Save source
+                </button>
+                <button class="te-btn te-btn-ghost" @onclick="SuggestSourceText" disabled="@(!_HasSourceChanges)">
+                    Suggest
+                </button>
+                <button class="te-btn te-btn-ghost" @onclick="ResetSourceDraft" disabled="@(!_HasSourceChanges)">
+                    Reset
+                </button>
+            </div>
+        }
+        else if (_CanEditTranslation)
+        {
+            @* Contributor on the source language: can only propose, never save directly *@
+            <div class="te-actions">
+                <button class="te-btn te-btn-ghost" @onclick="SuggestSourceText" disabled="@(!_HasSourceChanges)">
+                    Suggest
+                </button>
+                <button class="te-btn te-btn-ghost" @onclick="ResetSourceDraft" disabled="@(!_HasSourceChanges)">
+                    Reset
+                </button>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="te-block">
+            <label class="te-label">
+                Source · @_SourceLangCode
+                <span class="te-hint te-source-readonly-hint">read-only — switch to @_SourceLangCode to edit</span>
+            </label>
+            <textarea class="te-textarea te-readonly"
+                      value="@_SourceDraft"
+                      readonly
+                      rows="3"
+                      placeholder="Source text…"></textarea>
+        </div>
+
+        <div class="te-block">
+            <div class="te-label-row">
+                <label class="te-label">Translation · @SelectedLanguage</label>
+                <span class="te-hint">{placeholders} supported</span>
+            </div>
+            <textarea class="te-textarea @(_CanEditTranslation ? "" : "te-readonly")"
+                      @bind="_TranslationDraft" @bind:event="oninput"
+                      readonly="@(!_CanEditTranslation)"
+                      rows="4"
+                      placeholder="Type your translation…"></textarea>
+        </div>
+
+        @if (_CanEditTranslation)
+        {
+            <div class="te-actions">
+                <button class="te-btn te-btn-primary" @onclick="SaveTranslation" disabled="@(!_HasTranslationChanges)">
+                    Save translation
+                </button>
+                <button class="te-btn te-btn-ghost" @onclick="SuggestTranslation" disabled="@(!_HasTranslationChanges)">
+                    Suggest
+                </button>
+                <button class="te-btn te-btn-ghost" @onclick="ResetTranslationDraft" disabled="@(!_HasTranslationChanges)">
+                    Reset
+                </button>
+            </div>
+        }
+    }
+
+</div>
+
+@code {
+    [Parameter] public LocalizationKeyDto Key              { get; set; } = null!;
+    [Parameter] public string             SelectedLanguage { get; set; } = "";
+    [Parameter] public EventCallback      OnChanged        { get; set; }
+
+    private string _SourceDraft      = "";
+    private string _TranslationDraft = "";
+    private Guid?  _LoadedForKeyId;
+    private string _LoadedForLanguage = "";
+
+    private string _SourceLangCode           => _ProjectState.CurrentProject!.MainLanguageId;
+    private bool   _IsSourceLanguageSelected => SelectedLanguage == _SourceLangCode;
+
+    private bool _IsAdmin       => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _IsContributor => _ProjectState.CurrentUserHas(PermissionFlags.Contributor);
+
+    /// <summary>Only meaningful when the source language is selected — admin can edit and save it directly.</summary>
+    private bool _CanEditSource => _IsAdmin;
+
+    /// <summary>Only meaningful when a non-source language is selected.</summary>
+    private bool _CanEditTranslation => _IsContributor || _IsAdmin;
+
+    protected override void OnParametersSet()
+    {
+        // Reload drafts whenever the selected key or language changes
+        if (_LoadedForKeyId != Key.Id || _LoadedForLanguage != SelectedLanguage)
+        {
+            TranslationDto? source = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+            _SourceDraft = source?.Text ?? "";
+
+            TranslationDto? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+            _TranslationDraft = translation?.Text ?? "";
+
+            _LoadedForKeyId    = Key.Id;
+            _LoadedForLanguage = SelectedLanguage;
+        }
+    }
+
+    private bool _HasSourceChanges
+    {
+        get
+        {
+            TranslationDto? current = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+            return (current?.Text ?? "") != _SourceDraft;
+        }
+    }
+
+    private bool _HasTranslationChanges
+    {
+        get
+        {
+            TranslationDto? current = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+            return (current?.Text ?? "") != _TranslationDraft;
+        }
+    }
+
+    private void ResetSourceDraft()
+    {
+        TranslationDto? current = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        _SourceDraft = current?.Text ?? "";
+    }
+
+    private void ResetTranslationDraft()
+    {
+        TranslationDto? current = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        _TranslationDraft = current?.Text ?? "";
+    }
+
+    private async Task SaveSourceText()
+    {
+        if (!_CanEditSource) return;
+
+        TranslationDto? source = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        if (source == null)
+        {
+            source = new TranslationDto { KeyId = Key.Id, LanguageId = _SourceLangCode };
+            Key.Translations.Add(source);
+        }
+        if (source.Text == _SourceDraft) return;
+
+        source.Text      = _SourceDraft;
+        source.UpdatedBy = _ProjectState.CurrentUser.Id;
+        source.UpdatedAt = DateTime.UtcNow;
+        source.Status    = TranslationStatus.Approved;
+
+        Key.UpdatedAt = DateTime.UtcNow;
+        _ProjectState.MarkDirty();
+        await OnChanged.InvokeAsync();
+    }
+
+    private async Task SuggestSourceText()
+    {
+        if (!_CanEditTranslation) return;
+
+        TranslationDto? translation = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        if (translation == null)
+        {
+            translation = new TranslationDto { KeyId = Key.Id, LanguageId = _SourceLangCode };
+            Key.Translations.Add(translation);
+        }
+
+        translation.NeedsAttention = true;
+        if (translation.Status == TranslationStatus.Draft) translation.Status = TranslationStatus.Suggested;
+
+        translation.Suggestions.Add(new SuggestionDto
+        {
+            KeyId         = Key.Id,
+            TranslationId = translation.Id,
+            Text          = _SourceDraft,
+            AuthorId      = _ProjectState.CurrentUser.Id,
+            AuthorName    = _ProjectState.CurrentUser.DisplayName,
+            Status        = SuggestionStatus.Pending,
+        });
+
+        Key.UpdatedAt = DateTime.UtcNow;
+        _ProjectState.MarkDirty();
+        await OnChanged.InvokeAsync();
+    }
+
+    private async Task SaveTranslation()
+    {
+        if (!_CanEditTranslation) return;
+
+        TranslationDto? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        if (translation == null)
+        {
+            translation = new TranslationDto { KeyId = Key.Id, LanguageId = SelectedLanguage };
+            Key.Translations.Add(translation);
+        }
+
+        translation.Text           = _TranslationDraft;
+        translation.UpdatedBy      = _ProjectState.CurrentUser.Id;
+        translation.UpdatedAt      = DateTime.UtcNow;
+        translation.NeedsAttention = false;
+
+        // Contributors without Reviewer/Admin leave it as Draft; reviewers/admins approve directly.
+        translation.Status = (_ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
+                              || _ProjectState.CurrentUserHas(PermissionFlags.Admin))
+                                 ? TranslationStatus.Approved
+                                 : TranslationStatus.Draft;
+
+        Key.UpdatedAt = DateTime.UtcNow;
+        _ProjectState.MarkDirty();
+        await OnChanged.InvokeAsync();
+    }
+
+    private async Task SuggestTranslation()
+    {
+        if (!_CanEditTranslation) return;
+
+        TranslationDto? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        if (translation == null)
+        {
+            translation = new TranslationDto { KeyId = Key.Id, LanguageId = SelectedLanguage };
+            Key.Translations.Add(translation);
+        }
+
+        translation.NeedsAttention = true;
+        if (translation.Status == TranslationStatus.Draft) translation.Status = TranslationStatus.Suggested;
+
+        translation.Suggestions.Add(new SuggestionDto
+        {
+            KeyId         = Key.Id,
+            TranslationId = translation.Id,
+            Text          = _TranslationDraft,
+            AuthorId      = _ProjectState.CurrentUser.Id,
+            AuthorName    = _ProjectState.CurrentUser.DisplayName,
+            Status        = SuggestionStatus.Pending,
+        });
+
+        Key.UpdatedAt = DateTime.UtcNow;
+        _ProjectState.MarkDirty();
+        await OnChanged.InvokeAsync();
+    }
+
+}

@@ -29,6 +29,13 @@
     color: #5a5b63;
 }
 
+.te-source-readonly-hint {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: 8px;
+}
+
 .te-textarea {
     width: 100%;
     background: #12131a;

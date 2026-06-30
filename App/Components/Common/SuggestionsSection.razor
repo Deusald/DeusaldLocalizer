@@ -2,7 +2,7 @@
 @using DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
 
-@{ var suggestions = SuggestionsForLanguage; }
+@{ var suggestions = _SuggestionsForLanguage; }
 
 @if (suggestions.Count > 0)
 {
@@ -42,7 +42,7 @@
                         </div>
                     </div>
 
-                    @if (CanAccept)
+                    @if (_CanAccept)
                     {
                         <button class="ss-accept-btn" @onclick="() => Accept(s)">Accept</button>
                     }
@@ -57,14 +57,14 @@
     [Parameter] public string SelectedLanguage { get; set; } = "";
     [Parameter] public EventCallback OnChanged { get; set; }
 
-    private bool CanAccept => _ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
+    private bool _CanAccept => _ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
                             || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
 
-    private List<SuggestionDto> SuggestionsForLanguage =>
-        Key.Suggestions
-           .Where(s => s.LanguageId == SelectedLanguage && s.Status == SuggestionStatus.Pending)
+    private List<SuggestionDto> _SuggestionsForLanguage =>
+        Key.Translations.FirstOrDefault(t => t.LanguageId == SelectedLanguage)?.Suggestions
+           .Where(s => s.Status == SuggestionStatus.Pending)
            .OrderByDescending(s => s.Votes.Sum(v => v.Value))
-           .ToList();
+           .ToList() ?? [];
 
     private void Vote(SuggestionDto suggestion, int value)
     {
@@ -97,12 +97,7 @@
 
     private void Accept(SuggestionDto suggestion)
     {
-        var translation = Key.Translations.Find(t => t.LanguageId == suggestion.LanguageId);
-        if (translation == null)
-        {
-            translation = new TranslationDto { KeyId = Key.Id, LanguageId = suggestion.LanguageId };
-            Key.Translations.Add(translation);
-        }
+        TranslationDto translation = Key.Translations.Find(t => t.Id == suggestion.TranslationId)!;
         translation.Text           = suggestion.Text;
         translation.Status         = TranslationStatus.Approved;
         translation.NeedsAttention = false;
@@ -118,13 +113,13 @@
 
     private static string Initial(string name) => string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();
 
-    private static readonly string[] AvatarPalette =
+    private static readonly string[] _AvatarPalette =
         { "#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0" };
 
     private static string AvatarColor(Guid userId)
     {
-        var idx = Math.Abs(userId.GetHashCode()) % AvatarPalette.Length;
-        return AvatarPalette[idx];
+        var idx = Math.Abs(userId.GetHashCode()) % _AvatarPalette.Length;
+        return _AvatarPalette[idx];
     }
 
     private static string RelativeTime(DateTime time)

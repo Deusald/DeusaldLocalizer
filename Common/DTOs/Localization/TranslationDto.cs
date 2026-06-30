@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DeusaldLocalizerCommon
 {
@@ -27,6 +28,9 @@ namespace DeusaldLocalizerCommon
         /// </summary>
         public bool NeedsAttention { get; set; } = false;
 
+        /// <summary>All suggestions for this translation.</summary>
+        public List<SuggestionDto> Suggestions { get; set; } = new();
+        
         public Guid     UpdatedBy { get; set; }
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
     }

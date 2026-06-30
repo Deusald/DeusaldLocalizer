@@ -17,7 +17,7 @@
                    @bind="_Query" @bind:event="oninput" @onkeydown="OnKeyDown" />
 
             <div class="atm-results">
-                @if (ShowCreateOption)
+                @if (_ShowCreateOption)
                 {
                     <button class="atm-item atm-item-create" @onclick="() => AddTag(_Query.Trim())">
                         <i class="bi bi-plus-circle"></i>
@@ -25,16 +25,16 @@
                     </button>
                 }
 
-                @foreach (var tag in FilteredExisting)
+                @foreach (string tag in _FilteredExisting)
                 {
-                    var t = tag;
+                    string t = tag;
                     <button class="atm-item" @onclick="() => AddTag(t)">
                         <span class="atm-item-hash">#</span>
                         <span>@t</span>
                     </button>
                 }
 
-                @if (FilteredExisting.Count == 0 && !ShowCreateOption)
+                @if (_FilteredExisting.Count == 0 && !_ShowCreateOption)
                 {
                     <div class="atm-empty">No matching tags.</div>
                 }
@@ -60,7 +60,7 @@
     private void Close() => _Visible = false;
 
     /// <summary>Every distinct tag used across all keys in the project, excluding tags already on this key.</summary>
-    private List<string> AllExistingTags =>
+    private List<string> _AllExistingTags =>
         _ProjectState.CurrentProject!.Keys
             .SelectMany(k => k.Tags)
             .Distinct()
@@ -68,24 +68,24 @@
             .OrderBy(t => t)
             .ToList();
 
-    private List<string> FilteredExisting
+    private List<string> _FilteredExisting
     {
         get
         {
-            if (string.IsNullOrWhiteSpace(_Query)) return AllExistingTags;
-            var q = _Query.Trim().ToLowerInvariant();
-            return AllExistingTags.Where(t => t.ToLowerInvariant().Contains(q)).ToList();
+            if (string.IsNullOrWhiteSpace(_Query)) return _AllExistingTags;
+            string q = _Query.Trim().ToLowerInvariant();
+            return _AllExistingTags.Where(t => t.ToLowerInvariant().Contains(q)).ToList();
         }
     }
 
-    private bool ShowCreateOption =>
+    private bool _ShowCreateOption =>
         !string.IsNullOrWhiteSpace(_Query)
-        && !AllExistingTags.Any(t => string.Equals(t, _Query.Trim(), StringComparison.OrdinalIgnoreCase))
+        && !_AllExistingTags.Any(t => string.Equals(t, _Query.Trim(), StringComparison.OrdinalIgnoreCase))
         && !Key.Tags.Contains(_Query.Trim());
 
     private void OnKeyDown(KeyboardEventArgs e)
     {
-        if (e.Key == "Enter" && ShowCreateOption)
+        if (e.Key == "Enter" && _ShowCreateOption)
             AddTag(_Query.Trim());
     }
 
