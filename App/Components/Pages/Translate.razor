@@ -4,7 +4,6 @@
 @using global::App.Components.Translate
 @layout EmptyLayout
 @inject ProjectStateService _ProjectState
-@implements IDisposable
 
 @if (!_ProjectState.HasProject)
 {
@@ -45,7 +44,6 @@
         // Default to the first non-main language, or main if that's all there is
         _SelectedLanguage = project.Languages.Find(l => l != project.MainLanguageId)
                             ?? project.MainLanguageId;
-        _ProjectState.DirtyStateChanged += OnDirty;
     }
 
     private void OnLanguageSelected(string code)
@@ -62,15 +60,5 @@
     private void OnKeySelected(Guid keyId)
     {
         _SelectedKeyId = keyId;
-    }
-
-    private void OnDirty()
-    {
-        StateHasChanged();
-    }
-    
-    public void Dispose()
-    {
-        _ProjectState.DirtyStateChanged -= OnDirty;
     }
 }

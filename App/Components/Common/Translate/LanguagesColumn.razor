@@ -1,6 +1,7 @@
 ﻿@namespace App.Components.Translate
 @using DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
+@implements IDisposable
 
 <div class="lc-root">
 
@@ -128,6 +129,11 @@
 
     private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
 
+    protected override void OnInitialized()
+    {
+        _ProjectState.ProjectDataChanged += OnProjectDataChanged;
+    }
+
     private IEnumerable<string> _FilteredLanguages
     {
         get
@@ -193,10 +199,19 @@
 
         if (SelectedLanguage == code)
         {
-            var fallback = project.Languages.Find(l => l != project.MainLanguageId)
+            string fallback = project.Languages.Find(l => l != project.MainLanguageId)
                            ?? project.MainLanguageId;
             await OnLanguageSelected.InvokeAsync(fallback);
         }
     }
 
+    private void OnProjectDataChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+    
+    public void Dispose()
+    {
+        _ProjectState.ProjectDataChanged -= OnProjectDataChanged;
+    }
 }

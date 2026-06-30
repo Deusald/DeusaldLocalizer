@@ -1,0 +1,180 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+<div class="cfp-root">
+
+    @if (!_Expanded)
+    {
+        <button class="cfp-trigger" @onclick="() => _Expanded = true">
+            <i class="bi bi-funnel cfp-trigger-icon"></i>
+            <span class="cfp-trigger-label">@_TriggerLabel</span>
+            <i class="bi bi-chevron-down cfp-trigger-chevron"></i>
+        </button>
+    }
+    else
+    {
+        <div class="cfp-panel">
+            <div class="cfp-panel-header">
+                <span class="cfp-panel-title">Filter by category</span>
+                <div class="cfp-panel-actions">
+                    @if (SelectedCategoryIds.Count > 0)
+                    {
+                        <button class="cfp-clear-btn" @onclick="ClearAll">Clear</button>
+                    }
+                    <button class="cfp-collapse-btn" @onclick="() => _Expanded = false">
+                        <i class="bi bi-chevron-up"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="cfp-list">
+                @if (_ProjectState.CurrentProject!.Categories.Count == 0)
+                {
+                    <div class="cfp-empty">No categories yet.</div>
+                }
+                else
+                {
+                    @foreach (CategoryRow row in _FlattenedCategories)
+                    {
+                        bool active = SelectedCategoryIds.Contains(row.Category.Id);
+                        CategoryDto cat = row.Category;
+                        bool hasKeys = CategoryHasKeys(cat.Id);
+
+                        <div class="cfp-row"
+                             title="@cat.Description"
+                             @onmouseenter="() => _HoveredId = cat.Id"
+                             @onmouseleave="() => _HoveredId = null">
+                            <button class="cfp-item @(active ? "active" : "")"
+                                    style="padding-left:@(12 + row.Depth * 16)px"
+                                    @onclick="() => Toggle(cat.Id)">
+                                <span class="cfp-item-check">@(active ? "✓" : "")</span>
+                                <span class="cfp-item-name">
+                                    @if (row.Depth > 0)
+                                    {
+                                        <span class="cfp-item-path">@row.ParentPath/</span>
+                                    }
+                                    @cat.Name
+                                </span>
+                            </button>
+
+                            @if (_IsAdmin && _HoveredId == cat.Id)
+                            {
+                                <div class="cfp-row-actions">
+                                    <button class="cfp-row-action-btn" title="Edit category"
+                                            @onclick="() => _NewCategoryModal?.EditCategory(cat)">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="cfp-row-action-btn cfp-row-action-btn-danger"
+                                            title="@(hasKeys ? "Cannot delete: category still has keys" : "Delete category")"
+                                            disabled="@hasKeys"
+                                            @onclick="() => DeleteCategory(cat)">
+                                        <i class="bi bi-trash3"></i>
+                                    </button>
+                                </div>
+                            }
+                        </div>
+                    }
+                }
+            </div>
+
+            @if (_IsAdmin)
+            {
+                <button class="cfp-add-btn" @onclick="() => _NewCategoryModal?.Show()">
+                    <i class="bi bi-plus-lg"></i> Add category
+                </button>
+            }
+        </div>
+    }
+
+</div>
+
+<NewCategoryModal @ref="_NewCategoryModal" OnCreated="StateHasChanged"/>
+
+@code {
+    [Parameter] public HashSet<Guid> SelectedCategoryIds { get; set; } = new();
+    [Parameter] public EventCallback<HashSet<Guid>> OnChanged { get; set; }
+
+    private bool              _Expanded;
+    private NewCategoryModal? _NewCategoryModal;
+    private Guid?             _HoveredId;
+
+    private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+
+    private bool CategoryHasKeys(Guid categoryId) =>
+        _ProjectState.CurrentProject!.Keys.Any(k => k.CategoryId == categoryId);
+
+    private async Task DeleteCategory(CategoryDto category)
+    {
+        if (CategoryHasKeys(category.Id)) return; // guarded in UI too, but double-check here
+
+        ProjectDto project = _ProjectState.CurrentProject!;
+        project.Categories.Remove(category);
+        _ProjectState.MarkDirty();
+
+        if (SelectedCategoryIds.Contains(category.Id))
+        {
+            HashSet<Guid> next = new HashSet<Guid>(SelectedCategoryIds);
+            next.Remove(category.Id);
+            await OnChanged.InvokeAsync(next);
+        }
+
+        _HoveredId = null;
+    }
+
+    private sealed record CategoryRow(CategoryDto Category, int Depth, string ParentPath);
+
+    private List<CategoryRow> _FlattenedCategories
+    {
+        get
+        {
+            List<CategoryDto> all  = _ProjectState.CurrentProject!.Categories;
+            List<CategoryRow> rows = new List<CategoryRow>();
+
+            void Walk(Guid? parentId, int depth, string parentPath)
+            {
+                IOrderedEnumerable<CategoryDto> children = all
+                                                          .Where(c => c.ParentCategoryId == parentId)
+                                                          .OrderBy(c => c.Name, StringComparer.OrdinalIgnoreCase);
+
+                foreach (CategoryDto cat in children)
+                {
+                    rows.Add(new CategoryRow(cat, depth, parentPath));
+                    string nextPath = string.IsNullOrEmpty(parentPath) ? cat.Name : $"{parentPath}/{cat.Name}";
+                    Walk(cat.Id, depth + 1, nextPath);
+                }
+            }
+
+            Walk(null, 0, "");
+            return rows;
+        }
+    }
+
+    private string _TriggerLabel
+    {
+        get
+        {
+            if (SelectedCategoryIds.Count == 0) return "All categories";
+            if (SelectedCategoryIds.Count == 1)
+            {
+                Guid         id  = SelectedCategoryIds.First();
+                CategoryRow? row = _FlattenedCategories.Find(r => r.Category.Id == id);
+                if (row == null) return "1 category";
+                return string.IsNullOrEmpty(row.ParentPath) ? row.Category.Name : $"{row.ParentPath}/{row.Category.Name}";
+            }
+            return $"{SelectedCategoryIds.Count} categories";
+        }
+    }
+
+    private async Task Toggle(Guid id)
+    {
+        HashSet<Guid> next = new HashSet<Guid>(SelectedCategoryIds);
+        if (!next.Remove(id)) next.Add(id);
+        await OnChanged.InvokeAsync(next);
+    }
+
+    private async Task ClearAll()
+    {
+        await OnChanged.InvokeAsync(new HashSet<Guid>());
+    }
+}

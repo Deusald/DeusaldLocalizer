@@ -41,6 +41,14 @@ public class ProjectStateService
 
     /// <summary>Fires whenever IsDirty changes.</summary>
     public event Action? DirtyStateChanged;
+    
+    /// <summary>
+    /// Fires every time the project's data is mutated via MarkDirty(), even if
+    /// IsDirty was already true. Use this (instead of DirtyStateChanged) when a
+    /// component needs to refresh derived data — like translation progress —
+    /// after every edit, not just the first one after a save.
+    /// </summary>
+    public event Action? ProjectDataChanged;
 
     // ── Actions ──────────────────────────────────────────────────────────────
 
@@ -78,9 +86,15 @@ public class ProjectStateService
 
     public void MarkDirty()
     {
-        if (IsDirty) return;
-        IsDirty = true;
-        DirtyStateChanged?.Invoke();
+        if (!IsDirty)
+        {
+            IsDirty = true;
+            DirtyStateChanged?.Invoke();
+        }
+        // Always notify data listeners, even if IsDirty was already true —
+        // otherwise edits after the first one in a session go unnoticed by
+        // components that only refresh on this event (e.g. progress bars).
+        ProjectDataChanged?.Invoke();
     }
 
     public void MarkClean()

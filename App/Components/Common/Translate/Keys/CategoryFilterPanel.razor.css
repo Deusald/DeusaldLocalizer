@@ -86,6 +86,9 @@
     max-height: 200px;
     overflow-y: auto;
     padding: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
 }
 
 .cfp-empty {
@@ -95,11 +98,19 @@
     text-align: center;
 }
 
+.cfp-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
 .cfp-item {
     display: flex;
     align-items: center;
     gap: 8px;
-    width: 100%;
+    flex: 1;
+    min-width: 0;
     padding: 7px 10px;
     background: transparent;
     border: none;
@@ -107,9 +118,40 @@
     cursor: pointer;
     text-align: left;
     transition: background .1s;
+    white-space: nowrap;
 }
 .cfp-item:hover { background: #1a1b22; }
 .cfp-item.active { background: rgba(91,108,255,.12); }
+
+.cfp-row-actions {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+    padding-right: 4px;
+}
+
+.cfp-row-action-btn {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #5a5b63;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all .12s;
+}
+.cfp-row-action-btn:hover { background: #1e1f28; border-color: #2a2b35; color: #d6d6db; }
+.cfp-row-action-btn-danger:hover:not(:disabled) {
+    background: rgba(255,69,58,.12);
+    border-color: rgba(255,69,58,.3);
+    color: #ff6b6b;
+}
+.cfp-row-action-btn:disabled { opacity: .3; cursor: not-allowed; }
 
 .cfp-item-check {
     width: 14px;
@@ -127,6 +169,11 @@
     text-overflow: ellipsis;
 }
 .cfp-item.active .cfp-item-name { color: #e8e8ea; font-weight: 500; }
+
+.cfp-item-path {
+    color: #5a5b63;
+    font-weight: 400;
+}
 
 .cfp-add-btn {
     display: flex;

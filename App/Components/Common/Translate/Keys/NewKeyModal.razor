@@ -33,30 +33,42 @@
                 <label class="nkm-label">Category</label>
                 <div class="nkm-cat-picker">
                     <div class="nkm-cat-search-wrap">
-                        <i class="bi bi-search nkm-cat-search-icon"></i>
-                        <input class="nkm-input nkm-cat-search" type="text"
-                               placeholder="Search category…"
-                               @bind="_CatQuery" @bind:event="oninput"
-                               @onfocus="() => _CatOpen = true" />
-                        @if (_SelectedCategory != null)
+                        @if (_SelectedCategory != null && !_CatOpen)
                         {
-                            <span class="nkm-cat-badge">@_SelectedCategory.Name</span>
+                            <span class="nkm-cat-selected-icon">
+                                <i class="bi bi-folder2"></i>
+                            </span>
+                            <button class="nkm-cat-selected-display" @onclick="() => _CatOpen = true">
+                                @FullCategoryPath(_SelectedCategory)
+                            </button>
+                            <button class="nkm-cat-clear" @onclick="ClearCategory" @onclick:stopPropagation="true">
+                                <i class="bi bi-x-lg"></i>
+                            </button>
+                        }
+                        else
+                        {
+                            <i class="bi bi-search nkm-cat-search-icon"></i>
+                            <input class="nkm-input nkm-cat-search" type="text"
+                                   placeholder="Search category…"
+                                   @bind="_CatQuery" @bind:event="oninput"
+                                   @onfocus="() => _CatOpen = true"
+                                   @onblur="OnCatBlur" />
                         }
                     </div>
 
                     @if (_CatOpen)
                     {
-                        <div class="nkm-cat-dropdown">
-                            @{ var results = FilteredCategories; }
+                        <div class="nkm-cat-dropdown" @onmousedown="() => _SuppressBlurClose = true">
+                            @{ List<CategoryDto> results = _FilteredCategories; }
                             @if (results.Count == 0)
                             {
                                 <div class="nkm-cat-empty">No categories found. Create one from the Keys column first.</div>
                             }
                             else
                             {
-                                @foreach (var cat in results)
+                                @foreach (CategoryDto cat in results)
                                 {
-                                    var c = cat;
+                                    CategoryDto c = cat;
                                     bool active = _SelectedCategory?.Id == c.Id;
                                     <button class="nkm-cat-item @(active ? "active" : "")"
                                             @onclick="() => SelectCategory(c)"
@@ -78,7 +90,7 @@
             {
                 <div class="nkm-preview">
                     <span class="nkm-preview-label">Full key</span>
-                    <code class="nkm-preview-value">@PreviewFullKey</code>
+                    <code class="nkm-preview-value">@_PreviewFullKey</code>
                 </div>
             }
 
@@ -86,7 +98,7 @@
 
         <div class="nkm-footer">
             <button class="nkm-btn nkm-btn-ghost" @onclick="Cancel">Cancel</button>
-            <button class="nkm-btn nkm-btn-primary" @onclick="Confirm" disabled="@(!CanConfirm)">
+            <button class="nkm-btn nkm-btn-primary" @onclick="Confirm" disabled="@(!_CanConfirm)">
                 Create key
             </button>
         </div>
@@ -98,26 +110,26 @@
     [Parameter] public EventCallback<Guid> OnCreated { get; set; }
 
     private bool         _Visible;
-    private string        _KeyName  = "";
-    private string        _CatQuery = "";
-    private bool          _CatOpen  = false;
-    private CategoryDto?  _SelectedCategory;
+    private string       _KeyName  = "";
+    private string       _CatQuery = "";
+    private bool         _CatOpen;
+    private bool         _SuppressBlurClose;
+    private CategoryDto? _SelectedCategory;
 
-    private static readonly Regex KeyNamePattern = new Regex(@"^[A-Za-z0-9_]+$");
+    private static readonly Regex _KeyNamePattern = new(@"^[A-Za-z0-9_]+$");
 
-    private static bool IsValidKeyName(string s) => !string.IsNullOrEmpty(s) && KeyNamePattern.IsMatch(s);
+    private static bool IsValidKeyName(string s) => !string.IsNullOrEmpty(s) && _KeyNamePattern.IsMatch(s);
 
-    private bool CanConfirm =>
-        IsValidKeyName(_KeyName) && _SelectedCategory != null;
+    private bool _CanConfirm => IsValidKeyName(_KeyName) && _SelectedCategory != null;
 
-    private List<CategoryDto> FilteredCategories
+    private List<CategoryDto> _FilteredCategories
     {
         get
         {
-            var cats = _ProjectState.CurrentProject!.Categories.AsEnumerable();
+            IEnumerable<CategoryDto> cats = _ProjectState.CurrentProject!.Categories.AsEnumerable();
             if (!string.IsNullOrWhiteSpace(_CatQuery))
             {
-                var q = _CatQuery.Trim().ToLowerInvariant();
+                string q = _CatQuery.Trim().ToLowerInvariant();
                 cats = cats.Where(c => FullCategoryPath(c).ToLowerInvariant().Contains(q));
             }
             return cats.ToList();
@@ -126,12 +138,12 @@
 
     private string FullCategoryPath(CategoryDto cat)
     {
-        var parts = new List<string> { cat.Name };
-        var current = cat;
-        var project = _ProjectState.CurrentProject!;
+        List<string> parts   = [cat.Name];
+        CategoryDto  current = cat;
+        ProjectDto   project = _ProjectState.CurrentProject!;
         while (current.ParentCategoryId != null)
         {
-            var parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
+            CategoryDto? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
             if (parent == null) break;
             parts.Insert(0, parent.Name);
             current = parent;
@@ -139,7 +151,7 @@
         return string.Join("/", parts);
     }
 
-    private string PreviewFullKey =>
+    private string _PreviewFullKey =>
         _SelectedCategory != null && !string.IsNullOrEmpty(_KeyName)
             ? $"{FullCategoryPath(_SelectedCategory)}.{_KeyName}"
             : "—";
@@ -149,6 +161,7 @@
         _KeyName = "";
         _CatQuery = "";
         _CatOpen = false;
+        _SuppressBlurClose = false;
         _SelectedCategory = null;
         _Visible = true;
         StateHasChanged();
@@ -161,12 +174,32 @@
         _CatOpen = false;
     }
 
+    private async Task OnCatBlur()
+    {
+        // A mousedown on a dropdown item fires before this blur event, so we
+        // use it as a guard to avoid closing the list before the click
+        // (which selects a result) has a chance to register.
+        if (_SuppressBlurClose)
+        {
+            _SuppressBlurClose = false;
+            return;
+        }
+        await Task.Delay(120);
+        _CatOpen = false;
+        StateHasChanged();
+    }
+
+    private void ClearCategory()
+    {
+        _SelectedCategory = null;
+    }
+
     private void Confirm()
     {
-        if (!CanConfirm) return;
+        if (!_CanConfirm) return;
 
-        var project = _ProjectState.CurrentProject!;
-        var key = new LocalizationKeyDto
+        ProjectDto project = _ProjectState.CurrentProject!;
+        LocalizationKeyDto key = new LocalizationKeyDto
         {
             ProjectId  = project.Id,
             CategoryId = _SelectedCategory!.Id,

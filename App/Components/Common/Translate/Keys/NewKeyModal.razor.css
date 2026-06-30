@@ -84,20 +84,51 @@
     position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
     color: #44454e; font-size: 12px; pointer-events: none;
 }
-.nkm-cat-search { padding-left: 32px; padding-right: 100px; }
+.nkm-cat-search { padding-left: 32px; }
 
-.nkm-cat-badge {
+/* ── Selected state — rendered inside the input frame itself ────────────── */
+
+.nkm-cat-selected-icon {
     position: absolute;
-    right: 10px; top: 50%; transform: translateY(-50%);
-    font-size: 11.5px; font-weight: 500; color: #8a8b93;
-    background: #1e1f28; border: 1px solid #2a2b35; border-radius: 5px;
-    padding: 2px 7px;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5b6cff;
+    font-size: 13px;
     pointer-events: none;
-    max-width: 110px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
+
+.nkm-cat-selected-display {
+    width: 100%;
+    text-align: left;
+    background: #12131a;
+    border: 1px solid #2a2b35;
+    border-radius: 8px;
+    color: #e8e8ea;
+    font-size: 13.5px;
+    padding: 9px 36px 9px 32px;
+    cursor: pointer;
+    transition: border-color .15s;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+.nkm-cat-selected-display:hover { border-color: #3a3b44; }
+
+.nkm-cat-clear {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #6a6b73;
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 1;
+    padding: 4px;
+    border-radius: 4px;
+    transition: color .12s, background .12s;
+}
+.nkm-cat-clear:hover { color: #ff6b6b; background: rgba(255,69,58,.1); }
 
 .nkm-cat-dropdown {
     margin-top: 8px;

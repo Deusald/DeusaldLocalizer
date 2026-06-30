@@ -181,7 +181,7 @@
 
     private void OnDirty()
     {
-        StateHasChanged();
+        InvokeAsync(StateHasChanged);
     }
     
     public void Dispose()

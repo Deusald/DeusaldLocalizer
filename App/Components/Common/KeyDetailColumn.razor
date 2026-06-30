@@ -29,26 +29,26 @@
                     </div>
                 </div>
 
-                <KeyFlagsBar Key="SelectedKey" OnChanged="StateHasChanged" />
+                <KeyFlagsBar Key="@SelectedKey" OnChanged="StateHasChanged" />
             </div>
 
             @* ── Description ─────────────────────────────────────────────── *@
-            <KeyDescriptionBlock Key="SelectedKey" OnChanged="StateHasChanged" />
+            <KeyDescriptionBlock Key="@SelectedKey" OnChanged="StateHasChanged" />
 
             @* ── Tags ─────────────────────────────────────────────────────── *@
-            <KeyTagsBar Key="SelectedKey" OnChanged="StateHasChanged" />
+            <KeyTagsBar Key="@SelectedKey" OnChanged="StateHasChanged" />
 
             @* ── Translation editor ──────────────────────────────────────── *@
-            <TranslationEditor Key="SelectedKey" SelectedLanguage="SelectedLanguage" OnChanged="StateHasChanged" />
+            <TranslationEditor Key="@SelectedKey" SelectedLanguage="@SelectedLanguage" OnChanged="StateHasChanged" />
 
             @* ── Preview ──────────────────────────────────────────────────── *@
-            <PreviewSection Key="SelectedKey" SelectedLanguage="SelectedLanguage" />
+            <PreviewSection Key="@SelectedKey" SelectedLanguage="@SelectedLanguage" />
 
             @* ── Suggestions ──────────────────────────────────────────────── *@
-            <SuggestionsSection Key="SelectedKey" SelectedLanguage="SelectedLanguage" OnChanged="StateHasChanged" />
+            <SuggestionsSection Key="@SelectedKey" SelectedLanguage="@SelectedLanguage" OnChanged="StateHasChanged" />
 
             @* ── Variables ────────────────────────────────────────────────── *@
-            <VariablesSection Key="SelectedKey" OnChanged="StateHasChanged" />
+            <VariablesSection Key="@SelectedKey" OnChanged="StateHasChanged" />
 
             @* ── History ──────────────────────────────────────────────────── *@
             <div class="kd-history-row">
@@ -60,7 +60,7 @@
 
         </div>
 
-        <HistoryModal @ref="_HistoryModal" Key="SelectedKey" />
+        <HistoryModal @ref="_HistoryModal" Key="@SelectedKey" />
     }
 
 </div>
