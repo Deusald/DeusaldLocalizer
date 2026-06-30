@@ -1,0 +1,121 @@
+﻿.ss-root {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ss-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: #7a7b83;
+}
+
+.ss-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ss-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #13141a;
+    border: 1px solid #20212a;
+    border-radius: 10px;
+    padding: 12px 14px;
+}
+
+/* ── Vote column ──────────────────────────────────────────────────────────── */
+
+.ss-vote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.ss-vote-btn {
+    background: none;
+    border: none;
+    color: #44454e;
+    font-size: 10px;
+    cursor: pointer;
+    padding: 2px;
+    transition: color .12s;
+}
+.ss-vote-btn:hover { color: #8a8b93; }
+.ss-vote-btn.active { color: #5b6cff; }
+
+.ss-vote-score {
+    font-size: 13px;
+    font-weight: 600;
+    color: #d6d6db;
+}
+
+/* ── Content ──────────────────────────────────────────────────────────────── */
+
+.ss-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.ss-text {
+    font-size: 13.5px;
+    color: #e8e8ea;
+    line-height: 1.5;
+}
+
+.ss-preview {
+    font-size: 11.5px;
+    color: #5a5b63;
+    margin-top: 3px;
+    font-style: italic;
+}
+
+.ss-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 7px;
+}
+
+.ss-avatar {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8.5px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.ss-author {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #8a8b93;
+}
+
+.ss-dot { color: #3a3b44; font-size: 11px; }
+.ss-time { font-size: 11px; color: #5a5b63; }
+
+/* ── Accept ───────────────────────────────────────────────────────────────── */
+
+.ss-accept-btn {
+    flex-shrink: 0;
+    padding: 6px 13px;
+    background: transparent;
+    border: 1px solid rgba(91,108,255,.4);
+    border-radius: 7px;
+    color: #8d9aff;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .12s;
+}
+.ss-accept-btn:hover { background: rgba(91,108,255,.12); }

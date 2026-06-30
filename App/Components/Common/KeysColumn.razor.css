@@ -1,0 +1,196 @@
+﻿.kc-root {
+    width: 360px;
+    flex-shrink: 0;
+    border-right: 1px solid #1f2027;
+    background: #0e0f13;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* ── Toolbar ──────────────────────────────────────────────────────────────── */
+
+.kc-toolbar {
+    flex-shrink: 0;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid #1f2027;
+}
+
+.kc-search-wrap { position: relative; }
+
+.kc-search-icon {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #44454e;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.kc-search {
+    width: 100%;
+    background: #15161c;
+    border: 1px solid #20212a;
+    border-radius: 7px;
+    color: #e8e8ea;
+    font-size: 12.5px;
+    padding: 8px 11px 8px 30px;
+}
+.kc-search:focus { border-color: #5b6cff; outline: none; box-shadow: 0 0 0 3px rgba(91,108,255,.18); }
+.kc-search::placeholder { color: #44454e; }
+
+/* ── Tabs ─────────────────────────────────────────────────────────────────── */
+
+.kc-tabs {
+    display: flex;
+    gap: 4px;
+    background: #15161c;
+    border: 1px solid #20212a;
+    border-radius: 8px;
+    padding: 3px;
+}
+
+.kc-tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 6px 8px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #7a7b83;
+    cursor: pointer;
+    transition: background .12s, color .12s;
+    white-space: nowrap;
+}
+.kc-tab:hover { color: #b8b8be; }
+.kc-tab.active { background: #23242e; color: #e8e8ea; }
+
+.kc-tab-count {
+    font-size: 10px;
+    color: #5a5b63;
+}
+.kc-tab.active .kc-tab-count { color: #8a8b93; }
+
+/* ── List ─────────────────────────────────────────────────────────────────── */
+
+.kc-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 6px;
+}
+
+.kc-empty {
+    padding: 2rem 1rem;
+    font-size: 12.5px;
+    color: #44454e;
+    text-align: center;
+}
+
+.kc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 10px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    cursor: pointer;
+    text-align: left;
+    transition: background .1s, border-color .1s;
+    margin-bottom: 2px;
+}
+.kc-item:hover { background: #15161c; }
+.kc-item.active {
+    background: rgba(91,108,255,.08);
+    border-color: rgba(91,108,255,.3);
+}
+
+.kc-item-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+.kc-dot-ok    { background: #3ad98a; }
+.kc-dot-draft { background: #5b6cff; }
+.kc-dot-warn  { background: #f5a623; }
+.kc-dot-empty { background: #3a3b44; }
+
+.kc-item-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.kc-item-key {
+    font-size: 12px;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    color: #5b6cff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.kc-item-source {
+    font-size: 13px;
+    font-weight: 500;
+    color: #e8e8ea;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+}
+
+.kc-item-translated {
+    font-size: 12px;
+    color: #7a7b83;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1px;
+}
+
+.kc-item-suggestions {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #f5a623;
+    background: rgba(245,166,35,.12);
+    padding: 3px 6px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* ── Add key ──────────────────────────────────────────────────────────────── */
+
+.kc-add-btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 8px 12px 12px;
+    padding: 9px;
+    background: #15161c;
+    border: 1px dashed #2a2b35;
+    border-radius: 8px;
+    color: #8a8b93;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .12s, border-color .12s, color .12s;
+}
+.kc-add-btn:hover { background: #181922; border-color: #3a3b44; color: #d6d6db; }

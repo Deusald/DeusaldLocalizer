@@ -1,0 +1,139 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+@{ var suggestions = SuggestionsForLanguage; }
+
+@if (suggestions.Count > 0)
+{
+    <div class="ss-root">
+        <div class="ss-label">Community suggestions</div>
+
+        <div class="ss-list">
+            @foreach (var suggestion in suggestions)
+            {
+                var s = suggestion;
+                var score = s.Votes.Sum(v => v.Value);
+                var myVote = s.Votes.Find(v => v.UserId == _ProjectState.CurrentUser.Id)?.Value ?? 0;
+                var preview = SmartFormatPreviewService.Render(s.Text, Key.Variables);
+
+                <div class="ss-item">
+                    <div class="ss-vote">
+                        <button class="ss-vote-btn @(myVote == 1 ? "active" : "")" @onclick="() => Vote(s, 1)">
+                            <i class="bi bi-caret-up-fill"></i>
+                        </button>
+                        <span class="ss-vote-score">@score</span>
+                        <button class="ss-vote-btn @(myVote == -1 ? "active" : "")" @onclick="() => Vote(s, -1)">
+                            <i class="bi bi-caret-down-fill"></i>
+                        </button>
+                    </div>
+
+                    <div class="ss-content">
+                        <div class="ss-text">@s.Text</div>
+                        @if (preview != s.Text)
+                        {
+                            <div class="ss-preview">@preview</div>
+                        }
+                        <div class="ss-meta">
+                            <span class="ss-avatar" style="background:@AvatarColor(s.AuthorId)">@Initial(s.AuthorName)</span>
+                            <span class="ss-author">@s.AuthorName</span>
+                            <span class="ss-dot">·</span>
+                            <span class="ss-time">@RelativeTime(s.CreatedAt)</span>
+                        </div>
+                    </div>
+
+                    @if (CanAccept)
+                    {
+                        <button class="ss-accept-btn" @onclick="() => Accept(s)">Accept</button>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public LocalizationKeyDto Key { get; set; } = null!;
+    [Parameter] public string SelectedLanguage { get; set; } = "";
+    [Parameter] public EventCallback OnChanged { get; set; }
+
+    private bool CanAccept => _ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
+                            || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+
+    private List<SuggestionDto> SuggestionsForLanguage =>
+        Key.Suggestions
+           .Where(s => s.LanguageId == SelectedLanguage && s.Status == SuggestionStatus.Pending)
+           .OrderByDescending(s => s.Votes.Sum(v => v.Value))
+           .ToList();
+
+    private void Vote(SuggestionDto suggestion, int value)
+    {
+        var existing = suggestion.Votes.Find(v => v.UserId == _ProjectState.CurrentUser.Id);
+        if (existing != null)
+        {
+            if (existing.Value == value)
+            {
+                suggestion.Votes.Remove(existing); // toggle off
+            }
+            else
+            {
+                existing.Value = value;
+                existing.CastAt = DateTime.UtcNow;
+            }
+        }
+        else
+        {
+            suggestion.Votes.Add(new SuggestionVoteDto
+            {
+                SuggestionId = suggestion.Id,
+                UserId       = _ProjectState.CurrentUser.Id,
+                UserName     = _ProjectState.CurrentUser.DisplayName,
+                Value        = value,
+            });
+        }
+        _ProjectState.MarkDirty();
+        OnChanged.InvokeAsync();
+    }
+
+    private void Accept(SuggestionDto suggestion)
+    {
+        var translation = Key.Translations.Find(t => t.LanguageId == suggestion.LanguageId);
+        if (translation == null)
+        {
+            translation = new TranslationDto { KeyId = Key.Id, LanguageId = suggestion.LanguageId };
+            Key.Translations.Add(translation);
+        }
+        translation.Text           = suggestion.Text;
+        translation.Status         = TranslationStatus.Approved;
+        translation.NeedsAttention = false;
+        translation.UpdatedBy      = _ProjectState.CurrentUser.Id;
+        translation.UpdatedAt      = DateTime.UtcNow;
+
+        suggestion.Status = SuggestionStatus.Accepted;
+        Key.UpdatedAt = DateTime.UtcNow;
+
+        _ProjectState.MarkDirty();
+        OnChanged.InvokeAsync();
+    }
+
+    private static string Initial(string name) => string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();
+
+    private static readonly string[] AvatarPalette =
+        { "#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0" };
+
+    private static string AvatarColor(Guid userId)
+    {
+        var idx = Math.Abs(userId.GetHashCode()) % AvatarPalette.Length;
+        return AvatarPalette[idx];
+    }
+
+    private static string RelativeTime(DateTime time)
+    {
+        var diff = DateTime.UtcNow - time;
+        if (diff.TotalMinutes < 1)  return "just now";
+        if (diff.TotalHours   < 1)  return $"{(int)diff.TotalMinutes}m";
+        if (diff.TotalDays    < 1)  return $"{(int)diff.TotalHours}h";
+        if (diff.TotalDays    < 30) return $"{(int)diff.TotalDays}d";
+        return time.ToString("MMM d");
+    }
+}

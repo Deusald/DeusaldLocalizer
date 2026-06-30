@@ -1,0 +1,183 @@
+﻿@namespace App.Components.Translate
+@using System.Text.RegularExpressions
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+@if (_Visible)
+{
+    <div class="nkm-backdrop" @onclick="Cancel"></div>
+
+    <div class="nkm-box" @onclick:stopPropagation="true">
+
+        <div class="nkm-header">
+            <span class="nkm-title">New key</span>
+            <button class="nkm-close" @onclick="Cancel"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="nkm-body">
+
+            <div class="nkm-field">
+                <label class="nkm-label">
+                    Key name
+                    <span class="nkm-label-hint">letters, numbers and underscore only</span>
+                </label>
+                <input class="nkm-input nkm-input-mono" type="text" placeholder="button_save"
+                       @bind="_KeyName" @bind:event="oninput" maxlength="120" />
+                @if (!string.IsNullOrEmpty(_KeyName) && !IsValidKeyName(_KeyName))
+                {
+                    <div class="nkm-field-error">Only letters, numbers and "_" are allowed</div>
+                }
+            </div>
+
+            <div class="nkm-field nkm-field-grow">
+                <label class="nkm-label">Category</label>
+                <div class="nkm-cat-picker">
+                    <div class="nkm-cat-search-wrap">
+                        <i class="bi bi-search nkm-cat-search-icon"></i>
+                        <input class="nkm-input nkm-cat-search" type="text"
+                               placeholder="Search category…"
+                               @bind="_CatQuery" @bind:event="oninput"
+                               @onfocus="() => _CatOpen = true" />
+                        @if (_SelectedCategory != null)
+                        {
+                            <span class="nkm-cat-badge">@_SelectedCategory.Name</span>
+                        }
+                    </div>
+
+                    @if (_CatOpen)
+                    {
+                        <div class="nkm-cat-dropdown">
+                            @{ var results = FilteredCategories; }
+                            @if (results.Count == 0)
+                            {
+                                <div class="nkm-cat-empty">No categories found. Create one from the Keys column first.</div>
+                            }
+                            else
+                            {
+                                @foreach (var cat in results)
+                                {
+                                    var c = cat;
+                                    bool active = _SelectedCategory?.Id == c.Id;
+                                    <button class="nkm-cat-item @(active ? "active" : "")"
+                                            @onclick="() => SelectCategory(c)"
+                                            @onclick:preventDefault="true">
+                                        <span class="nkm-cat-item-name">@FullCategoryPath(c)</span>
+                                        @if (active)
+                                        {
+                                            <i class="bi bi-check2"></i>
+                                        }
+                                    </button>
+                                }
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+            @if (!_CatOpen)
+            {
+                <div class="nkm-preview">
+                    <span class="nkm-preview-label">Full key</span>
+                    <code class="nkm-preview-value">@PreviewFullKey</code>
+                </div>
+            }
+
+        </div>
+
+        <div class="nkm-footer">
+            <button class="nkm-btn nkm-btn-ghost" @onclick="Cancel">Cancel</button>
+            <button class="nkm-btn nkm-btn-primary" @onclick="Confirm" disabled="@(!CanConfirm)">
+                Create key
+            </button>
+        </div>
+
+    </div>
+}
+
+@code {
+    [Parameter] public EventCallback<Guid> OnCreated { get; set; }
+
+    private bool         _Visible;
+    private string        _KeyName  = "";
+    private string        _CatQuery = "";
+    private bool          _CatOpen  = false;
+    private CategoryDto?  _SelectedCategory;
+
+    private static readonly Regex KeyNamePattern = new Regex(@"^[A-Za-z0-9_]+$");
+
+    private static bool IsValidKeyName(string s) => !string.IsNullOrEmpty(s) && KeyNamePattern.IsMatch(s);
+
+    private bool CanConfirm =>
+        IsValidKeyName(_KeyName) && _SelectedCategory != null;
+
+    private List<CategoryDto> FilteredCategories
+    {
+        get
+        {
+            var cats = _ProjectState.CurrentProject!.Categories.AsEnumerable();
+            if (!string.IsNullOrWhiteSpace(_CatQuery))
+            {
+                var q = _CatQuery.Trim().ToLowerInvariant();
+                cats = cats.Where(c => FullCategoryPath(c).ToLowerInvariant().Contains(q));
+            }
+            return cats.ToList();
+        }
+    }
+
+    private string FullCategoryPath(CategoryDto cat)
+    {
+        var parts = new List<string> { cat.Name };
+        var current = cat;
+        var project = _ProjectState.CurrentProject!;
+        while (current.ParentCategoryId != null)
+        {
+            var parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
+            if (parent == null) break;
+            parts.Insert(0, parent.Name);
+            current = parent;
+        }
+        return string.Join("/", parts);
+    }
+
+    private string PreviewFullKey =>
+        _SelectedCategory != null && !string.IsNullOrEmpty(_KeyName)
+            ? $"{FullCategoryPath(_SelectedCategory)}.{_KeyName}"
+            : "—";
+
+    public void Show()
+    {
+        _KeyName = "";
+        _CatQuery = "";
+        _CatOpen = false;
+        _SelectedCategory = null;
+        _Visible = true;
+        StateHasChanged();
+    }
+
+    private void SelectCategory(CategoryDto cat)
+    {
+        _SelectedCategory = cat;
+        _CatQuery = "";
+        _CatOpen = false;
+    }
+
+    private void Confirm()
+    {
+        if (!CanConfirm) return;
+
+        var project = _ProjectState.CurrentProject!;
+        var key = new LocalizationKeyDto
+        {
+            ProjectId  = project.Id,
+            CategoryId = _SelectedCategory!.Id,
+            KeyName    = _KeyName.Trim(),
+        };
+        project.Keys.Add(key);
+        _ProjectState.MarkDirty();
+
+        _Visible = false;
+        OnCreated.InvokeAsync(key.Id);
+    }
+
+    private void Cancel() => _Visible = false;
+}

@@ -1,0 +1,77 @@
+﻿.te-root {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.te-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.te-label-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.te-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: #7a7b83;
+}
+
+.te-hint {
+    font-size: 10.5px;
+    color: #5a5b63;
+}
+
+.te-textarea {
+    width: 100%;
+    background: #12131a;
+    border: 1px solid #20212a;
+    border-radius: 9px;
+    color: #e8e8ea;
+    font-size: 13.5px;
+    line-height: 1.6;
+    padding: 12px 14px;
+    resize: vertical;
+    min-height: 64px;
+    font-family: inherit;
+    transition: border-color .15s, box-shadow .15s;
+}
+.te-textarea:focus { border-color: #5b6cff; outline: none; box-shadow: 0 0 0 3px rgba(91,108,255,.15); }
+.te-textarea::placeholder { color: #44454e; }
+
+.te-readonly {
+    background: #0f1015;
+    color: #9a9ba3;
+    cursor: default;
+}
+
+/* ── Actions ──────────────────────────────────────────────────────────────── */
+
+.te-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.te-btn {
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background .15s, border-color .15s, opacity .15s;
+}
+.te-btn:disabled { opacity: .4; cursor: not-allowed; }
+
+.te-btn-primary { background: #5b6cff; color: #fff; }
+.te-btn-primary:hover:not(:disabled) { background: #6c7cff; }
+
+.te-btn-ghost { background: #15161c; border-color: #20212a; color: #b8b8be; }
+.te-btn-ghost:hover:not(:disabled) { background: #1a1b22; border-color: #2a2b35; color: #e8e8ea; }

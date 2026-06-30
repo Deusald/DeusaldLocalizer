@@ -1,0 +1,153 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+<div class="te-root">
+
+    <div class="te-block">
+        <label class="te-label">
+            Source · @SourceLangCode
+        </label>
+        <textarea class="te-textarea @(CanEditSource ? "" : "te-readonly")"
+                  @bind="_SourceDraft" @bind:event="oninput"
+                  @onblur="SaveSourceIfChanged"
+                  readonly="@(!CanEditSource)"
+                  rows="3"
+                  placeholder="Source text…"></textarea>
+    </div>
+
+    <div class="te-block">
+        <div class="te-label-row">
+            <label class="te-label">Translation · @SelectedLanguage</label>
+            <span class="te-hint">Markdown &amp; {placeholders} supported</span>
+        </div>
+        <textarea class="te-textarea @(CanEditTranslation ? "" : "te-readonly")"
+                  @bind="_TranslationDraft" @bind:event="oninput"
+                  readonly="@(!CanEditTranslation)"
+                  rows="4"
+                  placeholder="Type your translation…"></textarea>
+    </div>
+
+    @if (CanEditTranslation)
+    {
+        <div class="te-actions">
+            <button class="te-btn te-btn-primary" @onclick="SaveTranslation" disabled="@(!HasTranslationChanges)">
+                Save translation
+            </button>
+            <button class="te-btn te-btn-ghost" @onclick="SuggestTranslation" disabled="@(!HasTranslationChanges)">
+                Suggest as alternative
+            </button>
+        </div>
+    }
+
+</div>
+
+@code {
+    [Parameter] public LocalizationKeyDto Key { get; set; } = null!;
+    [Parameter] public string SelectedLanguage { get; set; } = "";
+    [Parameter] public EventCallback OnChanged { get; set; }
+
+    private string _SourceDraft = "";
+    private string _TranslationDraft = "";
+    private Guid?  _LoadedForKeyId;
+    private string _LoadedForLanguage = "";
+
+    private string SourceLangCode => _ProjectState.CurrentProject!.MainLanguageId;
+
+    private bool CanEditSource => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool CanEditTranslation => _ProjectState.CurrentUserHas(PermissionFlags.Contributor)
+                                     || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+
+    protected override void OnParametersSet()
+    {
+        // Reload drafts whenever the selected key or language changes
+        if (_LoadedForKeyId != Key.Id || _LoadedForLanguage != SelectedLanguage)
+        {
+            var source = Key.Translations.Find(t => t.LanguageId == SourceLangCode);
+            _SourceDraft = source?.Text ?? "";
+
+            var translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+            _TranslationDraft = translation?.Text ?? "";
+
+            _LoadedForKeyId = Key.Id;
+            _LoadedForLanguage = SelectedLanguage;
+        }
+    }
+
+    private bool HasTranslationChanges
+    {
+        get
+        {
+            var current = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+            return (current?.Text ?? "") != _TranslationDraft;
+        }
+    }
+
+    private async Task SaveSourceIfChanged()
+    {
+        if (!CanEditSource) return;
+
+        var source = Key.Translations.Find(t => t.LanguageId == SourceLangCode);
+        if (source == null)
+        {
+            source = new TranslationDto { KeyId = Key.Id, LanguageId = SourceLangCode };
+            Key.Translations.Add(source);
+        }
+        if (source.Text == _SourceDraft) return;
+
+        source.Text      = _SourceDraft;
+        source.UpdatedBy = _ProjectState.CurrentUser.Id;
+        source.UpdatedAt = DateTime.UtcNow;
+        source.Status    = TranslationStatus.Approved;
+
+        Key.UpdatedAt = DateTime.UtcNow;
+        _ProjectState.MarkDirty();
+        await OnChanged.InvokeAsync();
+    }
+
+    private async Task SaveTranslation()
+    {
+        if (!CanEditTranslation) return;
+
+        var translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        if (translation == null)
+        {
+            translation = new TranslationDto { KeyId = Key.Id, LanguageId = SelectedLanguage };
+            Key.Translations.Add(translation);
+        }
+
+        translation.Text           = _TranslationDraft;
+        translation.UpdatedBy      = _ProjectState.CurrentUser.Id;
+        translation.UpdatedAt      = DateTime.UtcNow;
+        translation.NeedsAttention = false;
+
+        // Contributors without Reviewer/Admin leave it as Draft; reviewers/admins approve directly.
+        translation.Status = (_ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
+                            || _ProjectState.CurrentUserHas(PermissionFlags.Admin))
+            ? TranslationStatus.Approved
+            : TranslationStatus.Draft;
+
+        Key.UpdatedAt = DateTime.UtcNow;
+        _ProjectState.MarkDirty();
+        await OnChanged.InvokeAsync();
+    }
+
+    private async Task SuggestTranslation()
+    {
+        if (!CanEditTranslation) return;
+
+        Key.Suggestions.Add(new SuggestionDto
+        {
+            KeyId      = Key.Id,
+            LanguageId = SelectedLanguage,
+            Text       = _TranslationDraft,
+            AuthorId   = _ProjectState.CurrentUser.Id,
+            AuthorName = _ProjectState.CurrentUser.DisplayName,
+            Status     = SuggestionStatus.Pending,
+        });
+
+        Key.UpdatedAt = DateTime.UtcNow;
+        _ProjectState.MarkDirty();
+        await OnChanged.InvokeAsync();
+    }
+}

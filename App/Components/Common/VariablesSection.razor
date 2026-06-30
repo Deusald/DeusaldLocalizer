@@ -1,0 +1,103 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+<div class="vs-root">
+    <div class="vs-header">
+        <span class="vs-label">Variables</span>
+        @if (IsAdmin)
+        {
+            <button class="vs-add-btn" @onclick="AddVariable">
+                <i class="bi bi-plus"></i> Add variable
+            </button>
+        }
+    </div>
+
+    @if (Key.Variables.Count == 0)
+    {
+        <div class="vs-empty">No variables declared for this key.</div>
+    }
+    else
+    {
+        <div class="vs-list">
+            @foreach (var variable in Key.Variables)
+            {
+                var v = variable;
+                <div class="vs-row">
+                    @if (IsAdmin && _EditingId == v.Id)
+                    {
+                        <input class="vs-input vs-input-name" @bind="v.Name" @bind:event="oninput" placeholder="variableName" />
+                    }
+                    else
+                    {
+                        <span class="vs-name">{@v.Name}</span>
+                    }
+
+                    <input class="vs-input vs-input-sample" @bind="v.SampleValue" @bind:event="oninput"
+                           @onblur="() => OnSampleChanged(v)" placeholder="sample value" />
+
+                    @if (IsAdmin)
+                    {
+                        @if (_EditingId == v.Id)
+                        {
+                            <button class="vs-icon-btn" title="Done" @onclick="() => StopEditing()">
+                                <i class="bi bi-check2"></i>
+                            </button>
+                        }
+                        else
+                        {
+                            <button class="vs-icon-btn" title="Edit name" @onclick="() => StartEditing(v.Id)">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                        }
+                        <button class="vs-icon-btn vs-icon-btn-danger" title="Remove variable" @onclick="() => RemoveVariable(v)">
+                            <i class="bi bi-trash3"></i>
+                        </button>
+                    }
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public LocalizationKeyDto Key { get; set; } = null!;
+    [Parameter] public EventCallback OnChanged { get; set; }
+
+    private Guid? _EditingId;
+
+    private bool IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+
+    private void AddVariable()
+    {
+        var v = new KeyVariableDto { KeyId = Key.Id, Name = "variable", SampleValue = "" };
+        Key.Variables.Add(v);
+        _EditingId = v.Id;
+        _ProjectState.MarkDirty();
+    }
+
+    private void StartEditing(Guid id) => _EditingId = id;
+    private void StopEditing()
+    {
+        _EditingId = null;
+        _ProjectState.MarkDirty();
+        OnChanged.InvokeAsync();
+    }
+
+    private void RemoveVariable(KeyVariableDto v)
+    {
+        Key.Variables.Remove(v);
+        _ProjectState.MarkDirty();
+        OnChanged.InvokeAsync();
+    }
+
+    private void OnSampleChanged(KeyVariableDto v)
+    {
+        // Any user can change the sample locally to preview; this counts as a
+        // real save only when an Admin does it (the value lives on the shared
+        // KeyVariableDto either way in this offline-first model — admins are
+        // the ones expected to commit a "default" sample for everyone).
+        _ProjectState.MarkDirty();
+        OnChanged.InvokeAsync();
+    }
+}

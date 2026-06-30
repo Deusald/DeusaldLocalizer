@@ -1,0 +1,80 @@
+﻿.atm-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.6); backdrop-filter: blur(2px); z-index: 100; }
+
+.atm-box {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    z-index: 101;
+    width: 380px;
+    height: min(420px, calc(100vh - 64px));
+    background: #1a1b23;
+    border: 1px solid #2a2b35;
+    border-radius: 13px;
+    box-shadow: 0 24px 64px rgba(0,0,0,.6);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.atm-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border-bottom: 1px solid #20212a; flex-shrink: 0; }
+.atm-title { font-size: 14.5px; font-weight: 600; color: #e8e8ea; }
+.atm-close { background: none; border: none; color: #6a6b73; font-size: 13px; cursor: pointer; padding: 4px; border-radius: 5px; transition: color .15s, background .15s; }
+.atm-close:hover { color: #c8c8cf; background: #23242e; }
+
+.atm-body {
+    padding: 14px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    min-height: 0;
+}
+
+.atm-input {
+    background: #12131a;
+    border: 1px solid #2a2b35;
+    border-radius: 8px;
+    color: #e8e8ea;
+    font-size: 13px;
+    padding: 9px 12px;
+    flex-shrink: 0;
+}
+.atm-input:focus { border-color: #5b6cff; outline: none; box-shadow: 0 0 0 3px rgba(91,108,255,.18); }
+.atm-input::placeholder { color: #44454e; }
+
+.atm-results {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.atm-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 10px;
+    background: transparent;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 13px;
+    color: #d6d6db;
+    transition: background .1s;
+}
+.atm-item:hover { background: #1e1f28; }
+
+.atm-item-hash { color: #5a5b63; font-weight: 600; }
+
+.atm-item-create { color: #8d9aff; }
+.atm-item-create i { font-size: 14px; }
+.atm-item-create strong { color: #c4cbff; }
+
+.atm-empty {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 12.5px;
+    color: #44454e;
+}

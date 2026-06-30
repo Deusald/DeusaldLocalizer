@@ -1,0 +1,164 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+@if (_Visible)
+{
+    <div class="um-backdrop" @onclick="Close"></div>
+
+    <div class="um-box" @onclick:stopPropagation="true">
+
+        <div class="um-header">
+            <span class="um-title">Collaborators</span>
+            <button class="um-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        @if (_ProjectState.IsOnline)
+        {
+            <div class="um-section">
+                <div class="um-section-label">Your account</div>
+                <div class="um-password-row">
+                    <input class="um-input" type="password" placeholder="New password"
+                           @bind="_NewPassword" @bind:event="oninput" />
+                    <button class="um-btn um-btn-primary" @onclick="ChangePassword" disabled="@(string.IsNullOrWhiteSpace(_NewPassword))">
+                        Update
+                    </button>
+                </div>
+                @if (_PasswordMessage is not null)
+                {
+                    <div class="um-password-msg">@_PasswordMessage</div>
+                }
+            </div>
+        }
+
+        <div class="um-section">
+            <div class="um-section-label">Members (@_ProjectState.CurrentProject!.Members.Count)</div>
+
+            <div class="um-member-list">
+                @foreach (var member in _ProjectState.CurrentProject.Members)
+                {
+                    var isSelf = member.UserId == _ProjectState.CurrentUser.Id;
+                    <div class="um-member-row">
+                        <div class="um-member-avatar" style="background:@AvatarColor(member.UserId)">
+                            @Initial(member.DisplayName)
+                        </div>
+                        <div class="um-member-info">
+                            <div class="um-member-name">
+                                @member.DisplayName
+                                @if (isSelf)
+                                {
+                                    <span class="um-member-you">you</span>
+                                }
+                            </div>
+                        </div>
+
+                        @if (_IsAdmin)
+                        {
+                            <div class="um-perm-flags">
+                                @foreach (var flag in _AllFlags)
+                                {
+                                    bool active = (member.Permissions & flag) == flag;
+                                    <button class="um-perm-chip @(active ? "active" : "")"
+                                            @onclick="() => TogglePermission(member, flag)"
+                                            title="@flag">
+                                        @FlagLabel(flag)
+                                    </button>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="um-perm-readonly">@PermissionsSummary(member.Permissions)</div>
+                        }
+
+                        @if (_IsAdmin && !isSelf)
+                        {
+                            <button class="um-remove-btn" title="Remove access" @onclick="() => RemoveMember(member)">
+                                <i class="bi bi-x"></i>
+                            </button>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+}
+
+@code {
+    private bool   _Visible;
+    private string _NewPassword = "";
+    private string? _PasswordMessage;
+
+    private static readonly PermissionFlags[] _AllFlags =
+    [
+        PermissionFlags.Voter,
+        PermissionFlags.Contributor,
+        PermissionFlags.Reviewer,
+        PermissionFlags.Admin
+    ];
+
+    private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+
+    public void Show()
+    {
+        _NewPassword = "";
+        _PasswordMessage = null;
+        _Visible = true;
+        StateHasChanged();
+    }
+
+    private void Close() => _Visible = false;
+
+    private static string Initial(string name) =>
+        string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();
+
+    private static readonly string[] _AvatarPalette =
+        { "#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0" };
+
+    private static string AvatarColor(Guid userId)
+    {
+        var idx = Math.Abs(userId.GetHashCode()) % _AvatarPalette.Length;
+        return _AvatarPalette[idx];
+    }
+
+    private static string FlagLabel(PermissionFlags flag) => flag switch
+    {
+        PermissionFlags.Voter       => "Voter",
+        PermissionFlags.Contributor => "Contributor",
+        PermissionFlags.Reviewer    => "Reviewer",
+        PermissionFlags.Admin       => "Admin",
+        _ => flag.ToString(),
+    };
+
+    private static string PermissionsSummary(PermissionFlags flags)
+    {
+        if (flags == PermissionFlags.None) return "No access";
+        var labels = new List<string>();
+        foreach (var f in _AllFlags)
+            if ((flags & f) == f) labels.Add(FlagLabel(f));
+        return string.Join(", ", labels);
+    }
+
+    private void TogglePermission(ProjectMemberDto member, PermissionFlags flag)
+    {
+        member.Permissions = (member.Permissions & flag) == flag
+            ? member.Permissions & ~flag
+            : member.Permissions | flag;
+        _ProjectState.MarkDirty();
+    }
+
+    private void RemoveMember(ProjectMemberDto member)
+    {
+        _ProjectState.CurrentProject!.Members.Remove(member);
+        _ProjectState.MarkDirty();
+    }
+
+    private void ChangePassword()
+    {
+        if (string.IsNullOrWhiteSpace(_NewPassword)) return;
+        // Actual password-change API call happens here when online backend exists.
+        _PasswordMessage = "Password updated.";
+        _NewPassword = "";
+    }
+}

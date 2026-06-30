@@ -25,6 +25,13 @@ namespace DeusaldLocalizerCommon
         /// <summary>True when there are unsaved changes.</summary>
         public bool IsDirty { get; private set; }
 
+        /// <summary>
+        /// True when the project is backed by a remote server (API-driven, every
+        /// action syncs immediately). False in offline/local-file mode, where the
+        /// user must explicitly save.
+        /// </summary>
+        public bool IsOnline { get; private set; } = false;
+        
         // ── Events ───────────────────────────────────────────────────────────────
 
         /// <summary>Fires whenever the open project changes (load, close, new).</summary>
@@ -94,7 +101,7 @@ namespace DeusaldLocalizerCommon
         /// <summary>Checks whether the current user has ALL of the specified permission flags.</summary>
         public bool CurrentUserHas(PermissionFlags flags)
         {
-            var member = GetCurrentMember();
+            ProjectMemberDto? member = GetCurrentMember();
             if (member is null) return false;
             return (member.Permissions & flags) == flags;
         }

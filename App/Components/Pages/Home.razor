@@ -193,6 +193,7 @@
             ProjectDto project = await _DlocService.LoadAsync(path);
             _ProjectState.LoadProject(project, path);
             AddToRecentProjects(project.Name, path);
+            _Nav.NavigateTo("/translate");
         }
         catch (DlocFormatException ex)
         {
@@ -236,7 +237,7 @@
         project.MainLanguageId = args.MainLanguageCode;
 
         _ProjectState.CreateNewProject(project);
-        _Nav.NavigateTo("/languages");
+        _Nav.NavigateTo("/translate");
     }
 
     // ── Recent projects (persisted to Preferences) ────────────────────────

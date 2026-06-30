@@ -11,6 +11,8 @@ namespace DeusaldLocalizerCommon
     {
         public Guid   Id         { get; set; } = Guid.NewGuid();
         public Guid   KeyId      { get; set; }
+        
+        /// <summary>BCP-47 language code (e.g. "de-DE").</summary>
         public string LanguageId { get; set; } = string.Empty;
         public string Text       { get; set; } = string.Empty;
 

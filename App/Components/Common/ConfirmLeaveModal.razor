@@ -1,0 +1,49 @@
+﻿@namespace App.Components.Translate
+
+@if (_Visible)
+{
+    <div class="clm-backdrop" @onclick="Cancel"></div>
+
+    <div class="clm-box" @onclick:stopPropagation="true">
+        <div class="clm-header">
+            <span class="clm-title">Unsaved changes</span>
+        </div>
+
+        <div class="clm-body">
+            <p>You have unsaved changes. If you leave now, those changes will be lost.</p>
+        </div>
+
+        <div class="clm-footer">
+            <button class="clm-btn clm-btn-ghost" @onclick="Cancel">Cancel</button>
+            <button class="clm-btn clm-btn-danger" @onclick="DiscardAndLeave">Discard &amp; leave</button>
+            <button class="clm-btn clm-btn-primary" @onclick="SaveAndLeave">Save &amp; leave</button>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public EventCallback OnSaveAndLeave    { get; set; }
+    [Parameter] public EventCallback OnDiscardAndLeave { get; set; }
+
+    private bool _Visible;
+
+    public void Show()
+    {
+        _Visible = true;
+        StateHasChanged();
+    }
+
+    private void Cancel() => _Visible = false;
+
+    private async Task SaveAndLeave()
+    {
+        _Visible = false;
+        await OnSaveAndLeave.InvokeAsync();
+    }
+
+    private async Task DiscardAndLeave()
+    {
+        _Visible = false;
+        await OnDiscardAndLeave.InvokeAsync();
+    }
+}

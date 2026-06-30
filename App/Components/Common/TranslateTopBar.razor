@@ -1,0 +1,173 @@
+﻿@namespace App.Components.Translate
+@using CommunityToolkit.Maui.Storage
+@using System.IO
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+@inject DlocFileService     _DlocService
+@inject NavigationManager   _Nav
+
+@if (_ProjectState.CurrentProject != null)
+{
+    <div class="ttb-root">
+
+        <div class="ttb-left">
+            <button class="ttb-back-btn" @onclick="GoHome" title="Back to projects">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+
+            <div class="ttb-logo-orbs">
+                <div class="ttb-orb ttb-orb-1"></div>
+                <div class="ttb-orb ttb-orb-2"></div>
+                <div class="ttb-orb ttb-orb-3"></div>
+            </div>
+            <span class="ttb-project-name">@_ProjectState.CurrentProject?.Name</span>
+            <span class="ttb-sep">/</span>
+            <span class="ttb-translating">
+                Translating into <strong>@LanguageLabel</strong>
+            </span>
+        </div>
+
+        <div class="ttb-right">
+
+            @if (!_ProjectState.IsOnline)
+            {
+                @if (_ProjectState.IsDirty)
+                {
+                    <button class="ttb-save-btn" @onclick="Save">
+                        <i class="bi bi-cloud-arrow-up"></i> Save
+                    </button>
+                }
+                <span class="ttb-status-pill @(_ProjectState.IsDirty ? "ttb-status-warn" : "ttb-status-ok")">
+                    <span class="ttb-status-dot"></span>
+                    @(_ProjectState.IsDirty ? "Unsaved" : "Saved")
+                </span>
+            }
+            else
+            {
+                <span class="ttb-status-pill @(_ProjectState.IsDirty ? "ttb-status-warn" : "ttb-status-ok")">
+                    <span class="ttb-status-dot"></span>
+                    @(_ProjectState.IsDirty ? "Syncing…" : "Synced")
+                </span>
+            }
+
+            <div class="ttb-avatars" @onclick="OpenUsersModal">
+                @foreach (var member in _VisibleMembers)
+                {
+                    <div class="ttb-avatar" style="background:@AvatarColor(member.UserId)" title="@member.DisplayName">
+                        @Initial(member.DisplayName)
+                    </div>
+                }
+                @if (ExtraMemberCount > 0)
+                {
+                    <div class="ttb-avatar ttb-avatar-extra">+@ExtraMemberCount</div>
+                }
+            </div>
+
+        </div>
+
+    </div>
+}
+
+<UsersModal @ref="_UsersModal"/>
+<ConfirmLeaveModal @ref="_ConfirmLeaveModal" OnSaveAndLeave="SaveAndLeave" OnDiscardAndLeave="DiscardAndLeave"/>
+
+@code {
+    [Parameter] public string SelectedLanguage { get; set; } = "";
+
+    private UsersModal?        _UsersModal;
+    private ConfirmLeaveModal? _ConfirmLeaveModal;
+
+    private const int MaxVisibleAvatars = 3;
+
+    private string LanguageLabel
+    {
+        get
+        {
+            var entry = CultureService.FindByCode(SelectedLanguage);
+            return entry?.EnglishName ?? SelectedLanguage;
+        }
+    }
+
+    private List<ProjectMemberDto> _VisibleMembers =>
+        _ProjectState.CurrentProject!.Members.Count <= MaxVisibleAvatars
+            ? _ProjectState.CurrentProject.Members
+            : _ProjectState.CurrentProject.Members.GetRange(0, MaxVisibleAvatars);
+
+    private int ExtraMemberCount =>
+        Math.Max(0, _ProjectState.CurrentProject!.Members.Count - MaxVisibleAvatars);
+
+    private static string Initial(string name) =>
+        string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();
+
+    private static readonly string[] AvatarPalette =
+        { "#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0" };
+
+    private static string AvatarColor(Guid userId)
+    {
+        var idx = Math.Abs(userId.GetHashCode()) % AvatarPalette.Length;
+        return AvatarPalette[idx];
+    }
+
+    private void OpenUsersModal() => _UsersModal?.Show();
+
+    private void GoHome()
+    {
+        if (_ProjectState.IsDirty && !_ProjectState.IsOnline)
+        {
+            _ConfirmLeaveModal?.Show();
+        }
+        else
+        {
+            LeaveAndUnload();
+        }
+    }
+
+    private void LeaveAndUnload()
+    {
+        _ProjectState.CloseProject();
+        _Nav.NavigateTo("/");
+    }
+
+    private async Task SaveAndLeave()
+    {
+        await SaveCore();
+        LeaveAndUnload();
+    }
+
+    private void DiscardAndLeave()
+    {
+        LeaveAndUnload();
+    }
+
+    private async Task Save()
+    {
+        await SaveCore();
+    }
+
+    private async Task SaveCore()
+    {
+        var project = _ProjectState.CurrentProject!;
+
+        if (string.IsNullOrEmpty(_ProjectState.CurrentFilePath))
+        {
+            // Never saved to disk yet — ask where to put it.
+            using var stream = new MemoryStream();
+            await _DlocService.SaveToStreamAsync(project, stream);
+            stream.Position = 0;
+
+            var fileName = string.IsNullOrEmpty(project.Slug) ? "project" : project.Slug;
+            var result   = await FileSaver.Default.SaveAsync($"{fileName}{DlocFileService.FILE_EXTENSION}", stream);
+            if (result.IsSuccessful)
+            {
+                _ProjectState.UpdateFilePath(result.FilePath);
+                _ProjectState.MarkClean();
+            }
+        }
+        else
+        {
+            await _DlocService.SaveAsync(project, _ProjectState.CurrentFilePath);
+            _ProjectState.MarkClean();
+        }
+    }
+
+}

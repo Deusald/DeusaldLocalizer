@@ -1,0 +1,66 @@
+﻿@page "/translate"
+@using global::App.Components.Layout
+@using global::App.Components.Translate
+@layout EmptyLayout
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+@inject NavigationManager   _Nav
+
+@if (!_ProjectState.HasProject)
+{
+    <div class="tr-no-project">No project open.</div>
+    return;
+}
+
+<div class="tr-root">
+
+    <TranslateTopBar SelectedLanguage="@_SelectedLanguage"/>
+
+    <div class="tr-columns">
+
+        <LanguagesColumn SelectedLanguage="_SelectedLanguage"
+                         OnLanguageSelected="OnLanguageSelected"/>
+
+        <KeysColumn SelectedLanguage="_SelectedLanguage"
+                    SelectedCategoryIds="_SelectedCategoryIds"
+                    OnCategoryFilterChanged="OnCategoryFilterChanged"
+                    SelectedKeyId="_SelectedKeyId"
+                    OnKeySelected="OnKeySelected"/>
+
+        <KeyDetailColumn SelectedLanguage="_SelectedLanguage"
+                         SelectedKeyId="_SelectedKeyId"/>
+
+    </div>
+
+</div>
+
+@code {
+    private string        _SelectedLanguage    = "";
+    private HashSet<Guid> _SelectedCategoryIds = new();
+    private Guid?         _SelectedKeyId;
+
+    protected override void OnInitialized()
+    {
+        var project = _ProjectState.CurrentProject!;
+        // Default to the first non-main language, or main if that's all there is
+        _SelectedLanguage = project.Languages.Find(l => l != project.MainLanguageId)
+                            ?? project.MainLanguageId;
+    }
+
+    private void OnLanguageSelected(string code)
+    {
+        _SelectedLanguage = code;
+        _SelectedKeyId    = null;
+    }
+
+    private void OnCategoryFilterChanged(HashSet<Guid> categoryIds)
+    {
+        _SelectedCategoryIds = categoryIds;
+    }
+
+    private void OnKeySelected(Guid keyId)
+    {
+        _SelectedKeyId = keyId;
+    }
+
+}

@@ -1,0 +1,82 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+
+@if (_Visible)
+{
+    <div class="hm-backdrop" @onclick="Close"></div>
+
+    <div class="hm-box" @onclick:stopPropagation="true">
+        <div class="hm-header">
+            <span class="hm-title">History</span>
+            <button class="hm-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="hm-body">
+            @if (Key.History.Count == 0)
+            {
+                <div class="hm-empty">No history recorded yet.</div>
+            }
+            else
+            {
+                @foreach (var entry in Key.History.OrderByDescending(h => h.Timestamp))
+                {
+                    <div class="hm-entry">
+                        <div class="hm-entry-icon @IconClass(entry.ChangeType)">
+                            <i class="bi @IconGlyph(entry.ChangeType)"></i>
+                        </div>
+                        <div class="hm-entry-body">
+                            <div class="hm-entry-title">
+                                <strong>@entry.UserName</strong> @ActionLabel(entry)
+                            </div>
+                            <div class="hm-entry-time">@entry.Timestamp.ToString("MMM d, yyyy 'at' HH:mm")</div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public LocalizationKeyDto Key { get; set; } = null!;
+
+    private bool _Visible;
+
+    public void Show()
+    {
+        _Visible = true;
+        StateHasChanged();
+    }
+
+    private void Close() => _Visible = false;
+
+    private static string ActionLabel(HistoryEntryDto e) => e.ChangeType switch
+    {
+        HistoryChangeType.Created       => "created this",
+        HistoryChangeType.Updated       => "updated this",
+        HistoryChangeType.Deleted       => "deleted this",
+        HistoryChangeType.StatusChanged => "changed the status",
+        HistoryChangeType.Approved      => "approved a translation",
+        HistoryChangeType.Rejected      => "rejected a suggestion",
+        _ => "made a change",
+    };
+
+    private static string IconGlyph(HistoryChangeType type) => type switch
+    {
+        HistoryChangeType.Created       => "bi-plus-circle",
+        HistoryChangeType.Updated       => "bi-pencil",
+        HistoryChangeType.Deleted       => "bi-trash3",
+        HistoryChangeType.StatusChanged => "bi-arrow-repeat",
+        HistoryChangeType.Approved      => "bi-check-circle",
+        HistoryChangeType.Rejected      => "bi-x-circle",
+        _ => "bi-clock-history",
+    };
+
+    private static string IconClass(HistoryChangeType type) => type switch
+    {
+        HistoryChangeType.Approved => "hm-icon-ok",
+        HistoryChangeType.Rejected => "hm-icon-danger",
+        HistoryChangeType.Deleted  => "hm-icon-danger",
+        _ => "hm-icon-default",
+    };
+}

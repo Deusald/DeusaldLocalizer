@@ -1,0 +1,37 @@
+﻿.kdb-root { display: flex; }
+
+.kdb-display {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 13px;
+    color: #6a6b73;
+    line-height: 1.55;
+    padding: 0;
+    cursor: default;
+    font-family: inherit;
+}
+
+.kdb-editable {
+    cursor: text;
+    border-radius: 6px;
+    padding: 4px 6px;
+    margin: -4px -6px;
+    transition: background .12s;
+}
+.kdb-editable:hover { background: #15161c; color: #8a8b93; }
+
+.kdb-textarea {
+    width: 100%;
+    background: #12131a;
+    border: 1px solid #2a2b35;
+    border-radius: 7px;
+    color: #d6d6db;
+    font-size: 13px;
+    line-height: 1.55;
+    padding: 8px 10px;
+    resize: vertical;
+    font-family: inherit;
+}
+.kdb-textarea:focus { border-color: #5b6cff; outline: none; box-shadow: 0 0 0 3px rgba(91,108,255,.18); }

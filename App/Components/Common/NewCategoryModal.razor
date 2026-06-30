@@ -1,0 +1,161 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+@if (_Visible)
+{
+    <div class="ncm-backdrop" @onclick="Cancel"></div>
+
+    <div class="ncm-box" @onclick:stopPropagation="true">
+
+        <div class="ncm-header">
+            <span class="ncm-title">New category</span>
+            <button class="ncm-close" @onclick="Cancel"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="ncm-body">
+
+            <div class="ncm-field">
+                <label class="ncm-label">Category name</label>
+                <input class="ncm-input" type="text" placeholder="Menu"
+                       @bind="_Name" @bind:event="oninput" maxlength="80" />
+            </div>
+
+            <div class="ncm-field">
+                <label class="ncm-label">Parent category <span class="ncm-label-hint">optional</span></label>
+                <div class="ncm-parent-picker">
+                    <div class="ncm-parent-search-wrap">
+                        <i class="bi bi-search ncm-parent-search-icon"></i>
+                        <input class="ncm-input ncm-parent-search" type="text"
+                               placeholder="Search category…"
+                               @bind="_ParentQuery" @bind:event="oninput"
+                               @onfocus="() => _ParentOpen = true" />
+                        @if (_SelectedParent != null)
+                        {
+                            <span class="ncm-parent-badge">
+                                @_SelectedParent.Name
+                                <button class="ncm-parent-clear" @onclick="ClearParent" @onclick:stopPropagation="true">×</button>
+                            </span>
+                        }
+                    </div>
+
+                    @if (_ParentOpen)
+                    {
+                        <div class="ncm-parent-dropdown">
+                            @{ var results = _FilteredParents; }
+                            @if (results.Count == 0)
+                            {
+                                <div class="ncm-parent-empty">No categories found</div>
+                            }
+                            else
+                            {
+                                @foreach (var cat in results)
+                                {
+                                    var c = cat;
+                                    bool active = _SelectedParent?.Id == c.Id;
+                                    <button class="ncm-parent-item @(active ? "active" : "")"
+                                            @onclick="() => SelectParent(c)"
+                                            @onclick:preventDefault="true">
+                                        <span class="ncm-parent-item-name">@c.Name</span>
+                                        @if (active)
+                                        {
+                                            <i class="bi bi-check2"></i>
+                                        }
+                                    </button>
+                                }
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+            @if (!_ParentOpen)
+            {
+                <div class="ncm-field">
+                    <label class="ncm-label">
+                        Description <span class="ncm-label-hint">optional</span>
+                    </label>
+                    <textarea class="ncm-input ncm-textarea" placeholder="What kind of keys live here…"
+                              @bind="_Description" @bind:event="oninput" rows="3" maxlength="300"></textarea>
+                </div>
+            }
+
+        </div>
+
+        <div class="ncm-footer">
+            <button class="ncm-btn ncm-btn-ghost" @onclick="Cancel">Cancel</button>
+            <button class="ncm-btn ncm-btn-primary" @onclick="Confirm" disabled="@(string.IsNullOrWhiteSpace(_Name))">
+                Create category
+            </button>
+        </div>
+
+    </div>
+}
+
+@code {
+    [Parameter] public EventCallback OnCreated { get; set; }
+
+    private bool         _Visible;
+    private string        _Name        = "";
+    private string        _Description = "";
+    private string        _ParentQuery = "";
+    private bool          _ParentOpen  = false;
+    private CategoryDto?  _SelectedParent;
+
+    private List<CategoryDto> _FilteredParents
+    {
+        get
+        {
+            var cats = _ProjectState.CurrentProject!.Categories.AsEnumerable();
+            if (!string.IsNullOrWhiteSpace(_ParentQuery))
+            {
+                var q = _ParentQuery.Trim().ToLowerInvariant();
+                cats = cats.Where(c => c.Name.ToLowerInvariant().Contains(q));
+            }
+            return cats.ToList();
+        }
+    }
+
+    public void Show()
+    {
+        _Name = "";
+        _Description = "";
+        _ParentQuery = "";
+        _ParentOpen = false;
+        _SelectedParent = null;
+        _Visible = true;
+        StateHasChanged();
+    }
+
+    private void SelectParent(CategoryDto cat)
+    {
+        _SelectedParent = cat;
+        _ParentQuery = "";
+        _ParentOpen = false;
+    }
+
+    private void ClearParent()
+    {
+        _SelectedParent = null;
+    }
+
+    private void Confirm()
+    {
+        if (string.IsNullOrWhiteSpace(_Name)) return;
+
+        var project = _ProjectState.CurrentProject!;
+        project.Categories.Add(new CategoryDto
+        {
+            ProjectId        = project.Id,
+            Name             = _Name.Trim(),
+            Description      = _Description.Trim(),
+            ParentCategoryId = _SelectedParent?.Id,
+        });
+        _ProjectState.MarkDirty();
+
+        _Visible = false;
+        OnCreated.InvokeAsync();
+    }
+
+    private void Cancel() => _Visible = false;
+}

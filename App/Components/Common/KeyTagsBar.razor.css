@@ -1,0 +1,53 @@
+﻿.ktb-root {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+.ktb-empty {
+    font-size: 12px;
+    color: #44454e;
+    font-style: italic;
+}
+
+.ktb-tag {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #8d9aff;
+    background: rgba(91,108,255,.1);
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.ktb-tag-remove {
+    background: none;
+    border: none;
+    color: #ff6b6b;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+}
+.ktb-tag-remove:hover { opacity: .75; }
+
+.ktb-add-btn {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #15161c;
+    border: 1px dashed #2a2b35;
+    border-radius: 5px;
+    color: #6a6b73;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background .12s, color .12s, border-color .12s;
+}
+.ktb-add-btn:hover { background: #1a1b22; color: #d6d6db; border-color: #3a3b44; }

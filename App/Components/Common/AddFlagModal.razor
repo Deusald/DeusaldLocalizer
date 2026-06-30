@@ -1,0 +1,104 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+@if (_Visible)
+{
+    <div class="afm-backdrop" @onclick="Close"></div>
+
+    <div class="afm-box" @onclick:stopPropagation="true">
+        <div class="afm-header">
+            <span class="afm-title">Add flag</span>
+            <button class="afm-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="afm-body">
+            <div class="afm-field">
+                <label class="afm-label">Flag type</label>
+                <div class="afm-types">
+                    @foreach (var type in AllTypes)
+                    {
+                        var t = type;
+                        <button class="afm-type @(_Selected == t ? "active" : "")" @onclick="() => _Selected = t">
+                            <i class="bi @FlagIcon(t)"></i>
+                            <span>@FlagLabel(t)</span>
+                        </button>
+                    }
+                </div>
+            </div>
+
+            <div class="afm-field">
+                <label class="afm-label">Note <span class="afm-label-hint">optional</span></label>
+                <textarea class="afm-input" placeholder="Why is this flagged…"
+                          @bind="_Note" @bind:event="oninput" rows="3" maxlength="300"></textarea>
+            </div>
+        </div>
+
+        <div class="afm-footer">
+            <button class="afm-btn afm-btn-ghost" @onclick="Close">Cancel</button>
+            <button class="afm-btn afm-btn-primary" @onclick="Confirm" disabled="@(_Selected == null)">Add flag</button>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public LocalizationKeyDto Key { get; set; } = null!;
+    [Parameter] public EventCallback OnAdded { get; set; }
+
+    private bool _Visible;
+    private FlagType? _Selected;
+    private string _Note = "";
+
+    private static readonly FlagType[] AllTypes =
+    {
+        FlagType.NeedsReview, FlagType.Outdated, FlagType.DoNotTranslate,
+        FlagType.InProgress, FlagType.Disputed,
+    };
+
+    public void Show()
+    {
+        _Selected = null;
+        _Note = "";
+        _Visible = true;
+        StateHasChanged();
+    }
+
+    private void Close() => _Visible = false;
+
+    private void Confirm()
+    {
+        if (_Selected == null) return;
+
+        Key.Flags.Add(new KeyFlagDto
+        {
+            KeyId     = Key.Id,
+            Type      = _Selected.Value,
+            Note      = _Note.Trim(),
+            CreatedBy = _ProjectState.CurrentUser.Id,
+        });
+        _ProjectState.MarkDirty();
+
+        _Visible = false;
+        OnAdded.InvokeAsync();
+    }
+
+    private static string FlagLabel(FlagType type) => type switch
+    {
+        FlagType.NeedsReview    => "Needs review",
+        FlagType.Outdated       => "Outdated",
+        FlagType.DoNotTranslate => "Do not translate",
+        FlagType.InProgress     => "In progress",
+        FlagType.Disputed       => "Disputed",
+        _ => type.ToString(),
+    };
+
+    private static string FlagIcon(FlagType type) => type switch
+    {
+        FlagType.NeedsReview    => "bi-flag",
+        FlagType.Outdated       => "bi-clock-history",
+        FlagType.DoNotTranslate => "bi-slash-circle",
+        FlagType.InProgress     => "bi-hourglass-split",
+        FlagType.Disputed       => "bi-exclamation-triangle",
+        _ => "bi-flag",
+    };
+}

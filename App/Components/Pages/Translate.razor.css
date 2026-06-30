@@ -1,0 +1,19 @@
+﻿.tr-no-project {
+    padding: 2rem;
+    color: #8a8b93;
+}
+
+.tr-root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #0e0f13;
+    overflow: hidden;
+}
+
+.tr-columns {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+    overflow: hidden;
+}

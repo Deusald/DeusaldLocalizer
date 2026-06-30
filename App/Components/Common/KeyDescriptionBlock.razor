@@ -1,0 +1,49 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+<div class="kdb-root">
+    @if (_Editing)
+    {
+        <textarea class="kdb-textarea" @bind="_Draft" @bind:event="oninput"
+                  @onblur="Save" rows="2" placeholder="Add a description for translators…" @ref="_TextareaRef"></textarea>
+    }
+    else if (IsAdmin)
+    {
+        <button class="kdb-display kdb-editable" @onclick="StartEdit">
+            @(string.IsNullOrWhiteSpace(Key.Description) ? "Add a description…" : Key.Description)
+        </button>
+    }
+    else
+    {
+        <div class="kdb-display">
+            @(string.IsNullOrWhiteSpace(Key.Description) ? "No description." : Key.Description)
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public LocalizationKeyDto Key       { get; set; } = null!;
+    [Parameter] public EventCallback      OnChanged { get; set; }
+
+    private bool             _Editing;
+    private string           _Draft = "";
+    private ElementReference _TextareaRef;
+
+    private bool IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+
+    private void StartEdit()
+    {
+        _Draft   = Key.Description;
+        _Editing = true;
+    }
+
+    private async Task Save()
+    {
+        Key.Description = _Draft.Trim();
+        Key.UpdatedAt   = DateTime.UtcNow;
+        _ProjectState.MarkDirty();
+        _Editing = false;
+        await OnChanged.InvokeAsync();
+    }
+}

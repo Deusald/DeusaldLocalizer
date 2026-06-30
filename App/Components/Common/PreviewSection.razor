@@ -1,0 +1,44 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+<div class="ps-root">
+    <div class="ps-label">Preview</div>
+    <div class="ps-frame">
+        <div class="ps-row">
+            <span class="ps-row-tag ps-row-tag-source">SRC</span>
+            <span class="ps-row-text">@RenderedSource</span>
+        </div>
+        <div class="ps-row">
+            <span class="ps-row-tag ps-row-tag-translation">@SelectedLanguage</span>
+            <span class="ps-row-text @(string.IsNullOrEmpty(RenderedTranslation) ? "ps-row-text-empty" : "")">
+                @(string.IsNullOrEmpty(RenderedTranslation) ? "No translation yet" : RenderedTranslation)
+            </span>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public LocalizationKeyDto Key              { get; set; } = null!;
+    [Parameter] public string             SelectedLanguage { get; set; } = "";
+
+    private string SourceLangCode => _ProjectState.CurrentProject!.MainLanguageId;
+
+    private string RenderedSource
+    {
+        get
+        {
+            var t = Key.Translations.Find(tr => tr.LanguageId == SourceLangCode);
+            return SmartFormatPreviewService.Render(t?.Text ?? "", Key.Variables);
+        }
+    }
+
+    private string RenderedTranslation
+    {
+        get
+        {
+            var t = Key.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
+            return SmartFormatPreviewService.Render(t?.Text ?? "", Key.Variables);
+        }
+    }
+}

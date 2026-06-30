@@ -1,0 +1,109 @@
+﻿.kd-root {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: #0e0f13;
+    overflow: hidden;
+}
+
+.kd-empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #3a3b44;
+    font-size: 13px;
+}
+.kd-empty-icon { font-size: 28px; }
+
+.kd-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 32px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+
+.kd-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.kd-header-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.kd-header-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.kd-key-name {
+    font-size: 17px;
+    font-weight: 600;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    color: #e8e8ea;
+}
+
+.kd-status-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 999px;
+}
+.kd-status-ok     { background: rgba(58,217,138,.12); color: #3ad98a; }
+.kd-status-warn   { background: rgba(245,166,35,.12); color: #f5a623; }
+.kd-status-empty  { background: rgba(122,123,131,.12); color: #7a7b83; }
+.kd-status-draft  { background: rgba(91,108,255,.12); color: #8d9aff; }
+
+.kd-header-dates {
+    font-size: 11px;
+    color: #5a5b63;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.kd-dates-sep { margin: 0 5px; }
+
+/* ── History ──────────────────────────────────────────────────────────────── */
+
+.kd-history-row {
+    display: flex;
+    justify-content: center;
+    padding-top: 4px;
+}
+
+.kd-history-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 16px;
+    background: #15161c;
+    border: 1px solid #20212a;
+    border-radius: 8px;
+    color: #8a8b93;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .12s, color .12s, border-color .12s;
+}
+.kd-history-btn:hover { background: #181922; border-color: #2a2b35; color: #d6d6db; }
+
+.kd-history-count {
+    font-size: 10.5px;
+    color: #5a5b63;
+    background: #1e1f28;
+    padding: 1px 6px;
+    border-radius: 999px;
+}

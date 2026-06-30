@@ -1,0 +1,99 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+<div class="kfb-root">
+    @foreach (var flag in Key.Flags)
+    {
+        var f = flag;
+        <div class="kfb-chip @FlagClass(f.Type)"
+             @onmouseenter="() => _HoveredFlagId = f.Id"
+             @onmouseleave="() => _HoveredFlagId = null">
+            <i class="bi @FlagIcon(f.Type)"></i>
+            <span>@FlagLabel(f.Type)</span>
+
+            @if (_HoveredFlagId == f.Id)
+            {
+                <div class="kfb-tooltip">
+                    @if (!string.IsNullOrWhiteSpace(f.Note))
+                    {
+                        <div class="kfb-tooltip-note">@f.Note</div>
+                    }
+                    else
+                    {
+                        <div class="kfb-tooltip-note kfb-tooltip-empty">No note</div>
+                    }
+                    @if (CanManage)
+                    {
+                        <button class="kfb-tooltip-remove" @onclick="() => RemoveFlag(f)" @onclick:stopPropagation="true">
+                            <i class="bi bi-x"></i> Remove
+                        </button>
+                    }
+                </div>
+            }
+        </div>
+    }
+
+    @if (CanManage)
+    {
+        <button class="kfb-add-btn" @onclick="() => _AddFlagModal?.Show()" title="Add flag">
+            <i class="bi bi-plus"></i>
+        </button>
+    }
+</div>
+
+<AddFlagModal @ref="_AddFlagModal" Key="Key" OnAdded="OnAdded" />
+
+@code {
+    [Parameter] public LocalizationKeyDto Key { get; set; } = null!;
+    [Parameter] public EventCallback OnChanged { get; set; }
+
+    private Guid? _HoveredFlagId;
+    private AddFlagModal? _AddFlagModal;
+
+    private bool CanManage => _ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
+                            || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+
+    private async Task OnAdded()
+    {
+        await OnChanged.InvokeAsync();
+    }
+
+    private void RemoveFlag(KeyFlagDto flag)
+    {
+        Key.Flags.Remove(flag);
+        _ProjectState.MarkDirty();
+        _HoveredFlagId = null;
+        OnChanged.InvokeAsync();
+    }
+
+    private static string FlagLabel(FlagType type) => type switch
+    {
+        FlagType.NeedsReview    => "Needs review",
+        FlagType.Outdated       => "Outdated",
+        FlagType.DoNotTranslate => "Do not translate",
+        FlagType.InProgress     => "In progress",
+        FlagType.Disputed       => "Disputed",
+        _ => type.ToString(),
+    };
+
+    private static string FlagIcon(FlagType type) => type switch
+    {
+        FlagType.NeedsReview    => "bi-flag",
+        FlagType.Outdated       => "bi-clock-history",
+        FlagType.DoNotTranslate => "bi-slash-circle",
+        FlagType.InProgress     => "bi-hourglass-split",
+        FlagType.Disputed       => "bi-exclamation-triangle",
+        _ => "bi-flag",
+    };
+
+    private static string FlagClass(FlagType type) => type switch
+    {
+        FlagType.NeedsReview    => "kfb-warn",
+        FlagType.Outdated       => "kfb-muted",
+        FlagType.DoNotTranslate => "kfb-danger",
+        FlagType.InProgress     => "kfb-info",
+        FlagType.Disputed       => "kfb-danger",
+        _ => "kfb-muted",
+    };
+}

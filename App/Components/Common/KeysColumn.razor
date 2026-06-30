@@ -1,0 +1,177 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+<div class="kc-root">
+
+    <div class="kc-toolbar">
+        <CategoryFilterPanel SelectedCategoryIds="SelectedCategoryIds" OnChanged="OnCategoryFilterChanged" />
+
+        <div class="kc-search-wrap">
+            <i class="bi bi-search kc-search-icon"></i>
+            <input class="kc-search" type="text" placeholder="Search keys…"
+                   @bind="_Filter" @bind:event="oninput" />
+        </div>
+
+        <div class="kc-tabs">
+            <button class="kc-tab @(_Tab == KeyTab.All ? "active" : "")" @onclick="() => _Tab = KeyTab.All">
+                All <span class="kc-tab-count">@AllCount</span>
+            </button>
+            <button class="kc-tab @(_Tab == KeyTab.Untranslated ? "active" : "")" @onclick="() => _Tab = KeyTab.Untranslated">
+                Untranslated <span class="kc-tab-count">@UntranslatedCount</span>
+            </button>
+            <button class="kc-tab @(_Tab == KeyTab.NeedsReview ? "active" : "")" @onclick="() => _Tab = KeyTab.NeedsReview">
+                Needs review <span class="kc-tab-count">@NeedsReviewCount</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="kc-list">
+        @if (FilteredKeys.Count == 0)
+        {
+            <div class="kc-empty">No keys match.</div>
+        }
+        else
+        {
+            @foreach (var key in FilteredKeys)
+            {
+                var k = key;
+                bool active = k.Id == SelectedKeyId;
+                var translation = k.Translations.Find(t => t.LanguageId == SelectedLanguage);
+                var suggestionCount = k.Suggestions.Count(s => s.LanguageId == SelectedLanguage && s.Status == SuggestionStatus.Pending);
+
+                <button class="kc-item @(active ? "active" : "")" @onclick="() => OnKeySelected.InvokeAsync(k.Id)">
+                    <span class="kc-item-dot @StatusDotClass(k, translation)"></span>
+                    <div class="kc-item-text">
+                        <div class="kc-item-key">@FullKeyName(k)</div>
+                        <div class="kc-item-source">@SourceTextFor(k)</div>
+                        <div class="kc-item-translated">@(translation != null && !string.IsNullOrEmpty(translation.Text) ? translation.Text : "—")</div>
+                    </div>
+                    @if (suggestionCount > 0)
+                    {
+                        <div class="kc-item-suggestions" title="@suggestionCount pending suggestion(s)">
+                            <i class="bi bi-chat-left-text"></i>
+                            <span>@suggestionCount</span>
+                        </div>
+                    }
+                </button>
+            }
+        }
+    </div>
+
+    @if (IsAdmin)
+    {
+        <button class="kc-add-btn" @onclick="() => _NewKeyModal?.Show()">
+            <i class="bi bi-plus-lg"></i> Add key
+        </button>
+    }
+
+</div>
+
+<NewKeyModal @ref="_NewKeyModal" OnCreated="OnKeyCreated" />
+
+@code {
+    [Parameter] public string SelectedLanguage { get; set; } = "";
+    [Parameter] public HashSet<Guid> SelectedCategoryIds { get; set; } = new();
+    [Parameter] public EventCallback<HashSet<Guid>> OnCategoryFilterChanged { get; set; }
+    [Parameter] public Guid? SelectedKeyId { get; set; }
+    [Parameter] public EventCallback<Guid> OnKeySelected { get; set; }
+
+    private enum KeyTab { All, Untranslated, NeedsReview }
+    private KeyTab _Tab = KeyTab.All;
+    private string _Filter = "";
+
+    private NewKeyModal? _NewKeyModal;
+
+    private bool IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+
+    private List<LocalizationKeyDto> BaseKeys
+    {
+        get
+        {
+            var project = _ProjectState.CurrentProject!;
+            var keys = project.Keys.AsEnumerable();
+
+            if (SelectedCategoryIds.Count > 0)
+                keys = keys.Where(k => SelectedCategoryIds.Contains(k.CategoryId));
+
+            if (!string.IsNullOrWhiteSpace(_Filter))
+            {
+                var q = _Filter.Trim().ToLowerInvariant();
+                keys = keys.Where(k => FullKeyName(k).ToLowerInvariant().Contains(q)
+                                     || SourceTextFor(k).ToLowerInvariant().Contains(q));
+            }
+
+            return keys.ToList();
+        }
+    }
+
+    private List<LocalizationKeyDto> FilteredKeys
+    {
+        get
+        {
+            var keys = BaseKeys.AsEnumerable();
+            keys = _Tab switch
+            {
+                KeyTab.Untranslated => keys.Where(k =>
+                {
+                    var t = k.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
+                    return t == null || string.IsNullOrEmpty(t.Text);
+                }),
+                KeyTab.NeedsReview => keys.Where(k => k.Flags.Any(f => f.Type == FlagType.NeedsReview)
+                    || k.Translations.Any(t => t.LanguageId == SelectedLanguage && t.NeedsAttention)),
+                _ => keys,
+            };
+            return keys.ToList();
+        }
+    }
+
+    private int AllCount => BaseKeys.Count;
+    private int UntranslatedCount => BaseKeys.Count(k =>
+    {
+        var t = k.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
+        return t == null || string.IsNullOrEmpty(t.Text);
+    });
+    private int NeedsReviewCount => BaseKeys.Count(k =>
+        k.Flags.Any(f => f.Type == FlagType.NeedsReview)
+        || k.Translations.Any(t => t.LanguageId == SelectedLanguage && t.NeedsAttention));
+
+    private string FullKeyName(LocalizationKeyDto key)
+    {
+        var project = _ProjectState.CurrentProject!;
+        var cat = project.Categories.Find(c => c.Id == key.CategoryId);
+        if (cat == null) return key.KeyName;
+
+        var parts = new List<string> { cat.Name };
+        var current = cat;
+        while (current.ParentCategoryId != null)
+        {
+            var parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
+            if (parent == null) break;
+            parts.Insert(0, parent.Name);
+            current = parent;
+        }
+        return $"{string.Join("/", parts)}.{key.KeyName}";
+    }
+
+    private string SourceTextFor(LocalizationKeyDto key)
+    {
+        var project = _ProjectState.CurrentProject!;
+        var src = key.Translations.Find(t => t.LanguageId == project.MainLanguageId);
+        return src?.Text ?? "";
+    }
+
+    private string StatusDotClass(LocalizationKeyDto key, TranslationDto? translation)
+    {
+        if (key.Flags.Any(f => f.Type == FlagType.NeedsReview)) return "kc-dot-warn";
+        if (translation == null || string.IsNullOrEmpty(translation.Text)) return "kc-dot-empty";
+        if (translation.NeedsAttention) return "kc-dot-warn";
+        if (translation.Status == TranslationStatus.Approved) return "kc-dot-ok";
+        return "kc-dot-draft";
+    }
+
+    private async Task OnKeyCreated(Guid keyId)
+    {
+        await OnKeySelected.InvokeAsync(keyId);
+    }
+}
