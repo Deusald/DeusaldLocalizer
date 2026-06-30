@@ -20,28 +20,62 @@
                 bool          isMain = code == _ProjectState.CurrentProject!.MainLanguageId;
                 int           pct    = ProgressFor(code);
 
-                <button class="lc-item @(active ? "active" : "")" @onclick="() => OnLanguageSelected.InvokeAsync(code)">
-                    <div class="lc-item-top">
-                        <span class="lc-item-flag">@(entry?.FlagEmoji ?? "🌐")</span>
-                        <span class="lc-item-name">@(entry?.ShortName ?? code)</span>
-                        @if (isMain)
-                        {
-                            <span class="lc-item-main-badge">SRC</span>
-                        }
-                        <span class="lc-item-pct">@pct%</span>
+                @if (_EditMode)
+                {
+                    <div class="lc-item lc-item-editing">
+                        <div class="lc-item-top">
+                            <span class="lc-item-flag">@(entry?.FlagEmoji ?? "🌐")</span>
+                            <span class="lc-item-name">@(entry?.ShortName ?? code)</span>
+                            @if (isMain)
+                            {
+                                <span class="lc-item-main-badge">SRC</span>
+                            }
+                            @if (!isMain)
+                            {
+                                <button class="lc-item-remove" title="Remove language" @onclick="() => RemoveLanguage(code)">
+                                    <i class="bi bi-x"></i>
+                                </button>
+                            }
+                        </div>
                     </div>
-                    <div class="lc-item-bar">
-                        <div class="lc-item-fill" style="width:@pct%"></div>
-                    </div>
-                </button>
+                }
+                else
+                {
+                    <button class="lc-item @(active ? "active" : "")" @onclick="() => OnLanguageSelected.InvokeAsync(code)">
+                        <div class="lc-item-top">
+                            <span class="lc-item-flag">@(entry?.FlagEmoji ?? "🌐")</span>
+                            <span class="lc-item-name">@(entry?.ShortName ?? code)</span>
+                            @if (isMain)
+                            {
+                                <span class="lc-item-main-badge">SRC</span>
+                            }
+                            <span class="lc-item-pct">@pct%</span>
+                        </div>
+                        <div class="lc-item-bar">
+                            <div class="lc-item-fill" style="width:@pct%"></div>
+                        </div>
+                    </button>
+                }
             }
         </div>
 
         @if (_IsAdmin)
         {
-            <button class="lc-add-btn" @onclick="EnterAddMode">
-                <i class="bi bi-plus-lg"></i> Add language
-            </button>
+            @if (_EditMode)
+            {
+                <button class="lc-cancel-btn" @onclick="() => _EditMode = false">Done</button>
+            }
+            else
+            {
+                <div class="lc-bottom-actions">
+                    <button class="lc-add-btn" @onclick="EnterAddMode">
+                        <i class="bi bi-plus-lg"></i> Add language
+                    </button>
+                    <button class="lc-edit-btn" @onclick="() => _EditMode = true" title="Edit languages">
+                        <i class="bi bi-pencil"></i>
+                    </button>
+                </div>
+            }
         }
     }
     else
@@ -87,8 +121,9 @@
     [Parameter] public string                SelectedLanguage   { get; set; } = "";
     [Parameter] public EventCallback<string> OnLanguageSelected { get; set; }
 
-    private string _Filter   = "";
+    private string _Filter = "";
     private bool   _AddMode;
+    private bool   _EditMode;
     private string _AddQuery = "";
 
     private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
@@ -144,4 +179,24 @@
         _ProjectState.MarkDirty();
         ExitAddMode();
     }
+
+    private async Task RemoveLanguage(string code)
+    {
+        ProjectDto project = _ProjectState.CurrentProject!;
+        if (code == project.MainLanguageId) return; // main language can't be removed
+
+        // Only hide the language from the project — existing translations for
+        // this code are intentionally left untouched on each key, so the data
+        // reappears automatically if the language is added back later.
+        project.Languages.Remove(code);
+        _ProjectState.MarkDirty();
+
+        if (SelectedLanguage == code)
+        {
+            var fallback = project.Languages.Find(l => l != project.MainLanguageId)
+                           ?? project.MainLanguageId;
+            await OnLanguageSelected.InvokeAsync(fallback);
+        }
+    }
+
 }

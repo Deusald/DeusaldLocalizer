@@ -120,13 +120,20 @@
 
 /* ── Add button ───────────────────────────────────────────────────────────── */
 
-.lc-add-btn {
+.lc-bottom-actions {
     flex-shrink: 0;
+    display: flex;
+    gap: 8px;
+    margin: 10px 12px 12px;
+}
+
+.lc-add-btn {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    margin: 10px 12px 12px;
+    margin: 0;
     padding: 9px;
     background: #1a1b22;
     border: 1px dashed #2a2b35;
@@ -138,6 +145,53 @@
     transition: background .12s, border-color .12s, color .12s;
 }
 .lc-add-btn:hover { background: #1e1f28; border-color: #3a3b44; color: #d6d6db; }
+
+.lc-edit-btn {
+    flex-shrink: 0;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a1b22;
+    border: 1px solid #2a2b35;
+    border-radius: 8px;
+    color: #8a8b93;
+    font-size: 12.5px;
+    cursor: pointer;
+    transition: background .12s, border-color .12s, color .12s;
+}
+.lc-edit-btn:hover { background: #1e1f28; border-color: #3a3b44; color: #d6d6db; }
+
+/* ── Edit mode rows ───────────────────────────────────────────────────────── */
+
+.lc-item-editing {
+    cursor: default;
+    padding: 9px 10px;
+}
+.lc-item-editing:hover { background: transparent; }
+.lc-item-editing .lc-item-top { gap: 8px; }
+
+.lc-item-remove {
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #5a5b63;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all .12s;
+}
+.lc-item-remove:hover {
+    background: rgba(255,69,58,.12);
+    border-color: rgba(255,69,58,.3);
+    color: #ff6b6b;
+}
 
 /* ── Add language mode ────────────────────────────────────────────────────── */
 
