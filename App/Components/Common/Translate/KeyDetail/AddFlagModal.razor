@@ -1,5 +1,6 @@
 ﻿@namespace App.Components.Translate
 @using DeusaldLocalizerCommon
+@using DeusaldSharp
 @inject ProjectStateService _ProjectState
 
 @if (_Visible)
@@ -16,9 +17,9 @@
             <div class="afm-field">
                 <label class="afm-label">Flag type</label>
                 <div class="afm-types">
-                    @foreach (var type in AllTypes)
+                    @foreach (FlagType type in EnumExtensions.IterateAllValues<FlagType>())
                     {
-                        var t = type;
+                        FlagType t = type;
                         <button class="afm-type @(_Selected == t ? "active" : "")" @onclick="() => _Selected = t">
                             <i class="bi @FlagIcon(t)"></i>
                             <span>@FlagLabel(t)</span>
@@ -42,24 +43,18 @@
 }
 
 @code {
-    [Parameter] public LocalizationKeyDto Key { get; set; } = null!;
-    [Parameter] public EventCallback OnAdded { get; set; }
+    [Parameter] public LocalizationKeyDto Key     { get; set; } = null!;
+    [Parameter] public EventCallback      OnAdded { get; set; }
 
-    private bool _Visible;
+    private bool      _Visible;
     private FlagType? _Selected;
-    private string _Note = "";
-
-    private static readonly FlagType[] AllTypes =
-    {
-        FlagType.NeedsReview, FlagType.Outdated, FlagType.DoNotTranslate,
-        FlagType.InProgress, FlagType.Disputed,
-    };
+    private string    _Note = "";
 
     public void Show()
     {
         _Selected = null;
-        _Note = "";
-        _Visible = true;
+        _Note     = "";
+        _Visible  = true;
         StateHasChanged();
     }
 
@@ -89,7 +84,7 @@
         FlagType.DoNotTranslate => "Do not translate",
         FlagType.InProgress     => "In progress",
         FlagType.Disputed       => "Disputed",
-        _ => type.ToString(),
+        _                       => type.ToString(),
     };
 
     private static string FlagIcon(FlagType type) => type switch
@@ -99,6 +94,7 @@
         FlagType.DoNotTranslate => "bi-slash-circle",
         FlagType.InProgress     => "bi-hourglass-split",
         FlagType.Disputed       => "bi-exclamation-triangle",
-        _ => "bi-flag",
+        _                       => "bi-flag",
     };
+
 }

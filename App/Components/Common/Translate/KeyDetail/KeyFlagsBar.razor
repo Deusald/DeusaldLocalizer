@@ -3,38 +3,42 @@
 @inject ProjectStateService _ProjectState
 
 <div class="kfb-root">
-    @foreach (var flag in Key.Flags)
+    @foreach (KeyFlagDto flag in Key.Flags)
     {
-        var f = flag;
-        <div class="kfb-chip @FlagClass(f.Type)"
+        KeyFlagDto f = flag;
+        <div class="kfb-chip-wrap"
              @onmouseenter="() => _HoveredFlagId = f.Id"
              @onmouseleave="() => _HoveredFlagId = null">
-            <i class="bi @FlagIcon(f.Type)"></i>
-            <span>@FlagLabel(f.Type)</span>
+            <div class="kfb-chip @FlagClass(f.Type)">
+                <i class="bi @FlagIcon(f.Type)"></i>
+                <span>@FlagLabel(f.Type)</span>
+            </div>
 
             @if (_HoveredFlagId == f.Id)
             {
                 <div class="kfb-tooltip">
-                    @if (!string.IsNullOrWhiteSpace(f.Note))
-                    {
-                        <div class="kfb-tooltip-note">@f.Note</div>
-                    }
-                    else
-                    {
-                        <div class="kfb-tooltip-note kfb-tooltip-empty">No note</div>
-                    }
-                    @if (CanManage)
-                    {
-                        <button class="kfb-tooltip-remove" @onclick="() => RemoveFlag(f)" @onclick:stopPropagation="true">
-                            <i class="bi bi-x"></i> Remove
-                        </button>
-                    }
+                    <div class="kfb-tooltip-inner">
+                        @if (!string.IsNullOrWhiteSpace(f.Note))
+                        {
+                            <div class="kfb-tooltip-note">@f.Note</div>
+                        }
+                        else
+                        {
+                            <div class="kfb-tooltip-note kfb-tooltip-empty">No note</div>
+                        }
+                        @if (_CanManage)
+                        {
+                            <button class="kfb-tooltip-remove" @onclick="() => RemoveFlag(f)" @onclick:stopPropagation="true">
+                                <i class="bi bi-x"></i> Remove
+                            </button>
+                        }
+                    </div>
                 </div>
             }
         </div>
     }
 
-    @if (CanManage)
+    @if (_CanManage)
     {
         <button class="kfb-add-btn" @onclick="() => _AddFlagModal?.Show()" title="Add flag">
             <i class="bi bi-plus"></i>
@@ -42,17 +46,17 @@
     }
 </div>
 
-<AddFlagModal @ref="_AddFlagModal" Key="Key" OnAdded="OnAdded" />
+<AddFlagModal @ref="_AddFlagModal" Key="Key" OnAdded="OnAdded"/>
 
 @code {
-    [Parameter] public LocalizationKeyDto Key { get; set; } = null!;
-    [Parameter] public EventCallback OnChanged { get; set; }
+    [Parameter] public LocalizationKeyDto Key       { get; set; } = null!;
+    [Parameter] public EventCallback      OnChanged { get; set; }
 
-    private Guid? _HoveredFlagId;
+    private Guid?         _HoveredFlagId;
     private AddFlagModal? _AddFlagModal;
 
-    private bool CanManage => _ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
-                            || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _CanManage => _ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
+                               || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
 
     private async Task OnAdded()
     {
@@ -74,7 +78,7 @@
         FlagType.DoNotTranslate => "Do not translate",
         FlagType.InProgress     => "In progress",
         FlagType.Disputed       => "Disputed",
-        _ => type.ToString(),
+        _                       => type.ToString(),
     };
 
     private static string FlagIcon(FlagType type) => type switch
@@ -84,7 +88,7 @@
         FlagType.DoNotTranslate => "bi-slash-circle",
         FlagType.InProgress     => "bi-hourglass-split",
         FlagType.Disputed       => "bi-exclamation-triangle",
-        _ => "bi-flag",
+        _                       => "bi-flag",
     };
 
     private static string FlagClass(FlagType type) => type switch
@@ -94,6 +98,6 @@
         FlagType.DoNotTranslate => "kfb-danger",
         FlagType.InProgress     => "kfb-info",
         FlagType.Disputed       => "kfb-danger",
-        _ => "kfb-muted",
+        _                       => "kfb-muted",
     };
 }

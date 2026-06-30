@@ -1,6 +1,7 @@
 ﻿@namespace App.Components.Translate
 @using DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
+@implements IDisposable
 
 <div class="kc-root">
 
@@ -175,6 +176,11 @@
         k.Flags.Any(f => f.Type == FlagType.NeedsReview)
         || k.Translations.Any(t => t.LanguageId == SelectedLanguage && t.NeedsAttention));
 
+    protected override void OnInitialized()
+    {
+        _ProjectState.ProjectDataChanged += OnProjectDataChanged;
+    }
+    
     private string FullKeyName(LocalizationKeyDto key)
     {
         ProjectDto   project = _ProjectState.CurrentProject!;
@@ -212,5 +218,15 @@
     private async Task OnKeyCreated(Guid keyId)
     {
         await OnKeySelected.InvokeAsync(keyId);
+    }
+    
+    private void OnProjectDataChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+    
+    public void Dispose()
+    {
+        _ProjectState.ProjectDataChanged -= OnProjectDataChanged;
     }
 }

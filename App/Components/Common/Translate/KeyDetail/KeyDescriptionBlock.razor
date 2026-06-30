@@ -6,9 +6,9 @@
     @if (_Editing)
     {
         <textarea class="kdb-textarea" @bind="_Draft" @bind:event="oninput"
-                  @onblur="Save" rows="2" placeholder="Add a description for translators…" @ref="_TextareaRef"></textarea>
+                  @onblur="Save" rows="2" placeholder="Add a description for translators…"></textarea>
     }
-    else if (IsAdmin)
+    else if (_IsAdmin)
     {
         <button class="kdb-display kdb-editable" @onclick="StartEdit">
             @(string.IsNullOrWhiteSpace(Key.Description) ? "Add a description…" : Key.Description)
@@ -26,11 +26,10 @@
     [Parameter] public LocalizationKeyDto Key       { get; set; } = null!;
     [Parameter] public EventCallback      OnChanged { get; set; }
 
-    private bool             _Editing;
-    private string           _Draft = "";
-    private ElementReference _TextareaRef;
+    private bool   _Editing;
+    private string _Draft = "";
 
-    private bool IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
 
     private void StartEdit()
     {
