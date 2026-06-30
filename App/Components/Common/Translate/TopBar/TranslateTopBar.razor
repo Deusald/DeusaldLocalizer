@@ -5,6 +5,7 @@
 @inject ProjectStateService _ProjectState
 @inject DlocFileService     _DlocService
 @inject NavigationManager   _Nav
+@implements IDisposable
 
 @if (_ProjectState.HasProject)
 {
@@ -108,6 +109,11 @@
         return _AvatarPalette[idx];
     }
 
+    protected override void OnInitialized()
+    {
+        _ProjectState.DirtyStateChanged += OnDirty;
+    }
+    
     private void OpenUsersModal() => _UsersModal?.Show();
 
     private void GoHome()
@@ -173,4 +179,13 @@
         StateHasChanged();
     }
 
+    private void OnDirty()
+    {
+        StateHasChanged();
+    }
+    
+    public void Dispose()
+    {
+        _ProjectState.DirtyStateChanged -= OnDirty;
+    }
 }

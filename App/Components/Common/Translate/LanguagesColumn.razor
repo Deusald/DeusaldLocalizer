@@ -9,16 +9,16 @@
         <div class="lc-search-wrap">
             <i class="bi bi-search lc-search-icon"></i>
             <input class="lc-search" type="text" placeholder="Search languages…"
-                   @bind="_Filter" @bind:event="oninput" />
+                   @bind="_Filter" @bind:event="oninput"/>
         </div>
 
         <div class="lc-list">
-            @foreach (var code in _FilteredLanguages)
+            @foreach (string code in _FilteredLanguages)
             {
-                var entry = CultureService.FindByCode(code);
-                bool active = code == SelectedLanguage;
-                bool isMain = code == _ProjectState.CurrentProject!.MainLanguageId;
-                int pct = ProgressFor(code);
+                CultureEntry? entry  = CultureService.FindByCode(code);
+                bool          active = code == SelectedLanguage;
+                bool          isMain = code == _ProjectState.CurrentProject!.MainLanguageId;
+                int           pct    = ProgressFor(code);
 
                 <button class="lc-item @(active ? "active" : "")" @onclick="() => OnLanguageSelected.InvokeAsync(code)">
                     <div class="lc-item-top">
@@ -53,21 +53,21 @@
         <div class="lc-search-wrap">
             <i class="bi bi-search lc-search-icon"></i>
             <input class="lc-search" type="text" placeholder="Search by name or code…"
-                   @bind="_AddQuery" @bind:event="oninput" />
+                   @bind="_AddQuery" @bind:event="oninput"/>
         </div>
 
         <div class="lc-add-results">
-            @{ var existing = new HashSet<string>(_ProjectState.CurrentProject!.Languages); }
-            @{ var hits = CultureService.Search(_AddQuery).Where(c => !existing.Contains(c.Code)).ToList(); }
+            @{ HashSet<string> existing = new HashSet<string>(_ProjectState.CurrentProject!.Languages); }
+            @{ List<CultureEntry> hits = CultureService.Search(_AddQuery).Where(c => !existing.Contains(c.Code)).ToList(); }
             @if (hits.Count == 0)
             {
                 <div class="lc-add-empty">No results.</div>
             }
             else
             {
-                @foreach (var c in hits.Take(100))
+                @foreach (CultureEntry c in hits.Take(100))
                 {
-                    var entry = c;
+                    CultureEntry entry = c;
                     <button class="lc-add-item" @onclick="() => AddLanguage(entry.Code)">
                         <span class="lc-add-flag">@entry.FlagEmoji</span>
                         <span class="lc-add-name">@entry.EnglishName</span>
@@ -84,11 +84,11 @@
 </div>
 
 @code {
-    [Parameter] public string SelectedLanguage { get; set; } = "";
+    [Parameter] public string                SelectedLanguage   { get; set; } = "";
     [Parameter] public EventCallback<string> OnLanguageSelected { get; set; }
 
     private string _Filter   = "";
-    private bool   _AddMode  = false;
+    private bool   _AddMode;
     private string _AddQuery = "";
 
     private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
@@ -100,12 +100,12 @@
             IEnumerable<string> langs = _ProjectState.CurrentProject!.Languages.AsEnumerable();
             if (!string.IsNullOrWhiteSpace(_Filter))
             {
-                var q = _Filter.Trim().ToLowerInvariant();
+                string q = _Filter.Trim().ToLowerInvariant();
                 langs = langs.Where(code =>
                 {
-                    var entry = CultureService.FindByCode(code);
+                    CultureEntry? entry = CultureService.FindByCode(code);
                     return code.ToLowerInvariant().Contains(q)
-                        || (entry != null && entry.EnglishName.ToLowerInvariant().Contains(q));
+                           || (entry != null && entry.EnglishName.ToLowerInvariant().Contains(q));
                 });
             }
             return langs;
@@ -114,13 +114,13 @@
 
     private int ProgressFor(string code)
     {
-        var project = _ProjectState.CurrentProject!;
+        ProjectDto project = _ProjectState.CurrentProject!;
         if (code == project.MainLanguageId) return 100;
-        var keyCount = project.Keys.Count;
+        int keyCount = project.Keys.Count;
         if (keyCount == 0) return 0;
-        var translated = project.Keys
-            .SelectMany(k => k.Translations)
-            .Count(t => t.LanguageId == code && !string.IsNullOrEmpty(t.Text));
+        int translated = project.Keys
+                                 .SelectMany(k => k.Translations)
+                                 .Count(t => t.LanguageId == code && t.Status == TranslationStatus.Approved && !string.IsNullOrEmpty(t.Text));
         return (int)Math.Round(translated * 100.0 / keyCount);
     }
 
@@ -137,7 +137,7 @@
 
     private void AddLanguage(string code)
     {
-        var project = _ProjectState.CurrentProject!;
+        ProjectDto project = _ProjectState.CurrentProject!;
         if (project.Languages.Contains(code)) return;
         project.Languages.Add(code);
         if (project.Languages.Count == 1) project.MainLanguageId = code;
