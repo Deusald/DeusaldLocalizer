@@ -40,30 +40,60 @@
                 TranslationDto?    translation     = k.Translations.Find(t => t.LanguageId == SelectedLanguage);
                 int                suggestionCount = k.Suggestions.Count(s => s.LanguageId == SelectedLanguage && s.Status == SuggestionStatus.Pending);
 
-                <button class="kc-item @(active ? "active" : "")" @onclick="() => OnKeySelected.InvokeAsync(k.Id)">
-                    <span class="kc-item-dot @StatusDotClass(k, translation)"></span>
-                    <div class="kc-item-text">
-                        <div class="kc-item-key">@FullKeyName(k)</div>
-                        <div class="kc-item-source">@SourceTextFor(k)</div>
-                        <div class="kc-item-translated">@(translation != null && !string.IsNullOrEmpty(translation.Text) ? translation.Text : "—")</div>
-                    </div>
-                    @if (suggestionCount > 0)
-                    {
-                        <div class="kc-item-suggestions" title="@suggestionCount pending suggestion(s)">
-                            <i class="bi bi-chat-left-text"></i>
-                            <span>@suggestionCount</span>
+                @if (_EditMode)
+                {
+                    <div class="kc-row">
+                        <div class="kc-item kc-item-editing">
+                            <span class="kc-item-dot @StatusDotClass(k, translation)"></span>
+                            <div class="kc-item-text">
+                                <div class="kc-item-key">@FullKeyName(k)</div>
+                                <div class="kc-item-source">@SourceTextFor(k)</div>
+                            </div>
                         </div>
-                    }
-                </button>
+                        <button class="kc-item-edit-btn" title="Edit key" @onclick="() => _NewKeyModal?.EditKey(k)">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                    </div>
+                }
+                else
+                {
+                    <button class="kc-item @(active ? "active" : "")" @onclick="() => OnKeySelected.InvokeAsync(k.Id)">
+                        <span class="kc-item-dot @StatusDotClass(k, translation)"></span>
+                        <div class="kc-item-text">
+                            <div class="kc-item-key">@FullKeyName(k)</div>
+                            <div class="kc-item-source">@SourceTextFor(k)</div>
+                            <div class="kc-item-translated">@(translation != null && !string.IsNullOrEmpty(translation.Text) ? translation.Text : "—")</div>
+                        </div>
+                        @if (suggestionCount > 0)
+                        {
+                            <div class="kc-item-suggestions" title="@suggestionCount pending suggestion(s)">
+                                <i class="bi bi-chat-left-text"></i>
+                                <span>@suggestionCount</span>
+                            </div>
+                        }
+                    </button>
+                }
             }
         }
     </div>
 
     @if (_IsAdmin)
     {
-        <button class="kc-add-btn" @onclick="() => _NewKeyModal?.Show()">
-            <i class="bi bi-plus-lg"></i> Add key
-        </button>
+        @if (_EditMode)
+        {
+            <button class="kc-done-btn" @onclick="() => _EditMode = false">Done</button>
+        }
+        else
+        {
+            <div class="kc-bottom-actions">
+                <button class="kc-add-btn" @onclick="() => _NewKeyModal?.Show()">
+                    <i class="bi bi-plus-lg"></i> Add key
+                </button>
+                <button class="kc-edit-btn" @onclick="() => _EditMode = true" title="Edit keys">
+                    <i class="bi bi-pencil"></i>
+                </button>
+            </div>
+        }
     }
 
 </div>
@@ -86,6 +116,7 @@
 
     private KeyTab _Tab    = KeyTab.All;
     private string _Filter = "";
+    private bool   _EditMode;
 
     private NewKeyModal? _NewKeyModal;
 

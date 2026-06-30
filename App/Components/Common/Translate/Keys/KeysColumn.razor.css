@@ -95,11 +95,21 @@
     text-align: center;
 }
 
+.kc-row {
+    display: flex;
+    align-items: stretch;
+    gap: 6px;
+    margin-bottom: 2px;
+}
+
 .kc-item {
     display: flex;
     align-items: flex-start;
     gap: 10px;
     width: 100%;
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
     padding: 10px 10px;
     background: transparent;
     border: 1px solid transparent;
@@ -107,13 +117,33 @@
     cursor: pointer;
     text-align: left;
     transition: background .1s, border-color .1s;
-    margin-bottom: 2px;
 }
 .kc-item:hover { background: #15161c; }
 .kc-item.active {
     background: rgba(91,108,255,.08);
     border-color: rgba(91,108,255,.3);
 }
+
+.kc-item-editing {
+    cursor: default;
+}
+.kc-item-editing:hover { background: transparent; }
+
+.kc-item-edit-btn {
+    flex-shrink: 0;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a1b22;
+    border: 1px solid #2a2b35;
+    border-radius: 9px;
+    color: #8a8b93;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background .12s, color .12s, border-color .12s;
+}
+.kc-item-edit-btn:hover { background: #1e1f28; border-color: #3a3b44; color: #d6d6db; }
 
 .kc-item-dot {
     width: 8px;
@@ -174,15 +204,22 @@
     margin-top: 3px;
 }
 
-/* ── Add key ──────────────────────────────────────────────────────────────── */
+/* ── Add / Edit keys ──────────────────────────────────────────────────────── */
+
+.kc-bottom-actions {
+    flex-shrink: 0;
+    display: flex;
+    gap: 8px;
+    margin: 8px 12px 12px;
+}
 
 .kc-add-btn {
-    flex-shrink: 0;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    margin: 8px 12px 12px;
+    margin: 0;
     padding: 9px;
     background: #15161c;
     border: 1px dashed #2a2b35;
@@ -194,3 +231,34 @@
     transition: background .12s, border-color .12s, color .12s;
 }
 .kc-add-btn:hover { background: #181922; border-color: #3a3b44; color: #d6d6db; }
+
+.kc-edit-btn {
+    flex-shrink: 0;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #15161c;
+    border: 1px solid #20212a;
+    border-radius: 8px;
+    color: #8a8b93;
+    font-size: 12.5px;
+    cursor: pointer;
+    transition: background .12s, border-color .12s, color .12s;
+}
+.kc-edit-btn:hover { background: #181922; border-color: #3a3b44; color: #d6d6db; }
+
+.kc-done-btn {
+    flex-shrink: 0;
+    margin: 8px 12px 12px;
+    padding: 9px;
+    background: transparent;
+    border: 1px solid #2a2b35;
+    border-radius: 8px;
+    color: #8a8b93;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .12s, color .12s;
+}
+.kc-done-btn:hover { background: #1e1f28; color: #d6d6db; }

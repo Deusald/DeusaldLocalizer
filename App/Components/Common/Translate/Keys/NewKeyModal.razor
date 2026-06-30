@@ -7,10 +7,10 @@
 {
     <div class="nkm-backdrop" @onclick="Cancel"></div>
 
-    <div class="nkm-box" @onclick:stopPropagation="true">
+    <div class="nkm-box" @onclick="CloseCatDropdownIfOpen" @onclick:stopPropagation="true">
 
         <div class="nkm-header">
-            <span class="nkm-title">New key</span>
+            <span class="nkm-title">@(_EditingKey == null ? "New key" : "Edit key")</span>
             <button class="nkm-close" @onclick="Cancel"><i class="bi bi-x-lg"></i></button>
         </div>
 
@@ -27,11 +27,15 @@
                 {
                     <div class="nkm-field-error">Only letters, numbers and "_" are allowed</div>
                 }
+                else if (_IsDuplicateKey)
+                {
+                    <div class="nkm-field-error">A key with this name already exists in this category</div>
+                }
             </div>
 
             <div class="nkm-field nkm-field-grow">
                 <label class="nkm-label">Category</label>
-                <div class="nkm-cat-picker">
+                <div class="nkm-cat-picker" @onclick:stopPropagation="true">
                     <div class="nkm-cat-search-wrap">
                         @if (_SelectedCategory != null && !_CatOpen)
                         {
@@ -99,7 +103,7 @@
         <div class="nkm-footer">
             <button class="nkm-btn nkm-btn-ghost" @onclick="Cancel">Cancel</button>
             <button class="nkm-btn nkm-btn-primary" @onclick="Confirm" disabled="@(!_CanConfirm)">
-                Create key
+                @(_EditingKey == null ? "Create key" : "Save changes")
             </button>
         </div>
 
@@ -115,12 +119,25 @@
     private bool         _CatOpen;
     private bool         _SuppressBlurClose;
     private CategoryDto? _SelectedCategory;
+    private LocalizationKeyDto? _EditingKey;
 
     private static readonly Regex _KeyNamePattern = new(@"^[A-Za-z0-9_]+$");
 
     private static bool IsValidKeyName(string s) => !string.IsNullOrEmpty(s) && _KeyNamePattern.IsMatch(s);
 
-    private bool _CanConfirm => IsValidKeyName(_KeyName) && _SelectedCategory != null;
+    private bool _CanConfirm => IsValidKeyName(_KeyName) && _SelectedCategory != null && !_IsDuplicateKey;
+
+    private bool _IsDuplicateKey
+    {
+        get
+        {
+            if (_SelectedCategory == null || string.IsNullOrEmpty(_KeyName)) return false;
+            return _ProjectState.CurrentProject!.Keys.Any(k =>
+                k.Id != _EditingKey?.Id
+                && k.CategoryId == _SelectedCategory.Id
+                && string.Equals(k.KeyName, _KeyName.Trim(), StringComparison.Ordinal));
+        }
+    }
 
     private List<CategoryDto> _FilteredCategories
     {
@@ -163,6 +180,19 @@
         _CatOpen = false;
         _SuppressBlurClose = false;
         _SelectedCategory = null;
+        _EditingKey = null;
+        _Visible = true;
+        StateHasChanged();
+    }
+
+    public void EditKey(LocalizationKeyDto key)
+    {
+        _EditingKey = key;
+        _KeyName = key.KeyName;
+        _CatQuery = "";
+        _CatOpen = false;
+        _SuppressBlurClose = false;
+        _SelectedCategory = _ProjectState.CurrentProject!.Categories.Find(c => c.Id == key.CategoryId);
         _Visible = true;
         StateHasChanged();
     }
@@ -194,22 +224,45 @@
         _SelectedCategory = null;
     }
 
+    private void CloseCatDropdownIfOpen()
+    {
+        // Fires for clicks anywhere inside the modal that are NOT inside the
+        // category picker itself (that subtree stops propagation before
+        // reaching here). Covers the gap left by onblur, which doesn't fire
+        // reliably when clicking non-focusable empty space in the modal.
+        if (_CatOpen) _CatOpen = false;
+    }
+
     private void Confirm()
     {
         if (!_CanConfirm) return;
 
         ProjectDto project = _ProjectState.CurrentProject!;
-        LocalizationKeyDto key = new LocalizationKeyDto
-        {
-            ProjectId  = project.Id,
-            CategoryId = _SelectedCategory!.Id,
-            KeyName    = _KeyName.Trim(),
-        };
-        project.Keys.Add(key);
-        _ProjectState.MarkDirty();
 
-        _Visible = false;
-        OnCreated.InvokeAsync(key.Id);
+        if (_EditingKey == null)
+        {
+            LocalizationKeyDto key = new LocalizationKeyDto
+            {
+                ProjectId  = project.Id,
+                CategoryId = _SelectedCategory!.Id,
+                KeyName    = _KeyName.Trim(),
+            };
+            project.Keys.Add(key);
+            _ProjectState.MarkDirty();
+
+            _Visible = false;
+            OnCreated.InvokeAsync(key.Id);
+        }
+        else
+        {
+            _EditingKey.KeyName    = _KeyName.Trim();
+            _EditingKey.CategoryId = _SelectedCategory!.Id;
+            _EditingKey.UpdatedAt  = DateTime.UtcNow;
+            _ProjectState.MarkDirty();
+
+            _Visible = false;
+            OnCreated.InvokeAsync(_EditingKey.Id);
+        }
     }
 
     private void Cancel() => _Visible = false;

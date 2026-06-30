@@ -4,7 +4,7 @@
 
 <div class="kd-root">
 
-    @if (SelectedKeyId == null || SelectedKey == null)
+    @if (SelectedKeyId == null || _SelectedKey == null)
     {
         <div class="kd-empty">
             <i class="bi bi-key kd-empty-icon"></i>
@@ -19,72 +19,71 @@
             <div class="kd-header">
                 <div class="kd-header-top">
                     <div class="kd-header-title-row">
-                        <span class="kd-key-name">@FullKeyName(SelectedKey)</span>
-                        <span class="kd-status-tag @StatusTagClass">@StatusTagLabel</span>
+                        <span class="kd-key-name">@FullKeyName(_SelectedKey)</span>
+                        <span class="kd-status-tag @_StatusTagClass">@_StatusTagLabel</span>
                     </div>
                     <div class="kd-header-dates">
-                        <span title="Created">Created @SelectedKey.CreatedAt.ToString("MMM d, yyyy")</span>
+                        <span title="Created">Created @_SelectedKey.CreatedAt.ToString("MMM d, yyyy")</span>
                         <span class="kd-dates-sep">·</span>
-                        <span title="Last updated">Updated @SelectedKey.UpdatedAt.ToString("MMM d, yyyy")</span>
+                        <span title="Last updated">Updated @_SelectedKey.UpdatedAt.ToString("MMM d, yyyy")</span>
                     </div>
                 </div>
 
-                <KeyFlagsBar Key="@SelectedKey" OnChanged="StateHasChanged" />
+                <KeyFlagsBar Key="@_SelectedKey" OnChanged="StateHasChanged"/>
             </div>
 
             @* ── Description ─────────────────────────────────────────────── *@
-            <KeyDescriptionBlock Key="@SelectedKey" OnChanged="StateHasChanged" />
+            <KeyDescriptionBlock Key="@_SelectedKey" OnChanged="StateHasChanged"/>
 
             @* ── Tags ─────────────────────────────────────────────────────── *@
-            <KeyTagsBar Key="@SelectedKey" OnChanged="StateHasChanged" />
+            <KeyTagsBar Key="@_SelectedKey" OnChanged="StateHasChanged"/>
 
             @* ── Translation editor ──────────────────────────────────────── *@
-            <TranslationEditor Key="@SelectedKey" SelectedLanguage="@SelectedLanguage" OnChanged="StateHasChanged" />
+            <TranslationEditor Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage" OnChanged="StateHasChanged"/>
 
             @* ── Preview ──────────────────────────────────────────────────── *@
-            <PreviewSection Key="@SelectedKey" SelectedLanguage="@SelectedLanguage" />
+            <PreviewSection Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage"/>
 
             @* ── Suggestions ──────────────────────────────────────────────── *@
-            <SuggestionsSection Key="@SelectedKey" SelectedLanguage="@SelectedLanguage" OnChanged="StateHasChanged" />
+            <SuggestionsSection Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage" OnChanged="StateHasChanged"/>
 
             @* ── Variables ────────────────────────────────────────────────── *@
-            <VariablesSection Key="@SelectedKey" OnChanged="StateHasChanged" />
+            <VariablesSection Key="@_SelectedKey" OnChanged="StateHasChanged"/>
 
             @* ── History ──────────────────────────────────────────────────── *@
             <div class="kd-history-row">
                 <button class="kd-history-btn" @onclick="() => _HistoryModal?.Show()">
                     <i class="bi bi-clock-history"></i> View history
-                    <span class="kd-history-count">@SelectedKey.History.Count</span>
+                    <span class="kd-history-count">@_SelectedKey.History.Count</span>
                 </button>
             </div>
 
         </div>
 
-        <HistoryModal @ref="_HistoryModal" Key="@SelectedKey" />
+        <HistoryModal @ref="_HistoryModal" Key="@_SelectedKey"/>
     }
 
 </div>
 
 @code {
     [Parameter] public string SelectedLanguage { get; set; } = "";
-    [Parameter] public Guid? SelectedKeyId { get; set; }
+    [Parameter] public Guid?  SelectedKeyId    { get; set; }
 
     private HistoryModal? _HistoryModal;
 
-    private LocalizationKeyDto? SelectedKey =>
-        SelectedKeyId == null ? null : _ProjectState.CurrentProject!.Keys.Find(k => k.Id == SelectedKeyId);
+    private LocalizationKeyDto? _SelectedKey => SelectedKeyId == null ? null : _ProjectState.CurrentProject!.Keys.Find(k => k.Id == SelectedKeyId);
 
     private string FullKeyName(LocalizationKeyDto key)
     {
-        var project = _ProjectState.CurrentProject!;
-        var cat = project.Categories.Find(c => c.Id == key.CategoryId);
+        ProjectDto   project = _ProjectState.CurrentProject!;
+        CategoryDto? cat     = project.Categories.Find(c => c.Id == key.CategoryId);
         if (cat == null) return key.KeyName;
 
-        var parts = new List<string> { cat.Name };
-        var current = cat;
+        List<string> parts   = [cat.Name];
+        CategoryDto  current = cat;
         while (current.ParentCategoryId != null)
         {
-            var parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
+            CategoryDto? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
             if (parent == null) break;
             parts.Insert(0, parent.Name);
             current = parent;
@@ -92,29 +91,30 @@
         return $"{string.Join("/", parts)}.{key.KeyName}";
     }
 
-    private string StatusTagLabel
+    private string _StatusTagLabel
     {
         get
         {
-            var key = SelectedKey!;
+            LocalizationKeyDto key = _SelectedKey!;
             if (key.Flags.Any(f => f.Type == FlagType.NeedsReview)) return "Needs review";
-            var t = key.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
+            TranslationDto? t = key.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
             if (t == null || string.IsNullOrEmpty(t.Text)) return "Untranslated";
             if (t.NeedsAttention) return "Needs review";
             return t.Status switch
             {
                 TranslationStatus.Approved  => "Approved",
                 TranslationStatus.Suggested => "Suggested",
-                _ => "Draft",
+                _                           => "Draft",
             };
         }
     }
 
-    private string StatusTagClass => StatusTagLabel switch
+    private string _StatusTagClass => _StatusTagLabel switch
     {
-        "Approved"      => "kd-status-ok",
-        "Needs review"  => "kd-status-warn",
-        "Untranslated"  => "kd-status-empty",
-        _               => "kd-status-draft",
+        "Approved"     => "kd-status-ok",
+        "Needs review" => "kd-status-warn",
+        "Untranslated" => "kd-status-empty",
+        _              => "kd-status-draft",
     };
+
 }
