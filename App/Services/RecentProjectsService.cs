@@ -26,7 +26,7 @@ public static class RecentProjectsService
         Preferences.Default.Remove(_RECENT_PROJECTS_KEY);
     }
 
-    public static List<RecentProjectEntry> UpdateRecentProjects(ProjectDto project, string path)
+    public static List<RecentProjectEntry> UpdateRecentProjects(ProjectDto project, string path, bool isRemote)
     {
         List<RecentProjectEntry> projects = LoadRecentProjects();
 
@@ -34,28 +34,23 @@ public static class RecentProjectsService
         int pct = 0;
         if (project is { Languages.Count: > 1, Keys.Count: > 0 })
         {
-            int nonMainLangs = project.Languages.Count - 1;
-            int totalSlots   = project.Keys.Count * nonMainLangs;
-            int translated = project.Keys
-                                    .SelectMany(k => k.Translations)
-                                    .Count(t => t.LanguageId != project.MainLanguageId
-                                             && project.Languages.Contains(t.LanguageId)
-                                             && t.Status == TranslationStatus.Approved
-                                             && !string.IsNullOrEmpty(t.Text));
+            int totalSlots = project.Keys.Count * project.Languages.Count;
+            int translated = project.NumberOfApprovedKeys;
             pct = totalSlots > 0 ? (int)Math.Round(translated * 100.0 / totalSlots) : 0;
         }
 
-        projects.RemoveAll(r => r.FilePath == path);
+        projects.RemoveAll(r => r.Path == path);
         projects.Insert(0, new RecentProjectEntry
         {
             ProjectName    = project.Name,
-            FilePath       = path,
+            Path           = path,
             KeyCount       = project.Keys.Count,
             LangCount      = project.Languages.Count,
             TranslationPct = pct,
-            LastOpened     = DateTime.Now,
-            IsRemote       = false,
+            LastEdited     = project.UpdatedAt,
+            IsRemote       = isRemote
         });
+
         if (projects.Count > _MAX_RECENT_PROJECTS)
             projects = projects.GetRange(0, _MAX_RECENT_PROJECTS);
 
@@ -67,23 +62,23 @@ public static class RecentProjectsService
 public record RecentProjectEntry
 {
     public string   ProjectName    { get; init; } = "";
-    public string   FilePath       { get; init; } = "";
+    public string   Path           { get; init; } = "";
     public int      KeyCount       { get; init; }
     public int      LangCount      { get; init; }
     public int      TranslationPct { get; init; }
-    public DateTime LastOpened     { get; init; } = DateTime.Now;
+    public DateTime LastEdited     { get; init; } = DateTime.Now;
     public bool     IsRemote       { get; init; }
 
-    public string LastOpenedLabel
+    public string LastEditedLabel
     {
         get
         {
-            TimeSpan diff = DateTime.Now - LastOpened;
+            TimeSpan diff = DateTime.Now - LastEdited;
             if (diff.TotalMinutes < 2) return "just now";
             if (diff.TotalHours < 1) return $"{(int)diff.TotalMinutes}m ago";
             if (diff.TotalDays < 1) return $"{(int)diff.TotalHours}h ago";
             if (diff.TotalDays < 7) return $"{(int)diff.TotalDays}d ago";
-            return LastOpened.ToString("MMM d");
+            return LastEdited.ToString("MMM d");
         }
     }
 }

@@ -94,11 +94,11 @@
                     string             swatch  = swatches[x % swatches.Length];
                     int                pct     = recent.TranslationPct;
                     string meta = recent.KeyCount > 0
-                                      ? $"{recent.KeyCount} keys · {recent.LangCount} langs · {recent.LastOpenedLabel}"
-                                      : recent.LastOpenedLabel;
+                                      ? $"{recent.KeyCount} keys · {recent.LangCount} langs · {recent.LastEditedLabel}"
+                                      : recent.LastEditedLabel;
 
                     <button class="home-recent-item"
-                            @onclick="() => LoadRecentProject(recent.FilePath)"
+                            @onclick="() => LoadRecentProject(recent)"
                             disabled="@_IsLoading">
                         <div class="home-recent-swatch" style="background: @swatch">@initial</div>
                         <div class="home-recent-meta">
@@ -146,7 +146,7 @@
     protected override void OnInitialized()
     {
         _ProjectState.ProjectChanged += OnProjectChanged;
-        _RecentProjects = RecentProjectsService.LoadRecentProjects();
+        _RecentProjects              =  RecentProjectsService.LoadRecentProjects();
     }
 
     public void Dispose() => _ProjectState.ProjectChanged -= OnProjectChanged;
@@ -171,8 +171,7 @@
                 }),
             });
 
-            if (result is not null)
-                await LoadFromPath(result.FullPath);
+            if (result is not null) await LoadFromPath(result.FullPath);
         }
         catch (Exception ex)
         {
@@ -188,9 +187,11 @@
 
         try
         {
+            _ProjectState.LoginAsOffline();
             ProjectDto project = await DlocFileService.LoadAsync(path);
+            project.UpdatedAt = DateTime.UtcNow;
             _ProjectState.LoadProject(project, path);
-            _RecentProjects = RecentProjectsService.UpdateRecentProjects(project, path);
+            _RecentProjects = RecentProjectsService.UpdateRecentProjects(project, path, false);
             _Nav.NavigateTo("/translate");
         }
         catch (DlocFormatException ex)
@@ -207,7 +208,11 @@
         }
     }
 
-    private async Task LoadRecentProject(string filePath) => await LoadFromPath(filePath);
+    private async Task LoadRecentProject(RecentProjectEntry recent)
+    {
+        if (recent.IsRemote) Console.WriteLine("Non implemented yet!");
+        else await LoadFromPath(recent.Path);
+    }
 
     private NewProjectModal? _NewProjectModal;
 
@@ -215,6 +220,8 @@
 
     private void OnNewProjectConfirmed(NewProjectModal.NewProjectArgs args)
     {
+        _ProjectState.LoginAsOffline();
+
         ProjectDto project = new ProjectDto
         {
             Name        = args.Name,
@@ -224,9 +231,10 @@
             [
                 new ProjectMemberDto
                 {
-                    UserId      = _ProjectState.CurrentUser.Id,
-                    DisplayName = _ProjectState.CurrentUser.DisplayName,
-                    Permissions = PermissionFlags.Admin,
+                    UserId       = _ProjectState.CurrentUser.Id,
+                    DisplayName  = _ProjectState.CurrentUser.DisplayName,
+                    Permissions  = PermissionFlags.All,
+                    IsSuperAdmin = true
                 }
             ],
         };
@@ -237,10 +245,11 @@
         _ProjectState.CreateNewProject(project);
         _Nav.NavigateTo("/translate");
     }
-    
+
     private void ClearRecentProjects()
     {
         _RecentProjects.Clear();
         RecentProjectsService.ClearRecentProjects();
     }
+
 }

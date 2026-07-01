@@ -223,7 +223,7 @@
             _ProjectState.MarkClean();
         }
 
-        if (!string.IsNullOrEmpty(_ProjectState.CurrentFilePath)) RecentProjectsService.UpdateRecentProjects(project, _ProjectState.CurrentFilePath!);
+        if (!string.IsNullOrEmpty(_ProjectState.CurrentFilePath)) RecentProjectsService.UpdateRecentProjects(project, _ProjectState.CurrentFilePath!, false); // TODO: Fix
         StateHasChanged();
     }
 

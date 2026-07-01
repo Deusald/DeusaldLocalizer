@@ -106,7 +106,7 @@
     private string? _PasswordMessage;
 
     private bool _IsAdmin      => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
-    private bool _IsSuperAdmin => _ProjectState.CurrentUserHas(PermissionFlags.SuperAdmin);
+    private bool _IsSuperAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin); // TODO: Fix it
 
     public void Show()
     {

@@ -71,8 +71,8 @@ public class ProjectStateService
             await DlocFileService.SaveToStreamAsync(CurrentProject!, stream);
             stream.Position = 0;
 
-            string fileName = string.IsNullOrEmpty(CurrentProject!.Slug) ? "project" : CurrentProject.Slug;
-            FileSaverResult    result   = await FileSaver.Default.SaveAsync($"{fileName}{DlocFileService.FILE_EXTENSION}", stream);
+            string          fileName = string.IsNullOrEmpty(CurrentProject!.Slug) ? "project" : CurrentProject.Slug;
+            FileSaverResult result   = await FileSaver.Default.SaveAsync($"{fileName}{DlocFileService.FILE_EXTENSION}", stream);
 
             if (result.IsSuccessful)
             {
@@ -85,6 +85,8 @@ public class ProjectStateService
             await DlocFileService.SaveAsync(CurrentProject!, CurrentFilePath);
             MarkClean();
         }
+
+        RecentProjectsService.UpdateRecentProjects(CurrentProject!, CurrentFilePath!, false);
     }
 
     public void CreateNewProject(ProjectDto project)
@@ -130,6 +132,11 @@ public class ProjectStateService
         DirtyStateChanged?.Invoke();
     }
 
+    public void LoginAsOffline()
+    {
+        CurrentUser = UserDto.CreateOfflineUser();
+    }
+    
     /// <summary>
     /// Returns the member record for the current user in the open project,
     /// or null if the user is not a member (or no project is open).

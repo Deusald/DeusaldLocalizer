@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DeusaldLocalizerCommon
 {
@@ -20,13 +21,22 @@ namespace DeusaldLocalizerCommon
         /// <summary>BCP-47 codes of every language in this project (includes the main language).</summary>
         public List<string> Languages { get; set; } = new();
 
-        public List<ProjectMemberDto>   Members    { get; set; } = new();
-        public List<CategoryDto>        Categories { get; set; } = new();
-        public List<LocalizationKeyDto> Keys       { get; set; } = new();
+        public List<ProjectMemberDto>   Members              { get; set; } = new();
+        public List<CategoryDto>        Categories           { get; set; } = new();
+        public List<LocalizationKeyDto> Keys                 { get; set; } = new();
+        public int                      NumberOfApprovedKeys { get; set; }
 
         /// <summary>Project-level enum type definitions used by EnumInt/EnumString variables.</summary>
         public List<LocEnumDto> Enums { get; set; } = new();
 
         public List<HistoryEntryDto> ProjectHistory { get; set; } = new();
+
+        public void CalculateNumberOfApprovedKeys()
+        {
+            NumberOfApprovedKeys = Keys
+                                  .SelectMany(k => k.Translations)
+                                  .Count(t => Languages.Contains(t.LanguageId)
+                                           && t.Status == TranslationStatus.Approved);
+        }
     }
 }

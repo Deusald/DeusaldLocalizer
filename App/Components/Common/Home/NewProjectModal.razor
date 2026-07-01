@@ -24,7 +24,7 @@
                        placeholder="My Awesome Game"
                        value="@_Name"
                        @oninput="OnNameInput"
-                       maxlength="100" />
+                       maxlength="100"/>
             </div>
 
             @* ── Slug ──────────────────────────────────────────────────── *@
@@ -38,7 +38,7 @@
                        placeholder="my-awesome-game"
                        @bind="_Slug"
                        @bind:event="oninput"
-                       maxlength="80" />
+                       maxlength="80"/>
                 @if (!string.IsNullOrEmpty(_Slug) && !IsValidSlug(_Slug))
                 {
                     <div class="modal-field-error">Only lowercase letters, numbers and hyphens</div>
@@ -57,7 +57,7 @@
                                @bind="_LangQuery"
                                @bind:event="oninput"
                                @onfocus="() => _LangOpen = true"
-                               @onblur="OnLangBlur" />
+                               @onblur="OnLangBlur"/>
                         @if (_SelectedCulture != null)
                         {
                             <span class="modal-lang-selected-badge">
@@ -78,7 +78,7 @@
                             {
                                 @foreach (var c in results.Take(80))
                                 {
-                                    var entry = c;
+                                    var  entry  = c;
                                     bool active = _SelectedCulture?.Code == entry.Code;
                                     <button class="modal-lang-item @(active ? "active" : "")"
                                             @onclick="() => SelectLanguage(entry)"
@@ -131,7 +131,7 @@
 
 @code {
     [Parameter] public EventCallback<NewProjectArgs> OnConfirm { get; set; }
-    [Parameter] public EventCallback               OnCancel  { get; set; }
+    [Parameter] public EventCallback                 OnCancel  { get; set; }
 
     // ── State ──────────────────────────────────────────────────────────────
 
@@ -147,13 +147,13 @@
 
     public void Show()
     {
-        _Name           = "";
-        _Slug           = "";
-        _Description    = "";
-        _LangQuery      = "";
-        _LangOpen       = false;
+        _Name            = "";
+        _Slug            = "";
+        _Description     = "";
+        _LangQuery       = "";
+        _LangOpen        = false;
         _SelectedCulture = CultureService.FindByCode("en-US"); // sensible default
-        _Visible        = true;
+        _Visible         = true;
         StateHasChanged();
     }
 
@@ -221,4 +221,5 @@
         string Slug,
         string Description,
         string MainLanguageCode);
+
 }
