@@ -86,6 +86,20 @@
             }
         </div>
 
+        @if (_IsHashStale)
+        {
+            <div class="te-stale-warning">
+                <i class="bi bi-exclamation-triangle"></i>
+                Source has changed since this translation was last saved.
+                @if (_CanConfirmMatch)
+                {
+                    <button class="te-source-matched-btn" @onclick="MarkSourceMatched">
+                        Source matched
+                    </button>
+                }
+            </div>
+        }
+
         @if (_CanEditTranslation)
         {
             <div class="te-actions">
@@ -191,6 +205,23 @@
     private bool _TranslationOverLimit =>
         Key.MaxLength > 0 && _TranslationDraft.Length > Key.MaxLength;
 
+    /// <summary>True when the translation's BaseTextHash no longer matches the current source hash.</summary>
+    private bool _IsHashStale
+    {
+        get
+        {
+            if (_IsSourceLanguageSelected) return false;
+            TranslationDto? t = Key.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
+            if (t == null || string.IsNullOrEmpty(t.BaseTextHash)) return false;
+            TranslationDto? src = Key.Translations.Find(tr => tr.LanguageId == _SourceLangCode);
+            return t.BaseTextHash != TextHashHelper.Compute(src?.Text ?? "");
+        }
+    }
+
+    private bool _CanConfirmMatch =>
+        _ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
+        || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+
     private bool _HasSourceChanges
     {
         get
@@ -234,11 +265,31 @@
         if (source.Text == _SourceDraft) return;
 
         string oldText = source.Text;
-        
+        string oldHash = TextHashHelper.Compute(oldText);
+        string newHash = TextHashHelper.Compute(_SourceDraft);
+
         source.Text      = _SourceDraft;
         source.UpdatedBy = _ProjectState.CurrentUser.Id;
         source.UpdatedAt = DateTime.UtcNow;
         source.Status    = TranslationStatus.Approved;
+
+        // Update the source's own hash (it's always considered "matching itself")
+        source.BaseTextHash = newHash;
+
+        // Mark every other-language translation as needing attention if their
+        // BaseTextHash was based on the old source and the source actually changed.
+        if (oldHash != newHash)
+        {
+            foreach (TranslationDto other in Key.Translations)
+            {
+                if (other.LanguageId == _SourceLangCode) continue;
+                // Only flag if it had a hash recorded (i.e. was based on some source version)
+                if (!string.IsNullOrEmpty(other.BaseTextHash))
+                {
+                    other.NeedsAttention = true;
+                }
+            }
+        }
 
         Key.History.Add(new HistoryEntryDto
         {
@@ -250,7 +301,7 @@
             UserId         = _ProjectState.CurrentUser.Id,
             UserName       = _ProjectState.CurrentUser.DisplayName
         });
-        
+
         Key.UpdatedAt = DateTime.UtcNow;
         _ProjectState.MarkDirty();
         await OnChanged.InvokeAsync();
@@ -279,9 +330,9 @@
             AuthorName    = _ProjectState.CurrentUser.DisplayName,
             Status        = SuggestionStatus.Pending,
         };
-        
+
         translation.Suggestions.Add(suggestionDto);
-        
+
         Key.History.Add(new HistoryEntryDto
         {
             EntityPartName = $"Translation-Suggestion/{translation.LanguageId}",
@@ -310,11 +361,15 @@
         }
 
         string oldText = translation.Text;
-        
+
         translation.Text           = _TranslationDraft;
         translation.UpdatedBy      = _ProjectState.CurrentUser.Id;
         translation.UpdatedAt      = DateTime.UtcNow;
         translation.NeedsAttention = false;
+
+        // Record which version of the source this translation was based on
+        TranslationDto? currentSource = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        translation.BaseTextHash = TextHashHelper.Compute(currentSource?.Text ?? "");
 
         Key.History.Add(new HistoryEntryDto
         {
@@ -326,12 +381,40 @@
             UserId         = _ProjectState.CurrentUser.Id,
             UserName       = _ProjectState.CurrentUser.DisplayName
         });
-        
+
         // Contributors without Reviewer/Admin leave it as Draft; reviewers/admins approve directly.
         translation.Status = (_ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
                               || _ProjectState.CurrentUserHas(PermissionFlags.Admin))
                                  ? TranslationStatus.Approved
                                  : TranslationStatus.Draft;
+
+        Key.UpdatedAt = DateTime.UtcNow;
+        _ProjectState.MarkDirty();
+        await OnChanged.InvokeAsync();
+    }
+
+    private async Task MarkSourceMatched()
+    {
+        if (!_CanConfirmMatch) return;
+
+        TranslationDto? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        if (translation == null) return;
+
+        TranslationDto? src = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        translation.BaseTextHash   = TextHashHelper.Compute(src?.Text ?? "");
+        translation.NeedsAttention = false;
+        translation.UpdatedAt      = DateTime.UtcNow;
+
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = $"Translation-Hash/{translation.LanguageId}",
+            EntityPartId   = translation.Id,
+            ChangeType     = HistoryChangeType.Updated,
+            OldValue       = string.Empty,
+            NewValue       = "Source confirmed as still accurate",
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
 
         Key.UpdatedAt = DateTime.UtcNow;
         _ProjectState.MarkDirty();
@@ -361,9 +444,9 @@
             AuthorName    = _ProjectState.CurrentUser.DisplayName,
             Status        = SuggestionStatus.Pending,
         };
-        
+
         translation.Suggestions.Add(suggestionDto);
-        
+
         Key.History.Add(new HistoryEntryDto
         {
             EntityPartName = $"Translation-Suggestion/{translation.LanguageId}",
