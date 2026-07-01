@@ -182,6 +182,16 @@
         if (project.Languages.Contains(code)) return;
         project.Languages.Add(code);
         if (project.Languages.Count == 1) project.MainLanguageId = code;
+        project.ProjectHistory.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Languages",
+            EntityPartId   = project.Id,
+            ChangeType     = HistoryChangeType.Created,
+            OldValue       = string.Empty,
+            NewValue       = code,
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
         _ProjectState.MarkDirty();
         ExitAddMode();
     }
@@ -195,12 +205,24 @@
         // this code are intentionally left untouched on each key, so the data
         // reappears automatically if the language is added back later.
         project.Languages.Remove(code);
+        
+        project.ProjectHistory.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Languages",
+            EntityPartId   = project.Id,
+            ChangeType     = HistoryChangeType.Deleted,
+            OldValue       = code,
+            NewValue       = string.Empty,
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+        
         _ProjectState.MarkDirty();
 
         if (SelectedLanguage == code)
         {
             string fallback = project.Languages.Find(l => l != project.MainLanguageId)
-                           ?? project.MainLanguageId;
+                              ?? project.MainLanguageId;
             await OnLanguageSelected.InvokeAsync(fallback);
         }
     }
@@ -209,9 +231,10 @@
     {
         InvokeAsync(StateHasChanged);
     }
-    
+
     public void Dispose()
     {
         _ProjectState.ProjectDataChanged -= OnProjectDataChanged;
     }
+
 }

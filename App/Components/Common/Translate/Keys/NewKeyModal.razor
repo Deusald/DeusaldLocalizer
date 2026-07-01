@@ -1,6 +1,7 @@
 ﻿@namespace App.Components.Translate
 @using System.Text.RegularExpressions
 @using DeusaldLocalizerCommon
+@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 @if (_Visible)
@@ -261,6 +262,18 @@
                 MaxLength  = Math.Max(0, _MaxLength),
             };
             project.Keys.Add(key);
+
+            project.ProjectHistory.Add(new HistoryEntryDto
+            {
+                EntityPartName = "Keys",
+                EntityPartId   = key.Id,
+                ChangeType     = HistoryChangeType.Created,
+                OldValue       = string.Empty,
+                NewValue       = JsonConvert.SerializeObject(key),
+                UserId         = _ProjectState.CurrentUser.Id,
+                UserName       = _ProjectState.CurrentUser.DisplayName
+            });
+
             _ProjectState.MarkDirty();
 
             _Visible = false;
@@ -268,12 +281,28 @@
         }
         else
         {
+            string oldBaseValues = JsonConvert.SerializeObject((_EditingKey.KeyName, _EditingKey.CategoryId, _EditingKey.MaxLength, _EditingKey.UpdatedAt));
+
             _EditingKey.KeyName    = _KeyName.Trim();
             _EditingKey.CategoryId = _SelectedCategory!.Id;
             _EditingKey.MaxLength  = Math.Max(0, _MaxLength);
             _EditingKey.UpdatedAt  = DateTime.UtcNow;
-            _ProjectState.MarkDirty();
 
+            string newBaseValues = JsonConvert.SerializeObject((_EditingKey.KeyName, _EditingKey.CategoryId, _EditingKey.MaxLength, _EditingKey.UpdatedAt));
+            
+            _EditingKey.History.Add(new HistoryEntryDto
+            {
+                EntityPartName = "BaseValues",
+                EntityPartId   = _EditingKey.Id,
+                ChangeType     = HistoryChangeType.Updated,
+                OldValue       = oldBaseValues,
+                NewValue       = newBaseValues,
+                UserId         = _ProjectState.CurrentUser.Id,
+                UserName       = _ProjectState.CurrentUser.DisplayName
+            });
+
+            _ProjectState.MarkDirty();
+            
             _Visible = false;
             OnCreated.InvokeAsync(_EditingKey.Id);
         }

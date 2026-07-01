@@ -1,0 +1,137 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+
+@if (_Visible)
+{
+    <div class="hm-backdrop" @onclick="Close"></div>
+
+    <div class="hm-box" @onclick:stopPropagation="true">
+        <div class="hm-header">
+            <span class="hm-title">Key history</span>
+            <button class="hm-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="hm-body">
+            @if (Key.History.Count == 0)
+            {
+                <div class="hm-empty">No history recorded yet.</div>
+            }
+            else
+            {
+                @foreach (HistoryEntryDto entry in Key.History.OrderByDescending(h => h.Timestamp))
+                {
+                    bool expanded = _ExpandedIds.Contains(entry.Id);
+                    bool hasDiff  = !string.IsNullOrEmpty(entry.OldValue) || !string.IsNullOrEmpty(entry.NewValue);
+
+                    <div class="hm-entry">
+                        <div class="hm-entry-icon @IconClass(entry.ChangeType)">
+                            <i class="bi @IconGlyph(entry.ChangeType)"></i>
+                        </div>
+                        <div class="hm-entry-body">
+                            <div class="hm-entry-top">
+                                <div class="hm-entry-title">
+                                    <strong>@entry.UserName</strong>
+                                    @ActionLabel(entry)
+                                    @if (!string.IsNullOrEmpty(entry.EntityPartName))
+                                    {
+                                        <span class="hm-entry-part">@entry.EntityPartName</span>
+                                    }
+                                </div>
+                                @if (hasDiff)
+                                {
+                                    <button class="hm-toggle-btn" @onclick="() => ToggleExpand(entry.Id)">
+                                        <i class="bi @(expanded ? "bi-chevron-up" : "bi-chevron-down")"></i>
+                                    </button>
+                                }
+                            </div>
+                            <div class="hm-entry-time">@RelativeTime(entry.Timestamp)</div>
+
+                            @if (expanded && hasDiff)
+                            {
+                                <div class="hm-diff">
+                                    @if (!string.IsNullOrEmpty(entry.OldValue))
+                                    {
+                                        <div class="hm-diff-block hm-diff-old">
+                                            <span class="hm-diff-label">Before</span>
+                                            <pre class="hm-diff-value">@entry.OldValue</pre>
+                                        </div>
+                                    }
+                                    @if (!string.IsNullOrEmpty(entry.NewValue))
+                                    {
+                                        <div class="hm-diff-block hm-diff-new">
+                                            <span class="hm-diff-label">After</span>
+                                            <pre class="hm-diff-value">@entry.NewValue</pre>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public LocalizationKeyDto Key { get; set; } = null!;
+
+    private bool         _Visible;
+    private HashSet<Guid> _ExpandedIds = new();
+
+    public void Show()
+    {
+        _ExpandedIds.Clear();
+        _Visible = true;
+        StateHasChanged();
+    }
+
+    private void Close() => _Visible = false;
+
+    private void ToggleExpand(Guid id)
+    {
+        if (!_ExpandedIds.Remove(id))
+            _ExpandedIds.Add(id);
+    }
+
+    private static string ActionLabel(HistoryEntryDto e) => e.ChangeType switch
+    {
+        HistoryChangeType.Created       => "created",
+        HistoryChangeType.Updated       => "updated",
+        HistoryChangeType.Deleted       => "deleted",
+        HistoryChangeType.StatusChanged => "changed status of",
+        HistoryChangeType.Approved      => "approved",
+        HistoryChangeType.Rejected      => "rejected",
+        _                               => "modified",
+    };
+
+    private static string IconGlyph(HistoryChangeType type) => type switch
+    {
+        HistoryChangeType.Created       => "bi-plus-circle",
+        HistoryChangeType.Updated       => "bi-pencil",
+        HistoryChangeType.Deleted       => "bi-trash3",
+        HistoryChangeType.StatusChanged => "bi-arrow-repeat",
+        HistoryChangeType.Approved      => "bi-check-circle",
+        HistoryChangeType.Rejected      => "bi-x-circle",
+        _                               => "bi-clock-history",
+    };
+
+    private static string IconClass(HistoryChangeType type) => type switch
+    {
+        HistoryChangeType.Approved => "hm-icon-ok",
+        HistoryChangeType.Rejected => "hm-icon-danger",
+        HistoryChangeType.Deleted  => "hm-icon-danger",
+        HistoryChangeType.Created  => "hm-icon-created",
+        _                          => "hm-icon-default",
+    };
+
+    private static string RelativeTime(DateTime time)
+    {
+        TimeSpan diff = DateTime.UtcNow - time;
+        if (diff.TotalMinutes < 1)  return "just now";
+        if (diff.TotalHours   < 1)  return $"{(int)diff.TotalMinutes}m ago";
+        if (diff.TotalDays    < 1)  return $"{(int)diff.TotalHours}h ago";
+        if (diff.TotalDays    < 30) return $"{(int)diff.TotalDays}d ago";
+        return time.ToString("MMM d, yyyy");
+    }
+}

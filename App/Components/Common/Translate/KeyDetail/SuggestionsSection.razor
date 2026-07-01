@@ -1,5 +1,6 @@
 ﻿@namespace App.Components.Translate
 @using DeusaldLocalizerCommon
+@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 @{ List<SuggestionDto> suggestions = _SuggestionsForLanguage; }
@@ -72,6 +73,7 @@
 
     private void Vote(SuggestionDto suggestion, int value)
     {
+        string oldJson = JsonConvert.SerializeObject(suggestion);
         SuggestionVoteDto? existing = suggestion.Votes.Find(v => v.UserId == _ProjectState.CurrentUser.Id);
         if (existing != null)
         {
@@ -95,6 +97,18 @@
                 Value        = value,
             });
         }
+        
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = $"Translation-Suggestion-Vote/{SelectedLanguage}",
+            EntityPartId   = suggestion.Id,
+            ChangeType     = HistoryChangeType.Updated,
+            OldValue       = oldJson,
+            NewValue       = JsonConvert.SerializeObject(suggestion),
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+        
         _ProjectState.MarkDirty();
         OnChanged.InvokeAsync();
     }
@@ -102,6 +116,7 @@
     private void Accept(SuggestionDto suggestion)
     {
         TranslationDto translation = Key.Translations.Find(t => t.Id == suggestion.TranslationId)!;
+        string         oldText     = translation.Text;
         translation.Text           = suggestion.Text;
         translation.Status         = TranslationStatus.Approved;
         translation.NeedsAttention = false;
@@ -111,6 +126,19 @@
         suggestion.Status = SuggestionStatus.Accepted;
         Key.UpdatedAt = DateTime.UtcNow;
 
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = $"Translation-Suggestion/{SelectedLanguage}",
+            EntityPartId   = suggestion.Id,
+            ChangeType     = HistoryChangeType.Approved,
+            OldValue       = oldText,
+            NewValue       = suggestion.Text,
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+
+        translation.Suggestions.Remove(suggestion);
+        
         _ProjectState.MarkDirty();
         OnChanged.InvokeAsync();
     }
@@ -120,13 +148,26 @@
         suggestion.Status = SuggestionStatus.Rejected;
         Key.UpdatedAt = DateTime.UtcNow;
 
-        TranslationDto? translation = Key.Translations.FirstOrDefault(t => t.LanguageId == SelectedLanguage);
+        TranslationDto translation = Key.Translations.First(t => t.LanguageId == SelectedLanguage);
         
         if (_SuggestionsForLanguage.Count(s => s.Status == SuggestionStatus.Pending) == 0
-         && translation?.Status == TranslationStatus.Approved)
+         && translation.Status == TranslationStatus.Approved)
         {
             translation.NeedsAttention = false;
         }
+        
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = $"Translation-Suggestion/{SelectedLanguage}",
+            EntityPartId   = suggestion.Id,
+            ChangeType     = HistoryChangeType.Rejected,
+            OldValue       = string.Empty,
+            NewValue       = suggestion.Text,
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+
+        translation.Suggestions.Remove(suggestion);
         
         _ProjectState.MarkDirty();
         OnChanged.InvokeAsync();

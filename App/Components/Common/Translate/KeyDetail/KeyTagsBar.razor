@@ -48,6 +48,18 @@
     private void RemoveTag(string tag)
     {
         Key.Tags.Remove(tag);
+        
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Tags",
+            EntityPartId   = Key.Id,
+            ChangeType     = HistoryChangeType.Deleted,
+            OldValue       = tag,
+            NewValue       = string.Empty,
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+        
         _ProjectState.MarkDirty();
         _Hovered = null;
         OnChanged.InvokeAsync();

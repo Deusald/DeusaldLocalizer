@@ -8,14 +8,14 @@ namespace DeusaldLocalizerCommon
     /// </summary>
     public class HistoryEntryDto
     {
-        public Guid              Id         { get; set; } = Guid.NewGuid();
-        public HistoryEntityType EntityType { get; set; }
-        public Guid              EntityId   { get; set; }
-        public HistoryChangeType ChangeType { get; set; }
-        public string            OldValue   { get; set; } = string.Empty; // JSON snapshot
-        public string            NewValue   { get; set; } = string.Empty; // JSON snapshot
-        public Guid              UserId     { get; set; }
-        public string            UserName   { get; set; } = string.Empty; // Denormalised
-        public DateTime          Timestamp  { get; set; } = DateTime.UtcNow;
+        public Guid              Id             { get; set; } = Guid.NewGuid();
+        public string            EntityPartName { get; set; } = string.Empty;
+        public Guid              EntityPartId   { get; set; }
+        public HistoryChangeType ChangeType     { get; set; }
+        public string            OldValue       { get; set; } = string.Empty; // JSON snapshot
+        public string            NewValue       { get; set; } = string.Empty; // JSON snapshot
+        public Guid              UserId         { get; set; }
+        public string            UserName       { get; set; } = string.Empty; // Denormalised
+        public DateTime          Timestamp      { get; set; } = DateTime.UtcNow;
     }
 }

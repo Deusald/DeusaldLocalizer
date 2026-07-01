@@ -1,0 +1,214 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+@if (_Visible)
+{
+    <div class="phm-backdrop" @onclick="Close"></div>
+
+    <div class="phm-box" @onclick:stopPropagation="true">
+
+        <div class="phm-header">
+            <span class="phm-title">Project history</span>
+            <button class="phm-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="phm-toolbar">
+            <div class="phm-search-wrap">
+                <i class="bi bi-search phm-search-icon"></i>
+                <input class="phm-search" type="text" placeholder="Search by user or entity…"
+                       @bind="_Filter" @bind:event="oninput"/>
+            </div>
+
+            <select class="phm-type-filter" @bind="_TypeFilter">
+                <option value="">All changes</option>
+                @foreach (HistoryChangeType t in Enum.GetValues(typeof(HistoryChangeType)))
+                {
+                    <option value="@t">@TypeLabel(t)</option>
+                }
+            </select>
+        </div>
+
+        <div class="phm-body">
+            @{ List<HistoryEntryDto> entries = _FilteredEntries; }
+            @if (entries.Count == 0)
+            {
+                <div class="phm-empty">
+                    @(_AllEntries.Count == 0 ? "No project history yet." : "No entries match the filter.")
+                </div>
+            }
+            else
+            {
+                @foreach (HistoryEntryDto entry in entries)
+                {
+                    bool expanded = _ExpandedIds.Contains(entry.Id);
+                    bool hasDiff  = !string.IsNullOrEmpty(entry.OldValue) || !string.IsNullOrEmpty(entry.NewValue);
+
+                    <div class="phm-entry">
+                        <div class="phm-entry-icon @IconClass(entry.ChangeType)">
+                            <i class="bi @IconGlyph(entry.ChangeType)"></i>
+                        </div>
+                        <div class="phm-entry-body">
+                            <div class="phm-entry-top">
+                                <div class="phm-entry-title">
+                                    <strong>@entry.UserName</strong>
+                                    @ActionLabel(entry)
+                                    @if (!string.IsNullOrEmpty(entry.EntityPartName))
+                                    {
+                                        <span class="phm-entry-part">@entry.EntityPartName</span>
+                                    }
+                                </div>
+                                @if (hasDiff)
+                                {
+                                    <button class="phm-toggle-btn" @onclick="() => ToggleExpand(entry.Id)">
+                                        <i class="bi @(expanded ? "bi-chevron-up" : "bi-chevron-down")"></i>
+                                    </button>
+                                }
+                            </div>
+                            <div class="phm-entry-time">@RelativeTime(entry.Timestamp)</div>
+
+                            @if (expanded && hasDiff)
+                            {
+                                <div class="phm-diff">
+                                    @if (!string.IsNullOrEmpty(entry.OldValue))
+                                    {
+                                        <div class="phm-diff-block phm-diff-old">
+                                            <span class="phm-diff-label">Before</span>
+                                            <pre class="phm-diff-value">@entry.OldValue</pre>
+                                        </div>
+                                    }
+                                    @if (!string.IsNullOrEmpty(entry.NewValue))
+                                    {
+                                        <div class="phm-diff-block phm-diff-new">
+                                            <span class="phm-diff-label">After</span>
+                                            <pre class="phm-diff-value">@entry.NewValue</pre>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+    </div>
+}
+
+@code {
+    private bool   _Visible;
+    private string _Filter     = "";
+    private string _TypeFilter = "";
+
+    private readonly HashSet<Guid> _ExpandedIds = new();
+
+    public void Show()
+    {
+        _Filter     = "";
+        _TypeFilter = "";
+        _ExpandedIds.Clear();
+        _Visible = true;
+        StateHasChanged();
+    }
+
+    private void Close() => _Visible = false;
+
+    private void ToggleExpand(Guid id)
+    {
+        if (!_ExpandedIds.Remove(id))
+            _ExpandedIds.Add(id);
+    }
+
+    // Aggregate history from the project-level list and all key histories
+    private List<HistoryEntryDto> _AllEntries
+    {
+        get
+        {
+            ProjectDto            project = _ProjectState.CurrentProject!;
+            List<HistoryEntryDto> all     = new List<HistoryEntryDto>(project.ProjectHistory);
+            foreach (LocalizationKeyDto key in project.Keys)
+                all.AddRange(key.History);
+            all.Sort((a, b) => b.Timestamp.CompareTo(a.Timestamp));
+            return all;
+        }
+    }
+
+    private List<HistoryEntryDto> _FilteredEntries
+    {
+        get
+        {
+            IEnumerable<HistoryEntryDto> entries = _AllEntries.AsEnumerable();
+
+            if (!string.IsNullOrWhiteSpace(_TypeFilter) &&
+                Enum.TryParse(_TypeFilter, out HistoryChangeType t))
+            {
+                entries = entries.Where(e => e.ChangeType == t);
+            }
+
+            if (!string.IsNullOrWhiteSpace(_Filter))
+            {
+                string q = _Filter.Trim().ToLowerInvariant();
+                entries = entries.Where(e =>
+                    e.UserName.ToLowerInvariant().Contains(q) ||
+                    e.EntityPartName.ToLowerInvariant().Contains(q) ||
+                    e.NewValue.ToLowerInvariant().Contains(q) ||
+                    e.OldValue.ToLowerInvariant().Contains(q));
+            }
+
+            return entries.ToList();
+        }
+    }
+
+    private static string ActionLabel(HistoryEntryDto e) => e.ChangeType switch
+    {
+        HistoryChangeType.Created       => "created",
+        HistoryChangeType.Updated       => "updated",
+        HistoryChangeType.Deleted       => "deleted",
+        HistoryChangeType.StatusChanged => "changed status of",
+        HistoryChangeType.Approved      => "approved",
+        HistoryChangeType.Rejected      => "rejected",
+        _                               => "modified",
+    };
+
+    private static string TypeLabel(HistoryChangeType t) => t switch
+    {
+        HistoryChangeType.Created       => "Created",
+        HistoryChangeType.Updated       => "Updated",
+        HistoryChangeType.Deleted       => "Deleted",
+        HistoryChangeType.StatusChanged => "Status change",
+        HistoryChangeType.Approved      => "Approved",
+        HistoryChangeType.Rejected      => "Rejected",
+        _                               => t.ToString(),
+    };
+
+    private static string IconGlyph(HistoryChangeType type) => type switch
+    {
+        HistoryChangeType.Created       => "bi-plus-circle",
+        HistoryChangeType.Updated       => "bi-pencil",
+        HistoryChangeType.Deleted       => "bi-trash3",
+        HistoryChangeType.StatusChanged => "bi-arrow-repeat",
+        HistoryChangeType.Approved      => "bi-check-circle",
+        HistoryChangeType.Rejected      => "bi-x-circle",
+        _                               => "bi-clock-history",
+    };
+
+    private static string IconClass(HistoryChangeType type) => type switch
+    {
+        HistoryChangeType.Approved => "phm-icon-ok",
+        HistoryChangeType.Rejected => "phm-icon-danger",
+        HistoryChangeType.Deleted  => "phm-icon-danger",
+        HistoryChangeType.Created  => "phm-icon-created",
+        _                          => "phm-icon-default",
+    };
+
+    private static string RelativeTime(DateTime time)
+    {
+        TimeSpan diff = DateTime.UtcNow - time;
+        if (diff.TotalMinutes < 1) return "just now";
+        if (diff.TotalHours < 1) return $"{(int)diff.TotalMinutes}m ago";
+        if (diff.TotalDays < 1) return $"{(int)diff.TotalHours}h ago";
+        if (diff.TotalDays < 30) return $"{(int)diff.TotalDays}d ago";
+        return time.ToString("MMM d, yyyy");
+    }
+
+}

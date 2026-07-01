@@ -95,6 +95,18 @@
         if (string.IsNullOrEmpty(tag) || Key.Tags.Contains(tag)) return;
 
         Key.Tags.Add(tag);
+        
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Tags",
+            EntityPartId   = Key.Id,
+            ChangeType     = HistoryChangeType.Created,
+            OldValue       = string.Empty,
+            NewValue       = tag,
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+        
         _ProjectState.MarkDirty();
         _Visible = false;
         OnAdded.InvokeAsync();

@@ -1,6 +1,7 @@
 ﻿@namespace App.Components.Translate
 @using DeusaldLocalizerCommon
 @using DeusaldSharp
+@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 @if (_Visible)
@@ -64,13 +65,27 @@
     {
         if (_Selected == null) return;
 
-        Key.Flags.Add(new KeyFlagDto
+        KeyFlagDto newFlag = new KeyFlagDto
         {
             KeyId     = Key.Id,
             Type      = _Selected.Value,
             Note      = _Note.Trim(),
             CreatedBy = _ProjectState.CurrentUser.Id,
+        };
+        
+        Key.Flags.Add(newFlag);
+        
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Flags",
+            EntityPartId   = newFlag.Id,
+            ChangeType     = HistoryChangeType.Created,
+            OldValue       = string.Empty,
+            NewValue       = JsonConvert.SerializeObject(newFlag),
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
         });
+        
         _ProjectState.MarkDirty();
 
         _Visible = false;

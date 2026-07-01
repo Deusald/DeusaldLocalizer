@@ -39,10 +39,28 @@
 
     private async Task Save()
     {
+        string oldDescription = Key.Description;
+        _Editing = false;
+
+        if (Key.Description == _Draft.Trim()) return;
+
         Key.Description = _Draft.Trim();
         Key.UpdatedAt   = DateTime.UtcNow;
+
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Description",
+            EntityPartId   = Key.Id,
+            ChangeType     = HistoryChangeType.Updated,
+            OldValue       = oldDescription,
+            NewValue       = Key.Description,
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+
         _ProjectState.MarkDirty();
-        _Editing = false;
+
         await OnChanged.InvokeAsync();
     }
+
 }

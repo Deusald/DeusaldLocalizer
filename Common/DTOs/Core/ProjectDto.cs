@@ -26,5 +26,7 @@ namespace DeusaldLocalizerCommon
 
         /// <summary>Project-level enum type definitions used by EnumInt/EnumString variables.</summary>
         public List<LocEnumDto> Enums { get; set; } = new();
+
+        public List<HistoryEntryDto> ProjectHistory { get; set; } = new();
     }
 }

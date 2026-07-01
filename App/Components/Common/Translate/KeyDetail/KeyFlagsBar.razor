@@ -1,5 +1,6 @@
 ﻿@namespace App.Components.Translate
 @using DeusaldLocalizerCommon
+@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 <div class="kfb-root">
@@ -66,6 +67,18 @@
     private void RemoveFlag(KeyFlagDto flag)
     {
         Key.Flags.Remove(flag);
+        
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Flags",
+            EntityPartId   = flag.Id,
+            ChangeType     = HistoryChangeType.Deleted,
+            OldValue       = JsonConvert.SerializeObject(flag),
+            NewValue       = string.Empty,
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+        
         _ProjectState.MarkDirty();
         _HoveredFlagId = null;
         OnChanged.InvokeAsync();

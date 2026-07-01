@@ -1,5 +1,6 @@
 ﻿@namespace App.Components.Translate
 @using DeusaldLocalizerCommon
+@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 @if (_Visible)
@@ -126,9 +127,21 @@
 
     private void AddEnum()
     {
-        var e = new LocEnumDto { ProjectId = _ProjectState.CurrentProject!.Id };
+        LocEnumDto e = new LocEnumDto { ProjectId = _ProjectState.CurrentProject!.Id };
         _ProjectState.CurrentProject!.Enums.Add(e);
         _SelectedEnum = e;
+        
+        _ProjectState.CurrentProject!.ProjectHistory.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Enums",
+            EntityPartId   = e.Id,
+            ChangeType     = HistoryChangeType.Created,
+            OldValue       = string.Empty,
+            NewValue       = JsonConvert.SerializeObject(e),
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+        
         MarkDirty();
     }
 
@@ -136,6 +149,18 @@
     {
         if (_SelectedEnum == null) return;
         _ProjectState.CurrentProject!.Enums.Remove(_SelectedEnum);
+        
+        _ProjectState.CurrentProject!.ProjectHistory.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Enums",
+            EntityPartId   = _SelectedEnum.Id,
+            ChangeType     = HistoryChangeType.Deleted,
+            OldValue       = JsonConvert.SerializeObject(_SelectedEnum),
+            NewValue       = string.Empty,
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+        
         _SelectedEnum = null;
         MarkDirty();
     }
@@ -143,15 +168,43 @@
     private void AddEntry()
     {
         if (_SelectedEnum == null) return;
+        string oldEnum = JsonConvert.SerializeObject(_SelectedEnum);
+        
         int next = _SelectedEnum.Entries.Count > 0
             ? _SelectedEnum.Entries.Max(e => e.IntValue) + 1 : 0;
         _SelectedEnum.Entries.Add(new LocEnumEntryDto { IntValue = next });
+        
+        _ProjectState.CurrentProject!.ProjectHistory.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Enums",
+            EntityPartId   = _SelectedEnum.Id,
+            ChangeType     = HistoryChangeType.Updated,
+            OldValue       = oldEnum,
+            NewValue       = JsonConvert.SerializeObject(_SelectedEnum),
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+        
         MarkDirty();
     }
 
     private void RemoveEntry(LocEnumEntryDto entry)
     {
-        _SelectedEnum?.Entries.Remove(entry);
+        if (_SelectedEnum == null) return;
+        string oldEnum = JsonConvert.SerializeObject(_SelectedEnum);
+        _SelectedEnum.Entries.Remove(entry);
+        
+        _ProjectState.CurrentProject!.ProjectHistory.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Enums",
+            EntityPartId   = _SelectedEnum.Id,
+            ChangeType     = HistoryChangeType.Updated,
+            OldValue       = oldEnum,
+            NewValue       = JsonConvert.SerializeObject(_SelectedEnum),
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+        
         MarkDirty();
     }
 

@@ -1,5 +1,6 @@
 ﻿@namespace App.Components.Translate
 @using DeusaldLocalizerCommon
+@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 <div class="vs-root">
@@ -162,8 +163,9 @@
     [Parameter] public EventCallback      OnChanged { get; set; }
 
     private readonly Dictionary<Guid, string> _PreviewOverrides = new();
-    
+
     private Guid?              _EditingId;
+    private string             _OldJson = string.Empty;
     private ProjectEnumsModal? _EnumsModal;
 
     private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
@@ -171,20 +173,51 @@
     private void StartEditing(Guid id)
     {
         _EditingId = id;
+        KeyVariableDto? v = Key.Variables.FirstOrDefault(v => v.Id == _EditingId);
+        _OldJson = v == null ? string.Empty : JsonConvert.SerializeObject(v);
         _PreviewOverrides.Remove(id);
     }
 
     private void StopEditing()
     {
+        KeyVariableDto? v = Key.Variables.FirstOrDefault(v => v.Id == _EditingId);
+
+        if (v != null)
+        {
+            Key.History.Add(new HistoryEntryDto
+            {
+                EntityPartName = "Variables",
+                EntityPartId   = v.Id,
+                ChangeType     = string.IsNullOrEmpty(_OldJson) ? HistoryChangeType.Created : HistoryChangeType.Updated,
+                OldValue       = _OldJson,
+                NewValue       = JsonConvert.SerializeObject(v),
+                UserId         = _ProjectState.CurrentUser.Id,
+                UserName       = _ProjectState.CurrentUser.DisplayName
+            });
+        }
+
         _EditingId = null;
+        _OldJson   = string.Empty;
         _ProjectState.MarkDirty();
         OnChanged.InvokeAsync();
     }
 
     private void AddVariable()
     {
-        var v = new KeyVariableDto { KeyId = Key.Id };
+        KeyVariableDto v = new KeyVariableDto { KeyId = Key.Id };
         Key.Variables.Add(v);
+
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Variables",
+            EntityPartId   = v.Id,
+            ChangeType     = HistoryChangeType.Created,
+            OldValue       = string.Empty,
+            NewValue       = JsonConvert.SerializeObject(v),
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+
         _EditingId = v.Id;
         _ProjectState.MarkDirty();
     }
@@ -194,6 +227,18 @@
         _EditingId = null;
         _PreviewOverrides.Remove(v.Id);
         Key.Variables.Remove(v);
+
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Variables",
+            EntityPartId   = v.Id,
+            ChangeType     = HistoryChangeType.Created,
+            OldValue       = JsonConvert.SerializeObject(v),
+            NewValue       = string.Empty,
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+
         _ProjectState.MarkDirty();
         OnChanged.InvokeAsync();
     }

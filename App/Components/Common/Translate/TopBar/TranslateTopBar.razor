@@ -5,78 +5,83 @@
 @inject ProjectStateService _ProjectState
 @inject DlocFileService     _DlocService
 @inject NavigationManager   _Nav
-@implements IDisposable
 
-@if (_ProjectState.HasProject)
-{
-    <div class="ttb-root">
+<div class="ttb-root">
 
-        <div class="ttb-left">
-            <button class="ttb-back-btn" @onclick="GoHome" title="Back to projects">
-                <i class="bi bi-chevron-left"></i>
-            </button>
+    <div class="ttb-left">
+        <button class="ttb-back-btn" @onclick="GoHome" title="Back to projects">
+            <i class="bi bi-chevron-left"></i>
+        </button>
 
-            <div class="ttb-logo-orbs">
-                <div class="ttb-orb ttb-orb-1"></div>
-                <div class="ttb-orb ttb-orb-2"></div>
-                <div class="ttb-orb ttb-orb-3"></div>
-            </div>
-            <span class="ttb-project-name">@_ProjectState.CurrentProject?.Name</span>
-            <span class="ttb-sep">/</span>
-            <span class="ttb-translating">
-                Translating into <strong>@_LanguageLabel</strong>
-            </span>
+        <div class="ttb-logo-orbs">
+            <div class="ttb-orb ttb-orb-1"></div>
+            <div class="ttb-orb ttb-orb-2"></div>
+            <div class="ttb-orb ttb-orb-3"></div>
         </div>
+        <span class="ttb-project-name">@_ProjectState.CurrentProject!.Name</span>
+        <span class="ttb-sep">/</span>
+        <span class="ttb-translating">
+            Translating into <strong>@_LanguageLabel</strong>
+        </span>
+    </div>
 
-        <div class="ttb-right">
+    <div class="ttb-right">
 
-            @if (_ProjectState.IsOnline)
+        @if (_ProjectState.IsOnline)
+        {
+            <span class="ttb-status-pill @(_ProjectState.IsDirty ? "ttb-status-warn" : "ttb-status-ok")">
+                <span class="ttb-status-dot"></span>
+                @(_ProjectState.IsDirty ? "Syncing…" : "Synced")
+            </span>
+        }
+        else
+        {
+            @if (_ProjectState.IsDirty)
             {
-                <span class="ttb-status-pill @(_ProjectState.IsDirty ? "ttb-status-warn" : "ttb-status-ok")">
-                    <span class="ttb-status-dot"></span>
-                    @(_ProjectState.IsDirty ? "Syncing…" : "Synced")
-                </span>
+                <button class="ttb-save-btn" @onclick="Save">
+                    <i class="bi bi-cloud-arrow-up"></i> Save
+                </button>
             }
-            else
+            <span class="ttb-status-pill @(_ProjectState.IsDirty ? "ttb-status-warn" : "ttb-status-ok")">
+                <span class="ttb-status-dot"></span>
+                @(_ProjectState.IsDirty ? "Unsaved" : "Saved")
+            </span>
+        }
+
+        @if (_ProjectState.CurrentUserHas(PermissionFlags.Admin))
+        {
+            <button class="ttb-history-btn" @onclick="() => _ProjectHistoryModal?.Show()" title="Project history">
+                <i class="bi bi-clock-history"></i>
+            </button>
+        }
+
+        <div class="ttb-avatars" @onclick="OpenUsersModal">
+            @foreach (ProjectMemberDto member in _VisibleMembers)
             {
-                @if (_ProjectState.IsDirty)
-                {
-                    <button class="ttb-save-btn" @onclick="Save">
-                        <i class="bi bi-cloud-arrow-up"></i> Save
-                    </button>
-                }
-                <span class="ttb-status-pill @(_ProjectState.IsDirty ? "ttb-status-warn" : "ttb-status-ok")">
-                    <span class="ttb-status-dot"></span>
-                    @(_ProjectState.IsDirty ? "Unsaved" : "Saved")
-                </span>
+                <div class="ttb-avatar" style="background:@AvatarColor(member.UserId)" title="@member.DisplayName">
+                    @Initial(member.DisplayName)
+                </div>
             }
-
-            <div class="ttb-avatars" @onclick="OpenUsersModal">
-                @foreach (ProjectMemberDto member in _VisibleMembers)
-                {
-                    <div class="ttb-avatar" style="background:@AvatarColor(member.UserId)" title="@member.DisplayName">
-                        @Initial(member.DisplayName)
-                    </div>
-                }
-                @if (_ExtraMemberCount > 0)
-                {
-                    <div class="ttb-avatar ttb-avatar-extra">+@_ExtraMemberCount</div>
-                }
-            </div>
-
+            @if (_ExtraMemberCount > 0)
+            {
+                <div class="ttb-avatar ttb-avatar-extra">+@_ExtraMemberCount</div>
+            }
         </div>
 
     </div>
-}
+
+</div>
 
 <UsersModal @ref="_UsersModal"/>
 <ConfirmLeaveModal @ref="_ConfirmLeaveModal" OnSaveAndLeave="SaveAndLeave" OnDiscardAndLeave="DiscardAndLeave"/>
+<ProjectHistoryModal @ref="_ProjectHistoryModal"/>
 
 @code {
     [Parameter] public string SelectedLanguage { get; set; } = "";
 
-    private UsersModal?        _UsersModal;
-    private ConfirmLeaveModal? _ConfirmLeaveModal;
+    private UsersModal?          _UsersModal;
+    private ConfirmLeaveModal?   _ConfirmLeaveModal;
+    private ProjectHistoryModal? _ProjectHistoryModal;
 
     private const int _MAX_VISIBLE_AVATARS = 3;
 
@@ -113,7 +118,7 @@
     {
         _ProjectState.DirtyStateChanged += OnDirty;
     }
-    
+
     private void OpenUsersModal() => _UsersModal?.Show();
 
     private void GoHome()
@@ -188,4 +193,5 @@
     {
         _ProjectState.DirtyStateChanged -= OnDirty;
     }
+
 }

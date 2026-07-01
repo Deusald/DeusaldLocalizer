@@ -1,5 +1,6 @@
 ﻿@namespace App.Components.Translate
 @using DeusaldLocalizerCommon
+@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 <div class="cfp-root">
@@ -110,6 +111,18 @@
 
         ProjectDto project = _ProjectState.CurrentProject!;
         project.Categories.Remove(category);
+        
+        _ProjectState.CurrentProject!.ProjectHistory.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Categories",
+            EntityPartId   = category.Id,
+            ChangeType     = HistoryChangeType.Deleted,
+            OldValue       = JsonConvert.SerializeObject(category),
+            NewValue       = string.Empty,
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+        
         _ProjectState.MarkDirty();
 
         if (SelectedCategoryIds.Contains(category.Id))

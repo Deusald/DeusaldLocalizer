@@ -1,5 +1,6 @@
 ﻿@namespace App.Components.Translate
 @using DeusaldLocalizerCommon
+@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 @if (_Visible)
@@ -139,15 +140,41 @@
 
     private void TogglePermission(ProjectMemberDto member, PermissionFlags flag)
     {
+        string oldJson = JsonConvert.SerializeObject(member);
+        
         member.Permissions = (member.Permissions & flag) == flag
             ? member.Permissions & ~flag
             : member.Permissions | flag;
+        
+        _ProjectState.CurrentProject!.ProjectHistory.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Members",
+            EntityPartId   = member.Id,
+            ChangeType     = HistoryChangeType.Updated,
+            OldValue       = oldJson,
+            NewValue       = JsonConvert.SerializeObject(member),
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+        
         _ProjectState.MarkDirty();
     }
 
     private void RemoveMember(ProjectMemberDto member)
     {
         _ProjectState.CurrentProject!.Members.Remove(member);
+        
+        _ProjectState.CurrentProject!.ProjectHistory.Add(new HistoryEntryDto
+        {
+            EntityPartName = "Members",
+            EntityPartId   = member.Id,
+            ChangeType     = HistoryChangeType.Deleted,
+            OldValue       = JsonConvert.SerializeObject(member),
+            NewValue       = string.Empty,
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+        
         _ProjectState.MarkDirty();
     }
 

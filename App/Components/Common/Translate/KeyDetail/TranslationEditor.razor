@@ -1,5 +1,6 @@
 ﻿@namespace App.Components.Translate
 @using DeusaldLocalizerCommon
+@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 <div class="te-root">
@@ -232,11 +233,24 @@
         }
         if (source.Text == _SourceDraft) return;
 
+        string oldText = source.Text;
+        
         source.Text      = _SourceDraft;
         source.UpdatedBy = _ProjectState.CurrentUser.Id;
         source.UpdatedAt = DateTime.UtcNow;
         source.Status    = TranslationStatus.Approved;
 
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = $"Translation-Text/{source.LanguageId}",
+            EntityPartId   = source.Id,
+            ChangeType     = HistoryChangeType.Updated,
+            OldValue       = oldText,
+            NewValue       = source.Text,
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+        
         Key.UpdatedAt = DateTime.UtcNow;
         _ProjectState.MarkDirty();
         await OnChanged.InvokeAsync();
@@ -256,7 +270,7 @@
         translation.NeedsAttention = true;
         if (translation.Status == TranslationStatus.Draft) translation.Status = TranslationStatus.Suggested;
 
-        translation.Suggestions.Add(new SuggestionDto
+        SuggestionDto suggestionDto = new SuggestionDto
         {
             KeyId         = Key.Id,
             TranslationId = translation.Id,
@@ -264,6 +278,19 @@
             AuthorId      = _ProjectState.CurrentUser.Id,
             AuthorName    = _ProjectState.CurrentUser.DisplayName,
             Status        = SuggestionStatus.Pending,
+        };
+        
+        translation.Suggestions.Add(suggestionDto);
+        
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = $"Translation-Suggestion/{translation.LanguageId}",
+            EntityPartId   = translation.Id,
+            ChangeType     = HistoryChangeType.Created,
+            OldValue       = string.Empty,
+            NewValue       = JsonConvert.SerializeObject(suggestionDto),
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
         });
 
         Key.UpdatedAt = DateTime.UtcNow;
@@ -282,11 +309,24 @@
             Key.Translations.Add(translation);
         }
 
+        string oldText = translation.Text;
+        
         translation.Text           = _TranslationDraft;
         translation.UpdatedBy      = _ProjectState.CurrentUser.Id;
         translation.UpdatedAt      = DateTime.UtcNow;
         translation.NeedsAttention = false;
 
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = $"Translation-Text/{translation.LanguageId}",
+            EntityPartId   = translation.Id,
+            ChangeType     = HistoryChangeType.Updated,
+            OldValue       = oldText,
+            NewValue       = translation.Text,
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
+        });
+        
         // Contributors without Reviewer/Admin leave it as Draft; reviewers/admins approve directly.
         translation.Status = (_ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
                               || _ProjectState.CurrentUserHas(PermissionFlags.Admin))
@@ -312,7 +352,7 @@
         translation.NeedsAttention = true;
         if (translation.Status == TranslationStatus.Draft) translation.Status = TranslationStatus.Suggested;
 
-        translation.Suggestions.Add(new SuggestionDto
+        SuggestionDto suggestionDto = new SuggestionDto
         {
             KeyId         = Key.Id,
             TranslationId = translation.Id,
@@ -320,6 +360,19 @@
             AuthorId      = _ProjectState.CurrentUser.Id,
             AuthorName    = _ProjectState.CurrentUser.DisplayName,
             Status        = SuggestionStatus.Pending,
+        };
+        
+        translation.Suggestions.Add(suggestionDto);
+        
+        Key.History.Add(new HistoryEntryDto
+        {
+            EntityPartName = $"Translation-Suggestion/{translation.LanguageId}",
+            EntityPartId   = translation.Id,
+            ChangeType     = HistoryChangeType.Created,
+            OldValue       = string.Empty,
+            NewValue       = JsonConvert.SerializeObject(suggestionDto),
+            UserId         = _ProjectState.CurrentUser.Id,
+            UserName       = _ProjectState.CurrentUser.DisplayName
         });
 
         Key.UpdatedAt = DateTime.UtcNow;
