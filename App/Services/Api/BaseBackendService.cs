@@ -53,11 +53,10 @@ public class BaseBackendService(ProjectStateService projectState)
 
     public async Task RemoveUserAsync(ProjectMemberDto member)
     {
-        string memberJson = JsonConvert.SerializeObject(member);
         bool   result     = await OnlineRemoveUserAsync(member);
         if (!result) return;
         projectState.CurrentProject!.Members.Remove(member);
-        AddToProjectHistory("Members-Removed", member.UserId, HistoryChangeType.Deleted, memberJson, string.Empty);
+        AddToProjectHistory("Members-Removed", member.UserId, HistoryChangeType.Deleted, JsonConvert.SerializeObject(member), string.Empty);
         projectState.MarkDirty();
     }
 
@@ -73,6 +72,38 @@ public class BaseBackendService(ProjectStateService projectState)
 
     #endregion Users
 
+    #region Languages
+
+    public async Task AddLanguageAsync(string code)
+    {
+        bool result = await OnlineAddLanguageAsync(code);
+        if (!result) return;
+        projectState.CurrentProject!.Languages.Add(code);
+        AddToProjectHistory("Languages", projectState.CurrentProject.Id, HistoryChangeType.Created, string.Empty, code);
+        projectState.MarkDirty();
+    }
+
+    protected virtual Task<bool> OnlineAddLanguageAsync(string code)
+    {
+        return Task.FromResult(true);
+    }
+    
+    public async Task RemoveLanguageAsync(string code)
+    {
+        bool result = await OnlineRemoveLanguageAsync(code);
+        if (!result) return;
+        projectState.CurrentProject!.Languages.Remove(code);
+        AddToProjectHistory("Languages", projectState.CurrentProject.Id, HistoryChangeType.Deleted, code, string.Empty);
+        projectState.MarkDirty();
+    }
+
+    protected virtual Task<bool> OnlineRemoveLanguageAsync(string code)
+    {
+        return Task.FromResult(true);
+    }
+
+    #endregion Languages
+    
     private void AddToProjectHistory(string entityPartName, Guid entityPartId, HistoryChangeType changeType, string oldValue, string newValue)
     {
         projectState.CurrentProject!.ProjectHistory.Add(new HistoryEntryDto

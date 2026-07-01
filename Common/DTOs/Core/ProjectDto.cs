@@ -24,8 +24,10 @@ namespace DeusaldLocalizerCommon
         public List<ProjectMemberDto>   Members              { get; set; } = new();
         public List<CategoryDto>        Categories           { get; set; } = new();
         public List<LocalizationKeyDto> Keys                 { get; set; } = new();
-        public int                      NumberOfApprovedKeys { get; set; }
+        public Dictionary<string, int>  NumberOfApprovedKeys { get; set; } = new();
 
+        public int TotalNumberOfApprovedKeys => NumberOfApprovedKeys.Sum(k => k.Value);
+        
         /// <summary>Project-level enum type definitions used by EnumInt/EnumString variables.</summary>
         public List<LocEnumDto> Enums { get; set; } = new();
 
@@ -33,10 +35,14 @@ namespace DeusaldLocalizerCommon
 
         public void CalculateNumberOfApprovedKeys()
         {
-            NumberOfApprovedKeys = Keys
-                                  .SelectMany(k => k.Translations)
-                                  .Count(t => Languages.Contains(t.LanguageId)
-                                           && t.Status == TranslationStatus.Approved);
+            NumberOfApprovedKeys.Clear();
+            
+            foreach (string lang in Languages)
+            {
+                NumberOfApprovedKeys[lang] = Keys
+                                            .SelectMany(k => k.Translations)
+                                            .Count(t => t.LanguageId == lang && t.Status == TranslationStatus.Approved);
+            }
         }
     }
 }

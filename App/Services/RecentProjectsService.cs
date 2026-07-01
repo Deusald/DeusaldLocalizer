@@ -35,7 +35,7 @@ public static class RecentProjectsService
         if (project is { Languages.Count: > 1, Keys.Count: > 0 })
         {
             int totalSlots = project.Keys.Count * project.Languages.Count;
-            int translated = project.NumberOfApprovedKeys;
+            int translated = project.TotalNumberOfApprovedKeys;
             pct = totalSlots > 0 ? (int)Math.Round(translated * 100.0 / totalSlots) : 0;
         }
 

@@ -1,5 +1,6 @@
 ﻿@namespace App.Components.Translate
 @using DeusaldLocalizerCommon
+@using DeusaldSharp
 @inject ProjectStateService _ProjectState
 @implements IDisposable
 
@@ -155,13 +156,11 @@
 
     private int ProgressFor(string code)
     {
-        ProjectDto project = _ProjectState.CurrentProject!;
-        if (code == project.MainLanguageId) return 100;
-        int keyCount = project.Keys.Count;
+        ProjectDto project  = _ProjectState.CurrentProject!;
+        int        keyCount = project.Keys.Count;
         if (keyCount == 0) return 0;
-        int translated = project.Keys
-                                 .SelectMany(k => k.Translations)
-                                 .Count(t => t.LanguageId == code && t.Status == TranslationStatus.Approved && !string.IsNullOrEmpty(t.Text));
+        if (!project.NumberOfApprovedKeys.ContainsKey(code)) project.CalculateNumberOfApprovedKeys();
+        int translated = project.NumberOfApprovedKeys[code];
         return (int)Math.Round(translated * 100.0 / keyCount);
     }
 
@@ -180,19 +179,7 @@
     {
         ProjectDto project = _ProjectState.CurrentProject!;
         if (project.Languages.Contains(code)) return;
-        project.Languages.Add(code);
-        if (project.Languages.Count == 1) project.MainLanguageId = code;
-        project.ProjectHistory.Add(new HistoryEntryDto
-        {
-            EntityPartName = "Languages",
-            EntityPartId   = project.Id,
-            ChangeType     = HistoryChangeType.Created,
-            OldValue       = string.Empty,
-            NewValue       = code,
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
-        _ProjectState.MarkDirty();
+        _ProjectState.BackendService.AddLanguageAsync(code).Forget();
         ExitAddMode();
     }
 
@@ -200,31 +187,11 @@
     {
         ProjectDto project = _ProjectState.CurrentProject!;
         if (code == project.MainLanguageId) return; // main language can't be removed
-
-        // Only hide the language from the project — existing translations for
-        // this code are intentionally left untouched on each key, so the data
-        // reappears automatically if the language is added back later.
-        project.Languages.Remove(code);
-        
-        project.ProjectHistory.Add(new HistoryEntryDto
-        {
-            EntityPartName = "Languages",
-            EntityPartId   = project.Id,
-            ChangeType     = HistoryChangeType.Deleted,
-            OldValue       = code,
-            NewValue       = string.Empty,
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
-        
-        _ProjectState.MarkDirty();
-
-        if (SelectedLanguage == code)
-        {
-            string fallback = project.Languages.Find(l => l != project.MainLanguageId)
-                              ?? project.MainLanguageId;
-            await OnLanguageSelected.InvokeAsync(fallback);
-        }
+        await _ProjectState.BackendService.RemoveLanguageAsync(code);
+        if (SelectedLanguage != code) return;
+        string fallback = project.Languages.Find(l => l != project.MainLanguageId)
+                       ?? project.MainLanguageId;
+        await OnLanguageSelected.InvokeAsync(fallback);
     }
 
     private void OnProjectDataChanged()
