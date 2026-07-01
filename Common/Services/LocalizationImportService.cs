@@ -25,6 +25,7 @@ namespace DeusaldLocalizerCommon
     ///   - Skips cells that are empty (does not clear existing translations).
     ///   - Sets status to Draft on import; reviewer/admin should re-approve.
     /// </summary>
+    // TODO: Import them as suggestions
     public static class LocalizationImportService
     {
         public static ImportResult ImportFromStream(Stream stream, ProjectDto project, UserDto currentUser)

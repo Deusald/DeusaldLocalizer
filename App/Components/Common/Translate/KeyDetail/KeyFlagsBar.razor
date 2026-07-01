@@ -19,13 +19,17 @@
             {
                 <div class="kfb-tooltip">
                     <div class="kfb-tooltip-inner">
+                        @{
+                            string noteText = string.IsNullOrWhiteSpace(f.Note) ? "No note" : f.Note;
+                            noteText += $" ({f.CreatedAt:MMM d, yyyy})";
+                        }
                         @if (!string.IsNullOrWhiteSpace(f.Note))
                         {
-                            <div class="kfb-tooltip-note">@f.Note</div>
+                            <div class="kfb-tooltip-note">@noteText</div>
                         }
                         else
                         {
-                            <div class="kfb-tooltip-note kfb-tooltip-empty">No note</div>
+                            <div class="kfb-tooltip-note kfb-tooltip-empty">@noteText</div>
                         }
                         @if (_CanManage)
                         {
@@ -67,7 +71,7 @@
     private void RemoveFlag(KeyFlagDto flag)
     {
         Key.Flags.Remove(flag);
-        
+
         Key.History.Add(new HistoryEntryDto
         {
             EntityPartName = "Flags",
@@ -78,7 +82,7 @@
             UserId         = _ProjectState.CurrentUser.Id,
             UserName       = _ProjectState.CurrentUser.DisplayName
         });
-        
+
         _ProjectState.MarkDirty();
         _HoveredFlagId = null;
         OnChanged.InvokeAsync();
@@ -113,4 +117,5 @@
         FlagType.Disputed       => "kfb-danger",
         _                       => "kfb-muted",
     };
+
 }

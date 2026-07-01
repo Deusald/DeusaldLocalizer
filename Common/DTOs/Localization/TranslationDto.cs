@@ -20,7 +20,7 @@ namespace DeusaldLocalizerCommon
         /// <summary>SHA-256 of the main-language text this translation was based on.</summary>
         public string BaseTextHash { get; set; } = string.Empty;
 
-        public TranslationStatus Status { get; set; } = TranslationStatus.Draft;
+        public TranslationStatus Status { get; set; } = TranslationStatus.Untranslated;
 
         /// <summary>
         /// True when the main-language source text has changed since this translation

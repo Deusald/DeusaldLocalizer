@@ -3,8 +3,9 @@
     /// <summary>Lifecycle state of a translation entry.</summary>
     public enum TranslationStatus
     {
-        Draft,
-        Suggested,
-        Approved,
+        Untranslated = 0,
+        Draft        = 1,
+        Suggested    = 2,
+        Approved     = 3
     }
 }
