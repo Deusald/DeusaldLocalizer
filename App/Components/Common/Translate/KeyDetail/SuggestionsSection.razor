@@ -120,6 +120,14 @@
         suggestion.Status = SuggestionStatus.Rejected;
         Key.UpdatedAt = DateTime.UtcNow;
 
+        TranslationDto? translation = Key.Translations.FirstOrDefault(t => t.LanguageId == SelectedLanguage);
+        
+        if (_SuggestionsForLanguage.Count(s => s.Status == SuggestionStatus.Pending) == 0
+         && translation?.Status == TranslationStatus.Approved)
+        {
+            translation.NeedsAttention = false;
+        }
+        
         _ProjectState.MarkDirty();
         OnChanged.InvokeAsync();
     }
