@@ -33,14 +33,28 @@
         }
 
         <div class="um-section">
-            <div class="um-section-label">Members (@_ProjectState.CurrentProject!.Members.Count)</div>
+            <div class="um-section-header">
+                <span class="um-section-label">Members (@_ProjectState.CurrentProject!.Members.Count)</span>
+                @if (_IsSuperAdmin)
+                {
+                    <label class="um-accept-toggle" title="Allow new members to join">
+                        <input type="checkbox"
+                               checked="@_ProjectState.CurrentProject.AcceptNewMembers"
+                               @onchange="ToggleAcceptNewMembers"/>
+                        <span class="um-accept-label">Accept new members</span>
+                    </label>
+                }
+            </div>
 
             <div class="um-member-list">
                 @foreach (ProjectMemberDto member in _ProjectState.CurrentProject.Members)
                 {
-                    bool isSelf = member.UserId == _ProjectState.CurrentUser.Id;
+                    bool   isSelf      = member.UserId == _ProjectState.CurrentUser.Id;
+                    string joinedTitle = $"Joined {member.JoinedAt:MMM d, yyyy}";
+
                     <div class="um-member-row">
-                        <div class="um-member-avatar" style="background:@AvatarColor(member.UserId)">
+                        <div class="um-member-avatar" style="background:@AvatarColor(member.UserId)"
+                             title="@joinedTitle">
                             @Initial(member.DisplayName)
                         </div>
                         <div class="um-member-info">
@@ -51,27 +65,26 @@
                                     <span class="um-member-you">you</span>
                                 }
                             </div>
+                            @if (_IsAdmin)
+                            {
+                                <div class="um-perm-flags">
+                                    @foreach (PermissionFlags flag in DeusaldSharp.EnumExtensions.IterateAllValues<PermissionFlags>())
+                                    {
+                                        if (!DeusaldSharp.EnumExtensions.IsSingleFlagOn(flag)) continue;
+                                        bool active = (member.Permissions & flag) == flag;
+                                        <button class="um-perm-chip @(active ? "active" : "")"
+                                                @onclick="() => TogglePermission(member, flag)"
+                                                title="@flag">
+                                            @FlagLabel(flag)
+                                        </button>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="um-perm-readonly">@PermissionsSummary(member.Permissions)</div>
+                            }
                         </div>
-
-                        @if (_IsAdmin)
-                        {
-                            <div class="um-perm-flags">
-                                @foreach (PermissionFlags flag in DeusaldSharp.EnumExtensions.IterateAllValues<PermissionFlags>())
-                                {
-                                    if (!DeusaldSharp.EnumExtensions.IsSingleFlagOn(flag)) continue;
-                                    bool active = (member.Permissions & flag) == flag;
-                                    <button class="um-perm-chip @(active ? "active" : "")"
-                                            @onclick="() => TogglePermission(member, flag)"
-                                            title="@flag">
-                                        @FlagLabel(flag)
-                                    </button>
-                                }
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="um-perm-readonly">@PermissionsSummary(member.Permissions)</div>
-                        }
 
                         @if (_IsAdmin && !isSelf)
                         {
@@ -92,7 +105,8 @@
     private string  _NewPassword = "";
     private string? _PasswordMessage;
 
-    private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _IsAdmin      => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _IsSuperAdmin => _ProjectState.CurrentUserHas(PermissionFlags.SuperAdmin);
 
     public void Show()
     {
@@ -136,6 +150,12 @@
         }
 
         return string.Join(", ", labels);
+    }
+
+    private void ToggleAcceptNewMembers(ChangeEventArgs e)
+    {
+        _ProjectState.CurrentProject!.AcceptNewMembers = (bool)(e.Value ?? false);
+        _ProjectState.MarkDirty();
     }
 
     private void TogglePermission(ProjectMemberDto member, PermissionFlags flag)

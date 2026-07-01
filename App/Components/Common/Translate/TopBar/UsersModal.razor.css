@@ -12,7 +12,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 101;
-    width: 460px;
+    width: 560px;
     max-height: min(620px, calc(100vh - 64px));
     background: #1a1b23;
     border: 1px solid #2a2b35;
@@ -57,14 +57,38 @@
 }
 .um-section:last-child { border-bottom: none; flex: 1; min-height: 0; overflow-y: auto; }
 
+.um-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
 .um-section-label {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: .06em;
     text-transform: uppercase;
     color: #7a7b83;
-    margin-bottom: 10px;
 }
+
+/* ── AcceptNewMembers toggle ──────────────────────────────────────────────── */
+
+.um-accept-toggle {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #8a8b93;
+}
+.um-accept-toggle input[type="checkbox"] {
+    accent-color: #5b6cff;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+.um-accept-label { user-select: none; }
 
 /* ── Password row ─────────────────────────────────────────────────────────── */
 
@@ -108,14 +132,14 @@
 .um-member-list {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
 }
 
 .um-member-row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
-    padding: 9px 6px;
+    padding: 8px 6px;
     border-radius: 8px;
     transition: background .1s;
 }
@@ -132,11 +156,16 @@
     font-weight: 600;
     color: #fff;
     flex-shrink: 0;
+    margin-top: 1px;
+    cursor: default;
 }
 
 .um-member-info {
     flex: 1;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .um-member-name {
@@ -173,8 +202,8 @@
 
 .um-perm-flags {
     display: flex;
+    flex-wrap: wrap;
     gap: 4px;
-    flex-shrink: 0;
 }
 
 .um-perm-chip {
