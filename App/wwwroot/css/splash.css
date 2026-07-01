@@ -1,0 +1,51 @@
+﻿#app-loading {
+    position: fixed;
+    inset: 0;
+    background: #0e0f13;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+
+.splash-orbs {
+    position: relative;
+    width: 56px;
+    height: 56px;
+}
+
+.splash-orb {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.splash-orb-1 {
+    left: 0;
+    top: 8px;
+    background: rgba(91,108,255,.85);
+}
+
+.splash-orb-2 {
+    left: 18px;
+    top: 0;
+    background: rgba(120,160,255,.55);
+    mix-blend-mode: screen;
+}
+
+.splash-orb-3 {
+    left: 10px;
+    top: 18px;
+    background: rgba(160,120,255,.5);
+    mix-blend-mode: screen;
+}
+
+.splash-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6a6b73;
+    letter-spacing: .04em;
+}
