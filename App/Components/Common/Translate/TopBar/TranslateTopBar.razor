@@ -6,6 +6,8 @@
 @inject DlocFileService     _DlocService
 @inject NavigationManager   _Nav
 
+@{ if (!_ProjectState.HasProject) return; }
+
 <div class="ttb-root">
 
     <div class="ttb-left">
