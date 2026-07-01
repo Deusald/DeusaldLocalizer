@@ -62,7 +62,7 @@
     [Parameter] public EventCallback            OnChanged        { get; set; }
     [Parameter] public Dictionary<Guid, string> PreviewOverrides { get; set; } = new();
 
-    private bool _CanAccept => _ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
+    private bool _CanAccept => _ProjectState.CurrentUserHas(PermissionFlags.Review)
                             || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
 
     private List<SuggestionDto> _SuggestionsForLanguage =>

@@ -20,7 +20,7 @@
                 <div class="um-section-label">Your account</div>
                 <div class="um-password-row">
                     <input class="um-input" type="password" placeholder="New password"
-                           @bind="_NewPassword" @bind:event="oninput" />
+                           @bind="_NewPassword" @bind:event="oninput"/>
                     <button class="um-btn um-btn-primary" @onclick="ChangePassword" disabled="@(string.IsNullOrWhiteSpace(_NewPassword))">
                         Update
                     </button>
@@ -88,17 +88,17 @@
 }
 
 @code {
-    private bool   _Visible;
-    private string _NewPassword = "";
+    private bool    _Visible;
+    private string  _NewPassword = "";
     private string? _PasswordMessage;
 
     private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
 
     public void Show()
     {
-        _NewPassword = "";
+        _NewPassword     = "";
         _PasswordMessage = null;
-        _Visible = true;
+        _Visible         = true;
         StateHasChanged();
     }
 
@@ -118,11 +118,11 @@
 
     private static string FlagLabel(PermissionFlags flag) => flag switch
     {
-        PermissionFlags.Voter       => "Voter",
-        PermissionFlags.Contributor => "Contributor",
-        PermissionFlags.Reviewer    => "Reviewer",
-        PermissionFlags.Admin       => "Admin",
-        _ => flag.ToString(),
+        PermissionFlags.Vote    => "Voter",
+        PermissionFlags.Suggest => "Contributor",
+        PermissionFlags.Review  => "Reviewer",
+        PermissionFlags.Admin   => "Admin",
+        _                       => flag.ToString(),
     };
 
     private static string PermissionsSummary(PermissionFlags flags)
@@ -134,18 +134,18 @@
             if (!DeusaldSharp.EnumExtensions.IsSingleFlagOn(f)) continue;
             if ((flags & f) == f) labels.Add(FlagLabel(f));
         }
-            
+
         return string.Join(", ", labels);
     }
 
     private void TogglePermission(ProjectMemberDto member, PermissionFlags flag)
     {
         string oldJson = JsonConvert.SerializeObject(member);
-        
+
         member.Permissions = (member.Permissions & flag) == flag
-            ? member.Permissions & ~flag
-            : member.Permissions | flag;
-        
+                                 ? member.Permissions & ~flag
+                                 : member.Permissions | flag;
+
         _ProjectState.CurrentProject!.ProjectHistory.Add(new HistoryEntryDto
         {
             EntityPartName = "Members",
@@ -156,14 +156,14 @@
             UserId         = _ProjectState.CurrentUser.Id,
             UserName       = _ProjectState.CurrentUser.DisplayName
         });
-        
+
         _ProjectState.MarkDirty();
     }
 
     private void RemoveMember(ProjectMemberDto member)
     {
         _ProjectState.CurrentProject!.Members.Remove(member);
-        
+
         _ProjectState.CurrentProject!.ProjectHistory.Add(new HistoryEntryDto
         {
             EntityPartName = "Members",
@@ -174,7 +174,7 @@
             UserId         = _ProjectState.CurrentUser.Id,
             UserName       = _ProjectState.CurrentUser.DisplayName
         });
-        
+
         _ProjectState.MarkDirty();
     }
 
@@ -183,6 +183,7 @@
         if (string.IsNullOrWhiteSpace(_NewPassword)) return;
         // Actual password-change API call happens here when online backend exists.
         _PasswordMessage = "Password updated.";
-        _NewPassword = "";
+        _NewPassword     = "";
     }
+
 }

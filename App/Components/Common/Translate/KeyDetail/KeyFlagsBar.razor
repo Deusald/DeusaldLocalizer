@@ -56,7 +56,7 @@
     private Guid?         _HoveredFlagId;
     private AddFlagModal? _AddFlagModal;
 
-    private bool _CanManage => _ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
+    private bool _CanManage => _ProjectState.CurrentUserHas(PermissionFlags.Review)
                                || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
 
     private async Task OnAdded()

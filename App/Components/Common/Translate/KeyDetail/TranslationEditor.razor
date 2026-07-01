@@ -142,9 +142,9 @@
     private bool   _IsSourceLanguageSelected => SelectedLanguage == _SourceLangCode;
 
     private bool _IsAdmin         => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
-    private bool _IsContributor   => _ProjectState.CurrentUserHas(PermissionFlags.Contributor);
-    private bool _IsReviewer      => _ProjectState.CurrentUserHas(PermissionFlags.Reviewer);
-    private bool _CanConfirmMatch => _ProjectState.CurrentUserHas(PermissionFlags.Reviewer) || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _IsContributor   => _ProjectState.CurrentUserHas(PermissionFlags.Suggest);
+    private bool _IsReviewer      => _ProjectState.CurrentUserHas(PermissionFlags.Review);
+    private bool _CanConfirmMatch => _ProjectState.CurrentUserHas(PermissionFlags.Review) || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
 
     /// <summary>Only meaningful when the source language is selected — admin can edit and save it directly.</summary>
     private bool _CanEditSource => _IsAdmin;
@@ -384,7 +384,7 @@
         });
 
         // Contributors without Reviewer/Admin leave it as Draft; reviewers/admins approve directly.
-        translation.Status = (_ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
+        translation.Status = (_ProjectState.CurrentUserHas(PermissionFlags.Review)
                               || _ProjectState.CurrentUserHas(PermissionFlags.Admin))
                                  ? TranslationStatus.Approved
                                  : TranslationStatus.Draft;
