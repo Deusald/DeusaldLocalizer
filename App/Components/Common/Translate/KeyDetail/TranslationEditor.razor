@@ -11,20 +11,26 @@
                 <label class="te-label">Source · @_SourceLangCode</label>
                 <span class="te-hint">{placeholders} supported</span>
             </div>
-            <textarea class="te-textarea @((_CanEditSource || _CanEditTranslation) ? "" : "te-readonly")"
+            <textarea class="te-textarea @((_CanEditSource || _CanEditTranslation) ? "" : "te-readonly") @(_SourceOverLimit ? "te-over-limit" : "")"
                       @bind="_SourceDraft" @bind:event="oninput"
                       readonly="@(!_CanEditSource && !_CanEditTranslation)"
                       rows="4"
                       placeholder="Source text…"></textarea>
+            @if (Key.MaxLength > 0)
+            {
+                <div class="te-char-count @(_SourceOverLimit ? "te-char-count-over" : "")">
+                    @_SourceDraft.Length / @Key.MaxLength
+                </div>
+            }
         </div>
 
         @if (_CanEditSource)
         {
             <div class="te-actions">
-                <button class="te-btn te-btn-primary" @onclick="SaveSourceText" disabled="@(!_HasSourceChanges)">
+                <button class="te-btn te-btn-primary" @onclick="SaveSourceText" disabled="@(!_HasSourceChanges || _SourceOverLimit)">
                     Save source
                 </button>
-                <button class="te-btn te-btn-ghost" @onclick="SuggestSourceText" disabled="@(!_HasSourceChanges)">
+                <button class="te-btn te-btn-ghost" @onclick="SuggestSourceText" disabled="@(!_HasSourceChanges || _SourceOverLimit)">
                     Suggest
                 </button>
                 <button class="te-btn te-btn-ghost" @onclick="ResetSourceDraft" disabled="@(!_HasSourceChanges)">
@@ -36,7 +42,7 @@
         {
             @* Contributor on the source language: can only propose, never save directly *@
             <div class="te-actions">
-                <button class="te-btn te-btn-ghost" @onclick="SuggestSourceText" disabled="@(!_HasSourceChanges)">
+                <button class="te-btn te-btn-ghost" @onclick="SuggestSourceText" disabled="@(!_HasSourceChanges || _SourceOverLimit)">
                     Suggest
                 </button>
                 <button class="te-btn te-btn-ghost" @onclick="ResetSourceDraft" disabled="@(!_HasSourceChanges)">
@@ -64,20 +70,26 @@
                 <label class="te-label">Translation · @SelectedLanguage</label>
                 <span class="te-hint">{placeholders} supported</span>
             </div>
-            <textarea class="te-textarea @(_CanEditTranslation ? "" : "te-readonly")"
+            <textarea class="te-textarea @(_CanEditTranslation ? "" : "te-readonly") @(_TranslationOverLimit ? "te-over-limit" : "")"
                       @bind="_TranslationDraft" @bind:event="oninput"
                       readonly="@(!_CanEditTranslation)"
                       rows="4"
                       placeholder="Type your translation…"></textarea>
+            @if (Key.MaxLength > 0)
+            {
+                <div class="te-char-count @(_TranslationOverLimit ? "te-char-count-over" : "")">
+                    @_TranslationDraft.Length / @Key.MaxLength
+                </div>
+            }
         </div>
 
         @if (_CanEditTranslation)
         {
             <div class="te-actions">
-                <button class="te-btn te-btn-primary" @onclick="SaveTranslation" disabled="@(!_HasTranslationChanges)">
+                <button class="te-btn te-btn-primary" @onclick="SaveTranslation" disabled="@(!_HasTranslationChanges || _TranslationOverLimit)">
                     Save translation
                 </button>
-                <button class="te-btn te-btn-ghost" @onclick="SuggestTranslation" disabled="@(!_HasTranslationChanges)">
+                <button class="te-btn te-btn-ghost" @onclick="SuggestTranslation" disabled="@(!_HasTranslationChanges || _TranslationOverLimit)">
                     Suggest
                 </button>
                 <button class="te-btn te-btn-ghost" @onclick="ResetTranslationDraft" disabled="@(!_HasTranslationChanges)">
@@ -152,6 +164,12 @@
         _LastKnownSourceText      = currentSourceText;
         _LastKnownTranslationText = currentTranslationText;
     }
+
+    private bool _SourceOverLimit =>
+        Key.MaxLength > 0 && _SourceDraft.Length > Key.MaxLength;
+
+    private bool _TranslationOverLimit =>
+        Key.MaxLength > 0 && _TranslationDraft.Length > Key.MaxLength;
 
     private bool _HasSourceChanges
     {

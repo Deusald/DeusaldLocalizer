@@ -17,6 +17,12 @@ namespace DeusaldLocalizerCommon
         public DateTime CreatedAt   { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt   { get; set; } = DateTime.UtcNow;
 
+        /// <summary>
+        /// Maximum character length for all translations of this key.
+        /// 0 means no limit enforced.
+        /// </summary>
+        public int MaxLength { get; set; } = 0;
+
         /// <summary>Free-form tags for search/filter (e.g. ["ui", "button"]).</summary>
         public List<string> Tags { get; set; } = new();
 

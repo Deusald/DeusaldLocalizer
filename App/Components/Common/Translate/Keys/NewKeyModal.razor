@@ -22,7 +22,7 @@
                     <span class="nkm-label-hint">letters, numbers and underscore only</span>
                 </label>
                 <input class="nkm-input nkm-input-mono" type="text" placeholder="button_save"
-                       @bind="_KeyName" @bind:event="oninput" maxlength="120" />
+                       @bind="_KeyName" @bind:event="oninput" maxlength="120"/>
                 @if (!string.IsNullOrEmpty(_KeyName) && !IsValidKeyName(_KeyName))
                 {
                     <div class="nkm-field-error">Only letters, numbers and "_" are allowed</div>
@@ -56,7 +56,7 @@
                                    placeholder="Search category…"
                                    @bind="_CatQuery" @bind:event="oninput"
                                    @onfocus="() => _CatOpen = true"
-                                   @onblur="OnCatBlur" />
+                                   @onblur="OnCatBlur"/>
                         }
                     </div>
 
@@ -72,8 +72,8 @@
                             {
                                 @foreach (CategoryDto cat in results)
                                 {
-                                    CategoryDto c = cat;
-                                    bool active = _SelectedCategory?.Id == c.Id;
+                                    CategoryDto c      = cat;
+                                    bool        active = _SelectedCategory?.Id == c.Id;
                                     <button class="nkm-cat-item @(active ? "active" : "")"
                                             @onclick="() => SelectCategory(c)"
                                             @onclick:preventDefault="true">
@@ -92,6 +92,15 @@
 
             @if (!_CatOpen)
             {
+                <div class="nkm-field">
+                    <label class="nkm-label">
+                        Max length
+                        <span class="nkm-label-hint">0 = no limit</span>
+                    </label>
+                    <input class="nkm-input" type="number" min="0" max="10000" placeholder="0"
+                           @bind="_MaxLength" @bind:event="oninput"/>
+                </div>
+
                 <div class="nkm-preview">
                     <span class="nkm-preview-label">Full key</span>
                     <code class="nkm-preview-value">@_PreviewFullKey</code>
@@ -113,12 +122,13 @@
 @code {
     [Parameter] public EventCallback<Guid> OnCreated { get; set; }
 
-    private bool         _Visible;
-    private string       _KeyName  = "";
-    private string       _CatQuery = "";
-    private bool         _CatOpen;
-    private bool         _SuppressBlurClose;
-    private CategoryDto? _SelectedCategory;
+    private bool                _Visible;
+    private string              _KeyName = "";
+    private int                 _MaxLength;
+    private string              _CatQuery = "";
+    private bool                _CatOpen;
+    private bool                _SuppressBlurClose;
+    private CategoryDto?        _SelectedCategory;
     private LocalizationKeyDto? _EditingKey;
 
     private static readonly Regex _KeyNamePattern = new(@"^[A-Za-z0-9_]+$");
@@ -175,33 +185,35 @@
 
     public void Show()
     {
-        _KeyName = "";
-        _CatQuery = "";
-        _CatOpen = false;
+        _KeyName           = "";
+        _MaxLength         = 0;
+        _CatQuery          = "";
+        _CatOpen           = false;
         _SuppressBlurClose = false;
-        _SelectedCategory = null;
-        _EditingKey = null;
-        _Visible = true;
+        _SelectedCategory  = null;
+        _EditingKey        = null;
+        _Visible           = true;
         StateHasChanged();
     }
 
     public void EditKey(LocalizationKeyDto key)
     {
-        _EditingKey = key;
-        _KeyName = key.KeyName;
-        _CatQuery = "";
-        _CatOpen = false;
+        _EditingKey        = key;
+        _KeyName           = key.KeyName;
+        _MaxLength         = key.MaxLength;
+        _CatQuery          = "";
+        _CatOpen           = false;
         _SuppressBlurClose = false;
-        _SelectedCategory = _ProjectState.CurrentProject!.Categories.Find(c => c.Id == key.CategoryId);
-        _Visible = true;
+        _SelectedCategory  = _ProjectState.CurrentProject!.Categories.Find(c => c.Id == key.CategoryId);
+        _Visible           = true;
         StateHasChanged();
     }
 
     private void SelectCategory(CategoryDto cat)
     {
         _SelectedCategory = cat;
-        _CatQuery = "";
-        _CatOpen = false;
+        _CatQuery         = "";
+        _CatOpen          = false;
     }
 
     private async Task OnCatBlur()
@@ -246,6 +258,7 @@
                 ProjectId  = project.Id,
                 CategoryId = _SelectedCategory!.Id,
                 KeyName    = _KeyName.Trim(),
+                MaxLength  = Math.Max(0, _MaxLength),
             };
             project.Keys.Add(key);
             _ProjectState.MarkDirty();
@@ -257,6 +270,7 @@
         {
             _EditingKey.KeyName    = _KeyName.Trim();
             _EditingKey.CategoryId = _SelectedCategory!.Id;
+            _EditingKey.MaxLength  = Math.Max(0, _MaxLength);
             _EditingKey.UpdatedAt  = DateTime.UtcNow;
             _ProjectState.MarkDirty();
 

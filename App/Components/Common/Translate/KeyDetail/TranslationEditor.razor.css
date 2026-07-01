@@ -59,6 +59,23 @@
     cursor: default;
 }
 
+.te-over-limit {
+    border-color: #ff453a !important;
+    box-shadow: 0 0 0 3px rgba(255,69,58,.15) !important;
+}
+
+.te-char-count {
+    font-size: 11px;
+    color: #5a5b63;
+    text-align: right;
+    margin-top: 2px;
+}
+
+.te-char-count-over {
+    color: #ff453a;
+    font-weight: 600;
+}
+
 /* ── Actions ──────────────────────────────────────────────────────────────── */
 
 .te-actions {
