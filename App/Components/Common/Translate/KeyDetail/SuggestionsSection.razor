@@ -15,7 +15,7 @@
                 SuggestionDto s = suggestion;
                 int score = s.Votes.Sum(v => v.Value);
                 int myVote = s.Votes.Find(v => v.UserId == _ProjectState.CurrentUser.Id)?.Value ?? 0;
-                string preview = SmartFormatPreviewService.Render(s.Text, Key.Variables);
+                string preview = VariablePreviewService.Render(s.Text, Key.Variables, PreviewOverrides, _ProjectState.CurrentProject!.Enums);
 
                 <div class="ss-item">
                     <div class="ss-vote">
@@ -56,9 +56,10 @@
 }
 
 @code {
-    [Parameter] public LocalizationKeyDto Key { get; set; } = null!;
-    [Parameter] public string SelectedLanguage { get; set; } = "";
-    [Parameter] public EventCallback OnChanged { get; set; }
+    [Parameter] public LocalizationKeyDto       Key              { get; set; } = null!;
+    [Parameter] public string                   SelectedLanguage { get; set; } = "";
+    [Parameter] public EventCallback            OnChanged        { get; set; }
+    [Parameter] public Dictionary<Guid, string> PreviewOverrides { get; set; } = new();
 
     private bool _CanAccept => _ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
                             || _ProjectState.CurrentUserHas(PermissionFlags.Admin);

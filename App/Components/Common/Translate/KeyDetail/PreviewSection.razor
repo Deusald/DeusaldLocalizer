@@ -3,11 +3,19 @@
 @inject ProjectStateService _ProjectState
 
 <div class="ps-root">
-    <div class="ps-label">Preview</div>
+    <div class="ps-header">
+        <span class="ps-label">Preview</span>
+        <button class="ps-mode-btn" @onclick="ToggleMode" title="@(_LiveMode ? "Switch to Current (saved)" : "Switch to Live (draft)")">
+            <i class="bi @(_LiveMode ? "bi-broadcast" : "bi-check-circle")"></i>
+            @(_LiveMode ? "Live" : "Current")
+        </button>
+    </div>
     <div class="ps-frame">
         <div class="ps-row">
             <span class="ps-row-tag ps-row-tag-source">SRC</span>
-            <span class="ps-row-text">@_RenderedSource</span>
+            <span class="ps-row-text @(string.IsNullOrEmpty(_RenderedSource) ? "ps-row-text-empty" : "")">
+                @(string.IsNullOrEmpty(_RenderedSource) ? "No source yet" : _RenderedSource)
+            </span>
         </div>
         @if (!_IsSourceLanguageSelected)
         {
@@ -22,18 +30,34 @@
 </div>
 
 @code {
-    [Parameter] public LocalizationKeyDto Key              { get; set; } = null!;
-    [Parameter] public string             SelectedLanguage { get; set; } = "";
+    [Parameter] public LocalizationKeyDto       Key              { get; set; } = null!;
+    [Parameter] public string                   SelectedLanguage { get; set; } = "";
+    [Parameter] public Dictionary<Guid, string> PreviewOverrides { get; set; } = new();
 
-    private string _SourceLangCode           => _ProjectState.CurrentProject!.MainLanguageId;
-    private bool   _IsSourceLanguageSelected => SelectedLanguage == _SourceLangCode;
+    /// <summary>Live draft text for the source textarea — supplied by TranslationEditor via KeyDetailColumn.</summary>
+    [Parameter]
+    public string SourceDraft { get; set; } = "";
+
+    /// <summary>Live draft text for the translation textarea — supplied by TranslationEditor via KeyDetailColumn.</summary>
+    [Parameter]
+    public string TranslationDraft { get; set; } = "";
+
+    private bool _LiveMode;
+
+    private string           _SourceLangCode           => _ProjectState.CurrentProject!.MainLanguageId;
+    private bool             _IsSourceLanguageSelected => SelectedLanguage == _SourceLangCode;
+    private List<LocEnumDto> _ProjectEnums             => _ProjectState.CurrentProject!.Enums;
+
+    private void ToggleMode() => _LiveMode = !_LiveMode;
 
     private string _RenderedSource
     {
         get
         {
-            TranslationDto? t = Key.Translations.Find(tr => tr.LanguageId == _SourceLangCode);
-            return SmartFormatPreviewService.Render(t?.Text ?? "", Key.Variables);
+            string text = _LiveMode
+                              ? SourceDraft
+                              : (Key.Translations.Find(t => t.LanguageId == _SourceLangCode)?.Text ?? "");
+            return VariablePreviewService.Render(text, Key.Variables, PreviewOverrides, _ProjectEnums);
         }
     }
 
@@ -41,8 +65,11 @@
     {
         get
         {
-            TranslationDto? t = Key.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
-            return SmartFormatPreviewService.Render(t?.Text ?? "", Key.Variables);
+            string text = _LiveMode
+                              ? TranslationDraft
+                              : (Key.Translations.Find(t => t.LanguageId == SelectedLanguage)?.Text ?? "");
+            return VariablePreviewService.Render(text, Key.Variables, PreviewOverrides, _ProjectEnums);
         }
     }
+
 }

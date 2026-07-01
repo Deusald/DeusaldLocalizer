@@ -13,6 +13,7 @@
             </div>
             <textarea class="te-textarea @((_CanEditSource || _CanEditTranslation) ? "" : "te-readonly") @(_SourceOverLimit ? "te-over-limit" : "")"
                       @bind="_SourceDraft" @bind:event="oninput"
+                      @bind:after="NotifyDraftChanged"
                       readonly="@(!_CanEditSource && !_CanEditTranslation)"
                       rows="4"
                       placeholder="Source text…"></textarea>
@@ -72,6 +73,7 @@
             </div>
             <textarea class="te-textarea @(_CanEditTranslation ? "" : "te-readonly") @(_TranslationOverLimit ? "te-over-limit" : "")"
                       @bind="_TranslationDraft" @bind:event="oninput"
+                      @bind:after="NotifyDraftChanged"
                       readonly="@(!_CanEditTranslation)"
                       rows="4"
                       placeholder="Type your translation…"></textarea>
@@ -102,9 +104,10 @@
 </div>
 
 @code {
-    [Parameter] public LocalizationKeyDto Key              { get; set; } = null!;
-    [Parameter] public string             SelectedLanguage { get; set; } = "";
-    [Parameter] public EventCallback      OnChanged        { get; set; }
+    [Parameter] public LocalizationKeyDto                                 Key              { get; set; } = null!;
+    [Parameter] public string                                             SelectedLanguage { get; set; } = "";
+    [Parameter] public EventCallback                                      OnChanged        { get; set; }
+    [Parameter] public EventCallback<(string source, string translation)> OnDraftChanged   { get; set; }
 
     private string _SourceDraft      = "";
     private string _TranslationDraft = "";
@@ -139,6 +142,10 @@
         TranslationDto? translation            = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
         string          currentTranslationText = translation?.Text ?? "";
 
+        // Snapshot drafts before any mutations so we can detect if they changed
+        string previousSourceDraft      = _SourceDraft;
+        string previousTranslationDraft = _TranslationDraft;
+
         if (keyOrLanguageChanged)
         {
             _SourceDraft      = currentSourceText;
@@ -163,6 +170,18 @@
 
         _LastKnownSourceText      = currentSourceText;
         _LastKnownTranslationText = currentTranslationText;
+
+        // Only notify the parent if drafts actually changed here — calling
+        // InvokeAsync unconditionally triggers a parent StateHasChanged on
+        // every render, which re-renders this component, which fires
+        // OnParametersSet again: an infinite loop.
+        if (_SourceDraft != previousSourceDraft || _TranslationDraft != previousTranslationDraft)
+            OnDraftChanged.InvokeAsync((_SourceDraft, _TranslationDraft));
+    }
+
+    private async Task NotifyDraftChanged()
+    {
+        await OnDraftChanged.InvokeAsync((_SourceDraft, _TranslationDraft));
     }
 
     private bool _SourceOverLimit =>

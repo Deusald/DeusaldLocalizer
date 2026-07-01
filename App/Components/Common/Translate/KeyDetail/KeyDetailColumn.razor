@@ -39,16 +39,22 @@
             <KeyTagsBar Key="@_SelectedKey" OnChanged="StateHasChanged"/>
 
             @* ── Translation editor ──────────────────────────────────────── *@
-            <TranslationEditor Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage" OnChanged="StateHasChanged"/>
+            <TranslationEditor Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage"
+                               OnChanged="StateHasChanged"
+                               OnDraftChanged="OnDraftChanged" />
 
             @* ── Preview ──────────────────────────────────────────────────── *@
-            <PreviewSection Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage"/>
+            <PreviewSection Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage"
+                            PreviewOverrides="@(_VariablesSection?.CurrentPreviewOverrides ?? _EmptyOverrides)"
+                            SourceDraft="@_SourceDraft"
+                            TranslationDraft="@_TranslationDraft" />
 
             @* ── Suggestions ──────────────────────────────────────────────── *@
-            <SuggestionsSection Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage" OnChanged="StateHasChanged"/>
+            <SuggestionsSection Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage" OnChanged="StateHasChanged"
+                                PreviewOverrides="@(_VariablesSection?.CurrentPreviewOverrides ?? _EmptyOverrides)"/>
 
             @* ── Variables ────────────────────────────────────────────────── *@
-            <VariablesSection Key="@_SelectedKey" OnChanged="StateHasChanged"/>
+            <VariablesSection @ref="_VariablesSection" Key="@_SelectedKey" OnChanged="StateHasChanged"/>
 
             @* ── History ──────────────────────────────────────────────────── *@
             <div class="kd-history-row">
@@ -69,7 +75,18 @@
     [Parameter] public string SelectedLanguage { get; set; } = "";
     [Parameter] public Guid?  SelectedKeyId    { get; set; }
 
-    private HistoryModal? _HistoryModal;
+    private HistoryModal?     _HistoryModal;
+    private VariablesSection? _VariablesSection;
+    private string            _SourceDraft      = "";
+    private string            _TranslationDraft = "";
+
+    private static readonly Dictionary<Guid, string> _EmptyOverrides = new();
+
+    private void OnDraftChanged((string source, string translation) drafts)
+    {
+        _SourceDraft      = drafts.source;
+        _TranslationDraft = drafts.translation;
+    }
 
     private LocalizationKeyDto? _SelectedKey => SelectedKeyId == null ? null : _ProjectState.CurrentProject!.Keys.Find(k => k.Id == SelectedKeyId);
 

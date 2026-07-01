@@ -1,0 +1,100 @@
+﻿.vs-root { display: flex; flex-direction: column; gap: 10px; }
+
+.vs-header { display: flex; align-items: center; justify-content: space-between; }
+.vs-label { font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: #7a7b83; }
+
+.vs-header-actions { display: flex; align-items: center; gap: 10px; }
+
+.vs-text-btn {
+    background: none; border: none; font-size: 11.5px; font-weight: 500;
+    color: #7a7b83; cursor: pointer; padding: 0;
+    display: flex; align-items: center; gap: 4px; transition: color .12s;
+}
+.vs-text-btn:hover { color: #d6d6db; }
+.vs-text-btn-accent { color: #5b6cff; }
+.vs-text-btn-accent:hover { color: #8d9aff; }
+
+.vs-empty { font-size: 12.5px; color: #44454e; font-style: italic; }
+
+.vs-list { display: flex; flex-direction: column; gap: 6px; }
+
+/* ── Display row ──────────────────────────────────────────────────────────── */
+
+.vs-row {
+    display: flex; align-items: center; gap: 8px;
+    background: #13141a; border: 1px solid #20212a;
+    border-radius: 8px; padding: 7px 10px;
+}
+
+.vs-name {
+    flex: 0 0 130px;
+    font-size: 12.5px; font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    color: #8d9aff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.vs-type-badge {
+    font-size: 10px; font-weight: 600; letter-spacing: .03em;
+    color: #5a5b63; background: #1e1f28; border: 1px solid #2a2b35;
+    border-radius: 4px; padding: 1px 6px; flex-shrink: 0; white-space: nowrap;
+}
+
+.vs-preview-wrap { flex: 1; min-width: 0; }
+
+.vs-preview-input {
+    width: 100%; background: #0f1015; border: 1px solid #20212a;
+    border-radius: 6px; color: #d6d6db; font-size: 12.5px; padding: 5px 8px;
+}
+.vs-preview-input:focus { border-color: #5b6cff; outline: none; }
+.vs-preview-input::placeholder { color: #44454e; }
+
+.vs-reset-btn, .vs-icon-btn {
+    flex-shrink: 0; width: 26px; height: 26px;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; border: 1px solid transparent;
+    border-radius: 5px; color: #5a5b63; cursor: pointer; transition: all .12s;
+}
+.vs-reset-btn { font-size: 12px; }
+.vs-icon-btn  { font-size: 11.5px; }
+.vs-reset-btn:hover:not(:disabled), .vs-icon-btn:hover { background: #1e1f28; border-color: #2a2b35; color: #d6d6db; }
+.vs-reset-btn:disabled { opacity: .3; cursor: not-allowed; }
+
+/* ── Edit mode ────────────────────────────────────────────────────────────── */
+
+.vs-row-editing {
+    align-items: flex-start; padding: 12px;
+    border-color: rgba(91,108,255,.3); background: rgba(91,108,255,.04);
+}
+
+.vs-edit-block { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.vs-edit-row   { display: flex; gap: 10px; }
+
+.vs-edit-field { display: flex; flex-direction: column; gap: 5px; flex: 1; min-width: 0; }
+
+.vs-edit-label {
+    font-size: 11px; font-weight: 500; color: #7a7b83;
+    display: flex; align-items: baseline; gap: 6px;
+}
+.vs-edit-label-hint { font-size: 10px; font-weight: 400; color: #5a5b63; }
+
+.vs-input {
+    background: #12131a; border: 1px solid #2a2b35; border-radius: 7px;
+    color: #e8e8ea; font-size: 12.5px; padding: 7px 9px; width: 100%;
+}
+.vs-input:focus { border-color: #5b6cff; outline: none; box-shadow: 0 0 0 3px rgba(91,108,255,.18); }
+.vs-input::placeholder { color: #44454e; }
+.vs-input-mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+
+.vs-edit-actions { display: flex; align-items: center; gap: 10px; }
+
+.vs-done-btn {
+    padding: 6px 14px; background: #5b6cff; border: none;
+    border-radius: 7px; color: #fff; font-size: 12.5px; font-weight: 500; cursor: pointer;
+}
+.vs-done-btn:hover { background: #6c7cff; }
+
+.vs-remove-btn {
+    display: flex; align-items: center; gap: 5px;
+    background: none; border: none; color: #ff6b6b;
+    font-size: 12px; cursor: pointer; padding: 0; opacity: .7;
+}
+.vs-remove-btn:hover { opacity: 1; }

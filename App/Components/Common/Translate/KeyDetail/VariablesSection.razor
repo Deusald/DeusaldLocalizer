@@ -1,0 +1,255 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@inject ProjectStateService _ProjectState
+
+<div class="vs-root">
+    <div class="vs-header">
+        <span class="vs-label">Variables</span>
+        @if (_IsAdmin)
+        {
+            <div class="vs-header-actions">
+                <button class="vs-text-btn" @onclick="() => _EnumsModal?.Show()">
+                    Edit enums
+                </button>
+                <button class="vs-text-btn vs-text-btn-accent" @onclick="AddVariable">
+                    <i class="bi bi-plus"></i> Add variable
+                </button>
+            </div>
+        }
+    </div>
+
+    @if (Key.Variables.Count == 0)
+    {
+        <div class="vs-empty">No variables declared for this key.</div>
+    }
+    else
+    {
+        <div class="vs-list">
+            @foreach (var variable in Key.Variables)
+            {
+                KeyVariableDto v       = variable;
+                bool           editing = _IsAdmin && _EditingId == v.Id;
+                string         preview = _PreviewOverrides.TryGetValue(v.Id, out string? ov) ? ov : v.DefaultPreviewValue;
+
+                <div class="vs-row @(editing ? "vs-row-editing" : "")">
+
+                    @if (editing)
+                    {
+                        <div class="vs-edit-block">
+                            <div class="vs-edit-row">
+                                <div class="vs-edit-field">
+                                    <label class="vs-edit-label">Name</label>
+                                    <input class="vs-input vs-input-mono" @bind="v.Name" @bind:event="oninput"
+                                           placeholder="variableName" @bind:after="MarkDirty"/>
+                                </div>
+                                <div class="vs-edit-field">
+                                    <label class="vs-edit-label">Type</label>
+                                    <select class="vs-input" @bind="v.Type">
+                                        @foreach (KeyVariableType t in Enum.GetValues(typeof(KeyVariableType)))
+                                        {
+                                            <option value="@t">@TypeLabel(t)</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+
+                            @if (v.Type == KeyVariableType.EnumInt || v.Type == KeyVariableType.EnumString)
+                            {
+                                <div class="vs-edit-field">
+                                    <label class="vs-edit-label">Enum</label>
+                                    <select class="vs-input" @bind="v.EnumId">
+                                        <option value="">— select enum —</option>
+                                        @foreach (var e in _ProjectState.CurrentProject!.Enums)
+                                        {
+                                            <option value="@e.Id">@e.Name</option>
+                                        }
+                                    </select>
+                                </div>
+                            }
+
+                            <div class="vs-edit-field">
+                                <label class="vs-edit-label">
+                                    Default preview value
+                                    @if (v.Type is KeyVariableType.StringArray or KeyVariableType.IntArray
+                                         or KeyVariableType.FloatArray or KeyVariableType.BoolArray)
+                                    {
+                                        <span class="vs-edit-label-hint">comma-separated</span>
+                                    }
+                                    @if (v.Type is KeyVariableType.EnumInt or KeyVariableType.EnumString)
+                                    {
+                                        <span class="vs-edit-label-hint">int value</span>
+                                    }
+                                </label>
+                                @if (v.Type is KeyVariableType.EnumInt or KeyVariableType.EnumString)
+                                {
+                                    <select class="vs-input" value="@v.DefaultPreviewValue"
+                                            @onchange="e => { v.DefaultPreviewValue = e.Value?.ToString() ?? string.Empty; MarkDirty(); }">
+                                        <option value="">—</option>
+                                        @foreach (var entry in EnumEntries(v.EnumId))
+                                        {
+                                            <option value="@entry.IntValue">@entry.IntValue — @entry.StringValue</option>
+                                        }
+                                    </select>
+                                }
+                                else
+                                {
+                                    <input class="vs-input" placeholder="@PlaceholderFor(v.Type)"
+                                           value="@v.DefaultPreviewValue"
+                                           @onchange="e => { v.DefaultPreviewValue = e.Value?.ToString() ?? string.Empty; MarkDirty(); }"/>
+                                }
+                            </div>
+
+                            <div class="vs-edit-actions">
+                                <button class="vs-done-btn" @onclick="StopEditing">Done</button>
+                                <button class="vs-remove-btn" @onclick="() => RemoveVariable(v)">
+                                    <i class="bi bi-trash3"></i> Remove
+                                </button>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <span class="vs-name">{@v.Name}</span>
+                        <span class="vs-type-badge">@TypeLabel(v.Type)</span>
+
+                        <div class="vs-preview-wrap">
+                            @if (v.Type is KeyVariableType.EnumInt or KeyVariableType.EnumString)
+                            {
+                                <select class="vs-preview-input"
+                                        value="@preview"
+                                        @onchange="e => SetPreviewOverride(v.Id, e.Value?.ToString() ?? string.Empty)">
+                                    <option value="">—</option>
+                                    @foreach (var entry in EnumEntries(v.EnumId))
+                                    {
+                                        <option value="@entry.IntValue">@entry.IntValue — @entry.StringValue</option>
+                                    }
+                                </select>
+                            }
+                            else
+                            {
+                                <input class="vs-preview-input" type="text"
+                                       value="@preview"
+                                       placeholder="@PlaceholderFor(v.Type)"
+                                       @oninput="e => SetPreviewOverride(v.Id, e.Value?.ToString() ?? string.Empty)"/>
+                            }
+                        </div>
+
+                        <button class="vs-reset-btn" title="Reset to default preview value"
+                                @onclick="() => ResetPreview(v)"
+                                disabled="@(!HasOverride(v))">
+                            <i class="bi bi-arrow-counterclockwise"></i>
+                        </button>
+
+                        @if (_IsAdmin)
+                        {
+                            <button class="vs-icon-btn" title="Edit variable"
+                                    @onclick="() => StartEditing(v.Id)">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                        }
+                    }
+
+                </div>
+            }
+        </div>
+    }
+</div>
+
+<ProjectEnumsModal @ref="_EnumsModal"/>
+
+@code {
+    [Parameter] public LocalizationKeyDto Key       { get; set; } = null!;
+    [Parameter] public EventCallback      OnChanged { get; set; }
+
+    private readonly Dictionary<Guid, string> _PreviewOverrides = new();
+    
+    private Guid?              _EditingId;
+    private ProjectEnumsModal? _EnumsModal;
+
+    private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+
+    private void StartEditing(Guid id)
+    {
+        _EditingId = id;
+        _PreviewOverrides.Remove(id);
+    }
+
+    private void StopEditing()
+    {
+        _EditingId = null;
+        _ProjectState.MarkDirty();
+        OnChanged.InvokeAsync();
+    }
+
+    private void AddVariable()
+    {
+        var v = new KeyVariableDto { KeyId = Key.Id };
+        Key.Variables.Add(v);
+        _EditingId = v.Id;
+        _ProjectState.MarkDirty();
+    }
+
+    private void RemoveVariable(KeyVariableDto v)
+    {
+        _EditingId = null;
+        _PreviewOverrides.Remove(v.Id);
+        Key.Variables.Remove(v);
+        _ProjectState.MarkDirty();
+        OnChanged.InvokeAsync();
+    }
+
+    private void SetPreviewOverride(Guid id, string value)
+    {
+        _PreviewOverrides[id] = value;
+        OnChanged.InvokeAsync();
+    }
+
+    private void ResetPreview(KeyVariableDto v)
+    {
+        _PreviewOverrides.Remove(v.Id);
+        OnChanged.InvokeAsync();
+    }
+
+    private bool HasOverride(KeyVariableDto v) =>
+        _PreviewOverrides.TryGetValue(v.Id, out string? ov) && ov != v.DefaultPreviewValue;
+
+    private void MarkDirty() => _ProjectState.MarkDirty();
+
+    private List<LocEnumEntryDto> EnumEntries(Guid? enumId)
+    {
+        if (enumId == null) return new List<LocEnumEntryDto>();
+        LocEnumDto? locEnum = _ProjectState.CurrentProject!.Enums.Find(e => e.Id == enumId);
+        return locEnum?.Entries ?? new List<LocEnumEntryDto>();
+    }
+
+    public Dictionary<Guid, string> CurrentPreviewOverrides => _PreviewOverrides;
+
+    private static string TypeLabel(KeyVariableType t) => t switch
+    {
+        KeyVariableType.String      => "string",
+        KeyVariableType.Int         => "int",
+        KeyVariableType.Float       => "float",
+        KeyVariableType.Bool        => "bool",
+        KeyVariableType.StringArray => "string[]",
+        KeyVariableType.IntArray    => "int[]",
+        KeyVariableType.FloatArray  => "float[]",
+        KeyVariableType.BoolArray   => "bool[]",
+        KeyVariableType.EnumInt     => "enum→int",
+        KeyVariableType.EnumString  => "enum→str",
+        _                           => t.ToString(),
+    };
+
+    private static string PlaceholderFor(KeyVariableType t) => t switch
+    {
+        KeyVariableType.Int                                   => "0",
+        KeyVariableType.Float                                 => "0.0",
+        KeyVariableType.Bool                                  => "true",
+        KeyVariableType.IntArray                              => "1,2,3",
+        KeyVariableType.FloatArray                            => "1.0,2.0",
+        KeyVariableType.BoolArray                             => "true,false",
+        KeyVariableType.StringArray                           => "a,b,c",
+        KeyVariableType.EnumInt or KeyVariableType.EnumString => "0",
+        _                                                     => "value",
+    };
+
+}

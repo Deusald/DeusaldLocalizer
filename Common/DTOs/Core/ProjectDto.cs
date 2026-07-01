@@ -23,5 +23,8 @@ namespace DeusaldLocalizerCommon
         public List<ProjectMemberDto>   Members    { get; set; } = new();
         public List<CategoryDto>        Categories { get; set; } = new();
         public List<LocalizationKeyDto> Keys       { get; set; } = new();
+
+        /// <summary>Project-level enum type definitions used by EnumInt/EnumString variables.</summary>
+        public List<LocEnumDto> Enums { get; set; } = new();
     }
 }

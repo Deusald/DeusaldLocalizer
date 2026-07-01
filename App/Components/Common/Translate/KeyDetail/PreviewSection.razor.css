@@ -4,6 +4,12 @@
     gap: 6px;
 }
 
+.ps-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .ps-label {
     font-size: 11px;
     font-weight: 600;
@@ -11,6 +17,23 @@
     text-transform: uppercase;
     color: #7a7b83;
 }
+
+.ps-mode-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 8px;
+    background: transparent;
+    border: 1px solid #2a2b35;
+    border-radius: 5px;
+    color: #7a7b83;
+    font-size: 10.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .12s, color .12s, border-color .12s;
+}
+.ps-mode-btn:hover { background: #1e1f28; border-color: #3a3b44; color: #d6d6db; }
+.ps-mode-btn i { font-size: 10px; }
 
 .ps-frame {
     background: #101117;
@@ -45,6 +68,7 @@
     color: #d6d6db;
     line-height: 1.5;
     word-break: break-word;
+    white-space: pre-wrap;
 }
 
 .ps-row-text-empty { color: #44454e; font-style: italic; }

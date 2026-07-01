@@ -67,6 +67,8 @@
     font-size: 13.5px;
     color: #e8e8ea;
     line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 .ss-preview {
@@ -74,6 +76,8 @@
     color: #5a5b63;
     margin-top: 3px;
     font-style: italic;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 .ss-meta {
