@@ -1,5 +1,4 @@
 ﻿using CommunityToolkit.Maui;
-using DeusaldLocalizerCommon;
 using Microsoft.Extensions.Logging;
 
 namespace App;
@@ -24,9 +23,6 @@ public static class MauiProgram
         // ── App services ──────────────────────────────────────────────────
         // Singleton: shared state that must survive page navigation
         builder.Services.AddSingleton<ProjectStateService>();
-
-        // Transient: stateless file I/O service
-        builder.Services.AddTransient<DlocFileService>();
 
         return builder.Build();
     }

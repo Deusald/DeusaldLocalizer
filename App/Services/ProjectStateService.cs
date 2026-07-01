@@ -1,4 +1,5 @@
-﻿using DeusaldLocalizerCommon;
+﻿using CommunityToolkit.Maui.Storage;
+using DeusaldLocalizerCommon;
 using JetBrains.Annotations;
 
 namespace App;
@@ -33,7 +34,7 @@ public class ProjectStateService
     /// user must explicitly save.
     /// </summary>
     public bool IsOnline { get; private set; }
-        
+
     // ── Events ───────────────────────────────────────────────────────────────
 
     /// <summary>Fires whenever the open project changes (load, close, new).</summary>
@@ -41,7 +42,7 @@ public class ProjectStateService
 
     /// <summary>Fires whenever IsDirty changes.</summary>
     public event Action? DirtyStateChanged;
-    
+
     /// <summary>
     /// Fires every time the project's data is mutated via MarkDirty(), even if
     /// IsDirty was already true. Use this (instead of DirtyStateChanged) when a
@@ -59,6 +60,31 @@ public class ProjectStateService
         IsDirty         = false;
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
+    }
+
+    public async Task SaveAsync()
+    {
+        if (string.IsNullOrEmpty(CurrentFilePath))
+        {
+            // New project never saved — use FileSaver to pick a location.
+            using var stream = new MemoryStream();
+            await DlocFileService.SaveToStreamAsync(CurrentProject!, stream);
+            stream.Position = 0;
+
+            string fileName = string.IsNullOrEmpty(CurrentProject!.Slug) ? "project" : CurrentProject.Slug;
+            FileSaverResult    result   = await FileSaver.Default.SaveAsync($"{fileName}{DlocFileService.FILE_EXTENSION}", stream);
+
+            if (result.IsSuccessful)
+            {
+                UpdateFilePath(result.FilePath);
+                MarkClean();
+            }
+        }
+        else
+        {
+            await DlocFileService.SaveAsync(CurrentProject!, CurrentFilePath);
+            MarkClean();
+        }
     }
 
     public void CreateNewProject(ProjectDto project)

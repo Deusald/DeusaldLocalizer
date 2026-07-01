@@ -10,7 +10,7 @@ namespace DeusaldLocalizerCommon
     {
         public Guid   Id          { get; set; } = Guid.NewGuid();
         public string DisplayName { get; set; } = string.Empty;
-        public bool   IsOffline   { get; set; } = false;
+        public bool   IsOffline   { get; set; }
 
         public static UserDto CreateOfflineUser() => new()
         {

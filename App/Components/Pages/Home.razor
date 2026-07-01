@@ -4,7 +4,6 @@
 @using global::App.Components.Layout
 @using global::DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
-@inject DlocFileService     _DlocService
 @inject NavigationManager   _Nav
 @implements IDisposable
 
@@ -189,7 +188,7 @@
 
         try
         {
-            ProjectDto project = await _DlocService.LoadAsync(path);
+            ProjectDto project = await DlocFileService.LoadAsync(path);
             _ProjectState.LoadProject(project, path);
             _RecentProjects = RecentProjectsService.UpdateRecentProjects(project, path);
             _Nav.NavigateTo("/translate");

@@ -19,7 +19,7 @@ namespace App;
 /// and avoids loading everything into memory at once for large projects.
 /// </summary>
 [PublicAPI]
-public class DlocFileService
+public static class DlocFileService
 {
     // ── Constants ────────────────────────────────────────────────────────────
 
@@ -39,7 +39,7 @@ public class DlocFileService
     /// Loads a .dloc file from disk and returns the fully hydrated ProjectDto.
     /// Throws <see cref="DlocFormatException"/> on structural errors.
     /// </summary>
-    public async Task<ProjectDto> LoadAsync(string filePath)
+    public static async Task<ProjectDto> LoadAsync(string filePath)
     {
         if (!File.Exists(filePath))
             throw new FileNotFoundException("Project file not found.", filePath);
@@ -49,7 +49,7 @@ public class DlocFileService
     }
 
     /// <summary>Loads a .dloc from any readable stream (useful for testing).</summary>
-    public async Task<ProjectDto> LoadFromStreamAsync(Stream stream)
+    public static async Task<ProjectDto> LoadFromStreamAsync(Stream stream)
     {
         await using ZipArchive archive = new ZipArchive(stream, ZipArchiveMode.Read, leaveOpen: true);
 
@@ -86,7 +86,7 @@ public class DlocFileService
     // ── Save ─────────────────────────────────────────────────────────────────
 
     /// <summary>Saves the project to a .dloc file at the given path.</summary>
-    public async Task SaveAsync(ProjectDto project, string filePath)
+    public static async Task SaveAsync(ProjectDto project, string filePath)
     {
         project.UpdatedAt     = DateTime.UtcNow;
         project.FormatVersion = CURRENT_FORMAT_VERSION;
@@ -111,7 +111,7 @@ public class DlocFileService
     }
 
     /// <summary>Saves the project to any writable stream.</summary>
-    public async Task SaveToStreamAsync(ProjectDto project, Stream stream)
+    public static async Task SaveToStreamAsync(ProjectDto project, Stream stream)
     {
         await using ZipArchive archive = new ZipArchive(stream, ZipArchiveMode.Create, leaveOpen: true);
 

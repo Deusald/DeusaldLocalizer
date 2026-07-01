@@ -3,7 +3,6 @@
 @using System.IO
 @using DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
-@inject DlocFileService     _DlocService
 @inject NavigationManager   _Nav
 
 @{ if (!_ProjectState.HasProject) return; }
@@ -207,7 +206,7 @@
         {
             // Never saved to disk yet — ask where to put it.
             using MemoryStream stream = new MemoryStream();
-            await _DlocService.SaveToStreamAsync(project, stream);
+            await DlocFileService.SaveToStreamAsync(project, stream);
             stream.Position = 0;
 
             string          fileName = string.IsNullOrEmpty(project.Slug) ? "project" : project.Slug;
@@ -220,7 +219,7 @@
         }
         else
         {
-            await _DlocService.SaveAsync(project, _ProjectState.CurrentFilePath);
+            await DlocFileService.SaveAsync(project, _ProjectState.CurrentFilePath);
             _ProjectState.MarkClean();
         }
 

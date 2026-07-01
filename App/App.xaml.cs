@@ -3,18 +3,16 @@
 public partial class App : Application
 {
     private readonly ProjectStateService _ProjectState;
-    private readonly DlocFileService     _DlocService;
-    
-    public App(ProjectStateService projectState, DlocFileService dlocService)
+
+    public App(ProjectStateService projectState)
     {
         _ProjectState = projectState;
-        _DlocService  = dlocService;
-        
+
         InitializeComponent();
     }
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
-        return new AppWindow(new MainPage(), _ProjectState, _DlocService) { Title = "Deusald Localizer" };
+        return new AppWindow(new MainPage(), _ProjectState) { Title = "Deusald Localizer" };
     }
 }

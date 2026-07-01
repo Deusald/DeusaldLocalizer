@@ -1,4 +1,4 @@
-﻿using DeusaldLocalizerCommon;
+﻿using DeusaldSharp;
 
 namespace App
 {
@@ -6,24 +6,30 @@ namespace App
     /// Custom Window that intercepts the OS close button and prompts the user
     /// to save unsaved changes before quitting.
     /// </summary>
-    public class AppWindow(Page page, ProjectStateService projectState, DlocFileService dlocService) : Window(page)
+    public class AppWindow(Page page, ProjectStateService projectState) : Window(page)
     {
         protected override void OnHandlerChanged()
         {
             base.OnHandlerChanged();
 
-#if WINDOWS
+            #if WINDOWS
             // On Windows, subscribe to the WinUI AppWindow Closing event so we
             // can show a native dialog and cancel the close if needed.
             if (Handler?.PlatformView is Microsoft.UI.Xaml.Window winUiWindow)
             {
                 winUiWindow.AppWindow.Closing += OnWindowClosing;
             }
-#endif
+            #endif
         }
 
-#if WINDOWS
-        private async void OnWindowClosing(Microsoft.UI.Windowing.AppWindow sender,
+        #if WINDOWS
+        private void OnWindowClosing(Microsoft.UI.Windowing.AppWindow sender,
+                                           Microsoft.UI.Windowing.AppWindowClosingEventArgs args)
+        {
+            InnerOnWindowClosing(sender, args).Forget();
+        }
+        
+        private async Task InnerOnWindowClosing(Microsoft.UI.Windowing.AppWindow sender,
                                            Microsoft.UI.Windowing.AppWindowClosingEventArgs args)
         {
             if (!projectState.HasProject || !projectState.IsDirty || projectState.IsOnline)
@@ -45,10 +51,10 @@ namespace App
         private async Task<bool?> ShowSavePromptAsync()
         {
             string action = await Application.Current!.Windows[0].Page!.DisplayActionSheetAsync(
-                title:       "Unsaved changes",
-                cancel:      "Cancel",
-                destruction: "Discard changes",
-                buttons:     new[] { "Save and close" });
+                                title: "Unsaved changes",
+                                cancel: "Cancel",
+                                destruction: "Discard changes",
+                                buttons: ["Save and close"]);
 
             return action switch
             {
@@ -57,11 +63,11 @@ namespace App
                 _                 => null,
             };
         }
-#else
+        #else
         // macOS: override the cross-platform close-requested handler.
         protected override bool OnCloseRequested()
         {
-            if (!_ProjectState.HasProject || !_ProjectState.IsDirty || _ProjectState.IsOnline)
+            if (!projectState.HasProject || !projectState.IsDirty || projectState.IsOnline)
                 return false; // false = allow close
 
             // Fire-and-forget the async prompt; cancel the immediate close and
@@ -72,11 +78,11 @@ namespace App
 
         private async Task PromptAndCloseMacAsync()
         {
-            string action = await Application.Current!.MainPage!.DisplayActionSheetAsync(
+            string action = await Application.Current!.Windows[0].Page!.DisplayActionSheetAsync(
                 title:       "Unsaved changes",
                 cancel:      "Cancel",
                 destruction: "Discard changes",
-                buttons:     new[] { "Save and close" });
+                buttons: ["Save and close"]);
 
             if (action == "Save and close")
             {
@@ -89,34 +95,11 @@ namespace App
             }
             // "Cancel" — do nothing, window stays open
         }
-#endif
+        #endif
 
         private async Task SaveAsync()
         {
-            ProjectDto project = projectState.CurrentProject!;
-
-            if (string.IsNullOrEmpty(projectState.CurrentFilePath))
-            {
-                // New project never saved — use FileSaver to pick a location.
-                using var stream = new MemoryStream();
-                await dlocService.SaveToStreamAsync(project, stream);
-                stream.Position = 0;
-
-                string fileName = string.IsNullOrEmpty(project.Slug) ? "project" : project.Slug;
-                var result = await CommunityToolkit.Maui.Storage.FileSaver.Default
-                    .SaveAsync($"{fileName}{DlocFileService.FILE_EXTENSION}", stream);
-
-                if (result.IsSuccessful)
-                {
-                    projectState.UpdateFilePath(result.FilePath);
-                    projectState.MarkClean();
-                }
-            }
-            else
-            {
-                await dlocService.SaveAsync(project, projectState.CurrentFilePath);
-                projectState.MarkClean();
-            }
+            await projectState.SaveAsync();
         }
     }
 }
