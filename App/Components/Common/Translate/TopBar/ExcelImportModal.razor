@@ -1,0 +1,162 @@
+﻿@namespace App.Components.Translate
+@using DeusaldLocalizerCommon
+@using System.IO
+@inject ProjectStateService _ProjectState
+
+@if (_Visible)
+{
+    <div class="im-backdrop" @onclick="Close"></div>
+
+    <div class="im-box" @onclick:stopPropagation="true">
+
+        <div class="im-header">
+            <span class="im-title">Import from Excel</span>
+            <button class="im-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="im-body">
+
+            @if (_Result == null && !_IsImporting)
+            {
+                <div class="im-desc">
+                    Select an <code>.xlsx</code> file previously exported from this project.
+                    Translations are matched by <strong>KeyId</strong> and updated to
+                    <em>Draft</em> status — only non-empty cells overwrite existing values.
+                </div>
+
+                @if (_Error != null)
+                {
+                    <div class="im-alert im-alert-error">
+                        <i class="bi bi-exclamation-triangle"></i> @_Error
+                    </div>
+                }
+
+                <button class="im-pick-btn" @onclick="PickAndImport">
+                    <i class="bi bi-file-earmark-spreadsheet"></i>
+                    Choose file…
+                </button>
+            }
+            else if (_IsImporting)
+            {
+                <div class="im-progress">
+                    <span class="im-spinner"></span>
+                    <span>Importing…</span>
+                </div>
+            }
+            else if (_Result != null)
+            {
+                <div class="im-result">
+                    <div class="im-stat">
+                        <span class="im-stat-value">@_Result.KeysUpdated</span>
+                        <span class="im-stat-label">keys updated</span>
+                    </div>
+                    <div class="im-stat">
+                        <span class="im-stat-value">@_Result.CellsImported</span>
+                        <span class="im-stat-label">cells imported</span>
+                    </div>
+                    @if (_Result.KeysSkipped > 0)
+                    {
+                        <div class="im-stat im-stat-warn">
+                            <span class="im-stat-value">@_Result.KeysSkipped</span>
+                            <span class="im-stat-label">rows skipped</span>
+                        </div>
+                    }
+                </div>
+
+                @if (_Result.Warnings.Count > 0)
+                {
+                    <div class="im-warnings">
+                        @foreach (string w in _Result.Warnings)
+                        {
+                            <div class="im-warning-row"><i class="bi bi-exclamation-triangle"></i> @w</div>
+                        }
+                    </div>
+                }
+
+                <div class="im-footer-note">
+                    All imported translations are set to <em>Draft</em>. Review and approve them in the translator.
+                </div>
+            }
+
+        </div>
+
+        @if (_Result != null)
+        {
+            <div class="im-footer">
+                <button class="im-btn im-btn-ghost" @onclick="Reset">Import another</button>
+                <button class="im-btn im-btn-primary" @onclick="Close">Done</button>
+            </div>
+        }
+
+    </div>
+}
+
+@code {
+    private bool          _Visible;
+    private bool          _IsImporting;
+    private ImportResult? _Result;
+    private string?       _Error;
+
+    public void Show()
+    {
+        _Result      = null;
+        _Error       = null;
+        _IsImporting = false;
+        _Visible     = true;
+        StateHasChanged();
+    }
+
+    private void Close() => _Visible = false;
+
+    private void Reset()
+    {
+        _Result      = null;
+        _Error       = null;
+        _IsImporting = false;
+    }
+
+    private async Task PickAndImport()
+    {
+        _Error = null;
+
+        try
+        {
+            var options = new PickOptions
+            {
+                PickerTitle = "Select exported .xlsx file",
+                FileTypes = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
+                {
+                    { DevicePlatform.WinUI, [".xlsx"] },
+                    { DevicePlatform.macOS, ["xlsx"] },
+                }),
+            };
+
+            FileResult? picked = await FilePicker.Default.PickAsync(options);
+            if (picked == null) return;
+
+            _IsImporting = true;
+            StateHasChanged();
+
+            await Task.Yield(); // let the spinner render
+
+            using Stream stream = await picked.OpenReadAsync();
+            _Result = LocalizationImportService.ImportFromStream(
+                stream,
+                _ProjectState.CurrentProject!,
+                _ProjectState.CurrentUser);
+
+            if (_Result.KeysUpdated > 0 || _Result.CellsImported > 0)
+                _ProjectState.MarkDirty();
+        }
+        catch (Exception ex)
+        {
+            _Error = $"Import failed: {ex.Message}";
+        }
+        finally
+        {
+            _IsImporting = false;
+            StateHasChanged();
+        }
+    }
+
+}

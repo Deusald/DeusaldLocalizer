@@ -149,6 +149,16 @@
     color: #d6d6db;
 }
 
+.ttb-spinner {
+    display: inline-block;
+    width: 13px; height: 13px;
+    border: 1.5px solid rgba(138,139,147,.4);
+    border-top-color: #8a8b93;
+    border-radius: 50%;
+    animation: ttb-spin .65s linear infinite;
+}
+@keyframes ttb-spin { to { transform: rotate(360deg); } }
+
 .ttb-status-pill {
     display: flex;
     align-items: center;

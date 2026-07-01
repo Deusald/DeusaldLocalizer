@@ -52,6 +52,24 @@
 
         @if (_ProjectState.CurrentUserHas(PermissionFlags.Admin))
         {
+            <button class="ttb-history-btn" @onclick="ExportAsync" title="Export to Excel" disabled="@_IsExporting">
+                @if (_IsExporting)
+                {
+                    <span class="ttb-spinner"></span>
+                }
+                else
+                {
+                    <i class="bi bi-file-earmark-arrow-down"></i>
+                }
+            </button>
+
+            <button class="ttb-history-btn" @onclick="() => _ImportModal?.Show()" title="Import from Excel">
+                <i class="bi bi-file-earmark-arrow-up"></i>
+            </button>
+        }
+
+        @if (_ProjectState.CurrentUserHas(PermissionFlags.Admin))
+        {
             <button class="ttb-history-btn" @onclick="() => _ProjectHistoryModal?.Show()" title="Project history">
                 <i class="bi bi-clock-history"></i>
             </button>
@@ -77,6 +95,7 @@
 <UsersModal @ref="_UsersModal"/>
 <ConfirmLeaveModal @ref="_ConfirmLeaveModal" OnSaveAndLeave="SaveAndLeave" OnDiscardAndLeave="DiscardAndLeave"/>
 <ProjectHistoryModal @ref="_ProjectHistoryModal"/>
+<ExcelImportModal @ref="_ImportModal"/>
 
 @code {
     [Parameter] public string SelectedLanguage { get; set; } = "";
@@ -84,6 +103,8 @@
     private UsersModal?          _UsersModal;
     private ConfirmLeaveModal?   _ConfirmLeaveModal;
     private ProjectHistoryModal? _ProjectHistoryModal;
+    private ExcelImportModal?    _ImportModal;
+    private bool                 _IsExporting;
 
     private const int _MAX_VISIBLE_AVATARS = 3;
 
@@ -119,6 +140,27 @@
     protected override void OnInitialized()
     {
         _ProjectState.DirtyStateChanged += OnDirty;
+    }
+
+    private async Task ExportAsync()
+    {
+        if (_IsExporting) return;
+        _IsExporting = true;
+        try
+        {
+            ProjectDto         project  = _ProjectState.CurrentProject!;
+            using MemoryStream stream   = LocalizationExportService.ExportToStream(project);
+            string             fileName = $"{(string.IsNullOrEmpty(project.Slug) ? "export" : project.Slug)}-translations.xlsx";
+            await FileSaver.Default.SaveAsync(fileName, stream);
+        }
+        catch
+        {
+            /* silently ignore cancel */
+        }
+        finally
+        {
+            _IsExporting = false;
+        }
     }
 
     private void OpenUsersModal() => _UsersModal?.Show();
@@ -190,7 +232,7 @@
     {
         InvokeAsync(StateHasChanged);
     }
-    
+
     public void Dispose()
     {
         _ProjectState.DirtyStateChanged -= OnDirty;

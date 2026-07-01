@@ -103,9 +103,12 @@
         @if (_CanEditTranslation)
         {
             <div class="te-actions">
-                <button class="te-btn te-btn-primary" @onclick="SaveTranslation" disabled="@(!_HasTranslationChanges || _TranslationOverLimit)">
-                    Save translation
-                </button>
+                @if (_IsAdmin || _IsReviewer)
+                {
+                    <button class="te-btn te-btn-primary" @onclick="SaveTranslation" disabled="@(!_HasTranslationChanges || _TranslationOverLimit)">
+                        Save translation
+                    </button>
+                }
                 <button class="te-btn te-btn-ghost" @onclick="SuggestTranslation" disabled="@(!_HasTranslationChanges || _TranslationOverLimit)">
                     Suggest
                 </button>
@@ -138,14 +141,16 @@
     private string _SourceLangCode           => _ProjectState.CurrentProject!.MainLanguageId;
     private bool   _IsSourceLanguageSelected => SelectedLanguage == _SourceLangCode;
 
-    private bool _IsAdmin       => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
-    private bool _IsContributor => _ProjectState.CurrentUserHas(PermissionFlags.Contributor);
+    private bool _IsAdmin         => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _IsContributor   => _ProjectState.CurrentUserHas(PermissionFlags.Contributor);
+    private bool _IsReviewer      => _ProjectState.CurrentUserHas(PermissionFlags.Reviewer);
+    private bool _CanConfirmMatch => _ProjectState.CurrentUserHas(PermissionFlags.Reviewer) || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
 
     /// <summary>Only meaningful when the source language is selected — admin can edit and save it directly.</summary>
     private bool _CanEditSource => _IsAdmin;
 
     /// <summary>Only meaningful when a non-source language is selected.</summary>
-    private bool _CanEditTranslation => _IsContributor || _IsAdmin;
+    private bool _CanEditTranslation => _IsReviewer || _IsContributor || _IsAdmin;
 
     protected override void OnParametersSet()
     {
@@ -217,10 +222,6 @@
             return t.BaseTextHash != TextHashHelper.Compute(src?.Text ?? "");
         }
     }
-
-    private bool _CanConfirmMatch =>
-        _ProjectState.CurrentUserHas(PermissionFlags.Reviewer)
-        || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
 
     private bool _HasSourceChanges
     {
