@@ -32,7 +32,7 @@ namespace App
         private async Task InnerOnWindowClosing(Microsoft.UI.Windowing.AppWindow sender,
                                            Microsoft.UI.Windowing.AppWindowClosingEventArgs args)
         {
-            if (!projectState.HasProject || !projectState.IsDirty || projectState.IsOnline)
+            if (!projectState.HasProject || !projectState.IsDirty || projectState.BackendService.IsOnline)
                 return;
 
             args.Cancel = true;

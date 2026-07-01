@@ -1,6 +1,6 @@
 ﻿@namespace App.Components.Translate
 @using DeusaldLocalizerCommon
-@using Newtonsoft.Json
+@using DeusaldSharp
 @inject ProjectStateService _ProjectState
 
 @if (_Visible)
@@ -14,7 +14,7 @@
             <button class="um-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
         </div>
 
-        @if (_ProjectState.IsOnline)
+        @if (_ProjectState.BackendService.IsOnline)
         {
             <div class="um-section">
                 <div class="um-section-label">Your account</div>
@@ -65,24 +65,24 @@
                                     <span class="um-member-you">you</span>
                                 }
                             </div>
-                            @if (_IsAdmin)
+                            @if (member.IsSuperAdmin || !_IsAdmin)
+                            {
+                                <div class="um-perm-readonly">@PermissionsSummary(member.Permissions, member.IsSuperAdmin)</div>
+                            }
+                            else
                             {
                                 <div class="um-perm-flags">
-                                    @foreach (PermissionFlags flag in DeusaldSharp.EnumExtensions.IterateAllValues<PermissionFlags>())
+                                    @foreach (PermissionFlags flag in EnumExtensions.IterateAllValues<PermissionFlags>())
                                     {
-                                        if (!DeusaldSharp.EnumExtensions.IsSingleFlagOn(flag)) continue;
+                                        if (!flag.IsSingleFlagOn()) continue;
                                         bool active = (member.Permissions & flag) == flag;
                                         <button class="um-perm-chip @(active ? "active" : "")"
                                                 @onclick="() => TogglePermission(member, flag)"
                                                 title="@flag">
-                                            @FlagLabel(flag)
+                                            @FlagLabel(flag, member.IsSuperAdmin)
                                         </button>
                                     }
                                 </div>
-                            }
-                            else
-                            {
-                                <div class="um-perm-readonly">@PermissionsSummary(member.Permissions)</div>
                             }
                         </div>
 
@@ -106,7 +106,7 @@
     private string? _PasswordMessage;
 
     private bool _IsAdmin      => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
-    private bool _IsSuperAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin); // TODO: Fix it
+    private bool _IsSuperAdmin => _ProjectState.IsCurrentUserSuperAdmin();
 
     public void Show()
     {
@@ -122,7 +122,7 @@
         string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();
 
     private static readonly string[] _AvatarPalette =
-        { "#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0" };
+        ["#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0"];
 
     private static string AvatarColor(Guid userId)
     {
@@ -130,23 +130,23 @@
         return _AvatarPalette[idx];
     }
 
-    private static string FlagLabel(PermissionFlags flag) => flag switch
+    private static string FlagLabel(PermissionFlags flag, bool superAdmin) => flag switch
     {
         PermissionFlags.Vote    => "Voter",
         PermissionFlags.Suggest => "Contributor",
         PermissionFlags.Review  => "Reviewer",
-        PermissionFlags.Admin   => "Admin",
+        PermissionFlags.Admin   => superAdmin ? "Super Admin" : "Admin",
         _                       => flag.ToString(),
     };
 
-    private static string PermissionsSummary(PermissionFlags flags)
+    private static string PermissionsSummary(PermissionFlags flags, bool superAdmin)
     {
         if (flags == PermissionFlags.None) return "No access";
         List<string> labels = new List<string>();
-        foreach (PermissionFlags f in DeusaldSharp.EnumExtensions.IterateAllValues<PermissionFlags>())
+        foreach (PermissionFlags f in EnumExtensions.IterateAllValues<PermissionFlags>())
         {
-            if (!DeusaldSharp.EnumExtensions.IsSingleFlagOn(f)) continue;
-            if ((flags & f) == f) labels.Add(FlagLabel(f));
+            if (!f.IsSingleFlagOn()) continue;
+            if ((flags & f) == f) labels.Add(FlagLabel(f, superAdmin));
         }
 
         return string.Join(", ", labels);
@@ -154,56 +154,35 @@
 
     private void ToggleAcceptNewMembers(ChangeEventArgs e)
     {
-        _ProjectState.CurrentProject!.AcceptNewMembers = (bool)(e.Value ?? false);
-        _ProjectState.MarkDirty();
+        _ProjectState.BackendService.SetAcceptNewMembersAsync((bool)(e.Value ?? false)).Forget();
     }
 
     private void TogglePermission(ProjectMemberDto member, PermissionFlags flag)
     {
-        string oldJson = JsonConvert.SerializeObject(member);
+        if (!_IsSuperAdmin && flag == PermissionFlags.Admin) return;
+        PermissionFlags newPermissions = (member.Permissions & flag) == flag
+                                             ? member.Permissions & ~flag
+                                             : member.Permissions | flag;
+        if ((newPermissions & PermissionFlags.Admin) != 0) newPermissions = PermissionFlags.All;
 
-        member.Permissions = (member.Permissions & flag) == flag
-                                 ? member.Permissions & ~flag
-                                 : member.Permissions | flag;
-
-        _ProjectState.CurrentProject!.ProjectHistory.Add(new HistoryEntryDto
-        {
-            EntityPartName = "Members",
-            EntityPartId   = member.Id,
-            ChangeType     = HistoryChangeType.Updated,
-            OldValue       = oldJson,
-            NewValue       = JsonConvert.SerializeObject(member),
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
-
-        _ProjectState.MarkDirty();
+        _ProjectState.BackendService.SetNewUserPermissionsAsync(member, newPermissions).Forget();
     }
 
     private void RemoveMember(ProjectMemberDto member)
     {
-        _ProjectState.CurrentProject!.Members.Remove(member);
-
-        _ProjectState.CurrentProject!.ProjectHistory.Add(new HistoryEntryDto
-        {
-            EntityPartName = "Members",
-            EntityPartId   = member.Id,
-            ChangeType     = HistoryChangeType.Deleted,
-            OldValue       = JsonConvert.SerializeObject(member),
-            NewValue       = string.Empty,
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
-
-        _ProjectState.MarkDirty();
+        _ProjectState.BackendService.RemoveUserAsync(member).Forget();
     }
 
-    private void ChangePassword()
+    private async void ChangePassword()
     {
         if (string.IsNullOrWhiteSpace(_NewPassword)) return;
-        // Actual password-change API call happens here when online backend exists.
-        _PasswordMessage = "Password updated.";
-        _NewPassword     = "";
+        (bool, string) result = await _ProjectState.BackendService.OnlineChangePasswordAsync(_NewPassword);
+        if (result.Item1)
+        {
+            _PasswordMessage = "Password updated.";
+            _NewPassword     = "";
+        }
+        else _PasswordMessage = result.Item2;
     }
 
 }

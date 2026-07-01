@@ -41,9 +41,7 @@
     protected override void OnInitialized()
     {
         ProjectDto project = _ProjectState.CurrentProject!;
-        // Default to the first non-main language, or main if that's all there is
-        _SelectedLanguage = project.Languages.Find(l => l != project.MainLanguageId)
-                            ?? project.MainLanguageId;
+        _SelectedLanguage = project.MainLanguageId;
     }
 
     private void OnLanguageSelected(string code)

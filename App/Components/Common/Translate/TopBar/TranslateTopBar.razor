@@ -28,7 +28,7 @@
 
     <div class="ttb-right">
 
-        @if (_ProjectState.IsOnline)
+        @if (_ProjectState.BackendService.IsOnline)
         {
             <span class="ttb-status-pill @(_ProjectState.IsDirty ? "ttb-status-warn" : "ttb-status-ok")">
                 <span class="ttb-status-dot"></span>
@@ -65,10 +65,7 @@
             <button class="ttb-history-btn" @onclick="() => _ImportModal?.Show()" title="Import from Excel">
                 <i class="bi bi-file-earmark-arrow-up"></i>
             </button>
-        }
-
-        @if (_ProjectState.CurrentUserHas(PermissionFlags.Admin))
-        {
+            
             <button class="ttb-history-btn" @onclick="() => _ProjectHistoryModal?.Show()" title="Project history">
                 <i class="bi bi-clock-history"></i>
             </button>
@@ -163,10 +160,10 @@
     }
 
     private void OpenUsersModal() => _UsersModal?.Show();
-
+    
     private void GoHome()
     {
-        if (_ProjectState.IsDirty && !_ProjectState.IsOnline)
+        if (_ProjectState.IsDirty && !_ProjectState.BackendService.IsOnline)
         {
             _ConfirmLeaveModal?.Show();
         }
@@ -184,7 +181,7 @@
 
     private async Task SaveAndLeave()
     {
-        await SaveCore();
+        await Save();
         LeaveAndUnload();
     }
 
@@ -195,35 +192,7 @@
 
     private async Task Save()
     {
-        await SaveCore();
-    }
-
-    private async Task SaveCore()
-    {
-        ProjectDto project = _ProjectState.CurrentProject!;
-
-        if (string.IsNullOrEmpty(_ProjectState.CurrentFilePath))
-        {
-            // Never saved to disk yet — ask where to put it.
-            using MemoryStream stream = new MemoryStream();
-            await DlocFileService.SaveToStreamAsync(project, stream);
-            stream.Position = 0;
-
-            string          fileName = string.IsNullOrEmpty(project.Slug) ? "project" : project.Slug;
-            FileSaverResult result   = await FileSaver.Default.SaveAsync($"{fileName}{DlocFileService.FILE_EXTENSION}", stream);
-            if (result.IsSuccessful)
-            {
-                _ProjectState.UpdateFilePath(result.FilePath);
-                _ProjectState.MarkClean();
-            }
-        }
-        else
-        {
-            await DlocFileService.SaveAsync(project, _ProjectState.CurrentFilePath);
-            _ProjectState.MarkClean();
-        }
-
-        if (!string.IsNullOrEmpty(_ProjectState.CurrentFilePath)) RecentProjectsService.UpdateRecentProjects(project, _ProjectState.CurrentFilePath!, false); // TODO: Fix
+        await _ProjectState.SaveAsync();
         StateHasChanged();
     }
 

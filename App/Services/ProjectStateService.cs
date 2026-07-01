@@ -27,13 +27,8 @@ public class ProjectStateService
 
     /// <summary>True when there are unsaved changes.</summary>
     public bool IsDirty { get; private set; }
-
-    /// <summary>
-    /// True when the project is backed by a remote server (API-driven, every
-    /// action syncs immediately). False in offline/local-file mode, where the
-    /// user must explicitly save.
-    /// </summary>
-    public bool IsOnline { get; private set; }
+    
+    public BaseBackendService BackendService { get; private set; } = null!;
 
     // ── Events ───────────────────────────────────────────────────────────────
 
@@ -53,11 +48,12 @@ public class ProjectStateService
 
     // ── Actions ──────────────────────────────────────────────────────────────
 
-    public void LoadProject(ProjectDto project, string filePath)
+    public void LoadOfflineProject(ProjectDto project, string filePath)
     {
         CurrentProject  = project;
         CurrentFilePath = filePath;
         IsDirty         = false;
+        BackendService  = new BaseBackendService(this);
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
     }
@@ -86,7 +82,7 @@ public class ProjectStateService
             MarkClean();
         }
 
-        RecentProjectsService.UpdateRecentProjects(CurrentProject!, CurrentFilePath!, false);
+        if (!string.IsNullOrEmpty(CurrentFilePath)) RecentProjectsService.UpdateRecentProjects(CurrentProject!, CurrentFilePath, false);
     }
 
     public void CreateNewProject(ProjectDto project)
@@ -153,5 +149,11 @@ public class ProjectStateService
         ProjectMemberDto? member = GetCurrentMember();
         if (member is null) return false;
         return (member.Permissions & flags) == flags;
+    }
+
+    public bool IsCurrentUserSuperAdmin()
+    {
+        ProjectMemberDto? member = GetCurrentMember();
+        return member is not null && member.IsSuperAdmin;
     }
 }

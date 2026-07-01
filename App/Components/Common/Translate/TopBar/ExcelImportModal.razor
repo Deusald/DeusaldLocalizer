@@ -20,8 +20,8 @@
             {
                 <div class="im-desc">
                     Select an <code>.xlsx</code> file previously exported from this project.
-                    Translations are matched by <strong>KeyId</strong> and updated to
-                    <em>Draft</em> status — only non-empty cells overwrite existing values.
+                    Translations are matched by <strong>KeyId</strong> and are added as
+                    <em>Suggestions</em> — only non-empty cells.
                 </div>
 
                 @if (_Error != null)
@@ -74,7 +74,7 @@
                 }
 
                 <div class="im-footer-note">
-                    All imported translations are set to <em>Draft</em>. Review and approve them in the translator.
+                    All imported translations are added as <em>Suggestions</em>. Review and approve them in the translator.
                 </div>
             }
 
@@ -121,7 +121,7 @@
 
         try
         {
-            var options = new PickOptions
+            PickOptions options = new PickOptions
             {
                 PickerTitle = "Select exported .xlsx file",
                 FileTypes = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
@@ -139,7 +139,7 @@
 
             await Task.Yield(); // let the spinner render
 
-            using Stream stream = await picked.OpenReadAsync();
+            await using Stream stream = await picked.OpenReadAsync();
             _Result = LocalizationImportService.ImportFromStream(
                 stream,
                 _ProjectState.CurrentProject!,

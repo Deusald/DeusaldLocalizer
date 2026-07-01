@@ -190,7 +190,7 @@
             _ProjectState.LoginAsOffline();
             ProjectDto project = await DlocFileService.LoadAsync(path);
             project.UpdatedAt = DateTime.UtcNow;
-            _ProjectState.LoadProject(project, path);
+            _ProjectState.LoadOfflineProject(project, path);
             _RecentProjects = RecentProjectsService.UpdateRecentProjects(project, path, false);
             _Nav.NavigateTo("/translate");
         }
