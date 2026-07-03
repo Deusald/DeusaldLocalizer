@@ -324,7 +324,6 @@
 
         SuggestionDto suggestionDto = new SuggestionDto
         {
-            KeyId         = Key.Id,
             TranslationId = translation.Id,
             Text          = _SourceDraft,
             AuthorId      = _ProjectState.CurrentUser.Id,
@@ -438,7 +437,6 @@
 
         SuggestionDto suggestionDto = new SuggestionDto
         {
-            KeyId         = Key.Id,
             TranslationId = translation.Id,
             Text          = _TranslationDraft,
             AuthorId      = _ProjectState.CurrentUser.Id,

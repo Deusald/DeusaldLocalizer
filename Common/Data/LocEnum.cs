@@ -9,18 +9,18 @@ namespace DeusaldLocalizerCommon
     /// can resolve to a typed CLR value that SmartFormat's conditional/select formatters
     /// can branch on.
     /// </summary>
-    public class LocEnumDto
+    public class LocEnum
     {
         public Guid   Id          { get; set; } = Guid.NewGuid();
         public string Name        { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
 
         /// <summary>Ordered entries. IntValue must be unique within this enum.</summary>
-        public List<LocEnumEntryDto> Entries { get; set; } = new();
+        public List<LocEnumEntry> Entries { get; set; } = new();
     }
 
     /// <summary>One entry inside a LocEnumDto (e.g. IntValue=0, StringValue="Male").</summary>
-    public class LocEnumEntryDto
+    public class LocEnumEntry
     {
         public int    IntValue    { get; set; }
         public string StringValue { get; set; } = string.Empty;

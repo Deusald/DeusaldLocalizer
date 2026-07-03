@@ -5,7 +5,7 @@ namespace DeusaldLocalizerCommon
     /// <summary>
     /// Organises keys into a hierarchy. ParentCategoryId = null means root category.
     /// </summary>
-    public class CategoryDto
+    public class LocCategory
     {
         public Guid   Id               { get; set; } = Guid.NewGuid();
         public Guid?  ParentCategoryId { get; set; }

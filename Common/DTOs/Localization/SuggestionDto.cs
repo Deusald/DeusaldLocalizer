@@ -7,7 +7,6 @@ namespace DeusaldLocalizerCommon
     public class SuggestionDto
     {
         public Guid Id            { get; set; } = Guid.NewGuid();
-        public Guid KeyId         { get; set; }
         public Guid TranslationId { get; set; }
 
         public string           Text       { get; set; } = string.Empty;

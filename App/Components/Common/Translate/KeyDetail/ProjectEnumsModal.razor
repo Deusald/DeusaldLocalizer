@@ -127,7 +127,7 @@
 
     private void AddEnum()
     {
-        LocEnumDto e = new LocEnumDto { ProjectId = _ProjectState.CurrentProject!.Id };
+        LocEnumDto e = new LocEnumDto();
         _ProjectState.CurrentProject!.Enums.Add(e);
         _SelectedEnum = e;
         

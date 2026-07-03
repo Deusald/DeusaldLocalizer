@@ -76,8 +76,9 @@
 @code {
     [Parameter] public LocalizationKeyDto Key { get; set; } = null!;
 
-    private bool         _Visible;
-    private HashSet<Guid> _ExpandedIds = new();
+    private bool _Visible;
+    
+    private readonly HashSet<Guid> _ExpandedIds = new();
 
     public void Show()
     {
@@ -128,10 +129,11 @@
     private static string RelativeTime(DateTime time)
     {
         TimeSpan diff = DateTime.UtcNow - time;
-        if (diff.TotalMinutes < 1)  return "just now";
-        if (diff.TotalHours   < 1)  return $"{(int)diff.TotalMinutes}m ago";
-        if (diff.TotalDays    < 1)  return $"{(int)diff.TotalHours}h ago";
-        if (diff.TotalDays    < 30) return $"{(int)diff.TotalDays}d ago";
+        if (diff.TotalMinutes < 1) return "just now";
+        if (diff.TotalHours < 1) return $"{(int)diff.TotalMinutes}m ago";
+        if (diff.TotalDays < 1) return $"{(int)diff.TotalHours}h ago";
+        if (diff.TotalDays < 30) return $"{(int)diff.TotalDays}d ago";
         return time.ToString("MMM d, yyyy");
     }
+
 }

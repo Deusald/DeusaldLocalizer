@@ -159,8 +159,7 @@
         ProjectDto project  = _ProjectState.CurrentProject!;
         int        keyCount = project.Keys.Count;
         if (keyCount == 0) return 0;
-        if (!project.NumberOfApprovedKeys.ContainsKey(code)) project.CalculateNumberOfApprovedKeys();
-        int translated = project.NumberOfApprovedKeys[code];
+        int translated = project.GetNumberOfApprovedKeys(code);
         return (int)Math.Round(translated * 100.0 / keyCount);
     }
 

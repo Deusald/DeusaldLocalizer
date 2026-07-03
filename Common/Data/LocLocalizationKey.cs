@@ -3,11 +3,7 @@ using System.Collections.Generic;
 
 namespace DeusaldLocalizerCommon
 {
-    /// <summary>
-    /// A single translatable string identified by a stable GUID.
-    /// KeyName is the human-readable identifier used in code (e.g. "ui.button.save").
-    /// </summary>
-    public class LocalizationKeyDto
+    public class LocLocalizationKey
     {
         public Guid     Id          { get; set; } = Guid.NewGuid();
         public Guid     CategoryId  { get; set; }
@@ -26,15 +22,12 @@ namespace DeusaldLocalizerCommon
         public List<string> Tags { get; set; } = new();
 
         /// <summary>Structured workflow flags.</summary>
-        public List<KeyFlagDto> Flags { get; set; } = new();
-
+        public List<LocKeyFlag> Flags { get; set; } = new();
+        
         /// <summary>Declared SmartFormat variables so translators can preview the result.</summary>
-        public List<KeyVariableDto> Variables { get; set; } = new();
-
+        public List<LocKeyVariable> Variables { get; set; } = new();
+        
         /// <summary>All translations for this key across every language.</summary>
-        public List<TranslationDto> Translations { get; set; } = new();
-
-        /// <summary>Full audit history for this key.</summary>
-        public List<HistoryEntryDto> History { get; set; } = new();
+        public List<LocKeyTranslation> Translations { get; set; } = new();
     }
 }

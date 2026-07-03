@@ -7,6 +7,6 @@
         Outdated       = 1,
         DoNotTranslate = 2,
         InProgress     = 3,
-        Disputed       = 4,
+        Disputed       = 4
     }
 }
