@@ -1,0 +1,128 @@
+﻿@namespace App.Components.Translate
+@using System.Text.RegularExpressions
+@inject ProjectStateService _ProjectState
+
+@if (_Visible)
+{
+    <div class="ucm-backdrop" @onclick="Close"></div>
+
+    <div class="ucm-box" @onclick:stopPropagation="true">
+
+        <div class="ucm-header">
+            <div class="ucm-header-left">
+                <span class="ucm-title">Uncommitted changes</span>
+                @if (_ProjectState.CurrentProject!.UncommitedChanges.Count > 0)
+                {
+                    <span class="ucm-count">@_ProjectState.CurrentProject.UncommitedChanges.Count</span>
+                }
+            </div>
+            <button class="ucm-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="ucm-body">
+            @if (_ProjectState.CurrentProject!.UncommitedChanges.Count == 0)
+            {
+                <div class="ucm-empty">
+                    <i class="bi bi-check-circle ucm-empty-icon"></i>
+                    <span>No uncommitted changes.</span>
+                </div>
+            }
+            else
+            {
+                @for (int i = 0; i < _ProjectState.CurrentProject.UncommitedChanges.Count; i++)
+                {
+                    LocEntryChange change  = _ProjectState.CurrentProject.UncommitedChanges[i];
+                    int            index   = i;
+                    bool           expanded = _ExpandedIndexes.Contains(index);
+                    bool           hasDetails = !string.IsNullOrEmpty(change.EntrySubId)
+                                              || !string.IsNullOrEmpty(change.ChangeData)
+                                              || !string.IsNullOrEmpty(change.PrevHashData);
+
+                    <div class="ucm-entry">
+                        <div class="ucm-entry-header">
+                            <div class="ucm-entry-left">
+                                <span class="ucm-index">@index.ToString("D4")</span>
+                                <span class="ucm-type-badge @ActionClass(change.Type.ToActionType())">
+                                    @CamelCaseToWords(change.Type.ToString())
+                                </span>
+                                <span class="ucm-entry-id" title="@change.EntryId.ToString()">
+                                    @change.EntryId.ToString()[..8]…
+                                </span>
+                            </div>
+                            @if (hasDetails)
+                            {
+                                <button class="ucm-toggle" @onclick="() => ToggleExpand(index)">
+                                    <i class="bi @(expanded ? "bi-chevron-up" : "bi-chevron-down")"></i>
+                                </button>
+                            }
+                        </div>
+
+                        @if (expanded && hasDetails)
+                        {
+                            <div class="ucm-details">
+                                @if (!string.IsNullOrEmpty(change.EntrySubId))
+                                {
+                                    <div class="ucm-detail-row">
+                                        <span class="ucm-detail-label">Sub ID</span>
+                                        <code class="ucm-detail-value">@change.EntrySubId</code>
+                                    </div>
+                                }
+                                @if (!string.IsNullOrEmpty(change.ChangeData))
+                                {
+                                    <div class="ucm-detail-row ucm-detail-row-block">
+                                        <span class="ucm-detail-label">Change data</span>
+                                        <pre class="ucm-detail-pre ucm-detail-new">@change.ChangeData</pre>
+                                    </div>
+                                }
+                                @if (!string.IsNullOrEmpty(change.PrevHashData))
+                                {
+                                    <div class="ucm-detail-row ucm-detail-row-block">
+                                        <span class="ucm-detail-label">Prev hash</span>
+                                        <code class="ucm-detail-pre ucm-detail-hash">@change.PrevHashData</code>
+                                    </div>
+                                }
+                            </div>
+                        }
+                    </div>
+                }
+            }
+        </div>
+
+    </div>
+}
+
+@code {
+    private          bool         _Visible;
+    
+    private readonly HashSet<int> _ExpandedIndexes = new();
+
+    public void Show()
+    {
+        _ExpandedIndexes.Clear();
+        _Visible = true;
+        StateHasChanged();
+    }
+
+    private void Close() => _Visible = false;
+
+    private void ToggleExpand(int index)
+    {
+        if (!_ExpandedIndexes.Remove(index))
+            _ExpandedIndexes.Add(index);
+    }
+
+    /// <summary>Splits a CamelCase enum value into space-separated words. e.g. "StatusChanged" → "Status Changed"</summary>
+    private static string CamelCaseToWords(string value) =>
+        Regex.Replace(value, "([a-z])([A-Z])", "$1 $2");
+
+    private static string ActionClass(EntryChangeActionType action) => action switch
+    {
+        EntryChangeActionType.Created       => "ucm-badge-created",
+        EntryChangeActionType.Updated       => "ucm-badge-updated",
+        EntryChangeActionType.Deleted       => "ucm-badge-deleted",
+        EntryChangeActionType.Approved      => "ucm-badge-approved",
+        EntryChangeActionType.Rejected      => "ucm-badge-rejected",
+        EntryChangeActionType.StatusChanged => "ucm-badge-status",
+        _                                   => "ucm-badge-updated",
+    };
+}

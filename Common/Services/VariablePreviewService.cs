@@ -14,9 +14,9 @@ namespace DeusaldLocalizerCommon
     /// </summary>
     public static class VariablePreviewService
     {
-        public static string Render(string text, List<KeyVariableDto> variables,
+        public static string Render(string text, List<LocKeyVariable> variables,
                                     Dictionary<Guid, string>? previewOverrides,
-                                    List<LocEnumDto>? projectEnums)
+                                    List<LocEnum>? projectEnums)
         {
             HashSet<string> badPlaceholders  = new HashSet<string>();
             HashSet<string> parsingErrorText = new HashSet<string>();
@@ -53,19 +53,19 @@ namespace DeusaldLocalizerCommon
 
         /// <param name="variables">The key's declared variables.</param>
         /// <param name="previewOverrides">
-        ///   Per-session local overrides keyed by <see cref="KeyVariableDto.Id"/>.
-        ///   Values take precedence over <see cref="KeyVariableDto.DefaultPreviewValue"/>.
+        ///   Per-session local overrides keyed by <see cref="LocKeyVariable.Id"/>.
+        ///   Values take precedence over <see cref="LocKeyVariable.DefaultPreviewValue"/>.
         ///   Pass null or empty to use only defaults.
         /// </param>
         /// <param name="projectEnums">All LocEnumDtos on the project, for enum resolution.</param>
         private static Dictionary<string, object> Build(
-            List<KeyVariableDto> variables,
+            List<LocKeyVariable> variables,
             Dictionary<Guid, string>? previewOverrides,
-            List<LocEnumDto>? projectEnums)
+            List<LocEnum>? projectEnums)
         {
             Dictionary<string, object> dict = new Dictionary<string, object>();
 
-            foreach (KeyVariableDto? v in variables)
+            foreach (LocKeyVariable? v in variables)
             {
                 if (string.IsNullOrEmpty(v.Name)) continue;
 
@@ -80,7 +80,7 @@ namespace DeusaldLocalizerCommon
             return dict;
         }
 
-        private static object ConvertValue(KeyVariableDto v, string raw, List<LocEnumDto>? enums)
+        private static object ConvertValue(LocKeyVariable v, string raw, List<LocEnum>? enums)
         {
             switch (v.Type)
             {
@@ -121,20 +121,20 @@ namespace DeusaldLocalizerCommon
                 case KeyVariableType.EnumInt:
                 {
                     if (v.EnumId == null || enums == null) return 0;
-                    LocEnumDto? locEnum = enums.Find(e => e.Id == v.EnumId);
+                    LocEnum? locEnum = enums.Find(e => e.Id == v.EnumId);
                     if (locEnum == null) return 0;
                     if (!int.TryParse(raw, out int intVal)) return 0;
-                    LocEnumEntryDto? entry = locEnum.Entries.Find(e => e.IntValue == intVal);
+                    LocEnumEntry? entry = locEnum.Entries.Find(e => e.IntValue == intVal);
                     return entry?.IntValue ?? 0;
                 }
 
                 case KeyVariableType.EnumString:
                 {
                     if (v.EnumId == null || enums == null) return string.Empty;
-                    LocEnumDto? locEnum = enums.Find(e => e.Id == v.EnumId);
+                    LocEnum? locEnum = enums.Find(e => e.Id == v.EnumId);
                     if (locEnum == null) return string.Empty;
                     if (!int.TryParse(raw, out int intVal2)) return string.Empty;
-                    LocEnumEntryDto? entry = locEnum.Entries.Find(e => e.IntValue == intVal2);
+                    LocEnumEntry? entry = locEnum.Entries.Find(e => e.IntValue == intVal2);
                     return entry?.StringValue ?? string.Empty;
                 }
 

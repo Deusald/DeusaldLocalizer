@@ -19,6 +19,8 @@ namespace DeusaldLocalizerCommon
         public int      FormatVersion { get; set; } = 1;
 
         /// <summary>BCP-47 codes of every language in this project (includes the main language).</summary>
-        public List<string> Languages { get; set; } = new();
+        public List<string> Languages { get; } = new();
+
+        public bool IsOnline => !string.IsNullOrEmpty(ApiUrl);
     }
 }

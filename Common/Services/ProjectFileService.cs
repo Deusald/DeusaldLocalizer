@@ -100,6 +100,7 @@ namespace DeusaldLocalizerCommon
         /// </summary>
         public static async Task SaveAsync(LocProject project, string folderPath)
         {
+            project.Metadata.SyncId        = Guid.NewGuid();
             project.Metadata.UpdatedAt     = DateTime.UtcNow;
             project.Metadata.FormatVersion = CURRENT_FORMAT_VERSION;
 
@@ -127,6 +128,7 @@ namespace DeusaldLocalizerCommon
             string folderPath,
             HashSet<Guid> dirtyKeyIds)
         {
+            project.Metadata.SyncId    = Guid.NewGuid();
             project.Metadata.UpdatedAt = DateTime.UtcNow;
 
             EnsureFolderStructure(folderPath);
@@ -138,7 +140,7 @@ namespace DeusaldLocalizerCommon
             await SaveFolderAsync(folderPath, CATEGORIES_FOLDER, project.Categories,     c => c.Id.ToString());
             await SaveFolderAsync(folderPath, ENUMS_FOLDER,      project.Enums,          e => e.Id.ToString());
             await SaveFolderAsync(folderPath, KEYS_FOLDER,       project.Keys,           k => k.Id.ToString());
-            
+
             string keysPath = Path.Combine(folderPath, KEYS_FOLDER);
 
             // Write only dirty keys

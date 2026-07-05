@@ -28,7 +28,7 @@ namespace DeusaldLocalizerCommon
     // TODO: Import them as suggestions
     public static class LocalizationImportService
     {
-        public static ImportResult ImportFromStream(Stream stream, ProjectDto project, UserDto currentUser)
+        public static ImportResult ImportFromStream(Stream stream, LocProject project)
         {
             ImportResult result = new ImportResult();
 
@@ -46,8 +46,8 @@ namespace DeusaldLocalizerCommon
                 string header = cell.GetString().Trim();
                 int    c      = cell.Address.ColumnNumber;
 
-                if (header == "KeyId") keyIdCol                          = c;
-                else if (project.Languages.Contains(header)) langCols[c] = header;
+                if (header == "KeyId") keyIdCol                                   = c;
+                else if (project.Metadata.Languages.Contains(header)) langCols[c] = header;
             }
 
             if (keyIdCol < 0)
@@ -77,7 +77,7 @@ namespace DeusaldLocalizerCommon
                     continue;
                 }
 
-                LocalizationKeyDto? key = project.Keys.Find(k => k.Id == keyId);
+                LocLocalizationKey? key = project.Keys.Find(k => k.Id == keyId);
                 if (key == null)
                 {
                     result.KeysSkipped++;
@@ -100,13 +100,12 @@ namespace DeusaldLocalizerCommon
                         continue;
                     }
 
-                    TranslationDto? existing = key.Translations.Find(t => t.LanguageId == langCode);
+                    LocKeyTranslation? existing = key.Translations.Find(t => t.LanguageId == langCode);
                     if (existing == null)
                     {
-                        existing = new TranslationDto
+                        existing = new LocKeyTranslation
                         {
-                            KeyId      = key.Id,
-                            LanguageId = langCode,
+                            LanguageId = langCode
                         };
                         key.Translations.Add(existing);
                     }
@@ -114,12 +113,11 @@ namespace DeusaldLocalizerCommon
                     if (existing.Text == text) continue; // no change needed
 
                     existing.Text      = text;
-                    existing.UpdatedBy = currentUser.Id;
                     existing.UpdatedAt = DateTime.UtcNow;
                     existing.Status    = TranslationStatus.Draft;
 
                     // Record which source version this was based on
-                    TranslationDto? src = key.Translations.Find(t => t.LanguageId == project.MainLanguageId);
+                    LocKeyTranslation? src = key.Translations.Find(t => t.LanguageId == project.Metadata.MainLanguageId);
                     existing.BaseTextHash = TextHashHelper.Compute(src?.Text ?? "");
 
                     result.CellsImported++;

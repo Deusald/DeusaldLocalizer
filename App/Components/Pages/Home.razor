@@ -1,8 +1,8 @@
 ﻿@page "/"
 @layout MainLayout
+@using CommunityToolkit.Maui.Storage
 @using global::App.Components.Common.Home
 @using global::App.Components.Layout
-@using global::DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
 @inject NavigationManager   _Nav
 @implements IDisposable
@@ -45,7 +45,7 @@
                 </button>
 
                 <button class="home-btn home-btn-secondary"
-                        @onclick="PickFile" disabled="@_IsLoading">
+                        @onclick="PickFolder" disabled="@_IsLoading">
                     @if (_IsLoading)
                     {
                         <span class="dl-spinner" style="width:14px;height:14px;flex-shrink:0;"></span>
@@ -56,11 +56,6 @@
                         <span class="home-btn-icon"><i class="bi bi-folder2-open"></i></span>
                         <span>Open project…</span>
                     }
-                </button>
-
-                <button class="home-btn home-btn-secondary" disabled="disabled">
-                    <span class="home-btn-dot"></span>
-                    <span>Connect to server…</span>
                 </button>
             </div>
         </div>
@@ -98,7 +93,7 @@
                                       : recent.LastEditedLabel;
 
                     <button class="home-recent-item"
-                            @onclick="() => LoadRecentProject(recent)"
+                            @onclick="() => LoadFromPath(recent.Path)"
                             disabled="@_IsLoading">
                         <div class="home-recent-swatch" style="background: @swatch">@initial</div>
                         <div class="home-recent-meta">
@@ -132,6 +127,13 @@
 
     <NewProjectModal OnConfirm="OnNewProjectConfirmed" @ref="_NewProjectModal"/>
 
+    @if (_ShowLoginModal)
+    {
+        <LoginModal @ref="_LoginModal"
+                    OnConfirm="OnLoginConfirmed"
+                    OnCancel="OnLoginCancelled" />
+    }
+
 </div>
 
 @code {
@@ -140,6 +142,17 @@
     private bool                     _IsLoading;
     private string?                  _ErrorMessage;
     private List<RecentProjectEntry> _RecentProjects = [];
+
+    // Tracks the path being opened when the login modal is showing
+    private string?    _PendingPath;
+    private LocProject? _PendingProject;
+    private bool        _ShowLoginModal;
+
+    private NewProjectModal? _NewProjectModal;
+    private LoginModal?      _LoginModal;
+
+    // Secure storage key: project Id → "userId|accessToken"
+    private const string _SECURE_KEY_PREFIX = "dloc:auth:";
 
     // ── Lifecycle ─────────────────────────────────────────────────────────
 
@@ -155,27 +168,17 @@
 
     // ── File operations ───────────────────────────────────────────────────
 
-    private async Task PickFile()
+    private async Task PickFolder()
     {
         _ErrorMessage = null;
         try
         {
-            FileResult? result = await FilePicker.Default.PickAsync(new PickOptions
-            {
-                PickerTitle = "Open Localizer Project",
-                FileTypes = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
-                {
-                    [DevicePlatform.WinUI]       = [".dloc"],
-                    [DevicePlatform.macOS]       = [".dloc"],
-                    [DevicePlatform.MacCatalyst] = [".dloc"],
-                }),
-            });
-
-            if (result is not null) await LoadFromPath(result.FullPath);
+            FolderPickerResult result = await FolderPicker.Default.PickAsync();
+            if (result.IsSuccessful) await LoadFromPath(result.Folder.Path);
         }
         catch (Exception ex)
         {
-            _ErrorMessage = $"Could not open file picker: {ex.Message}";
+            _ErrorMessage = $"Could not open folder picker: {ex.Message}";
         }
     }
 
@@ -187,69 +190,169 @@
 
         try
         {
-            _ProjectState.LoginAsOffline();
-            ProjectDto project = await DlocFileService.LoadAsync(path);
-            project.UpdatedAt = DateTime.UtcNow;
-            _ProjectState.LoadOfflineProject(project, path);
-            _RecentProjects = RecentProjectsService.UpdateRecentProjects(project, path, false);
-            _Nav.NavigateTo("/translate");
+            LocProject project  = await ProjectFileService.OpenAsync(path);
+            bool       isOnline = project.Metadata.IsOnline;
+
+            if (isOnline)
+            {
+                await LoadOnlineProject(project, path);
+            }
+            else
+            {
+                // Offline — always use the offline member, no session token needed
+                FinalizeLoad(project, path, LocProjectMember.OfflineMember.UserId, Guid.Empty);
+            }
         }
-        catch (DlocFormatException ex)
+        catch (ProjectFolderException ex)
         {
-            _ErrorMessage = $"Invalid project file: {ex.Message}";
+            _ErrorMessage = $"Invalid project: {ex.Message}";
+            _IsLoading    = false;
         }
         catch (Exception ex)
         {
             _ErrorMessage = $"Failed to load project: {ex.Message}";
+            _IsLoading    = false;
         }
-        finally
+    }
+
+    // ── Online auth flow ──────────────────────────────────────────────────
+
+    private async Task LoadOnlineProject(LocProject project, string path)
+    {
+        string secureKey = $"{_SECURE_KEY_PREFIX}{project.Metadata.Id}";
+
+        try
+        {
+            string? stored = await SecureStorage.Default.GetAsync(secureKey);
+
+            if (!string.IsNullOrEmpty(stored))
+            {
+                // Format: "userId|rawAccessToken"
+                string[] parts = stored.Split('|', 2);
+                if (parts.Length == 2 &&
+                    Guid.TryParse(parts[0], out Guid cachedUserId) &&
+                    !string.IsNullOrEmpty(parts[1]))
+                {
+                    // Re-verify the cached raw token against the stored BCrypt hash
+                    if (VerifyCredentials(project, cachedUserId, parts[1]))
+                    {
+                        // Generate a new session token Guid for this session
+                        FinalizeLoad(project, path, cachedUserId, Guid.NewGuid());
+                        return;
+                    }
+
+                    // Token no longer valid — remove and fall through to login
+                    SecureStorage.Default.Remove(secureKey);
+                }
+            }
+        }
+        catch
+        {
+            // SecureStorage unavailable on this platform — fall through to login
+        }
+
+        // No valid cached credentials — show the login modal
+        _PendingPath    = path;
+        _PendingProject = project;
+        _ShowLoginModal = true;
+        _IsLoading      = false;
+        StateHasChanged();
+
+        await Task.Yield();
+        _LoginModal?.Show(project.Metadata.Name);
+    }
+
+    private async Task OnLoginConfirmed((string username, string accessToken) credentials)
+    {
+        if (_PendingProject == null || _PendingPath == null) return;
+
+        _IsLoading = true;
+        StateHasChanged();
+
+        if (!VerifyCredentials(_PendingProject, credentials.username, credentials.accessToken,
+                out LocProjectMember? member))
         {
             _IsLoading = false;
+            _LoginModal?.ShowError("Username or access token is incorrect.");
+            return;
         }
+
+        // Credentials valid — store in SecureStorage for next time
+        try
+        {
+            string secureKey = $"{_SECURE_KEY_PREFIX}{_PendingProject.Metadata.Id}";
+            await SecureStorage.Default.SetAsync(secureKey, $"{member!.UserId}|{credentials.accessToken}");
+        }
+        catch
+        {
+            // Non-fatal — user will just need to log in again next time
+        }
+
+        _ShowLoginModal = false;
+        FinalizeLoad(_PendingProject, _PendingPath, member!.UserId, Guid.Parse(credentials.accessToken));
     }
 
-    private async Task LoadRecentProject(RecentProjectEntry recent)
+    private void OnLoginCancelled()
     {
-        if (recent.IsRemote) Console.WriteLine("Non implemented yet!");
-        else await LoadFromPath(recent.Path);
+        _PendingPath    = null;
+        _PendingProject = null;
+        _ShowLoginModal = false;
+        _IsLoading      = false;
+        StateHasChanged();
     }
 
-    private NewProjectModal? _NewProjectModal;
+    /// <summary>
+    /// Checks that the given username exists in the project's member list
+    /// and that the BCrypt hash of their access token matches the stored hash.
+    /// </summary>
+    private static bool VerifyCredentials(
+        LocProject          project,
+        Guid                userId,
+        string              accessToken)
+    {
+        LocProjectMember? member = project.ProjectMembers.Find(m => m.UserId == userId);
+        if (member == null) return false;
+        if (string.IsNullOrEmpty(member.HashedAccessToken)) return false;
+        return BCrypt.Net.BCrypt.Verify(accessToken, member.HashedAccessToken);
+    }
+
+    /// <summary>Overload that looks up by username string instead of Guid.</summary>
+    private static bool VerifyCredentials(
+        LocProject          project,
+        string              username,
+        string              accessToken,
+        out LocProjectMember? member)
+    {
+        member = project.ProjectMembers.Find(m =>
+            string.Equals(m.Username, username, StringComparison.OrdinalIgnoreCase));
+        if (member == null) return false;
+        if (string.IsNullOrEmpty(member.HashedAccessToken)) return false;
+        return BCrypt.Net.BCrypt.Verify(accessToken, member.HashedAccessToken);
+    }
+
+    private void FinalizeLoad(LocProject project, string path, Guid userId, Guid sessionToken)
+    {
+        _ProjectState.LoadProject(project, path, userId, sessionToken);
+        _RecentProjects = RecentProjectsService.UpdateRecentProjects(project, path, project.Metadata.IsOnline);
+        _IsLoading      = false;
+        _Nav.NavigateTo("/translate");
+    }
+
+    // ── New project ───────────────────────────────────────────────────────
 
     private void OpenNewProjectModal() => _NewProjectModal?.Show();
 
     private void OnNewProjectConfirmed(NewProjectModal.NewProjectArgs args)
     {
-        _ProjectState.LoginAsOffline();
-
-        ProjectDto project = new ProjectDto
-        {
-            Name        = args.Name,
-            Slug        = args.Slug,
-            Description = args.Description,
-            Members =
-            [
-                new ProjectMemberDto
-                {
-                    UserId       = _ProjectState.CurrentUser.Id,
-                    DisplayName  = _ProjectState.CurrentUser.DisplayName,
-                    Permissions  = PermissionFlags.All,
-                    IsSuperAdmin = true
-                }
-            ],
-        };
-
-        project.Languages.Add(args.MainLanguageCode);
-        project.MainLanguageId = args.MainLanguageCode;
-
-        _ProjectState.CreateNewProject(project);
+        _ProjectState.CreateNewProject(args.Name, args.Slug, args.Description, args.MainLanguageCode);
         _Nav.NavigateTo("/translate");
     }
+
+    // ── Recents ───────────────────────────────────────────────────────────
 
     private void ClearRecentProjects()
     {
         _RecentProjects.Clear();
         RecentProjectsService.ClearRecentProjects();
     }
-
 }

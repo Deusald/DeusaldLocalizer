@@ -1,9 +1,9 @@
 ﻿@namespace App.Components.Translate
 @using CommunityToolkit.Maui.Storage
 @using System.IO
-@using DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
 @inject NavigationManager   _Nav
+@implements IDisposable
 
 @{ if (!_ProjectState.HasProject) return; }
 
@@ -19,7 +19,7 @@
             <div class="ttb-orb ttb-orb-2"></div>
             <div class="ttb-orb ttb-orb-3"></div>
         </div>
-        <span class="ttb-project-name">@_ProjectState.CurrentProject!.Name</span>
+        <span class="ttb-project-name">@_ProjectState.CurrentProject!.Metadata.Name</span>
         <span class="ttb-sep">/</span>
         <span class="ttb-translating">
             Translating into <strong>@_LanguageLabel</strong>
@@ -28,54 +28,41 @@
 
     <div class="ttb-right">
 
-        @if (_ProjectState.BackendService.IsOnline)
+        @if (_ProjectState.IsDirty)
         {
-            <span class="ttb-status-pill @(_ProjectState.IsDirty ? "ttb-status-warn" : "ttb-status-ok")">
-                <span class="ttb-status-dot"></span>
-                @(_ProjectState.IsDirty ? "Syncing…" : "Synced")
-            </span>
+            <button class="ttb-save-btn" @onclick="Save">
+                <i class="bi bi-cloud-arrow-up"></i> Save
+            </button>
         }
-        else
-        {
-            @if (_ProjectState.IsDirty)
+        <span class="ttb-status-pill @(_ProjectState.IsDirty ? "ttb-status-warn" : "ttb-status-ok")">
+            <span class="ttb-status-dot"></span>
+            @(_ProjectState.IsDirty ? "Unsaved" : "Saved")
+        </span>
+
+        <button class="ttb-history-btn" @onclick="ExportAsync" title="Export to Excel" disabled="@_IsExporting">
+            @if (_IsExporting)
             {
-                <button class="ttb-save-btn" @onclick="Save">
-                    <i class="bi bi-cloud-arrow-up"></i> Save
-                </button>
+                <span class="ttb-spinner"></span>
             }
-            <span class="ttb-status-pill @(_ProjectState.IsDirty ? "ttb-status-warn" : "ttb-status-ok")">
-                <span class="ttb-status-dot"></span>
-                @(_ProjectState.IsDirty ? "Unsaved" : "Saved")
-            </span>
-        }
+            else
+            {
+                <i class="bi bi-file-earmark-arrow-down"></i>
+            }
+        </button>
 
-        @if (_ProjectState.CurrentUserHas(PermissionFlags.Admin))
-        {
-            <button class="ttb-history-btn" @onclick="ExportAsync" title="Export to Excel" disabled="@_IsExporting">
-                @if (_IsExporting)
-                {
-                    <span class="ttb-spinner"></span>
-                }
-                else
-                {
-                    <i class="bi bi-file-earmark-arrow-down"></i>
-                }
-            </button>
+        <button class="ttb-history-btn" @onclick="() => _ImportModal?.Show()" title="Import from Excel">
+            <i class="bi bi-file-earmark-arrow-up"></i>
+        </button>
 
-            <button class="ttb-history-btn" @onclick="() => _ImportModal?.Show()" title="Import from Excel">
-                <i class="bi bi-file-earmark-arrow-up"></i>
-            </button>
-            
-            <button class="ttb-history-btn" @onclick="() => _ProjectHistoryModal?.Show()" title="Project history">
-                <i class="bi bi-clock-history"></i>
-            </button>
-        }
+        <button class="ttb-history-btn" @onclick="() => _ProjectUncommittedChangesModal?.Show()" title="Uncommitted changes">
+            <i class="bi bi-clock-history"></i>
+        </button>
 
         <div class="ttb-avatars" @onclick="OpenUsersModal">
-            @foreach (ProjectMemberDto member in _VisibleMembers)
+            @foreach (LocProjectMember member in _VisibleMembers)
             {
-                <div class="ttb-avatar" style="background:@AvatarColor(member.UserId)" title="@member.DisplayName">
-                    @Initial(member.DisplayName)
+                <div class="ttb-avatar" style="background:@AvatarColor(member.UserId)" title="@member.Username">
+                    @Initial(member.Username)
                 </div>
             }
             @if (_ExtraMemberCount > 0)
@@ -90,17 +77,17 @@
 
 <UsersModal @ref="_UsersModal"/>
 <ConfirmLeaveModal @ref="_ConfirmLeaveModal" OnSaveAndLeave="SaveAndLeave" OnDiscardAndLeave="DiscardAndLeave"/>
-<ProjectHistoryModal @ref="_ProjectHistoryModal"/>
+<ProjectUncommittedChangesModal @ref="_ProjectUncommittedChangesModal"/>
 <ExcelImportModal @ref="_ImportModal"/>
 
 @code {
     [Parameter] public string SelectedLanguage { get; set; } = "";
 
-    private UsersModal?          _UsersModal;
-    private ConfirmLeaveModal?   _ConfirmLeaveModal;
-    private ProjectHistoryModal? _ProjectHistoryModal;
-    private ExcelImportModal?    _ImportModal;
-    private bool                 _IsExporting;
+    private UsersModal?                     _UsersModal;
+    private ConfirmLeaveModal?              _ConfirmLeaveModal;
+    private ProjectUncommittedChangesModal? _ProjectUncommittedChangesModal;
+    private ExcelImportModal?               _ImportModal;
+    private bool                            _IsExporting;
 
     private const int _MAX_VISIBLE_AVATARS = 3;
 
@@ -113,19 +100,23 @@
         }
     }
 
-    private List<ProjectMemberDto> _VisibleMembers =>
-        _ProjectState.CurrentProject!.Members.Count <= _MAX_VISIBLE_AVATARS
-            ? _ProjectState.CurrentProject.Members
-            : _ProjectState.CurrentProject.Members.GetRange(0, _MAX_VISIBLE_AVATARS);
+    private List<LocProjectMember> _ProjectMembers => _ProjectState.CurrentProject!.Metadata.IsOnline
+                                                          ? _ProjectState.CurrentProject!.ProjectMembers
+                                                          : [.._ProjectState.CurrentProject!.ProjectMembers, LocProjectMember.OfflineMember];
+
+    private List<LocProjectMember> _VisibleMembers =>
+        _ProjectMembers.Count <= _MAX_VISIBLE_AVATARS
+            ? _ProjectMembers
+            : _ProjectMembers.GetRange(0, _MAX_VISIBLE_AVATARS);
 
     private int _ExtraMemberCount =>
-        Math.Max(0, _ProjectState.CurrentProject!.Members.Count - _MAX_VISIBLE_AVATARS);
+        Math.Max(0, _ProjectMembers.Count - _MAX_VISIBLE_AVATARS);
 
     private static string Initial(string name) =>
         string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();
 
     private static readonly string[] _AvatarPalette =
-        { "#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0" };
+        ["#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0"];
 
     private static string AvatarColor(Guid userId)
     {
@@ -144,9 +135,9 @@
         _IsExporting = true;
         try
         {
-            ProjectDto         project  = _ProjectState.CurrentProject!;
+            LocProject         project  = _ProjectState.CurrentProject!;
             using MemoryStream stream   = LocalizationExportService.ExportToStream(project);
-            string             fileName = $"{(string.IsNullOrEmpty(project.Slug) ? "export" : project.Slug)}-translations.xlsx";
+            string             fileName = $"{(string.IsNullOrEmpty(project.Metadata.Slug) ? "export" : project.Metadata.Slug)}-translations.xlsx";
             await FileSaver.Default.SaveAsync(fileName, stream);
         }
         catch
@@ -160,10 +151,10 @@
     }
 
     private void OpenUsersModal() => _UsersModal?.Show();
-    
+
     private void GoHome()
     {
-        if (_ProjectState.IsDirty && !_ProjectState.BackendService.IsOnline)
+        if (_ProjectState.IsDirty)
         {
             _ConfirmLeaveModal?.Show();
         }

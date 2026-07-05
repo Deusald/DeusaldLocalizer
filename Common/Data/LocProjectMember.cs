@@ -18,6 +18,7 @@ namespace DeusaldLocalizerCommon
         public string          Username                  { get; set; } = string.Empty;
         public HashSet<string> ReviewLanguagePermissions { get; set; } = new();
         public bool            IsAdmin                   { get; set; }
+        public bool            IsBanned                  { get; set; }
         public string          HashedAccessToken         { get; set; } = string.Empty;
 
         public bool IsOfflineUser => UserId == _OfflineId;

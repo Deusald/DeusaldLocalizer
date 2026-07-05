@@ -15,17 +15,16 @@ namespace DeusaldLocalizerCommon
     /// </summary>
     public static class LocalizationExportService
     {
-        public static MemoryStream ExportToStream(ProjectDto project)
+        public static MemoryStream ExportToStream(LocProject project)
         {
             using XLWorkbook wb    = new XLWorkbook();
             IXLWorksheet     sheet = wb.AddWorksheet("Translations");
 
             // ── Build ordered language list: source first, rest alphabetical ──
-            List<string> languages = new List<string>();
-            languages.Add(project.MainLanguageId);
-            foreach (string lang in project.Languages.OrderBy(l => l))
+            List<string> languages = new List<string> { project.Metadata.MainLanguageId };
+            foreach (string lang in project.Metadata.Languages.OrderBy(l => l))
             {
-                if (lang != project.MainLanguageId)
+                if (lang != project.Metadata.MainLanguageId)
                     languages.Add(lang);
             }
 
@@ -53,11 +52,11 @@ namespace DeusaldLocalizerCommon
 
             // ── Data rows ───────────────────────────────────────────────────
             int row = 2;
-            foreach (LocalizationKeyDto key in project.Keys.OrderBy(k => FullKeyName(k, project)))
+            foreach (LocLocalizationKey key in project.Keys.OrderBy(k => FullKeyName(k, project)))
             {
                 // Get the source translation's BaseTextHash as "SourceHash"
-                TranslationDto? sourceTrans = key.Translations
-                    .Find(t => t.LanguageId == project.MainLanguageId);
+                LocKeyTranslation? sourceTrans = key.Translations
+                    .Find(t => t.LanguageId == project.Metadata.MainLanguageId);
                 string sourceHash = sourceTrans?.BaseTextHash ?? string.Empty;
 
                 col = 1;
@@ -69,7 +68,7 @@ namespace DeusaldLocalizerCommon
 
                 foreach (string lang in languages)
                 {
-                    TranslationDto? translation = key.Translations.Find(t => t.LanguageId == lang);
+                    LocKeyTranslation? translation = key.Translations.Find(t => t.LanguageId == lang);
                     sheet.Cell(row, col++).Value = translation?.Text ?? string.Empty;
                 }
 
@@ -129,17 +128,17 @@ namespace DeusaldLocalizerCommon
             return stream;
         }
 
-        private static string FullKeyName(LocalizationKeyDto key, ProjectDto project)
+        private static string FullKeyName(LocLocalizationKey key, LocProject project)
         {
-            CategoryDto? cat = project.Categories.Find(c => c.Id == key.CategoryId);
+            LocCategory? cat = project.Categories.Find(c => c.Id == key.CategoryId);
             if (cat == null) return key.KeyName;
 
             List<string> parts   = new List<string> { cat.Name };
-            CategoryDto  current = cat;
+            LocCategory  current = cat;
 
             while (current.ParentCategoryId != null)
             {
-                CategoryDto? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
+                LocCategory? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
                 if (parent == null) break;
                 parts.Insert(0, parent.Name);
                 current = parent;

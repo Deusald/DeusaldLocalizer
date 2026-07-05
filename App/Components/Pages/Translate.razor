@@ -1,5 +1,4 @@
 ﻿@page "/translate"
-@using DeusaldLocalizerCommon
 @using global::App.Components.Layout
 @using global::App.Components.Translate
 @layout EmptyLayout
@@ -40,8 +39,8 @@
 
     protected override void OnInitialized()
     {
-        ProjectDto project = _ProjectState.CurrentProject!;
-        _SelectedLanguage = project.MainLanguageId;
+        LocProject project = _ProjectState.CurrentProject!;
+        _SelectedLanguage = project.Metadata.MainLanguageId;
     }
 
     private void OnLanguageSelected(string code)

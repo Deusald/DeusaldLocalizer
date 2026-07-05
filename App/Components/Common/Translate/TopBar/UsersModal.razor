@@ -154,23 +154,24 @@
 
     private void ToggleAcceptNewMembers(ChangeEventArgs e)
     {
-        _ProjectState.BackendService.SetAcceptNewMembersAsync((bool)(e.Value ?? false)).Forget();
+        // TODO: Remove it
+        //_ProjectState.BackendService.SetAcceptNewMembersAsync((bool)(e.Value ?? false)).Forget();
     }
 
     private void TogglePermission(ProjectMemberDto member, PermissionFlags flag)
     {
-        if (!_IsSuperAdmin && flag == PermissionFlags.Admin) return;
+        /*if (!_IsSuperAdmin && flag == PermissionFlags.Admin) return;
         PermissionFlags newPermissions = (member.Permissions & flag) == flag
                                              ? member.Permissions & ~flag
                                              : member.Permissions | flag;
         if ((newPermissions & PermissionFlags.Admin) != 0) newPermissions = PermissionFlags.All;
 
-        _ProjectState.BackendService.SetNewUserPermissionsAsync(member, newPermissions).Forget();
+        _ProjectState.BackendService.SetNewUserPermissionsAsync(member, newPermissions).Forget();*/
     }
 
     private void RemoveMember(ProjectMemberDto member)
     {
-        _ProjectState.BackendService.RemoveUserAsync(member).Forget();
+        //_ProjectState.BackendService.RemoveUserAsync(member).Forget();
     }
 
     private async void ChangePassword()

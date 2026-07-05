@@ -26,15 +26,15 @@ public static class RecentProjectsService
         Preferences.Default.Remove(_RECENT_PROJECTS_KEY);
     }
 
-    public static List<RecentProjectEntry> UpdateRecentProjects(ProjectDto project, string path, bool isRemote)
+    public static List<RecentProjectEntry> UpdateRecentProjects(LocProject project, string path, bool isRemote)
     {
         List<RecentProjectEntry> projects = LoadRecentProjects();
 
         // Calculate translation % across all non-main languages
         int pct = 0;
-        if (project is { Languages.Count: > 1, Keys.Count: > 0 })
+        if (project is { Metadata.Languages.Count: > 1, Keys.Count: > 0 })
         {
-            int totalSlots = project.Keys.Count * project.Languages.Count;
+            int totalSlots = project.Keys.Count * project.Metadata.Languages.Count;
             int translated = project.TotalNumberOfApprovedKeys();
             pct = totalSlots > 0 ? (int)Math.Round(translated * 100.0 / totalSlots) : 0;
         }
@@ -42,12 +42,12 @@ public static class RecentProjectsService
         projects.RemoveAll(r => r.Path == path);
         projects.Insert(0, new RecentProjectEntry
         {
-            ProjectName    = project.Name,
+            ProjectName    = project.Metadata.Name,
             Path           = path,
             KeyCount       = project.Keys.Count,
-            LangCount      = project.Languages.Count,
+            LangCount      = project.Metadata.Languages.Count,
             TranslationPct = pct,
-            LastEdited     = project.UpdatedAt,
+            LastEdited     = project.Metadata.UpdatedAt,
             IsRemote       = isRemote
         });
 

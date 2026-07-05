@@ -1,0 +1,89 @@
+﻿@namespace App.Components.Common.Home
+
+<div class="lm-backdrop" @onclick="Cancel"></div>
+
+<div class="lm-box" @onclick:stopPropagation="true">
+    <div class="lm-header">
+        <div>
+            <div class="lm-title">Sign in to project</div>
+            <div class="lm-subtitle">@_ProjectName</div>
+        </div>
+        <button class="lm-close" @onclick="Cancel"><i class="bi bi-x-lg"></i></button>
+    </div>
+
+    <div class="lm-body">
+        <div class="lm-field">
+            <label class="lm-label">Username</label>
+            <input class="lm-input" type="text" placeholder="your.username"
+                   @bind="_Username" @bind:event="oninput"
+                   @onkeydown="OnKeyDown" />
+        </div>
+
+        <div class="lm-field">
+            <label class="lm-label">Access token</label>
+            <input class="lm-input" type="password" placeholder="Paste your access token…"
+                   @bind="_AccessToken" @bind:event="oninput"
+                   @onkeydown="OnKeyDown" />
+        </div>
+
+        @if (_Error != null)
+        {
+            <div class="lm-error">
+                <i class="bi bi-exclamation-triangle"></i> @_Error
+            </div>
+        }
+    </div>
+
+    <div class="lm-footer">
+        <button class="lm-btn lm-btn-ghost" @onclick="Cancel">Cancel</button>
+        <button class="lm-btn lm-btn-primary" @onclick="Confirm"
+                disabled="@(!_CanConfirm)">
+            Sign in
+        </button>
+    </div>
+</div>
+
+@code {
+    [Parameter] public EventCallback<(string username, string accessToken)> OnConfirm { get; set; }
+    [Parameter] public EventCallback OnCancel { get; set; }
+
+    private string  _ProjectName = "";
+    private string  _Username    = "";
+    private string  _AccessToken = "";
+    private string? _Error;
+
+    private bool _CanConfirm =>
+        !string.IsNullOrWhiteSpace(_Username) &&
+        !string.IsNullOrWhiteSpace(_AccessToken);
+
+    public void Show(string projectName, string? error = null)
+    {
+        _ProjectName = projectName;
+        _Username    = "";
+        _AccessToken = "";
+        _Error       = error;
+        StateHasChanged();
+    }
+
+    public void ShowError(string error)
+    {
+        _Error = error;
+        StateHasChanged();
+    }
+
+    private async Task Confirm()
+    {
+        if (!_CanConfirm) return;
+        await OnConfirm.InvokeAsync((_Username.Trim(), _AccessToken.Trim()));
+    }
+
+    private async Task Cancel()
+    {
+        await OnCancel.InvokeAsync();
+    }
+
+    private async Task OnKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter") await Confirm();
+    }
+}

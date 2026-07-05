@@ -64,6 +64,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
         <PackageReference Include="CommunityToolkit.Maui" Version="14.2.0" />
         <PackageReference Include="DeusaldSharp" Version="10.6.0" />
         <PackageReference Include="JetBrains.Annotations" Version="2026.2.0" />

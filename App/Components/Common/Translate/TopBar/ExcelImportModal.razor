@@ -1,5 +1,4 @@
 ﻿@namespace App.Components.Translate
-@using DeusaldLocalizerCommon
 @using System.IO
 @inject ProjectStateService _ProjectState
 
@@ -142,8 +141,7 @@
             await using Stream stream = await picked.OpenReadAsync();
             _Result = LocalizationImportService.ImportFromStream(
                 stream,
-                _ProjectState.CurrentProject!,
-                _ProjectState.CurrentUser);
+                _ProjectState.CurrentProject!);
 
             if (_Result.KeysUpdated > 0 || _Result.CellsImported > 0)
                 _ProjectState.MarkDirty();

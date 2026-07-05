@@ -176,20 +176,22 @@
 
     private void AddLanguage(string code)
     {
-        ProjectDto project = _ProjectState.CurrentProject!;
-        if (project.Languages.Contains(code)) return;
-        _ProjectState.BackendService.AddLanguageAsync(code).Forget();
+        LocProject project = _ProjectState.CurrentProject!;
+        if (project.Metadata.Languages.Contains(code)) return;
+        project.Metadata.Languages.Add(code);
+        _ProjectState.MarkDirty();
         ExitAddMode();
     }
 
     private async Task RemoveLanguage(string code)
     {
-        ProjectDto project = _ProjectState.CurrentProject!;
-        if (code == project.MainLanguageId) return; // main language can't be removed
-        await _ProjectState.BackendService.RemoveLanguageAsync(code);
+        LocProject project = _ProjectState.CurrentProject!;
+        if (code == project.Metadata.MainLanguageId) return; // main language can't be removed
+        project.Metadata.Languages.Remove(code);
+        _ProjectState.MarkDirty();
         if (SelectedLanguage != code) return;
-        string fallback = project.Languages.Find(l => l != project.MainLanguageId)
-                       ?? project.MainLanguageId;
+        string fallback = project.Metadata.Languages.Find(l => l != project.Metadata.MainLanguageId)
+                       ?? project.Metadata.MainLanguageId;
         await OnLanguageSelected.InvokeAsync(fallback);
     }
 
