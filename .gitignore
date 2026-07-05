@@ -154,4 +154,7 @@ $RECYCLE.BIN/
 .vs
 packages
 
+# graphify knowledge graph (locally-built, regenerable)
+graphify-out/
+
 # Ignore project specific:
