@@ -172,6 +172,29 @@ public class ProjectStateService
         MarkDirty();
     }
 
+    // ── Language change recording ─────────────────────────────────────────────
+
+    public void RecordLanguageAdded(string code) =>
+        AddLanguageChange(EntryChangeType.LanguageAdded, code);
+
+    public void RecordLanguageRemoved(string code) =>
+        AddLanguageChange(EntryChangeType.LanguageRemoved, code);
+
+    private void AddLanguageChange(EntryChangeType type, string code)
+    {
+        if (CurrentProject!.Metadata.IsOnline)
+        {
+            CurrentProject.UncommitedChanges.Add(new LocEntryChange
+            {
+                Type       = type,
+                EntryId    = CurrentProject.Metadata.Id,
+                ChangeData = code
+            });
+        }
+
+        MarkDirty();
+    }
+
     public void MarkDirty()
     {
         if (!IsDirty)

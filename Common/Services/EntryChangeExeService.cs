@@ -45,6 +45,23 @@ namespace DeusaldLocalizerCommon
                     commitString = $"Update member {existing.Username} ({change.EntrySubId})";
                     break;
                 }
+                case EntryChangeType.LanguageAdded:
+                {
+                    string code = change.ChangeData;
+                    if (!string.IsNullOrEmpty(code) && !project.Metadata.Languages.Contains(code))
+                        project.Metadata.Languages.Add(code);
+
+                    commitString = $"Add language {code}";
+                    break;
+                }
+                case EntryChangeType.LanguageRemoved:
+                {
+                    string code = change.ChangeData;
+                    project.Metadata.Languages.Remove(code);
+
+                    commitString = $"Remove language {code}";
+                    break;
+                }
             }
         }
     }

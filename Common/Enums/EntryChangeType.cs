@@ -3,7 +3,9 @@ namespace DeusaldLocalizerCommon
     public enum EntryChangeType
     {
         MemberAdded,
-        MemberUpdated
+        MemberUpdated,
+        LanguageAdded,
+        LanguageRemoved
     }
 
     public static class EntryChangeTypeExtensions
@@ -12,9 +14,11 @@ namespace DeusaldLocalizerCommon
         {
             return entryChangeType switch
             {
-                EntryChangeType.MemberAdded   => EntryChangeActionType.Created,
-                EntryChangeType.MemberUpdated => EntryChangeActionType.Updated,
-                _                             => EntryChangeActionType.Created
+                EntryChangeType.MemberAdded     => EntryChangeActionType.Created,
+                EntryChangeType.MemberUpdated   => EntryChangeActionType.Updated,
+                EntryChangeType.LanguageAdded   => EntryChangeActionType.Created,
+                EntryChangeType.LanguageRemoved => EntryChangeActionType.Deleted,
+                _                               => EntryChangeActionType.Created
             };
         }
     }

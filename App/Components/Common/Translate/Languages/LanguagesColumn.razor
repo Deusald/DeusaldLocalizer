@@ -1,6 +1,4 @@
 ﻿@namespace App.Components.Translate
-@using DeusaldLocalizerCommon
-@using DeusaldSharp
 @inject ProjectStateService _ProjectState
 @implements IDisposable
 
@@ -19,7 +17,7 @@
             {
                 CultureEntry? entry  = CultureService.FindByCode(code);
                 bool          active = code == SelectedLanguage;
-                bool          isMain = code == _ProjectState.CurrentProject!.MainLanguageId;
+                bool          isMain = code == _ProjectState.CurrentProject!.Metadata.MainLanguageId;
                 int           pct    = ProgressFor(code);
 
                 @if (_EditMode)
@@ -93,7 +91,7 @@
         </div>
 
         <div class="lc-add-results">
-            @{ HashSet<string> existing = new HashSet<string>(_ProjectState.CurrentProject!.Languages); }
+            @{ HashSet<string> existing = new HashSet<string>(_ProjectState.CurrentProject!.Metadata.Languages); }
             @{ List<CultureEntry> hits = CultureService.Search(_AddQuery).Where(c => !existing.Contains(c.Code)).ToList(); }
             @if (hits.Count == 0)
             {
@@ -128,7 +126,7 @@
     private bool   _EditMode;
     private string _AddQuery = "";
 
-    private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _IsAdmin => _ProjectState.CurrentUser.IsAdmin;
 
     protected override void OnInitialized()
     {
@@ -139,7 +137,7 @@
     {
         get
         {
-            IEnumerable<string> langs = _ProjectState.CurrentProject!.Languages.AsEnumerable();
+            IEnumerable<string> langs = _ProjectState.CurrentProject!.Metadata.Languages.AsEnumerable();
             if (!string.IsNullOrWhiteSpace(_Filter))
             {
                 string q = _Filter.Trim().ToLowerInvariant();
@@ -156,7 +154,7 @@
 
     private int ProgressFor(string code)
     {
-        ProjectDto project  = _ProjectState.CurrentProject!;
+        LocProject project  = _ProjectState.CurrentProject!;
         int        keyCount = project.Keys.Count;
         if (keyCount == 0) return 0;
         int translated = project.GetNumberOfApprovedKeys(code);
@@ -179,7 +177,7 @@
         LocProject project = _ProjectState.CurrentProject!;
         if (project.Metadata.Languages.Contains(code)) return;
         project.Metadata.Languages.Add(code);
-        _ProjectState.MarkDirty();
+        _ProjectState.RecordLanguageAdded(code);
         ExitAddMode();
     }
 
@@ -188,7 +186,7 @@
         LocProject project = _ProjectState.CurrentProject!;
         if (code == project.Metadata.MainLanguageId) return; // main language can't be removed
         project.Metadata.Languages.Remove(code);
-        _ProjectState.MarkDirty();
+        _ProjectState.RecordLanguageRemoved(code);
         if (SelectedLanguage != code) return;
         string fallback = project.Metadata.Languages.Find(l => l != project.Metadata.MainLanguageId)
                        ?? project.Metadata.MainLanguageId;
