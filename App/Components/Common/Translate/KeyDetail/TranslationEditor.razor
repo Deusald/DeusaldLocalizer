@@ -275,16 +275,21 @@
 
         _ProjectState.RecordTranslationUpdated(Key.Id, source);
 
-        // Mark every other-language translation as source-changed if their BaseTextHash
-        // was based on the old source and the source actually changed.
+        // Re-evaluate every other-language translation against the new source hash.
+        // A translation is "source changed" when it was based on a different source
+        // version than the current one; reverting the source back to a translation's
+        // BaseTextHash clears the flag again.
         if (oldHash != newHash)
         {
             foreach (LocKeyTranslation other in Key.Translations)
             {
                 if (other.LanguageId == _SourceLangCode) continue;
-                if (!string.IsNullOrEmpty(other.BaseTextHash) && !other.SourceChanged)
+                if (string.IsNullOrEmpty(other.BaseTextHash)) continue;
+
+                bool sourceChanged = other.BaseTextHash != newHash;
+                if (other.SourceChanged != sourceChanged)
                 {
-                    other.SourceChanged = true;
+                    other.SourceChanged = sourceChanged;
                     _ProjectState.RecordTranslationUpdated(Key.Id, other);
                 }
             }
