@@ -7,6 +7,11 @@
     <div class="kc-toolbar">
         <CategoryFilterPanel SelectedCategoryIds="SelectedCategoryIds" OnChanged="OnCategoryFilterChanged"/>
 
+        <TagFlagFilterPanel SelectedFlagTypes="_SelectedFlagTypes"
+                            SelectedTags="_SelectedTags"
+                            OnFlagsChanged="OnFlagFilterChanged"
+                            OnTagsChanged="OnTagFilterChanged"/>
+
         <div class="kc-search-wrap">
             <i class="bi bi-search kc-search-icon"></i>
             <input class="kc-search" type="text" placeholder="Search keys…"
@@ -114,9 +119,11 @@
         NeedsReview
     }
 
-    private KeyTab _Tab    = KeyTab.All;
-    private string _Filter = "";
-    private bool   _EditMode;
+    private KeyTab            _Tab              = KeyTab.All;
+    private string            _Filter           = "";
+    private bool              _EditMode;
+    private HashSet<FlagType> _SelectedFlagTypes = new();
+    private HashSet<string>   _SelectedTags      = new(StringComparer.OrdinalIgnoreCase);
 
     private NewKeyModal? _NewKeyModal;
 
@@ -131,6 +138,12 @@
 
             if (SelectedCategoryIds.Count > 0)
                 keys = keys.Where(k => SelectedCategoryIds.Contains(k.CategoryId));
+
+            if (_SelectedFlagTypes.Count > 0)
+                keys = keys.Where(k => k.Flags.Any(f => _SelectedFlagTypes.Contains(f.Type)));
+
+            if (_SelectedTags.Count > 0)
+                keys = keys.Where(k => k.Tags.Any(t => _SelectedTags.Contains(t)));
 
             if (!string.IsNullOrWhiteSpace(_Filter))
             {
@@ -150,14 +163,9 @@
             IEnumerable<LocLocalizationKey> keys = _BaseKeys.AsEnumerable();
             keys = _Tab switch
             {
-                KeyTab.Untranslated => keys.Where(k =>
-                {
-                    LocKeyTranslation? t = k.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
-                    return t == null || string.IsNullOrEmpty(t.Text);
-                }),
-                KeyTab.NeedsReview => keys.Where(k => k.Flags.Any(f => f.Type == FlagType.NeedsReview)
-                                                      || k.Translations.Any(t => t.LanguageId == SelectedLanguage && t.SourceChanged)),
-                _ => keys,
+                KeyTab.Untranslated => keys.Where(IsUntranslated),
+                KeyTab.NeedsReview  => keys.Where(NeedsReview),
+                _                   => keys,
             };
             return keys.ToList();
         }
@@ -165,15 +173,20 @@
 
     private int _AllCount => _BaseKeys.Count;
 
-    private int _UntranslatedCount => _BaseKeys.Count(k =>
-    {
-        LocKeyTranslation? t = k.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
-        return t == null || string.IsNullOrEmpty(t.Text);
-    });
+    private int _UntranslatedCount => _BaseKeys.Count(IsUntranslated);
 
-    private int _NeedsReviewCount => _BaseKeys.Count(k =>
-        k.Flags.Any(f => f.Type == FlagType.NeedsReview)
-        || k.Translations.Any(t => t.LanguageId == SelectedLanguage && t.SourceChanged));
+    private int _NeedsReviewCount => _BaseKeys.Count(NeedsReview);
+
+    private bool IsUntranslated(LocLocalizationKey key)
+    {
+        LocKeyTranslation? t = key.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
+        return t == null || string.IsNullOrEmpty(t.Text);
+    }
+
+    private bool NeedsReview(LocLocalizationKey key) =>
+        key.Flags.Any(f => f.Type == FlagType.NeedsReview)
+        || key.Translations.Any(t => t.LanguageId == SelectedLanguage
+                                     && (t.SourceChanged || t.Suggestions.Count > 0));
 
     protected override void OnInitialized()
     {
@@ -212,6 +225,16 @@
         if (translation.SourceChanged) return "kc-dot-warn";
         if (translation.Status == TranslationStatus.Approved) return "kc-dot-ok";
         return "kc-dot-draft";
+    }
+
+    private void OnFlagFilterChanged(HashSet<FlagType> flagTypes)
+    {
+        _SelectedFlagTypes = flagTypes;
+    }
+
+    private void OnTagFilterChanged(HashSet<string> tags)
+    {
+        _SelectedTags = tags;
     }
 
     private async Task OnKeyCreated(Guid keyId)
