@@ -195,6 +195,108 @@ public class ProjectStateService
         MarkDirty();
     }
 
+    // ── Key change recording ──────────────────────────────────────────────────
+
+    /// <summary>Records a brand-new key (whole object).</summary>
+    public void RecordKeyAdded(LocLocalizationKey key)
+    {
+        ChangedLocKeys.Add(key.Id);
+        if (CurrentProject!.Metadata.IsOnline)
+        {
+            CurrentProject.UncommitedChanges.Add(new LocEntryChange
+            {
+                Type       = EntryChangeType.KeyAdded,
+                EntryId    = key.Id,
+                ChangeData = Newtonsoft.Json.JsonConvert.SerializeObject(key)
+            });
+        }
+
+        MarkDirty();
+    }
+
+    public void RecordKeyNameChanged(LocLocalizationKey key) =>
+        AddKeyFieldChange(key, nameof(LocLocalizationKey.KeyName), key.KeyName);
+
+    public void RecordKeyCategoryChanged(LocLocalizationKey key) =>
+        AddKeyFieldChange(key, nameof(LocLocalizationKey.CategoryId), key.CategoryId.ToString());
+
+    public void RecordKeyMaxLengthChanged(LocLocalizationKey key) =>
+        AddKeyFieldChange(key, nameof(LocLocalizationKey.MaxLength), key.MaxLength.ToString());
+
+    private void AddKeyFieldChange(LocLocalizationKey key, string fieldName, string changeData)
+    {
+        ChangedLocKeys.Add(key.Id);
+        if (CurrentProject!.Metadata.IsOnline)
+        {
+            CurrentProject.UncommitedChanges.Add(new LocEntryChange
+            {
+                Type       = EntryChangeType.KeyUpdated,
+                EntryId    = key.Id,
+                EntrySubId = fieldName,
+                ChangeData = changeData
+            });
+        }
+
+        MarkDirty();
+    }
+
+    // ── Category change recording ─────────────────────────────────────────────
+
+    /// <summary>Records a brand-new category (whole object).</summary>
+    public void RecordCategoryAdded(LocCategory category)
+    {
+        if (CurrentProject!.Metadata.IsOnline)
+        {
+            CurrentProject.UncommitedChanges.Add(new LocEntryChange
+            {
+                Type       = EntryChangeType.CategoryAdded,
+                EntryId    = category.Id,
+                ChangeData = Newtonsoft.Json.JsonConvert.SerializeObject(category)
+            });
+        }
+
+        MarkDirty();
+    }
+
+    public void RecordCategoryNameChanged(LocCategory category) =>
+        AddCategoryFieldChange(category, nameof(LocCategory.Name), category.Name);
+
+    public void RecordCategoryDescriptionChanged(LocCategory category) =>
+        AddCategoryFieldChange(category, nameof(LocCategory.Description), category.Description);
+
+    public void RecordCategoryParentChanged(LocCategory category) =>
+        AddCategoryFieldChange(category, nameof(LocCategory.ParentCategoryId), category.ParentCategoryId?.ToString() ?? string.Empty);
+
+    public void RecordCategoryRemoved(LocCategory category)
+    {
+        if (CurrentProject!.Metadata.IsOnline)
+        {
+            CurrentProject.UncommitedChanges.Add(new LocEntryChange
+            {
+                Type    = EntryChangeType.CategoryRemoved,
+                EntryId = category.Id
+            });
+        }
+
+        MarkDirty();
+    }
+
+    private void AddCategoryFieldChange(LocCategory category, string fieldName, string changeData)
+    {
+        if (CurrentProject!.Metadata.IsOnline)
+        {
+            CurrentProject.UncommitedChanges.Add(new LocEntryChange
+            {
+                Type       = EntryChangeType.CategoryUpdated,
+                EntryId    = category.Id,
+                EntrySubId = fieldName,
+                ChangeData = changeData
+            });
+        }
+
+        MarkDirty();
+    }
+
     public void MarkDirty()
     {
         if (!IsDirty)

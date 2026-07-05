@@ -1,6 +1,4 @@
 ﻿@namespace App.Components.Translate
-@using DeusaldLocalizerCommon
-@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 <div class="cfp-root">
@@ -39,7 +37,7 @@
                     @foreach (CategoryRow row in _FlattenedCategories)
                     {
                         bool active = SelectedCategoryIds.Contains(row.Category.Id);
-                        CategoryDto cat = row.Category;
+                        LocCategory cat = row.Category;
                         bool hasKeys = CategoryHasKeys(cat.Id);
 
                         <div class="cfp-row"
@@ -100,30 +98,18 @@
     private NewCategoryModal? _NewCategoryModal;
     private Guid?             _HoveredId;
 
-    private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _IsAdmin => _ProjectState.CurrentUser.IsAdmin;
 
     private bool CategoryHasKeys(Guid categoryId) =>
         _ProjectState.CurrentProject!.Keys.Any(k => k.CategoryId == categoryId);
 
-    private async Task DeleteCategory(CategoryDto category)
+    private async Task DeleteCategory(LocCategory category)
     {
         if (CategoryHasKeys(category.Id)) return; // guarded in UI too, but double-check here
 
-        ProjectDto project = _ProjectState.CurrentProject!;
+        LocProject project = _ProjectState.CurrentProject!;
         project.Categories.Remove(category);
-        
-        _ProjectState.CurrentProject!.ProjectHistory.Add(new HistoryEntryDto
-        {
-            EntityPartName = "Categories",
-            EntityPartId   = category.Id,
-            ChangeType     = HistoryChangeType.Deleted,
-            OldValue       = JsonConvert.SerializeObject(category),
-            NewValue       = string.Empty,
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
-        
-        _ProjectState.MarkDirty();
+        _ProjectState.RecordCategoryRemoved(category);
 
         if (SelectedCategoryIds.Contains(category.Id))
         {
@@ -135,22 +121,22 @@
         _HoveredId = null;
     }
 
-    private sealed record CategoryRow(CategoryDto Category, int Depth, string ParentPath);
+    private sealed record CategoryRow(LocCategory Category, int Depth, string ParentPath);
 
     private List<CategoryRow> _FlattenedCategories
     {
         get
         {
-            List<CategoryDto> all  = _ProjectState.CurrentProject!.Categories;
+            List<LocCategory> all  = _ProjectState.CurrentProject!.Categories;
             List<CategoryRow> rows = new List<CategoryRow>();
 
             void Walk(Guid? parentId, int depth, string parentPath)
             {
-                IOrderedEnumerable<CategoryDto> children = all
+                IOrderedEnumerable<LocCategory> children = all
                                                           .Where(c => c.ParentCategoryId == parentId)
                                                           .OrderBy(c => c.Name, StringComparer.OrdinalIgnoreCase);
 
-                foreach (CategoryDto cat in children)
+                foreach (LocCategory cat in children)
                 {
                     rows.Add(new CategoryRow(cat, depth, parentPath));
                     string nextPath = string.IsNullOrEmpty(parentPath) ? cat.Name : $"{parentPath}/{cat.Name}";

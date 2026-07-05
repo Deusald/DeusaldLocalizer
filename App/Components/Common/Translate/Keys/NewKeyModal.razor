@@ -1,7 +1,5 @@
 ﻿@namespace App.Components.Translate
 @using System.Text.RegularExpressions
-@using DeusaldLocalizerCommon
-@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 @if (_Visible)
@@ -64,16 +62,16 @@
                     @if (_CatOpen)
                     {
                         <div class="nkm-cat-dropdown" @onmousedown="() => _SuppressBlurClose = true">
-                            @{ List<CategoryDto> results = _FilteredCategories; }
+                            @{ List<LocCategory> results = _FilteredCategories; }
                             @if (results.Count == 0)
                             {
                                 <div class="nkm-cat-empty">No categories found. Create one from the Keys column first.</div>
                             }
                             else
                             {
-                                @foreach (CategoryDto cat in results)
+                                @foreach (LocCategory cat in results)
                                 {
-                                    CategoryDto c      = cat;
+                                    LocCategory c      = cat;
                                     bool        active = _SelectedCategory?.Id == c.Id;
                                     <button class="nkm-cat-item @(active ? "active" : "")"
                                             @onclick="() => SelectCategory(c)"
@@ -129,8 +127,8 @@
     private string              _CatQuery = "";
     private bool                _CatOpen;
     private bool                _SuppressBlurClose;
-    private CategoryDto?        _SelectedCategory;
-    private LocalizationKeyDto? _EditingKey;
+    private LocCategory?        _SelectedCategory;
+    private LocLocalizationKey? _EditingKey;
 
     private static readonly Regex _KeyNamePattern = new(@"^[A-Za-z0-9_]+$");
 
@@ -150,11 +148,11 @@
         }
     }
 
-    private List<CategoryDto> _FilteredCategories
+    private List<LocCategory> _FilteredCategories
     {
         get
         {
-            IEnumerable<CategoryDto> cats = _ProjectState.CurrentProject!.Categories.AsEnumerable();
+            IEnumerable<LocCategory> cats = _ProjectState.CurrentProject!.Categories.AsEnumerable();
             if (!string.IsNullOrWhiteSpace(_CatQuery))
             {
                 string q = _CatQuery.Trim().ToLowerInvariant();
@@ -164,14 +162,14 @@
         }
     }
 
-    private string FullCategoryPath(CategoryDto cat)
+    private string FullCategoryPath(LocCategory cat)
     {
         List<string> parts   = [cat.Name];
-        CategoryDto  current = cat;
-        ProjectDto   project = _ProjectState.CurrentProject!;
+        LocCategory  current = cat;
+        LocProject   project = _ProjectState.CurrentProject!;
         while (current.ParentCategoryId != null)
         {
-            CategoryDto? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
+            LocCategory? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
             if (parent == null) break;
             parts.Insert(0, parent.Name);
             current = parent;
@@ -197,7 +195,7 @@
         StateHasChanged();
     }
 
-    public void EditKey(LocalizationKeyDto key)
+    public void EditKey(LocLocalizationKey key)
     {
         _EditingKey        = key;
         _KeyName           = key.KeyName;
@@ -210,7 +208,7 @@
         StateHasChanged();
     }
 
-    private void SelectCategory(CategoryDto cat)
+    private void SelectCategory(LocCategory cat)
     {
         _SelectedCategory = cat;
         _CatQuery         = "";
@@ -250,58 +248,41 @@
     {
         if (!_CanConfirm) return;
 
-        ProjectDto project = _ProjectState.CurrentProject!;
+        LocProject project = _ProjectState.CurrentProject!;
 
         if (_EditingKey == null)
         {
-            LocalizationKeyDto key = new LocalizationKeyDto
+            LocLocalizationKey key = new LocLocalizationKey
             {
                 CategoryId = _SelectedCategory!.Id,
                 KeyName    = _KeyName.Trim(),
                 MaxLength  = Math.Max(0, _MaxLength),
             };
             project.Keys.Add(key);
-
-            project.ProjectHistory.Add(new HistoryEntryDto
-            {
-                EntityPartName = "Keys",
-                EntityPartId   = key.Id,
-                ChangeType     = HistoryChangeType.Created,
-                OldValue       = string.Empty,
-                NewValue       = JsonConvert.SerializeObject(key),
-                UserId         = _ProjectState.CurrentUser.Id,
-                UserName       = _ProjectState.CurrentUser.DisplayName
-            });
-
-            _ProjectState.MarkDirty();
+            _ProjectState.RecordKeyAdded(key);
 
             _Visible = false;
             OnCreated.InvokeAsync(key.Id);
         }
         else
         {
-            string oldBaseValues = JsonConvert.SerializeObject((_EditingKey.KeyName, _EditingKey.CategoryId, _EditingKey.MaxLength, _EditingKey.UpdatedAt));
+            string newKeyName     = _KeyName.Trim();
+            Guid   newCategoryId  = _SelectedCategory!.Id;
+            int    newMaxLength   = Math.Max(0, _MaxLength);
 
-            _EditingKey.KeyName    = _KeyName.Trim();
-            _EditingKey.CategoryId = _SelectedCategory!.Id;
-            _EditingKey.MaxLength  = Math.Max(0, _MaxLength);
+            bool nameChanged      = _EditingKey.KeyName    != newKeyName;
+            bool categoryChanged  = _EditingKey.CategoryId != newCategoryId;
+            bool maxLengthChanged = _EditingKey.MaxLength  != newMaxLength;
+
+            _EditingKey.KeyName    = newKeyName;
+            _EditingKey.CategoryId = newCategoryId;
+            _EditingKey.MaxLength  = newMaxLength;
             _EditingKey.UpdatedAt  = DateTime.UtcNow;
 
-            string newBaseValues = JsonConvert.SerializeObject((_EditingKey.KeyName, _EditingKey.CategoryId, _EditingKey.MaxLength, _EditingKey.UpdatedAt));
-            
-            _EditingKey.History.Add(new HistoryEntryDto
-            {
-                EntityPartName = "BaseValues",
-                EntityPartId   = _EditingKey.Id,
-                ChangeType     = HistoryChangeType.Updated,
-                OldValue       = oldBaseValues,
-                NewValue       = newBaseValues,
-                UserId         = _ProjectState.CurrentUser.Id,
-                UserName       = _ProjectState.CurrentUser.DisplayName
-            });
+            if (nameChanged)      _ProjectState.RecordKeyNameChanged(_EditingKey);
+            if (categoryChanged)  _ProjectState.RecordKeyCategoryChanged(_EditingKey);
+            if (maxLengthChanged) _ProjectState.RecordKeyMaxLengthChanged(_EditingKey);
 
-            _ProjectState.MarkDirty();
-            
             _Visible = false;
             OnCreated.InvokeAsync(_EditingKey.Id);
         }

@@ -1,5 +1,4 @@
 ﻿@namespace App.Components.Translate
-@using DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
 @implements IDisposable
 
@@ -34,12 +33,12 @@
         }
         else
         {
-            @foreach (LocalizationKeyDto key in _FilteredKeys)
+            @foreach (LocLocalizationKey key in _FilteredKeys)
             {
-                LocalizationKeyDto k               = key;
+                LocLocalizationKey k               = key;
                 bool               active          = k.Id == SelectedKeyId;
-                TranslationDto?    translation     = k.Translations.Find(t => t.LanguageId == SelectedLanguage);
-                int                suggestionCount = k.Translations.Where(t => t.LanguageId == SelectedLanguage).SelectMany(t => t.Suggestions).Count(s => s.Status == SuggestionStatus.Pending);
+                LocKeyTranslation?    translation     = k.Translations.Find(t => t.LanguageId == SelectedLanguage);
+                int                suggestionCount = k.Translations.Where(t => t.LanguageId == SelectedLanguage).SelectMany(t => t.Suggestions).Count();
 
                 @if (_EditMode)
                 {
@@ -121,14 +120,14 @@
 
     private NewKeyModal? _NewKeyModal;
 
-    private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _IsAdmin => _ProjectState.CurrentUser.IsAdmin;
 
-    private List<LocalizationKeyDto> _BaseKeys
+    private List<LocLocalizationKey> _BaseKeys
     {
         get
         {
-            ProjectDto                      project = _ProjectState.CurrentProject!;
-            IEnumerable<LocalizationKeyDto> keys    = project.Keys.AsEnumerable();
+            LocProject                      project = _ProjectState.CurrentProject!;
+            IEnumerable<LocLocalizationKey> keys    = project.Keys.AsEnumerable();
 
             if (SelectedCategoryIds.Count > 0)
                 keys = keys.Where(k => SelectedCategoryIds.Contains(k.CategoryId));
@@ -144,20 +143,20 @@
         }
     }
 
-    private List<LocalizationKeyDto> _FilteredKeys
+    private List<LocLocalizationKey> _FilteredKeys
     {
         get
         {
-            IEnumerable<LocalizationKeyDto> keys = _BaseKeys.AsEnumerable();
+            IEnumerable<LocLocalizationKey> keys = _BaseKeys.AsEnumerable();
             keys = _Tab switch
             {
                 KeyTab.Untranslated => keys.Where(k =>
                 {
-                    TranslationDto? t = k.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
+                    LocKeyTranslation? t = k.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
                     return t == null || string.IsNullOrEmpty(t.Text);
                 }),
                 KeyTab.NeedsReview => keys.Where(k => k.Flags.Any(f => f.Type == FlagType.NeedsReview)
-                                                      || k.Translations.Any(t => t.LanguageId == SelectedLanguage && t.NeedsAttention)),
+                                                      || k.Translations.Any(t => t.LanguageId == SelectedLanguage && t.SourceChanged)),
                 _ => keys,
             };
             return keys.ToList();
@@ -168,30 +167,30 @@
 
     private int _UntranslatedCount => _BaseKeys.Count(k =>
     {
-        TranslationDto? t = k.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
+        LocKeyTranslation? t = k.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
         return t == null || string.IsNullOrEmpty(t.Text);
     });
 
     private int _NeedsReviewCount => _BaseKeys.Count(k =>
         k.Flags.Any(f => f.Type == FlagType.NeedsReview)
-        || k.Translations.Any(t => t.LanguageId == SelectedLanguage && t.NeedsAttention));
+        || k.Translations.Any(t => t.LanguageId == SelectedLanguage && t.SourceChanged));
 
     protected override void OnInitialized()
     {
         _ProjectState.ProjectDataChanged += OnProjectDataChanged;
     }
     
-    private string FullKeyName(LocalizationKeyDto key)
+    private string FullKeyName(LocLocalizationKey key)
     {
-        ProjectDto   project = _ProjectState.CurrentProject!;
-        CategoryDto? cat     = project.Categories.Find(c => c.Id == key.CategoryId);
+        LocProject   project = _ProjectState.CurrentProject!;
+        LocCategory? cat     = project.Categories.Find(c => c.Id == key.CategoryId);
         if (cat == null) return key.KeyName;
 
         List<string> parts   = [cat.Name];
-        CategoryDto  current = cat;
+        LocCategory  current = cat;
         while (current.ParentCategoryId != null)
         {
-            CategoryDto? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
+            LocCategory? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
             if (parent == null) break;
             parts.Insert(0, parent.Name);
             current = parent;
@@ -199,18 +198,18 @@
         return $"{string.Join("/", parts)}.{key.KeyName}";
     }
 
-    private string SourceTextFor(LocalizationKeyDto key)
+    private string SourceTextFor(LocLocalizationKey key)
     {
-        ProjectDto      project = _ProjectState.CurrentProject!;
-        TranslationDto? src     = key.Translations.Find(t => t.LanguageId == project.MainLanguageId);
+        LocProject      project = _ProjectState.CurrentProject!;
+        LocKeyTranslation? src     = key.Translations.Find(t => t.LanguageId == project.Metadata.MainLanguageId);
         return src?.Text ?? "";
     }
 
-    private string StatusDotClass(LocalizationKeyDto key, TranslationDto? translation)
+    private string StatusDotClass(LocLocalizationKey key, LocKeyTranslation? translation)
     {
         if (key.Flags.Any(f => f.Type == FlagType.NeedsReview)) return "kc-dot-warn";
         if (translation == null || string.IsNullOrEmpty(translation.Text)) return "kc-dot-empty";
-        if (translation.NeedsAttention) return "kc-dot-warn";
+        if (translation.SourceChanged) return "kc-dot-warn";
         if (translation.Status == TranslationStatus.Approved) return "kc-dot-ok";
         return "kc-dot-draft";
     }

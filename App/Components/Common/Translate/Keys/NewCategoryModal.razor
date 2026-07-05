@@ -1,6 +1,4 @@
 ﻿@namespace App.Components.Translate
-@using DeusaldLocalizerCommon
-@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 @if (_Visible)
@@ -63,16 +61,16 @@
                             </button>
                             <div class="ncm-parent-divider"></div>
 
-                            @{ List<CategoryDto> results = _FilteredParents; }
+                            @{ List<LocCategory> results = _FilteredParents; }
                             @if (results.Count == 0)
                             {
                                 <div class="ncm-parent-empty">No categories found</div>
                             }
                             else
                             {
-                                @foreach (CategoryDto cat in results)
+                                @foreach (LocCategory cat in results)
                                 {
-                                    CategoryDto c = cat;
+                                    LocCategory c = cat;
                                     bool active = _SelectedParent?.Id == c.Id;
                                     string path = FullPath(c);
                                     <button class="ncm-parent-item @(active ? "active" : "")"
@@ -123,10 +121,10 @@
     private string       _ParentQuery = "";
     private bool         _ParentOpen;
     private bool         _SuppressBlurClose;
-    private CategoryDto? _SelectedParent;
-    private CategoryDto? _EditingCategory;
+    private LocCategory? _SelectedParent;
+    private LocCategory? _EditingCategory;
 
-    private List<CategoryDto> _FilteredParents
+    private List<LocCategory> _FilteredParents
     {
         get
         {
@@ -134,7 +132,7 @@
                                          ? new HashSet<Guid>()
                                          : DescendantsAndSelf(_EditingCategory);
 
-            IEnumerable<CategoryDto> cats = _ProjectState.CurrentProject!.Categories
+            IEnumerable<LocCategory> cats = _ProjectState.CurrentProject!.Categories
                                                          .Where(c => !excluded.Contains(c.Id))
                                                          .AsEnumerable();
 
@@ -148,14 +146,14 @@
     }
 
     /// <summary>A category's own id plus every descendant id — used to prevent picking a cyclical parent while editing.</summary>
-    private HashSet<Guid> DescendantsAndSelf(CategoryDto cat)
+    private HashSet<Guid> DescendantsAndSelf(LocCategory cat)
     {
-        ProjectDto    project = _ProjectState.CurrentProject!;
+        LocProject    project = _ProjectState.CurrentProject!;
         HashSet<Guid> result  = new HashSet<Guid> { cat.Id };
 
         void Walk(Guid parentId)
         {
-            foreach (CategoryDto child in project.Categories.Where(c => c.ParentCategoryId == parentId))
+            foreach (LocCategory child in project.Categories.Where(c => c.ParentCategoryId == parentId))
             {
                 if (result.Add(child.Id)) Walk(child.Id);
             }
@@ -166,14 +164,14 @@
     }
 
     /// <summary>Builds the full "parent/child" path for a category, e.g. "menu/buttons".</summary>
-    private string FullPath(CategoryDto cat)
+    private string FullPath(LocCategory cat)
     {
-        ProjectDto   project = _ProjectState.CurrentProject!;
+        LocProject   project = _ProjectState.CurrentProject!;
         List<string> parts   = new List<string> { cat.Name };
-        CategoryDto          current = cat;
+        LocCategory          current = cat;
         while (current.ParentCategoryId != null)
         {
-            CategoryDto? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
+            LocCategory? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
             if (parent == null) break;
             parts.Insert(0, parent.Name);
             current = parent;
@@ -194,7 +192,7 @@
         StateHasChanged();
     }
 
-    public void EditCategory(CategoryDto category)
+    public void EditCategory(LocCategory category)
     {
         _EditingCategory = category;
         _Name = category.Name;
@@ -209,7 +207,7 @@
         StateHasChanged();
     }
 
-    private void SelectParent(CategoryDto? cat)
+    private void SelectParent(LocCategory? cat)
     {
         _SelectedParent = cat;
         _ParentQuery = "";
@@ -240,51 +238,38 @@
     {
         if (string.IsNullOrWhiteSpace(_Name)) return;
 
-        ProjectDto project = _ProjectState.CurrentProject!;
+        LocProject project = _ProjectState.CurrentProject!;
 
         if (_EditingCategory == null)
         {
-            CategoryDto newCategory = new CategoryDto
+            LocCategory newCategory = new LocCategory
             {
                 Name             = _Name.Trim(),
                 Description      = _Description.Trim(),
                 ParentCategoryId = _SelectedParent?.Id,
             };
-            
+
             project.Categories.Add(newCategory);
-            
-            project.ProjectHistory.Add(new HistoryEntryDto
-            {
-                EntityPartName = "Categories",
-                EntityPartId   = newCategory.Id,
-                ChangeType     = HistoryChangeType.Created,
-                OldValue       = string.Empty,
-                NewValue       = JsonConvert.SerializeObject(newCategory),
-                UserId         = _ProjectState.CurrentUser.Id,
-                UserName       = _ProjectState.CurrentUser.DisplayName
-            });
+            _ProjectState.RecordCategoryAdded(newCategory);
         }
         else
         {
-            string oldCategory = JsonConvert.SerializeObject(_EditingCategory);
-            
-            _EditingCategory.Name             = _Name.Trim();
-            _EditingCategory.Description      = _Description.Trim();
-            _EditingCategory.ParentCategoryId = _SelectedParent?.Id;
-            
-            project.ProjectHistory.Add(new HistoryEntryDto
-            {
-                EntityPartName = "Categories",
-                EntityPartId   = _EditingCategory.Id,
-                ChangeType     = HistoryChangeType.Updated,
-                OldValue       = oldCategory,
-                NewValue       = JsonConvert.SerializeObject(_EditingCategory),
-                UserId         = _ProjectState.CurrentUser.Id,
-                UserName       = _ProjectState.CurrentUser.DisplayName
-            });
-        }
+            string newName        = _Name.Trim();
+            string newDescription = _Description.Trim();
+            Guid?  newParentId    = _SelectedParent?.Id;
 
-        _ProjectState.MarkDirty();
+            bool nameChanged        = _EditingCategory.Name             != newName;
+            bool descriptionChanged = _EditingCategory.Description      != newDescription;
+            bool parentChanged      = _EditingCategory.ParentCategoryId != newParentId;
+
+            _EditingCategory.Name             = newName;
+            _EditingCategory.Description      = newDescription;
+            _EditingCategory.ParentCategoryId = newParentId;
+
+            if (nameChanged)        _ProjectState.RecordCategoryNameChanged(_EditingCategory);
+            if (descriptionChanged) _ProjectState.RecordCategoryDescriptionChanged(_EditingCategory);
+            if (parentChanged)      _ProjectState.RecordCategoryParentChanged(_EditingCategory);
+        }
 
         _Visible = false;
         OnCreated.InvokeAsync();
