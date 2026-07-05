@@ -50,8 +50,8 @@
                         <span class="im-stat-label">keys updated</span>
                     </div>
                     <div class="im-stat">
-                        <span class="im-stat-value">@_Result.CellsImported</span>
-                        <span class="im-stat-label">cells imported</span>
+                        <span class="im-stat-value">@_Result.SuggestionsAdded</span>
+                        <span class="im-stat-label">suggestions added</span>
                     </div>
                     @if (_Result.KeysSkipped > 0)
                     {
@@ -141,10 +141,13 @@
             await using Stream stream = await picked.OpenReadAsync();
             _Result = LocalizationImportService.ImportFromStream(
                 stream,
-                _ProjectState.CurrentProject!);
+                _ProjectState.CurrentProject!,
+                _ProjectState.CurrentUser.UserId);
 
-            if (_Result.KeysUpdated > 0 || _Result.CellsImported > 0)
-                _ProjectState.MarkDirty();
+            // Record each imported suggestion. This populates UncommitedChanges
+            // (when online), marks the key dirty and flags the app as dirty.
+            foreach (ImportedSuggestion applied in _Result.AppliedSuggestions)
+                _ProjectState.RecordSuggestionAdded(applied.KeyId, applied.Translation.LanguageId, applied.Suggestion);
         }
         catch (Exception ex)
         {

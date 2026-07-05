@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,27 +8,44 @@ namespace DeusaldLocalizerCommon
 {
     public class ImportResult
     {
-        public int          KeysUpdated   { get; set; }
-        public int          CellsImported { get; set; }
-        public int          KeysSkipped   { get; set; }
-        public List<string> Warnings      { get; set; } = new();
+        public int          KeysUpdated      { get; set; }
+        public int          SuggestionsAdded { get; set; }
+        public int          KeysSkipped      { get; set; }
+        public List<string> Warnings         { get; set; } = new();
+
+        /// <summary>
+        /// Suggestions created by this import. The caller records each one so it
+        /// lands in UncommitedChanges.
+        /// </summary>
+        public List<ImportedSuggestion> AppliedSuggestions { get; set; } = new();
+    }
+
+    /// <summary>A single suggestion the import produced, paired with the translation it belongs to.</summary>
+    public class ImportedSuggestion
+    {
+        public Guid                     KeyId       { get; set; }
+        public LocKeyTranslation        Translation { get; set; } = null!;
+        public LocTranslationSuggestion Suggestion  { get; set; } = null!;
     }
 
     /// <summary>
-    /// Reads an xlsx file produced by LocalizationExportService and updates
-    /// translation text for matching keys (matched by KeyId column).
+    /// Reads an xlsx file produced by LocalizationExportService and adds each
+    /// changed translation cell as a Suggestion on the matching key+language,
+    /// leaving the existing (approved) translation text untouched.
     ///
     /// Rules:
     ///   - Matches rows by KeyId (column A / first column).
-    ///   - Only updates translation columns (columns after SourceHash).
+    ///   - Only reads translation (language) columns.
     ///   - Skips rows where the KeyId does not exist in the project.
-    ///   - Skips cells that are empty (does not clear existing translations).
-    ///   - Sets status to Draft on import; reviewer/admin should re-approve.
+    ///   - Skips empty cells (never proposes an empty string).
+    ///   - Skips cells whose text already matches the current translation or an
+    ///     existing suggestion (nothing new to propose).
+    ///   - Adds a LocTranslationSuggestion authored by the importing user without
+    ///     altering the translation's own text, status or SourceChanged flag.
     /// </summary>
-    // TODO: Import them as suggestions
     public static class LocalizationImportService
     {
-        public static ImportResult ImportFromStream(Stream stream, LocProject project)
+        public static ImportResult ImportFromStream(Stream stream, LocProject project, Guid authorId)
         {
             ImportResult result = new ImportResult();
 
@@ -92,7 +109,7 @@ namespace DeusaldLocalizerCommon
                     string langCode = langEntry.Value;
 
                     string text = sheet.Cell(row, c).GetString();
-                    if (string.IsNullOrEmpty(text)) continue; // never clear existing
+                    if (string.IsNullOrEmpty(text)) continue; // never propose an empty string
 
                     if (key.MaxLength != 0 && text.Length > key.MaxLength)
                     {
@@ -100,27 +117,40 @@ namespace DeusaldLocalizerCommon
                         continue;
                     }
 
-                    LocKeyTranslation? existing = key.Translations.Find(t => t.LanguageId == langCode);
-                    if (existing == null)
+                    LocKeyTranslation? translation = key.Translations.Find(t => t.LanguageId == langCode);
+                    if (translation == null)
                     {
-                        existing = new LocKeyTranslation
+                        translation = new LocKeyTranslation
                         {
                             LanguageId = langCode
                         };
-                        key.Translations.Add(existing);
+                        key.Translations.Add(translation);
                     }
 
-                    if (existing.Text == text) continue; // no change needed
+                    // Nothing new to propose if the current translation already reads
+                    // like this, or an identical suggestion is already pending.
+                    if (translation.Text == text) continue;
+                    if (translation.Suggestions.Any(s => s.Text == text)) continue;
 
-                    existing.Text      = text;
-                    existing.UpdatedAt = DateTime.UtcNow;
-                    existing.Status    = TranslationStatus.Suggested;
+                    LocTranslationSuggestion suggestion = new LocTranslationSuggestion
+                    {
+                        Text     = text,
+                        AuthorId = authorId
+                    };
 
-                    // Record which source version this was based on
-                    LocKeyTranslation? src = key.Translations.Find(t => t.LanguageId == project.Metadata.MainLanguageId);
-                    existing.BaseTextHash = TextHashHelper.Compute(src?.Text ?? "");
+                    // Only add the proposal — do NOT touch the translation's own text,
+                    // status or SourceChanged flag. Editing those here leaves the key
+                    // stuck in "Needs review" once the suggestion is later rejected.
+                    translation.Suggestions.Add(suggestion);
 
-                    result.CellsImported++;
+                    result.AppliedSuggestions.Add(new ImportedSuggestion
+                    {
+                        KeyId       = key.Id,
+                        Translation = translation,
+                        Suggestion  = suggestion
+                    });
+
+                    result.SuggestionsAdded++;
                     keyTouched = true;
                 }
 
