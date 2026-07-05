@@ -306,7 +306,7 @@ public class ProjectStateService
 
     public void RecordTranslationUpdated(Guid keyId, LocKeyTranslation translation) =>
         AddKeyChange(keyId, EntryChangeType.TranslationUpdated, translation.LanguageId,
-            Newtonsoft.Json.JsonConvert.SerializeObject(translation));
+            Newtonsoft.Json.JsonConvert.SerializeObject(translation), translation.BaseTextHash);
 
     // ── Suggestion change recording ───────────────────────────────────────────
 
@@ -351,17 +351,18 @@ public class ProjectStateService
     public void RecordVariableRemoved(Guid keyId, Guid variableId) =>
         AddKeyChange(keyId, EntryChangeType.VariableRemoved, string.Empty, variableId.ToString());
 
-    private void AddKeyChange(Guid keyId, EntryChangeType type, string entrySubId, string changeData)
+    private void AddKeyChange(Guid keyId, EntryChangeType type, string entrySubId, string changeData, string prevHashData = "")
     {
         ChangedLocKeys.Add(keyId);
         if (CurrentProject!.Metadata.IsOnline)
         {
             CurrentProject.UncommitedChanges.Add(new LocEntryChange
             {
-                Type       = type,
-                EntryId    = keyId,
-                EntrySubId = entrySubId,
-                ChangeData = changeData
+                Type         = type,
+                EntryId      = keyId,
+                EntrySubId   = entrySubId,
+                ChangeData   = changeData,
+                PrevHashData = prevHashData
             });
         }
 
