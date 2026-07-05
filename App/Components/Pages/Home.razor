@@ -1,6 +1,7 @@
 ﻿@page "/"
 @layout MainLayout
 @using CommunityToolkit.Maui.Storage
+@using global::App.Components.Common
 @using global::App.Components.Common.Home
 @using global::App.Components.Layout
 @inject ProjectStateService _ProjectState
@@ -134,6 +135,8 @@
                     OnCancel="OnLoginCancelled" />
     }
 
+    <AccessTokenModal @ref="_AccessTokenModal" OnClose="OnAccessTokenAcknowledged" />
+
 </div>
 
 @code {
@@ -143,16 +146,15 @@
     private string?                  _ErrorMessage;
     private List<RecentProjectEntry> _RecentProjects = [];
 
-    // Tracks the path being opened when the login modal is showing
+    // Tracks the path being opened when the login / token modal is showing
     private string?    _PendingPath;
     private LocProject? _PendingProject;
+    private Guid        _PendingUserId;
     private bool        _ShowLoginModal;
 
-    private NewProjectModal? _NewProjectModal;
-    private LoginModal?      _LoginModal;
-
-    // Secure storage key: project Id → "userId|accessToken"
-    private const string _SECURE_KEY_PREFIX = "dloc:auth:";
+    private NewProjectModal?  _NewProjectModal;
+    private LoginModal?       _LoginModal;
+    private AccessTokenModal? _AccessTokenModal;
 
     // ── Lifecycle ─────────────────────────────────────────────────────────
 
@@ -190,8 +192,14 @@
 
         try
         {
-            LocProject project  = await ProjectFileService.OpenAsync(path);
-            bool       isOnline = project.Metadata.IsOnline;
+            LocProject project = await ProjectFileService.OpenAsync(path);
+
+            // Replay pending changes onto the in-memory project before authenticating —
+            // an uncommitted access-token rotation must be reflected before we verify.
+            foreach (LocEntryChange change in project.UncommitedChanges)
+                EntryChangeExeService.ExecuteChange(project, change, out _);
+
+            bool isOnline = project.Metadata.IsOnline;
 
             if (isOnline)
             {
@@ -219,36 +227,20 @@
 
     private async Task LoadOnlineProject(LocProject project, string path)
     {
-        string secureKey = $"{_SECURE_KEY_PREFIX}{project.Metadata.Id}";
+        (Guid UserId, string Token)? cached = await AuthTokenStorage.GetAsync(project.Metadata.Id);
 
-        try
+        if (cached != null)
         {
-            string? stored = await SecureStorage.Default.GetAsync(secureKey);
-
-            if (!string.IsNullOrEmpty(stored))
+            // Re-verify the cached raw token against the stored BCrypt hash
+            if (VerifyCredentials(project, cached.Value.UserId, cached.Value.Token))
             {
-                // Format: "userId|rawAccessToken"
-                string[] parts = stored.Split('|', 2);
-                if (parts.Length == 2 &&
-                    Guid.TryParse(parts[0], out Guid cachedUserId) &&
-                    !string.IsNullOrEmpty(parts[1]))
-                {
-                    // Re-verify the cached raw token against the stored BCrypt hash
-                    if (VerifyCredentials(project, cachedUserId, parts[1]))
-                    {
-                        // Generate a new session token Guid for this session
-                        FinalizeLoad(project, path, cachedUserId, Guid.NewGuid());
-                        return;
-                    }
-
-                    // Token no longer valid — remove and fall through to login
-                    SecureStorage.Default.Remove(secureKey);
-                }
+                // Generate a new session token Guid for this session
+                FinalizeLoad(project, path, cached.Value.UserId, Guid.NewGuid());
+                return;
             }
-        }
-        catch
-        {
-            // SecureStorage unavailable on this platform — fall through to login
+
+            // Token no longer valid — remove and fall through to login
+            AuthTokenStorage.Remove(project.Metadata.Id);
         }
 
         // No valid cached credentials — show the login modal
@@ -277,19 +269,48 @@
             return;
         }
 
-        // Credentials valid — store in SecureStorage for next time
-        try
+        Guid projectId = _PendingProject.Metadata.Id;
+
+        // First sign-in: the member is still carrying the initial (username-based)
+        // token. Rotate it to a fresh random token, persist the change and show it
+        // once so the user can store it. Sign-in only ever happens for online
+        // projects, so recording an uncommitted change here is always correct.
+        if (AccessTokenService.IsInitialToken(member!))
         {
-            string secureKey = $"{_SECURE_KEY_PREFIX}{_PendingProject.Metadata.Id}";
-            await SecureStorage.Default.SetAsync(secureKey, $"{member!.UserId}|{credentials.accessToken}");
-        }
-        catch
-        {
-            // Non-fatal — user will just need to log in again next time
+            string newToken = AccessTokenService.GenerateToken();
+            member!.HashedAccessToken = AccessTokenService.HashToken(newToken);
+
+            _PendingProject.UncommitedChanges.Add(new LocEntryChange
+            {
+                Type       = EntryChangeType.MemberUpdated,
+                EntryId    = member.UserId,
+                EntrySubId = nameof(LocProjectMember.HashedAccessToken),
+                ChangeData = member.HashedAccessToken
+            });
+
+            await ProjectFileService.SaveUncommittedOnlyAsync(_PendingProject, _PendingPath);
+            await AuthTokenStorage.SaveAsync(projectId, member.UserId, newToken);
+
+            _ShowLoginModal = false;
+            _PendingUserId  = member.UserId;
+            StateHasChanged();
+
+            _AccessTokenModal?.Show(newToken, "Your access token",
+                "This is your new sign-in token. Copy it now and keep it safe — you'll use it to sign in from now on.");
+            return; // FinalizeLoad runs once the user closes the token modal
         }
 
+        // Returning user — cache the raw token for next time and load straight in.
+        await AuthTokenStorage.SaveAsync(projectId, member!.UserId, credentials.accessToken);
+
         _ShowLoginModal = false;
-        FinalizeLoad(_PendingProject, _PendingPath, member!.UserId, Guid.Parse(credentials.accessToken));
+        FinalizeLoad(_PendingProject, _PendingPath, member.UserId, Guid.NewGuid());
+    }
+
+    private void OnAccessTokenAcknowledged()
+    {
+        if (_PendingProject == null || _PendingPath == null) return;
+        FinalizeLoad(_PendingProject, _PendingPath, _PendingUserId, Guid.NewGuid());
     }
 
     private void OnLoginCancelled()
@@ -312,8 +333,7 @@
     {
         LocProjectMember? member = project.ProjectMembers.Find(m => m.UserId == userId);
         if (member == null) return false;
-        if (string.IsNullOrEmpty(member.HashedAccessToken)) return false;
-        return BCrypt.Net.BCrypt.Verify(accessToken, member.HashedAccessToken);
+        return AccessTokenService.VerifyToken(accessToken, member.HashedAccessToken);
     }
 
     /// <summary>Overload that looks up by username string instead of Guid.</summary>
@@ -326,8 +346,7 @@
         member = project.ProjectMembers.Find(m =>
             string.Equals(m.Username, username, StringComparison.OrdinalIgnoreCase));
         if (member == null) return false;
-        if (string.IsNullOrEmpty(member.HashedAccessToken)) return false;
-        return BCrypt.Net.BCrypt.Verify(accessToken, member.HashedAccessToken);
+        return AccessTokenService.VerifyToken(accessToken, member.HashedAccessToken);
     }
 
     private void FinalizeLoad(LocProject project, string path, Guid userId, Guid sessionToken)

@@ -1,5 +1,6 @@
 @namespace App.Components.Translate
 @using System.Linq
+@using global::App.Components.Common
 @inject ProjectStateService _ProjectState
 
 @if (_Visible)
@@ -111,18 +112,36 @@
                             <div class="um-perm-readonly">@PermissionsSummary(member)</div>
                         </div>
 
-                        @if (_IsAdmin && !isSelf)
-                        {
-                            <button class="um-edit-btn" title="Edit member" @onclick="() => StartEdit(member)">
-                                <i class="bi bi-pencil"></i>
-                            </button>
-                        }
+                        <div class="um-member-actions">
+                            @if (isSelf && !member.IsOfflineUser)
+                            {
+                                <button class="um-edit-btn" title="Regenerate my access token"
+                                        @onclick="() => RegenerateToken(member)">
+                                    <i class="bi bi-arrow-repeat"></i>
+                                </button>
+                            }
+                            @if (_IsAdmin && !isSelf)
+                            {
+                                <button class="um-edit-btn" title="Edit member" @onclick="() => StartEdit(member)">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                @if (!member.IsOfflineUser)
+                                {
+                                    <button class="um-edit-btn" title="Reset access token"
+                                            @onclick="() => ResetToken(member)">
+                                        <i class="bi bi-key"></i>
+                                    </button>
+                                }
+                            }
+                        </div>
                     </div>
                 }
             </div>
         </div>
 
     </div>
+
+    <AccessTokenModal @ref="_AccessTokenModal" />
 }
 
 @code {
@@ -133,6 +152,7 @@
 
     private HashSet<string>   _SelectedLangs = new();
     private LocProjectMember? _EditingMember;
+    private AccessTokenModal? _AccessTokenModal;
 
     private bool _IsAdmin => _ProjectState.CurrentUser.IsAdmin;
 
@@ -195,7 +215,9 @@
                 ReviewLanguagePermissions = [.._SelectedLangs],
                 IsAdmin                   = false,
                 IsBanned                  = false,
-                HashedAccessToken         = string.Empty
+                // Initial token is the hash of the username — the member signs in the
+                // first time with their username and is then prompted to set a real one.
+                HashedAccessToken         = AccessTokenService.InitialTokenHash(name)
             };
 
             project.ProjectMembers.Add(member);
@@ -208,6 +230,10 @@
             bool langsChanged    = !_EditingMember.ReviewLanguagePermissions.SetEquals(_SelectedLangs);
             bool bannedChanged   = _EditingMember.IsBanned != _IsBanned;
 
+            // If the member never set a real token, its initial hash is tied to the old
+            // username — re-hash so they can still sign in with their (new) username.
+            bool rehashInitial = usernameChanged && AccessTokenService.IsInitialToken(_EditingMember);
+
             _EditingMember.Username                  = name;
             _EditingMember.ReviewLanguagePermissions = [.._SelectedLangs];
             _EditingMember.IsBanned                  = _IsBanned;
@@ -215,9 +241,42 @@
             if (usernameChanged) _ProjectState.RecordMemberUsernameChanged(_EditingMember);
             if (langsChanged)    _ProjectState.RecordMemberReviewPermissionsChanged(_EditingMember);
             if (bannedChanged)   _ProjectState.RecordMemberBanStatusChanged(_EditingMember);
+
+            if (rehashInitial)
+            {
+                _EditingMember.HashedAccessToken = AccessTokenService.InitialTokenHash(name);
+                _ProjectState.RecordMemberAccessTokenChanged(_EditingMember);
+            }
         }
 
         CloseForm();
+    }
+
+    // ── Access token ─────────────────────────────────────────────────────────
+
+    /// <summary>User rotates their own access token to a fresh random one.</summary>
+    private async Task RegenerateToken(LocProjectMember member)
+    {
+        string newToken = AccessTokenService.GenerateToken();
+        member.HashedAccessToken = AccessTokenService.HashToken(newToken);
+        _ProjectState.RecordMemberAccessTokenChanged(member);
+
+        // Keep this device signed in with the new token.
+        await AuthTokenStorage.SaveAsync(_ProjectState.CurrentProject!.Metadata.Id, member.UserId, newToken);
+
+        _AccessTokenModal?.Show(newToken, "New access token",
+            "Your previous token no longer works. Copy this one and keep it safe — you'll use it to sign in from now on.");
+    }
+
+    /// <summary>Admin resets a member back to the initial (username-based) token.</summary>
+    private void ResetToken(LocProjectMember member)
+    {
+        member.HashedAccessToken = AccessTokenService.InitialTokenHash(member.Username);
+        _ProjectState.RecordMemberAccessTokenChanged(member);
+
+        _AccessTokenModal?.Show(member.Username, "Access token reset",
+            $"{member.Username}'s token was reset. They can now sign in using their username as the access token, " +
+            "and will be asked to set a new one.");
     }
 
     // ── Display helpers ──────────────────────────────────────────────────────

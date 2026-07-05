@@ -83,7 +83,6 @@ public class ProjectStateService
         ChangedLocKeys.Clear();
         CurrentUser = userId == LocProjectMember.OfflineMember.UserId ? LocProjectMember.OfflineMember : project.ProjectMembers.Find(m => m.UserId == userId)!;
         AccessToken = accessToken;
-        foreach (LocEntryChange uncommitedChange in project.UncommitedChanges) EntryChangeExeService.ExecuteChange(project, uncommitedChange, out _);
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
     }
@@ -155,6 +154,9 @@ public class ProjectStateService
 
     public void RecordMemberBanStatusChanged(LocProjectMember member) =>
         AddMemberFieldChange(member, nameof(LocProjectMember.IsBanned), member.IsBanned.ToString());
+
+    public void RecordMemberAccessTokenChanged(LocProjectMember member) =>
+        AddMemberFieldChange(member, nameof(LocProjectMember.HashedAccessToken), member.HashedAccessToken);
 
     private void AddMemberFieldChange(LocProjectMember member, string fieldName, string changeData)
     {

@@ -41,6 +41,9 @@ namespace DeusaldLocalizerCommon
                         case nameof(LocProjectMember.IsBanned):
                             existing.IsBanned = bool.TryParse(change.ChangeData, out bool banned) && banned;
                             break;
+                        case nameof(LocProjectMember.HashedAccessToken):
+                            existing.HashedAccessToken = change.ChangeData;
+                            break;
                     }
 
                     commitString = $"Update member {existing.Username} ({change.EntrySubId})";

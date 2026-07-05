@@ -274,6 +274,13 @@
 
 /* ── Edit button ──────────────────────────────────────────────────────────── */
 
+.um-member-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
 .um-edit-btn {
     width: 26px;
     height: 26px;
