@@ -1,5 +1,4 @@
 ﻿@namespace App.Components.Translate
-@using DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
 
 <div class="ps-root">
@@ -30,7 +29,7 @@
 </div>
 
 @code {
-    [Parameter] public LocalizationKeyDto       Key              { get; set; } = null!;
+    [Parameter] public LocLocalizationKey       Key              { get; set; } = null!;
     [Parameter] public string                   SelectedLanguage { get; set; } = "";
     [Parameter] public Dictionary<Guid, string> PreviewOverrides { get; set; } = new();
 
@@ -44,9 +43,9 @@
 
     private bool _LiveMode;
 
-    private string           _SourceLangCode           => _ProjectState.CurrentProject!.MainLanguageId;
-    private bool             _IsSourceLanguageSelected => SelectedLanguage == _SourceLangCode;
-    private List<LocEnumDto> _ProjectEnums             => _ProjectState.CurrentProject!.Enums;
+    private string        _SourceLangCode           => _ProjectState.CurrentProject!.Metadata.MainLanguageId;
+    private bool          _IsSourceLanguageSelected => SelectedLanguage == _SourceLangCode;
+    private List<LocEnum> _ProjectEnums             => _ProjectState.CurrentProject!.Enums;
 
     private void ToggleMode() => _LiveMode = !_LiveMode;
 

@@ -1,6 +1,4 @@
 ﻿@namespace App.Components.Translate
-@using DeusaldLocalizerCommon
-@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 <div class="te-root">
@@ -122,7 +120,7 @@
 </div>
 
 @code {
-    [Parameter] public LocalizationKeyDto                                 Key              { get; set; } = null!;
+    [Parameter] public LocLocalizationKey                                 Key              { get; set; } = null!;
     [Parameter] public string                                             SelectedLanguage { get; set; } = "";
     [Parameter] public EventCallback                                      OnChanged        { get; set; }
     [Parameter] public EventCallback<(string source, string translation)> OnDraftChanged   { get; set; }
@@ -138,29 +136,29 @@
     private string _LastKnownSourceText      = "";
     private string _LastKnownTranslationText = "";
 
-    private string _SourceLangCode           => _ProjectState.CurrentProject!.MainLanguageId;
+    private string _SourceLangCode           => _ProjectState.CurrentProject!.Metadata.MainLanguageId;
     private bool   _IsSourceLanguageSelected => SelectedLanguage == _SourceLangCode;
 
-    private bool _IsAdmin         => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
-    private bool _IsContributor   => _ProjectState.CurrentUserHas(PermissionFlags.Suggest);
-    private bool _IsReviewer      => _ProjectState.CurrentUserHas(PermissionFlags.Review);
-    private bool _CanConfirmMatch => _ProjectState.CurrentUserHas(PermissionFlags.Review) || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _IsAdmin         => _ProjectState.CurrentUser.IsAdmin;
+    private bool _IsReviewer      => _ProjectState.CurrentUser.IsAdmin || _ProjectState.CurrentUser.ReviewLanguagePermissions.Contains(SelectedLanguage);
+    private bool _CanSuggest      => !_ProjectState.CurrentUser.IsBanned;
+    private bool _CanConfirmMatch => _IsReviewer;
 
     /// <summary>Only meaningful when the source language is selected — admin can edit and save it directly.</summary>
     private bool _CanEditSource => _IsAdmin;
 
-    /// <summary>Only meaningful when a non-source language is selected.</summary>
-    private bool _CanEditTranslation => _IsReviewer || _IsContributor || _IsAdmin;
+    /// <summary>Any non-banned user can at least propose a translation; reviewers/admins can save it directly.</summary>
+    private bool _CanEditTranslation => _CanSuggest;
 
     protected override void OnParametersSet()
     {
         bool keyOrLanguageChanged = _LoadedForKeyId != Key.Id || _LoadedForLanguage != SelectedLanguage;
 
-        TranslationDto? source            = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
-        string          currentSourceText = source?.Text ?? "";
+        LocKeyTranslation? source            = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        string             currentSourceText = source?.Text ?? "";
 
-        TranslationDto? translation            = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
-        string          currentTranslationText = translation?.Text ?? "";
+        LocKeyTranslation? translation            = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        string             currentTranslationText = translation?.Text ?? "";
 
         // Snapshot drafts before any mutations so we can detect if they changed
         string previousSourceDraft      = _SourceDraft;
@@ -216,9 +214,9 @@
         get
         {
             if (_IsSourceLanguageSelected) return false;
-            TranslationDto? t = Key.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
+            LocKeyTranslation? t = Key.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
             if (t == null || string.IsNullOrEmpty(t.BaseTextHash)) return false;
-            TranslationDto? src = Key.Translations.Find(tr => tr.LanguageId == _SourceLangCode);
+            LocKeyTranslation? src = Key.Translations.Find(tr => tr.LanguageId == _SourceLangCode);
             return t.BaseTextHash != TextHashHelper.Compute(src?.Text ?? "");
         }
     }
@@ -227,7 +225,7 @@
     {
         get
         {
-            TranslationDto? current = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+            LocKeyTranslation? current = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
             return (current?.Text ?? "") != _SourceDraft;
         }
     }
@@ -236,20 +234,20 @@
     {
         get
         {
-            TranslationDto? current = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+            LocKeyTranslation? current = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
             return (current?.Text ?? "") != _TranslationDraft;
         }
     }
 
     private void ResetSourceDraft()
     {
-        TranslationDto? current = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        LocKeyTranslation? current = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
         _SourceDraft = current?.Text ?? "";
     }
 
     private void ResetTranslationDraft()
     {
-        TranslationDto? current = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        LocKeyTranslation? current = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
         _TranslationDraft = current?.Text ?? "";
     }
 
@@ -257,54 +255,42 @@
     {
         if (!_CanEditSource) return;
 
-        TranslationDto? source = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        LocKeyTranslation? source = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
         if (source == null)
         {
-            source = new TranslationDto { KeyId = Key.Id, LanguageId = _SourceLangCode };
+            source = new LocKeyTranslation { LanguageId = _SourceLangCode };
             Key.Translations.Add(source);
         }
         if (source.Text == _SourceDraft) return;
 
-        string oldText = source.Text;
-        string oldHash = TextHashHelper.Compute(oldText);
+        string oldHash = TextHashHelper.Compute(source.Text);
         string newHash = TextHashHelper.Compute(_SourceDraft);
 
         source.Text      = _SourceDraft;
-        source.UpdatedBy = _ProjectState.CurrentUser.Id;
         source.UpdatedAt = DateTime.UtcNow;
         source.Status    = TranslationStatus.Approved;
 
-        // Update the source's own hash (it's always considered "matching itself")
+        // The source is always considered "matching itself".
         source.BaseTextHash = newHash;
 
-        // Mark every other-language translation as needing attention if their
-        // BaseTextHash was based on the old source and the source actually changed.
+        _ProjectState.RecordTranslationUpdated(Key.Id, source);
+
+        // Mark every other-language translation as source-changed if their BaseTextHash
+        // was based on the old source and the source actually changed.
         if (oldHash != newHash)
         {
-            foreach (TranslationDto other in Key.Translations)
+            foreach (LocKeyTranslation other in Key.Translations)
             {
                 if (other.LanguageId == _SourceLangCode) continue;
-                // Only flag if it had a hash recorded (i.e. was based on some source version)
-                if (!string.IsNullOrEmpty(other.BaseTextHash))
+                if (!string.IsNullOrEmpty(other.BaseTextHash) && !other.SourceChanged)
                 {
-                    other.NeedsAttention = true;
+                    other.SourceChanged = true;
+                    _ProjectState.RecordTranslationUpdated(Key.Id, other);
                 }
             }
         }
 
-        Key.History.Add(new HistoryEntryDto
-        {
-            EntityPartName = $"Translation-Text/{source.LanguageId}",
-            EntityPartId   = source.Id,
-            ChangeType     = HistoryChangeType.Updated,
-            OldValue       = oldText,
-            NewValue       = source.Text,
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
-
         Key.UpdatedAt = DateTime.UtcNow;
-        _ProjectState.MarkDirty();
         await OnChanged.InvokeAsync();
     }
 
@@ -312,40 +298,28 @@
     {
         if (!_CanEditTranslation) return;
 
-        TranslationDto? translation = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        LocKeyTranslation? translation = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
         if (translation == null)
         {
-            translation = new TranslationDto { KeyId = Key.Id, LanguageId = _SourceLangCode };
+            translation = new LocKeyTranslation { LanguageId = _SourceLangCode };
             Key.Translations.Add(translation);
         }
 
-        translation.NeedsAttention = true;
+        translation.SourceChanged = true;
         if (translation.Status == TranslationStatus.Draft) translation.Status = TranslationStatus.Suggested;
 
-        SuggestionDto suggestionDto = new SuggestionDto
+        LocTranslationSuggestion suggestion = new LocTranslationSuggestion
         {
-            TranslationId = translation.Id,
-            Text          = _SourceDraft,
-            AuthorId      = _ProjectState.CurrentUser.Id,
-            AuthorName    = _ProjectState.CurrentUser.DisplayName,
-            Status        = SuggestionStatus.Pending,
+            Text     = _SourceDraft,
+            AuthorId = _ProjectState.CurrentUser.UserId,
         };
 
-        translation.Suggestions.Add(suggestionDto);
+        translation.Suggestions.Add(suggestion);
 
-        Key.History.Add(new HistoryEntryDto
-        {
-            EntityPartName = $"Translation-Suggestion/{translation.LanguageId}",
-            EntityPartId   = translation.Id,
-            ChangeType     = HistoryChangeType.Created,
-            OldValue       = string.Empty,
-            NewValue       = JsonConvert.SerializeObject(suggestionDto),
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
+        _ProjectState.RecordTranslationUpdated(Key.Id, translation);
+        _ProjectState.RecordSuggestionAdded(Key.Id, _SourceLangCode, suggestion);
 
         Key.UpdatedAt = DateTime.UtcNow;
-        _ProjectState.MarkDirty();
         await OnChanged.InvokeAsync();
     }
 
@@ -353,43 +327,27 @@
     {
         if (!_CanEditTranslation) return;
 
-        TranslationDto? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        LocKeyTranslation? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
         if (translation == null)
         {
-            translation = new TranslationDto { KeyId = Key.Id, LanguageId = SelectedLanguage };
+            translation = new LocKeyTranslation { LanguageId = SelectedLanguage };
             Key.Translations.Add(translation);
         }
 
-        string oldText = translation.Text;
-
-        translation.Text           = _TranslationDraft;
-        translation.UpdatedBy      = _ProjectState.CurrentUser.Id;
+        translation.Text          = _TranslationDraft;
         translation.UpdatedAt      = DateTime.UtcNow;
-        translation.NeedsAttention = false;
+        translation.SourceChanged  = false;
 
         // Record which version of the source this translation was based on
-        TranslationDto? currentSource = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        LocKeyTranslation? currentSource = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
         translation.BaseTextHash = TextHashHelper.Compute(currentSource?.Text ?? "");
 
-        Key.History.Add(new HistoryEntryDto
-        {
-            EntityPartName = $"Translation-Text/{translation.LanguageId}",
-            EntityPartId   = translation.Id,
-            ChangeType     = HistoryChangeType.Updated,
-            OldValue       = oldText,
-            NewValue       = translation.Text,
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
+        // Contributors without review rights leave it as Draft; reviewers/admins approve directly.
+        translation.Status = _IsReviewer ? TranslationStatus.Approved : TranslationStatus.Draft;
 
-        // Contributors without Reviewer/Admin leave it as Draft; reviewers/admins approve directly.
-        translation.Status = (_ProjectState.CurrentUserHas(PermissionFlags.Review)
-                              || _ProjectState.CurrentUserHas(PermissionFlags.Admin))
-                                 ? TranslationStatus.Approved
-                                 : TranslationStatus.Draft;
+        _ProjectState.RecordTranslationUpdated(Key.Id, translation);
 
         Key.UpdatedAt = DateTime.UtcNow;
-        _ProjectState.MarkDirty();
         await OnChanged.InvokeAsync();
     }
 
@@ -397,27 +355,17 @@
     {
         if (!_CanConfirmMatch) return;
 
-        TranslationDto? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        LocKeyTranslation? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
         if (translation == null) return;
 
-        TranslationDto? src = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
-        translation.BaseTextHash   = TextHashHelper.Compute(src?.Text ?? "");
-        translation.NeedsAttention = false;
-        translation.UpdatedAt      = DateTime.UtcNow;
+        LocKeyTranslation? src = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        translation.BaseTextHash  = TextHashHelper.Compute(src?.Text ?? "");
+        translation.SourceChanged = false;
+        translation.UpdatedAt     = DateTime.UtcNow;
 
-        Key.History.Add(new HistoryEntryDto
-        {
-            EntityPartName = $"Translation-Hash/{translation.LanguageId}",
-            EntityPartId   = translation.Id,
-            ChangeType     = HistoryChangeType.Updated,
-            OldValue       = string.Empty,
-            NewValue       = "Source confirmed as still accurate",
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
+        _ProjectState.RecordTranslationUpdated(Key.Id, translation);
 
         Key.UpdatedAt = DateTime.UtcNow;
-        _ProjectState.MarkDirty();
         await OnChanged.InvokeAsync();
     }
 
@@ -425,40 +373,28 @@
     {
         if (!_CanEditTranslation) return;
 
-        TranslationDto? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        LocKeyTranslation? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
         if (translation == null)
         {
-            translation = new TranslationDto { KeyId = Key.Id, LanguageId = SelectedLanguage };
+            translation = new LocKeyTranslation { LanguageId = SelectedLanguage };
             Key.Translations.Add(translation);
         }
 
-        translation.NeedsAttention = true;
+        translation.SourceChanged = true;
         if (translation.Status == TranslationStatus.Draft) translation.Status = TranslationStatus.Suggested;
 
-        SuggestionDto suggestionDto = new SuggestionDto
+        LocTranslationSuggestion suggestion = new LocTranslationSuggestion
         {
-            TranslationId = translation.Id,
-            Text          = _TranslationDraft,
-            AuthorId      = _ProjectState.CurrentUser.Id,
-            AuthorName    = _ProjectState.CurrentUser.DisplayName,
-            Status        = SuggestionStatus.Pending,
+            Text     = _TranslationDraft,
+            AuthorId = _ProjectState.CurrentUser.UserId,
         };
 
-        translation.Suggestions.Add(suggestionDto);
+        translation.Suggestions.Add(suggestion);
 
-        Key.History.Add(new HistoryEntryDto
-        {
-            EntityPartName = $"Translation-Suggestion/{translation.LanguageId}",
-            EntityPartId   = translation.Id,
-            ChangeType     = HistoryChangeType.Created,
-            OldValue       = string.Empty,
-            NewValue       = JsonConvert.SerializeObject(suggestionDto),
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
+        _ProjectState.RecordTranslationUpdated(Key.Id, translation);
+        _ProjectState.RecordSuggestionAdded(Key.Id, SelectedLanguage, suggestion);
 
         Key.UpdatedAt = DateTime.UtcNow;
-        _ProjectState.MarkDirty();
         await OnChanged.InvokeAsync();
     }
 

@@ -1,9 +1,7 @@
-﻿@namespace App.Components.Translate
-@using DeusaldLocalizerCommon
-@using Newtonsoft.Json
+@namespace App.Components.Translate
 @inject ProjectStateService _ProjectState
 
-@{ List<SuggestionDto> suggestions = _SuggestionsForLanguage; }
+@{ List<LocTranslationSuggestion> suggestions = _SuggestionsForLanguage; }
 
 @if (suggestions.Count > 0)
 {
@@ -11,11 +9,12 @@
         <div class="ss-label">Community suggestions</div>
 
         <div class="ss-list">
-            @foreach (SuggestionDto suggestion in suggestions)
+            @foreach (LocTranslationSuggestion suggestion in suggestions)
             {
-                SuggestionDto s = suggestion;
+                LocTranslationSuggestion s = suggestion;
                 int score = s.Votes.Sum(v => v.Value);
-                int myVote = s.Votes.Find(v => v.UserId == _ProjectState.CurrentUser.Id)?.Value ?? 0;
+                int myVote = s.Votes.Find(v => v.UserId == _ProjectState.CurrentUser.UserId)?.Value ?? 0;
+                string authorName = AuthorName(s.AuthorId);
                 string preview = VariablePreviewService.Render(s.Text, Key.Variables, PreviewOverrides, _ProjectState.CurrentProject!.Enums);
 
                 <div class="ss-item">
@@ -36,8 +35,8 @@
                             <div class="ss-preview">@preview</div>
                         }
                         <div class="ss-meta">
-                            <span class="ss-avatar" style="background:@AvatarColor(s.AuthorId)">@Initial(s.AuthorName)</span>
-                            <span class="ss-author">@s.AuthorName</span>
+                            <span class="ss-avatar" style="background:@AvatarColor(s.AuthorId)">@Initial(authorName)</span>
+                            <span class="ss-author">@authorName</span>
                             <span class="ss-dot">·</span>
                             <span class="ss-time">@RelativeTime(s.CreatedAt)</span>
                         </div>
@@ -57,24 +56,22 @@
 }
 
 @code {
-    [Parameter] public LocalizationKeyDto       Key              { get; set; } = null!;
+    [Parameter] public LocLocalizationKey       Key              { get; set; } = null!;
     [Parameter] public string                   SelectedLanguage { get; set; } = "";
     [Parameter] public EventCallback            OnChanged        { get; set; }
     [Parameter] public Dictionary<Guid, string> PreviewOverrides { get; set; } = new();
 
-    private bool _CanAccept => _ProjectState.CurrentUserHas(PermissionFlags.Review)
-                            || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _CanAccept => _ProjectState.CurrentUser.IsAdmin
+                            || _ProjectState.CurrentUser.ReviewLanguagePermissions.Contains(SelectedLanguage);
 
-    private List<SuggestionDto> _SuggestionsForLanguage =>
+    private List<LocTranslationSuggestion> _SuggestionsForLanguage =>
         Key.Translations.FirstOrDefault(t => t.LanguageId == SelectedLanguage)?.Suggestions
-           .Where(s => s.Status == SuggestionStatus.Pending)
            .OrderByDescending(s => s.Votes.Sum(v => v.Value))
            .ToList() ?? [];
 
-    private void Vote(SuggestionDto suggestion, int value)
+    private void Vote(LocTranslationSuggestion suggestion, int value)
     {
-        string oldJson = JsonConvert.SerializeObject(suggestion);
-        SuggestionVoteDto? existing = suggestion.Votes.Find(v => v.UserId == _ProjectState.CurrentUser.Id);
+        LocSuggestionVote? existing = suggestion.Votes.Find(v => v.UserId == _ProjectState.CurrentUser.UserId);
         if (existing != null)
         {
             if (existing.Value == value)
@@ -83,99 +80,70 @@
             }
             else
             {
-                existing.Value = value;
+                existing.Value  = value;
                 existing.CastAt = DateTime.UtcNow;
             }
         }
         else
         {
-            suggestion.Votes.Add(new SuggestionVoteDto
+            suggestion.Votes.Add(new LocSuggestionVote
             {
-                SuggestionId = suggestion.Id,
-                UserId       = _ProjectState.CurrentUser.Id,
-                UserName     = _ProjectState.CurrentUser.DisplayName,
-                Value        = value,
+                UserId = _ProjectState.CurrentUser.UserId,
+                Value  = value,
             });
         }
-        
-        Key.History.Add(new HistoryEntryDto
-        {
-            EntityPartName = $"Translation-Suggestion-Vote/{SelectedLanguage}",
-            EntityPartId   = suggestion.Id,
-            ChangeType     = HistoryChangeType.Updated,
-            OldValue       = oldJson,
-            NewValue       = JsonConvert.SerializeObject(suggestion),
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
-        
-        _ProjectState.MarkDirty();
+
+        _ProjectState.RecordSuggestionVoted(Key.Id, SelectedLanguage, suggestion);
         OnChanged.InvokeAsync();
     }
 
-    private void Accept(SuggestionDto suggestion)
+    private void Accept(LocTranslationSuggestion suggestion)
     {
-        TranslationDto translation = Key.Translations.Find(t => t.Id == suggestion.TranslationId)!;
-        string         oldText     = translation.Text;
-        translation.Text           = suggestion.Text;
-        translation.Status         = TranslationStatus.Approved;
-        translation.NeedsAttention = false;
-        translation.UpdatedBy      = _ProjectState.CurrentUser.Id;
-        translation.UpdatedAt      = DateTime.UtcNow;
+        LocKeyTranslation? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        if (translation == null) return;
+
+        translation.Text          = suggestion.Text;
+        translation.Status        = TranslationStatus.Approved;
+        translation.SourceChanged = false;
+        translation.UpdatedAt     = DateTime.UtcNow;
 
         // Accepting a suggestion means the translator has reviewed the current source —
         // stamp the hash so this translation is considered up-to-date.
-        TranslationDto? src = Key.Translations.Find(t => t.LanguageId == _ProjectState.CurrentProject!.MainLanguageId);
+        LocKeyTranslation? src = Key.Translations.Find(t => t.LanguageId == _ProjectState.CurrentProject!.Metadata.MainLanguageId);
         translation.BaseTextHash = TextHashHelper.Compute(src?.Text ?? "");
 
-        suggestion.Status = SuggestionStatus.Accepted;
+        translation.Suggestions.Remove(suggestion);
         Key.UpdatedAt = DateTime.UtcNow;
 
-        Key.History.Add(new HistoryEntryDto
-        {
-            EntityPartName = $"Translation-Suggestion/{SelectedLanguage}",
-            EntityPartId   = suggestion.Id,
-            ChangeType     = HistoryChangeType.Approved,
-            OldValue       = oldText,
-            NewValue       = suggestion.Text,
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
-
-        translation.Suggestions.Remove(suggestion);
-        
-        _ProjectState.MarkDirty();
+        _ProjectState.RecordTranslationUpdated(Key.Id, translation);
+        _ProjectState.RecordSuggestionRemoved(Key.Id, SelectedLanguage, suggestion.Id);
         OnChanged.InvokeAsync();
     }
 
-    private void Reject(SuggestionDto suggestion)
+    private void Reject(LocTranslationSuggestion suggestion)
     {
-        suggestion.Status = SuggestionStatus.Rejected;
-        Key.UpdatedAt = DateTime.UtcNow;
-
-        TranslationDto translation = Key.Translations.First(t => t.LanguageId == SelectedLanguage);
-        
-        if (_SuggestionsForLanguage.Count(s => s.Status == SuggestionStatus.Pending) == 0
-         && translation.Status == TranslationStatus.Approved)
-        {
-            translation.NeedsAttention = false;
-        }
-        
-        Key.History.Add(new HistoryEntryDto
-        {
-            EntityPartName = $"Translation-Suggestion/{SelectedLanguage}",
-            EntityPartId   = suggestion.Id,
-            ChangeType     = HistoryChangeType.Rejected,
-            OldValue       = string.Empty,
-            NewValue       = suggestion.Text,
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
+        LocKeyTranslation? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        if (translation == null) return;
 
         translation.Suggestions.Remove(suggestion);
-        
-        _ProjectState.MarkDirty();
+        Key.UpdatedAt = DateTime.UtcNow;
+        _ProjectState.RecordSuggestionRemoved(Key.Id, SelectedLanguage, suggestion.Id);
+
+        // If nothing is left pending and the current translation is approved, clear the flag.
+        if (translation.Suggestions.Count == 0 && translation.Status == TranslationStatus.Approved && translation.SourceChanged)
+        {
+            translation.SourceChanged = false;
+            _ProjectState.RecordTranslationUpdated(Key.Id, translation);
+        }
+
         OnChanged.InvokeAsync();
+    }
+
+    private string AuthorName(Guid authorId)
+    {
+        LocProjectMember? member = _ProjectState.CurrentProject!.ProjectMembers.Find(m => m.UserId == authorId);
+        if (member != null) return member.Username;
+        return authorId == _ProjectState.CurrentUser.UserId ? _ProjectState.CurrentUser.Username : "Unknown";
     }
 
     private static string Initial(string name) => string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();

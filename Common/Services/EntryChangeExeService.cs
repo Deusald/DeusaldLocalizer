@@ -90,6 +90,9 @@ namespace DeusaldLocalizerCommon
                         case nameof(LocLocalizationKey.MaxLength):
                             if (int.TryParse(change.ChangeData, out int maxLength)) key.MaxLength = maxLength;
                             break;
+                        case nameof(LocLocalizationKey.Description):
+                            key.Description = change.ChangeData;
+                            break;
                     }
 
                     commitString = $"Update key {key.KeyName} ({change.EntrySubId})";
@@ -136,7 +139,205 @@ namespace DeusaldLocalizerCommon
                     commitString = $"Remove category {name}";
                     break;
                 }
+                case EntryChangeType.TranslationUpdated:
+                {
+                    LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+                    if (key == null) return;
+
+                    LocKeyTranslation? incoming = JsonConvert.DeserializeObject<LocKeyTranslation>(change.ChangeData);
+                    if (incoming == null) return;
+
+                    LocKeyTranslation? existing = key.Translations.Find(t => t.LanguageId == change.EntrySubId);
+                    if (existing == null)
+                    {
+                        key.Translations.Add(incoming);
+                    }
+                    else
+                    {
+                        // Copy scalar fields only — suggestion changes are recorded separately,
+                        // so the existing suggestions list must be preserved here.
+                        existing.Text          = incoming.Text;
+                        existing.Status        = incoming.Status;
+                        existing.SourceChanged = incoming.SourceChanged;
+                        existing.BaseTextHash  = incoming.BaseTextHash;
+                        existing.UpdatedAt     = incoming.UpdatedAt;
+                    }
+
+                    commitString = $"Update translation {change.EntrySubId} for key {key.KeyName}";
+                    break;
+                }
+                case EntryChangeType.SuggestionAdded:
+                {
+                    LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+                    if (key == null) return;
+
+                    LocTranslationSuggestion? suggestion = JsonConvert.DeserializeObject<LocTranslationSuggestion>(change.ChangeData);
+                    if (suggestion == null) return;
+
+                    LocKeyTranslation translation = GetOrCreateTranslation(key, change.EntrySubId);
+                    if (translation.Suggestions.All(s => s.Id != suggestion.Id))
+                        translation.Suggestions.Add(suggestion);
+
+                    commitString = $"Add suggestion for {change.EntrySubId} on key {key.KeyName}";
+                    break;
+                }
+                case EntryChangeType.SuggestionVoted:
+                {
+                    LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+                    if (key == null) return;
+
+                    LocTranslationSuggestion? incoming = JsonConvert.DeserializeObject<LocTranslationSuggestion>(change.ChangeData);
+                    if (incoming == null) return;
+
+                    LocKeyTranslation? translation = key.Translations.Find(t => t.LanguageId == change.EntrySubId);
+                    if (translation == null) return;
+
+                    int idx = translation.Suggestions.FindIndex(s => s.Id == incoming.Id);
+                    if (idx >= 0) translation.Suggestions[idx] = incoming;
+                    else translation.Suggestions.Add(incoming);
+
+                    commitString = $"Vote on suggestion for {change.EntrySubId} on key {key.KeyName}";
+                    break;
+                }
+                case EntryChangeType.SuggestionRemoved:
+                {
+                    LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+                    if (key == null) return;
+                    if (!Guid.TryParse(change.ChangeData, out Guid suggestionId)) return;
+
+                    LocKeyTranslation? translation = key.Translations.Find(t => t.LanguageId == change.EntrySubId);
+                    translation?.Suggestions.RemoveAll(s => s.Id == suggestionId);
+
+                    commitString = $"Remove suggestion for {change.EntrySubId} on key {key.KeyName}";
+                    break;
+                }
+                case EntryChangeType.FlagAdded:
+                {
+                    LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+                    if (key == null) return;
+
+                    LocKeyFlag? flag = JsonConvert.DeserializeObject<LocKeyFlag>(change.ChangeData);
+                    if (flag == null) return;
+
+                    if (key.Flags.All(f => f.Id != flag.Id)) key.Flags.Add(flag);
+
+                    commitString = $"Add flag to key {key.KeyName}";
+                    break;
+                }
+                case EntryChangeType.FlagRemoved:
+                {
+                    LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+                    if (key == null) return;
+                    if (!Guid.TryParse(change.ChangeData, out Guid flagId)) return;
+
+                    key.Flags.RemoveAll(f => f.Id == flagId);
+
+                    commitString = $"Remove flag from key {key.KeyName}";
+                    break;
+                }
+                case EntryChangeType.TagAdded:
+                {
+                    LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+                    if (key == null) return;
+
+                    if (!string.IsNullOrEmpty(change.ChangeData) && !key.Tags.Contains(change.ChangeData))
+                        key.Tags.Add(change.ChangeData);
+
+                    commitString = $"Add tag {change.ChangeData} to key {key.KeyName}";
+                    break;
+                }
+                case EntryChangeType.TagRemoved:
+                {
+                    LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+                    if (key == null) return;
+
+                    key.Tags.Remove(change.ChangeData);
+
+                    commitString = $"Remove tag {change.ChangeData} from key {key.KeyName}";
+                    break;
+                }
+                case EntryChangeType.VariableAdded:
+                {
+                    LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+                    if (key == null) return;
+
+                    LocKeyVariable? variable = JsonConvert.DeserializeObject<LocKeyVariable>(change.ChangeData);
+                    if (variable == null) return;
+
+                    if (key.Variables.All(v => v.Id != variable.Id)) key.Variables.Add(variable);
+
+                    commitString = $"Add variable to key {key.KeyName}";
+                    break;
+                }
+                case EntryChangeType.VariableUpdated:
+                {
+                    LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+                    if (key == null) return;
+
+                    LocKeyVariable? incoming = JsonConvert.DeserializeObject<LocKeyVariable>(change.ChangeData);
+                    if (incoming == null) return;
+
+                    int idx = key.Variables.FindIndex(v => v.Id == incoming.Id);
+                    if (idx >= 0) key.Variables[idx] = incoming;
+                    else key.Variables.Add(incoming);
+
+                    commitString = $"Update variable on key {key.KeyName}";
+                    break;
+                }
+                case EntryChangeType.VariableRemoved:
+                {
+                    LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+                    if (key == null) return;
+                    if (!Guid.TryParse(change.ChangeData, out Guid variableId)) return;
+
+                    key.Variables.RemoveAll(v => v.Id == variableId);
+
+                    commitString = $"Remove variable from key {key.KeyName}";
+                    break;
+                }
+                case EntryChangeType.EnumAdded:
+                {
+                    LocEnum? locEnum = JsonConvert.DeserializeObject<LocEnum>(change.ChangeData);
+                    if (locEnum == null) return;
+
+                    if (project.Enums.All(e => e.Id != locEnum.Id)) project.Enums.Add(locEnum);
+
+                    commitString = $"Add enum {locEnum.Name}";
+                    break;
+                }
+                case EntryChangeType.EnumUpdated:
+                {
+                    LocEnum? incoming = JsonConvert.DeserializeObject<LocEnum>(change.ChangeData);
+                    if (incoming == null) return;
+
+                    int idx = project.Enums.FindIndex(e => e.Id == incoming.Id);
+                    if (idx >= 0) project.Enums[idx] = incoming;
+                    else project.Enums.Add(incoming);
+
+                    commitString = $"Update enum {incoming.Name}";
+                    break;
+                }
+                case EntryChangeType.EnumRemoved:
+                {
+                    LocEnum? locEnum = project.Enums.Find(e => e.Id == change.EntryId);
+                    string   name    = locEnum?.Name ?? change.EntryId.ToString();
+                    if (locEnum != null) project.Enums.Remove(locEnum);
+
+                    commitString = $"Remove enum {name}";
+                    break;
+                }
             }
+        }
+
+        private static LocKeyTranslation GetOrCreateTranslation(LocLocalizationKey key, string languageId)
+        {
+            LocKeyTranslation? translation = key.Translations.Find(t => t.LanguageId == languageId);
+            if (translation == null)
+            {
+                translation = new LocKeyTranslation { LanguageId = languageId };
+                key.Translations.Add(translation);
+            }
+            return translation;
         }
     }
 }

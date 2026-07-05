@@ -1,5 +1,4 @@
 ﻿@namespace App.Components.Translate
-@using DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
 
 <div class="kd-root">
@@ -56,17 +55,7 @@
             @* ── Variables ────────────────────────────────────────────────── *@
             <VariablesSection @ref="_VariablesSection" Key="@_SelectedKey" OnChanged="StateHasChanged"/>
 
-            @* ── History ──────────────────────────────────────────────────── *@
-            <div class="kd-history-row">
-                <button class="kd-history-btn" @onclick="() => _HistoryModal?.Show()">
-                    <i class="bi bi-clock-history"></i> View history
-                    <span class="kd-history-count">@_SelectedKey.History.Count</span>
-                </button>
-            </div>
-
         </div>
-
-        <HistoryModal @ref="_HistoryModal" Key="@_SelectedKey"/>
     }
 
 </div>
@@ -75,7 +64,6 @@
     [Parameter] public string SelectedLanguage { get; set; } = "";
     [Parameter] public Guid?  SelectedKeyId    { get; set; }
 
-    private HistoryModal?     _HistoryModal;
     private VariablesSection? _VariablesSection;
     private string            _SourceDraft      = "";
     private string            _TranslationDraft = "";
@@ -88,19 +76,19 @@
         _TranslationDraft = drafts.translation;
     }
 
-    private LocalizationKeyDto? _SelectedKey => SelectedKeyId == null ? null : _ProjectState.CurrentProject!.Keys.Find(k => k.Id == SelectedKeyId);
+    private LocLocalizationKey? _SelectedKey => SelectedKeyId == null ? null : _ProjectState.CurrentProject!.Keys.Find(k => k.Id == SelectedKeyId);
 
-    private string FullKeyName(LocalizationKeyDto key)
+    private string FullKeyName(LocLocalizationKey key)
     {
-        ProjectDto   project = _ProjectState.CurrentProject!;
-        CategoryDto? cat     = project.Categories.Find(c => c.Id == key.CategoryId);
+        LocProject   project = _ProjectState.CurrentProject!;
+        LocCategory? cat     = project.Categories.Find(c => c.Id == key.CategoryId);
         if (cat == null) return key.KeyName;
 
         List<string> parts   = [cat.Name];
-        CategoryDto  current = cat;
+        LocCategory  current = cat;
         while (current.ParentCategoryId != null)
         {
-            CategoryDto? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
+            LocCategory? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
             if (parent == null) break;
             parts.Insert(0, parent.Name);
             current = parent;
@@ -112,11 +100,11 @@
     {
         get
         {
-            LocalizationKeyDto key = _SelectedKey!;
+            LocLocalizationKey key = _SelectedKey!;
             if (key.Flags.Any(f => f.Type == FlagType.NeedsReview)) return "Needs review";
-            TranslationDto? t = key.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
+            LocKeyTranslation? t = key.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
             if (t == null || (string.IsNullOrEmpty(t.Text) && t.Suggestions.Count == 0)) return "Untranslated";
-            if (!string.IsNullOrEmpty(t.Text) && t.NeedsAttention) return "Needs review";
+            if (!string.IsNullOrEmpty(t.Text) && t.SourceChanged) return "Needs review";
             return t.Status switch
             {
                 TranslationStatus.Approved  => "Approved",

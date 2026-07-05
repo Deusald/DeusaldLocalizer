@@ -297,6 +297,112 @@ public class ProjectStateService
         MarkDirty();
     }
 
+    // ── Key description recording ─────────────────────────────────────────────
+
+    public void RecordKeyDescriptionChanged(LocLocalizationKey key) =>
+        AddKeyFieldChange(key, nameof(LocLocalizationKey.Description), key.Description);
+
+    // ── Translation change recording ──────────────────────────────────────────
+
+    public void RecordTranslationUpdated(Guid keyId, LocKeyTranslation translation) =>
+        AddKeyChange(keyId, EntryChangeType.TranslationUpdated, translation.LanguageId,
+            Newtonsoft.Json.JsonConvert.SerializeObject(translation));
+
+    // ── Suggestion change recording ───────────────────────────────────────────
+
+    public void RecordSuggestionAdded(Guid keyId, string languageId, LocTranslationSuggestion suggestion) =>
+        AddKeyChange(keyId, EntryChangeType.SuggestionAdded, languageId,
+            Newtonsoft.Json.JsonConvert.SerializeObject(suggestion));
+
+    public void RecordSuggestionVoted(Guid keyId, string languageId, LocTranslationSuggestion suggestion) =>
+        AddKeyChange(keyId, EntryChangeType.SuggestionVoted, languageId,
+            Newtonsoft.Json.JsonConvert.SerializeObject(suggestion));
+
+    public void RecordSuggestionRemoved(Guid keyId, string languageId, Guid suggestionId) =>
+        AddKeyChange(keyId, EntryChangeType.SuggestionRemoved, languageId, suggestionId.ToString());
+
+    // ── Flag change recording ─────────────────────────────────────────────────
+
+    public void RecordFlagAdded(Guid keyId, LocKeyFlag flag) =>
+        AddKeyChange(keyId, EntryChangeType.FlagAdded, string.Empty,
+            Newtonsoft.Json.JsonConvert.SerializeObject(flag));
+
+    public void RecordFlagRemoved(Guid keyId, Guid flagId) =>
+        AddKeyChange(keyId, EntryChangeType.FlagRemoved, string.Empty, flagId.ToString());
+
+    // ── Tag change recording ──────────────────────────────────────────────────
+
+    public void RecordTagAdded(Guid keyId, string tag) =>
+        AddKeyChange(keyId, EntryChangeType.TagAdded, string.Empty, tag);
+
+    public void RecordTagRemoved(Guid keyId, string tag) =>
+        AddKeyChange(keyId, EntryChangeType.TagRemoved, string.Empty, tag);
+
+    // ── Variable change recording ─────────────────────────────────────────────
+
+    public void RecordVariableAdded(Guid keyId, LocKeyVariable variable) =>
+        AddKeyChange(keyId, EntryChangeType.VariableAdded, string.Empty,
+            Newtonsoft.Json.JsonConvert.SerializeObject(variable));
+
+    public void RecordVariableUpdated(Guid keyId, LocKeyVariable variable) =>
+        AddKeyChange(keyId, EntryChangeType.VariableUpdated, variable.Id.ToString(),
+            Newtonsoft.Json.JsonConvert.SerializeObject(variable));
+
+    public void RecordVariableRemoved(Guid keyId, Guid variableId) =>
+        AddKeyChange(keyId, EntryChangeType.VariableRemoved, string.Empty, variableId.ToString());
+
+    private void AddKeyChange(Guid keyId, EntryChangeType type, string entrySubId, string changeData)
+    {
+        ChangedLocKeys.Add(keyId);
+        if (CurrentProject!.Metadata.IsOnline)
+        {
+            CurrentProject.UncommitedChanges.Add(new LocEntryChange
+            {
+                Type       = type,
+                EntryId    = keyId,
+                EntrySubId = entrySubId,
+                ChangeData = changeData
+            });
+        }
+
+        MarkDirty();
+    }
+
+    // ── Enum change recording ─────────────────────────────────────────────────
+
+    /// <summary>Records a brand-new enum (whole object).</summary>
+    public void RecordEnumAdded(LocEnum locEnum) =>
+        AddEnumChange(EntryChangeType.EnumAdded, locEnum.Id, Newtonsoft.Json.JsonConvert.SerializeObject(locEnum));
+
+    /// <summary>Records an edited enum (whole object — name, description and entries).</summary>
+    public void RecordEnumUpdated(LocEnum locEnum) =>
+        AddEnumChange(EntryChangeType.EnumUpdated, locEnum.Id, Newtonsoft.Json.JsonConvert.SerializeObject(locEnum));
+
+    public void RecordEnumRemoved(Guid enumId) =>
+        AddEnumChange(EntryChangeType.EnumRemoved, enumId, string.Empty);
+
+    private void AddEnumChange(EntryChangeType type, Guid enumId, string changeData)
+    {
+        if (CurrentProject!.Metadata.IsOnline)
+        {
+            CurrentProject.UncommitedChanges.Add(new LocEntryChange
+            {
+                Type       = type,
+                EntryId    = enumId,
+                ChangeData = changeData
+            });
+        }
+
+        MarkDirty();
+    }
+
+    /// <summary>Marks a key as edited (offline incremental save) without recording an online change.</summary>
+    public void MarkKeyDirty(Guid keyId)
+    {
+        ChangedLocKeys.Add(keyId);
+        MarkDirty();
+    }
+
     public void MarkDirty()
     {
         if (!IsDirty)

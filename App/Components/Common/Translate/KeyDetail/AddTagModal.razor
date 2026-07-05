@@ -1,5 +1,4 @@
 ﻿@namespace App.Components.Translate
-@using DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
 
 @if (_Visible)
@@ -44,7 +43,7 @@
 }
 
 @code {
-    [Parameter] public LocalizationKeyDto Key { get; set; } = null!;
+    [Parameter] public LocLocalizationKey Key { get; set; } = null!;
     [Parameter] public EventCallback OnAdded { get; set; }
 
     private bool   _Visible;
@@ -95,19 +94,7 @@
         if (string.IsNullOrEmpty(tag) || Key.Tags.Contains(tag)) return;
 
         Key.Tags.Add(tag);
-        
-        Key.History.Add(new HistoryEntryDto
-        {
-            EntityPartName = "Tags",
-            EntityPartId   = Key.Id,
-            ChangeType     = HistoryChangeType.Created,
-            OldValue       = string.Empty,
-            NewValue       = tag,
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
-        
-        _ProjectState.MarkDirty();
+        _ProjectState.RecordTagAdded(Key.Id, tag);
         _Visible = false;
         OnAdded.InvokeAsync();
     }

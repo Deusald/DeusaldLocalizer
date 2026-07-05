@@ -1,6 +1,4 @@
 ﻿@namespace App.Components.Translate
-@using DeusaldLocalizerCommon
-@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 <div class="vs-root">
@@ -28,7 +26,7 @@
         <div class="vs-list">
             @foreach (var variable in Key.Variables)
             {
-                KeyVariableDto v       = variable;
+                LocKeyVariable v       = variable;
                 bool           editing = _IsAdmin && _EditingId == v.Id;
                 string         preview = _PreviewOverrides.TryGetValue(v.Id, out string? ov) ? ov : v.DefaultPreviewValue;
 
@@ -159,87 +157,46 @@
 <ProjectEnumsModal @ref="_EnumsModal"/>
 
 @code {
-    [Parameter] public LocalizationKeyDto Key       { get; set; } = null!;
+    [Parameter] public LocLocalizationKey Key       { get; set; } = null!;
     [Parameter] public EventCallback      OnChanged { get; set; }
 
     private readonly Dictionary<Guid, string> _PreviewOverrides = new();
 
     private Guid?              _EditingId;
-    private string             _OldJson = string.Empty;
     private ProjectEnumsModal? _EnumsModal;
 
-    private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _IsAdmin => _ProjectState.CurrentUser.IsAdmin;
 
     private void StartEditing(Guid id)
     {
         _EditingId = id;
-        KeyVariableDto? v = Key.Variables.FirstOrDefault(v => v.Id == _EditingId);
-        _OldJson = v == null ? string.Empty : JsonConvert.SerializeObject(v);
         _PreviewOverrides.Remove(id);
     }
 
     private void StopEditing()
     {
-        KeyVariableDto? v = Key.Variables.FirstOrDefault(v => v.Id == _EditingId);
+        LocKeyVariable? v = Key.Variables.FirstOrDefault(v => v.Id == _EditingId);
 
-        if (v != null)
-        {
-            Key.History.Add(new HistoryEntryDto
-            {
-                EntityPartName = "Variables",
-                EntityPartId   = v.Id,
-                ChangeType     = string.IsNullOrEmpty(_OldJson) ? HistoryChangeType.Created : HistoryChangeType.Updated,
-                OldValue       = _OldJson,
-                NewValue       = JsonConvert.SerializeObject(v),
-                UserId         = _ProjectState.CurrentUser.Id,
-                UserName       = _ProjectState.CurrentUser.DisplayName
-            });
-        }
+        if (v != null) _ProjectState.RecordVariableUpdated(Key.Id, v);
 
         _EditingId = null;
-        _OldJson   = string.Empty;
-        _ProjectState.MarkDirty();
         OnChanged.InvokeAsync();
     }
 
     private void AddVariable()
     {
-        KeyVariableDto v = new KeyVariableDto { KeyId = Key.Id };
+        LocKeyVariable v = new LocKeyVariable();
         Key.Variables.Add(v);
-
-        Key.History.Add(new HistoryEntryDto
-        {
-            EntityPartName = "Variables",
-            EntityPartId   = v.Id,
-            ChangeType     = HistoryChangeType.Created,
-            OldValue       = string.Empty,
-            NewValue       = JsonConvert.SerializeObject(v),
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
-
+        _ProjectState.RecordVariableAdded(Key.Id, v);
         _EditingId = v.Id;
-        _ProjectState.MarkDirty();
     }
 
-    private void RemoveVariable(KeyVariableDto v)
+    private void RemoveVariable(LocKeyVariable v)
     {
         _EditingId = null;
         _PreviewOverrides.Remove(v.Id);
         Key.Variables.Remove(v);
-
-        Key.History.Add(new HistoryEntryDto
-        {
-            EntityPartName = "Variables",
-            EntityPartId   = v.Id,
-            ChangeType     = HistoryChangeType.Created,
-            OldValue       = JsonConvert.SerializeObject(v),
-            NewValue       = string.Empty,
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
-
-        _ProjectState.MarkDirty();
+        _ProjectState.RecordVariableRemoved(Key.Id, v.Id);
         OnChanged.InvokeAsync();
     }
 
@@ -249,22 +206,24 @@
         OnChanged.InvokeAsync();
     }
 
-    private void ResetPreview(KeyVariableDto v)
+    private void ResetPreview(LocKeyVariable v)
     {
         _PreviewOverrides.Remove(v.Id);
         OnChanged.InvokeAsync();
     }
 
-    private bool HasOverride(KeyVariableDto v) =>
+    private bool HasOverride(LocKeyVariable v) =>
         _PreviewOverrides.TryGetValue(v.Id, out string? ov) && ov != v.DefaultPreviewValue;
 
-    private void MarkDirty() => _ProjectState.MarkDirty();
+    // Live edits inside the editor mutate the variable in place — mark the key dirty
+    // so an offline incremental save rewrites it; the change is recorded on Done.
+    private void MarkDirty() => _ProjectState.MarkKeyDirty(Key.Id);
 
-    private List<LocEnumEntryDto> EnumEntries(Guid? enumId)
+    private List<LocEnumEntry> EnumEntries(Guid? enumId)
     {
-        if (enumId == null) return new List<LocEnumEntryDto>();
-        LocEnumDto? locEnum = _ProjectState.CurrentProject!.Enums.Find(e => e.Id == enumId);
-        return locEnum?.Entries ?? new List<LocEnumEntryDto>();
+        if (enumId == null) return new List<LocEnumEntry>();
+        LocEnum? locEnum = _ProjectState.CurrentProject!.Enums.Find(e => e.Id == enumId);
+        return locEnum?.Entries ?? new List<LocEnumEntry>();
     }
 
     public Dictionary<Guid, string> CurrentPreviewOverrides => _PreviewOverrides;

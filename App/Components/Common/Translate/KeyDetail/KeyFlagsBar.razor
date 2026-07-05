@@ -1,12 +1,10 @@
 ﻿@namespace App.Components.Translate
-@using DeusaldLocalizerCommon
-@using Newtonsoft.Json
 @inject ProjectStateService _ProjectState
 
 <div class="kfb-root">
-    @foreach (KeyFlagDto flag in Key.Flags)
+    @foreach (LocKeyFlag flag in Key.Flags)
     {
-        KeyFlagDto f = flag;
+        LocKeyFlag f = flag;
         <div class="kfb-chip-wrap"
              @onmouseenter="() => _HoveredFlagId = f.Id"
              @onmouseleave="() => _HoveredFlagId = null">
@@ -54,36 +52,25 @@
 <AddFlagModal @ref="_AddFlagModal" Key="Key" OnAdded="OnAdded"/>
 
 @code {
-    [Parameter] public LocalizationKeyDto Key       { get; set; } = null!;
+    [Parameter] public LocLocalizationKey Key       { get; set; } = null!;
     [Parameter] public EventCallback      OnChanged { get; set; }
 
     private Guid?         _HoveredFlagId;
     private AddFlagModal? _AddFlagModal;
 
-    private bool _CanManage => _ProjectState.CurrentUserHas(PermissionFlags.Review)
-                               || _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    // Flags are key-level (not per-language), so any reviewer or an admin may manage them.
+    private bool _CanManage => _ProjectState.CurrentUser.IsAdmin
+                               || _ProjectState.CurrentUser.ReviewLanguagePermissions.Count > 0;
 
     private async Task OnAdded()
     {
         await OnChanged.InvokeAsync();
     }
 
-    private void RemoveFlag(KeyFlagDto flag)
+    private void RemoveFlag(LocKeyFlag flag)
     {
         Key.Flags.Remove(flag);
-
-        Key.History.Add(new HistoryEntryDto
-        {
-            EntityPartName = "Flags",
-            EntityPartId   = flag.Id,
-            ChangeType     = HistoryChangeType.Deleted,
-            OldValue       = JsonConvert.SerializeObject(flag),
-            NewValue       = string.Empty,
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
-
-        _ProjectState.MarkDirty();
+        _ProjectState.RecordFlagRemoved(Key.Id, flag.Id);
         _HoveredFlagId = null;
         OnChanged.InvokeAsync();
     }

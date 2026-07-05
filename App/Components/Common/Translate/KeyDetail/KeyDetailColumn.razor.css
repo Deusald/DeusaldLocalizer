@@ -75,35 +75,3 @@
     flex-shrink: 0;
 }
 .kd-dates-sep { margin: 0 5px; }
-
-/* ── History ──────────────────────────────────────────────────────────────── */
-
-.kd-history-row {
-    display: flex;
-    justify-content: center;
-    padding-top: 4px;
-}
-
-.kd-history-btn {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    padding: 8px 16px;
-    background: #15161c;
-    border: 1px solid #20212a;
-    border-radius: 8px;
-    color: #8a8b93;
-    font-size: 12.5px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background .12s, color .12s, border-color .12s;
-}
-.kd-history-btn:hover { background: #181922; border-color: #2a2b35; color: #d6d6db; }
-
-.kd-history-count {
-    font-size: 10.5px;
-    color: #5a5b63;
-    background: #1e1f28;
-    padding: 1px 6px;
-    border-radius: 999px;
-}

@@ -1,5 +1,4 @@
 ﻿@namespace App.Components.Translate
-@using DeusaldLocalizerCommon
 @inject ProjectStateService _ProjectState
 
 <div class="ktb-root">
@@ -35,32 +34,20 @@
 <AddTagModal @ref="_AddTagModal" Key="Key" OnAdded="OnAdded" />
 
 @code {
-    [Parameter] public LocalizationKeyDto Key       { get; set; } = null!;
+    [Parameter] public LocLocalizationKey Key       { get; set; } = null!;
     [Parameter] public EventCallback      OnChanged { get; set; }
 
     private string?      _Hovered;
     private AddTagModal? _AddTagModal;
 
-    private bool _IsAdmin => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
+    private bool _IsAdmin => _ProjectState.CurrentUser.IsAdmin;
 
     private async Task OnAdded() => await OnChanged.InvokeAsync();
 
     private void RemoveTag(string tag)
     {
         Key.Tags.Remove(tag);
-        
-        Key.History.Add(new HistoryEntryDto
-        {
-            EntityPartName = "Tags",
-            EntityPartId   = Key.Id,
-            ChangeType     = HistoryChangeType.Deleted,
-            OldValue       = tag,
-            NewValue       = string.Empty,
-            UserId         = _ProjectState.CurrentUser.Id,
-            UserName       = _ProjectState.CurrentUser.DisplayName
-        });
-        
-        _ProjectState.MarkDirty();
+        _ProjectState.RecordTagRemoved(Key.Id, tag);
         _Hovered = null;
         OnChanged.InvokeAsync();
     }
