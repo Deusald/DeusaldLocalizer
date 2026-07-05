@@ -151,6 +151,10 @@ $RECYCLE.BIN/
 #############
 ## Custom
 #############
+
+# Claude Code
+CLAUDE.md
+graphify-out/
 .vs
 packages
 
