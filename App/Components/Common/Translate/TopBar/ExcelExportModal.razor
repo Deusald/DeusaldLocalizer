@@ -1,0 +1,265 @@
+@namespace App.Components.Translate
+@using CommunityToolkit.Maui.Storage
+@using System.IO
+@inject ProjectStateService _ProjectState
+
+@if (_Visible)
+{
+    <div class="ex-backdrop" @onclick="Close"></div>
+
+    <div class="ex-box" @onclick:stopPropagation="true">
+
+        <div class="ex-header">
+            <span class="ex-title">Export to Excel</span>
+            <button class="ex-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="ex-body">
+
+            @* ── Flags ──────────────────────────────────────────────── *@
+            <div class="ex-section">
+                <div class="ex-section-title">Flags</div>
+                <div class="ex-section-hint">Include keeps only keys that have any selected flag; Exclude drops keys with it.</div>
+                @foreach (FlagType type in _AllFlagTypes)
+                {
+                    FlagType t = type;
+                    <div class="ex-row">
+                        <div class="ex-row-label">
+                            <i class="bi @FlagIcon(t) ex-row-icon"></i>@FlagLabel(t)
+                        </div>
+                        @RenderTri(_FlagStates[t], s => _FlagStates[t] = s)
+                    </div>
+                }
+            </div>
+
+            @* ── Tags ───────────────────────────────────────────────── *@
+            <div class="ex-section">
+                <div class="ex-section-title">Tags</div>
+                @if (_AllTags.Count == 0)
+                {
+                    <div class="ex-empty">No tags in this project.</div>
+                }
+                else
+                {
+                    @foreach (string tag in _AllTags)
+                    {
+                        string tg = tag;
+                        <div class="ex-row">
+                            <div class="ex-row-label">
+                                <i class="bi bi-tag ex-row-icon"></i>@tg
+                            </div>
+                            @RenderTri(_TagStates[tg], s => _TagStates[tg] = s)
+                        </div>
+                    }
+                }
+            </div>
+
+            @* ── Languages ──────────────────────────────────────────── *@
+            <div class="ex-section">
+                <div class="ex-section-header">
+                    <span class="ex-section-title">Languages</span>
+                    <button class="ex-linkbtn" @onclick="ToggleAllLangs">
+                        @(_AllLangsSelected ? "Deselect all" : "Select all")
+                    </button>
+                </div>
+                @foreach (string lang in _AllLanguages)
+                {
+                    string lg     = lang;
+                    bool   active = _SelectedLangs.Contains(lg);
+                    <button class="ex-lang @(active ? "active" : "")" @onclick="() => ToggleLang(lg)">
+                        <span class="ex-lang-check">@(active ? "✓" : "")</span>
+                        <span class="ex-lang-name">@LangLabel(lg)</span>
+                        @if (lg == _ProjectState.CurrentProject!.Metadata.MainLanguageId)
+                        {
+                            <span class="ex-lang-badge">source</span>
+                        }
+                    </button>
+                }
+            </div>
+
+        </div>
+
+        <div class="ex-footer">
+            <span class="ex-count">@_MatchingKeyCount of @_TotalKeyCount keys</span>
+            <div class="ex-footer-actions">
+                <button class="ex-btn ex-btn-ghost" @onclick="Close">Cancel</button>
+                <button class="ex-btn ex-btn-primary" @onclick="ExportAsync"
+                        disabled="@(_IsExporting || _MatchingKeyCount == 0 || _SelectedLangs.Count == 0)">
+                    @if (_IsExporting)
+                    {
+                        <span class="ex-spinner"></span> <span>Exporting…</span>
+                    }
+                    else
+                    {
+                        <i class="bi bi-file-earmark-arrow-down"></i> <span>Export</span>
+                    }
+                </button>
+            </div>
+        </div>
+
+    </div>
+}
+
+@code {
+    private enum Tri { Off, Include, Exclude }
+
+    private bool _Visible;
+    private bool _IsExporting;
+
+    private Dictionary<FlagType, Tri> _FlagStates = new();
+    private Dictionary<string, Tri>   _TagStates  = new(StringComparer.OrdinalIgnoreCase);
+    private HashSet<string>           _SelectedLangs = new();
+
+    private static readonly FlagType[] _AllFlagTypes = (FlagType[])Enum.GetValues(typeof(FlagType));
+
+    private List<string> _AllTags =>
+        _ProjectState.CurrentProject!.Keys
+                     .SelectMany(k => k.Tags)
+                     .Distinct(StringComparer.OrdinalIgnoreCase)
+                     .OrderBy(t => t, StringComparer.OrdinalIgnoreCase)
+                     .ToList();
+
+    private List<string> _AllLanguages
+    {
+        get
+        {
+            LocProjectMetadata meta = _ProjectState.CurrentProject!.Metadata;
+            List<string>       list = new() { meta.MainLanguageId };
+            list.AddRange(meta.Languages.Where(l => l != meta.MainLanguageId).OrderBy(l => l));
+            return list;
+        }
+    }
+
+    private bool _AllLangsSelected => _SelectedLangs.Count == _AllLanguages.Count;
+
+    private int _TotalKeyCount => _ProjectState.CurrentProject!.Keys.Count;
+
+    private int _MatchingKeyCount =>
+        _ProjectState.CurrentProject!.Keys.Count(k => Matches(k));
+
+    public void Show()
+    {
+        _FlagStates    = _AllFlagTypes.ToDictionary(t => t, _ => Tri.Off);
+        _TagStates     = _AllTags.ToDictionary(t => t, _ => Tri.Off, StringComparer.OrdinalIgnoreCase);
+        _SelectedLangs = new HashSet<string>(_AllLanguages);
+        _IsExporting   = false;
+        _Visible       = true;
+        StateHasChanged();
+    }
+
+    private void Close() => _Visible = false;
+
+    private RenderFragment RenderTri(Tri current, Action<Tri> set) => __builder =>
+    {
+        <div class="ex-seg">
+            <button class="ex-seg-btn @(current == Tri.Off ? "active" : "")"
+                    @onclick="() => set(Tri.Off)">Any</button>
+            <button class="ex-seg-btn ex-seg-inc @(current == Tri.Include ? "active" : "")"
+                    @onclick="() => set(Tri.Include)">Include</button>
+            <button class="ex-seg-btn ex-seg-exc @(current == Tri.Exclude ? "active" : "")"
+                    @onclick="() => set(Tri.Exclude)">Exclude</button>
+        </div>
+    };
+
+    private void ToggleLang(string lang)
+    {
+        if (!_SelectedLangs.Remove(lang))
+            _SelectedLangs.Add(lang);
+    }
+
+    private void ToggleAllLangs()
+    {
+        if (_AllLangsSelected)
+            _SelectedLangs.Clear();
+        else
+            _SelectedLangs = new HashSet<string>(_AllLanguages);
+    }
+
+    // Mirrors LocalizationExportService.PassesFilter so the live count matches the export.
+    private bool Matches(LocLocalizationKey key)
+    {
+        List<FlagType> includeFlags = _FlagStates.Where(x => x.Value == Tri.Include).Select(x => x.Key).ToList();
+        if (includeFlags.Count > 0 && !key.Flags.Any(fl => includeFlags.Contains(fl.Type)))
+            return false;
+        if (_FlagStates.Any(x => x.Value == Tri.Exclude && key.Flags.Any(fl => fl.Type == x.Key)))
+            return false;
+
+        List<string> includeTags = _TagStates.Where(x => x.Value == Tri.Include).Select(x => x.Key).ToList();
+        if (includeTags.Count > 0 && !key.Tags.Any(t => includeTags.Contains(t)))
+            return false;
+        if (_TagStates.Any(x => x.Value == Tri.Exclude && key.Tags.Contains(x.Key)))
+            return false;
+
+        return true;
+    }
+
+    private LocExportOptions BuildOptions()
+    {
+        LocExportOptions options = new();
+        foreach (KeyValuePair<FlagType, Tri> f in _FlagStates)
+        {
+            if (f.Value == Tri.Include) options.IncludeFlags.Add(f.Key);
+            else if (f.Value == Tri.Exclude) options.ExcludeFlags.Add(f.Key);
+        }
+        foreach (KeyValuePair<string, Tri> t in _TagStates)
+        {
+            if (t.Value == Tri.Include) options.IncludeTags.Add(t.Key);
+            else if (t.Value == Tri.Exclude) options.ExcludeTags.Add(t.Key);
+        }
+        // Preserve source-first ordering of the selected languages.
+        foreach (string lang in _AllLanguages.Where(l => _SelectedLangs.Contains(l)))
+            options.Languages.Add(lang);
+        return options;
+    }
+
+    private async Task ExportAsync()
+    {
+        if (_IsExporting) return;
+        _IsExporting = true;
+        StateHasChanged();
+        try
+        {
+            LocProject         project  = _ProjectState.CurrentProject!;
+            LocExportOptions   options  = BuildOptions();
+            using MemoryStream stream   = LocalizationExportService.ExportToStream(project, options);
+            string             fileName = $"{(string.IsNullOrEmpty(project.Metadata.Slug) ? "export" : project.Metadata.Slug)}-translations.xlsx";
+            await FileSaver.Default.SaveAsync(fileName, stream);
+            Close();
+        }
+        catch
+        {
+            /* silently ignore cancel */
+        }
+        finally
+        {
+            _IsExporting = false;
+            StateHasChanged();
+        }
+    }
+
+    private string LangLabel(string code)
+    {
+        CultureEntry? entry = CultureService.FindByCode(code);
+        return entry != null ? $"{entry.EnglishName} ({code})" : code;
+    }
+
+    private static string FlagLabel(FlagType type) => type switch
+    {
+        FlagType.NeedsReview    => "Needs review",
+        FlagType.Outdated       => "Outdated",
+        FlagType.DoNotTranslate => "Do not translate",
+        FlagType.InProgress     => "In progress",
+        FlagType.Disputed       => "Disputed",
+        _                       => type.ToString(),
+    };
+
+    private static string FlagIcon(FlagType type) => type switch
+    {
+        FlagType.NeedsReview    => "bi-flag",
+        FlagType.Outdated       => "bi-clock-history",
+        FlagType.DoNotTranslate => "bi-slash-circle",
+        FlagType.InProgress     => "bi-hourglass-split",
+        FlagType.Disputed       => "bi-exclamation-triangle",
+        _                       => "bi-flag",
+    };
+}

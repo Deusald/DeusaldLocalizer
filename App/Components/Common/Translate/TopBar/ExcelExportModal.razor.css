@@ -1,0 +1,78 @@
+.ex-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.6); backdrop-filter: blur(2px); z-index: 100; }
+
+.ex-box {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    z-index: 101; width: 480px; max-height: 82vh;
+    background: #1a1b23; border: 1px solid #2a2b35; border-radius: 13px;
+    box-shadow: 0 24px 64px rgba(0,0,0,.6); display: flex; flex-direction: column; overflow: hidden;
+}
+
+.ex-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid #20212a; }
+.ex-title  { font-size: 15px; font-weight: 600; color: #e8e8ea; }
+.ex-close  { background: none; border: none; color: #6a6b73; font-size: 14px; cursor: pointer; padding: 4px; border-radius: 5px; }
+.ex-close:hover { color: #c8c8cf; background: #23242e; }
+
+.ex-body { padding: 18px 20px; display: flex; flex-direction: column; gap: 22px; overflow-y: auto; }
+
+/* ── Sections ─────────────────────────────────────────────────────────────── */
+
+.ex-section { display: flex; flex-direction: column; gap: 7px; }
+.ex-section-header { display: flex; align-items: center; justify-content: space-between; }
+.ex-section-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: #7a7b83; }
+.ex-section-hint { font-size: 11.5px; color: #5a5b63; line-height: 1.5; margin-bottom: 2px; }
+.ex-empty { font-size: 12.5px; color: #5a5b63; padding: 4px 0; }
+
+.ex-linkbtn { background: none; border: none; color: #8d9aff; font-size: 12px; cursor: pointer; padding: 2px 4px; border-radius: 5px; }
+.ex-linkbtn:hover { color: #b3bcff; background: rgba(91,108,255,.1); }
+
+/* ── Flag / tag rows ──────────────────────────────────────────────────────── */
+
+.ex-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 4px 0; }
+.ex-row-label { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #d6d6db; min-width: 0; }
+.ex-row-icon { font-size: 13px; color: #7a7b83; flex-shrink: 0; }
+
+.ex-seg { display: inline-flex; background: #13141a; border: 1px solid #20212a; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+.ex-seg-btn {
+    background: none; border: none; color: #8a8b93; font-size: 12px; cursor: pointer;
+    padding: 5px 11px; transition: background .12s, color .12s;
+    border-left: 1px solid #20212a;
+}
+.ex-seg-btn:first-child { border-left: none; }
+.ex-seg-btn:hover { color: #d6d6db; background: #1e1f28; }
+.ex-seg-btn.active { color: #fff; background: #3a3b46; }
+.ex-seg-btn.ex-seg-inc.active { background: #1f5c3a; color: #6ee7a3; }
+.ex-seg-btn.ex-seg-exc.active { background: #5c1a17; color: #ff9492; }
+
+/* ── Language checklist ───────────────────────────────────────────────────── */
+
+.ex-lang {
+    display: flex; align-items: center; gap: 9px; width: 100%;
+    background: #13141a; border: 1px solid #20212a; border-radius: 8px;
+    padding: 8px 11px; margin-top: 6px; cursor: pointer; text-align: left;
+    transition: border-color .12s, background .12s;
+}
+.ex-lang:hover { background: #1e1f28; border-color: #2f3040; }
+.ex-lang.active { border-color: #5b6cff; background: rgba(91,108,255,.08); }
+.ex-lang-check { width: 14px; color: #5b6cff; font-size: 12px; flex-shrink: 0; }
+.ex-lang-name { font-size: 13px; color: #d6d6db; flex: 1; }
+.ex-lang-badge { font-size: 10px; color: #f5a623; background: rgba(245,166,35,.12); padding: 1px 7px; border-radius: 10px; }
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+
+.ex-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 14px 20px; border-top: 1px solid #20212a; }
+.ex-count { font-size: 12px; color: #7a7b83; }
+.ex-footer-actions { display: flex; gap: 8px; }
+
+.ex-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; border: 1px solid transparent; transition: background .15s; }
+.ex-btn-ghost { background: transparent; border-color: #2a2b35; color: #8a8b93; }
+.ex-btn-ghost:hover { background: #1e1f28; color: #d6d6db; }
+.ex-btn-primary { background: #5b6cff; color: #fff; }
+.ex-btn-primary:hover { background: #6c7cff; }
+.ex-btn-primary:disabled { background: #2a2b35; color: #5a5b63; cursor: not-allowed; }
+
+.ex-spinner {
+    display: inline-block; width: 14px; height: 14px;
+    border: 2px solid rgba(255,255,255,.3); border-top-color: #fff;
+    border-radius: 50%; animation: ex-spin .65s linear infinite;
+}
+@keyframes ex-spin { to { transform: rotate(360deg); } }

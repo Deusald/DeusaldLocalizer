@@ -15,16 +15,25 @@ namespace DeusaldLocalizerCommon
     /// </summary>
     public static class LocalizationExportService
     {
-        public static MemoryStream ExportToStream(LocProject project)
+        public static MemoryStream ExportToStream(LocProject project, LocExportOptions? options = null)
         {
             using XLWorkbook wb    = new XLWorkbook();
             IXLWorksheet     sheet = wb.AddWorksheet("Translations");
 
             // ── Build ordered language list: source first, rest alphabetical ──
-            List<string> languages = new List<string> { project.Metadata.MainLanguageId };
+            // When options select a language subset, keep only those (empty = all).
+            bool            hasLangFilter = options != null && options.Languages.Count > 0;
+            HashSet<string> selectedLangs = hasLangFilter
+                ? new HashSet<string>(options!.Languages)
+                : new HashSet<string>();
+
+            List<string> languages = new List<string>();
+            if (!hasLangFilter || selectedLangs.Contains(project.Metadata.MainLanguageId))
+                languages.Add(project.Metadata.MainLanguageId);
             foreach (string lang in project.Metadata.Languages.OrderBy(l => l))
             {
-                if (lang != project.Metadata.MainLanguageId)
+                if (lang == project.Metadata.MainLanguageId) continue;
+                if (!hasLangFilter || selectedLangs.Contains(lang))
                     languages.Add(lang);
             }
 
@@ -52,7 +61,10 @@ namespace DeusaldLocalizerCommon
 
             // ── Data rows ───────────────────────────────────────────────────
             int row = 2;
-            foreach (LocLocalizationKey key in project.Keys.OrderBy(k => FullKeyName(k, project)))
+            IEnumerable<LocLocalizationKey> exportedKeys = project.Keys;
+            if (options != null)
+                exportedKeys = exportedKeys.Where(k => PassesFilter(k, options));
+            foreach (LocLocalizationKey key in exportedKeys.OrderBy(k => FullKeyName(k, project)))
             {
                 // Get the source translation's BaseTextHash as "SourceHash"
                 LocKeyTranslation? sourceTrans = key.Translations
@@ -126,6 +138,19 @@ namespace DeusaldLocalizerCommon
             wb.SaveAs(stream);
             stream.Position = 0;
             return stream;
+        }
+
+        private static bool PassesFilter(LocLocalizationKey key, LocExportOptions options)
+        {
+            if (options.IncludeFlags.Count > 0 && !key.Flags.Any(f => options.IncludeFlags.Contains(f.Type)))
+                return false;
+            if (options.ExcludeFlags.Count > 0 && key.Flags.Any(f => options.ExcludeFlags.Contains(f.Type)))
+                return false;
+            if (options.IncludeTags.Count > 0 && !key.Tags.Any(t => options.IncludeTags.Contains(t)))
+                return false;
+            if (options.ExcludeTags.Count > 0 && key.Tags.Any(t => options.ExcludeTags.Contains(t)))
+                return false;
+            return true;
         }
 
         private static string FullKeyName(LocLocalizationKey key, LocProject project)

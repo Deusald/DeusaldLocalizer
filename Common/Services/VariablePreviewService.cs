@@ -40,12 +40,12 @@ namespace DeusaldLocalizerCommon
                 Smart.Default.Parser.OnParsingFailure -= OnParserOnOnParsingFailure;
             }
 
-            void OnDefaultOnOnFormattingFailure(object sender, FormattingErrorEventArgs args)
+            void OnDefaultOnOnFormattingFailure(object? sender, FormattingErrorEventArgs args)
             {
                 badPlaceholders.Add(args.Placeholder);
             }
 
-            void OnParserOnOnParsingFailure(object sender, ParsingErrorEventArgs args)
+            void OnParserOnOnParsingFailure(object? sender, ParsingErrorEventArgs args)
             {
                 parsingErrorText.Add(args.Errors.MessageShort);
             }
@@ -65,7 +65,7 @@ namespace DeusaldLocalizerCommon
         {
             Dictionary<string, object> dict = new Dictionary<string, object>();
 
-            foreach (LocKeyVariable? v in variables)
+            foreach (LocKeyVariable v in variables)
             {
                 if (string.IsNullOrEmpty(v.Name)) continue;
 
@@ -115,7 +115,7 @@ namespace DeusaldLocalizerCommon
 
                 case KeyVariableType.BoolArray:
                     return SplitCsv(raw)
-                          .Select(s => s?.ToLowerInvariant() is "true" or "1" or "yes")
+                          .Select(s => s.ToLowerInvariant() is "true" or "1" or "yes")
                           .ToArray();
 
                 case KeyVariableType.EnumInt:

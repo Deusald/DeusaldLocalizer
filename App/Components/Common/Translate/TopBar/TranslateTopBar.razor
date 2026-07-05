@@ -1,6 +1,4 @@
 ﻿@namespace App.Components.Translate
-@using CommunityToolkit.Maui.Storage
-@using System.IO
 @inject ProjectStateService _ProjectState
 @inject NavigationManager   _Nav
 @implements IDisposable
@@ -39,15 +37,8 @@
             @(_ProjectState.IsDirty ? "Unsaved" : "Saved")
         </span>
 
-        <button class="ttb-history-btn" @onclick="ExportAsync" title="Export to Excel" disabled="@_IsExporting">
-            @if (_IsExporting)
-            {
-                <span class="ttb-spinner"></span>
-            }
-            else
-            {
-                <i class="bi bi-file-earmark-arrow-down"></i>
-            }
+        <button class="ttb-history-btn" @onclick="() => _ExportModal?.Show()" title="Export to Excel">
+            <i class="bi bi-file-earmark-arrow-down"></i>
         </button>
 
         <button class="ttb-history-btn" @onclick="() => _ImportModal?.Show()" title="Import from Excel">
@@ -79,6 +70,7 @@
 <ConfirmLeaveModal @ref="_ConfirmLeaveModal" OnSaveAndLeave="SaveAndLeave" OnDiscardAndLeave="DiscardAndLeave"/>
 <ProjectUncommittedChangesModal @ref="_ProjectUncommittedChangesModal"/>
 <ExcelImportModal @ref="_ImportModal"/>
+<ExcelExportModal @ref="_ExportModal"/>
 
 @code {
     [Parameter] public string SelectedLanguage { get; set; } = "";
@@ -87,7 +79,7 @@
     private ConfirmLeaveModal?              _ConfirmLeaveModal;
     private ProjectUncommittedChangesModal? _ProjectUncommittedChangesModal;
     private ExcelImportModal?               _ImportModal;
-    private bool                            _IsExporting;
+    private ExcelExportModal?               _ExportModal;
 
     private const int _MAX_VISIBLE_AVATARS = 3;
 
@@ -127,27 +119,6 @@
     protected override void OnInitialized()
     {
         _ProjectState.DirtyStateChanged += OnDirty;
-    }
-
-    private async Task ExportAsync()
-    {
-        if (_IsExporting) return;
-        _IsExporting = true;
-        try
-        {
-            LocProject         project  = _ProjectState.CurrentProject!;
-            using MemoryStream stream   = LocalizationExportService.ExportToStream(project);
-            string             fileName = $"{(string.IsNullOrEmpty(project.Metadata.Slug) ? "export" : project.Metadata.Slug)}-translations.xlsx";
-            await FileSaver.Default.SaveAsync(fileName, stream);
-        }
-        catch
-        {
-            /* silently ignore cancel */
-        }
-        finally
-        {
-            _IsExporting = false;
-        }
     }
 
     private void OpenUsersModal() => _UsersModal?.Show();
