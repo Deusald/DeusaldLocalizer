@@ -4,8 +4,7 @@
     public enum TranslationStatus
     {
         Untranslated = 0,
-        Draft        = 1,
-        Suggested    = 2,
-        Approved     = 3
+        Suggested    = 1,
+        Approved     = 2
     }
 }

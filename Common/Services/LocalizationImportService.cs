@@ -114,7 +114,7 @@ namespace DeusaldLocalizerCommon
 
                     existing.Text      = text;
                     existing.UpdatedAt = DateTime.UtcNow;
-                    existing.Status    = TranslationStatus.Draft;
+                    existing.Status    = TranslationStatus.Suggested;
 
                     // Record which source version this was based on
                     LocKeyTranslation? src = key.Translations.Find(t => t.LanguageId == project.Metadata.MainLanguageId);

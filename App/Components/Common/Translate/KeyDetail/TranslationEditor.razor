@@ -306,7 +306,7 @@
         }
 
         translation.SourceChanged = true;
-        if (translation.Status == TranslationStatus.Draft) translation.Status = TranslationStatus.Suggested;
+        translation.Status        = TranslationStatus.Suggested;
 
         LocTranslationSuggestion suggestion = new LocTranslationSuggestion
         {
@@ -326,6 +326,7 @@
     private async Task SaveTranslation()
     {
         if (!_CanEditTranslation) return;
+        if (!_IsReviewer) return;
 
         LocKeyTranslation? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
         if (translation == null)
@@ -335,15 +336,14 @@
         }
 
         translation.Text          = _TranslationDraft;
-        translation.UpdatedAt      = DateTime.UtcNow;
-        translation.SourceChanged  = false;
+        translation.UpdatedAt     = DateTime.UtcNow;
+        translation.SourceChanged = false;
 
         // Record which version of the source this translation was based on
         LocKeyTranslation? currentSource = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
         translation.BaseTextHash = TextHashHelper.Compute(currentSource?.Text ?? "");
 
-        // Contributors without review rights leave it as Draft; reviewers/admins approve directly.
-        translation.Status = _IsReviewer ? TranslationStatus.Approved : TranslationStatus.Draft;
+        translation.Status = TranslationStatus.Approved;
 
         _ProjectState.RecordTranslationUpdated(Key.Id, translation);
 
@@ -381,7 +381,7 @@
         }
 
         translation.SourceChanged = true;
-        if (translation.Status == TranslationStatus.Draft) translation.Status = TranslationStatus.Suggested;
+        translation.Status        = TranslationStatus.Suggested;
 
         LocTranslationSuggestion suggestion = new LocTranslationSuggestion
         {
