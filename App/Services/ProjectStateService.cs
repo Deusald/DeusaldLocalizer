@@ -128,6 +128,50 @@ public class ProjectStateService
         if (!string.IsNullOrEmpty(CurrentProjectPath)) RecentProjectsService.UpdateRecentProjects(CurrentProject!, CurrentProjectPath, CurrentProject.Metadata.IsOnline);
     }
 
+    // ── Member change recording ──────────────────────────────────────────────
+    
+    /// <summary>Records a brand-new member (whole object).</summary>
+    public void RecordMemberAdded(LocProjectMember member)
+    {
+        if (CurrentProject!.Metadata.IsOnline)
+        {
+            CurrentProject.UncommitedChanges.Add(new LocEntryChange
+            {
+                Type       = EntryChangeType.MemberAdded,
+                EntryId    = member.UserId,
+                ChangeData = Newtonsoft.Json.JsonConvert.SerializeObject(member)
+            });
+        }
+
+        MarkDirty();
+    }
+
+    public void RecordMemberUsernameChanged(LocProjectMember member) =>
+        AddMemberFieldChange(member, nameof(LocProjectMember.Username), member.Username);
+
+    public void RecordMemberReviewPermissionsChanged(LocProjectMember member) =>
+        AddMemberFieldChange(member, nameof(LocProjectMember.ReviewLanguagePermissions),
+            Newtonsoft.Json.JsonConvert.SerializeObject(member.ReviewLanguagePermissions));
+
+    public void RecordMemberBanStatusChanged(LocProjectMember member) =>
+        AddMemberFieldChange(member, nameof(LocProjectMember.IsBanned), member.IsBanned.ToString());
+
+    private void AddMemberFieldChange(LocProjectMember member, string fieldName, string changeData)
+    {
+        if (CurrentProject!.Metadata.IsOnline)
+        {
+            CurrentProject.UncommitedChanges.Add(new LocEntryChange
+            {
+                Type       = EntryChangeType.MemberUpdated,
+                EntryId    = member.UserId,
+                EntrySubId = fieldName,
+                ChangeData = changeData
+            });
+        }
+
+        MarkDirty();
+    }
+
     public void MarkDirty()
     {
         if (!IsDirty)

@@ -1,6 +1,5 @@
-﻿@namespace App.Components.Translate
-@using DeusaldLocalizerCommon
-@using DeusaldSharp
+@namespace App.Components.Translate
+@using System.Linq
 @inject ProjectStateService _ProjectState
 
 @if (_Visible)
@@ -14,82 +13,108 @@
             <button class="um-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
         </div>
 
-        @if (_ProjectState.BackendService.IsOnline)
-        {
-            <div class="um-section">
-                <div class="um-section-label">Your account</div>
-                <div class="um-password-row">
-                    <input class="um-input" type="password" placeholder="New password"
-                           @bind="_NewPassword" @bind:event="oninput"/>
-                    <button class="um-btn um-btn-primary" @onclick="ChangePassword" disabled="@(string.IsNullOrWhiteSpace(_NewPassword))">
-                        Update
-                    </button>
-                </div>
-                @if (_PasswordMessage is not null)
-                {
-                    <div class="um-password-msg">@_PasswordMessage</div>
-                }
-            </div>
-        }
-
         <div class="um-section">
             <div class="um-section-header">
-                <span class="um-section-label">Members (@_ProjectState.CurrentProject!.Members.Count)</span>
-                @if (_IsSuperAdmin)
+                <span class="um-section-label">Members (@_ProjectState.CurrentProject!.ProjectMembers.Count)</span>
+                @if (_IsAdmin && !_FormOpen)
                 {
-                    <label class="um-accept-toggle" title="Allow new members to join">
-                        <input type="checkbox"
-                               checked="@_ProjectState.CurrentProject.AcceptNewMembers"
-                               @onchange="ToggleAcceptNewMembers"/>
-                        <span class="um-accept-label">Accept new members</span>
-                    </label>
+                    <button class="um-btn um-btn-primary um-btn-sm" @onclick="StartAdd">
+                        <i class="bi bi-plus-lg"></i> Add member
+                    </button>
                 }
             </div>
 
+            @if (_FormOpen)
+            {
+                <div class="um-form">
+                    <div class="um-form-title">@(_EditingMember == null ? "Add member" : "Edit member")</div>
+
+                    <div class="um-field">
+                        <label class="um-label">Username</label>
+                        <input class="um-input" type="text" placeholder="jane.doe"
+                               @bind="_Username" @bind:event="oninput" maxlength="60" />
+                    </div>
+
+                    <div class="um-field">
+                        <label class="um-label">
+                            Review languages <span class="um-label-hint">languages this member can review</span>
+                        </label>
+                        @if (_ProjectState.CurrentProject.Metadata.Languages.Count == 0)
+                        {
+                            <div class="um-empty">This project has no languages yet.</div>
+                        }
+                        else
+                        {
+                            <div class="um-perm-flags">
+                                @foreach (string code in _ProjectState.CurrentProject.Metadata.Languages)
+                                {
+                                    string c      = code;
+                                    bool   active = _SelectedLangs.Contains(c);
+                                    <button class="um-perm-chip @(active ? "active" : "")"
+                                            @onclick="() => ToggleLang(c)" title="@c">
+                                        @LangLabel(c)
+                                    </button>
+                                }
+                            </div>
+                        }
+                    </div>
+
+                    @if (_EditingMember != null)
+                    {
+                        <div class="um-field">
+                            <label class="um-ban-toggle">
+                                <input type="checkbox" @bind="_IsBanned" />
+                                <span>Banned <span class="um-label-hint">blocks this member from contributing</span></span>
+                            </label>
+                        </div>
+                    }
+
+                    <div class="um-form-footer">
+                        <button class="um-btn um-btn-ghost" @onclick="CloseForm">Cancel</button>
+                        <button class="um-btn um-btn-primary" @onclick="Confirm"
+                                disabled="@(string.IsNullOrWhiteSpace(_Username))">
+                            @(_EditingMember == null ? "Add member" : "Save changes")
+                        </button>
+                    </div>
+                </div>
+            }
+
             <div class="um-member-list">
-                @foreach (ProjectMemberDto member in _ProjectState.CurrentProject.Members)
+                @if (_ProjectState.CurrentProject.ProjectMembers.Count == 0)
                 {
-                    bool   isSelf      = member.UserId == _ProjectState.CurrentUser.Id;
-                    string joinedTitle = $"Joined {member.JoinedAt:MMM d, yyyy}";
+                    <div class="um-empty">No members yet.</div>
+                }
+                @foreach (LocProjectMember member in _ProjectState.CurrentProject.ProjectMembers)
+                {
+                    bool isSelf = member.UserId == _ProjectState.CurrentUser.UserId;
 
                     <div class="um-member-row">
-                        <div class="um-member-avatar" style="background:@AvatarColor(member.UserId)"
-                             title="@joinedTitle">
-                            @Initial(member.DisplayName)
+                        <div class="um-member-avatar" style="background:@AvatarColor(member.UserId)">
+                            @Initial(member.Username)
                         </div>
                         <div class="um-member-info">
                             <div class="um-member-name">
-                                @member.DisplayName
+                                @member.Username
                                 @if (isSelf)
                                 {
                                     <span class="um-member-you">you</span>
                                 }
+                                @if (member.IsAdmin)
+                                {
+                                    <span class="um-member-badge um-badge-admin">admin</span>
+                                }
+                                @if (member.IsBanned)
+                                {
+                                    <span class="um-member-badge um-badge-banned">banned</span>
+                                }
                             </div>
-                            @if (member.IsSuperAdmin || !_IsAdmin)
-                            {
-                                <div class="um-perm-readonly">@PermissionsSummary(member.Permissions, member.IsSuperAdmin)</div>
-                            }
-                            else
-                            {
-                                <div class="um-perm-flags">
-                                    @foreach (PermissionFlags flag in EnumExtensions.IterateAllValues<PermissionFlags>())
-                                    {
-                                        if (!flag.IsSingleFlagOn()) continue;
-                                        bool active = (member.Permissions & flag) == flag;
-                                        <button class="um-perm-chip @(active ? "active" : "")"
-                                                @onclick="() => TogglePermission(member, flag)"
-                                                title="@flag">
-                                            @FlagLabel(flag, member.IsSuperAdmin)
-                                        </button>
-                                    }
-                                </div>
-                            }
+                            <div class="um-perm-readonly">@PermissionsSummary(member)</div>
                         </div>
 
                         @if (_IsAdmin && !isSelf)
                         {
-                            <button class="um-remove-btn" title="Remove access" @onclick="() => RemoveMember(member)">
-                                <i class="bi bi-x"></i>
+                            <button class="um-edit-btn" title="Edit member" @onclick="() => StartEdit(member)">
+                                <i class="bi bi-pencil"></i>
                             </button>
                         }
                     </div>
@@ -101,22 +126,101 @@
 }
 
 @code {
-    private bool    _Visible;
-    private string  _NewPassword = "";
-    private string? _PasswordMessage;
+    private bool   _Visible;
+    private bool   _FormOpen;
+    private string _Username = "";
+    private bool   _IsBanned;
 
-    private bool _IsAdmin      => _ProjectState.CurrentUserHas(PermissionFlags.Admin);
-    private bool _IsSuperAdmin => _ProjectState.IsCurrentUserSuperAdmin();
+    private HashSet<string>   _SelectedLangs = new();
+    private LocProjectMember? _EditingMember;
+
+    private bool _IsAdmin => _ProjectState.CurrentUser.IsAdmin;
 
     public void Show()
     {
-        _NewPassword     = "";
-        _PasswordMessage = null;
-        _Visible         = true;
+        CloseForm();
+        _Visible = true;
         StateHasChanged();
     }
 
     private void Close() => _Visible = false;
+
+    // ── Add / Edit form ──────────────────────────────────────────────────────
+
+    private void StartAdd()
+    {
+        _EditingMember = null;
+        _Username      = "";
+        _SelectedLangs = new HashSet<string>();
+        _IsBanned      = false;
+        _FormOpen      = true;
+    }
+
+    private void StartEdit(LocProjectMember member)
+    {
+        _EditingMember = member;
+        _Username      = member.Username;
+        _SelectedLangs = new HashSet<string>(member.ReviewLanguagePermissions);
+        _IsBanned      = member.IsBanned;
+        _FormOpen      = true;
+    }
+
+    private void CloseForm()
+    {
+        _FormOpen      = false;
+        _EditingMember = null;
+        _Username      = "";
+        _SelectedLangs = new HashSet<string>();
+        _IsBanned      = false;
+    }
+
+    private void ToggleLang(string code)
+    {
+        if (!_SelectedLangs.Add(code)) _SelectedLangs.Remove(code);
+    }
+
+    private void Confirm()
+    {
+        string name = _Username.Trim();
+        if (string.IsNullOrWhiteSpace(name)) return;
+
+        LocProject project = _ProjectState.CurrentProject!;
+
+        if (_EditingMember == null)
+        {
+            LocProjectMember member = new()
+            {
+                UserId                    = Guid.NewGuid(),
+                Username                  = name,
+                ReviewLanguagePermissions = [.._SelectedLangs],
+                IsAdmin                   = false,
+                IsBanned                  = false,
+                HashedAccessToken         = string.Empty
+            };
+
+            project.ProjectMembers.Add(member);
+            _ProjectState.RecordMemberAdded(member);
+        }
+        else
+        {
+            // Record one change per actually-changed field (compared before mutating).
+            bool usernameChanged = _EditingMember.Username != name;
+            bool langsChanged    = !_EditingMember.ReviewLanguagePermissions.SetEquals(_SelectedLangs);
+            bool bannedChanged   = _EditingMember.IsBanned != _IsBanned;
+
+            _EditingMember.Username                  = name;
+            _EditingMember.ReviewLanguagePermissions = [.._SelectedLangs];
+            _EditingMember.IsBanned                  = _IsBanned;
+
+            if (usernameChanged) _ProjectState.RecordMemberUsernameChanged(_EditingMember);
+            if (langsChanged)    _ProjectState.RecordMemberReviewPermissionsChanged(_EditingMember);
+            if (bannedChanged)   _ProjectState.RecordMemberBanStatusChanged(_EditingMember);
+        }
+
+        CloseForm();
+    }
+
+    // ── Display helpers ──────────────────────────────────────────────────────
 
     private static string Initial(string name) =>
         string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();
@@ -130,60 +234,16 @@
         return _AvatarPalette[idx];
     }
 
-    private static string FlagLabel(PermissionFlags flag, bool superAdmin) => flag switch
+    private static string LangLabel(string code)
     {
-        PermissionFlags.Vote    => "Voter",
-        PermissionFlags.Suggest => "Contributor",
-        PermissionFlags.Review  => "Reviewer",
-        PermissionFlags.Admin   => superAdmin ? "Super Admin" : "Admin",
-        _                       => flag.ToString(),
-    };
-
-    private static string PermissionsSummary(PermissionFlags flags, bool superAdmin)
-    {
-        if (flags == PermissionFlags.None) return "No access";
-        List<string> labels = new List<string>();
-        foreach (PermissionFlags f in EnumExtensions.IterateAllValues<PermissionFlags>())
-        {
-            if (!f.IsSingleFlagOn()) continue;
-            if ((flags & f) == f) labels.Add(FlagLabel(f, superAdmin));
-        }
-
-        return string.Join(", ", labels);
+        CultureEntry? entry = CultureService.FindByCode(code);
+        return entry != null ? $"{entry.FlagEmoji} {entry.ShortName}" : code;
     }
 
-    private void ToggleAcceptNewMembers(ChangeEventArgs e)
+    private static string PermissionsSummary(LocProjectMember member)
     {
-        // TODO: Remove it
-        //_ProjectState.BackendService.SetAcceptNewMembersAsync((bool)(e.Value ?? false)).Forget();
+        if (member.IsAdmin) return "Admin — full access";
+        if (member.ReviewLanguagePermissions.Count == 0) return "No review languages";
+        return string.Join(", ", member.ReviewLanguagePermissions.Select(LangLabel));
     }
-
-    private void TogglePermission(ProjectMemberDto member, PermissionFlags flag)
-    {
-        /*if (!_IsSuperAdmin && flag == PermissionFlags.Admin) return;
-        PermissionFlags newPermissions = (member.Permissions & flag) == flag
-                                             ? member.Permissions & ~flag
-                                             : member.Permissions | flag;
-        if ((newPermissions & PermissionFlags.Admin) != 0) newPermissions = PermissionFlags.All;
-
-        _ProjectState.BackendService.SetNewUserPermissionsAsync(member, newPermissions).Forget();*/
-    }
-
-    private void RemoveMember(ProjectMemberDto member)
-    {
-        //_ProjectState.BackendService.RemoveUserAsync(member).Forget();
-    }
-
-    private async void ChangePassword()
-    {
-        if (string.IsNullOrWhiteSpace(_NewPassword)) return;
-        (bool, string) result = await _ProjectState.BackendService.OnlineChangePasswordAsync(_NewPassword);
-        if (result.Item1)
-        {
-            _PasswordMessage = "Password updated.";
-            _NewPassword     = "";
-        }
-        else _PasswordMessage = result.Item2;
-    }
-
 }

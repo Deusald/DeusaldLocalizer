@@ -1,4 +1,4 @@
-﻿.um-backdrop {
+.um-backdrop {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,.6);
@@ -72,42 +72,7 @@
     color: #7a7b83;
 }
 
-/* ── AcceptNewMembers toggle ──────────────────────────────────────────────── */
-
-.um-accept-toggle {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    cursor: pointer;
-    font-size: 12px;
-    color: #8a8b93;
-}
-.um-accept-toggle input[type="checkbox"] {
-    accent-color: #5b6cff;
-    width: 14px;
-    height: 14px;
-    cursor: pointer;
-}
-.um-accept-label { user-select: none; }
-
-/* ── Password row ─────────────────────────────────────────────────────────── */
-
-.um-password-row {
-    display: flex;
-    gap: 8px;
-}
-
-.um-input {
-    flex: 1;
-    background: #12131a;
-    border: 1px solid #2a2b35;
-    border-radius: 7px;
-    color: #e8e8ea;
-    font-size: 13px;
-    padding: 8px 11px;
-}
-.um-input:focus { border-color: #5b6cff; outline: none; box-shadow: 0 0 0 3px rgba(91,108,255,.18); }
-.um-input::placeholder { color: #44454e; }
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
 
 .um-btn {
     padding: 8px 14px;
@@ -118,13 +83,85 @@
     border: 1px solid transparent;
 }
 .um-btn:disabled { opacity: .4; cursor: not-allowed; }
+.um-btn-sm { padding: 5px 10px; font-size: 12px; }
 .um-btn-primary { background: #5b6cff; color: #fff; }
 .um-btn-primary:hover:not(:disabled) { background: #6c7cff; }
+.um-btn-ghost { background: transparent; border-color: #2a2b35; color: #a8a9b3; }
+.um-btn-ghost:hover { background: #23242e; color: #d8d8df; }
 
-.um-password-msg {
+/* ── Add / Edit form ──────────────────────────────────────────────────────── */
+
+.um-form {
+    background: #14151c;
+    border: 1px solid #2a2b35;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.um-form-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e8e8ea;
+}
+
+.um-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.um-label {
     font-size: 12px;
-    color: #3ad98a;
-    margin-top: 8px;
+    font-weight: 500;
+    color: #a8a9b3;
+}
+.um-label-hint {
+    font-weight: 400;
+    color: #5a5b63;
+    font-size: 11px;
+}
+
+.um-input {
+    background: #12131a;
+    border: 1px solid #2a2b35;
+    border-radius: 7px;
+    color: #e8e8ea;
+    font-size: 13px;
+    padding: 8px 11px;
+}
+.um-input:focus { border-color: #5b6cff; outline: none; box-shadow: 0 0 0 3px rgba(91,108,255,.18); }
+.um-input::placeholder { color: #44454e; }
+
+.um-ban-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 12.5px;
+    color: #c8c8cf;
+}
+.um-ban-toggle input[type="checkbox"] {
+    accent-color: #ff6b6b;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.um-form-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.um-empty {
+    font-size: 12px;
+    color: #6a6b73;
+    padding: 6px 2px;
 }
 
 /* ── Member list ──────────────────────────────────────────────────────────── */
@@ -175,6 +212,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
+    flex-wrap: wrap;
 }
 
 .um-member-you {
@@ -186,19 +224,29 @@
     border-radius: 4px;
 }
 
-.um-member-email {
-    font-size: 11px;
-    color: #6a6b73;
-    margin-top: 1px;
+.um-member-badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+.um-badge-admin {
+    color: #8d9aff;
+    background: rgba(91,108,255,.15);
+}
+.um-badge-banned {
+    color: #ff6b6b;
+    background: rgba(255,69,58,.14);
 }
 
 .um-perm-readonly {
     font-size: 11.5px;
     color: #7a7b83;
-    flex-shrink: 0;
 }
 
-/* ── Permission chips ─────────────────────────────────────────────────────── */
+/* ── Language permission chips ────────────────────────────────────────────── */
 
 .um-perm-flags {
     display: flex;
@@ -207,42 +255,42 @@
 }
 
 .um-perm-chip {
-    font-size: 10.5px;
+    font-size: 11px;
     font-weight: 500;
-    padding: 4px 8px;
+    padding: 4px 9px;
     border-radius: 5px;
     background: #1e1f28;
     border: 1px solid #2a2b35;
-    color: #5a5b63;
+    color: #7a7b83;
     cursor: pointer;
     transition: all .12s;
 }
-.um-perm-chip:hover { border-color: #3a3b44; color: #8a8b93; }
+.um-perm-chip:hover { border-color: #3a3b44; color: #a8a9b3; }
 .um-perm-chip.active {
     background: rgba(91,108,255,.15);
     border-color: rgba(91,108,255,.4);
     color: #8d9aff;
 }
 
-/* ── Remove button ────────────────────────────────────────────────────────── */
+/* ── Edit button ──────────────────────────────────────────────────────────── */
 
-.um-remove-btn {
-    width: 22px;
-    height: 22px;
+.um-edit-btn {
+    width: 26px;
+    height: 26px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     background: transparent;
     border: 1px solid transparent;
-    border-radius: 5px;
-    color: #5a5b63;
+    border-radius: 6px;
+    color: #6a6b73;
     font-size: 13px;
     cursor: pointer;
     transition: all .12s;
 }
-.um-remove-btn:hover {
-    background: rgba(255,69,58,.12);
-    border-color: rgba(255,69,58,.3);
-    color: #ff6b6b;
+.um-edit-btn:hover {
+    background: #23242e;
+    border-color: #2a2b35;
+    color: #8d9aff;
 }
