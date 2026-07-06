@@ -1,0 +1,50 @@
+{
+  "Id": "10000000-0000-4000-8000-000000000001",
+  "CategoryId": "c2c2c2c2-0000-4000-8000-000000000002",
+  "KeyName": "ui.button.play",
+  "Description": "Main menu — starts the game.",
+  "CreatedAt": "2026-05-01T10:00:00Z",
+  "UpdatedAt": "2026-06-10T12:00:00Z",
+  "MaxLength": 20,
+  "Tags": [ "ui", "button" ],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "436e61016e26fcb773b9725745cbbf0afe7f001ea26041a814a7712c2925c442",
+      "Text": "Play",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-01T10:00:00Z",
+      "Suggestions": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "436e61016e26fcb773b9725745cbbf0afe7f001ea26041a814a7712c2925c442",
+      "Text": "Spielen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-03T11:00:00Z",
+      "Suggestions": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "436e61016e26fcb773b9725745cbbf0afe7f001ea26041a814a7712c2925c442",
+      "Text": "Jouer",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-04T09:30:00Z",
+      "Suggestions": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "436e61016e26fcb773b9725745cbbf0afe7f001ea26041a814a7712c2925c442",
+      "Text": "Graj",
+      "Status": "Suggested",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-06-10T12:00:00Z",
+      "Suggestions": []
+    }
+  ]
+}

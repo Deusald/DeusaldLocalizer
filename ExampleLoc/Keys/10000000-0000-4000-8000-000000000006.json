@@ -1,0 +1,80 @@
+{
+  "Id": "10000000-0000-4000-8000-000000000006",
+  "CategoryId": "c4c4c4c4-0000-4000-8000-000000000004",
+  "KeyName": "item.gold.count",
+  "Description": "HUD label for the player's gold, with plural handling.",
+  "CreatedAt": "2026-05-03T09:20:00Z",
+  "UpdatedAt": "2026-06-12T15:00:00Z",
+  "MaxLength": 0,
+  "Tags": [ "item", "hud" ],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "20000000-0000-4000-8000-000000000003",
+      "Name": "goldCount",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "5"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "d9352e33dad62b98e2cf7a3c94c2aa423f01b8c15079a830abb16ca8c671f89d",
+      "Text": "You have {goldCount} {goldCount:plural:coin|coins}.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-03T09:20:00Z",
+      "Suggestions": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "d9352e33dad62b98e2cf7a3c94c2aa423f01b8c15079a830abb16ca8c671f89d",
+      "Text": "Du hast {goldCount} {goldCount:plural:Münze|Münzen}.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-11T10:00:00Z",
+      "Suggestions": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "",
+      "Text": "",
+      "Status": "Suggested",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-06-12T15:00:00Z",
+      "Suggestions": [
+        {
+          "Id": "50000000-0000-4000-8000-000000000001",
+          "Text": "Vous avez {goldCount} {goldCount:plural:pièce|pièces}.",
+          "AuthorId": "22222222-2222-4222-8222-222222222222",
+          "CreatedAt": "2026-06-12T15:00:00Z",
+          "Votes": [
+            {
+              "Id": "60000000-0000-4000-8000-000000000001",
+              "UserId": "11111111-1111-4111-8111-111111111111",
+              "Value": 1,
+              "CastAt": "2026-06-12T16:00:00Z"
+            },
+            {
+              "Id": "60000000-0000-4000-8000-000000000002",
+              "UserId": "33333333-3333-4333-8333-333333333333",
+              "Value": 1,
+              "CastAt": "2026-06-13T08:00:00Z"
+            }
+          ],
+          "SourceHash": "d9352e33dad62b98e2cf7a3c94c2aa423f01b8c15079a830abb16ca8c671f89d"
+        }
+      ]
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "",
+      "Text": "",
+      "Status": "Untranslated",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-03T09:20:00Z",
+      "Suggestions": []
+    }
+  ]
+}

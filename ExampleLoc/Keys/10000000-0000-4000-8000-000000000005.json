@@ -1,0 +1,50 @@
+{
+  "Id": "10000000-0000-4000-8000-000000000005",
+  "CategoryId": "c4c4c4c4-0000-4000-8000-000000000004",
+  "KeyName": "item.potion.health.name",
+  "Description": "Display name of the basic healing consumable.",
+  "CreatedAt": "2026-05-03T09:00:00Z",
+  "UpdatedAt": "2026-06-01T10:00:00Z",
+  "MaxLength": 24,
+  "Tags": [ "item", "consumable" ],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a85b2d459b8ed9a9a46186c0469d9ec594376d5f62f93ca573d167daaa7306c0",
+      "Text": "Health Potion",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-03T09:00:00Z",
+      "Suggestions": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a85b2d459b8ed9a9a46186c0469d9ec594376d5f62f93ca573d167daaa7306c0",
+      "Text": "Heiltrank",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-08T12:00:00Z",
+      "Suggestions": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a85b2d459b8ed9a9a46186c0469d9ec594376d5f62f93ca573d167daaa7306c0",
+      "Text": "Potion de soin",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-09T09:00:00Z",
+      "Suggestions": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a85b2d459b8ed9a9a46186c0469d9ec594376d5f62f93ca573d167daaa7306c0",
+      "Text": "Mikstura zdrowia",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-10T14:00:00Z",
+      "Suggestions": []
+    }
+  ]
+}

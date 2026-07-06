@@ -28,10 +28,10 @@
         <MauiXamlInflator>SourceGen</MauiXamlInflator>
 
         <!-- Display name -->
-        <ApplicationTitle>App</ApplicationTitle>
+        <ApplicationTitle>Deusald Localizer</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId>com.companyname.app</ApplicationId>
+        <ApplicationId>com.deusald.localizer</ApplicationId>
 
         <!-- Versions -->
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>

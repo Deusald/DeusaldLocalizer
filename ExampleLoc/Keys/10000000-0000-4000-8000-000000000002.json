@@ -1,0 +1,58 @@
+{
+  "Id": "10000000-0000-4000-8000-000000000002",
+  "CategoryId": "c2c2c2c2-0000-4000-8000-000000000002",
+  "KeyName": "ui.button.settings",
+  "Description": "Main menu — opens the settings screen.",
+  "CreatedAt": "2026-05-01T10:05:00Z",
+  "UpdatedAt": "2026-06-11T08:00:00Z",
+  "MaxLength": 24,
+  "Tags": [ "ui", "button" ],
+  "Flags": [
+    {
+      "Id": "30000000-0000-4000-8000-000000000001",
+      "Type": "NeedsReview",
+      "Note": "Check that translations fit on small screens without truncation.",
+      "CreatedBy": "11111111-1111-4111-8111-111111111111",
+      "CreatedAt": "2026-06-11T08:00:00Z"
+    }
+  ],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+      "Text": "Settings",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-01T10:05:00Z",
+      "Suggestions": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+      "Text": "Einstellungen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-03T11:05:00Z",
+      "Suggestions": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+      "Text": "Paramètres",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-04T09:35:00Z",
+      "Suggestions": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "",
+      "Text": "",
+      "Status": "Untranslated",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-01T10:05:00Z",
+      "Suggestions": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "UserId": "11111111-1111-4111-8111-111111111111",
+  "Username": "adam",
+  "ReviewLanguagePermissions": [
+    "en-US",
+    "de-DE",
+    "fr-FR",
+    "pl-PL"
+  ],
+  "IsAdmin": true,
+  "IsBanned": false,
+  "HashedAccessToken": ""
+}

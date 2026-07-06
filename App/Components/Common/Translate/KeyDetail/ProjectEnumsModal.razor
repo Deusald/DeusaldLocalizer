@@ -54,13 +54,13 @@
                     <div class="pem-editor-fields">
                         <div class="pem-field">
                             <label class="pem-label">Name</label>
-                            <input class="pem-input" type="text" placeholder="Gender"
+                            <input class="pem-input" type="text" placeholder="WeekDay"
                                    @bind="_SelectedEnum.Name" @bind:event="oninput"
                                    @bind:after="MarkDirty" />
                         </div>
                         <div class="pem-field">
                             <label class="pem-label">Description <span class="pem-label-hint">optional</span></label>
-                            <input class="pem-input" type="text" placeholder="Grammatical gender"
+                            <input class="pem-input" type="text" placeholder="Days of the week"
                                    @bind="_SelectedEnum.Description" @bind:event="oninput"
                                    @bind:after="MarkDirty" />
                         </div>
@@ -83,7 +83,7 @@
                                        value="@ent.IntValue"
                                        @onchange="e => { ent.IntValue = int.TryParse(e.Value?.ToString(), out int v) ? v : 0; MarkDirty(); }" />
                                 <input class="pem-input pem-entry-str" type="text"
-                                       placeholder="Male"
+                                       placeholder="Monday"
                                        @bind="ent.StringValue" @bind:event="oninput"
                                        @bind:after="MarkDirty" />
                                 <button class="pem-entry-remove" @onclick="() => RemoveEntry(ent)">

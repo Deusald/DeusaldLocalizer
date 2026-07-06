@@ -1,0 +1,10 @@
+{
+  "UserId": "22222222-2222-4222-8222-222222222222",
+  "Username": "marie",
+  "ReviewLanguagePermissions": [
+    "fr-FR"
+  ],
+  "IsAdmin": false,
+  "IsBanned": false,
+  "HashedAccessToken": ""
+}

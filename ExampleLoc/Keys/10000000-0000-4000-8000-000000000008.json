@@ -1,0 +1,95 @@
+{
+  "Id": "10000000-0000-4000-8000-000000000008",
+  "CategoryId": "c2c2c2c2-0000-4000-8000-000000000002",
+  "KeyName": "ui.button.quit",
+  "Description": "Main menu — exits the game. French translation is disputed between two candidates.",
+  "CreatedAt": "2026-05-01T10:10:00Z",
+  "UpdatedAt": "2026-06-13T12:00:00Z",
+  "MaxLength": 20,
+  "Tags": [ "ui", "button" ],
+  "Flags": [
+    {
+      "Id": "30000000-0000-4000-8000-000000000003",
+      "Type": "Disputed",
+      "Note": "Two competing French translations — needs a decision.",
+      "CreatedBy": "22222222-2222-4222-8222-222222222222",
+      "CreatedAt": "2026-06-13T12:00:00Z"
+    }
+  ],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "b3eb37acb66ba4bbe8fb1ba296815daf194be94f5a5fb50dab2fb5e4a57ba29e",
+      "Text": "Quit",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-01T10:10:00Z",
+      "Suggestions": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "b3eb37acb66ba4bbe8fb1ba296815daf194be94f5a5fb50dab2fb5e4a57ba29e",
+      "Text": "Beenden",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-05T11:00:00Z",
+      "Suggestions": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "",
+      "Text": "",
+      "Status": "Suggested",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-06-13T12:00:00Z",
+      "Suggestions": [
+        {
+          "Id": "50000000-0000-4000-8000-000000000002",
+          "Text": "Quitter",
+          "AuthorId": "22222222-2222-4222-8222-222222222222",
+          "CreatedAt": "2026-06-13T10:00:00Z",
+          "Votes": [
+            {
+              "Id": "60000000-0000-4000-8000-000000000003",
+              "UserId": "11111111-1111-4111-8111-111111111111",
+              "Value": 1,
+              "CastAt": "2026-06-13T10:30:00Z"
+            },
+            {
+              "Id": "60000000-0000-4000-8000-000000000004",
+              "UserId": "33333333-3333-4333-8333-333333333333",
+              "Value": 1,
+              "CastAt": "2026-06-13T11:00:00Z"
+            }
+          ],
+          "SourceHash": "b3eb37acb66ba4bbe8fb1ba296815daf194be94f5a5fb50dab2fb5e4a57ba29e"
+        },
+        {
+          "Id": "50000000-0000-4000-8000-000000000003",
+          "Text": "Sortir",
+          "AuthorId": "44444444-4444-4444-8444-444444444444",
+          "CreatedAt": "2026-06-13T11:30:00Z",
+          "Votes": [
+            {
+              "Id": "60000000-0000-4000-8000-000000000005",
+              "UserId": "22222222-2222-4222-8222-222222222222",
+              "Value": -1,
+              "CastAt": "2026-06-13T11:45:00Z"
+            }
+          ],
+          "SourceHash": "b3eb37acb66ba4bbe8fb1ba296815daf194be94f5a5fb50dab2fb5e4a57ba29e"
+        }
+      ]
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "b3eb37acb66ba4bbe8fb1ba296815daf194be94f5a5fb50dab2fb5e4a57ba29e",
+      "Text": "Wyjdź",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-05-10T15:00:00Z",
+      "Suggestions": []
+    }
+  ]
+}

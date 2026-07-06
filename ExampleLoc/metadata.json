@@ -1,0 +1,17 @@
+{
+  "Id": "a1a1a1a1-0000-4000-8000-000000000001",
+  "Name": "Example RPG",
+  "Slug": "example-rpg",
+  "Description": "A sample localization project for the Deusald Localizer demo — a small fantasy RPG translated into English, German, French and Polish.",
+  "ApiUrl": "",
+  "MainLanguageId": "en-US",
+  "SyncId": "99999999-0000-4000-8000-000000000001",
+  "UpdatedAt": "2026-06-15T09:00:00Z",
+  "FormatVersion": 1,
+  "Languages": [
+    "en-US",
+    "de-DE",
+    "fr-FR",
+    "pl-PL"
+  ]
+}
