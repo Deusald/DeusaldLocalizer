@@ -269,7 +269,7 @@
 
     private async Task LoadOnlineProject(LocProject project, string path)
     {
-        (Guid UserId, string Token)? cached = await AuthTokenStorage.GetAsync(project.Metadata.Id);
+        (Guid UserId, string Token)? cached = await AuthTokenStorage.GetAsync(project.Metadata.Id, path);
 
         if (cached != null)
         {
@@ -282,7 +282,7 @@
             }
 
             // Token no longer valid — remove and fall through to login
-            AuthTokenStorage.Remove(project.Metadata.Id);
+            AuthTokenStorage.Remove(project.Metadata.Id, path);
         }
 
         // No valid cached credentials — show the login modal
@@ -341,7 +341,7 @@
         }
 
         // Returning user — cache the raw token for next time and load straight in.
-        await AuthTokenStorage.SaveAsync(projectId, member!.UserId, credentials.accessToken);
+        await AuthTokenStorage.SaveAsync(projectId, _PendingPath, member!.UserId, credentials.accessToken);
 
         _ShowLoginModal = false;
         FinalizeLoad(_PendingProject, _PendingPath, member.UserId, Guid.NewGuid());

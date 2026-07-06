@@ -177,7 +177,7 @@ public class ProjectStateService
         if (!CurrentProject.Metadata.IsOnline)
             return new SyncOperationResult { Outcome = SyncOutcome.NotOnline };
 
-        (Guid UserId, string Token)? creds = await AuthTokenStorage.GetAsync(CurrentProject.Metadata.Id);
+        (Guid UserId, string Token)? creds = await AuthTokenStorage.GetAsync(CurrentProject.Metadata.Id, CurrentProjectPath!);
         if (creds is null)
             return new SyncOperationResult { Outcome = SyncOutcome.NoCredentials };
 
@@ -251,7 +251,7 @@ public class ProjectStateService
         if (CurrentProject.UncommitedChanges.Count == 0)
             return new PushOperationResult { Outcome = PushOutcome.Success };
 
-        (Guid UserId, string Token)? creds = await AuthTokenStorage.GetAsync(CurrentProject.Metadata.Id);
+        (Guid UserId, string Token)? creds = await AuthTokenStorage.GetAsync(CurrentProject.Metadata.Id, CurrentProjectPath!);
         if (creds is null)
             return new PushOperationResult { Outcome = PushOutcome.NoCredentials };
 
@@ -349,7 +349,7 @@ public class ProjectStateService
         // a failed follow-up pull can never lock the member out, then cache the token for next time.
         member.HashedAccessToken = change.ChangeData;
         await ProjectFileService.WriteEntityForChangeAsync(project, path, change);
-        await AuthTokenStorage.SaveAsync(project.Metadata.Id, member.UserId, newToken);
+        await AuthTokenStorage.SaveAsync(project.Metadata.Id, path, member.UserId, newToken);
 
         LocProject reloaded = await PullLatestAsync(project, path, member.UserId, newToken);
 
@@ -374,7 +374,7 @@ public class ProjectStateService
         if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath) || !CurrentProject.Metadata.IsOnline)
             return new InitialTokenResult { Error = "No online project is open." };
 
-        (Guid UserId, string Token)? creds = await AuthTokenStorage.GetAsync(CurrentProject.Metadata.Id);
+        (Guid UserId, string Token)? creds = await AuthTokenStorage.GetAsync(CurrentProject.Metadata.Id, CurrentProjectPath!);
         if (creds is null)
             return new InitialTokenResult { Error = "You are not signed in on this device." };
 
@@ -399,7 +399,7 @@ public class ProjectStateService
         // preserves the pending queue and re-validates it against the freshly pulled project.
         CurrentUser.HashedAccessToken = change.ChangeData;
         await ProjectFileService.WriteEntityForChangeAsync(CurrentProject, CurrentProjectPath, change);
-        await AuthTokenStorage.SaveAsync(CurrentProject.Metadata.Id, CurrentUser.UserId, newToken);
+        await AuthTokenStorage.SaveAsync(CurrentProject.Metadata.Id, CurrentProjectPath!, CurrentUser.UserId, newToken);
 
         await SyncAsync();
 
