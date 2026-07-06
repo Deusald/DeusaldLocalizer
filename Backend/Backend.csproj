@@ -5,6 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>DeusaldLocalizerBackend</RootNamespace>
+        <UserSecretsId>358fb480-d7a9-4937-87fa-608f6a425b57</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
