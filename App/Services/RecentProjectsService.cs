@@ -24,6 +24,26 @@ public static class RecentProjectsService
     public static void ClearRecentProjects()
     {
         Preferences.Default.Remove(_RECENT_PROJECTS_KEY);
+        // Forgetting the projects should also forget the sign-ins cached for them, so no access
+        // token lingers in secure storage for a project the user can no longer see.
+        AuthTokenStorage.RemoveAll();
+    }
+
+    /// <summary>
+    /// Drops a single project from the recent list and removes its cached sign-in credential. Returns
+    /// the updated list. Entries saved before <see cref="RecentProjectEntry.ProjectId"/> existed carry
+    /// an empty Id, so their token (if any) cannot be targeted and is left for the next full clear.
+    /// </summary>
+    public static List<RecentProjectEntry> RemoveRecentProject(RecentProjectEntry entry)
+    {
+        List<RecentProjectEntry> projects = LoadRecentProjects();
+        projects.RemoveAll(r => r.Path == entry.Path);
+        Preferences.Default.Set(_RECENT_PROJECTS_KEY, JsonConvert.SerializeObject(projects));
+
+        if (entry.ProjectId != Guid.Empty)
+            AuthTokenStorage.Remove(entry.ProjectId, entry.Path);
+
+        return projects;
     }
 
     public static List<RecentProjectEntry> UpdateRecentProjects(LocProject project, string path, bool isRemote)
@@ -42,6 +62,7 @@ public static class RecentProjectsService
         projects.RemoveAll(r => r.Path == path);
         projects.Insert(0, new RecentProjectEntry
         {
+            ProjectId      = project.Metadata.Id,
             ProjectName    = project.Metadata.Name,
             Path           = path,
             KeyCount       = project.Keys.Count,
@@ -61,6 +82,7 @@ public static class RecentProjectsService
 
 public record RecentProjectEntry
 {
+    public Guid     ProjectId      { get; init; }
     public string   ProjectName    { get; init; } = "";
     public string   Path           { get; init; } = "";
     public int      KeyCount       { get; init; }

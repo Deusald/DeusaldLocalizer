@@ -118,34 +118,43 @@
                                       ? $"{recent.KeyCount} keys · {recent.LangCount} langs · {recent.LastEditedLabel}"
                                       : recent.LastEditedLabel;
 
-                    <button class="home-recent-item"
-                            @onclick="() => LoadFromPath(recent.Path)"
-                            disabled="@_IsLoading">
-                        <div class="home-recent-swatch" style="background: @swatch">@initial</div>
-                        <div class="home-recent-meta">
-                            <div class="home-recent-top">
-                                <span class="home-recent-name">@recent.ProjectName</span>
-                                @if (recent.IsRemote)
-                                {
-                                    <span class="home-recent-tag-remote">REMOTE</span>
-                                }
-                            </div>
-                            <div class="home-recent-sub">@meta</div>
-                        </div>
-                        @if (recent.KeyCount > 0)
-                        {
-                            <div class="home-recent-progress">
-                                <div class="home-recent-progress-top">
-                                    <span>@recent.LangCount langs</span>
-                                    <span class="home-recent-progress-pct">@pct%</span>
+                    <div class="home-recent-item-wrap">
+                        <button class="home-recent-item"
+                                @onclick="() => LoadFromPath(recent.Path)"
+                                disabled="@_IsLoading"
+                                title="@recent.Path">
+                            <div class="home-recent-swatch" style="background: @swatch">@initial</div>
+                            <div class="home-recent-meta">
+                                <div class="home-recent-top">
+                                    <span class="home-recent-name">@recent.ProjectName</span>
+                                    @if (recent.IsRemote)
+                                    {
+                                        <span class="home-recent-tag-remote">REMOTE</span>
+                                    }
                                 </div>
-                                <div class="home-recent-progress-bar">
-                                    <div class="home-recent-progress-fill" style="width: @pct%"></div>
-                                </div>
+                                <div class="home-recent-sub">@meta</div>
                             </div>
-                        }
-                        <i class="bi bi-chevron-right home-recent-arrow"></i>
-                    </button>
+                            @if (recent.KeyCount > 0)
+                            {
+                                <div class="home-recent-progress">
+                                    <div class="home-recent-progress-top">
+                                        <span>@recent.LangCount langs</span>
+                                        <span class="home-recent-progress-pct">@pct%</span>
+                                    </div>
+                                    <div class="home-recent-progress-bar">
+                                        <div class="home-recent-progress-fill" style="width: @pct%"></div>
+                                    </div>
+                                </div>
+                            }
+                            <i class="bi bi-chevron-right home-recent-arrow"></i>
+                        </button>
+                        <button class="home-recent-remove"
+                                @onclick="() => RemoveRecent(recent)"
+                                disabled="@_IsLoading"
+                                title="Remove from recent">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
                 }
             </div>
         }
@@ -413,5 +422,10 @@
     {
         _RecentProjects.Clear();
         RecentProjectsService.ClearRecentProjects();
+    }
+
+    private void RemoveRecent(RecentProjectEntry recent)
+    {
+        _RecentProjects = RecentProjectsService.RemoveRecentProject(recent);
     }
 }

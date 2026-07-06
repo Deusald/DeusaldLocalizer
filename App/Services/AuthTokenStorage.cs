@@ -88,4 +88,22 @@ public static class AuthTokenStorage
             // Ignore — nothing to clean up if storage is unavailable.
         }
     }
+
+    /// <summary>
+    /// Wipes every cached sign-in credential for the app. Used when the user clears their recent
+    /// projects — no project reference remains, so no per-project key can be reconstructed. This is
+    /// the only feature that writes to <see cref="SecureStorage"/>, so clearing all of it removes
+    /// exactly the saved access tokens and nothing else.
+    /// </summary>
+    public static void RemoveAll()
+    {
+        try
+        {
+            SecureStorage.Default.RemoveAll();
+        }
+        catch
+        {
+            // Ignore — nothing to clean up if storage is unavailable.
+        }
+    }
 }

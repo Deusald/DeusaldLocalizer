@@ -180,6 +180,11 @@
     padding-right: 4px;
 }
 
+.home-recent-item-wrap {
+    position: relative;
+    flex: none;
+}
+
 .home-recent-item {
     display: flex;
     align-items: center;
@@ -201,6 +206,31 @@
 }
 
 .home-recent-item:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Remove-from-recent button (overlays the item, appears on hover) ──────── */
+
+.home-recent-remove {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    background: rgba(0,0,0,.4);
+    color: #9a9ba3;
+    font-size: 15px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .15s, background .15s, color .15s;
+}
+.home-recent-item-wrap:hover .home-recent-remove { opacity: 1; }
+.home-recent-remove:hover { background: rgba(255,107,107,.16); color: #ff6b6b; }
+.home-recent-remove:disabled { cursor: not-allowed; opacity: 0; }
 
 .home-recent-swatch {
     width: 42px;

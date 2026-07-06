@@ -339,7 +339,7 @@ public class ProjectStateService
         }
         catch (Exception ex)
         {
-            return new InitialTokenResult { Error = ex.Message };
+            return new InitialTokenResult { Error = FriendlyError(ex) };
         }
 
         if (push is null || push.Status != PushStatus.Success)
@@ -388,7 +388,7 @@ public class ProjectStateService
         }
         catch (Exception ex)
         {
-            return new InitialTokenResult { Error = ex.Message };
+            return new InitialTokenResult { Error = FriendlyError(ex) };
         }
 
         if (push is null || push.Status != PushStatus.Success)
@@ -414,6 +414,12 @@ public class ProjectStateService
         ChangeData = AccessTokenService.HashToken(rawToken),
     };
 
+    /// <summary>Maps a transport-layer failure to a short, user-facing reason; other errors pass through.</summary>
+    private static string FriendlyError(Exception ex) =>
+        ex is System.Net.Http.HttpRequestException or TaskCanceledException
+            ? "Could not reach the server. Check your connection and try again."
+            : ex.Message;
+
     /// <summary>Pushes a single change to the bot, authenticated with an explicit token.</summary>
     private Task<PushResponse?> PushSingleAsync(LocProject project, Guid userId, string authToken, LocEntryChange change) =>
         _Api.PushAsync(project.Metadata.ApiUrl, project.Metadata.Id, userId, authToken,
@@ -426,22 +432,24 @@ public class ProjectStateService
     /// </summary>
     private async Task<LocProject> PullLatestAsync(LocProject project, string path, Guid userId, string token)
     {
-        SyncResponse? response;
         try
         {
-            response = await _Api.SyncAsync(
+            SyncResponse? response = await _Api.SyncAsync(
                 project.Metadata.ApiUrl, project.Metadata.Id, userId, token, project.Metadata.SyncId);
+
+            if (response is null || response.Status == SyncStatus.UpToDate)
+                return project;
+
+            await ApplyServerFilesAsync(path, response);
+            return await ProjectFileService.OpenAsync(path);
         }
         catch
         {
+            // Best-effort pull: the token rotation is already committed and cached, so any transport
+            // OR disk failure here (dropped connection, half-applied delta) must not crash sign-in.
+            // Fall back to the in-memory project and let the next manual sync pick up the server delta.
             return project;
         }
-
-        if (response is null || response.Status == SyncStatus.UpToDate)
-            return project;
-
-        await ApplyServerFilesAsync(path, response);
-        return await ProjectFileService.OpenAsync(path);
     }
 
     private void RevalidateConflicts()
