@@ -318,3 +318,22 @@
 /* ── Error ───────────────────────────────────────────────────────────────── */
 
 .home-error { margin-bottom: 1rem; }
+
+/* ── Version footer ──────────────────────────────────────────────────────── */
+
+.home-version {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 20px;
+    font-size: 11.5px;
+    color: #4a4b54;
+    letter-spacing: .02em;
+}
+
+.home-version-sep { color: #33343d; }
+
+.home-version-hash {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    color: #6a6b73;
+}

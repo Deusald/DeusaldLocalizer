@@ -13,6 +13,7 @@
 
         <OutputType>Exe</OutputType>
         <RootNamespace>App</RootNamespace>
+        <AssemblyName>DeusaldLocalizer</AssemblyName>
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -34,7 +35,8 @@
         <ApplicationId>com.deusald.localizer</ApplicationId>
 
         <!-- Versions -->
-        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <Version>1.0.0</Version>
+        <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
         <ApplicationVersion>1</ApplicationVersion>
 
         <!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
@@ -81,5 +83,24 @@
       <Folder Include="Resources\Images\" />
       <Folder Include="Resources\Splash\" />
     </ItemGroup>
+
+    <!-- Capture the short git commit hash and append it to the assembly's
+         informational version ("1.0.0+<hash>"). Read back at runtime via BuildInfo.
+         Falls back silently to no hash when git is unavailable (e.g. source-only build). -->
+    <Target Name="SetGitCommitHash"
+            BeforeTargets="GetAssemblyVersion;GenerateAssemblyInfo"
+            Condition="'$(SourceRevisionId)' == ''">
+        <Exec Command="git rev-parse --short HEAD"
+              ConsoleToMSBuild="true"
+              IgnoreExitCode="true"
+              ContinueOnError="true"
+              StandardOutputImportance="low">
+            <Output TaskParameter="ConsoleOutput" PropertyName="SourceRevisionId" />
+            <Output TaskParameter="ExitCode" PropertyName="_GitExitCode" />
+        </Exec>
+        <PropertyGroup Condition="'$(_GitExitCode)' != '0'">
+            <SourceRevisionId></SourceRevisionId>
+        </PropertyGroup>
+    </Target>
 
 </Project>

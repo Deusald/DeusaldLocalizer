@@ -59,6 +59,15 @@
                     }
                 </button>
             </div>
+
+            <div class="home-version">
+                <span>v@BuildInfo.Version</span>
+                @if (!string.IsNullOrEmpty(BuildInfo.CommitHash))
+                {
+                    <span class="home-version-sep">·</span>
+                    <span class="home-version-hash">@BuildInfo.CommitHash</span>
+                }
+            </div>
         </div>
     </div>
 
