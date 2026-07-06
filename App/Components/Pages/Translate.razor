@@ -2,6 +2,7 @@
 @using global::App.Components.Layout
 @using global::App.Components.Translate
 @layout EmptyLayout
+@implements IDisposable
 @inject ProjectStateService _ProjectState
 
 @if (!_ProjectState.HasProject)
@@ -41,6 +42,20 @@
     {
         LocProject project = _ProjectState.CurrentProject!;
         _SelectedLanguage = project.Metadata.MainLanguageId;
+        _ProjectState.OpenKeyRequested += OnOpenKeyRequested;
+    }
+
+    /// <summary>Jumps the editor to a specific key + language — used when a conflict is clicked in the conflicts modal.</summary>
+    private void OnOpenKeyRequested(Guid keyId, string languageId)
+    {
+        _SelectedKeyId    = keyId;
+        _SelectedLanguage = languageId;
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        _ProjectState.OpenKeyRequested -= OnOpenKeyRequested;
     }
 
     private void OnLanguageSelected(string code)

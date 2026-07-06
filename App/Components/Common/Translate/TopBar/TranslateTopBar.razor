@@ -43,17 +43,18 @@
                 <i class="bi bi-arrow-repeat"></i> Sync
             </button>
             <button class="ttb-save-btn" @onclick="Push"
-                    disabled="@(_Busy || _ProjectState.HasSyncConflicts || _UncommittedCount == 0)"
+                    disabled="@(_Busy || _UncommittedCount == 0)"
                     title="@(_ProjectState.HasSyncConflicts ? "Resolve conflicts before pushing" : "Push changes to server")">
                 <i class="bi bi-cloud-arrow-up-fill"></i> Push@(_UncommittedCount > 0 ? $" ({_UncommittedCount})" : "")
             </button>
 
             @if (_ProjectState.HasSyncConflicts)
             {
-                <span class="ttb-status-pill ttb-status-warn" title="@_ConflictTooltip">
+                <button class="ttb-status-pill ttb-status-pill-btn ttb-status-warn" title="@_ConflictTooltip"
+                        @onclick="() => _ConflictsModal?.Show()">
                     <span class="ttb-status-dot"></span>
                     @_ProjectState.SyncConflicts.Count @(_ProjectState.SyncConflicts.Count == 1 ? "conflict" : "conflicts")
-                </span>
+                </button>
             }
             @if (!string.IsNullOrEmpty(_StatusMessage))
             {
@@ -68,6 +69,15 @@
         <button class="ttb-history-btn" @onclick="() => _ImportModal?.Show()" title="Import from Excel">
             <i class="bi bi-file-earmark-arrow-up"></i>
         </button>
+
+        @if (_IsOnline)
+        {
+            <span class="ttb-status-pill @(_UncommittedCount == 0 ? "ttb-status-ok" : "ttb-status-warn")"
+                  title="@(_UncommittedCount == 0 ? "All local changes are on the server" : $"{_UncommittedCount} change(s) not pushed to the server yet")">
+                <span class="ttb-status-dot"></span>
+                @(_UncommittedCount == 0 ? "Committed" : "Uncommitted")
+            </span>
+        }
 
         <button class="ttb-history-btn" @onclick="() => _ProjectUncommittedChangesModal?.Show()" title="Uncommitted changes">
             <i class="bi bi-clock-history"></i>
@@ -93,6 +103,7 @@
 <UsersModal @ref="_UsersModal"/>
 <ConfirmLeaveModal @ref="_ConfirmLeaveModal" OnSaveAndLeave="SaveAndLeave" OnDiscardAndLeave="DiscardAndLeave"/>
 <ProjectUncommittedChangesModal @ref="_ProjectUncommittedChangesModal"/>
+<ConflictsModal @ref="_ConflictsModal"/>
 <ExcelImportModal @ref="_ImportModal"/>
 <ExcelExportModal @ref="_ExportModal"/>
 
@@ -102,6 +113,7 @@
     private UsersModal?                     _UsersModal;
     private ConfirmLeaveModal?              _ConfirmLeaveModal;
     private ProjectUncommittedChangesModal? _ProjectUncommittedChangesModal;
+    private ConflictsModal?                 _ConflictsModal;
     private ExcelImportModal?               _ImportModal;
     private ExcelExportModal?               _ExportModal;
 
@@ -178,6 +190,13 @@
 
     private async Task Push()
     {
+        // Something already blocks the push — explain why instead of firing a doomed request.
+        if (_ProjectState.HasSyncConflicts)
+        {
+            _ConflictsModal?.Show();
+            return;
+        }
+
         _Busy = true;
         _StatusMessage = "Pushing…";
         StateHasChanged();
@@ -187,11 +206,27 @@
         {
             PushOutcome.Success            => "Pushed",
             PushOutcome.BlockedByConflicts => $"Resolve {result.Conflicts} conflict(s) first",
-            PushOutcome.Conflict           => $"{result.Conflicts} conflict(s) — sync to resolve",
+            PushOutcome.Conflict           => $"Push rejected — resolve {result.Conflicts} conflict(s)",
             PushOutcome.NoCredentials      => "Sign in required",
             PushOutcome.NotOnline          => "Offline project",
             _                              => "Push failed" + (result.Message is null ? "" : $": {result.Message}"),
         };
+
+        switch (result.Outcome)
+        {
+            case PushOutcome.BlockedByConflicts:
+                _ConflictsModal?.Show();
+                break;
+            case PushOutcome.Conflict:
+                _ConflictsModal?.ShowError("The push was rejected because the server has newer changes. The latest server version has been pulled in — resolve each conflict below, then push again.");
+                break;
+            case PushOutcome.Failed:
+                _ConflictsModal?.ShowError(result.Message ?? "The push was rejected by the server. Sync and try again.");
+                break;
+            case PushOutcome.NoCredentials:
+                _ConflictsModal?.ShowError("You need to sign in on this device before you can push.");
+                break;
+        }
 
         _Busy = false;
         StateHasChanged();

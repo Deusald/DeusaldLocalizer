@@ -33,6 +33,13 @@ public class ProjectStateService
     public IReadOnlyList<EntryChangeConflict> SyncConflicts => _SyncConflicts;
     private List<EntryChangeConflict> _SyncConflicts = new();
 
+    /// <summary>
+    /// A clean copy of the last-synced server state (no local edits replayed onto it), used purely as the
+    /// baseline for conflict validation. The working <see cref="CurrentProject"/> carries the user's edits
+    /// on top of the same server state, so it cannot be validated against itself.
+    /// </summary>
+    private LocProject? _SyncBaseline;
+
     public bool HasSyncConflicts => _SyncConflicts.Count > 0;
 
     /// <summary>True when a project is open and ready to use.</summary>
@@ -86,6 +93,7 @@ public class ProjectStateService
         IsDirty            = true;
         ChangedLocKeys.Clear();
         _SyncConflicts.Clear();
+        _SyncBaseline = null;
         CurrentUser = LocProjectMember.OfflineMember;
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
@@ -98,8 +106,15 @@ public class ProjectStateService
         IsDirty            = false;
         ChangedLocKeys.Clear();
         _SyncConflicts.Clear();
+        _SyncBaseline = null;
         CurrentUser = userId == LocProjectMember.OfflineMember.UserId ? LocProjectMember.OfflineMember : project.ProjectMembers.Find(m => m.UserId == userId)!;
         AccessToken = accessToken;
+
+        // Online key files mirror the server, so any unpushed edits live only in the pending queue.
+        // Replay them onto the freshly-loaded project so reopening shows the user's in-flight work.
+        if (project.Metadata.IsOnline && project.UncommitedChanges.Count > 0)
+            ReapplyPendingChanges();
+
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
     }
@@ -111,6 +126,7 @@ public class ProjectStateService
         IsDirty            = false;
         ChangedLocKeys.Clear();
         _SyncConflicts.Clear();
+        _SyncBaseline = null;
         CurrentUser = LocProjectMember.OfflineMember;
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
@@ -120,8 +136,10 @@ public class ProjectStateService
     {
         if (CurrentProject!.Metadata.IsOnline)
         {
-            // We should only save uncommited changes
+            // Online projects only persist the pending queue locally; the key files stay
+            // untouched until the bot confirms the push. The work is now on disk, so it counts as saved.
             await ProjectFileService.SaveUncommittedOnlyAsync(CurrentProject, CurrentProjectPath!);
+            MarkClean();
             return;
         }
 
@@ -180,7 +198,23 @@ public class ProjectStateService
 
         if (response.Status == SyncStatus.UpToDate)
         {
-            RevalidateConflicts();
+            // The server is unchanged, but the editor mutated the in-memory project in place during the
+            // session (online key files are never rewritten locally). That makes the in-memory state a
+            // dirty working copy, not a clean server baseline — validating pending changes against it
+            // compares an edit to itself and reports false conflicts, and it also hides the fact that the
+            // key files still hold the server value. Rebuild from the on-disk state whenever anything is
+            // pending so the baseline is clean and the user's edits are replayed back on top.
+            if (CurrentProject.UncommitedChanges.Count > 0)
+            {
+                await RebuildWorkingCopyAsync(CurrentProject.UncommitedChanges);
+                ProjectChanged?.Invoke();
+                ProjectDataChanged?.Invoke();
+            }
+            else
+            {
+                RevalidateConflicts();
+            }
+
             return new SyncOperationResult { Outcome = SyncOutcome.UpToDate, Conflicts = _SyncConflicts.Count };
         }
 
@@ -189,13 +223,7 @@ public class ProjectStateService
 
         await ApplyServerFilesAsync(CurrentProjectPath, response);
 
-        LocProject reloaded = await ProjectFileService.OpenAsync(CurrentProjectPath);
-        reloaded.UncommitedChanges = pending;
-        CurrentProject             = reloaded;
-
-        await ProjectFileService.SaveUncommittedOnlyAsync(CurrentProject, CurrentProjectPath);
-
-        RevalidateConflicts();
+        await RebuildWorkingCopyAsync(pending);
 
         ProjectChanged?.Invoke();
         ProjectDataChanged?.Invoke();
@@ -246,9 +274,22 @@ public class ProjectStateService
         switch (response.Status)
         {
             case PushStatus.Conflict:
-                _SyncConflicts = response.Conflicts;
-                ProjectDataChanged?.Invoke();
-                return new PushOperationResult { Outcome = PushOutcome.Conflict, Conflicts = response.Conflicts.Count, Message = response.Message };
+                // The server rejected the push because our changes clash with newer server edits, but we
+                // haven't pulled that newer state yet — so we can't show the server version or validate
+                // against it. Sync now: it pulls the server state, discards any of our edits that turned
+                // out identical to the server's, and flags the genuine conflicts against a fresh baseline.
+                await SyncAsync();
+
+                if (_SyncConflicts.Count == 0)
+                {
+                    // Every rejected change was redundant (already on the server) and got pruned. If real
+                    // work is still pending, retry the now-clean push; otherwise there is nothing left.
+                    if ((CurrentProject?.UncommitedChanges.Count ?? 0) > 0)
+                        return await PushAsync();
+                    return new PushOperationResult { Outcome = PushOutcome.Success };
+                }
+
+                return new PushOperationResult { Outcome = PushOutcome.Conflict, Conflicts = _SyncConflicts.Count, Message = response.Message };
 
             case PushStatus.Failed:
                 return new PushOperationResult { Outcome = PushOutcome.Failed, Message = response.Message };
@@ -405,9 +446,216 @@ public class ProjectStateService
 
     private void RevalidateConflicts()
     {
+        // Validate against the clean server baseline, never against the working copy (which already carries
+        // the very edits we're validating). Falls back to CurrentProject only when nothing is pending, where
+        // the result is empty regardless.
+        LocProject baseline = _SyncBaseline ?? CurrentProject!;
         _SyncConflicts = CurrentProject!.Metadata.IsOnline
-            ? EntryChangeConflictService.Validate(CurrentProject, CurrentProject.UncommitedChanges)
+            ? EntryChangeConflictService.Validate(baseline, CurrentProject.UncommitedChanges)
             : new List<EntryChangeConflict>();
+    }
+
+    /// <summary>
+    /// Rebuilds the in-memory project from the on-disk (server-state) files after a sync: loads a clean
+    /// baseline for conflict validation, then a separate working copy onto which the pending changes are
+    /// replayed so the editor shows the user's unpushed edits. Conflicting translations are left at the
+    /// server value (see <see cref="ReapplyPendingChanges"/>).
+    /// </summary>
+    private async Task RebuildWorkingCopyAsync(List<LocEntryChange> pending)
+    {
+        _SyncBaseline = await ProjectFileService.OpenAsync(CurrentProjectPath!);
+
+        LocProject working = await ProjectFileService.OpenAsync(CurrentProjectPath!);
+        working.UncommitedChanges = pending;
+        CurrentProject            = working;
+
+        // Discard pending translation edits that already match the server exactly (someone else made the
+        // same edit): they are redundant no-ops, not conflicts, so they must never be flagged or pushed.
+        PruneRedundantTranslationChanges(_SyncBaseline);
+
+        RevalidateConflicts();
+        ReapplyPendingChanges();
+
+        await ProjectFileService.SaveUncommittedOnlyAsync(CurrentProject, CurrentProjectPath!);
+    }
+
+    /// <summary>
+    /// Drops pending translation edits whose net result is identical to the server's current translation
+    /// (same text, status, source-changed flag and base hash). This is the "someone else already made the
+    /// same change" case: there is nothing left to push, so the edit is silently discarded rather than
+    /// surfaced as a conflict. Edits that differ in any field (e.g. a source-matched acknowledgement) stay.
+    /// </summary>
+    private void PruneRedundantTranslationChanges(LocProject baseline)
+    {
+        if (CurrentProject is null) return;
+
+        List<(Guid KeyId, string Lang)> pairs = CurrentProject.UncommitedChanges
+            .Where(c => c.Type == EntryChangeType.TranslationUpdated)
+            .Select(c => (c.EntryId, c.EntrySubId))
+            .Distinct()
+            .ToList();
+
+        foreach ((Guid keyId, string lang) in pairs)
+        {
+            LocKeyTranslation? mine = PendingTranslation(keyId, lang);
+            if (mine is null) continue;
+
+            LocLocalizationKey? baseKey  = baseline.Keys.Find(k => k.Id == keyId);
+            LocKeyTranslation?  baseDest = baseKey?.Translations.Find(t => t.LanguageId == lang);
+            if (baseDest is null) continue;
+
+            bool redundant = mine.Text          == baseDest.Text
+                          && mine.Status        == baseDest.Status
+                          && mine.SourceChanged == baseDest.SourceChanged
+                          && mine.BaseTextHash  == baseDest.BaseTextHash;
+
+            if (redundant)
+                CurrentProject.UncommitedChanges.RemoveAll(c =>
+                    c.Type == EntryChangeType.TranslationUpdated && c.EntryId == keyId && c.EntrySubId == lang);
+        }
+    }
+
+    /// <summary>
+    /// Replays the pending uncommitted changes onto <see cref="CurrentProject"/> so the editor reflects the
+    /// user's unpushed edits (online key files always mirror the server, never the local edits). Translation
+    /// edits that currently conflict are skipped, leaving the server value visible so the conflict box can
+    /// compare server-vs-yours and the user can resolve them explicitly.
+    /// </summary>
+    private void ReapplyPendingChanges()
+    {
+        if (CurrentProject is null) return;
+
+        foreach (LocEntryChange change in CurrentProject.UncommitedChanges)
+        {
+            if (change.Type == EntryChangeType.TranslationUpdated
+             && _SyncConflicts.Any(c => c.KeyId == change.EntryId && c.LanguageId == change.EntrySubId))
+                continue;
+
+            EntryChangeExeService.ExecuteChange(CurrentProject, change, out _);
+        }
+    }
+
+    // ── Conflict resolution ──────────────────────────────────────────────────
+
+    /// <summary>
+    /// Raised when something (e.g. the conflicts modal) asks the translate editor to select and show a
+    /// specific key on a specific language. The Translate page listens and moves its selection there.
+    /// </summary>
+    public event Action<Guid, string>? OpenKeyRequested;
+
+    /// <summary>Asks the translate editor to open the given key on the given language.</summary>
+    public void RequestOpenKey(Guid keyId, string languageId) => OpenKeyRequested?.Invoke(keyId, languageId);
+
+    /// <summary>The sync conflict (if any) currently affecting the given key + language.</summary>
+    public EntryChangeConflict? ConflictFor(Guid keyId, string languageId) =>
+        _SyncConflicts.Find(c => c.KeyId == keyId && c.LanguageId == languageId);
+
+    /// <summary>
+    /// My most recent queued translation edit for a key + language — i.e. what a KeepMine/SuggestMine
+    /// resolution would use. Null when there is no pending translation edit for the pair.
+    /// </summary>
+    public LocKeyTranslation? PendingTranslation(Guid keyId, string languageId)
+    {
+        if (CurrentProject is null) return null;
+        for (int x = CurrentProject.UncommitedChanges.Count - 1; x >= 0; --x)
+        {
+            LocEntryChange c = CurrentProject.UncommitedChanges[x];
+            if (c.Type != EntryChangeType.TranslationUpdated || c.EntryId != keyId || c.EntrySubId != languageId) continue;
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<LocKeyTranslation>(c.ChangeData);
+        }
+        return null;
+    }
+
+    /// <summary>The text of <see cref="PendingTranslation"/>, or null when there is no pending edit for the pair.</summary>
+    public string? PendingTranslationText(Guid keyId, string languageId) =>
+        PendingTranslation(keyId, languageId)?.Text;
+
+    /// <summary>
+    /// Resolves a single translation conflict for a key + language. Server-side values are read from the
+    /// clean <see cref="_SyncBaseline"/> (so resolving is only meaningful after a sync):
+    ///  • <see cref="ConflictResolution.KeepMine"/>    — overwrite the server's translation with my queued edit.
+    ///  • <see cref="ConflictResolution.SuggestMine"/> — keep the server's translation, add my edit as a suggestion.
+    ///  • <see cref="ConflictResolution.KeepServer"/>  — discard my queued edit for this translation.
+    /// Every pending translation edit for the key + language is dropped, then re-recorded (clean, based on the
+    /// current server state) as the chosen resolution requires, so the conflict clears and the push can proceed.
+    /// </summary>
+    public async Task ResolveConflictAsync(Guid keyId, string languageId, ConflictResolution resolution)
+    {
+        if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath)) return;
+
+        LocLocalizationKey? key = CurrentProject.Keys.Find(k => k.Id == keyId);
+        if (key is null) return;
+
+        // Recover the edit I was trying to save from the most recent queued translation edit for this pair.
+        LocKeyTranslation? mine   = PendingTranslation(keyId, languageId);
+        string             myText = mine?.Text ?? string.Empty;
+
+        // Drop every queued translation edit for this pair — we re-record below as the resolution requires.
+        CurrentProject.UncommitedChanges.RemoveAll(c =>
+            c.Type == EntryChangeType.TranslationUpdated && c.EntryId == keyId && c.EntrySubId == languageId);
+
+        // Server-side values come from the clean baseline, not the working copy (which carries local edits).
+        LocProject          baseline         = _SyncBaseline ?? CurrentProject;
+        LocLocalizationKey? baseKey          = baseline.Keys.Find(k => k.Id == keyId);
+        LocKeyTranslation?  baseSource       = baseKey?.Translations.Find(t => t.LanguageId == baseline.Metadata.MainLanguageId);
+        LocKeyTranslation?  baseDest         = baseKey?.Translations.Find(t => t.LanguageId == languageId);
+        string              serverSourceHash = TextHashHelper.Compute(baseSource?.Text ?? string.Empty);
+        string              serverDestText   = baseDest?.Text ?? string.Empty;
+        string              serverDestHash   = TextHashHelper.Compute(serverDestText);
+
+        LocKeyTranslation? translation = key.Translations.Find(t => t.LanguageId == languageId);
+        if (translation is null)
+        {
+            translation = new LocKeyTranslation { LanguageId = languageId };
+            key.Translations.Add(translation);
+        }
+
+        switch (resolution)
+        {
+            case ConflictResolution.KeepMine: // overwrite the server's translation with my edit on the next push
+                translation.Text          = myText;
+                translation.BaseTextHash  = serverSourceHash;
+                translation.SourceChanged = false;
+                translation.Status        = mine?.Status ?? TranslationStatus.Suggested; // keep my status, don't escalate
+                translation.UpdatedAt     = DateTime.UtcNow;
+
+                RecordTranslationUpdated(keyId, translation, serverDestHash);
+                key.UpdatedAt = DateTime.UtcNow;
+                break;
+
+            case ConflictResolution.SuggestMine: // keep the server's translation, offer mine up for voting
+                LocTranslationSuggestion suggestion = new LocTranslationSuggestion
+                {
+                    Text       = myText,
+                    AuthorId   = CurrentUser.UserId,
+                    SourceHash = serverSourceHash,
+                };
+                translation.Text          = serverDestText; // keep the server's translation as the active text
+                translation.BaseTextHash  = serverSourceHash;
+                translation.SourceChanged = true;
+                translation.Status        = TranslationStatus.Suggested;
+                translation.UpdatedAt     = DateTime.UtcNow;
+                translation.Suggestions.Add(suggestion);
+
+                RecordTranslationUpdated(keyId, translation, serverDestHash);
+                RecordSuggestionAdded(keyId, languageId, suggestion);
+                key.UpdatedAt = DateTime.UtcNow;
+                break;
+
+            case ConflictResolution.KeepServer: // discard my edit, restore the server's translation
+                translation.Text          = serverDestText;
+                translation.BaseTextHash  = baseDest?.BaseTextHash ?? serverSourceHash;
+                translation.SourceChanged = baseDest?.SourceChanged ?? false;
+                translation.Status        = baseDest?.Status ?? TranslationStatus.Untranslated;
+                translation.UpdatedAt     = baseDest?.UpdatedAt ?? DateTime.UtcNow;
+                break;
+        }
+
+        RevalidateConflicts();
+        await ProjectFileService.SaveUncommittedOnlyAsync(CurrentProject, CurrentProjectPath);
+        MarkClean();
+
+        ProjectDataChanged?.Invoke();
     }
 
     private static async Task ApplyServerFilesAsync(string root, SyncResponse response)
@@ -756,4 +1004,15 @@ public class ProjectStateService
         IsDirty = false;
         DirtyStateChanged?.Invoke();
     }
+}
+
+/// <summary>How a single translation conflict should be resolved. See <see cref="ProjectStateService.ResolveConflictAsync"/>.</summary>
+public enum ConflictResolution
+{
+    /// <summary>Overwrite the server's translation with my queued edit.</summary>
+    KeepMine,
+    /// <summary>Keep the server's translation and add my edit as a suggestion for voting.</summary>
+    SuggestMine,
+    /// <summary>Discard my queued edit and keep the server's translation.</summary>
+    KeepServer,
 }

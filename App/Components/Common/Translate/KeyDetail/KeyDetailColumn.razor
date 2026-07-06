@@ -1,5 +1,6 @@
 ﻿@namespace App.Components.Translate
 @inject ProjectStateService _ProjectState
+@implements IDisposable
 
 <div class="kd-root">
 
@@ -37,6 +38,10 @@
             @* ── Tags ─────────────────────────────────────────────────────── *@
             <KeyTagsBar Key="@_SelectedKey" OnChanged="StateHasChanged"/>
 
+            @* ── Sync conflict ───────────────────────────────────────────── *@
+            <ConflictResolutionBox Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage"
+                                   OnChanged="StateHasChanged" />
+
             @* ── Translation editor ──────────────────────────────────────── *@
             <TranslationEditor Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage"
                                OnChanged="StateHasChanged"
@@ -69,6 +74,20 @@
     private string            _TranslationDraft = "";
 
     private static readonly Dictionary<Guid, string> _EmptyOverrides = new();
+
+    protected override void OnInitialized()
+    {
+        // Refresh when the project data changes (e.g. a sync just computed conflicts) so the conflict
+        // box and status tag update immediately, even when the affected key is already open.
+        _ProjectState.ProjectDataChanged += OnProjectDataChanged;
+    }
+
+    private void OnProjectDataChanged() => InvokeAsync(StateHasChanged);
+
+    public void Dispose()
+    {
+        _ProjectState.ProjectDataChanged -= OnProjectDataChanged;
+    }
 
     private void OnDraftChanged((string source, string translation) drafts)
     {

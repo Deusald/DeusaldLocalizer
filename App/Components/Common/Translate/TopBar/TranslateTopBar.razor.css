@@ -169,6 +169,17 @@
     font-weight: 500;
 }
 
+.ttb-status-pill-btn {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: filter .12s;
+}
+
+.ttb-status-pill-btn:hover {
+    filter: brightness(1.2);
+}
+
 .ttb-status-dot {
     width: 6px;
     height: 6px;
