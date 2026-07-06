@@ -32,6 +32,10 @@
     flex-shrink: 0;
 }
 
+.um-token-error {
+    margin: 0 0 12px;
+}
+
 .um-title {
     font-size: 15px;
     font-weight: 600;

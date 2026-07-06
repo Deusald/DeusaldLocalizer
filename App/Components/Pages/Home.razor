@@ -194,8 +194,8 @@
         {
             LocProject project = await ProjectFileService.OpenAsync(path);
 
-            // Replay pending changes onto the in-memory project before authenticating —
-            // an uncommitted access-token rotation must be reflected before we verify.
+            // Replay any pending (unpushed) changes onto the in-memory project so the UI reflects
+            // local edits that have not yet been committed to the server.
             foreach (LocEntryChange change in project.UncommitedChanges)
                 EntryChangeExeService.ExecuteChange(project, change, out _);
 
@@ -271,31 +271,29 @@
 
         Guid projectId = _PendingProject.Metadata.Id;
 
-        // First sign-in: the member is still carrying the initial (username-based)
-        // token. Rotate it to a fresh random token, persist the change and show it
-        // once so the user can store it. Sign-in only ever happens for online
-        // projects, so recording an uncommitted change here is always correct.
+        // First sign-in: the member is still carrying the initial (username-based) token. Rotate it
+        // to a fresh random token and push that single change straight away — authenticated with the
+        // token the user just entered, because the server still only knows the initial token and so
+        // the new one cannot push itself. Only once the server accepts it do we adopt it locally and
+        // show it once for the user to store.
         if (AccessTokenService.IsInitialToken(member!))
         {
-            string newToken = AccessTokenService.GenerateToken();
-            member!.HashedAccessToken = AccessTokenService.HashToken(newToken);
+            InitialTokenResult result = await _ProjectState.RotateInitialTokenAsync(
+                _PendingProject, _PendingPath, member!, credentials.accessToken);
 
-            _PendingProject.UncommitedChanges.Add(new LocEntryChange
+            if (result.RawToken == null)
             {
-                Type       = EntryChangeType.MemberUpdated,
-                EntryId    = member.UserId,
-                EntrySubId = nameof(LocProjectMember.HashedAccessToken),
-                ChangeData = member.HashedAccessToken
-            });
+                _IsLoading = false;
+                _LoginModal?.ShowError(result.Error ?? "Could not complete first sign-in. Please try again.");
+                return;
+            }
 
-            await ProjectFileService.SaveUncommittedOnlyAsync(_PendingProject, _PendingPath);
-            await AuthTokenStorage.SaveAsync(projectId, member.UserId, newToken);
-
+            _PendingProject = result.Project!;
             _ShowLoginModal = false;
-            _PendingUserId  = member.UserId;
+            _PendingUserId  = member!.UserId;
             StateHasChanged();
 
-            _AccessTokenModal?.Show(newToken, "Your access token",
+            _AccessTokenModal?.Show(result.RawToken, "Your access token",
                 "This is your new sign-in token. Copy it now and keep it safe — you'll use it to sign in from now on.");
             return; // FinalizeLoad runs once the user closes the token modal
         }

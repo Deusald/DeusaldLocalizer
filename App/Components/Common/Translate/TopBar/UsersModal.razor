@@ -80,6 +80,14 @@
                 </div>
             }
 
+            @if (_TokenError != null)
+            {
+                <div class="dl-alert dl-alert-error um-token-error">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <span>@_TokenError</span>
+                </div>
+            }
+
             <div class="um-member-list">
                 @if (_ProjectState.CurrentProject.ProjectMembers.Count == 0)
                 {
@@ -145,10 +153,11 @@
 }
 
 @code {
-    private bool   _Visible;
-    private bool   _FormOpen;
-    private string _Username = "";
-    private bool   _IsBanned;
+    private bool    _Visible;
+    private bool    _FormOpen;
+    private string  _Username = "";
+    private bool    _IsBanned;
+    private string? _TokenError;
 
     private HashSet<string>   _SelectedLangs = new();
     private LocProjectMember? _EditingMember;
@@ -159,7 +168,8 @@
     public void Show()
     {
         CloseForm();
-        _Visible = true;
+        _TokenError = null;
+        _Visible    = true;
         StateHasChanged();
     }
 
@@ -254,17 +264,25 @@
 
     // ── Access token ─────────────────────────────────────────────────────────
 
-    /// <summary>User rotates their own access token to a fresh random one.</summary>
+    /// <summary>
+    /// User rotates their own access token to a fresh random one. The change is pushed to the server
+    /// immediately, authenticated with the current token — the new one cannot push itself because the
+    /// server does not know it yet. Only once the server accepts it is the new token adopted.
+    /// </summary>
     private async Task RegenerateToken(LocProjectMember member)
     {
-        string newToken = AccessTokenService.GenerateToken();
-        member.HashedAccessToken = AccessTokenService.HashToken(newToken);
-        _ProjectState.RecordMemberAccessTokenChanged(member);
+        _TokenError = null;
 
-        // Keep this device signed in with the new token.
-        await AuthTokenStorage.SaveAsync(_ProjectState.CurrentProject!.Metadata.Id, member.UserId, newToken);
+        InitialTokenResult result = await _ProjectState.RegenerateOwnTokenAsync();
 
-        _AccessTokenModal?.Show(newToken, "New access token",
+        if (result.RawToken == null)
+        {
+            _TokenError = result.Error ?? "Could not regenerate your token. Please try again.";
+            StateHasChanged();
+            return;
+        }
+
+        _AccessTokenModal?.Show(result.RawToken, "New access token",
             "Your previous token no longer works. Copy this one and keep it safe — you'll use it to sign in from now on.");
     }
 

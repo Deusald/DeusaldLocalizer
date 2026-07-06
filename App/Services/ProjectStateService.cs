@@ -269,6 +269,140 @@ public class ProjectStateService
         }
     }
 
+    // ── First sign-in token rotation ───────────────────────────────────────────
+
+    /// <summary>
+    /// Completes a member's first sign-in by rotating their initial (username-based) token to a
+    /// freshly generated one and installing it on the server. The rotation is pushed straight away
+    /// as a single <see cref="EntryChangeType.MemberUpdated"/> change, authenticated with the
+    /// member's PREVIOUS token (<paramref name="previousToken"/>) — the only credential the server
+    /// still recognizes, since it does not yet know the new token, so the new token cannot push
+    /// itself.
+    ///
+    /// Nothing local is mutated until the server accepts the push, so a rejected push leaves the
+    /// member on their initial token and the caller can simply ask them to retry. On success the new
+    /// hash is written to the local files right away (so the member can never be locked out even if
+    /// the follow-up pull fails), the new token is cached, the just-pushed state is pulled down, and
+    /// the result carries the raw token to show once plus the reloaded project.
+    /// </summary>
+    public async Task<InitialTokenResult> RotateInitialTokenAsync(
+        LocProject project, string path, LocProjectMember member, string previousToken)
+    {
+        string         newToken = AccessTokenService.GenerateToken();
+        LocEntryChange change   = HashRotationChange(member.UserId, newToken);
+
+        PushResponse? push;
+        try
+        {
+            push = await PushSingleAsync(project, member.UserId, previousToken, change);
+        }
+        catch (Exception ex)
+        {
+            return new InitialTokenResult { Error = ex.Message };
+        }
+
+        if (push is null || push.Status != PushStatus.Success)
+            return new InitialTokenResult { Error = push?.Message ?? "The server rejected the sign-in. Please try again." };
+
+        // The server now knows the new token. Reflect the new hash in the local files immediately so
+        // a failed follow-up pull can never lock the member out, then cache the token for next time.
+        member.HashedAccessToken = change.ChangeData;
+        await ProjectFileService.WriteEntityForChangeAsync(project, path, change);
+        await AuthTokenStorage.SaveAsync(project.Metadata.Id, member.UserId, newToken);
+
+        LocProject reloaded = await PullLatestAsync(project, path, member.UserId, newToken);
+
+        return new InitialTokenResult { RawToken = newToken, Project = reloaded };
+    }
+
+    /// <summary>
+    /// Regenerates the current user's own access token on a live online project. Exactly like the
+    /// first sign-in rotation, the change must be pushed straight away and authenticated with the
+    /// user's PREVIOUS token — the one this device is currently signed in with — because the server
+    /// does not know the new token yet, so it cannot push itself. Any other pending changes are left
+    /// untouched in the queue.
+    ///
+    /// Nothing is adopted until the server accepts the push, so a rejected push leaves the user on
+    /// their existing token to retry. On success the new hash is written locally (guarding against a
+    /// failed follow-up sync locking the user out), the new token is cached, and the just-pushed
+    /// state is pulled down via <see cref="SyncAsync"/> (which preserves the pending queue). The raw
+    /// token to show once is returned; a null <see cref="InitialTokenResult.RawToken"/> means failure.
+    /// </summary>
+    public async Task<InitialTokenResult> RegenerateOwnTokenAsync()
+    {
+        if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath) || !CurrentProject.Metadata.IsOnline)
+            return new InitialTokenResult { Error = "No online project is open." };
+
+        (Guid UserId, string Token)? creds = await AuthTokenStorage.GetAsync(CurrentProject.Metadata.Id);
+        if (creds is null)
+            return new InitialTokenResult { Error = "You are not signed in on this device." };
+
+        string         newToken = AccessTokenService.GenerateToken();
+        LocEntryChange change   = HashRotationChange(CurrentUser.UserId, newToken);
+
+        PushResponse? push;
+        try
+        {
+            push = await PushSingleAsync(CurrentProject, CurrentUser.UserId, creds.Value.Token, change);
+        }
+        catch (Exception ex)
+        {
+            return new InitialTokenResult { Error = ex.Message };
+        }
+
+        if (push is null || push.Status != PushStatus.Success)
+            return new InitialTokenResult { Error = push?.Message ?? "The server rejected the change. Please sync and try again." };
+
+        // The server now knows the new token. Adopt it locally (writing the member file first so a
+        // failed follow-up sync can't lock the user out), then pull the new state down — SyncAsync
+        // preserves the pending queue and re-validates it against the freshly pulled project.
+        CurrentUser.HashedAccessToken = change.ChangeData;
+        await ProjectFileService.WriteEntityForChangeAsync(CurrentProject, CurrentProjectPath, change);
+        await AuthTokenStorage.SaveAsync(CurrentProject.Metadata.Id, CurrentUser.UserId, newToken);
+
+        await SyncAsync();
+
+        return new InitialTokenResult { RawToken = newToken };
+    }
+
+    private static LocEntryChange HashRotationChange(Guid userId, string rawToken) => new()
+    {
+        Type       = EntryChangeType.MemberUpdated,
+        EntryId    = userId,
+        EntrySubId = nameof(LocProjectMember.HashedAccessToken),
+        ChangeData = AccessTokenService.HashToken(rawToken),
+    };
+
+    /// <summary>Pushes a single change to the bot, authenticated with an explicit token.</summary>
+    private Task<PushResponse?> PushSingleAsync(LocProject project, Guid userId, string authToken, LocEntryChange change) =>
+        _Api.PushAsync(project.Metadata.ApiUrl, project.Metadata.Id, userId, authToken,
+            project.Metadata.SyncId, new List<LocEntryChange> { change });
+
+    /// <summary>
+    /// Best-effort pull of the latest repo state into <paramref name="path"/> without touching the
+    /// session state. Applies the server delta and returns a freshly reloaded project; on any failure
+    /// (or when already up to date) returns <paramref name="project"/> unchanged.
+    /// </summary>
+    private async Task<LocProject> PullLatestAsync(LocProject project, string path, Guid userId, string token)
+    {
+        SyncResponse? response;
+        try
+        {
+            response = await _Api.SyncAsync(
+                project.Metadata.ApiUrl, project.Metadata.Id, userId, token, project.Metadata.SyncId);
+        }
+        catch
+        {
+            return project;
+        }
+
+        if (response is null || response.Status == SyncStatus.UpToDate)
+            return project;
+
+        await ApplyServerFilesAsync(path, response);
+        return await ProjectFileService.OpenAsync(path);
+    }
+
     private void RevalidateConflicts()
     {
         _SyncConflicts = CurrentProject!.Metadata.IsOnline
