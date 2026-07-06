@@ -1,12 +1,15 @@
 {
   "Id": "10000000-0000-4000-8000-000000000008",
   "CategoryId": "c2c2c2c2-0000-4000-8000-000000000002",
-  "KeyName": "ui.button.quit",
+  "KeyName": "ui_button_quit",
   "Description": "Main menu — exits the game. French translation is disputed between two candidates.",
   "CreatedAt": "2026-05-01T10:10:00Z",
-  "UpdatedAt": "2026-06-13T12:00:00Z",
+  "UpdatedAt": "2026-07-06T18:30:49.5560427Z",
   "MaxLength": 20,
-  "Tags": [ "ui", "button" ],
+  "Tags": [
+    "ui",
+    "button"
+  ],
   "Flags": [
     {
       "Id": "30000000-0000-4000-8000-000000000003",

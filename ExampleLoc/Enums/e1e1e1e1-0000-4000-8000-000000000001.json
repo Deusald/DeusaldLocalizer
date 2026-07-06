@@ -3,12 +3,33 @@
   "Name": "WeekDay",
   "Description": "Days of the week, used to localise day names in dialogue.",
   "Entries": [
-    { "IntValue": 0, "StringValue": "Monday" },
-    { "IntValue": 1, "StringValue": "Tuesday" },
-    { "IntValue": 2, "StringValue": "Wednesday" },
-    { "IntValue": 3, "StringValue": "Thursday" },
-    { "IntValue": 4, "StringValue": "Friday" },
-    { "IntValue": 5, "StringValue": "Saturday" },
-    { "IntValue": 6, "StringValue": "Sunday" }
+    {
+      "IntValue": 0,
+      "StringValue": "Monday"
+    },
+    {
+      "IntValue": 1,
+      "StringValue": "Tuesday"
+    },
+    {
+      "IntValue": 2,
+      "StringValue": "Wednesday"
+    },
+    {
+      "IntValue": 3,
+      "StringValue": "Thursday"
+    },
+    {
+      "IntValue": 4,
+      "StringValue": "Friday"
+    },
+    {
+      "IntValue": 5,
+      "StringValue": "Saturday"
+    },
+    {
+      "IntValue": 6,
+      "StringValue": "Sunday"
+    }
   ]
 }

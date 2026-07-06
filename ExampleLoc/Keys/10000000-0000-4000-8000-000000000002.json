@@ -1,12 +1,15 @@
 {
   "Id": "10000000-0000-4000-8000-000000000002",
   "CategoryId": "c2c2c2c2-0000-4000-8000-000000000002",
-  "KeyName": "ui.button.settings",
+  "KeyName": "ui_button_settings",
   "Description": "Main menu — opens the settings screen.",
   "CreatedAt": "2026-05-01T10:05:00Z",
-  "UpdatedAt": "2026-06-11T08:00:00Z",
+  "UpdatedAt": "2026-07-06T18:30:30.4817487Z",
   "MaxLength": 24,
-  "Tags": [ "ui", "button" ],
+  "Tags": [
+    "ui",
+    "button"
+  ],
   "Flags": [
     {
       "Id": "30000000-0000-4000-8000-000000000001",

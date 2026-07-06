@@ -1,12 +1,15 @@
 {
   "Id": "10000000-0000-4000-8000-000000000006",
   "CategoryId": "c4c4c4c4-0000-4000-8000-000000000004",
-  "KeyName": "item.gold.count",
+  "KeyName": "item_gold_count",
   "Description": "HUD label for the player's gold, with plural handling.",
   "CreatedAt": "2026-05-03T09:20:00Z",
-  "UpdatedAt": "2026-06-12T15:00:00Z",
+  "UpdatedAt": "2026-07-06T18:30:43.518978Z",
   "MaxLength": 0,
-  "Tags": [ "item", "hud" ],
+  "Tags": [
+    "item",
+    "hud"
+  ],
   "Flags": [],
   "Variables": [
     {

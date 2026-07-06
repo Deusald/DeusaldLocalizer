@@ -1,12 +1,15 @@
 {
   "Id": "10000000-0000-4000-8000-000000000003",
   "CategoryId": "c3c3c3c3-0000-4000-8000-000000000003",
-  "KeyName": "dialogue.welcome",
+  "KeyName": "dialogue_welcome",
   "Description": "Shown when the player first enters the world. Uses the player's chosen name.",
   "CreatedAt": "2026-05-02T14:00:00Z",
-  "UpdatedAt": "2026-06-09T16:00:00Z",
+  "UpdatedAt": "2026-07-06T18:30:32.871148Z",
   "MaxLength": 0,
-  "Tags": [ "dialogue", "greeting" ],
+  "Tags": [
+    "dialogue",
+    "greeting"
+  ],
   "Flags": [],
   "Variables": [
     {

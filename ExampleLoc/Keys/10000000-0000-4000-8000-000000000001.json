@@ -1,12 +1,15 @@
 {
   "Id": "10000000-0000-4000-8000-000000000001",
   "CategoryId": "c2c2c2c2-0000-4000-8000-000000000002",
-  "KeyName": "ui.button.play",
+  "KeyName": "ui_button_play",
   "Description": "Main menu — starts the game.",
   "CreatedAt": "2026-05-01T10:00:00Z",
-  "UpdatedAt": "2026-06-10T12:00:00Z",
+  "UpdatedAt": "2026-07-06T18:30:27.3839815Z",
   "MaxLength": 20,
-  "Tags": [ "ui", "button" ],
+  "Tags": [
+    "ui",
+    "button"
+  ],
   "Flags": [],
   "Variables": [],
   "Translations": [

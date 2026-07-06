@@ -1,12 +1,15 @@
 {
   "Id": "10000000-0000-4000-8000-000000000004",
   "CategoryId": "c1c1c1c1-0000-4000-8000-000000000001",
-  "KeyName": "ui.dailyreward.title",
+  "KeyName": "ui_dailyreward_title",
   "Description": "Daily reward banner. The day name is localised per language via the WeekDay enum and a SmartFormat 'choose'.",
   "CreatedAt": "2026-05-02T14:10:00Z",
-  "UpdatedAt": "2026-06-08T13:00:00Z",
+  "UpdatedAt": "2026-07-06T18:30:37.3870932Z",
   "MaxLength": 0,
-  "Tags": [ "ui", "hud" ],
+  "Tags": [
+    "ui",
+    "hud"
+  ],
   "Flags": [
     {
       "Id": "30000000-0000-4000-8000-000000000004",

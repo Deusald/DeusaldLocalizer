@@ -5,13 +5,14 @@
   "Description": "A sample localization project for the Deusald Localizer demo — a small fantasy RPG translated into English, German, French and Polish.",
   "ApiUrl": "",
   "MainLanguageId": "en-US",
-  "SyncId": "99999999-0000-4000-8000-000000000001",
-  "UpdatedAt": "2026-06-15T09:00:00Z",
+  "SyncId": "6c882415-49b5-4db1-9c79-1b3dd3135ebc",
+  "UpdatedAt": "2026-07-06T18:31:10.9272266Z",
   "FormatVersion": 1,
   "Languages": [
     "en-US",
     "de-DE",
     "fr-FR",
     "pl-PL"
-  ]
+  ],
+  "IsOnline": false
 }

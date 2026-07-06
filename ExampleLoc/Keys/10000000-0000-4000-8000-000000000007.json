@@ -1,12 +1,15 @@
 {
   "Id": "10000000-0000-4000-8000-000000000007",
   "CategoryId": "c3c3c3c3-0000-4000-8000-000000000003",
-  "KeyName": "dialogue.quest.complete",
+  "KeyName": "dialogue_quest_complete",
   "Description": "Banner shown when a quest is finished. Source wording was recently changed from 'Quest done!'.",
   "CreatedAt": "2026-05-04T11:00:00Z",
-  "UpdatedAt": "2026-06-14T10:00:00Z",
+  "UpdatedAt": "2026-07-06T18:30:46.7204123Z",
   "MaxLength": 0,
-  "Tags": [ "dialogue", "quest" ],
+  "Tags": [
+    "dialogue",
+    "quest"
+  ],
   "Flags": [
     {
       "Id": "30000000-0000-4000-8000-000000000002",

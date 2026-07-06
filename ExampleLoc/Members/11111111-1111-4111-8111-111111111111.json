@@ -9,5 +9,6 @@
   ],
   "IsAdmin": true,
   "IsBanned": false,
-  "HashedAccessToken": ""
+  "HashedAccessToken": "",
+  "IsOfflineUser": false
 }

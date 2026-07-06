@@ -1,12 +1,15 @@
 {
   "Id": "10000000-0000-4000-8000-000000000005",
   "CategoryId": "c4c4c4c4-0000-4000-8000-000000000004",
-  "KeyName": "item.potion.health.name",
+  "KeyName": "item_potion_health_name",
   "Description": "Display name of the basic healing consumable.",
   "CreatedAt": "2026-05-03T09:00:00Z",
-  "UpdatedAt": "2026-06-01T10:00:00Z",
+  "UpdatedAt": "2026-07-06T18:31:01.8225207Z",
   "MaxLength": 24,
-  "Tags": [ "item", "consumable" ],
+  "Tags": [
+    "item",
+    "consumable"
+  ],
   "Flags": [],
   "Variables": [],
   "Translations": [
