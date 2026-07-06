@@ -319,6 +319,76 @@
 
 .home-error { margin-bottom: 1rem; }
 
+/* ── Update banner ───────────────────────────────────────────────────────── */
+
+.home-update {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 13px;
+    margin-bottom: 28px;
+    background: rgba(91,108,255,.1);
+    border: 1px solid rgba(91,108,255,.32);
+    border-radius: 10px;
+}
+
+.home-update-icon {
+    font-size: 18px;
+    color: #7d8bff;
+    flex-shrink: 0;
+}
+
+.home-update-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex: 1;
+    min-width: 0;
+}
+
+.home-update-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #e8e8ea;
+}
+
+.home-update-sub {
+    font-size: 11.5px;
+    color: #9a9bb0;
+}
+
+.home-update-download {
+    flex-shrink: 0;
+    padding: 6px 12px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background: #5b6cff;
+    border: none;
+    cursor: pointer;
+    transition: background .15s;
+}
+.home-update-download:hover { background: #6c7cff; }
+
+.home-update-dismiss {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    background: none;
+    color: #7a7b90;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background .15s, color .15s;
+}
+.home-update-dismiss:hover { background: rgba(255,255,255,.06); color: #c8c8cf; }
+
 /* ── Version footer ──────────────────────────────────────────────────────── */
 
 .home-version {

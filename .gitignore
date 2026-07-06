@@ -162,3 +162,5 @@ packages
 graphify-out/
 
 # Ignore project specific:
+# Release artifacts
+dist/
