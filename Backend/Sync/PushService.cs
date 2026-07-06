@@ -62,25 +62,38 @@ public sealed class PushService
 
         try
         {
-            foreach (LocEntryChange change in changes)
+            for (int x = 0; x < changes.Count; ++x)
             {
+                LocEntryChange change = changes[x];
                 EntryChangeExeService.ExecuteChange(project, change, out string commitString);
                 if (string.IsNullOrEmpty(commitString)) commitString = $"Apply {change.Type}";
 
                 await ProjectFileService.WriteEntityForChangeAsync(project, repoPath, change);
+
+                // Fold the sync-id bump into the batch's final change so it lands as one commit.
+                if (x == changes.Count - 1)
+                {
+                    project.Metadata.SyncId    = newSyncId;
+                    project.Metadata.UpdatedAt = DateTime.UtcNow;
+                    await ProjectFileService.SaveMetadataOnlyAsync(project, repoPath);
+                }
+
                 await _Git.StageAllAsync(repoPath, ct);
                 await _Git.CommitAsync(repoPath,
                     $"{commitString}\n\n{syncTag}\nAuthor: {member.Username}",
                     member.Username, authorEmail, committerName, committerEmail, ct);
             }
 
-            // Stamp the new sync id into metadata.json as the final commit of the batch.
-            project.Metadata.SyncId    = newSyncId;
-            project.Metadata.UpdatedAt = DateTime.UtcNow;
-            await ProjectFileService.SaveMetadataOnlyAsync(project, repoPath);
-            await _Git.StageAllAsync(repoPath, ct);
-            await _Git.CommitAsync(repoPath, $"Bump sync id\n\n{syncTag}",
-                member.Username, authorEmail, committerName, committerEmail, ct);
+            // No changes to fold into (degenerate batch): stamp the sync id in its own commit.
+            if (changes.Count == 0)
+            {
+                project.Metadata.SyncId    = newSyncId;
+                project.Metadata.UpdatedAt = DateTime.UtcNow;
+                await ProjectFileService.SaveMetadataOnlyAsync(project, repoPath);
+                await _Git.StageAllAsync(repoPath, ct);
+                await _Git.CommitAsync(repoPath, $"Bump sync id\n\n{syncTag}",
+                    member.Username, authorEmail, committerName, committerEmail, ct);
+            }
 
             // A plain push refuses to merge: if the remote moved while we worked, it is rejected.
             GitResult push = await _Git.PushAsync(repoPath, config.Branch, ct);
