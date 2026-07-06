@@ -60,6 +60,8 @@ if ($LASTEXITCODE -eq 0) { Write-Host "Commit: $shortHash" -ForegroundColor Dark
 
 # ── Publish ──────────────────────────────────────────────────────────────────
 if (Test-Path $publishDir) { Remove-Item $publishDir -Recurse -Force }
+dotnet clean $csproj -f $framework -c Release
+if ($LASTEXITCODE -ne 0) { throw "dotnet clean failed (exit $LASTEXITCODE)." }
 dotnet publish $csproj `
     -f $framework -c Release `
     -p:WindowsPackageType=None -p:SelfContained=true -p:RuntimeIdentifier=$rid
