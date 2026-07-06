@@ -178,6 +178,81 @@ namespace DeusaldLocalizerCommon
         }
 
         /// <summary>
+        /// Writes only <c>metadata.json</c> (does not mint a new SyncId — the caller is expected
+        /// to set <see cref="LocProjectMetadata.SyncId"/>/<see cref="LocProjectMetadata.UpdatedAt"/>
+        /// explicitly). Used by the bot to stamp a new sync id in its own commit.
+        /// </summary>
+        public static async Task SaveMetadataOnlyAsync(LocProject project, string folderPath)
+        {
+            EnsureFolderStructure(folderPath);
+            await WriteJsonAsync(Path.Combine(folderPath, METADATA_FILE_NAME), project.Metadata);
+        }
+
+        /// <summary>
+        /// Writes (or, for whole-entity removals, deletes) exactly the single on-disk file affected
+        /// by <paramref name="change"/>, after that change has been applied in memory. Used by the
+        /// bot so it can stage and commit one change at a time. Sub-entity changes (translations,
+        /// suggestions, flags, tags, variables) live inside their key's file and rewrite that key.
+        /// </summary>
+        public static async Task WriteEntityForChangeAsync(LocProject project, string folderPath, LocEntryChange change)
+        {
+            switch (change.Type)
+            {
+                case EntryChangeType.MemberAdded:
+                case EntryChangeType.MemberUpdated:
+                {
+                    LocProjectMember? member = project.ProjectMembers.Find(m => m.UserId == change.EntryId);
+                    if (member != null)
+                        await WriteJsonAsync(EntityPath(folderPath, MEMBERS_FOLDER, change.EntryId), member);
+                    break;
+                }
+                case EntryChangeType.LanguageAdded:
+                case EntryChangeType.LanguageRemoved:
+                    await WriteJsonAsync(Path.Combine(folderPath, METADATA_FILE_NAME), project.Metadata);
+                    break;
+                case EntryChangeType.CategoryAdded:
+                case EntryChangeType.CategoryUpdated:
+                {
+                    LocCategory? category = project.Categories.Find(c => c.Id == change.EntryId);
+                    if (category != null)
+                        await WriteJsonAsync(EntityPath(folderPath, CATEGORIES_FOLDER, change.EntryId), category);
+                    break;
+                }
+                case EntryChangeType.CategoryRemoved:
+                    DeleteEntity(folderPath, CATEGORIES_FOLDER, change.EntryId);
+                    break;
+                case EntryChangeType.EnumAdded:
+                case EntryChangeType.EnumUpdated:
+                {
+                    LocEnum? locEnum = project.Enums.Find(e => e.Id == change.EntryId);
+                    if (locEnum != null)
+                        await WriteJsonAsync(EntityPath(folderPath, ENUMS_FOLDER, change.EntryId), locEnum);
+                    break;
+                }
+                case EntryChangeType.EnumRemoved:
+                    DeleteEntity(folderPath, ENUMS_FOLDER, change.EntryId);
+                    break;
+                default:
+                {
+                    // Every remaining change type is key-scoped: EntryId is the key id.
+                    LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+                    if (key != null)
+                        await WriteJsonAsync(EntityPath(folderPath, KEYS_FOLDER, change.EntryId), key);
+                    break;
+                }
+            }
+        }
+
+        private static string EntityPath(string folderPath, string subFolder, Guid id) =>
+            Path.Combine(folderPath, subFolder, $"{id}.json");
+
+        private static void DeleteEntity(string folderPath, string subFolder, Guid id)
+        {
+            string path = EntityPath(folderPath, subFolder, id);
+            if (File.Exists(path)) File.Delete(path);
+        }
+
+        /// <summary>
         /// Clears all uncommitted change files from disk after a successful bot commit.
         /// </summary>
         public static void ClearUncommittedChanges(string folderPath)

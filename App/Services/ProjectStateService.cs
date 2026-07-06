@@ -26,6 +26,15 @@ public class ProjectStateService
 
     public HashSet<Guid> ChangedLocKeys { get; } = new();
 
+    /// <summary>
+    /// Conflicts detected the last time uncommitted changes were validated against the server
+    /// (after a sync). While this is non-empty, pushing is blocked until the user resolves them.
+    /// </summary>
+    public IReadOnlyList<EntryChangeConflict> SyncConflicts => _SyncConflicts;
+    private List<EntryChangeConflict> _SyncConflicts = new();
+
+    public bool HasSyncConflicts => _SyncConflicts.Count > 0;
+
     /// <summary>True when a project is open and ready to use.</summary>
     public bool HasProject => CurrentProject is not null;
 
@@ -47,6 +56,12 @@ public class ProjectStateService
     /// after every edit, not just the first one after a save.
     /// </summary>
     public event Action? ProjectDataChanged;
+
+    // ── Construction ───────────────────────────────────────────────────────────
+
+    private readonly LocalizerApiClient _Api;
+
+    public ProjectStateService(LocalizerApiClient api) => _Api = api;
 
     // ── Actions ──────────────────────────────────────────────────────────────
 
@@ -70,6 +85,7 @@ public class ProjectStateService
         CurrentProjectPath = null;
         IsDirty            = true;
         ChangedLocKeys.Clear();
+        _SyncConflicts.Clear();
         CurrentUser = LocProjectMember.OfflineMember;
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
@@ -81,6 +97,7 @@ public class ProjectStateService
         CurrentProjectPath = folderPath;
         IsDirty            = false;
         ChangedLocKeys.Clear();
+        _SyncConflicts.Clear();
         CurrentUser = userId == LocProjectMember.OfflineMember.UserId ? LocProjectMember.OfflineMember : project.ProjectMembers.Find(m => m.UserId == userId)!;
         AccessToken = accessToken;
         ProjectChanged?.Invoke();
@@ -93,6 +110,7 @@ public class ProjectStateService
         CurrentProjectPath = null;
         IsDirty            = false;
         ChangedLocKeys.Clear();
+        _SyncConflicts.Clear();
         CurrentUser = LocProjectMember.OfflineMember;
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
@@ -125,6 +143,176 @@ public class ProjectStateService
         }
 
         if (!string.IsNullOrEmpty(CurrentProjectPath)) RecentProjectsService.UpdateRecentProjects(CurrentProject!, CurrentProjectPath, CurrentProject.Metadata.IsOnline);
+    }
+
+    // ── Online sync / push ─────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Pulls the latest repo state from the bot: applies any changed/deleted files locally,
+    /// reloads the project, then re-validates the pending uncommitted changes against the new
+    /// state. Detected conflicts are stored in <see cref="SyncConflicts"/> and block pushing.
+    /// </summary>
+    public async Task<SyncOperationResult> SyncAsync()
+    {
+        if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath))
+            return new SyncOperationResult { Outcome = SyncOutcome.Failed, Error = "No project is open." };
+        if (!CurrentProject.Metadata.IsOnline)
+            return new SyncOperationResult { Outcome = SyncOutcome.NotOnline };
+
+        (Guid UserId, string Token)? creds = await AuthTokenStorage.GetAsync(CurrentProject.Metadata.Id);
+        if (creds is null)
+            return new SyncOperationResult { Outcome = SyncOutcome.NoCredentials };
+
+        SyncResponse? response;
+        try
+        {
+            response = await _Api.SyncAsync(
+                CurrentProject.Metadata.ApiUrl, CurrentProject.Metadata.Id,
+                creds.Value.UserId, creds.Value.Token, CurrentProject.Metadata.SyncId);
+        }
+        catch (Exception ex)
+        {
+            return new SyncOperationResult { Outcome = SyncOutcome.Failed, Error = ex.Message };
+        }
+
+        if (response is null)
+            return new SyncOperationResult { Outcome = SyncOutcome.Failed, Error = "Empty response from server." };
+
+        if (response.Status == SyncStatus.UpToDate)
+        {
+            RevalidateConflicts();
+            return new SyncOperationResult { Outcome = SyncOutcome.UpToDate, Conflicts = _SyncConflicts.Count };
+        }
+
+        // Preserve the pending queue across the reload (server files never touch UncommittedChanges/).
+        List<LocEntryChange> pending = CurrentProject.UncommitedChanges;
+
+        await ApplyServerFilesAsync(CurrentProjectPath, response);
+
+        LocProject reloaded = await ProjectFileService.OpenAsync(CurrentProjectPath);
+        reloaded.UncommitedChanges = pending;
+        CurrentProject             = reloaded;
+
+        await ProjectFileService.SaveUncommittedOnlyAsync(CurrentProject, CurrentProjectPath);
+
+        RevalidateConflicts();
+
+        ProjectChanged?.Invoke();
+        ProjectDataChanged?.Invoke();
+
+        return new SyncOperationResult
+        {
+            Outcome      = response.Status == SyncStatus.FullResync ? SyncOutcome.FullResync : SyncOutcome.Updated,
+            ChangedFiles = response.ChangedFiles.Count + response.DeletedFiles.Count,
+            Conflicts    = _SyncConflicts.Count,
+        };
+    }
+
+    /// <summary>
+    /// Sends all pending uncommitted changes to the bot. Blocked while <see cref="HasSyncConflicts"/>.
+    /// On success, clears the local queue and refreshes local files by syncing to the new version.
+    /// </summary>
+    public async Task<PushOperationResult> PushAsync()
+    {
+        if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath))
+            return new PushOperationResult { Outcome = PushOutcome.Failed, Message = "No project is open." };
+        if (!CurrentProject.Metadata.IsOnline)
+            return new PushOperationResult { Outcome = PushOutcome.NotOnline };
+        if (HasSyncConflicts)
+            return new PushOperationResult { Outcome = PushOutcome.BlockedByConflicts, Conflicts = _SyncConflicts.Count };
+        if (CurrentProject.UncommitedChanges.Count == 0)
+            return new PushOperationResult { Outcome = PushOutcome.Success };
+
+        (Guid UserId, string Token)? creds = await AuthTokenStorage.GetAsync(CurrentProject.Metadata.Id);
+        if (creds is null)
+            return new PushOperationResult { Outcome = PushOutcome.NoCredentials };
+
+        PushResponse? response;
+        try
+        {
+            response = await _Api.PushAsync(
+                CurrentProject.Metadata.ApiUrl, CurrentProject.Metadata.Id,
+                creds.Value.UserId, creds.Value.Token,
+                CurrentProject.Metadata.SyncId, CurrentProject.UncommitedChanges);
+        }
+        catch (Exception ex)
+        {
+            return new PushOperationResult { Outcome = PushOutcome.Failed, Message = ex.Message };
+        }
+
+        if (response is null)
+            return new PushOperationResult { Outcome = PushOutcome.Failed, Message = "Empty response from server." };
+
+        switch (response.Status)
+        {
+            case PushStatus.Conflict:
+                _SyncConflicts = response.Conflicts;
+                ProjectDataChanged?.Invoke();
+                return new PushOperationResult { Outcome = PushOutcome.Conflict, Conflicts = response.Conflicts.Count, Message = response.Message };
+
+            case PushStatus.Failed:
+                return new PushOperationResult { Outcome = PushOutcome.Failed, Message = response.Message };
+
+            case PushStatus.Success:
+                // Clear the queue first so the follow-up sync does not see our own changes as conflicts,
+                // then sync (still holding the old SyncId) to pull the just-pushed state into local files.
+                CurrentProject.UncommitedChanges.Clear();
+                ProjectFileService.ClearUncommittedChanges(CurrentProjectPath);
+                MarkClean();
+
+                await SyncAsync();
+
+                return new PushOperationResult { Outcome = PushOutcome.Success };
+
+            default:
+                return new PushOperationResult { Outcome = PushOutcome.Failed, Message = "Unexpected server status." };
+        }
+    }
+
+    private void RevalidateConflicts()
+    {
+        _SyncConflicts = CurrentProject!.Metadata.IsOnline
+            ? EntryChangeConflictService.Validate(CurrentProject, CurrentProject.UncommitedChanges)
+            : new List<EntryChangeConflict>();
+    }
+
+    private static async Task ApplyServerFilesAsync(string root, SyncResponse response)
+    {
+        if (response.Status == SyncStatus.FullResync)
+            WipeEntityFiles(root);
+
+        foreach (SyncFile file in response.ChangedFiles)
+        {
+            string full = Path.Combine(root, file.Path.Replace('/', Path.DirectorySeparatorChar));
+            string? dir  = Path.GetDirectoryName(full);
+            if (!string.IsNullOrEmpty(dir)) Directory.CreateDirectory(dir);
+            await File.WriteAllTextAsync(full, file.Content);
+        }
+
+        foreach (string deleted in response.DeletedFiles)
+        {
+            string full = Path.Combine(root, deleted.Replace('/', Path.DirectorySeparatorChar));
+            if (File.Exists(full)) File.Delete(full);
+        }
+    }
+
+    /// <summary>Removes metadata + every entity file (a full resync then rewrites them), leaving the local queue intact.</summary>
+    private static void WipeEntityFiles(string root)
+    {
+        string metadata = Path.Combine(root, ProjectFileService.METADATA_FILE_NAME);
+        if (File.Exists(metadata)) File.Delete(metadata);
+
+        foreach (string folder in new[]
+                 {
+                     ProjectFileService.MEMBERS_FOLDER, ProjectFileService.CATEGORIES_FOLDER,
+                     ProjectFileService.ENUMS_FOLDER, ProjectFileService.KEYS_FOLDER,
+                 })
+        {
+            string path = Path.Combine(root, folder);
+            if (!Directory.Exists(path)) continue;
+            foreach (string file in Directory.GetFiles(path, "*.json"))
+                File.Delete(file);
+        }
     }
 
     // ── Member change recording ──────────────────────────────────────────────
@@ -306,9 +494,16 @@ public class ProjectStateService
 
     // ── Translation change recording ──────────────────────────────────────────
 
-    public void RecordTranslationUpdated(Guid keyId, LocKeyTranslation translation) =>
+    /// <summary>
+    /// Records a translation update. <paramref name="prevDestHash"/> is the hash of the translation's
+    /// text <em>before</em> this edit (so a concurrent edit on the server can be detected); when the
+    /// caller did not change the text it may be left null and the translation's current text is used.
+    /// The previous source hash is the translation's <see cref="LocKeyTranslation.BaseTextHash"/>.
+    /// </summary>
+    public void RecordTranslationUpdated(Guid keyId, LocKeyTranslation translation, string? prevDestHash = null) =>
         AddKeyChange(keyId, EntryChangeType.TranslationUpdated, translation.LanguageId,
-            Newtonsoft.Json.JsonConvert.SerializeObject(translation), translation.BaseTextHash);
+            Newtonsoft.Json.JsonConvert.SerializeObject(translation), translation.BaseTextHash,
+            prevDestHash ?? TextHashHelper.Compute(translation.Text));
 
     // ── Suggestion change recording ───────────────────────────────────────────
 
@@ -353,18 +548,20 @@ public class ProjectStateService
     public void RecordVariableRemoved(Guid keyId, Guid variableId) =>
         AddKeyChange(keyId, EntryChangeType.VariableRemoved, string.Empty, variableId.ToString());
 
-    private void AddKeyChange(Guid keyId, EntryChangeType type, string entrySubId, string changeData, string prevHashData = "")
+    private void AddKeyChange(Guid keyId, EntryChangeType type, string entrySubId, string changeData,
+        string prevSourceHashData = "", string prevDestHashData = "")
     {
         ChangedLocKeys.Add(keyId);
         if (CurrentProject!.Metadata.IsOnline)
         {
             CurrentProject.UncommitedChanges.Add(new LocEntryChange
             {
-                Type         = type,
-                EntryId      = keyId,
-                EntrySubId   = entrySubId,
-                ChangeData   = changeData,
-                PrevHashData = prevHashData
+                Type               = type,
+                EntryId            = keyId,
+                EntrySubId         = entrySubId,
+                ChangeData         = changeData,
+                PrevSourceHashData = prevSourceHashData,
+                PrevDestHashData   = prevDestHashData
             });
         }
 

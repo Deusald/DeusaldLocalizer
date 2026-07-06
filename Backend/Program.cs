@@ -1,23 +1,37 @@
+using System.Text.Json.Serialization;
+using DeusaldLocalizerBackend;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// ── Configuration ─────────────────────────────────────────────────────────────
+builder.Services.Configure<BotOptions>(builder.Configuration.GetSection(BotOptions.SECTION_NAME));
 
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+// ── Services ──────────────────────────────────────────────────────────────────
+builder.Services.AddSingleton<GitService>();
+builder.Services.AddSingleton<ProjectRegistry>();
+builder.Services.AddSingleton<ProjectSerializer>();
+builder.Services.AddSingleton<AuthService>();
+builder.Services.AddSingleton<RepoPreparer>();
+builder.Services.AddSingleton<SyncService>();
+builder.Services.AddSingleton<PushService>();
+
+builder.Services
+       .AddControllers()
+       .AddJsonOptions(options =>
+        {
+            // Serialize enums (EntryChangeType, SyncStatus, …) as strings on the wire.
+            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+        });
+
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// ── Pipeline ──────────────────────────────────────────────────────────────────
 if (app.Environment.IsDevelopment())
-{
     app.MapOpenApi();
-}
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
 
 app.MapControllers();
+app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
 
 app.Run();

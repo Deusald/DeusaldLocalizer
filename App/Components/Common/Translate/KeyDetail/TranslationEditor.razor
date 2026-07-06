@@ -273,7 +273,7 @@
         // The source is always considered "matching itself".
         source.BaseTextHash = newHash;
 
-        _ProjectState.RecordTranslationUpdated(Key.Id, source);
+        _ProjectState.RecordTranslationUpdated(Key.Id, source, oldHash);
 
         // Re-evaluate every other-language translation against the new source hash.
         // A translation is "source changed" when it was based on a different source
@@ -313,10 +313,13 @@
         translation.SourceChanged = true;
         translation.Status        = TranslationStatus.Suggested;
 
+        LocKeyTranslation? sourceForHash = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+
         LocTranslationSuggestion suggestion = new LocTranslationSuggestion
         {
-            Text     = _SourceDraft,
-            AuthorId = _ProjectState.CurrentUser.UserId,
+            Text       = _SourceDraft,
+            AuthorId   = _ProjectState.CurrentUser.UserId,
+            SourceHash = TextHashHelper.Compute(sourceForHash?.Text ?? ""),
         };
 
         translation.Suggestions.Add(suggestion);
@@ -340,6 +343,9 @@
             Key.Translations.Add(translation);
         }
 
+        // Hash of the text before this edit — lets the server/client detect a concurrent edit.
+        string oldDestHash = TextHashHelper.Compute(translation.Text);
+
         translation.Text          = _TranslationDraft;
         translation.UpdatedAt     = DateTime.UtcNow;
         translation.SourceChanged = false;
@@ -350,7 +356,7 @@
 
         translation.Status = TranslationStatus.Approved;
 
-        _ProjectState.RecordTranslationUpdated(Key.Id, translation);
+        _ProjectState.RecordTranslationUpdated(Key.Id, translation, oldDestHash);
 
         Key.UpdatedAt = DateTime.UtcNow;
         await OnChanged.InvokeAsync();
@@ -388,10 +394,13 @@
         translation.SourceChanged = true;
         translation.Status        = TranslationStatus.Suggested;
 
+        LocKeyTranslation? sourceForHash = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+
         LocTranslationSuggestion suggestion = new LocTranslationSuggestion
         {
-            Text     = _TranslationDraft,
-            AuthorId = _ProjectState.CurrentUser.UserId,
+            Text       = _TranslationDraft,
+            AuthorId   = _ProjectState.CurrentUser.UserId,
+            SourceHash = TextHashHelper.Compute(sourceForHash?.Text ?? ""),
         };
 
         translation.Suggestions.Add(suggestion);

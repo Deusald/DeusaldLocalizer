@@ -67,7 +67,7 @@ namespace App
         // macOS: override the cross-platform close-requested handler.
         protected override bool OnCloseRequested()
         {
-            if (!projectState.HasProject || !projectState.IsDirty || projectState.IsOnline)
+            if (!projectState.HasProject || !projectState.IsDirty || projectState.CurrentProject!.Metadata.IsOnline)
                 return false; // false = allow close
 
             // Fire-and-forget the async prompt; cancel the immediate close and

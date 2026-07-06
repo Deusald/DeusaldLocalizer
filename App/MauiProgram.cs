@@ -22,6 +22,8 @@ public static class MauiProgram
 
         // ── App services ──────────────────────────────────────────────────
         // Singleton: shared state that must survive page navigation
+        builder.Services.AddSingleton<HttpClient>();
+        builder.Services.AddSingleton<LocalizerApiClient>();
         builder.Services.AddSingleton<ProjectStateService>();
 
         return builder.Build();

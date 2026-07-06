@@ -102,6 +102,9 @@
         LocKeyTranslation? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
         if (translation == null) return;
 
+        // Hash of the text before accepting — lets the server/client detect a concurrent edit.
+        string oldDestHash = TextHashHelper.Compute(translation.Text);
+
         translation.Text          = suggestion.Text;
         translation.Status        = TranslationStatus.Approved;
         translation.SourceChanged = false;
@@ -115,7 +118,7 @@
         translation.Suggestions.Remove(suggestion);
         Key.UpdatedAt = DateTime.UtcNow;
 
-        _ProjectState.RecordTranslationUpdated(Key.Id, translation);
+        _ProjectState.RecordTranslationUpdated(Key.Id, translation, oldDestHash);
         _ProjectState.RecordSuggestionRemoved(Key.Id, SelectedLanguage, suggestion.Id);
         OnChanged.InvokeAsync();
     }

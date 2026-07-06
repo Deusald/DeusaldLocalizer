@@ -1,0 +1,37 @@
+@host = http://localhost:5114
+@projectId = 00000000-0000-0000-0000-000000000000
+@userId = 00000000-0000-0000-0001-000000000001
+@token = replace-with-raw-access-token
+
+### Health
+GET {{host}}/health
+
+### Sync (pull) — send the SyncId the client currently holds
+POST {{host}}/projects/{{projectId}}/sync
+Content-Type: application/json
+Authorization: Bearer {{token}}
+X-User-Id: {{userId}}
+
+{
+  "syncId": "00000000-0000-0000-0000-000000000000"
+}
+
+### Push — send the pending LocEntryChange list
+POST {{host}}/projects/{{projectId}}/push
+Content-Type: application/json
+Authorization: Bearer {{token}}
+X-User-Id: {{userId}}
+
+{
+  "syncId": "00000000-0000-0000-0000-000000000000",
+  "changes": [
+    {
+      "type": "TagAdded",
+      "entryId": "00000000-0000-0000-0000-000000000000",
+      "entrySubId": "",
+      "changeData": "example-tag",
+      "prevSourceHashData": "",
+      "prevDestHashData": ""
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+# Local + Droplet deployment for the localization bot.
+#
+# Provide project configuration and GitHub credentials via a .env file or the
+# environment. Config keys use the ASP.NET double-underscore convention, e.g.
+#   Bot__Projects__0__ProjectId=...
+#   Bot__Projects__0__Slug=my-game
+#   Bot__Projects__0__RemoteUrl=https://<user>:<PAT>@github.com/owner/repo.git
+#   Bot__Projects__0__Branch=main
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Backend/Dockerfile
+    image: deusald-localizer-bot
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      Bot__ReposRoot: /data/repos
+      Bot__CommitterName: "Deusald Localizer Bot"
+      Bot__CommitterEmail: "bot@localizer"
+      # Project entries and GitHub credentials come from the .env file:
+      Bot__Projects__0__ProjectId: "${PROJECT_0_ID}"
+      Bot__Projects__0__Slug: "${PROJECT_0_SLUG}"
+      Bot__Projects__0__RemoteUrl: "${PROJECT_0_REMOTE_URL}"
+      Bot__Projects__0__Branch: "${PROJECT_0_BRANCH:-main}"
+    volumes:
+      - bot-repos:/data/repos
+    restart: unless-stopped
+
+volumes:
+  bot-repos:

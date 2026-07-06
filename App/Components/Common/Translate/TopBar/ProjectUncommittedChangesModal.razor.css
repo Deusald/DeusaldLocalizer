@@ -123,3 +123,28 @@
 
 .ucm-detail-new  { background: rgba(58,217,138,.06); color: #c8c8cf; border-left: 2px solid rgba(58,217,138,.3); }
 .ucm-detail-hash { background: rgba(91,108,255,.06); color: #7a7b83; border-left: 2px solid rgba(91,108,255,.2); }
+.ucm-conflict-banner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(255, 107, 107, 0.12);
+    color: #ff9b9b;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255, 107, 107, 0.25);
+}
+
+.ucm-entry-conflict {
+    border-left: 3px solid #ff6b6b;
+}
+
+.ucm-conflict-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: #ff9b9b;
+    background: rgba(255, 107, 107, 0.14);
+    padding: 1px 7px;
+    border-radius: 10px;
+}
