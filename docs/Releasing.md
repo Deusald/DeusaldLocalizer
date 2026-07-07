@@ -122,10 +122,12 @@ that **local folder** (or URL) instead of GitHub. Unset in production, so it's i
 2. **Install it** — run `dist\DeusaldLocalizer-win-Setup.exe`. It installs to
    `%LocalAppData%\DeusaldLocalizer` and launches once.
 3. **Make a newer version** and pack it into the **same** `dist\` (vpk builds a delta from `1.1.2`
-   and updates `releases.win.json`):
+   and updates `releases.win.json`). Bump `<Version>` to `1.1.3` in
+   [App/App.csproj](../App/App.csproj) first — the script reads it automatically, so no `-Version`
+   flag is needed. (Bump the csproj, don't just pass `-Version`, so the version shown on the
+   welcome screen matches what Velopack installs.)
    ```powershell
-   # bump <Version> to 1.1.3 in App/App.csproj first
-   ./scripts/build-release.ps1 -Version 1.1.3
+   ./scripts/build-release.ps1
    ```
 4. **Launch the installed app pointed at `dist\`.** Launching the exe from this shell makes it
    inherit the env var (no need to set it system-wide):
