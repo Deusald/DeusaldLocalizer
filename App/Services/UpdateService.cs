@@ -1,66 +1,84 @@
-using System.Net.Http.Json;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using JetBrains.Annotations;
+using Velopack;
+using Velopack.Sources;
 
 namespace App
 {
     /// <summary>
     /// Details of a newer release found on GitHub.
     /// </summary>
-    public sealed record UpdateInfo(string LatestVersion, string ReleaseUrl);
+    public sealed record UpdateInfo(string LatestVersion, string? ReleaseNotesHtml);
 
     /// <summary>
-    /// Checks GitHub Releases for a version newer than the running build and, if found,
-    /// returns where to download it. Never throws to the caller — offline, rate-limited,
-    /// or malformed responses simply yield <c>null</c> (no update).
+    /// Wraps Velopack's <see cref="UpdateManager"/> to check GitHub Releases for a newer build and,
+    /// on request, download it and relaunch into it. Never throws to the caller — offline, rate-limited,
+    /// or not-installed (dev / portable) runs simply yield <c>null</c> (no update).
     /// </summary>
     [PublicAPI]
-    public sealed class UpdateService(HttpClient http)
+    public sealed class UpdateService
     {
-        private const string _OWNER = "Deusald";
-        private const string _REPO  = "DeusaldLocalizer";
+        private const string _REPO_URL = "https://github.com/Deusald/DeusaldLocalizer";
 
-        private static readonly JsonSerializerOptions _Json = new(JsonSerializerDefaults.Web);
+        // Local-test hook: set this env var to a folder (or URL) containing a Velopack release
+        // (releases.win.json + .nupkg) to update from there instead of GitHub. Unset in production.
+        private const string _SOURCE_OVERRIDE_ENV = "DEUSALD_UPDATE_SOURCE";
 
-        public async Task<UpdateInfo?> CheckForUpdateAsync(CancellationToken ct = default)
+        private readonly UpdateManager _Manager = CreateManager();
+
+        private static UpdateManager CreateManager()
+        {
+            string? overrideSource = Environment.GetEnvironmentVariable(_SOURCE_OVERRIDE_ENV);
+            return string.IsNullOrWhiteSpace(overrideSource)
+                ? new UpdateManager(new GithubSource(_REPO_URL, accessToken: null, prerelease: false))
+                : new UpdateManager(overrideSource);
+        }
+
+        // The Velopack update descriptor from the last successful check, needed to download / apply.
+        private Velopack.UpdateInfo? _Pending;
+
+        /// <summary>
+        /// Returns info about a newer release, or <c>null</c> when up to date, offline, or the app is
+        /// not a Velopack install (e.g. running from the IDE) — in which case in-app update is disabled.
+        /// </summary>
+        public async Task<UpdateInfo?> CheckForUpdateAsync()
         {
             try
             {
-                using HttpRequestMessage request = new(HttpMethod.Get,
-                    $"https://api.github.com/repos/{_OWNER}/{_REPO}/releases/latest");
-                // GitHub rejects requests without a User-Agent; the other headers pin the API version.
-                request.Headers.TryAddWithoutValidation("User-Agent", _REPO);
-                request.Headers.TryAddWithoutValidation("Accept", "application/vnd.github+json");
-                request.Headers.TryAddWithoutValidation("X-GitHub-Api-Version", "2022-11-28");
+                // Not a Velopack install (debug / portable run) — nothing to update in place.
+                if (!_Manager.IsInstalled) return null;
 
-                using HttpResponseMessage response = await http.SendAsync(request, ct);
-                if (!response.IsSuccessStatusCode) return null;
+                Velopack.UpdateInfo? updates = await _Manager.CheckForUpdatesAsync();
+                if (updates is null) return null;
 
-                GitHubRelease? release = await response.Content.ReadFromJsonAsync<GitHubRelease>(_Json, ct);
-                if (release?.TagName is null || release.HtmlUrl is null) return null;
-                if (!IsNewer(release.TagName, BuildInfo.Version)) return null;
-
-                return new UpdateInfo(release.TagName.TrimStart('v', 'V'), release.HtmlUrl);
+                _Pending = updates;
+                VelopackAsset target = updates.TargetFullRelease;
+                return new UpdateInfo(target.Version.ToString(), target.NotesHTML);
             }
             catch
             {
-                // Offline, DNS failure, rate-limited, or unparseable body — treat as "no update".
+                // Offline, DNS failure, rate-limited, or unparseable feed — treat as "no update".
                 return null;
             }
         }
 
-        private static bool IsNewer(string latestTag, string current)
+        /// <summary>
+        /// Downloads the pending update and relaunches into it. On success the current process exits
+        /// and does not return; returns <c>false</c> only when there is nothing to apply or the
+        /// download failed (e.g. connection lost between the check and the download).
+        /// </summary>
+        public async Task<bool> DownloadAndApplyAsync(Action<int>? progress = null)
         {
-            if (!Version.TryParse(latestTag.TrimStart('v', 'V'), out Version? latest)) return false;
-            if (!Version.TryParse(current,                       out Version? cur))    return false;
-            return latest > cur;
-        }
-
-        private sealed class GitHubRelease
-        {
-            [JsonPropertyName("tag_name")] public string? TagName { get; set; }
-            [JsonPropertyName("html_url")] public string? HtmlUrl { get; set; }
+            if (_Pending is null) return false;
+            try
+            {
+                await _Manager.DownloadUpdatesAsync(_Pending, progress);
+                _Manager.ApplyUpdatesAndRestart(_Pending); // relaunches into the new version; does not return
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

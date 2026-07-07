@@ -1,35 +1,99 @@
 <#
 .SYNOPSIS
-    Builds a self-contained Windows release of Deusald Localizer, zips it, and
-    generates a SHA-256 checksum ready to upload to a GitHub Release.
+    Builds a Windows release of Deusald Localizer and packages it with Velopack
+    (https://velopack.io) so existing installs can auto-update in place.
 
 .DESCRIPTION
     Run from anywhere; paths are resolved relative to the script location.
-    Produces, under dist/:
-        DeusaldLocalizer-v<version>-win-x64.zip
-        DeusaldLocalizer-v<version>-win-x64.zip.sha256
 
-    The version is read from App/App.csproj (<Version>) unless -Version is passed.
-    The build embeds the current short git commit hash into the app
+    Pipeline:
+        1. dotnet publish  — self-contained win-x64 build into App\bin\...\publish.
+        2. vpk download    — pull the previous release from GitHub so Velopack can
+                             build a small delta package (skipped/optional first time).
+        3. vpk pack        — produce the release artifacts under dist\:
+                                 DeusaldLocalizer-<version>-full.nupkg
+                                 DeusaldLocalizer-<version>-delta.nupkg   (if a prior release existed)
+                                 DeusaldLocalizer-win-Setup.exe           (the installer users download)
+                                 DeusaldLocalizer-win-Portable.zip
+                                 releases.win.json                        (the update feed clients read)
+        4. vpk upload      — (only with -Upload) create a GitHub DRAFT release and upload
+                             the artifacts to it. The script never publishes — you review the
+                             draft, edit its description, and click Publish yourself.
+
+    The version is read from App/App.csproj (<Version>) unless -Version is passed, and is
+    used verbatim as the Velopack package version. Keep <Version> in App.csproj in sync.
+
+    The build still embeds the current short git commit hash into the app
     (shown on the welcome screen as "v<version> · <hash>").
 
 .PARAMETER Version
-    Override the version string (e.g. "1.0.1"). Defaults to <Version> in App.csproj.
+    Override the version string (e.g. "1.1.3"). Defaults to <Version> in App.csproj.
 
-.PARAMETER Tag
-    Also create and push an annotated git tag "v<version>" for the current commit.
+.PARAMETER Upload
+    After packing, run `vpk upload github` to create a GitHub DRAFT release (tag v<version>)
+    and upload all artifacts to it. The draft is visible only to you — review it, edit the
+    description, and publish it manually. The script never publishes on its own. Needs a token.
+
+.PARAMETER ReleaseNotes
+    Optional path to a markdown file whose contents pre-fill the draft release's description.
+    If omitted, the description starts empty and you type it into the GitHub draft before publishing.
+
+.PARAMETER Token
+    GitHub personal access token (fine-grained, Contents: Read and write) used for -Upload /
+    delta download. Resolution order: this parameter, then the GITHUB_TOKEN environment variable,
+    then the 1Password item (via the `op` CLI) referenced by $opTokenRef below — pulled only when
+    -Upload is set, so a local-only pack never prompts 1Password. Public-repo delta download works
+    without a token but is rate-limited.
 
 .EXAMPLE
-    ./scripts/build-release.ps1
-    ./scripts/build-release.ps1 -Version 1.0.1 -Tag
+    ./scripts/build-release.ps1                       # pack only, artifacts in dist\
+    ./scripts/build-release.ps1 -Upload               # pack + upload to a GitHub draft you publish
+    ./scripts/build-release.ps1 -Version 1.1.3 -Upload -ReleaseNotes notes.md
 #>
 [CmdletBinding()]
 param(
     [string] $Version,
-    [switch] $Tag
+    [switch] $Upload,
+    [string] $ReleaseNotes,
+    [string] $Token
 )
 
 $ErrorActionPreference = 'Stop'
+
+# ── Constants ────────────────────────────────────────────────────────────────
+$packId     = 'DeusaldLocalizer'
+$packTitle  = 'Deusald Localizer'
+$authors    = 'Deusald'
+$mainExe    = 'DeusaldLocalizer.exe'
+$repoUrl    = 'https://github.com/Deusald/DeusaldLocalizer'
+$opTokenRef = 'op://Private/GitHub Deusald Localizer Token/credential'  # 1Password secret reference
+
+# ── Resolve the GitHub token: -Token > $env:GITHUB_TOKEN > 1Password (only when uploading) ────
+function Resolve-GitHubToken {
+    param([string] $Explicit, [string] $OpRef, [bool] $NeedFromVault)
+
+    if ($Explicit)         { return $Explicit }
+    if ($env:GITHUB_TOKEN) { return $env:GITHUB_TOKEN }
+    # Don't reach for 1Password (and trigger its approval prompt) unless a token is actually required.
+    if (-not $NeedFromVault) { return $null }
+
+    if (-not (Get-Command op -ErrorAction SilentlyContinue)) {
+        Write-Warning "1Password CLI 'op' not found; cannot read $OpRef. Pass -Token or set GITHUB_TOKEN."
+        return $null
+    }
+    Write-Host "Reading GitHub token from 1Password ($OpRef)..." -ForegroundColor Cyan
+    # Capture without .Trim() first: a failed `op read` prints to stderr and yields $null on stdout,
+    # so guard against null before trimming (otherwise it throws under ErrorActionPreference=Stop).
+    $tok = op read $OpRef
+    if ($LASTEXITCODE -eq 0 -and -not [string]::IsNullOrWhiteSpace($tok)) { return $tok.Trim() }
+    Write-Warning "1Password read failed (signed in? run 'op signin'). Continuing without a token."
+    return $null
+}
+$Token = Resolve-GitHubToken -Explicit $Token -OpRef $opTokenRef -NeedFromVault $Upload
+
+if ($ReleaseNotes -and -not (Test-Path $ReleaseNotes)) {
+    throw "ReleaseNotes file not found: $ReleaseNotes"
+}
 
 # ── Resolve paths ────────────────────────────────────────────────────────────
 $scriptDir  = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -48,7 +112,17 @@ if (-not $Version) {
     if ($csprojText -match '<Version>(.*?)</Version>') { $Version = $Matches[1].Trim() }
     else { throw "No <Version> in App.csproj; pass -Version explicitly." }
 }
-Write-Host "Building Deusald Localizer v$Version ($rid, self-contained)" -ForegroundColor Cyan
+Write-Host "Packaging $packTitle v$Version ($rid, self-contained, Velopack)" -ForegroundColor Cyan
+
+# ── Ensure the Velopack CLI (vpk) is available ───────────────────────────────
+if (-not (Get-Command vpk -ErrorAction SilentlyContinue)) {
+    Write-Host "vpk (Velopack CLI) not found - installing as a global dotnet tool..." -ForegroundColor Yellow
+    dotnet tool install -g vpk
+    if ($LASTEXITCODE -ne 0) { throw "Failed to install vpk. Install manually: dotnet tool install -g vpk" }
+    if (-not (Get-Command vpk -ErrorAction SilentlyContinue)) {
+        throw "vpk installed but not on PATH. Open a new shell (or add %USERPROFILE%\.dotnet\tools to PATH) and re-run."
+    }
+}
 
 # ── Warn on a dirty / detached working tree (hash embed reflects HEAD) ────────
 $gitStatus = git -C $root status --porcelain 2>$null
@@ -56,6 +130,7 @@ if ($LASTEXITCODE -eq 0 -and $gitStatus) {
     Write-Warning "Working tree has uncommitted changes. The embedded commit hash reflects HEAD, not these edits."
 }
 $shortHash = (git -C $root rev-parse --short HEAD 2>$null)
+$fullHash  = (git -C $root rev-parse HEAD 2>$null)
 if ($LASTEXITCODE -eq 0) { Write-Host "Commit: $shortHash" -ForegroundColor DarkGray }
 
 # ── Publish ──────────────────────────────────────────────────────────────────
@@ -67,43 +142,82 @@ dotnet publish $csproj `
     -p:WindowsPackageType=None -p:SelfContained=true -p:RuntimeIdentifier=$rid
 if ($LASTEXITCODE -ne 0) { throw "dotnet publish failed (exit $LASTEXITCODE)." }
 
-$exe = Join-Path $publishDir 'DeusaldLocalizer.exe'
+$exe = Join-Path $publishDir $mainExe
 if (-not (Test-Path $exe)) { throw "Expected $exe was not produced." }
 
-# ── Zip ──────────────────────────────────────────────────────────────────────
+# MAUI emits an .ico into the publish folder; use it for the installer/shortcuts if present.
+$icon = Join-Path $publishDir 'appicon.ico'
+$iconArgs = if (Test-Path $icon) { @('--icon', $icon) } else { @() }
+
+# Optional release notes → embedded in the package and used as the GitHub draft's description.
+$notesArgs = if ($ReleaseNotes) { @('--releaseNotes', (Resolve-Path $ReleaseNotes).Path) } else { @() }
+
 New-Item -ItemType Directory -Force -Path $distDir | Out-Null
-$zipName = "DeusaldLocalizer-v$Version-win-x64.zip"
-$zipPath = Join-Path $distDir $zipName
-if (Test-Path $zipPath) { Remove-Item $zipPath -Force }
-Compress-Archive -Path (Join-Path $publishDir '*') -DestinationPath $zipPath -CompressionLevel Optimal
-$zipMb = "{0:N1}" -f ((Get-Item $zipPath).Length / 1MB)
 
-# ── Checksum ─────────────────────────────────────────────────────────────────
-$hash = (Get-FileHash -Algorithm SHA256 $zipPath).Hash.ToLower()
-$shaPath = "$zipPath.sha256"
-"$hash  $zipName" | Out-File -FilePath $shaPath -Encoding ascii -NoNewline
+# ── Fetch the previous release so Velopack can build a delta (best-effort) ────
+# Only when uploading: the delta base must be the last *published* release. For local packs we
+# skip GitHub entirely and let vpk build the delta against whatever is already in dist\ (e.g. the
+# previous version you packed while testing). On the first ever release there is simply no delta.
+if ($Upload) {
+    Write-Host "Fetching previous release from GitHub (for delta generation)..." -ForegroundColor Cyan
+    $dlArgs = @('download', 'github', '--repoUrl', $repoUrl, '--outputDir', $distDir)
+    if ($Token) { $dlArgs += @('--token', $Token) }
+    vpk @dlArgs
+    if ($LASTEXITCODE -ne 0) {
+        Write-Warning "No previous release downloaded (first release, or download failed). Building a full-only package."
+    }
+}
 
-# ── Optional tag ─────────────────────────────────────────────────────────────
-if ($Tag) {
-    Write-Host "Tagging v$Version..." -ForegroundColor Cyan
-    git -C $root tag -a "v$Version" -m "DeusaldLocalizer v$Version"
-    if ($LASTEXITCODE -ne 0) { throw "git tag failed (does v$Version already exist?)." }
-    git -C $root push origin "v$Version"
-    if ($LASTEXITCODE -ne 0) { throw "git push tag failed." }
+# ── Pack ─────────────────────────────────────────────────────────────────────
+Write-Host "Packing with Velopack..." -ForegroundColor Cyan
+vpk pack `
+    --packId      $packId `
+    --packVersion $Version `
+    --packDir     $publishDir `
+    --mainExe     $mainExe `
+    --packTitle   $packTitle `
+    --packAuthors $authors `
+    --outputDir   $distDir `
+    @iconArgs @notesArgs
+if ($LASTEXITCODE -ne 0) { throw "vpk pack failed (exit $LASTEXITCODE)." }
+
+$setup = Join-Path $distDir "$packId-win-Setup.exe"
+
+# ── Optional upload to GitHub Releases ───────────────────────────────────────
+if ($Upload) {
+    if (-not $Token) { throw "-Upload requires a token. Pass -Token, set GITHUB_TOKEN, or sign in to 1Password (op signin)." }
+    Write-Host "Creating GitHub DRAFT release (tag v$Version) and uploading artifacts..." -ForegroundColor Cyan
+    # No --publish: vpk always leaves the release as a draft, which we never convert here.
+    $upArgs = @(
+        'upload', 'github',
+        '--repoUrl',     $repoUrl,
+        '--token',       $Token,
+        '--outputDir',   $distDir,
+        '--tag',         "v$Version",
+        '--releaseName', "$packTitle v$Version"
+    )
+    if ($fullHash) { $upArgs += @('--targetCommitish', $fullHash) }  # pin the tag to this exact commit (created on publish)
+    vpk @upArgs
+    if ($LASTEXITCODE -ne 0) { throw "vpk upload failed (exit $LASTEXITCODE)." }
 }
 
 # ── Summary ──────────────────────────────────────────────────────────────────
 Write-Host ""
-Write-Host "Release artifacts ready ($zipMb MB):" -ForegroundColor Green
-Write-Host "  $zipPath"
-Write-Host "  $shaPath"
+Write-Host "Velopack artifacts ready in dist\:" -ForegroundColor Green
+Get-ChildItem $distDir -File | Where-Object { $_.LastWriteTime -gt (Get-Date).AddMinutes(-30) } |
+    Sort-Object Name | ForEach-Object { Write-Host ("  {0,-45} {1,7:N1} MB" -f $_.Name, ($_.Length / 1MB)) }
 Write-Host ""
-Write-Host "SHA-256: $hash" -ForegroundColor Yellow
-Write-Host ""
-Write-Host "Next steps:" -ForegroundColor Cyan
-if (-not $Tag) {
-    Write-Host "  1. Tag the release commit:  git tag -a v$Version -m `"DeusaldLocalizer v$Version`"  &&  git push origin v$Version"
-    Write-Host "     (or re-run this script with -Tag)"
+
+if ($Upload) {
+    Write-Host "Uploaded to a GitHub DRAFT release (visible only to you)." -ForegroundColor Yellow
+    Write-Host "Next steps:" -ForegroundColor Cyan
+    Write-Host "  1. Open https://github.com/Deusald/DeusaldLocalizer/releases  and open the 'v$Version' draft."
+    Write-Host "  2. Edit the description, then click Publish (keep it a non-prerelease)."
+    Write-Host "     Publishing creates the git tag v$Version at the built commit and lets clients auto-update."
 }
-Write-Host "  2. Open https://github.com/Deusald/DeusaldLocalizer/releases/new?tag=v$Version"
-Write-Host "  3. Attach both files above, add notes, and Publish."
+else {
+    Write-Host "Local pack only (not uploaded)." -ForegroundColor Yellow
+    Write-Host "Next steps:" -ForegroundColor Cyan
+    Write-Host "  - Test the installer:  $setup"
+    Write-Host "  - Re-run with -Upload to create a GitHub draft you can review and publish."
+}

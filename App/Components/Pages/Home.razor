@@ -18,10 +18,20 @@
                         <span class="home-update-title">Update available</span>
                         <span class="home-update-sub">Version @_UpdateInfo.LatestVersion is ready to download.</span>
                     </div>
-                    <button class="home-update-download" @onclick="DownloadUpdate">Download</button>
-                    <button class="home-update-dismiss" @onclick="() => _UpdateInfo = null" title="Dismiss">
-                        <i class="bi bi-x"></i>
-                    </button>
+                    @if (_IsUpdating)
+                    {
+                        <button class="home-update-download" disabled>
+                            <span class="dl-spinner" style="width:14px;height:14px;flex-shrink:0;"></span>
+                            <span>Installing… @_UpdateProgress%</span>
+                        </button>
+                    }
+                    else
+                    {
+                        <button class="home-update-download" @onclick="DownloadUpdate">Update</button>
+                        <button class="home-update-dismiss" @onclick="() => _UpdateInfo = null" title="Dismiss">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    }
                 </div>
             }
 
@@ -187,6 +197,8 @@
     private AccessTokenModal? _AccessTokenModal;
 
     private UpdateInfo? _UpdateInfo;
+    private bool        _IsUpdating;
+    private int         _UpdateProgress;
 
     // ── Lifecycle ─────────────────────────────────────────────────────────
 
@@ -207,8 +219,22 @@
 
     private async Task DownloadUpdate()
     {
-        if (_UpdateInfo is not null)
-            await Launcher.Default.OpenAsync(_UpdateInfo.ReleaseUrl);
+        if (_UpdateInfo is null || _IsUpdating) return;
+
+        _IsUpdating = true;
+        StateHasChanged();
+
+        // The progress callback fires off the UI thread — marshal each tick back onto it.
+        bool ok = await _Update.DownloadAndApplyAsync(pct =>
+            _ = InvokeAsync(() => { _UpdateProgress = pct; StateHasChanged(); }));
+
+        // On success the app relaunches into the new version and never returns here.
+        if (!ok)
+        {
+            _IsUpdating   = false;
+            _ErrorMessage = "The update could not be installed. Please try again later.";
+            StateHasChanged();
+        }
     }
 
     public void Dispose() => _ProjectState.ProjectChanged -= OnProjectChanged;
