@@ -16,9 +16,12 @@
                                  DeusaldLocalizer-win-Setup.exe           (the installer users download)
                                  DeusaldLocalizer-win-Portable.zip
                                  releases.win.json                        (the update feed clients read)
+                             then compute DeusaldLocalizer-win-SHA256SUMS.txt over the two
+                             user-facing downloads so people can verify what they grabbed.
         4. vpk upload      — (only with -Upload) create a GitHub DRAFT release and upload
-                             the artifacts to it. The script never publishes — you review the
-                             draft, edit its description, and click Publish yourself.
+                             the artifacts to it, then attach the SHA256SUMS.txt to the same
+                             draft via the GitHub API. The script never publishes — you review
+                             the draft, edit its description, and click Publish yourself.
 
     The version is read from App/App.csproj (<Version>) unless -Version is passed, and is
     used verbatim as the Velopack package version. Keep <Version> in App.csproj in sync.
@@ -67,6 +70,11 @@ $authors    = 'Deusald'
 $mainExe    = 'DeusaldLocalizer.exe'
 $repoUrl    = 'https://github.com/Deusald/DeusaldLocalizer'
 $opTokenRef = 'op://Private/GitHub Deusald Localizer Token/credential'  # 1Password secret reference
+
+# Owner/repo parsed from $repoUrl, used for the GitHub REST calls that attach the checksums file.
+$null = $repoUrl -match 'github\.com/([^/]+)/([^/]+?)(?:\.git)?/?$'
+$repoOwner = $Matches[1]
+$repoName  = $Matches[2]
 
 # ── Resolve the GitHub token: -Token > $env:GITHUB_TOKEN > 1Password (only when uploading) ────
 function Resolve-GitHubToken {
@@ -183,6 +191,55 @@ if ($LASTEXITCODE -ne 0) { throw "vpk pack failed (exit $LASTEXITCODE)." }
 
 $setup = Join-Path $distDir "$packId-win-Setup.exe"
 
+# ── Checksums ────────────────────────────────────────────────────────────────
+# Velopack ships SHA hashes inside releases.win.json for its own auto-updater, but nothing a human
+# can use to verify the files they download by hand. Emit a sha256sum-format manifest over the
+# user-facing artifacts so anyone can confirm a download with `Get-FileHash` / `sha256sum -c`.
+$checksumsFile = Join-Path $distDir "$packId-win-SHA256SUMS.txt"
+$hashTargets   = @(
+    (Join-Path $distDir "$packId-win-Setup.exe"),
+    (Join-Path $distDir "$packId-win-Portable.zip"),
+    (Join-Path $distDir "$packId-$Version-full.nupkg")
+) | Where-Object { Test-Path $_ }
+
+$checksumLines = $hashTargets | ForEach-Object {
+    $hash = (Get-FileHash -Path $_ -Algorithm SHA256).Hash.ToLowerInvariant()
+    # Two spaces + bare filename = the canonical `sha256sum` format users can feed straight to `-c`.
+    "$hash  $(Split-Path $_ -Leaf)"
+}
+Set-Content -Path $checksumsFile -Value $checksumLines -Encoding ascii
+Write-Host "Wrote checksums -> $(Split-Path $checksumsFile -Leaf)" -ForegroundColor DarkGray
+
+# ── Attach the checksums file to the (draft) GitHub release ───────────────────
+# vpk only uploads its own artifacts, so the manifest has to be pushed to the same draft by hand
+# via the REST API. Drafts have no real git tag yet, so we match the draft by its tag_name field.
+function Publish-ChecksumsAsset {
+    param([string] $Owner, [string] $Repo, [string] $Tag, [string] $Path, [string] $Tok)
+
+    $headers = @{
+        Authorization = "Bearer $Tok"
+        Accept        = 'application/vnd.github+json'
+        'User-Agent'  = 'build-release.ps1'
+    }
+    $releases = Invoke-RestMethod -Method Get -Headers $headers `
+        -Uri "https://api.github.com/repos/$Owner/$Repo/releases?per_page=100"
+    $release = $releases | Where-Object { $_.tag_name -eq $Tag } | Select-Object -First 1
+    if (-not $release) { throw "Could not find a release for tag $Tag to attach checksums to." }
+
+    $name = Split-Path $Path -Leaf
+    # Replace any asset of the same name left over from a re-run so uploads stay idempotent.
+    $existing = $release.assets | Where-Object { $_.name -eq $name }
+    foreach ($asset in $existing) {
+        Invoke-RestMethod -Method Delete -Headers $headers `
+            -Uri "https://api.github.com/repos/$Owner/$Repo/releases/assets/$($asset.id)" | Out-Null
+    }
+
+    $uploadUrl = ($release.upload_url -replace '\{\?[^}]*\}', '') + "?name=$name"
+    $uploadHeaders = $headers.Clone()
+    $uploadHeaders['Content-Type'] = 'text/plain'
+    Invoke-RestMethod -Method Post -Headers $uploadHeaders -Uri $uploadUrl -InFile $Path | Out-Null
+}
+
 # ── Optional upload to GitHub Releases ───────────────────────────────────────
 if ($Upload) {
     if (-not $Token) { throw "-Upload requires a token. Pass -Token, set GITHUB_TOKEN, or sign in to 1Password (op signin)." }
@@ -199,6 +256,9 @@ if ($Upload) {
     if ($fullHash) { $upArgs += @('--targetCommitish', $fullHash) }  # pin the tag to this exact commit (created on publish)
     vpk @upArgs
     if ($LASTEXITCODE -ne 0) { throw "vpk upload failed (exit $LASTEXITCODE)." }
+
+    Write-Host "Attaching checksums to the draft release..." -ForegroundColor Cyan
+    Publish-ChecksumsAsset -Owner $repoOwner -Repo $repoName -Tag "v$Version" -Path $checksumsFile -Tok $Token
 }
 
 # ── Summary ──────────────────────────────────────────────────────────────────
