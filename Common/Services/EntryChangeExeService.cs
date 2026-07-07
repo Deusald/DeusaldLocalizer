@@ -126,7 +126,7 @@ namespace DeusaldLocalizerCommon
                             category.Description = change.ChangeData;
                             break;
                         case nameof(LocCategory.ParentCategoryId):
-                            category.ParentCategoryId = Guid.TryParse(change.ChangeData, out Guid parentId) ? parentId : (Guid?)null;
+                            category.ParentCategoryId = Guid.TryParse(change.ChangeData, out Guid parentId) ? parentId : null;
                             break;
                     }
 

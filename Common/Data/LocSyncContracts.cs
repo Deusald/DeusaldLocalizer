@@ -44,9 +44,10 @@ namespace DeusaldLocalizerCommon
 
     public enum PushStatus
     {
-        Success,  // changes committed and pushed; NewSyncId is the new repo version
-        Conflict, // one or more changes conflict with the current repo (Conflicts populated)
-        Failed,   // the repo changed during processing — nothing applied, retry after a sync
+        Success,   // changes committed and pushed; NewSyncId is the new repo version
+        Conflict,  // one or more changes conflict with the current repo (Conflicts populated)
+        Failed,    // the repo changed during processing — nothing applied, retry after a sync
+        Forbidden, // one or more changes exceed the member's role — nothing applied (Message explains)
     }
 
     public class PushResponse

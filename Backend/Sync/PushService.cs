@@ -42,6 +42,20 @@ public sealed class PushService
         LocProjectMember? member = _Auth.Authenticate(project, userId, token);
         if (member == null) return ServiceResult<PushResponse>.Unauthorized();
 
+        // Authorization: the client hides actions the member's role forbids, but a crafted request
+        // could push them anyway — re-check every change server-side before mutating anything.
+        List<EntryChangePermissionError> denied = EntryChangePermissionService.Validate(project, member, changes);
+        if (denied.Count > 0)
+        {
+            _Logger.LogWarning("Push rejected for '{Slug}': member '{User}' lacks permission for {Count} change(s): {Types}",
+                config.Slug, member.Username, denied.Count, string.Join(", ", denied.Select(d => d.Type)));
+            return ServiceResult<PushResponse>.Ok(new PushResponse
+            {
+                Status  = PushStatus.Forbidden,
+                Message = denied[0].Message,
+            });
+        }
+
         // Defense-in-depth: validate against the pristine, freshly-pulled project before mutating it.
         List<EntryChangeConflict> conflicts = EntryChangeConflictService.Validate(project, changes);
         if (conflicts.Count > 0)

@@ -294,6 +294,12 @@ public class ProjectStateService
             case PushStatus.Failed:
                 return new PushOperationResult { Outcome = PushOutcome.Failed, Message = response.Message };
 
+            case PushStatus.Forbidden:
+                // The server rejected the batch because it exceeded our role. The UI normally prevents
+                // this, so it means the local state drifted from the server's view of our permissions —
+                // surface the server's explanation rather than a generic failure.
+                return new PushOperationResult { Outcome = PushOutcome.Failed, Message = response.Message };
+
             case PushStatus.Success:
                 // Clear the queue first so the follow-up sync does not see our own changes as conflicts,
                 // then sync (still holding the old SyncId) to pull the just-pushed state into local files.
