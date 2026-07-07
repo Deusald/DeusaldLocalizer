@@ -38,6 +38,8 @@ namespace DeusaldLocalizerCommon
     ///   - Only reads translation (language) columns.
     ///   - Skips rows where the KeyId does not exist in the project.
     ///   - Skips empty cells (never proposes an empty string).
+    ///   - Skips cells whose text still matches the "#hash" column written at export
+    ///     time (the translator never touched that cell).
     ///   - Skips cells whose text already matches the current translation or an
     ///     existing suggestion (nothing new to propose).
     ///   - Adds a LocTranslationSuggestion authored by the importing user without
@@ -57,14 +59,27 @@ namespace DeusaldLocalizerCommon
 
             int                     keyIdCol = -1;
             Dictionary<int, string> langCols = new Dictionary<int, string>();
+            // language code -> column holding the SHA-256 written at export time
+            Dictionary<string, int> hashCols = new Dictionary<string, int>();
 
             foreach (IXLCell cell in headerRow.CellsUsed())
             {
                 string header = cell.GetString().Trim();
                 int    c      = cell.Address.ColumnNumber;
 
-                if (header == "KeyId") keyIdCol                                   = c;
-                else if (project.Metadata.Languages.Contains(header)) langCols[c] = header;
+                if (header == "KeyId")
+                {
+                    keyIdCol = c;
+                }
+                else if (header.EndsWith(LocalizationExportService.HashHeaderSuffix))
+                {
+                    string lang = header.Substring(0, header.Length - LocalizationExportService.HashHeaderSuffix.Length);
+                    if (project.Metadata.Languages.Contains(lang)) hashCols[lang] = c;
+                }
+                else if (project.Metadata.Languages.Contains(header))
+                {
+                    langCols[c] = header;
+                }
             }
 
             if (keyIdCol < 0)
@@ -110,6 +125,15 @@ namespace DeusaldLocalizerCommon
 
                     string text = sheet.Cell(row, c).GetString();
                     if (string.IsNullOrEmpty(text)) continue; // never propose an empty string
+
+                    // If the cell still hashes to the value written at export time the
+                    // translator never edited it — nothing to import.
+                    if (hashCols.TryGetValue(langCode, out int hashCol))
+                    {
+                        string exportedHash = sheet.Cell(row, hashCol).GetString().Trim();
+                        if (exportedHash.Length > 0 && TextHashHelper.Compute(text) == exportedHash)
+                            continue;
+                    }
 
                     if (key.MaxLength != 0 && text.Length > key.MaxLength)
                     {

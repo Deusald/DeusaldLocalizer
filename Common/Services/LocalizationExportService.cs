@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ClosedXML.Excel;
@@ -10,11 +10,16 @@ namespace DeusaldLocalizerCommon
     /// Admin-only: the caller must verify permissions before invoking.
     ///
     /// Column layout:
-    ///   KeyId | KeyName | KeyDescription | MaxLength | SourceHash | [lang1] | [lang2] | ...
-    /// Languages are ordered source-language first, then the rest alphabetically.
+    ///   KeyId | KeyName | KeyDescription | [Tags] | MaxLength | SourceHash | [lang1] | [lang1 #hash] | ...
+    /// Languages are ordered source-language first, then the rest alphabetical.
+    /// Each language column is followed by a "#hash" column holding a SHA-256 of the
+    /// exported text, so the importer can tell which cells the translator actually changed.
     /// </summary>
     public static class LocalizationExportService
     {
+        /// <summary>Header suffix that marks the per-language hash column (e.g. "en #hash").</summary>
+        public const string HashHeaderSuffix = " #hash";
+
         public static MemoryStream ExportToStream(LocProject project, LocExportOptions? options = null)
         {
             using XLWorkbook wb    = new XLWorkbook();
@@ -37,17 +42,33 @@ namespace DeusaldLocalizerCommon
                     languages.Add(lang);
             }
 
+            bool includeTagsCol = options != null && options.IncludeTagsColumn;
+
             // ── Header row ──────────────────────────────────────────────────
             int col = 1;
             sheet.Cell(1, col++).Value = "KeyId";
             sheet.Cell(1, col++).Value = "KeyName";
             sheet.Cell(1, col++).Value = "KeyDescription";
+
+            int tagsCol = -1;
+            if (includeTagsCol)
+            {
+                tagsCol = col;
+                sheet.Cell(1, col++).Value = "Tags";
+            }
+
+            int maxLengthCol = col;
             sheet.Cell(1, col++).Value = "MaxLength";
             sheet.Cell(1, col++).Value = "SourceHash";
 
-            int langStartCol = col;
+            int          langStartCol = col;
+            List<int>    langTextCols = new List<int>();
             foreach (string lang in languages)
+            {
+                langTextCols.Add(col);
                 sheet.Cell(1, col++).Value = lang;
+                sheet.Cell(1, col++).Value = lang + HashHeaderSuffix;
+            }
 
             // ── Style header ────────────────────────────────────────────────
             IXLRange headerRange = sheet.Range(1, 1, 1, col - 1);
@@ -75,13 +96,17 @@ namespace DeusaldLocalizerCommon
                 sheet.Cell(row, col++).Value = key.Id.ToString();
                 sheet.Cell(row, col++).Value = FullKeyName(key, project);
                 sheet.Cell(row, col++).Value = key.Description;
+                if (includeTagsCol)
+                    sheet.Cell(row, col++).Value = string.Join(", ", key.Tags);
                 sheet.Cell(row, col++).Value = key.MaxLength == 0 ? (int?)null : key.MaxLength;
                 sheet.Cell(row, col++).Value = sourceHash;
 
                 foreach (string lang in languages)
                 {
                     LocKeyTranslation? translation = key.Translations.Find(t => t.LanguageId == lang);
-                    sheet.Cell(row, col++).Value = translation?.Text ?? string.Empty;
+                    string             text        = translation?.Text ?? string.Empty;
+                    sheet.Cell(row, col++).Value = text;
+                    sheet.Cell(row, col++).Value = TextHashHelper.Compute(text);
                 }
 
                 row++;
@@ -91,35 +116,46 @@ namespace DeusaldLocalizerCommon
             sheet.Column(1).Width = 38;  // KeyId (UUID)
             sheet.Column(2).Width = 40;  // KeyName
             sheet.Column(3).Width = 40;  // KeyDescription
-            sheet.Column(4).Width = 12;  // MaxLength
-            sheet.Column(5).Width = 66;  // SourceHash (SHA-256 hex)
+            if (tagsCol > 0)
+                sheet.Column(tagsCol).Width = 26;  // Tags
+            sheet.Column(maxLengthCol).Width     = 12;  // MaxLength
+            sheet.Column(maxLengthCol + 1).Width = 66;  // SourceHash (SHA-256 hex)
 
-            // Language columns — wider to show translation text
+            // Language columns — wide text with wrap; hash columns narrow and de-emphasized.
             for (int c = langStartCol; c < col; c++)
-                sheet.Column(c).Width = 50;
-
-            // Wrap text in translation columns so multi-line strings are readable
-            for (int c = langStartCol; c < col; c++)
-                sheet.Column(c).Style.Alignment.WrapText = true;
+            {
+                bool isHashCol = (c - langStartCol) % 2 == 1;
+                if (isHashCol)
+                {
+                    sheet.Column(c).Width                     = 16;
+                    sheet.Column(c).Style.NumberFormat.Format = "@";
+                    sheet.Column(c).Style.Font.FontColor      = XLColor.FromHtml("#888888");
+                }
+                else
+                {
+                    sheet.Column(c).Width                     = 50;
+                    sheet.Column(c).Style.Alignment.WrapText  = true;
+                }
+            }
 
             // KeyId column: monospace-style by setting number format to text
             sheet.Column(1).Style.NumberFormat.Format = "@";
 
             // ── Conditional formatting: red background when LEN > MaxLength ─
-            // Column D (col 4) holds MaxLength; 0 means no limit so we skip those.
-            // For each language column we add one CF range covering all data rows.
-            // The formula uses $D{row} (absolute column, relative row) so Excel
-            // evaluates it per-row when applied across the range.
+            // The MaxLength column holds the limit; 0/blank means no limit so we skip those.
+            // For each language TEXT column we add one CF range covering all data rows.
+            // The formula uses an absolute column, relative row so Excel evaluates it per-row.
             if (row > 2) // only when there are data rows
             {
-                int lastDataRow = row - 1;
-                for (int langCol = langStartCol; langCol < col; langCol++)
+                int    lastDataRow = row - 1;
+                string maxLenCol   = XLHelper.GetColumnLetterFromNumber(maxLengthCol);
+                foreach (int langCol in langTextCols)
                 {
                     // Get the Excel column letter for the anchor cell of this range
                     string cellRef = XLHelper.GetColumnLetterFromNumber(langCol) + "2";
 
-                    // Formula: cell is non-empty AND MaxLength > 0 AND LEN > MaxLength
-                    string formula = $"AND($D2>0,LEN({cellRef})>$D2)";
+                    // Formula: MaxLength > 0 AND LEN > MaxLength
+                    string formula = $"AND(${maxLenCol}2>0,LEN({cellRef})>${maxLenCol}2)";
 
                     IXLRange cfRange = sheet.Range(2, langCol, lastDataRow, langCol);
                     cfRange.AddConditionalFormat()
@@ -142,14 +178,22 @@ namespace DeusaldLocalizerCommon
 
         private static bool PassesFilter(LocLocalizationKey key, LocExportOptions options)
         {
-            if (options.IncludeFlags.Count > 0 && !key.Flags.Any(f => options.IncludeFlags.Contains(f.Type)))
+            // Flags: no-flag keys ride on IncludeNoFlags; otherwise any excluded flag drops the key.
+            if (key.Flags.Count == 0)
+            {
+                if (!options.IncludeNoFlags) return false;
+            }
+            else if (key.Flags.Any(f => options.ExcludeFlags.Contains(f.Type)))
                 return false;
-            if (options.ExcludeFlags.Count > 0 && key.Flags.Any(f => options.ExcludeFlags.Contains(f.Type)))
+
+            // Tags: same shape as flags.
+            if (key.Tags.Count == 0)
+            {
+                if (!options.IncludeNoTags) return false;
+            }
+            else if (key.Tags.Any(t => options.ExcludeTags.Contains(t)))
                 return false;
-            if (options.IncludeTags.Count > 0 && !key.Tags.Any(t => options.IncludeTags.Contains(t)))
-                return false;
-            if (options.ExcludeTags.Count > 0 && key.Tags.Any(t => options.ExcludeTags.Contains(t)))
-                return false;
+
             return true;
         }
 

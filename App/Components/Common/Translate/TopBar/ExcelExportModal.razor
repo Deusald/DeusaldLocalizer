@@ -17,7 +17,13 @@
             @* ── Flags ──────────────────────────────────────────────── *@
             <div class="ex-section">
                 <div class="ex-section-title">Flags</div>
-                <div class="ex-section-hint">Include keeps only keys that have any selected flag; Exclude drops keys with it.</div>
+                <div class="ex-section-hint">Exclude drops keys that carry the flag; Include keeps them.</div>
+                <div class="ex-row">
+                    <div class="ex-row-label">
+                        <i class="bi bi-flag ex-row-icon"></i>No flags
+                    </div>
+                    @RenderSeg(_NoFlagsExcluded, s => _NoFlagsExcluded = s)
+                </div>
                 @foreach (FlagType type in _AllFlagTypes)
                 {
                     FlagType t = type;
@@ -25,7 +31,7 @@
                         <div class="ex-row-label">
                             <i class="bi @FlagIcon(t) ex-row-icon"></i>@FlagLabel(t)
                         </div>
-                        @RenderTri(_FlagStates[t], s => _FlagStates[t] = s)
+                        @RenderSeg(_FlagExcluded[t], s => _FlagExcluded[t] = s)
                     </div>
                 }
             </div>
@@ -33,23 +39,32 @@
             @* ── Tags ───────────────────────────────────────────────── *@
             <div class="ex-section">
                 <div class="ex-section-title">Tags</div>
-                @if (_AllTags.Count == 0)
+                <div class="ex-row">
+                    <div class="ex-row-label">
+                        <i class="bi bi-tag ex-row-icon"></i>No tags
+                    </div>
+                    @RenderSeg(_NoTagsExcluded, s => _NoTagsExcluded = s)
+                </div>
+                @foreach (string tag in _AllTags)
                 {
-                    <div class="ex-empty">No tags in this project.</div>
-                }
-                else
-                {
-                    @foreach (string tag in _AllTags)
-                    {
-                        string tg = tag;
-                        <div class="ex-row">
-                            <div class="ex-row-label">
-                                <i class="bi bi-tag ex-row-icon"></i>@tg
-                            </div>
-                            @RenderTri(_TagStates[tg], s => _TagStates[tg] = s)
+                    string tg = tag;
+                    <div class="ex-row">
+                        <div class="ex-row-label">
+                            <i class="bi bi-tag ex-row-icon"></i>@tg
                         </div>
-                    }
+                        @RenderSeg(_TagExcluded[tg], s => _TagExcluded[tg] = s)
+                    </div>
                 }
+            </div>
+
+            @* ── Columns ────────────────────────────────────────────── *@
+            <div class="ex-section">
+                <div class="ex-section-title">Columns</div>
+                <label class="ex-check">
+                    <input type="checkbox" checked="@_IncludeTagsColumn"
+                           @onchange="e => _IncludeTagsColumn = (bool)e.Value!" />
+                    <span>Add a Tags column listing each key's tags</span>
+                </label>
             </div>
 
             @* ── Languages ──────────────────────────────────────────── *@
@@ -99,16 +114,24 @@
 }
 
 @code {
-    private enum Tri { Off, Include, Exclude }
-
     private bool _Visible;
     private bool _IsExporting;
 
-    private Dictionary<FlagType, Tri> _FlagStates = new();
-    private Dictionary<string, Tri>   _TagStates  = new(StringComparer.OrdinalIgnoreCase);
-    private HashSet<string>           _SelectedLangs = new();
+    // true = Exclude, false = Include. Every flag/tag is included by default.
+    private Dictionary<FlagType, bool> _FlagExcluded = new();
+    private Dictionary<string, bool>   _TagExcluded  = new(StringComparer.OrdinalIgnoreCase);
+    private bool                       _NoFlagsExcluded;
+    private bool                       _NoTagsExcluded;
+    private bool                       _IncludeTagsColumn;
+    private HashSet<string>            _SelectedLangs = new();
 
     private static readonly FlagType[] _AllFlagTypes = (FlagType[])Enum.GetValues(typeof(FlagType));
+
+    // Flags translators should skip by default; everything else defaults to Include.
+    private static readonly HashSet<FlagType> _DefaultExcludedFlags = new()
+    {
+        FlagType.Outdated, FlagType.DoNotTranslate, FlagType.InProgress
+    };
 
     private List<string> _AllTags =>
         _ProjectState.CurrentProject!.Keys
@@ -137,25 +160,26 @@
 
     public void Show()
     {
-        _FlagStates    = _AllFlagTypes.ToDictionary(t => t, _ => Tri.Off);
-        _TagStates     = _AllTags.ToDictionary(t => t, _ => Tri.Off, StringComparer.OrdinalIgnoreCase);
-        _SelectedLangs = new HashSet<string>(_AllLanguages);
-        _IsExporting   = false;
-        _Visible       = true;
+        _FlagExcluded      = _AllFlagTypes.ToDictionary(t => t, t => _DefaultExcludedFlags.Contains(t));
+        _TagExcluded       = _AllTags.ToDictionary(t => t, _ => false, StringComparer.OrdinalIgnoreCase);
+        _NoFlagsExcluded   = false;
+        _NoTagsExcluded    = false;
+        _IncludeTagsColumn = false;
+        _SelectedLangs     = new HashSet<string>(_AllLanguages);
+        _IsExporting       = false;
+        _Visible           = true;
         StateHasChanged();
     }
 
     private void Close() => _Visible = false;
 
-    private RenderFragment RenderTri(Tri current, Action<Tri> set) => __builder =>
+    private RenderFragment RenderSeg(bool excluded, Action<bool> set) => __builder =>
     {
         <div class="ex-seg">
-            <button class="ex-seg-btn @(current == Tri.Off ? "active" : "")"
-                    @onclick="() => set(Tri.Off)">Any</button>
-            <button class="ex-seg-btn ex-seg-inc @(current == Tri.Include ? "active" : "")"
-                    @onclick="() => set(Tri.Include)">Include</button>
-            <button class="ex-seg-btn ex-seg-exc @(current == Tri.Exclude ? "active" : "")"
-                    @onclick="() => set(Tri.Exclude)">Exclude</button>
+            <button class="ex-seg-btn ex-seg-inc @(!excluded ? "active" : "")"
+                    @onclick="() => set(false)">Include</button>
+            <button class="ex-seg-btn ex-seg-exc @(excluded ? "active" : "")"
+                    @onclick="() => set(true)">Exclude</button>
         </div>
     };
 
@@ -176,16 +200,18 @@
     // Mirrors LocalizationExportService.PassesFilter so the live count matches the export.
     private bool Matches(LocLocalizationKey key)
     {
-        List<FlagType> includeFlags = _FlagStates.Where(x => x.Value == Tri.Include).Select(x => x.Key).ToList();
-        if (includeFlags.Count > 0 && !key.Flags.Any(fl => includeFlags.Contains(fl.Type)))
-            return false;
-        if (_FlagStates.Any(x => x.Value == Tri.Exclude && key.Flags.Any(fl => fl.Type == x.Key)))
+        if (key.Flags.Count == 0)
+        {
+            if (_NoFlagsExcluded) return false;
+        }
+        else if (key.Flags.Any(fl => _FlagExcluded.TryGetValue(fl.Type, out bool ex) && ex))
             return false;
 
-        List<string> includeTags = _TagStates.Where(x => x.Value == Tri.Include).Select(x => x.Key).ToList();
-        if (includeTags.Count > 0 && !key.Tags.Any(t => includeTags.Contains(t)))
-            return false;
-        if (_TagStates.Any(x => x.Value == Tri.Exclude && key.Tags.Contains(x.Key)))
+        if (key.Tags.Count == 0)
+        {
+            if (_NoTagsExcluded) return false;
+        }
+        else if (key.Tags.Any(t => _TagExcluded.TryGetValue(t, out bool ex) && ex))
             return false;
 
         return true;
@@ -193,17 +219,16 @@
 
     private LocExportOptions BuildOptions()
     {
-        LocExportOptions options = new();
-        foreach (KeyValuePair<FlagType, Tri> f in _FlagStates)
+        LocExportOptions options = new()
         {
-            if (f.Value == Tri.Include) options.IncludeFlags.Add(f.Key);
-            else if (f.Value == Tri.Exclude) options.ExcludeFlags.Add(f.Key);
-        }
-        foreach (KeyValuePair<string, Tri> t in _TagStates)
-        {
-            if (t.Value == Tri.Include) options.IncludeTags.Add(t.Key);
-            else if (t.Value == Tri.Exclude) options.ExcludeTags.Add(t.Key);
-        }
+            IncludeNoFlags    = !_NoFlagsExcluded,
+            IncludeNoTags     = !_NoTagsExcluded,
+            IncludeTagsColumn = _IncludeTagsColumn
+        };
+        foreach (KeyValuePair<FlagType, bool> f in _FlagExcluded)
+            if (f.Value) options.ExcludeFlags.Add(f.Key);
+        foreach (KeyValuePair<string, bool> t in _TagExcluded)
+            if (t.Value) options.ExcludeTags.Add(t.Key);
         // Preserve source-first ordering of the selected languages.
         foreach (string lang in _AllLanguages.Where(l => _SelectedLangs.Contains(l)))
             options.Languages.Add(lang);

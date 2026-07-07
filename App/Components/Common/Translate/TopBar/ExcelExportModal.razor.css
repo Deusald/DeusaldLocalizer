@@ -43,6 +43,11 @@
 .ex-seg-btn.ex-seg-inc.active { background: #1f5c3a; color: #6ee7a3; }
 .ex-seg-btn.ex-seg-exc.active { background: #5c1a17; color: #ff9492; }
 
+/* ── Checkbox option ──────────────────────────────────────────────────────── */
+
+.ex-check { display: flex; align-items: center; gap: 9px; font-size: 13px; color: #d6d6db; cursor: pointer; padding: 2px 0; }
+.ex-check input { width: 15px; height: 15px; accent-color: #5b6cff; cursor: pointer; flex-shrink: 0; }
+
 /* ── Language checklist ───────────────────────────────────────────────────── */
 
 .ex-lang {
