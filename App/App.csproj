@@ -48,15 +48,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <!-- App Icon -->
+        <!-- Main Css -->
         <MauiAsset Include="wwwroot\css\app.css" />
+        
+        <!-- App Icon -->
         <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4"/>
 
+        <!-- Splash Screen -->
         <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#0e0f13" />
         
         <!-- Images -->
         <MauiImage Include="Resources\Images\*"/>
-        <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208"/>
 
         <!-- Custom Fonts -->
         <MauiFont Include="Resources\Fonts\*"/>
@@ -99,7 +101,7 @@
             <Output TaskParameter="ExitCode" PropertyName="_GitExitCode" />
         </Exec>
         <PropertyGroup Condition="'$(_GitExitCode)' != '0'">
-            <SourceRevisionId></SourceRevisionId>
+            <SourceRevisionId/>
         </PropertyGroup>
     </Target>
 

@@ -1,5 +1,5 @@
 @namespace App.Components.Common
-@inject IJSRuntime _JS
+@inject IJSRuntime _Js
 
 @if (_Visible)
 {
@@ -57,7 +57,7 @@
     {
         try
         {
-            await _JS.InvokeVoidAsync("copyToClipboard", _Token);
+            await _Js.InvokeVoidAsync("copyToClipboard", _Token);
             _Copied = true;
         }
         catch
