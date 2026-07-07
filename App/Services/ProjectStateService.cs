@@ -549,6 +549,47 @@ public class ProjectStateService
         }
     }
 
+    // ── Uncommitted change management ────────────────────────────────────────
+
+    /// <summary>
+    /// Removes a single pending uncommitted change by its position in the queue, then rebuilds the working
+    /// copy from disk and replays the remaining changes so the editor reflects the reduced queue. Online
+    /// projects only — the key files on disk mirror the server, so dropping a change means re-deriving the
+    /// working copy from the clean server state rather than trying to "undo" the change in place.
+    /// </summary>
+    public async Task RemoveUncommittedChangeAsync(int index)
+    {
+        if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath)) return;
+        if (!CurrentProject.Metadata.IsOnline)                                   return;
+        if (index < 0 || index >= CurrentProject.UncommitedChanges.Count)        return;
+
+        List<LocEntryChange> pending = new(CurrentProject.UncommitedChanges);
+        pending.RemoveAt(index);
+
+        await RebuildWorkingCopyAsync(pending);
+
+        MarkClean();
+        ProjectChanged?.Invoke();
+        ProjectDataChanged?.Invoke();
+    }
+
+    /// <summary>
+    /// Discards every pending uncommitted change, then rebuilds the working copy from disk so the editor
+    /// returns to the clean server state. Online projects only (see <see cref="RemoveUncommittedChangeAsync"/>).
+    /// </summary>
+    public async Task ClearUncommittedChangesAsync()
+    {
+        if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath)) return;
+        if (!CurrentProject.Metadata.IsOnline)                                   return;
+        if (CurrentProject.UncommitedChanges.Count == 0)                         return;
+
+        await RebuildWorkingCopyAsync(new List<LocEntryChange>());
+
+        MarkClean();
+        ProjectChanged?.Invoke();
+        ProjectDataChanged?.Invoke();
+    }
+
     // ── Conflict resolution ──────────────────────────────────────────────────
 
     /// <summary>

@@ -27,6 +27,30 @@
 .ucm-close { background: none; border: none; color: #6a6b73; font-size: 14px; cursor: pointer; padding: 4px; border-radius: 5px; }
 .ucm-close:hover { color: #c8c8cf; background: #23242e; }
 
+.ucm-header-right { display: flex; align-items: center; gap: 8px; }
+
+.ucm-discard-all {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: none; border: 1px solid #2a2b35; color: #9a9ba3;
+    font-size: 11.5px; font-weight: 500; cursor: pointer;
+    padding: 4px 10px; border-radius: 6px; transition: all .12s;
+}
+.ucm-discard-all:hover { color: #ff6b6b; border-color: rgba(255,107,107,.4); background: rgba(255,69,58,.08); }
+
+.ucm-confirm-label { font-size: 11.5px; color: #ff9b9b; }
+
+.ucm-confirm-yes {
+    background: rgba(255,69,58,.14); border: 1px solid rgba(255,107,107,.4); color: #ff6b6b;
+    font-size: 11.5px; font-weight: 600; cursor: pointer; padding: 4px 10px; border-radius: 6px;
+}
+.ucm-confirm-yes:hover { background: rgba(255,69,58,.24); }
+
+.ucm-confirm-no {
+    background: none; border: 1px solid #2a2b35; color: #9a9ba3;
+    font-size: 11.5px; font-weight: 500; cursor: pointer; padding: 4px 10px; border-radius: 6px;
+}
+.ucm-confirm-no:hover { color: #c8c8cf; background: #23242e; }
+
 /* ── Body ─────────────────────────────────────────────────────────────────── */
 
 .ucm-body {
@@ -91,6 +115,27 @@
     border-radius: 4px; flex-shrink: 0; transition: color .12s;
 }
 .ucm-toggle:hover { color: #d6d6db; }
+
+.ucm-entry-actions { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+
+.ucm-row-remove {
+    background: none; border: none; color: #5a5b63;
+    cursor: pointer; font-size: 11px; padding: 2px 5px;
+    border-radius: 4px; transition: all .12s;
+}
+.ucm-row-remove:hover { color: #ff6b6b; background: rgba(255,69,58,.1); }
+
+.ucm-row-confirm-yes {
+    background: rgba(255,69,58,.14); border: none; color: #ff6b6b;
+    cursor: pointer; font-size: 11px; padding: 2px 6px; border-radius: 4px;
+}
+.ucm-row-confirm-yes:hover { background: rgba(255,69,58,.26); }
+
+.ucm-row-confirm-no {
+    background: none; border: none; color: #7a7b83;
+    cursor: pointer; font-size: 11px; padding: 2px 6px; border-radius: 4px;
+}
+.ucm-row-confirm-no:hover { color: #d6d6db; background: #23242e; }
 
 /* ── Detail block ─────────────────────────────────────────────────────────── */
 

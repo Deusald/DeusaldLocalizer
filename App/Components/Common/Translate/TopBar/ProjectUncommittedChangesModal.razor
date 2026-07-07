@@ -15,7 +15,24 @@
                     <span class="ucm-count">@_ProjectState.CurrentProject.UncommitedChanges.Count</span>
                 }
             </div>
-            <button class="ucm-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+            <div class="ucm-header-right">
+                @if (_ProjectState.CurrentProject.UncommitedChanges.Count > 0 && !_Busy)
+                {
+                    @if (_ConfirmClearAll)
+                    {
+                        <span class="ucm-confirm-label">Discard all?</span>
+                        <button class="ucm-confirm-yes" @onclick="ClearAll">Discard</button>
+                        <button class="ucm-confirm-no" @onclick="() => _ConfirmClearAll = false">Cancel</button>
+                    }
+                    else
+                    {
+                        <button class="ucm-discard-all" @onclick="() => _ConfirmClearAll = true">
+                            <i class="bi bi-trash"></i> Discard all
+                        </button>
+                    }
+                }
+                <button class="ucm-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+            </div>
         </div>
 
         @if (_ProjectState.HasSyncConflicts)
@@ -65,12 +82,32 @@
                                     </span>
                                 }
                             </div>
-                            @if (hasDetails)
-                            {
-                                <button class="ucm-toggle" @onclick="() => ToggleExpand(index)">
-                                    <i class="bi @(expanded ? "bi-chevron-up" : "bi-chevron-down")"></i>
-                                </button>
-                            }
+                            <div class="ucm-entry-actions">
+                                @if (hasDetails)
+                                {
+                                    <button class="ucm-toggle" @onclick="() => ToggleExpand(index)">
+                                        <i class="bi @(expanded ? "bi-chevron-up" : "bi-chevron-down")"></i>
+                                    </button>
+                                }
+                                @if (!_Busy)
+                                {
+                                    @if (_ConfirmRemoveIndex == index)
+                                    {
+                                        <button class="ucm-row-confirm-yes" title="Confirm remove" @onclick="() => Remove(index)">
+                                            <i class="bi bi-check-lg"></i>
+                                        </button>
+                                        <button class="ucm-row-confirm-no" title="Cancel" @onclick="() => _ConfirmRemoveIndex = null">
+                                            <i class="bi bi-x-lg"></i>
+                                        </button>
+                                    }
+                                    else
+                                    {
+                                        <button class="ucm-row-remove" title="Remove this change" @onclick="() => _ConfirmRemoveIndex = index">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    }
+                                }
+                            </div>
                         </div>
 
                         @if (expanded && hasDetails)
@@ -116,13 +153,18 @@
 
 @code {
     private          bool         _Visible;
-    
+    private          bool         _Busy;
+    private          bool         _ConfirmClearAll;
+    private          int?         _ConfirmRemoveIndex;
+
     private readonly HashSet<int> _ExpandedIndexes = new();
 
     public void Show()
     {
         _ExpandedIndexes.Clear();
-        _Visible = true;
+        _ConfirmClearAll    = false;
+        _ConfirmRemoveIndex = null;
+        _Visible            = true;
         StateHasChanged();
     }
 
@@ -132,6 +174,40 @@
     {
         if (!_ExpandedIndexes.Remove(index))
             _ExpandedIndexes.Add(index);
+    }
+
+    /// <summary>Removes a single pending change, then reloads the project so the remaining changes are replayed.</summary>
+    private async Task Remove(int index)
+    {
+        if (_Busy) return;
+        _Busy = true;
+        try
+        {
+            await _ProjectState.RemoveUncommittedChangeAsync(index);
+        }
+        finally
+        {
+            _ConfirmRemoveIndex = null;
+            _ExpandedIndexes.Clear();
+            _Busy = false;
+        }
+    }
+
+    /// <summary>Discards every pending change, then reloads the project back to the clean server state.</summary>
+    private async Task ClearAll()
+    {
+        if (_Busy) return;
+        _Busy = true;
+        try
+        {
+            await _ProjectState.ClearUncommittedChangesAsync();
+        }
+        finally
+        {
+            _ConfirmClearAll = false;
+            _ExpandedIndexes.Clear();
+            _Busy = false;
+        }
     }
 
     /// <summary>True when this change matches a conflict detected during the last sync.</summary>
