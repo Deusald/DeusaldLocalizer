@@ -1,4 +1,4 @@
-﻿@namespace App.Components.Common
+@namespace App.Components.Common
 @inject ProjectStateService _ProjectState
 
 @if (_Visible)
@@ -17,9 +17,8 @@
             @if (_Result == null && !_IsImporting)
             {
                 <div class="im-desc">
-                    Select an <code>.xlsx</code> file previously exported from this project.
-                    Translations are matched by <strong>KeyId</strong> and are added as
-                    <em>Suggestions</em> — only non-empty cells.
+                    Select an <code>.xlsx</code> exported from this project. Rows are matched by
+                    <strong>KeyId</strong>; cells that still match their <code>#hash</code> are skipped.
                 </div>
 
                 @if (_Error != null)
@@ -28,6 +27,38 @@
                         <i class="bi bi-exclamation-triangle"></i> @_Error
                     </div>
                 }
+
+                @* ── What to update ─────────────────────────────────────── *@
+                <div class="im-section">
+                    <div class="im-section-header">
+                        <span class="im-section-title">Update from sheet</span>
+                        <button class="im-linkbtn" @onclick="ToggleAll">
+                            @(_AllSelected ? "Deselect all" : "Select all")
+                        </button>
+                    </div>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.CreateNewKeys" /><span>Create keys missing from the project</span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateCategories" /><span>Update categories <span class="im-check-hint">— creates missing</span></span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateDescriptions" /><span>Update descriptions</span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateTags" /><span>Update tags</span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateMaxLength" /><span>Update max length</span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateSourceText" /><span>Update source text</span></label>
+                </div>
+
+                @* ── How to import translations ─────────────────────────── *@
+                <div class="im-section">
+                    <span class="im-section-title">Translations import as</span>
+                    <div class="im-seg">
+                        <button class="im-seg-btn @(_Options.ImportAsSuggestions ? "active" : "")"
+                                @onclick="() => _Options.ImportAsSuggestions = true">Suggestions</button>
+                        <button class="im-seg-btn @(!_Options.ImportAsSuggestions ? "active" : "")"
+                                @onclick="() => _Options.ImportAsSuggestions = false">Direct text</button>
+                    </div>
+                    <div class="im-section-hint">
+                        @(_Options.ImportAsSuggestions
+                            ? "Changed cells become suggestions to review and approve."
+                            : "Changed cells overwrite the approved translation directly.")
+                    </div>
+                </div>
 
                 <button class="im-pick-btn" @onclick="PickAndImport">
                     <i class="bi bi-file-earmark-spreadsheet"></i>
@@ -44,20 +75,26 @@
             else if (_Result != null)
             {
                 <div class="im-result">
-                    <div class="im-stat">
-                        <span class="im-stat-value">@_Result.KeysUpdated</span>
-                        <span class="im-stat-label">keys updated</span>
-                    </div>
-                    <div class="im-stat">
-                        <span class="im-stat-value">@_Result.SuggestionsAdded</span>
-                        <span class="im-stat-label">suggestions added</span>
-                    </div>
+                    @if (_Result.KeysCreated > 0)
+                    {
+                        <div class="im-stat"><span class="im-stat-value">@_Result.KeysCreated</span><span class="im-stat-label">keys created</span></div>
+                    }
+                    <div class="im-stat"><span class="im-stat-value">@_Result.KeysUpdated</span><span class="im-stat-label">keys updated</span></div>
+                    @if (_Result.TranslationsUpdated > 0)
+                    {
+                        <div class="im-stat"><span class="im-stat-value">@_Result.TranslationsUpdated</span><span class="im-stat-label">translations set</span></div>
+                    }
+                    @if (_Result.SuggestionsAdded > 0)
+                    {
+                        <div class="im-stat"><span class="im-stat-value">@_Result.SuggestionsAdded</span><span class="im-stat-label">suggestions added</span></div>
+                    }
+                    @if (_Result.CategoriesCreated > 0)
+                    {
+                        <div class="im-stat"><span class="im-stat-value">@_Result.CategoriesCreated</span><span class="im-stat-label">categories created</span></div>
+                    }
                     @if (_Result.KeysSkipped > 0)
                     {
-                        <div class="im-stat im-stat-warn">
-                            <span class="im-stat-value">@_Result.KeysSkipped</span>
-                            <span class="im-stat-label">rows skipped</span>
-                        </div>
+                        <div class="im-stat im-stat-warn"><span class="im-stat-value">@_Result.KeysSkipped</span><span class="im-stat-label">rows skipped</span></div>
                     }
                 </div>
 
@@ -70,10 +107,6 @@
                         }
                     </div>
                 }
-
-                <div class="im-footer-note">
-                    All imported translations are added as <em>Suggestions</em>. Review and approve them in the translator.
-                </div>
             }
 
         </div>
@@ -90,16 +123,22 @@
 }
 
 @code {
-    private bool          _Visible;
-    private bool          _IsImporting;
-    private ImportResult? _Result;
-    private string?       _Error;
+    private bool             _Visible;
+    private bool             _IsImporting;
+    private ImportResult?    _Result;
+    private string?          _Error;
+    private LocImportOptions _Options = new();
+
+    private bool _AllSelected =>
+        _Options.CreateNewKeys && _Options.UpdateCategories && _Options.UpdateDescriptions &&
+        _Options.UpdateTags && _Options.UpdateMaxLength && _Options.UpdateSourceText;
 
     public void Show()
     {
         _Result      = null;
         _Error       = null;
         _IsImporting = false;
+        _Options     = new LocImportOptions();
         _Visible     = true;
         StateHasChanged();
     }
@@ -111,6 +150,17 @@
         _Result      = null;
         _Error       = null;
         _IsImporting = false;
+    }
+
+    private void ToggleAll()
+    {
+        bool value = !_AllSelected;
+        _Options.CreateNewKeys      = value;
+        _Options.UpdateCategories   = value;
+        _Options.UpdateDescriptions = value;
+        _Options.UpdateTags         = value;
+        _Options.UpdateMaxLength    = value;
+        _Options.UpdateSourceText   = value;
     }
 
     private async Task PickAndImport()
@@ -141,12 +191,13 @@
             _Result = LocalizationImportService.ImportFromStream(
                 stream,
                 _ProjectState.CurrentProject!,
-                _ProjectState.CurrentUser.UserId);
+                _ProjectState.CurrentUser.UserId,
+                _Options);
 
-            // Record each imported suggestion. This populates UncommitedChanges
-            // (when online), marks the key dirty and flags the app as dirty.
-            foreach (ImportedSuggestion applied in _Result.AppliedSuggestions)
-                _ProjectState.RecordSuggestionAdded(applied.KeyId, applied.Translation.LanguageId, applied.Suggestion);
+            // Replay each mutation into the change log (in order) so it populates
+            // UncommitedChanges when online, marks keys dirty and flags the app dirty.
+            foreach (ImportedChange change in _Result.Changes)
+                RecordChange(change);
         }
         catch (Exception ex)
         {
@@ -156,6 +207,22 @@
         {
             _IsImporting = false;
             StateHasChanged();
+        }
+    }
+
+    private void RecordChange(ImportedChange change)
+    {
+        switch (change.Kind)
+        {
+            case ImportChangeKind.CategoryAdded:         _ProjectState.RecordCategoryAdded(change.Category!);                                    break;
+            case ImportChangeKind.KeyAdded:              _ProjectState.RecordKeyAdded(change.Key!);                                              break;
+            case ImportChangeKind.KeyCategoryChanged:    _ProjectState.RecordKeyCategoryChanged(change.Key!);                                    break;
+            case ImportChangeKind.KeyDescriptionChanged: _ProjectState.RecordKeyDescriptionChanged(change.Key!);                                 break;
+            case ImportChangeKind.KeyMaxLengthChanged:   _ProjectState.RecordKeyMaxLengthChanged(change.Key!);                                   break;
+            case ImportChangeKind.TagAdded:              _ProjectState.RecordTagAdded(change.KeyId, change.Tag);                                 break;
+            case ImportChangeKind.TagRemoved:            _ProjectState.RecordTagRemoved(change.KeyId, change.Tag);                               break;
+            case ImportChangeKind.TranslationUpdated:    _ProjectState.RecordTranslationUpdated(change.KeyId, change.Translation!, change.PrevDestHash); break;
+            case ImportChangeKind.SuggestionAdded:       _ProjectState.RecordSuggestionAdded(change.KeyId, change.LanguageId, change.Suggestion!);       break;
         }
     }
 
