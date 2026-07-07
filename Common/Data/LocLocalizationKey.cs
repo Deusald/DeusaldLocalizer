@@ -16,7 +16,7 @@ namespace DeusaldLocalizerCommon
         /// Maximum character length for all translations of this key.
         /// 0 means no limit enforced.
         /// </summary>
-        public int MaxLength { get; set; } = 0;
+        public int MaxLength { get; set; }
 
         /// <summary>Free-form tags for search/filter (e.g. ["ui", "button"]).</summary>
         public List<string> Tags { get; set; } = new();

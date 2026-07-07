@@ -13,10 +13,10 @@ namespace DeusaldLocalizerCommon
     /// </summary>
     public class LocExportOptions
     {
-        public HashSet<FlagType> IncludeFlags { get; } = new HashSet<FlagType>();
-        public HashSet<FlagType> ExcludeFlags { get; } = new HashSet<FlagType>();
-        public HashSet<string>   IncludeTags  { get; } = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        public HashSet<string>   ExcludeTags  { get; } = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        public List<string>      Languages    { get; } = new List<string>();
+        public HashSet<FlagType> IncludeFlags { get; } = new();
+        public HashSet<FlagType> ExcludeFlags { get; } = new();
+        public HashSet<string>   IncludeTags  { get; } = new(StringComparer.OrdinalIgnoreCase);
+        public HashSet<string>   ExcludeTags  { get; } = new(StringComparer.OrdinalIgnoreCase);
+        public List<string>      Languages    { get; } = new();
     }
 }

@@ -29,8 +29,8 @@ namespace DeusaldLocalizerCommon
     {
         public SyncStatus     Status       { get; set; }
         public Guid           NewSyncId    { get; set; }
-        public List<SyncFile> ChangedFiles { get; set; } = new List<SyncFile>();
-        public List<string>   DeletedFiles { get; set; } = new List<string>();
+        public List<SyncFile> ChangedFiles { get; set; } = new();
+        public List<string>   DeletedFiles { get; set; } = new();
     }
 
     // ── Push ───────────────────────────────────────────────────────────────────
@@ -39,7 +39,7 @@ namespace DeusaldLocalizerCommon
     {
         /// <summary>The <c>SyncId</c> the client currently holds (for logging / diagnostics).</summary>
         public Guid                 SyncId  { get; set; }
-        public List<LocEntryChange> Changes { get; set; } = new List<LocEntryChange>();
+        public List<LocEntryChange> Changes { get; set; } = new();
     }
 
     public enum PushStatus
@@ -53,7 +53,7 @@ namespace DeusaldLocalizerCommon
     {
         public PushStatus                Status    { get; set; }
         public Guid                      NewSyncId { get; set; }
-        public List<EntryChangeConflict> Conflicts { get; set; } = new List<EntryChangeConflict>();
+        public List<EntryChangeConflict> Conflicts { get; set; } = new();
         public string?                   Message   { get; set; }
     }
 }
