@@ -3,6 +3,8 @@
 @inject ProjectStateService _ProjectState
 @inject UpdateService       _Update
 @inject NavigationManager   _Nav
+@inject RecentProjectsStore _Recents
+@inject IAuthTokenStore     _AuthTokens
 @implements IDisposable
 
 <div class="home-root">
@@ -213,7 +215,7 @@
     protected override void OnInitialized()
     {
         _ProjectState.ProjectChanged += OnProjectChanged;
-        _RecentProjects              =  RecentProjectsService.LoadRecentProjects();
+        _RecentProjects              =  _Recents.LoadRecentProjects();
         _ = CheckForUpdateAsync();
     }
 
@@ -315,7 +317,7 @@
 
     private async Task LoadOnlineProject(LocProject project, string path)
     {
-        (Guid UserId, string Token)? cached = await AuthTokenStorage.GetAsync(project.Metadata.Id, path);
+        (Guid UserId, string Token)? cached = await _AuthTokens.GetAsync(project.Metadata.Id, path);
 
         if (cached != null)
         {
@@ -328,7 +330,7 @@
             }
 
             // Token no longer valid — remove and fall through to login
-            AuthTokenStorage.Remove(project.Metadata.Id, path);
+            _AuthTokens.Remove(project.Metadata.Id, path);
         }
 
         // No valid cached credentials — show the login modal
@@ -387,7 +389,7 @@
         }
 
         // Returning user — cache the raw token for next time and load straight in.
-        await AuthTokenStorage.SaveAsync(projectId, _PendingPath, member!.UserId, credentials.accessToken);
+        await _AuthTokens.SaveAsync(projectId, _PendingPath, member!.UserId, credentials.accessToken);
 
         _ShowLoginModal = false;
         FinalizeLoad(_PendingProject, _PendingPath, member.UserId, Guid.NewGuid());
@@ -438,7 +440,7 @@
     private void FinalizeLoad(LocProject project, string path, Guid userId, Guid sessionToken)
     {
         _ProjectState.LoadProject(project, path, userId, sessionToken);
-        _RecentProjects = RecentProjectsService.UpdateRecentProjects(project, path, project.Metadata.IsOnline);
+        _RecentProjects = _Recents.UpdateRecentProjects(project, path, project.Metadata.IsOnline);
         _IsLoading      = false;
         _Nav.NavigateTo("/translate");
     }
@@ -458,11 +460,11 @@
     private void ClearRecentProjects()
     {
         _RecentProjects.Clear();
-        RecentProjectsService.ClearRecentProjects();
+        _Recents.ClearRecentProjects();
     }
 
     private void RemoveRecent(RecentProjectEntry recent)
     {
-        _RecentProjects = RecentProjectsService.RemoveRecentProject(recent);
+        _RecentProjects = _Recents.RemoveRecentProject(recent);
     }
 }

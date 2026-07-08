@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui;
+using DeusaldLocalizerWeb;
 using Microsoft.Extensions.Logging;
 #if WINDOWS
 using Velopack;
@@ -44,6 +45,14 @@ public static class MauiProgram
         builder.Services.AddSingleton<HttpClient>();
         builder.Services.AddSingleton<LocalizerApiClient>();
         builder.Services.AddSingleton<UpdateService>();
+
+        // Platform implementations of the WebCommon abstractions (disc / MAUI storage).
+        builder.Services.AddSingleton<IAuthTokenStore, MauiAuthTokenStore>();
+        builder.Services.AddSingleton<IPreferencesStore, MauiPreferencesStore>();
+        builder.Services.AddSingleton<IProjectStoreFactory, DiscProjectStoreFactory>();
+        builder.Services.AddSingleton<IProjectLocationService, MauiProjectLocationService>();
+        builder.Services.AddSingleton<IExcelInterop, MauiExcelInterop>();
+        builder.Services.AddSingleton<RecentProjectsStore>();
         builder.Services.AddSingleton<ProjectStateService>();
 
         return builder.Build();

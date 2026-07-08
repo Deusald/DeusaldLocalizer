@@ -1,0 +1,194 @@
+﻿@namespace DeusaldLocalizerWeb.Components.Common
+@inject ProjectStateService _ProjectState
+
+@if (_Visible)
+{
+    <div class="pem-backdrop" @onclick="Close"></div>
+
+    <div class="pem-box" @onclick:stopPropagation="true">
+
+        <div class="pem-header">
+            <span class="pem-title">Project enums</span>
+            <button class="pem-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="pem-body">
+
+            @* ── Enum list ──────────────────────────────────────────────── *@
+            <div class="pem-list-col">
+                <div class="pem-col-header">
+                    <span class="pem-col-label">Enums</span>
+                    <button class="pem-add-btn" @onclick="AddEnum">
+                        <i class="bi bi-plus"></i>
+                    </button>
+                </div>
+
+                <div class="pem-enum-list">
+                    @foreach (var e in _ProjectState.CurrentProject!.Enums)
+                    {
+                        var locEnum = e;
+                        bool active = _SelectedEnum?.Id == locEnum.Id;
+                        <button class="pem-enum-item @(active ? "active" : "")"
+                                @onclick="() => SelectEnum(locEnum)">
+                            <span class="pem-enum-item-name">@(string.IsNullOrEmpty(locEnum.Name) ? "Unnamed" : locEnum.Name)</span>
+                            <span class="pem-enum-item-count">@locEnum.Entries.Count</span>
+                        </button>
+                    }
+
+                    @if (_ProjectState.CurrentProject.Enums.Count == 0)
+                    {
+                        <div class="pem-empty">No enums yet.</div>
+                    }
+                </div>
+            </div>
+
+            @* ── Enum editor ────────────────────────────────────────────── *@
+            <div class="pem-editor-col">
+                @if (_SelectedEnum == null)
+                {
+                    <div class="pem-editor-empty">Select an enum to edit it.</div>
+                }
+                else
+                {
+                    <div class="pem-editor-fields">
+                        <div class="pem-field">
+                            <label class="pem-label">Name</label>
+                            <input class="pem-input" type="text" placeholder="WeekDay"
+                                   @bind="_SelectedEnum.Name" @bind:event="oninput"
+                                   @bind:after="MarkDirty" />
+                        </div>
+                        <div class="pem-field">
+                            <label class="pem-label">Description <span class="pem-label-hint">optional</span></label>
+                            <input class="pem-input" type="text" placeholder="Days of the week"
+                                   @bind="_SelectedEnum.Description" @bind:event="oninput"
+                                   @bind:after="MarkDirty" />
+                        </div>
+                    </div>
+
+                    <div class="pem-entries-header">
+                        <span class="pem-col-label">Entries</span>
+                        <button class="pem-add-btn" @onclick="AddEntry">
+                            <i class="bi bi-plus"></i>
+                        </button>
+                    </div>
+
+                    <div class="pem-entries-list">
+                        @foreach (var entry in _SelectedEnum.Entries)
+                        {
+                            var ent = entry;
+                            <div class="pem-entry-row">
+                                <input class="pem-input pem-entry-int" type="number"
+                                       placeholder="0"
+                                       value="@ent.IntValue"
+                                       @onchange="e => { ent.IntValue = int.TryParse(e.Value?.ToString(), out int v) ? v : 0; MarkDirty(); }" />
+                                <input class="pem-input pem-entry-str" type="text"
+                                       placeholder="Monday"
+                                       @bind="ent.StringValue" @bind:event="oninput"
+                                       @bind:after="MarkDirty" />
+                                <button class="pem-entry-remove" @onclick="() => RemoveEntry(ent)">
+                                    <i class="bi bi-x"></i>
+                                </button>
+                            </div>
+                        }
+
+                        @if (_SelectedEnum.Entries.Count == 0)
+                        {
+                            <div class="pem-empty">No entries. Add at least one.</div>
+                        }
+                    </div>
+
+                    <button class="pem-delete-enum-btn" @onclick="DeleteEnum">
+                        <i class="bi bi-trash3"></i> Delete enum
+                    </button>
+                }
+            </div>
+
+        </div>
+
+    </div>
+}
+
+@code {
+    private bool     _Visible;
+    private LocEnum? _SelectedEnum;
+
+    // Snapshot of every enum's JSON taken when the modal opens, so Close can record
+    // the minimal set of add/update/remove changes rather than one per keystroke.
+    private readonly Dictionary<Guid, string> _Snapshot = new();
+
+    public void Show()
+    {
+        _SelectedEnum = null;
+        SnapshotEnums();
+        _Visible = true;
+        StateHasChanged();
+    }
+
+    private void Close()
+    {
+        RecordEnumChanges();
+        _Visible = false;
+    }
+
+    private void SnapshotEnums()
+    {
+        _Snapshot.Clear();
+        foreach (LocEnum e in _ProjectState.CurrentProject!.Enums)
+            _Snapshot[e.Id] = JsonConvert.SerializeObject(e);
+    }
+
+    private void RecordEnumChanges()
+    {
+        List<LocEnum> current    = _ProjectState.CurrentProject!.Enums;
+        HashSet<Guid> currentIds = new();
+
+        foreach (LocEnum e in current)
+        {
+            currentIds.Add(e.Id);
+            string json = JsonConvert.SerializeObject(e);
+            if (!_Snapshot.TryGetValue(e.Id, out string? old)) _ProjectState.RecordEnumAdded(e);
+            else if (old != json)                              _ProjectState.RecordEnumUpdated(e);
+        }
+
+        foreach (Guid removedId in _Snapshot.Keys.Where(id => !currentIds.Contains(id)).ToList())
+            _ProjectState.RecordEnumRemoved(removedId);
+
+        SnapshotEnums();
+    }
+
+    private void SelectEnum(LocEnum e) => _SelectedEnum = e;
+
+    private void AddEnum()
+    {
+        LocEnum e = new LocEnum();
+        _ProjectState.CurrentProject!.Enums.Add(e);
+        _SelectedEnum = e;
+        MarkDirty();
+    }
+
+    private void DeleteEnum()
+    {
+        if (_SelectedEnum == null) return;
+        _ProjectState.CurrentProject!.Enums.Remove(_SelectedEnum);
+        _SelectedEnum = null;
+        MarkDirty();
+    }
+
+    private void AddEntry()
+    {
+        if (_SelectedEnum == null) return;
+        int next = _SelectedEnum.Entries.Count > 0
+            ? _SelectedEnum.Entries.Max(e => e.IntValue) + 1 : 0;
+        _SelectedEnum.Entries.Add(new LocEnumEntry { IntValue = next });
+        MarkDirty();
+    }
+
+    private void RemoveEntry(LocEnumEntry entry)
+    {
+        if (_SelectedEnum == null) return;
+        _SelectedEnum.Entries.Remove(entry);
+        MarkDirty();
+    }
+
+    private void MarkDirty() => _ProjectState.MarkDirty();
+}

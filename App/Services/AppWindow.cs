@@ -1,3 +1,4 @@
+using DeusaldLocalizerWeb;
 #if WINDOWS
 using DeusaldSharp;
 #endif

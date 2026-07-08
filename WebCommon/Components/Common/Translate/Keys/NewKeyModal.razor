@@ -1,0 +1,309 @@
+﻿@namespace DeusaldLocalizerWeb.Components.Common
+@inject ProjectStateService _ProjectState
+
+@if (_Visible)
+{
+    <div class="nkm-backdrop" @onclick="Cancel"></div>
+
+    <div class="nkm-box" @onclick="CloseCatDropdownIfOpen" @onclick:stopPropagation="true">
+
+        <div class="nkm-header">
+            <span class="nkm-title">@(_EditingKey == null ? "New key" : "Edit key")</span>
+            <button class="nkm-close" @onclick="Cancel"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="nkm-body">
+
+            @if (_NoCategories)
+            {
+                <div class="nkm-warning">
+                    <i class="bi bi-exclamation-triangle nkm-warning-icon"></i>
+                    <div class="nkm-warning-text">
+                        <span class="nkm-warning-title">No categories yet</span>
+                        A key must belong to a category. Create at least one category from the Keys column before adding a key.
+                    </div>
+                </div>
+            }
+            else
+            {
+            <div class="nkm-field">
+                <label class="nkm-label">
+                    Key name
+                    <span class="nkm-label-hint">letters, numbers and underscore only</span>
+                </label>
+                <input class="nkm-input nkm-input-mono" type="text" placeholder="button_save"
+                       @bind="_KeyName" @bind:event="oninput" maxlength="120"/>
+                @if (!string.IsNullOrEmpty(_KeyName) && !IsValidKeyName(_KeyName))
+                {
+                    <div class="nkm-field-error">Only letters, numbers and "_" are allowed</div>
+                }
+                else if (_IsDuplicateKey)
+                {
+                    <div class="nkm-field-error">A key with this name already exists in this category</div>
+                }
+            </div>
+
+            <div class="nkm-field nkm-field-grow">
+                <label class="nkm-label">Category</label>
+                <div class="nkm-cat-picker" @onclick:stopPropagation="true">
+                    <div class="nkm-cat-search-wrap">
+                        @if (_SelectedCategory != null && !_CatOpen)
+                        {
+                            <span class="nkm-cat-selected-icon">
+                                <i class="bi bi-folder2"></i>
+                            </span>
+                            <button class="nkm-cat-selected-display" @onclick="() => _CatOpen = true">
+                                @FullCategoryPath(_SelectedCategory)
+                            </button>
+                            <button class="nkm-cat-clear" @onclick="ClearCategory" @onclick:stopPropagation="true">
+                                <i class="bi bi-x-lg"></i>
+                            </button>
+                        }
+                        else
+                        {
+                            <i class="bi bi-search nkm-cat-search-icon"></i>
+                            <input class="nkm-input nkm-cat-search" type="text"
+                                   placeholder="Search category…"
+                                   @bind="_CatQuery" @bind:event="oninput"
+                                   @onfocus="() => _CatOpen = true"
+                                   @onblur="OnCatBlur"/>
+                        }
+                    </div>
+
+                    @if (_CatOpen)
+                    {
+                        <div class="nkm-cat-dropdown" @onmousedown="() => _SuppressBlurClose = true">
+                            @{ List<LocCategory> results = _FilteredCategories; }
+                            @if (results.Count == 0)
+                            {
+                                <div class="nkm-cat-empty">No categories found. Create one from the Keys column first.</div>
+                            }
+                            else
+                            {
+                                @foreach (LocCategory cat in results)
+                                {
+                                    LocCategory c      = cat;
+                                    bool        active = _SelectedCategory?.Id == c.Id;
+                                    <button class="nkm-cat-item @(active ? "active" : "")"
+                                            @onclick="() => SelectCategory(c)"
+                                            @onclick:preventDefault="true">
+                                        <span class="nkm-cat-item-name">@FullCategoryPath(c)</span>
+                                        @if (active)
+                                        {
+                                            <i class="bi bi-check2"></i>
+                                        }
+                                    </button>
+                                }
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+            @if (!_CatOpen)
+            {
+                <div class="nkm-field">
+                    <label class="nkm-label">
+                        Max length
+                        <span class="nkm-label-hint">0 = no limit</span>
+                    </label>
+                    <input class="nkm-input" type="number" min="0" max="10000" placeholder="0"
+                           @bind="_MaxLength" @bind:event="oninput"/>
+                </div>
+
+                <div class="nkm-preview">
+                    <span class="nkm-preview-label">Full key</span>
+                    <code class="nkm-preview-value">@_PreviewFullKey</code>
+                </div>
+            }
+            }
+
+        </div>
+
+        <div class="nkm-footer">
+            <button class="nkm-btn nkm-btn-ghost" @onclick="Cancel">@(_NoCategories ? "Close" : "Cancel")</button>
+            @if (!_NoCategories)
+            {
+                <button class="nkm-btn nkm-btn-primary" @onclick="Confirm" disabled="@(!_CanConfirm)">
+                    @(_EditingKey == null ? "Create key" : "Save changes")
+                </button>
+            }
+        </div>
+
+    </div>
+}
+
+@code {
+    [Parameter] public EventCallback<Guid> OnCreated { get; set; }
+
+    private bool                _Visible;
+    private string              _KeyName = "";
+    private int                 _MaxLength;
+    private string              _CatQuery = "";
+    private bool                _CatOpen;
+    private bool                _SuppressBlurClose;
+    private LocCategory?        _SelectedCategory;
+    private LocLocalizationKey? _EditingKey;
+
+    private static readonly Regex _KeyNamePattern = new(@"^[A-Za-z0-9_]+$");
+
+    private static bool IsValidKeyName(string s) => !string.IsNullOrEmpty(s) && _KeyNamePattern.IsMatch(s);
+
+    private bool _CanConfirm => IsValidKeyName(_KeyName) && _SelectedCategory != null && !_IsDuplicateKey;
+
+    private bool _NoCategories => _EditingKey == null && _ProjectState.CurrentProject!.Categories.Count == 0;
+
+    private bool _IsDuplicateKey
+    {
+        get
+        {
+            if (_SelectedCategory == null || string.IsNullOrEmpty(_KeyName)) return false;
+            return _ProjectState.CurrentProject!.Keys.Any(k =>
+                k.Id != _EditingKey?.Id
+                && k.CategoryId == _SelectedCategory.Id
+                && string.Equals(k.KeyName, _KeyName.Trim(), StringComparison.Ordinal));
+        }
+    }
+
+    private List<LocCategory> _FilteredCategories
+    {
+        get
+        {
+            IEnumerable<LocCategory> cats = _ProjectState.CurrentProject!.Categories.AsEnumerable();
+            if (!string.IsNullOrWhiteSpace(_CatQuery))
+            {
+                string q = _CatQuery.Trim().ToLowerInvariant();
+                cats = cats.Where(c => FullCategoryPath(c).ToLowerInvariant().Contains(q));
+            }
+            return cats.ToList();
+        }
+    }
+
+    private string FullCategoryPath(LocCategory cat)
+    {
+        List<string> parts   = [cat.Name];
+        LocCategory  current = cat;
+        LocProject   project = _ProjectState.CurrentProject!;
+        while (current.ParentCategoryId != null)
+        {
+            LocCategory? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
+            if (parent == null) break;
+            parts.Insert(0, parent.Name);
+            current = parent;
+        }
+        return string.Join("/", parts);
+    }
+
+    private string _PreviewFullKey =>
+        _SelectedCategory != null && !string.IsNullOrEmpty(_KeyName)
+            ? $"{FullCategoryPath(_SelectedCategory)}.{_KeyName}"
+            : "—";
+
+    public void Show()
+    {
+        _KeyName           = "";
+        _MaxLength         = 0;
+        _CatQuery          = "";
+        _CatOpen           = false;
+        _SuppressBlurClose = false;
+        _SelectedCategory  = null;
+        _EditingKey        = null;
+        _Visible           = true;
+        StateHasChanged();
+    }
+
+    public void EditKey(LocLocalizationKey key)
+    {
+        _EditingKey        = key;
+        _KeyName           = key.KeyName;
+        _MaxLength         = key.MaxLength;
+        _CatQuery          = "";
+        _CatOpen           = false;
+        _SuppressBlurClose = false;
+        _SelectedCategory  = _ProjectState.CurrentProject!.Categories.Find(c => c.Id == key.CategoryId);
+        _Visible           = true;
+        StateHasChanged();
+    }
+
+    private void SelectCategory(LocCategory cat)
+    {
+        _SelectedCategory = cat;
+        _CatQuery         = "";
+        _CatOpen          = false;
+    }
+
+    private async Task OnCatBlur()
+    {
+        // A mousedown on a dropdown item fires before this blur event, so we
+        // use it as a guard to avoid closing the list before the click
+        // (which selects a result) has a chance to register.
+        if (_SuppressBlurClose)
+        {
+            _SuppressBlurClose = false;
+            return;
+        }
+        await Task.Delay(120);
+        _CatOpen = false;
+        StateHasChanged();
+    }
+
+    private void ClearCategory()
+    {
+        _SelectedCategory = null;
+    }
+
+    private void CloseCatDropdownIfOpen()
+    {
+        // Fires for clicks anywhere inside the modal that are NOT inside the
+        // category picker itself (that subtree stops propagation before
+        // reaching here). Covers the gap left by onblur, which doesn't fire
+        // reliably when clicking non-focusable empty space in the modal.
+        if (_CatOpen) _CatOpen = false;
+    }
+
+    private void Confirm()
+    {
+        if (!_CanConfirm) return;
+
+        LocProject project = _ProjectState.CurrentProject!;
+
+        if (_EditingKey == null)
+        {
+            LocLocalizationKey key = new LocLocalizationKey
+            {
+                CategoryId = _SelectedCategory!.Id,
+                KeyName    = _KeyName.Trim(),
+                MaxLength  = Math.Max(0, _MaxLength),
+            };
+            project.Keys.Add(key);
+            _ProjectState.RecordKeyAdded(key);
+
+            _Visible = false;
+            OnCreated.InvokeAsync(key.Id);
+        }
+        else
+        {
+            string newKeyName     = _KeyName.Trim();
+            Guid   newCategoryId  = _SelectedCategory!.Id;
+            int    newMaxLength   = Math.Max(0, _MaxLength);
+
+            bool nameChanged      = _EditingKey.KeyName    != newKeyName;
+            bool categoryChanged  = _EditingKey.CategoryId != newCategoryId;
+            bool maxLengthChanged = _EditingKey.MaxLength  != newMaxLength;
+
+            _EditingKey.KeyName    = newKeyName;
+            _EditingKey.CategoryId = newCategoryId;
+            _EditingKey.MaxLength  = newMaxLength;
+            _EditingKey.UpdatedAt  = DateTime.UtcNow;
+
+            if (nameChanged)      _ProjectState.RecordKeyNameChanged(_EditingKey);
+            if (categoryChanged)  _ProjectState.RecordKeyCategoryChanged(_EditingKey);
+            if (maxLengthChanged) _ProjectState.RecordKeyMaxLengthChanged(_EditingKey);
+
+            _Visible = false;
+            OnCreated.InvokeAsync(_EditingKey.Id);
+        }
+    }
+
+    private void Cancel() => _Visible = false;
+}

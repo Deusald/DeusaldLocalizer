@@ -1,0 +1,289 @@
+@namespace DeusaldLocalizerWeb.Components.Common
+@inject ProjectStateService _ProjectState
+@inject IExcelInterop       _Excel
+
+@if (_Visible)
+{
+    <div class="ex-backdrop" @onclick="Close"></div>
+
+    <div class="ex-box" @onclick:stopPropagation="true">
+
+        <div class="ex-header">
+            <span class="ex-title">Export to Excel</span>
+            <button class="ex-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="ex-body">
+
+            @* ── Flags ──────────────────────────────────────────────── *@
+            <div class="ex-section">
+                <div class="ex-section-title">Flags</div>
+                <div class="ex-section-hint">Exclude drops keys that carry the flag; Include keeps them.</div>
+                <div class="ex-row">
+                    <div class="ex-row-label">
+                        <i class="bi bi-flag ex-row-icon"></i>No flags
+                    </div>
+                    @RenderSeg(_NoFlagsExcluded, s => _NoFlagsExcluded = s)
+                </div>
+                @foreach (FlagType type in _AllFlagTypes)
+                {
+                    FlagType t = type;
+                    <div class="ex-row">
+                        <div class="ex-row-label">
+                            <i class="bi @FlagIcon(t) ex-row-icon"></i>@FlagLabel(t)
+                        </div>
+                        @RenderSeg(_FlagExcluded[t], s => _FlagExcluded[t] = s)
+                    </div>
+                }
+            </div>
+
+            @* ── Tags ───────────────────────────────────────────────── *@
+            <div class="ex-section">
+                <div class="ex-section-title">Tags</div>
+                <div class="ex-row">
+                    <div class="ex-row-label">
+                        <i class="bi bi-tag ex-row-icon"></i>No tags
+                    </div>
+                    @RenderSeg(_NoTagsExcluded, s => _NoTagsExcluded = s)
+                </div>
+                @foreach (string tag in _AllTags)
+                {
+                    string tg = tag;
+                    <div class="ex-row">
+                        <div class="ex-row-label">
+                            <i class="bi bi-tag ex-row-icon"></i>@tg
+                        </div>
+                        @RenderSeg(_TagExcluded[tg], s => _TagExcluded[tg] = s)
+                    </div>
+                }
+            </div>
+
+            @* ── Columns ────────────────────────────────────────────── *@
+            <div class="ex-section">
+                <div class="ex-section-title">Columns</div>
+                <label class="ex-check">
+                    <input type="checkbox" checked="@_IncludeTagsColumn"
+                           @onchange="e => _IncludeTagsColumn = (bool)e.Value!" />
+                    <span>Add a Tags column listing each key's tags</span>
+                </label>
+            </div>
+
+            @* ── Languages ──────────────────────────────────────────── *@
+            <div class="ex-section">
+                <div class="ex-section-header">
+                    <span class="ex-section-title">Languages</span>
+                    <button class="ex-linkbtn" @onclick="ToggleAllLangs">
+                        @(_AllLangsSelected ? "Deselect all" : "Select all")
+                    </button>
+                </div>
+                @foreach (string lang in _AllLanguages)
+                {
+                    string lg     = lang;
+                    bool   active = _SelectedLangs.Contains(lg);
+                    <button class="ex-lang @(active ? "active" : "")" @onclick="() => ToggleLang(lg)">
+                        <span class="ex-lang-check">@(active ? "✓" : "")</span>
+                        <span class="ex-lang-name">@LangLabel(lg)</span>
+                        @if (lg == _ProjectState.CurrentProject!.Metadata.MainLanguageId)
+                        {
+                            <span class="ex-lang-badge">source</span>
+                        }
+                    </button>
+                }
+            </div>
+
+        </div>
+
+        <div class="ex-footer">
+            <span class="ex-count">@_MatchingKeyCount of @_TotalKeyCount keys</span>
+            <div class="ex-footer-actions">
+                <button class="ex-btn ex-btn-ghost" @onclick="Close">Cancel</button>
+                <button class="ex-btn ex-btn-primary" @onclick="ExportAsync"
+                        disabled="@(_IsExporting || _MatchingKeyCount == 0 || _SelectedLangs.Count == 0)">
+                    @if (_IsExporting)
+                    {
+                        <span class="ex-spinner"></span> <span>Exporting…</span>
+                    }
+                    else
+                    {
+                        <i class="bi bi-file-earmark-arrow-down"></i> <span>Export</span>
+                    }
+                </button>
+            </div>
+        </div>
+
+    </div>
+}
+
+@code {
+    private bool _Visible;
+    private bool _IsExporting;
+
+    // true = Exclude, false = Include. Every flag/tag is included by default.
+    private Dictionary<FlagType, bool> _FlagExcluded = new();
+    private Dictionary<string, bool>   _TagExcluded  = new(StringComparer.OrdinalIgnoreCase);
+    private bool                       _NoFlagsExcluded;
+    private bool                       _NoTagsExcluded;
+    private bool                       _IncludeTagsColumn;
+    private HashSet<string>            _SelectedLangs = new();
+
+    private static readonly FlagType[] _AllFlagTypes = (FlagType[])Enum.GetValues(typeof(FlagType));
+
+    // Flags translators should skip by default; everything else defaults to Include.
+    private static readonly HashSet<FlagType> _DefaultExcludedFlags = new()
+    {
+        FlagType.Outdated, FlagType.DoNotTranslate, FlagType.InProgress
+    };
+
+    private List<string> _AllTags =>
+        _ProjectState.CurrentProject!.Keys
+                     .SelectMany(k => k.Tags)
+                     .Distinct(StringComparer.OrdinalIgnoreCase)
+                     .OrderBy(t => t, StringComparer.OrdinalIgnoreCase)
+                     .ToList();
+
+    private List<string> _AllLanguages
+    {
+        get
+        {
+            LocProjectMetadata meta = _ProjectState.CurrentProject!.Metadata;
+            List<string>       list = new() { meta.MainLanguageId };
+            list.AddRange(meta.Languages.Where(l => l != meta.MainLanguageId).OrderBy(l => l));
+            return list;
+        }
+    }
+
+    private bool _AllLangsSelected => _SelectedLangs.Count == _AllLanguages.Count;
+
+    private int _TotalKeyCount => _ProjectState.CurrentProject!.Keys.Count;
+
+    private int _MatchingKeyCount =>
+        _ProjectState.CurrentProject!.Keys.Count(k => Matches(k));
+
+    public void Show()
+    {
+        _FlagExcluded      = _AllFlagTypes.ToDictionary(t => t, t => _DefaultExcludedFlags.Contains(t));
+        _TagExcluded       = _AllTags.ToDictionary(t => t, _ => false, StringComparer.OrdinalIgnoreCase);
+        _NoFlagsExcluded   = false;
+        _NoTagsExcluded    = false;
+        _IncludeTagsColumn = false;
+        _SelectedLangs     = new HashSet<string>(_AllLanguages);
+        _IsExporting       = false;
+        _Visible           = true;
+        StateHasChanged();
+    }
+
+    private void Close() => _Visible = false;
+
+    private RenderFragment RenderSeg(bool excluded, Action<bool> set) => __builder =>
+    {
+        <div class="ex-seg">
+            <button class="ex-seg-btn ex-seg-inc @(!excluded ? "active" : "")"
+                    @onclick="() => set(false)">Include</button>
+            <button class="ex-seg-btn ex-seg-exc @(excluded ? "active" : "")"
+                    @onclick="() => set(true)">Exclude</button>
+        </div>
+    };
+
+    private void ToggleLang(string lang)
+    {
+        if (!_SelectedLangs.Remove(lang))
+            _SelectedLangs.Add(lang);
+    }
+
+    private void ToggleAllLangs()
+    {
+        if (_AllLangsSelected)
+            _SelectedLangs.Clear();
+        else
+            _SelectedLangs = new HashSet<string>(_AllLanguages);
+    }
+
+    // Mirrors LocalizationExportService.PassesFilter so the live count matches the export.
+    private bool Matches(LocLocalizationKey key)
+    {
+        if (key.Flags.Count == 0)
+        {
+            if (_NoFlagsExcluded) return false;
+        }
+        else if (key.Flags.Any(fl => _FlagExcluded.TryGetValue(fl.Type, out bool ex) && ex))
+            return false;
+
+        if (key.Tags.Count == 0)
+        {
+            if (_NoTagsExcluded) return false;
+        }
+        else if (key.Tags.Any(t => _TagExcluded.TryGetValue(t, out bool ex) && ex))
+            return false;
+
+        return true;
+    }
+
+    private LocExportOptions BuildOptions()
+    {
+        LocExportOptions options = new()
+        {
+            IncludeNoFlags    = !_NoFlagsExcluded,
+            IncludeNoTags     = !_NoTagsExcluded,
+            IncludeTagsColumn = _IncludeTagsColumn
+        };
+        foreach (KeyValuePair<FlagType, bool> f in _FlagExcluded)
+            if (f.Value) options.ExcludeFlags.Add(f.Key);
+        foreach (KeyValuePair<string, bool> t in _TagExcluded)
+            if (t.Value) options.ExcludeTags.Add(t.Key);
+        // Preserve source-first ordering of the selected languages.
+        foreach (string lang in _AllLanguages.Where(l => _SelectedLangs.Contains(l)))
+            options.Languages.Add(lang);
+        return options;
+    }
+
+    private async Task ExportAsync()
+    {
+        if (_IsExporting) return;
+        _IsExporting = true;
+        StateHasChanged();
+        try
+        {
+            LocProject         project  = _ProjectState.CurrentProject!;
+            LocExportOptions   options  = BuildOptions();
+            using MemoryStream stream   = LocalizationExportService.ExportToStream(project, options);
+            string             fileName = $"{(string.IsNullOrEmpty(project.Metadata.Slug) ? "export" : project.Metadata.Slug)}-translations.xlsx";
+            await _Excel.SaveXlsxAsync(fileName, stream);
+            Close();
+        }
+        catch
+        {
+            /* silently ignore cancel */
+        }
+        finally
+        {
+            _IsExporting = false;
+            StateHasChanged();
+        }
+    }
+
+    private string LangLabel(string code)
+    {
+        CultureEntry? entry = CultureService.FindByCode(code);
+        return entry != null ? $"{entry.EnglishName} ({code})" : code;
+    }
+
+    private static string FlagLabel(FlagType type) => type switch
+    {
+        FlagType.NeedsReview    => "Needs review",
+        FlagType.Outdated       => "Outdated",
+        FlagType.DoNotTranslate => "Do not translate",
+        FlagType.InProgress     => "In progress",
+        FlagType.Disputed       => "Disputed",
+        _                       => type.ToString(),
+    };
+
+    private static string FlagIcon(FlagType type) => type switch
+    {
+        FlagType.NeedsReview    => "bi-flag",
+        FlagType.Outdated       => "bi-clock-history",
+        FlagType.DoNotTranslate => "bi-slash-circle",
+        FlagType.InProgress     => "bi-hourglass-split",
+        FlagType.Disputed       => "bi-exclamation-triangle",
+        _                       => "bi-flag",
+    };
+}

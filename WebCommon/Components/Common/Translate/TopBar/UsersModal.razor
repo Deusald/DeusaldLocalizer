@@ -1,0 +1,326 @@
+@namespace DeusaldLocalizerWeb.Components.Common
+@inject ProjectStateService _ProjectState
+
+@if (_Visible)
+{
+    <div class="um-backdrop" @onclick="Close"></div>
+
+    <div class="um-box" @onclick:stopPropagation="true">
+
+        <div class="um-header">
+            <span class="um-title">Collaborators</span>
+            <button class="um-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="um-section">
+            <div class="um-section-header">
+                <span class="um-section-label">Members (@_ProjectState.CurrentProject!.ProjectMembers.Count)</span>
+                @if (_IsAdmin && !_FormOpen)
+                {
+                    <button class="um-btn um-btn-primary um-btn-sm" @onclick="StartAdd">
+                        <i class="bi bi-plus-lg"></i> Add member
+                    </button>
+                }
+            </div>
+
+            @if (_FormOpen)
+            {
+                <div class="um-form">
+                    <div class="um-form-title">@(_EditingMember == null ? "Add member" : "Edit member")</div>
+
+                    <div class="um-field">
+                        <label class="um-label">Username</label>
+                        <input class="um-input" type="text" placeholder="jane.doe"
+                               @bind="_Username" @bind:event="oninput" maxlength="60" />
+                    </div>
+
+                    <div class="um-field">
+                        <label class="um-label">
+                            Review languages <span class="um-label-hint">languages this member can review</span>
+                        </label>
+                        @if (_ProjectState.CurrentProject.Metadata.Languages.Count == 0)
+                        {
+                            <div class="um-empty">This project has no languages yet.</div>
+                        }
+                        else
+                        {
+                            <div class="um-perm-flags">
+                                @foreach (string code in _ProjectState.CurrentProject.Metadata.Languages)
+                                {
+                                    string c      = code;
+                                    bool   active = _SelectedLangs.Contains(c);
+                                    <button class="um-perm-chip @(active ? "active" : "")"
+                                            @onclick="() => ToggleLang(c)" title="@c">
+                                        @LangLabel(c)
+                                    </button>
+                                }
+                            </div>
+                        }
+                    </div>
+
+                    @if (_EditingMember != null)
+                    {
+                        <div class="um-field">
+                            <label class="um-ban-toggle">
+                                <input type="checkbox" @bind="_IsBanned" />
+                                <span>Banned <span class="um-label-hint">blocks this member from contributing</span></span>
+                            </label>
+                        </div>
+                    }
+
+                    <div class="um-form-footer">
+                        <button class="um-btn um-btn-ghost" @onclick="CloseForm">Cancel</button>
+                        <button class="um-btn um-btn-primary" @onclick="Confirm"
+                                disabled="@(string.IsNullOrWhiteSpace(_Username))">
+                            @(_EditingMember == null ? "Add member" : "Save changes")
+                        </button>
+                    </div>
+                </div>
+            }
+
+            @if (_TokenError != null)
+            {
+                <div class="dl-alert dl-alert-error um-token-error">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <span>@_TokenError</span>
+                </div>
+            }
+
+            <div class="um-member-list">
+                @if (_ProjectState.CurrentProject.ProjectMembers.Count == 0)
+                {
+                    <div class="um-empty">No members yet.</div>
+                }
+                @foreach (LocProjectMember member in _ProjectState.CurrentProject.ProjectMembers)
+                {
+                    bool isSelf = member.UserId == _ProjectState.CurrentUser.UserId;
+
+                    <div class="um-member-row">
+                        <div class="um-member-avatar" style="background:@AvatarColor(member.UserId)">
+                            @Initial(member.Username)
+                        </div>
+                        <div class="um-member-info">
+                            <div class="um-member-name">
+                                @member.Username
+                                @if (isSelf)
+                                {
+                                    <span class="um-member-you">you</span>
+                                }
+                                @if (member.IsAdmin)
+                                {
+                                    <span class="um-member-badge um-badge-admin">admin</span>
+                                }
+                                @if (member.IsBanned)
+                                {
+                                    <span class="um-member-badge um-badge-banned">banned</span>
+                                }
+                            </div>
+                            <div class="um-perm-readonly">@PermissionsSummary(member)</div>
+                        </div>
+
+                        <div class="um-member-actions">
+                            @if (isSelf && !member.IsOfflineUser)
+                            {
+                                <button class="um-edit-btn" title="Regenerate my access token"
+                                        @onclick="() => RegenerateToken(member)">
+                                    <i class="bi bi-arrow-repeat"></i>
+                                </button>
+                            }
+                            @if (_IsAdmin && !isSelf)
+                            {
+                                <button class="um-edit-btn" title="Edit member" @onclick="() => StartEdit(member)">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                @if (!member.IsOfflineUser)
+                                {
+                                    <button class="um-edit-btn" title="Reset access token"
+                                            @onclick="() => ResetToken(member)">
+                                        <i class="bi bi-key"></i>
+                                    </button>
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+
+    <AccessTokenModal @ref="_AccessTokenModal" />
+}
+
+@code {
+    private bool    _Visible;
+    private bool    _FormOpen;
+    private string  _Username = "";
+    private bool    _IsBanned;
+    private string? _TokenError;
+
+    private HashSet<string>   _SelectedLangs = new();
+    private LocProjectMember? _EditingMember;
+    private AccessTokenModal? _AccessTokenModal;
+
+    private bool _IsAdmin => _ProjectState.CurrentUser.IsAdmin;
+
+    public void Show()
+    {
+        CloseForm();
+        _TokenError = null;
+        _Visible    = true;
+        StateHasChanged();
+    }
+
+    private void Close() => _Visible = false;
+
+    // ── Add / Edit form ──────────────────────────────────────────────────────
+
+    private void StartAdd()
+    {
+        _EditingMember = null;
+        _Username      = "";
+        _SelectedLangs = new HashSet<string>();
+        _IsBanned      = false;
+        _FormOpen      = true;
+    }
+
+    private void StartEdit(LocProjectMember member)
+    {
+        _EditingMember = member;
+        _Username      = member.Username;
+        _SelectedLangs = new HashSet<string>(member.ReviewLanguagePermissions);
+        _IsBanned      = member.IsBanned;
+        _FormOpen      = true;
+    }
+
+    private void CloseForm()
+    {
+        _FormOpen      = false;
+        _EditingMember = null;
+        _Username      = "";
+        _SelectedLangs = new HashSet<string>();
+        _IsBanned      = false;
+    }
+
+    private void ToggleLang(string code)
+    {
+        if (!_SelectedLangs.Add(code)) _SelectedLangs.Remove(code);
+    }
+
+    private void Confirm()
+    {
+        string name = _Username.Trim();
+        if (string.IsNullOrWhiteSpace(name)) return;
+
+        LocProject project = _ProjectState.CurrentProject!;
+
+        if (_EditingMember == null)
+        {
+            // Issue a random one-time sign-in token shown to the admin below; the member is forced to
+            // rotate it to their own token on first sign-in (MustResetAccessToken). The token is never
+            // derived from public data (like the username), so nobody with repo access can guess it.
+            string initialToken = AccessTokenService.GenerateToken();
+
+            LocProjectMember member = new()
+            {
+                UserId                    = Guid.NewGuid(),
+                Username                  = name,
+                ReviewLanguagePermissions = [.._SelectedLangs],
+                IsAdmin                   = false,
+                IsBanned                  = false,
+                HashedAccessToken         = AccessTokenService.HashToken(initialToken),
+                MustResetAccessToken      = true
+            };
+
+            project.ProjectMembers.Add(member);
+            _ProjectState.RecordMemberAdded(member);
+
+            CloseForm();
+            _AccessTokenModal?.Show(initialToken, "Member sign-in token",
+                $"Share this one-time token with {name} over a secure channel. " +
+                "They'll sign in with it once and then set their own token.");
+            return;
+        }
+
+        // Record one change per actually-changed field (compared before mutating).
+        bool usernameChanged = _EditingMember.Username != name;
+        bool langsChanged    = !_EditingMember.ReviewLanguagePermissions.SetEquals(_SelectedLangs);
+        bool bannedChanged   = _EditingMember.IsBanned != _IsBanned;
+
+        _EditingMember.Username                  = name;
+        _EditingMember.ReviewLanguagePermissions = [.._SelectedLangs];
+        _EditingMember.IsBanned                  = _IsBanned;
+
+        if (usernameChanged) _ProjectState.RecordMemberUsernameChanged(_EditingMember);
+        if (langsChanged)    _ProjectState.RecordMemberReviewPermissionsChanged(_EditingMember);
+        if (bannedChanged)   _ProjectState.RecordMemberBanStatusChanged(_EditingMember);
+
+        CloseForm();
+    }
+
+    // ── Access token ─────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// User rotates their own access token to a fresh random one. The change is pushed to the server
+    /// immediately, authenticated with the current token — the new one cannot push itself because the
+    /// server does not know it yet. Only once the server accepts it is the new token adopted.
+    /// </summary>
+    private async Task RegenerateToken(LocProjectMember member)
+    {
+        _TokenError = null;
+
+        InitialTokenResult result = await _ProjectState.RegenerateOwnTokenAsync();
+
+        if (result.RawToken == null)
+        {
+            _TokenError = result.Error ?? "Could not regenerate your token. Please try again.";
+            StateHasChanged();
+            return;
+        }
+
+        _AccessTokenModal?.Show(result.RawToken, "New access token",
+            "Your previous token no longer works. Copy this one and keep it safe — you'll use it to sign in from now on.");
+    }
+
+    /// <summary>Admin resets a member to a fresh random one-time token they must rotate on next sign-in.</summary>
+    private void ResetToken(LocProjectMember member)
+    {
+        string newToken = AccessTokenService.GenerateToken();
+
+        member.HashedAccessToken    = AccessTokenService.HashToken(newToken);
+        member.MustResetAccessToken = true;
+        _ProjectState.RecordMemberAccessTokenChanged(member);
+        _ProjectState.RecordMemberMustResetChanged(member);
+
+        _AccessTokenModal?.Show(newToken, "Access token reset",
+            $"{member.Username}'s token was reset. Share this one-time token with them over a secure channel; " +
+            "they'll sign in with it once and then set their own.");
+    }
+
+    // ── Display helpers ──────────────────────────────────────────────────────
+
+    private static string Initial(string name) =>
+        string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();
+
+    private static readonly string[] _AvatarPalette =
+        ["#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0"];
+
+    private static string AvatarColor(Guid userId)
+    {
+        int idx = Math.Abs(userId.GetHashCode()) % _AvatarPalette.Length;
+        return _AvatarPalette[idx];
+    }
+
+    private static string LangLabel(string code)
+    {
+        CultureEntry? entry = CultureService.FindByCode(code);
+        return entry != null ? $"{entry.FlagEmoji} {entry.ShortName}" : code;
+    }
+
+    private static string PermissionsSummary(LocProjectMember member)
+    {
+        if (member.IsAdmin) return "Admin — full access";
+        if (member.ReviewLanguagePermissions.Count == 0) return "No review languages";
+        return string.Join(", ", member.ReviewLanguagePermissions.Select(LangLabel));
+    }
+}

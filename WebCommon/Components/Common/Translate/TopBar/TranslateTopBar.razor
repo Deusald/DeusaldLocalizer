@@ -1,0 +1,296 @@
+﻿@namespace DeusaldLocalizerWeb.Components.Common
+@inject ProjectStateService _ProjectState
+@inject NavigationManager   _Nav
+@implements IDisposable
+
+@{ if (!_ProjectState.HasProject) return; }
+
+<div class="ttb-root">
+
+    <div class="ttb-left">
+        <button class="ttb-back-btn" @onclick="GoHome" title="Back to projects">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <div class="ttb-logo-orbs">
+            <div class="ttb-orb ttb-orb-1"></div>
+            <div class="ttb-orb ttb-orb-2"></div>
+            <div class="ttb-orb ttb-orb-3"></div>
+        </div>
+        <span class="ttb-project-name">@_ProjectState.CurrentProject!.Metadata.Name</span>
+        <span class="ttb-sep">/</span>
+        <span class="ttb-translating">
+            Translating into <strong>@_LanguageLabel</strong>
+        </span>
+    </div>
+
+    <div class="ttb-right">
+
+        @if (_ProjectState.IsDirty)
+        {
+            <button class="ttb-save-btn" @onclick="Save">
+                <i class="bi bi-cloud-arrow-up"></i> Save
+            </button>
+        }
+        <span class="ttb-status-pill @(_ProjectState.IsDirty ? "ttb-status-warn" : "ttb-status-ok")">
+            <span class="ttb-status-dot"></span>
+            @(_ProjectState.IsDirty ? "Unsaved" : "Saved")
+        </span>
+
+        @if (_IsOnline)
+        {
+            <button class="ttb-save-btn" @onclick="Sync" disabled="@_Busy" title="Sync from server">
+                <i class="bi bi-arrow-repeat"></i> Sync
+            </button>
+            <button class="ttb-save-btn" @onclick="Push"
+                    disabled="@(_Busy || _UncommittedCount == 0)"
+                    title="@(_ProjectState.HasSyncConflicts ? "Resolve conflicts before pushing" : "Push changes to server")">
+                <i class="bi bi-cloud-arrow-up-fill"></i> Push@(_UncommittedCount > 0 ? $" ({_UncommittedCount})" : "")
+            </button>
+
+            @if (_ProjectState.HasSyncConflicts)
+            {
+                <button class="ttb-status-pill ttb-status-pill-btn ttb-status-warn" title="@_ConflictTooltip"
+                        @onclick="() => _ConflictsModal?.Show()">
+                    <span class="ttb-status-dot"></span>
+                    @_ProjectState.SyncConflicts.Count @(_ProjectState.SyncConflicts.Count == 1 ? "conflict" : "conflicts")
+                </button>
+            }
+            @if (!string.IsNullOrEmpty(_StatusMessage))
+            {
+                <span class="ttb-sync-msg">@_StatusMessage</span>
+            }
+        }
+
+        <button class="ttb-history-btn" @onclick="() => _ExportModal?.Show()" title="Export to Excel">
+            <i class="bi bi-file-earmark-arrow-down"></i>
+        </button>
+
+        <button class="ttb-history-btn" @onclick="() => _ImportModal?.Show()" title="Import from Excel">
+            <i class="bi bi-file-earmark-arrow-up"></i>
+        </button>
+
+        @if (_IsOnline)
+        {
+            <span class="ttb-status-pill @(_UncommittedCount == 0 ? "ttb-status-ok" : "ttb-status-warn")"
+                  title="@(_UncommittedCount == 0 ? "All local changes are on the server" : $"{_UncommittedCount} change(s) not pushed to the server yet")">
+                <span class="ttb-status-dot"></span>
+                @(_UncommittedCount == 0 ? "Committed" : "Uncommitted")
+            </span>
+        }
+        else if (_UncommittedMode)
+        {
+            <button class="ttb-status-pill ttb-status-pill-btn @(_UncommittedCount == 0 ? "ttb-status-ok" : "ttb-status-warn")"
+                    title="@(_UncommittedCount == 0 ? "Uncommitted mode — no changes to apply" : $"{_UncommittedCount} change(s) waiting to be applied")"
+                    @onclick="() => _ProjectUncommittedChangesModal?.Show()">
+                <span class="ttb-status-dot"></span>
+                @(_UncommittedCount == 0 ? "Committed" : $"Uncommitted ({_UncommittedCount})")
+            </button>
+        }
+
+        <button class="ttb-history-btn" @onclick="() => _ProjectUncommittedChangesModal?.Show()" title="Uncommitted changes">
+            <i class="bi bi-clock-history"></i>
+        </button>
+
+        <div class="ttb-avatars" @onclick="OpenUsersModal">
+            @foreach (LocProjectMember member in _VisibleMembers)
+            {
+                <div class="ttb-avatar" style="background:@AvatarColor(member.UserId)" title="@member.Username">
+                    @Initial(member.Username)
+                </div>
+            }
+            @if (_ExtraMemberCount > 0)
+            {
+                <div class="ttb-avatar ttb-avatar-extra">+@_ExtraMemberCount</div>
+            }
+        </div>
+
+    </div>
+
+</div>
+
+<UsersModal @ref="_UsersModal"/>
+<ConfirmLeaveModal @ref="_ConfirmLeaveModal" OnSaveAndLeave="SaveAndLeave" OnDiscardAndLeave="DiscardAndLeave"/>
+<ProjectUncommittedChangesModal @ref="_ProjectUncommittedChangesModal"/>
+<ConflictsModal @ref="_ConflictsModal"/>
+<ExcelImportModal @ref="_ImportModal"/>
+<ExcelExportModal @ref="_ExportModal"/>
+
+@code {
+    [Parameter] public string SelectedLanguage { get; set; } = "";
+
+    private UsersModal?                     _UsersModal;
+    private ConfirmLeaveModal?              _ConfirmLeaveModal;
+    private ProjectUncommittedChangesModal? _ProjectUncommittedChangesModal;
+    private ConflictsModal?                 _ConflictsModal;
+    private ExcelImportModal?               _ImportModal;
+    private ExcelExportModal?               _ExportModal;
+
+    private const int _MAX_VISIBLE_AVATARS = 3;
+
+    private bool    _Busy;
+    private string? _StatusMessage;
+
+    private bool _IsOnline         => _ProjectState.CurrentProject!.Metadata.IsOnline;
+    private bool _UncommittedMode  => _ProjectState.CurrentProject!.Metadata.UncommittedMode;
+    private int  _UncommittedCount => _ProjectState.CurrentProject!.UncommitedChanges.Count;
+
+    private string _ConflictTooltip =>
+        string.Join("\n", _ProjectState.SyncConflicts.Select(c => c.Message));
+
+    private string _LanguageLabel
+    {
+        get
+        {
+            CultureEntry? entry = CultureService.FindByCode(SelectedLanguage);
+            return entry?.EnglishName ?? SelectedLanguage;
+        }
+    }
+
+    private List<LocProjectMember> _ProjectMembers => _ProjectState.CurrentProject!.Metadata.IsOnline
+                                                          ? _ProjectState.CurrentProject!.ProjectMembers
+                                                          : [.._ProjectState.CurrentProject!.ProjectMembers, LocProjectMember.OfflineMember];
+
+    private List<LocProjectMember> _VisibleMembers =>
+        _ProjectMembers.Count <= _MAX_VISIBLE_AVATARS
+            ? _ProjectMembers
+            : _ProjectMembers.GetRange(0, _MAX_VISIBLE_AVATARS);
+
+    private int _ExtraMemberCount =>
+        Math.Max(0, _ProjectMembers.Count - _MAX_VISIBLE_AVATARS);
+
+    private static string Initial(string name) =>
+        string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();
+
+    private static readonly string[] _AvatarPalette =
+        ["#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0"];
+
+    private static string AvatarColor(Guid userId)
+    {
+        int idx = Math.Abs(userId.GetHashCode()) % _AvatarPalette.Length;
+        return _AvatarPalette[idx];
+    }
+
+    protected override void OnInitialized()
+    {
+        _ProjectState.DirtyStateChanged += OnDirty;
+        _ProjectState.ProjectDataChanged += OnDirty;
+    }
+
+    private async Task Sync()
+    {
+        _Busy = true;
+        _StatusMessage = "Syncing…";
+        StateHasChanged();
+
+        SyncOperationResult result = await _ProjectState.SyncAsync();
+        _StatusMessage = result.Outcome switch
+        {
+            SyncOutcome.UpToDate      => "Up to date",
+            SyncOutcome.Updated       => $"Synced {result.ChangedFiles} file(s)" + ConflictSuffix(result.Conflicts),
+            SyncOutcome.FullResync    => "Resynced" + ConflictSuffix(result.Conflicts),
+            SyncOutcome.NoCredentials => "Sign in required",
+            SyncOutcome.NotOnline     => "Offline project",
+            _                         => "Sync failed" + (result.Error is null ? "" : $": {result.Error}"),
+        };
+
+        _Busy = false;
+        StateHasChanged();
+    }
+
+    private async Task Push()
+    {
+        // Something already blocks the push — explain why instead of firing a doomed request.
+        if (_ProjectState.HasSyncConflicts)
+        {
+            _ConflictsModal?.Show();
+            return;
+        }
+
+        _Busy = true;
+        _StatusMessage = "Pushing…";
+        StateHasChanged();
+
+        PushOperationResult result = await _ProjectState.PushAsync();
+        _StatusMessage = result.Outcome switch
+        {
+            PushOutcome.Success            => "Pushed",
+            PushOutcome.BlockedByConflicts => $"Resolve {result.Conflicts} conflict(s) first",
+            PushOutcome.Conflict           => $"Push rejected — resolve {result.Conflicts} conflict(s)",
+            PushOutcome.NoCredentials      => "Sign in required",
+            PushOutcome.NotOnline          => "Offline project",
+            _                              => "Push failed" + (result.Message is null ? "" : $": {result.Message}"),
+        };
+
+        switch (result.Outcome)
+        {
+            case PushOutcome.BlockedByConflicts:
+                _ConflictsModal?.Show();
+                break;
+            case PushOutcome.Conflict:
+                _ConflictsModal?.ShowError("The push was rejected because the server has newer changes. The latest server version has been pulled in — resolve each conflict below, then push again.");
+                break;
+            case PushOutcome.Failed:
+                _ConflictsModal?.ShowError(result.Message ?? "The push was rejected by the server. Sync and try again.");
+                break;
+            case PushOutcome.NoCredentials:
+                _ConflictsModal?.ShowError("You need to sign in on this device before you can push.");
+                break;
+        }
+
+        _Busy = false;
+        StateHasChanged();
+    }
+
+    private static string ConflictSuffix(int conflicts) =>
+        conflicts > 0 ? $" · {conflicts} conflict(s)" : "";
+
+    private void OpenUsersModal() => _UsersModal?.Show();
+
+    private void GoHome()
+    {
+        if (_ProjectState.IsDirty)
+        {
+            _ConfirmLeaveModal?.Show();
+        }
+        else
+        {
+            LeaveAndUnload();
+        }
+    }
+
+    private void LeaveAndUnload()
+    {
+        _ProjectState.CloseProject();
+        _Nav.NavigateTo("/");
+    }
+
+    private async Task SaveAndLeave()
+    {
+        await Save();
+        LeaveAndUnload();
+    }
+
+    private void DiscardAndLeave()
+    {
+        LeaveAndUnload();
+    }
+
+    private async Task Save()
+    {
+        await _ProjectState.SaveAsync();
+        StateHasChanged();
+    }
+
+    private void OnDirty()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        _ProjectState.DirtyStateChanged -= OnDirty;
+        _ProjectState.ProjectDataChanged -= OnDirty;
+    }
+
+}

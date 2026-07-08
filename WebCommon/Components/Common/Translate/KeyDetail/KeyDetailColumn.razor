@@ -1,0 +1,144 @@
+﻿@namespace DeusaldLocalizerWeb.Components.Common
+@inject ProjectStateService _ProjectState
+@implements IDisposable
+
+<div class="kd-root">
+
+    @if (SelectedKeyId == null || _SelectedKey == null)
+    {
+        <div class="kd-empty">
+            <i class="bi bi-key kd-empty-icon"></i>
+            <span>Select a key to start translating</span>
+        </div>
+    }
+    else
+    {
+        <div class="kd-scroll">
+
+            @* ── Header ───────────────────────────────────────────────────── *@
+            <div class="kd-header">
+                <div class="kd-header-top">
+                    <div class="kd-header-title-row">
+                        <span class="kd-key-name">@FullKeyName(_SelectedKey)</span>
+                        <span class="kd-status-tag @_StatusTagClass">@_StatusTagLabel</span>
+                    </div>
+                    <div class="kd-header-dates">
+                        <span title="Created">Created @_SelectedKey.CreatedAt.ToString("MMM d, yyyy")</span>
+                        <span class="kd-dates-sep">·</span>
+                        <span title="Last updated">Updated @_SelectedKey.UpdatedAt.ToString("MMM d, yyyy")</span>
+                    </div>
+                </div>
+
+                <KeyFlagsBar Key="@_SelectedKey" OnChanged="StateHasChanged"/>
+            </div>
+
+            @* ── Description ─────────────────────────────────────────────── *@
+            <KeyDescriptionBlock Key="@_SelectedKey" OnChanged="StateHasChanged"/>
+
+            @* ── Tags ─────────────────────────────────────────────────────── *@
+            <KeyTagsBar Key="@_SelectedKey" OnChanged="StateHasChanged"/>
+
+            @* ── Sync conflict ───────────────────────────────────────────── *@
+            <ConflictResolutionBox Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage"
+                                   OnChanged="StateHasChanged" />
+
+            @* ── Translation editor ──────────────────────────────────────── *@
+            <TranslationEditor Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage"
+                               OnChanged="StateHasChanged"
+                               OnDraftChanged="OnDraftChanged" />
+
+            @* ── Preview ──────────────────────────────────────────────────── *@
+            <PreviewSection Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage"
+                            PreviewOverrides="@(_VariablesSection?.CurrentPreviewOverrides ?? _EmptyOverrides)"
+                            SourceDraft="@_SourceDraft"
+                            TranslationDraft="@_TranslationDraft" />
+
+            @* ── Suggestions ──────────────────────────────────────────────── *@
+            <SuggestionsSection Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage" OnChanged="StateHasChanged"
+                                PreviewOverrides="@(_VariablesSection?.CurrentPreviewOverrides ?? _EmptyOverrides)"/>
+
+            @* ── Variables ────────────────────────────────────────────────── *@
+            <VariablesSection @ref="_VariablesSection" Key="@_SelectedKey" OnChanged="StateHasChanged"/>
+
+        </div>
+    }
+
+</div>
+
+@code {
+    [Parameter] public string SelectedLanguage { get; set; } = "";
+    [Parameter] public Guid?  SelectedKeyId    { get; set; }
+
+    private VariablesSection? _VariablesSection;
+    private string            _SourceDraft      = "";
+    private string            _TranslationDraft = "";
+
+    private static readonly Dictionary<Guid, string> _EmptyOverrides = new();
+
+    protected override void OnInitialized()
+    {
+        // Refresh when the project data changes (e.g. a sync just computed conflicts) so the conflict
+        // box and status tag update immediately, even when the affected key is already open.
+        _ProjectState.ProjectDataChanged += OnProjectDataChanged;
+    }
+
+    private void OnProjectDataChanged() => InvokeAsync(StateHasChanged);
+
+    public void Dispose()
+    {
+        _ProjectState.ProjectDataChanged -= OnProjectDataChanged;
+    }
+
+    private void OnDraftChanged((string source, string translation) drafts)
+    {
+        _SourceDraft      = drafts.source;
+        _TranslationDraft = drafts.translation;
+    }
+
+    private LocLocalizationKey? _SelectedKey => SelectedKeyId == null ? null : _ProjectState.CurrentProject!.Keys.Find(k => k.Id == SelectedKeyId);
+
+    private string FullKeyName(LocLocalizationKey key)
+    {
+        LocProject   project = _ProjectState.CurrentProject!;
+        LocCategory? cat     = project.Categories.Find(c => c.Id == key.CategoryId);
+        if (cat == null) return key.KeyName;
+
+        List<string> parts   = [cat.Name];
+        LocCategory  current = cat;
+        while (current.ParentCategoryId != null)
+        {
+            LocCategory? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
+            if (parent == null) break;
+            parts.Insert(0, parent.Name);
+            current = parent;
+        }
+        return $"{string.Join("/", parts)}.{key.KeyName}";
+    }
+
+    private string _StatusTagLabel
+    {
+        get
+        {
+            LocLocalizationKey key = _SelectedKey!;
+            if (key.Flags.Any(f => f.Type == FlagType.NeedsReview)) return "Needs review";
+            LocKeyTranslation? t = key.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
+            if (t == null || (string.IsNullOrEmpty(t.Text) && t.Suggestions.Count == 0)) return "Untranslated";
+            if (!string.IsNullOrEmpty(t.Text) && t.SourceChanged) return "Needs review";
+            return t.Status switch
+            {
+                TranslationStatus.Approved  => "Approved",
+                TranslationStatus.Suggested => "Suggested",
+                _                           => "Draft",
+            };
+        }
+    }
+
+    private string _StatusTagClass => _StatusTagLabel switch
+    {
+        "Approved"     => "kd-status-ok",
+        "Needs review" => "kd-status-warn",
+        "Untranslated" => "kd-status-empty",
+        _              => "kd-status-draft",
+    };
+
+}

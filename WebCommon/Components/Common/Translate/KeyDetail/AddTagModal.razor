@@ -1,0 +1,101 @@
+﻿@namespace DeusaldLocalizerWeb.Components.Common
+@inject ProjectStateService _ProjectState
+
+@if (_Visible)
+{
+    <div class="atm-backdrop" @onclick="Close"></div>
+
+    <div class="atm-box" @onclick:stopPropagation="true">
+        <div class="atm-header">
+            <span class="atm-title">Add tag</span>
+            <button class="atm-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="atm-body">
+            <input class="atm-input" type="text" placeholder="Search or create a tag…"
+                   @bind="_Query" @bind:event="oninput" @onkeydown="OnKeyDown" />
+
+            <div class="atm-results">
+                @if (_ShowCreateOption)
+                {
+                    <button class="atm-item atm-item-create" @onclick="() => AddTag(_Query.Trim())">
+                        <i class="bi bi-plus-circle"></i>
+                        <span>Create "<strong>@_Query.Trim()</strong>"</span>
+                    </button>
+                }
+
+                @foreach (string tag in _FilteredExisting)
+                {
+                    string t = tag;
+                    <button class="atm-item" @onclick="() => AddTag(t)">
+                        <span class="atm-item-hash">#</span>
+                        <span>@t</span>
+                    </button>
+                }
+
+                @if (_FilteredExisting.Count == 0 && !_ShowCreateOption)
+                {
+                    <div class="atm-empty">No matching tags.</div>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public LocLocalizationKey Key { get; set; } = null!;
+    [Parameter] public EventCallback OnAdded { get; set; }
+
+    private bool   _Visible;
+    private string _Query = "";
+
+    public void Show()
+    {
+        _Query = "";
+        _Visible = true;
+        StateHasChanged();
+    }
+
+    private void Close() => _Visible = false;
+
+    /// <summary>Every distinct tag used across all keys in the project, excluding tags already on this key.</summary>
+    private List<string> _AllExistingTags =>
+        _ProjectState.CurrentProject!.Keys
+            .SelectMany(k => k.Tags)
+            .Distinct()
+            .Where(t => !Key.Tags.Contains(t))
+            .OrderBy(t => t)
+            .ToList();
+
+    private List<string> _FilteredExisting
+    {
+        get
+        {
+            if (string.IsNullOrWhiteSpace(_Query)) return _AllExistingTags;
+            string q = _Query.Trim().ToLowerInvariant();
+            return _AllExistingTags.Where(t => t.ToLowerInvariant().Contains(q)).ToList();
+        }
+    }
+
+    private bool _ShowCreateOption =>
+        !string.IsNullOrWhiteSpace(_Query)
+        && !_AllExistingTags.Any(t => string.Equals(t, _Query.Trim(), StringComparison.OrdinalIgnoreCase))
+        && !Key.Tags.Contains(_Query.Trim());
+
+    private void OnKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter" && _ShowCreateOption)
+            AddTag(_Query.Trim());
+    }
+
+    private void AddTag(string tag)
+    {
+        tag = tag.Trim();
+        if (string.IsNullOrEmpty(tag) || Key.Tags.Contains(tag)) return;
+
+        Key.Tags.Add(tag);
+        _ProjectState.RecordTagAdded(Key.Id, tag);
+        _Visible = false;
+        OnAdded.InvokeAsync();
+    }
+}

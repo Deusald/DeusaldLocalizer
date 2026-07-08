@@ -1,0 +1,415 @@
+﻿@namespace DeusaldLocalizerWeb.Components.Common
+@inject ProjectStateService _ProjectState
+
+<div class="te-root">
+
+    @if (_IsSourceLanguageSelected)
+    {
+        <div class="te-block">
+            <div class="te-label-row">
+                <label class="te-label">Source · @_SourceLangCode</label>
+                <span class="te-hint">{placeholders} supported</span>
+            </div>
+            <textarea class="te-textarea @((_CanEditSource || _CanEditTranslation) ? "" : "te-readonly") @(_SourceOverLimit ? "te-over-limit" : "")"
+                      @bind="_SourceDraft" @bind:event="oninput"
+                      @bind:after="NotifyDraftChanged"
+                      readonly="@(!_CanEditSource && !_CanEditTranslation)"
+                      rows="4"
+                      placeholder="Source text…"></textarea>
+            @if (Key.MaxLength > 0)
+            {
+                <div class="te-char-count @(_SourceOverLimit ? "te-char-count-over" : "")">
+                    @_SourceDraft.Length / @Key.MaxLength
+                </div>
+            }
+        </div>
+
+        @if (_CanEditSource)
+        {
+            <div class="te-actions">
+                <button class="te-btn te-btn-primary" @onclick="SaveSourceText" disabled="@(!_HasSourceChanges || _SourceOverLimit)">
+                    Save source
+                </button>
+                <button class="te-btn te-btn-ghost" @onclick="SuggestSourceText" disabled="@(!_HasSourceChanges || _SourceOverLimit)">
+                    Suggest
+                </button>
+                <button class="te-btn te-btn-ghost" @onclick="ResetSourceDraft" disabled="@(!_HasSourceChanges)">
+                    Reset
+                </button>
+            </div>
+        }
+        else if (_CanEditTranslation)
+        {
+            @* Contributor on the source language: can only propose, never save directly *@
+            <div class="te-actions">
+                <button class="te-btn te-btn-ghost" @onclick="SuggestSourceText" disabled="@(!_HasSourceChanges || _SourceOverLimit)">
+                    Suggest
+                </button>
+                <button class="te-btn te-btn-ghost" @onclick="ResetSourceDraft" disabled="@(!_HasSourceChanges)">
+                    Reset
+                </button>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="te-block">
+            <label class="te-label">
+                Source · @_SourceLangCode
+                <span class="te-hint te-source-readonly-hint">read-only — switch to @_SourceLangCode to edit</span>
+            </label>
+            <textarea class="te-textarea te-readonly"
+                      value="@_SourceDraft"
+                      readonly
+                      rows="3"
+                      placeholder="Source text…"></textarea>
+        </div>
+
+        <div class="te-block">
+            <div class="te-label-row">
+                <label class="te-label">Translation · @SelectedLanguage</label>
+                <span class="te-hint">{placeholders} supported</span>
+            </div>
+            <textarea class="te-textarea @(_CanEditTranslation ? "" : "te-readonly") @(_TranslationOverLimit ? "te-over-limit" : "")"
+                      @bind="_TranslationDraft" @bind:event="oninput"
+                      @bind:after="NotifyDraftChanged"
+                      readonly="@(!_CanEditTranslation)"
+                      rows="4"
+                      placeholder="Type your translation…"></textarea>
+            @if (Key.MaxLength > 0)
+            {
+                <div class="te-char-count @(_TranslationOverLimit ? "te-char-count-over" : "")">
+                    @_TranslationDraft.Length / @Key.MaxLength
+                </div>
+            }
+        </div>
+
+        @if (_IsHashStale)
+        {
+            <div class="te-stale-warning">
+                <i class="bi bi-exclamation-triangle"></i>
+                Source has changed since this translation was last saved.
+                @if (_CanConfirmMatch)
+                {
+                    <button class="te-source-matched-btn" @onclick="MarkSourceMatched">
+                        Source matched
+                    </button>
+                }
+            </div>
+        }
+
+        @if (_CanEditTranslation)
+        {
+            <div class="te-actions">
+                @if (_IsAdmin || _IsReviewer)
+                {
+                    <button class="te-btn te-btn-primary" @onclick="SaveTranslation" disabled="@(!_HasTranslationChanges || _TranslationOverLimit)">
+                        Save translation
+                    </button>
+                }
+                <button class="te-btn te-btn-ghost" @onclick="SuggestTranslation" disabled="@(!_HasTranslationChanges || _TranslationOverLimit)">
+                    Suggest
+                </button>
+                <button class="te-btn te-btn-ghost" @onclick="ResetTranslationDraft" disabled="@(!_HasTranslationChanges)">
+                    Reset
+                </button>
+            </div>
+        }
+    }
+
+</div>
+
+@code {
+    [Parameter] public LocLocalizationKey                                 Key              { get; set; } = null!;
+    [Parameter] public string                                             SelectedLanguage { get; set; } = "";
+    [Parameter] public EventCallback                                      OnChanged        { get; set; }
+    [Parameter] public EventCallback<(string source, string translation)> OnDraftChanged   { get; set; }
+
+    private string _SourceDraft      = "";
+    private string _TranslationDraft = "";
+    private Guid?  _LoadedForKeyId;
+    private string _LoadedForLanguage = "";
+
+    // Snapshots of the last text we knew was saved on the DTO. Used to detect
+    // external changes (e.g. a suggestion being accepted elsewhere) so the
+    // draft can be re-synced, without clobbering genuine unsaved local edits.
+    private string _LastKnownSourceText      = "";
+    private string _LastKnownTranslationText = "";
+
+    private string _SourceLangCode           => _ProjectState.CurrentProject!.Metadata.MainLanguageId;
+    private bool   _IsSourceLanguageSelected => SelectedLanguage == _SourceLangCode;
+
+    private bool _IsAdmin         => _ProjectState.CurrentUser.IsAdmin;
+    private bool _IsReviewer      => _ProjectState.CurrentUser.IsAdmin || _ProjectState.CurrentUser.ReviewLanguagePermissions.Contains(SelectedLanguage);
+    private bool _CanSuggest      => !_ProjectState.CurrentUser.IsBanned;
+    private bool _CanConfirmMatch => _IsReviewer;
+
+    /// <summary>Only meaningful when the source language is selected — admin can edit and save it directly.</summary>
+    private bool _CanEditSource => _IsAdmin;
+
+    /// <summary>Any non-banned user can at least propose a translation; reviewers/admins can save it directly.</summary>
+    private bool _CanEditTranslation => _CanSuggest;
+
+    protected override void OnParametersSet()
+    {
+        bool keyOrLanguageChanged = _LoadedForKeyId != Key.Id || _LoadedForLanguage != SelectedLanguage;
+
+        LocKeyTranslation? source            = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        string             currentSourceText = source?.Text ?? "";
+
+        LocKeyTranslation? translation            = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        string             currentTranslationText = translation?.Text ?? "";
+
+        // Snapshot drafts before any mutations so we can detect if they changed
+        string previousSourceDraft      = _SourceDraft;
+        string previousTranslationDraft = _TranslationDraft;
+
+        if (keyOrLanguageChanged)
+        {
+            _SourceDraft      = currentSourceText;
+            _TranslationDraft = currentTranslationText;
+
+            _LoadedForKeyId    = Key.Id;
+            _LoadedForLanguage = SelectedLanguage;
+        }
+        else
+        {
+            // Same key/language as before — if the saved text changed since we
+            // last saw it (e.g. a suggestion was accepted elsewhere) and the
+            // draft still matches what we last knew, it's safe to resync.
+            // If the draft differs from what we last knew, the user has typed
+            // something unsaved, so leave their draft alone.
+            if (currentSourceText != _LastKnownSourceText && _SourceDraft == _LastKnownSourceText)
+                _SourceDraft = currentSourceText;
+
+            if (currentTranslationText != _LastKnownTranslationText && _TranslationDraft == _LastKnownTranslationText)
+                _TranslationDraft = currentTranslationText;
+        }
+
+        _LastKnownSourceText      = currentSourceText;
+        _LastKnownTranslationText = currentTranslationText;
+
+        // Only notify the parent if drafts actually changed here — calling
+        // InvokeAsync unconditionally triggers a parent StateHasChanged on
+        // every render, which re-renders this component, which fires
+        // OnParametersSet again: an infinite loop.
+        if (_SourceDraft != previousSourceDraft || _TranslationDraft != previousTranslationDraft)
+            OnDraftChanged.InvokeAsync((_SourceDraft, _TranslationDraft));
+    }
+
+    private async Task NotifyDraftChanged()
+    {
+        await OnDraftChanged.InvokeAsync((_SourceDraft, _TranslationDraft));
+    }
+
+    private bool _SourceOverLimit =>
+        Key.MaxLength > 0 && _SourceDraft.Length > Key.MaxLength;
+
+    private bool _TranslationOverLimit =>
+        Key.MaxLength > 0 && _TranslationDraft.Length > Key.MaxLength;
+
+    /// <summary>True when the translation's BaseTextHash no longer matches the current source hash.</summary>
+    private bool _IsHashStale
+    {
+        get
+        {
+            if (_IsSourceLanguageSelected) return false;
+            LocKeyTranslation? t = Key.Translations.Find(tr => tr.LanguageId == SelectedLanguage);
+            if (t == null || string.IsNullOrEmpty(t.BaseTextHash)) return false;
+            LocKeyTranslation? src = Key.Translations.Find(tr => tr.LanguageId == _SourceLangCode);
+            return t.BaseTextHash != TextHashHelper.Compute(src?.Text ?? "");
+        }
+    }
+
+    private bool _HasSourceChanges
+    {
+        get
+        {
+            LocKeyTranslation? current = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+            return (current?.Text ?? "") != _SourceDraft;
+        }
+    }
+
+    private bool _HasTranslationChanges
+    {
+        get
+        {
+            LocKeyTranslation? current = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+            return (current?.Text ?? "") != _TranslationDraft;
+        }
+    }
+
+    private void ResetSourceDraft()
+    {
+        LocKeyTranslation? current = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        _SourceDraft = current?.Text ?? "";
+    }
+
+    private void ResetTranslationDraft()
+    {
+        LocKeyTranslation? current = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        _TranslationDraft = current?.Text ?? "";
+    }
+
+    private async Task SaveSourceText()
+    {
+        if (!_CanEditSource) return;
+
+        LocKeyTranslation? source = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        if (source == null)
+        {
+            source = new LocKeyTranslation { LanguageId = _SourceLangCode };
+            Key.Translations.Add(source);
+        }
+        if (source.Text == _SourceDraft) return;
+
+        string oldHash = TextHashHelper.Compute(source.Text);
+        string newHash = TextHashHelper.Compute(_SourceDraft);
+
+        source.Text      = _SourceDraft;
+        source.UpdatedAt = DateTime.UtcNow;
+        source.Status    = TranslationStatus.Approved;
+
+        // The source is always considered "matching itself".
+        source.BaseTextHash = newHash;
+
+        _ProjectState.RecordTranslationUpdated(Key.Id, source, oldHash);
+
+        // Re-evaluate every other-language translation against the new source hash.
+        // A translation is "source changed" when it was based on a different source
+        // version than the current one; reverting the source back to a translation's
+        // BaseTextHash clears the flag again.
+        if (oldHash != newHash)
+        {
+            foreach (LocKeyTranslation other in Key.Translations)
+            {
+                if (other.LanguageId == _SourceLangCode) continue;
+                if (string.IsNullOrEmpty(other.BaseTextHash)) continue;
+
+                bool sourceChanged = other.BaseTextHash != newHash;
+                if (other.SourceChanged != sourceChanged)
+                {
+                    other.SourceChanged = sourceChanged;
+                    _ProjectState.RecordTranslationUpdated(Key.Id, other);
+                }
+            }
+        }
+
+        Key.UpdatedAt = DateTime.UtcNow;
+        await OnChanged.InvokeAsync();
+    }
+
+    private async Task SuggestSourceText()
+    {
+        if (!_CanEditTranslation) return;
+
+        LocKeyTranslation? translation = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        if (translation == null)
+        {
+            translation = new LocKeyTranslation { LanguageId = _SourceLangCode };
+            Key.Translations.Add(translation);
+        }
+
+        translation.SourceChanged = true;
+        translation.Status        = TranslationStatus.Suggested;
+
+        LocKeyTranslation? sourceForHash = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+
+        LocTranslationSuggestion suggestion = new LocTranslationSuggestion
+        {
+            Text       = _SourceDraft,
+            AuthorId   = _ProjectState.CurrentUser.UserId,
+            SourceHash = TextHashHelper.Compute(sourceForHash?.Text ?? ""),
+        };
+
+        translation.Suggestions.Add(suggestion);
+
+        _ProjectState.RecordTranslationUpdated(Key.Id, translation);
+        _ProjectState.RecordSuggestionAdded(Key.Id, _SourceLangCode, suggestion);
+
+        Key.UpdatedAt = DateTime.UtcNow;
+        await OnChanged.InvokeAsync();
+    }
+
+    private async Task SaveTranslation()
+    {
+        if (!_CanEditTranslation) return;
+        if (!_IsReviewer) return;
+
+        LocKeyTranslation? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        if (translation == null)
+        {
+            translation = new LocKeyTranslation { LanguageId = SelectedLanguage };
+            Key.Translations.Add(translation);
+        }
+
+        // Hash of the text before this edit — lets the server/client detect a concurrent edit.
+        string oldDestHash = TextHashHelper.Compute(translation.Text);
+
+        translation.Text          = _TranslationDraft;
+        translation.UpdatedAt     = DateTime.UtcNow;
+        translation.SourceChanged = false;
+
+        // Record which version of the source this translation was based on
+        LocKeyTranslation? currentSource = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        translation.BaseTextHash = TextHashHelper.Compute(currentSource?.Text ?? "");
+
+        translation.Status = TranslationStatus.Approved;
+
+        _ProjectState.RecordTranslationUpdated(Key.Id, translation, oldDestHash);
+
+        Key.UpdatedAt = DateTime.UtcNow;
+        await OnChanged.InvokeAsync();
+    }
+
+    private async Task MarkSourceMatched()
+    {
+        if (!_CanConfirmMatch) return;
+
+        LocKeyTranslation? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        if (translation == null) return;
+
+        LocKeyTranslation? src = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+        translation.BaseTextHash  = TextHashHelper.Compute(src?.Text ?? "");
+        translation.SourceChanged = false;
+        translation.UpdatedAt     = DateTime.UtcNow;
+
+        _ProjectState.RecordTranslationUpdated(Key.Id, translation);
+
+        Key.UpdatedAt = DateTime.UtcNow;
+        await OnChanged.InvokeAsync();
+    }
+
+    private async Task SuggestTranslation()
+    {
+        if (!_CanEditTranslation) return;
+
+        LocKeyTranslation? translation = Key.Translations.Find(t => t.LanguageId == SelectedLanguage);
+        if (translation == null)
+        {
+            translation = new LocKeyTranslation { LanguageId = SelectedLanguage };
+            Key.Translations.Add(translation);
+        }
+
+        translation.SourceChanged = true;
+        translation.Status        = TranslationStatus.Suggested;
+
+        LocKeyTranslation? sourceForHash = Key.Translations.Find(t => t.LanguageId == _SourceLangCode);
+
+        LocTranslationSuggestion suggestion = new LocTranslationSuggestion
+        {
+            Text       = _TranslationDraft,
+            AuthorId   = _ProjectState.CurrentUser.UserId,
+            SourceHash = TextHashHelper.Compute(sourceForHash?.Text ?? ""),
+        };
+
+        translation.Suggestions.Add(suggestion);
+
+        _ProjectState.RecordTranslationUpdated(Key.Id, translation);
+        _ProjectState.RecordSuggestionAdded(Key.Id, SelectedLanguage, suggestion);
+
+        Key.UpdatedAt = DateTime.UtcNow;
+        await OnChanged.InvokeAsync();
+    }
+
+}
