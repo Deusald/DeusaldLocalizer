@@ -1,6 +1,6 @@
 {
-  "name": "WebApp",
-  "short_name": "WebApp",
+  "name": "Deusald Localizer",
+  "short_name": "Localizer",
   "id": "./",
   "start_url": "./",
   "display": "standalone",

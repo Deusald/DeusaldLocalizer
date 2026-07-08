@@ -243,4 +243,26 @@ p { margin: 0; }
     color: var(--dl-text-1); box-shadow: 0 0 0 3px var(--dl-accent-dim);
 }
 .form-control::placeholder { color: var(--dl-text-3); }
+
+/* ── Blazor unhandled-error banner (WASM host only) ─────────────────────
+   This element ships in index.html and is hidden by default; Blazor sets an
+   inline display:block on it only when a genuine unhandled error occurs. The
+   MAUI app.css this file was seeded from had no such element, so without this
+   rule the banner shows permanently. */
+#blazor-error-ui {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0.7rem 1.25rem;
+    background: #2a1416;
+    color: #ffb4b4;
+    border-top: 1px solid var(--dl-danger, #ff6b6b);
+    box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.4);
+    font-size: 13px;
+}
+#blazor-error-ui .reload { color: var(--dl-accent, #8ea2ff); text-decoration: underline; cursor: pointer; }
+#blazor-error-ui .dismiss { cursor: pointer; position: absolute; right: 0.9rem; top: 0.55rem; }
 .form-label { font-size: 0.75rem; font-weight: 500; color: var(--dl-text-2); margin-bottom: 0.25rem; }
