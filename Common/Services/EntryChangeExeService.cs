@@ -153,6 +153,10 @@ namespace DeusaldLocalizerCommon
                     LocKeyTranslation? incoming = JsonConvert.DeserializeObject<LocKeyTranslation>(change.ChangeData);
                     if (incoming == null) return;
 
+                    // Server owns the target language: the push is authorized against EntrySubId, so the
+                    // payload must not be able to redirect the write to a different (e.g. source) language.
+                    incoming.LanguageId = change.EntrySubId;
+
                     LocKeyTranslation? existing = key.Translations.Find(t => t.LanguageId == change.EntrySubId);
                     if (existing == null)
                     {
