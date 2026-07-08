@@ -110,9 +110,10 @@ public class ProjectStateService
         CurrentUser = userId == LocProjectMember.OfflineMember.UserId ? LocProjectMember.OfflineMember : project.ProjectMembers.Find(m => m.UserId == userId)!;
         AccessToken = accessToken;
 
-        // Online key files mirror the server, so any unpushed edits live only in the pending queue.
-        // Replay them onto the freshly-loaded project so reopening shows the user's in-flight work.
-        if (project.Metadata.IsOnline && project.UncommitedChanges.Count > 0)
+        // When changes are staged (online, or offline uncommitted mode) the key files hold the last-committed
+        // state, so any unapplied edits live only in the pending queue. Replay them onto the freshly-loaded
+        // project so reopening shows the user's in-flight work.
+        if (project.Metadata.UsesUncommittedChanges && project.UncommitedChanges.Count > 0)
             ReapplyPendingChanges();
 
         ProjectChanged?.Invoke();
@@ -134,10 +135,12 @@ public class ProjectStateService
 
     public async Task SaveAsync()
     {
-        if (CurrentProject!.Metadata.IsOnline)
+        // Online, or offline uncommitted mode with a folder already on disk: only persist the pending
+        // queue locally; the key files stay at their last-committed state until the changes are applied
+        // (pushed to the bot online, applied locally offline). The work is now on disk, so it counts as saved.
+        // A brand-new offline project without a path still falls through to the folder-pick full save below.
+        if (!string.IsNullOrEmpty(CurrentProjectPath) && CurrentProject!.Metadata.UsesUncommittedChanges)
         {
-            // Online projects only persist the pending queue locally; the key files stay
-            // untouched until the bot confirms the push. The work is now on disk, so it counts as saved.
             await ProjectFileService.SaveUncommittedOnlyAsync(CurrentProject, CurrentProjectPath!);
             MarkClean();
             return;
@@ -150,17 +153,17 @@ public class ProjectStateService
             if (result.IsSuccessful)
             {
                 CurrentProjectPath = result.Folder.Path;
-                await ProjectFileService.SaveAsync(CurrentProject, CurrentProjectPath);
+                await ProjectFileService.SaveAsync(CurrentProject!, CurrentProjectPath);
                 MarkClean();
             }
         }
         else
         {
-            await ProjectFileService.SaveIncrementalAsync(CurrentProject, CurrentProjectPath, ChangedLocKeys);
+            await ProjectFileService.SaveIncrementalAsync(CurrentProject!, CurrentProjectPath, ChangedLocKeys);
             MarkClean();
         }
 
-        if (!string.IsNullOrEmpty(CurrentProjectPath)) RecentProjectsService.UpdateRecentProjects(CurrentProject!, CurrentProjectPath, CurrentProject.Metadata.IsOnline);
+        if (!string.IsNullOrEmpty(CurrentProjectPath)) RecentProjectsService.UpdateRecentProjects(CurrentProject!, CurrentProjectPath, CurrentProject!.Metadata.IsOnline);
     }
 
     // ── Online sync / push ─────────────────────────────────────────────────────
@@ -575,7 +578,7 @@ public class ProjectStateService
     public async Task RemoveUncommittedChangeAsync(int index)
     {
         if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath)) return;
-        if (!CurrentProject.Metadata.IsOnline)                                   return;
+        if (!CurrentProject.Metadata.UsesUncommittedChanges)                     return;
         if (index < 0 || index >= CurrentProject.UncommitedChanges.Count)        return;
 
         List<LocEntryChange> pending = new(CurrentProject.UncommitedChanges);
@@ -595,12 +598,60 @@ public class ProjectStateService
     public async Task ClearUncommittedChangesAsync()
     {
         if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath)) return;
-        if (!CurrentProject.Metadata.IsOnline)                                   return;
+        if (!CurrentProject.Metadata.UsesUncommittedChanges)                     return;
         if (CurrentProject.UncommitedChanges.Count == 0)                         return;
 
         await RebuildWorkingCopyAsync(new List<LocEntryChange>());
 
         MarkClean();
+        ProjectChanged?.Invoke();
+        ProjectDataChanged?.Invoke();
+    }
+
+    /// <summary>
+    /// Offline "commit": the working copy already reflects every staged edit, so this writes the whole
+    /// project straight to the key files and clears the uncommitted queue (both in memory and on disk).
+    /// Offline uncommitted mode only — online projects apply their queue by pushing to the bot.
+    /// </summary>
+    public async Task ApplyUncommittedChangesAsync()
+    {
+        if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath)) return;
+        if (CurrentProject.Metadata.IsOnline || !CurrentProject.Metadata.UncommittedMode) return;
+        if (CurrentProject.UncommitedChanges.Count == 0)                         return;
+
+        CurrentProject.UncommitedChanges.Clear();
+        ChangedLocKeys.Clear();
+
+        // A full save writes every key file from the in-memory state and rewrites the (now empty)
+        // UncommittedChanges folder, so nothing pending is left behind on disk.
+        await ProjectFileService.SaveAsync(CurrentProject, CurrentProjectPath);
+        MarkClean();
+
+        ProjectChanged?.Invoke();
+        ProjectDataChanged?.Invoke();
+    }
+
+    /// <summary>
+    /// Turns offline uncommitted mode on or off and persists the flag. Enabling first commits any edits
+    /// already made this session (a full save) so the key files form a clean baseline for the staged changes
+    /// that follow; disabling is only permitted once the queue is empty (edits would otherwise be orphaned).
+    /// No-op for online projects — they always stage their changes.
+    /// </summary>
+    public async Task SetUncommittedModeAsync(bool enabled)
+    {
+        if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath)) return;
+        if (CurrentProject.Metadata.IsOnline)                                    return;
+        if (CurrentProject.Metadata.UncommittedMode == enabled)                  return;
+        if (!enabled && CurrentProject.UncommitedChanges.Count > 0)              return;
+
+        CurrentProject.Metadata.UncommittedMode = enabled;
+        ChangedLocKeys.Clear();
+
+        // A full save persists the flag along with the whole state: on enable it commits any pre-existing
+        // session edits as the baseline; on disable the queue is already empty, so it just rewrites cleanly.
+        await ProjectFileService.SaveAsync(CurrentProject, CurrentProjectPath);
+        MarkClean();
+
         ProjectChanged?.Invoke();
         ProjectDataChanged?.Invoke();
     }
@@ -772,7 +823,7 @@ public class ProjectStateService
     /// <summary>Records a brand-new member (whole object).</summary>
     public void RecordMemberAdded(LocProjectMember member)
     {
-        if (CurrentProject!.Metadata.IsOnline)
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
         {
             CurrentProject.UncommitedChanges.Add(new LocEntryChange
             {
@@ -803,7 +854,7 @@ public class ProjectStateService
 
     private void AddMemberFieldChange(LocProjectMember member, string fieldName, string changeData)
     {
-        if (CurrentProject!.Metadata.IsOnline)
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
         {
             CurrentProject.UncommitedChanges.Add(new LocEntryChange
             {
@@ -827,7 +878,7 @@ public class ProjectStateService
 
     private void AddLanguageChange(EntryChangeType type, string code)
     {
-        if (CurrentProject!.Metadata.IsOnline)
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
         {
             CurrentProject.UncommitedChanges.Add(new LocEntryChange
             {
@@ -846,7 +897,7 @@ public class ProjectStateService
     public void RecordKeyAdded(LocLocalizationKey key)
     {
         ChangedLocKeys.Add(key.Id);
-        if (CurrentProject!.Metadata.IsOnline)
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
         {
             CurrentProject.UncommitedChanges.Add(new LocEntryChange
             {
@@ -871,7 +922,7 @@ public class ProjectStateService
     private void AddKeyFieldChange(LocLocalizationKey key, string fieldName, string changeData)
     {
         ChangedLocKeys.Add(key.Id);
-        if (CurrentProject!.Metadata.IsOnline)
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
         {
             CurrentProject.UncommitedChanges.Add(new LocEntryChange
             {
@@ -890,7 +941,7 @@ public class ProjectStateService
     /// <summary>Records a brand-new category (whole object).</summary>
     public void RecordCategoryAdded(LocCategory category)
     {
-        if (CurrentProject!.Metadata.IsOnline)
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
         {
             CurrentProject.UncommitedChanges.Add(new LocEntryChange
             {
@@ -914,7 +965,7 @@ public class ProjectStateService
 
     public void RecordCategoryRemoved(LocCategory category)
     {
-        if (CurrentProject!.Metadata.IsOnline)
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
         {
             CurrentProject.UncommitedChanges.Add(new LocEntryChange
             {
@@ -928,7 +979,7 @@ public class ProjectStateService
 
     private void AddCategoryFieldChange(LocCategory category, string fieldName, string changeData)
     {
-        if (CurrentProject!.Metadata.IsOnline)
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
         {
             CurrentProject.UncommitedChanges.Add(new LocEntryChange
             {
@@ -1007,7 +1058,7 @@ public class ProjectStateService
         string prevSourceHashData = "", string prevDestHashData = "")
     {
         ChangedLocKeys.Add(keyId);
-        if (CurrentProject!.Metadata.IsOnline)
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
         {
             CurrentProject.UncommitedChanges.Add(new LocEntryChange
             {
@@ -1038,7 +1089,7 @@ public class ProjectStateService
 
     private void AddEnumChange(EntryChangeType type, Guid enumId, string changeData)
     {
-        if (CurrentProject!.Metadata.IsOnline)
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
         {
             CurrentProject.UncommitedChanges.Add(new LocEntryChange
             {

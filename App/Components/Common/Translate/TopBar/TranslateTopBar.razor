@@ -78,6 +78,15 @@
                 @(_UncommittedCount == 0 ? "Committed" : "Uncommitted")
             </span>
         }
+        else if (_UncommittedMode)
+        {
+            <button class="ttb-status-pill ttb-status-pill-btn @(_UncommittedCount == 0 ? "ttb-status-ok" : "ttb-status-warn")"
+                    title="@(_UncommittedCount == 0 ? "Uncommitted mode — no changes to apply" : $"{_UncommittedCount} change(s) waiting to be applied")"
+                    @onclick="() => _ProjectUncommittedChangesModal?.Show()">
+                <span class="ttb-status-dot"></span>
+                @(_UncommittedCount == 0 ? "Committed" : $"Uncommitted ({_UncommittedCount})")
+            </button>
+        }
 
         <button class="ttb-history-btn" @onclick="() => _ProjectUncommittedChangesModal?.Show()" title="Uncommitted changes">
             <i class="bi bi-clock-history"></i>
@@ -123,6 +132,7 @@
     private string? _StatusMessage;
 
     private bool _IsOnline         => _ProjectState.CurrentProject!.Metadata.IsOnline;
+    private bool _UncommittedMode  => _ProjectState.CurrentProject!.Metadata.UncommittedMode;
     private int  _UncommittedCount => _ProjectState.CurrentProject!.UncommitedChanges.Count;
 
     private string _ConflictTooltip =>
