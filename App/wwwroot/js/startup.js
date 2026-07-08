@@ -1,2 +1,0 @@
-﻿// Start Blazor
-Blazor.start();

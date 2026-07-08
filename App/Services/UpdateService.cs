@@ -23,14 +23,31 @@ namespace App
         // (releases.win.json + .nupkg) to update from there instead of GitHub. Unset in production.
         private const string _SOURCE_OVERRIDE_ENV = "DEUSALD_UPDATE_SOURCE";
 
-        private readonly UpdateManager _Manager = CreateManager();
+        // Null when the platform cannot host a Velopack UpdateManager. Under Mac Catalyst the
+        // manager cannot be built at all: MauiProgram swallows the PlatformNotSupportedException
+        // that VelopackApp.Build().Run() throws there, so no VelopackLocator is ever established and
+        // constructing an UpdateManager then throws "No VelopackLocator has been set"
+        // (InvalidOperationException). Any such failure must be swallowed here — if it escaped this
+        // singleton's field initializer it would surface during DI resolution when a component injects
+        // UpdateService, aborting Blazor's first render and leaving the app stuck on the loading splash.
+        // In-app auto-update is a best-effort, Windows-only feature, so treat any construction failure
+        // as "updates unavailable".
+        private readonly UpdateManager? _Manager = CreateManager();
 
-        private static UpdateManager CreateManager()
+        private static UpdateManager? CreateManager()
         {
-            string? overrideSource = Environment.GetEnvironmentVariable(_SOURCE_OVERRIDE_ENV);
-            return string.IsNullOrWhiteSpace(overrideSource)
-                ? new UpdateManager(new GithubSource(_REPO_URL, accessToken: null, prerelease: false))
-                : new UpdateManager(overrideSource);
+            try
+            {
+                string? overrideSource = Environment.GetEnvironmentVariable(_SOURCE_OVERRIDE_ENV);
+                return string.IsNullOrWhiteSpace(overrideSource)
+                    ? new UpdateManager(new GithubSource(_REPO_URL, accessToken: null, prerelease: false))
+                    : new UpdateManager(overrideSource);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"UpdateManager unavailable on this platform: {ex.Message}");
+                return null;
+            }
         }
 
         // The Velopack update descriptor from the last successful check, needed to download / apply.
@@ -42,6 +59,9 @@ namespace App
         /// </summary>
         public async Task<UpdateInfo?> CheckForUpdateAsync()
         {
+            // Update manager could not be created on this platform (e.g. Mac Catalyst) — updates off.
+            if (_Manager is null) return null;
+
             try
             {
                 // Not a Velopack install (debug / portable run) — nothing to update in place.
@@ -68,7 +88,7 @@ namespace App
         /// </summary>
         public async Task<bool> DownloadAndApplyAsync(Action<int>? progress = null)
         {
-            if (_Pending is null) return false;
+            if (_Manager is null || _Pending is null) return false;
             try
             {
                 await _Manager.DownloadUpdatesAsync(_Pending, progress);
