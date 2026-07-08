@@ -65,10 +65,11 @@ Example `secrets.json` (edit paths for your machine):
 
 The bundled [`ExampleLoc/`](../ExampleLoc) demo project is **offline** (`ApiUrl` is empty) and its
 members have no access-token hash, so it cannot be signed into as-is. Two changes turn it into a
-working online project — set `ApiUrl`, and give every member their *initial* token (the BCrypt hash
-of their own username, which is how first sign-in works). Do this with a throwaway helper that
-references `Common`, so the JSON is written exactly the way the app reads it and the BCrypt hashes
-are valid:
+working online project — set `ApiUrl`, and give every member a **random one-time sign-in token**
+(BCrypt-hashed for storage, with `MustResetAccessToken` set so first sign-in forces a rotation). Do
+this with a throwaway helper that references `Common`, so the JSON is written exactly the way the app
+reads it and the BCrypt hashes are valid. The helper **prints each member's token** — keep them, they
+are the only way to sign in:
 
 `seedgen/seedgen.csproj`:
 
@@ -165,23 +166,27 @@ done
 ## 5. Run it
 
 1. Start the bot: `dotnet run --project Backend` (serves `http://localhost:5114`).
-2. In the app, **Open project…** → `…\example-rpg\app-adam`, sign in as **adam** / **adam**.
+2. In the app, **Open project…** → `…\example-rpg\app-adam`, sign in as **adam** with the one-time
+   token seedgen printed for adam.
 3. In another app instance (or later), **Open project…** → `…\example-rpg\app-kasia`, sign in as
-   **kasia** / **kasia**.
+   **kasia** with the token seedgen printed for kasia.
 4. Edit, **Push**, and **Sync** between the two folders to exercise conflicts and the never-merge
    push.
 
-On first sign-in the app rotates the username-token to a fresh random token and shows it once — copy
-it if you plan to sign out and back in, otherwise reset (see below).
+On first sign-in the app rotates the one-time token to a fresh random token and shows it once — copy
+it, as it becomes the token you sign in with from then on (otherwise reset, see below).
 
 ### Seed users
 
-| Username | UserId                                 | First-login token | Role                 |
-|----------|----------------------------------------|-------------------|----------------------|
-| adam     | `11111111-1111-4111-8111-111111111111` | `adam`            | Admin                |
-| marie    | `22222222-2222-4222-8222-222222222222` | `marie`           | Reviewer (fr-FR)     |
-| lukas    | `33333333-3333-4333-8333-333333333333` | `lukas`           | Reviewer (de-DE)     |
-| kasia    | `44444444-4444-4444-8444-444444444444` | `kasia`           | Reviewer (pl-PL)     |
+The sign-in token for each is the random one-time value **seedgen printed** in step 2 (not a fixed
+value). After first sign-in it is replaced by the app's own generated token.
+
+| Username | UserId                                 | Role                 |
+|----------|----------------------------------------|----------------------|
+| adam     | `11111111-1111-4111-8111-111111111111` | Admin                |
+| marie    | `22222222-2222-4222-8222-222222222222` | Reviewer (fr-FR)     |
+| lukas    | `33333333-3333-4333-8333-333333333333` | Reviewer (de-DE)     |
+| kasia    | `44444444-4444-4444-8444-444444444444` | Reviewer (pl-PL)     |
 
 ## Resetting
 
@@ -196,26 +201,27 @@ rm -rf "$R/example-rpg/app-adam"/* "$R/example-rpg/app-kasia"/*
 rm -rf "$R/bot-repos-root/example-rpg"     # optional: force a fresh clone
 ```
 
-Note the app also caches the rotated access tokens per project-folder path; after a reset, sign in
-again with the username tokens above.
+Note the app also caches the rotated access tokens per project-folder path; after a reset, re-run
+seedgen and sign in again with the fresh one-time tokens it prints.
 
 ## Sanity check without the app
 
 With the bot running, a raw sync request confirms the chain (bot clones the `file://` remote, finds
-the SyncId commit, authenticates the member):
+the SyncId commit, authenticates the member). Substitute each member's one-time token printed by
+seedgen for the `Bearer` value (use a member who has not yet rotated in the app):
 
 ```bash
 PID=a1a1a1a1-0000-4000-8000-000000000001
 
 # Current SyncId → UpToDate
 curl -s -X POST "http://localhost:5114/projects/$PID/sync" \
-  -H "Authorization: Bearer adam" -H "X-User-Id: 11111111-1111-4111-8111-111111111111" \
+  -H "Authorization: Bearer <adam-token>" -H "X-User-Id: 11111111-1111-4111-8111-111111111111" \
   -H "Content-Type: application/json" \
   -d '{"SyncId":"4938ca2d-acc9-4c70-8826-23ac3f42a87e"}'
 
 # Unknown SyncId → FullResync (returns every file)
 curl -s -X POST "http://localhost:5114/projects/$PID/sync" \
-  -H "Authorization: Bearer kasia" -H "X-User-Id: 44444444-4444-4444-8444-444444444444" \
+  -H "Authorization: Bearer <kasia-token>" -H "X-User-Id: 44444444-4444-4444-8444-444444444444" \
   -H "Content-Type: application/json" \
   -d '{"SyncId":"00000000-0000-0000-0000-000000000000"}'
 ```
