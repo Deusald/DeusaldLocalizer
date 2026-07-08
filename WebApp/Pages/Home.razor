@@ -1,7 +1,243 @@
-﻿@page "/"
+@page "/"
+@layout MainLayout
+@inject ProjectStateService   _ProjectState
+@inject IProjectStoreFactory  _StoreFactory
+@inject IndexedDbInterop      _Idb
+@inject WebProjectArchive     _Archive
+@inject NavigationManager     _Nav
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Deusald Localizer</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="home-root">
 
-Welcome to your new app.
+    @* ── Left panel ───────────────────────────────────────────────────── *@
+    <div class="home-left">
+        <div>
+            <div class="home-logo">
+                <div class="home-logo-orbs">
+                    <div class="home-orb home-orb-1"></div>
+                    <div class="home-orb home-orb-2"></div>
+                    <div class="home-orb home-orb-3"></div>
+                </div>
+                <div>
+                    <div class="home-logo-text-name">Deusald Localizer</div>
+                    <div class="home-logo-text-sub">COMMUNITY LOCALIZATION · WEB</div>
+                </div>
+            </div>
+
+            <h1 class="home-headline">Translate your game,<br/>together.</h1>
+            <p class="home-sub">Edit strings, propose alternatives, and let the community vote on the best translation for every key — right in your browser.</p>
+        </div>
+
+        <div>
+            @if (_ErrorMessage is not null)
+            {
+                <div class="dl-alert dl-alert-error home-error">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <span>@_ErrorMessage</span>
+                </div>
+            }
+
+            <div class="home-actions">
+                <button class="home-btn home-btn-primary" @onclick="OpenNewProjectModal" disabled="@_IsBusy">
+                    <span class="home-btn-icon">+</span>
+                    <span>New project</span>
+                </button>
+
+                <button class="home-btn home-btn-secondary" @onclick="ImportZip" disabled="@_IsBusy">
+                    @if (_IsBusy)
+                    {
+                        <span class="dl-spinner" style="width:14px;height:14px;flex-shrink:0;"></span>
+                        <span>Working…</span>
+                    }
+                    else
+                    {
+                        <span class="home-btn-icon"><i class="bi bi-file-earmark-zip"></i></span>
+                        <span>Import .zip…</span>
+                    }
+                </button>
+            </div>
+        </div>
+    </div>
+
+    @* ── Right panel ──────────────────────────────────────────────────── *@
+    <div class="home-right">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;">
+            <div class="home-recents-label" style="margin-bottom:0;">Your projects</div>
+        </div>
+
+        @if (_Projects.Count == 0)
+        {
+            <div class="home-empty">
+                <div class="home-empty-title">No projects yet</div>
+                <div class="home-empty-sub">Create a new project or import a <code>.zip</code><br/>to get started. They're saved in this browser.</div>
+            </div>
+        }
+        else
+        {
+            <div class="home-recent-list">
+                @{ string[] swatches = ["#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa"]; }
+                @for (int x = 0; x < _Projects.Count; ++x)
+                {
+                    ProjectSummary p       = _Projects[x];
+                    string         initial = p.Name.Length > 0 ? p.Name[0].ToString().ToUpper() : "P";
+                    string         swatch  = swatches[x % swatches.Length];
+
+                    <div class="home-recent-item-wrap">
+                        <button class="home-recent-item" @onclick="() => OpenProject(p.Location)" disabled="@_IsBusy" title="@p.Name">
+                            <div class="home-recent-swatch" style="background: @swatch">@initial</div>
+                            <div class="home-recent-meta">
+                                <div class="home-recent-top">
+                                    <span class="home-recent-name">@p.Name</span>
+                                    @if (p.IsOnline)
+                                    {
+                                        <span class="home-recent-tag-remote">REMOTE</span>
+                                    }
+                                </div>
+                                <div class="home-recent-sub">@p.KeyCount keys · @p.LangCount langs</div>
+                            </div>
+                            <i class="bi bi-chevron-right home-recent-arrow"></i>
+                        </button>
+                        <button class="home-recent-remove" @onclick="() => ExportProject(p)" disabled="@_IsBusy" title="Download a copy (.zip)">
+                            <i class="bi bi-download"></i>
+                        </button>
+                        <button class="home-recent-remove" @onclick="() => DeleteProject(p)" disabled="@_IsBusy" title="Delete from this browser">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
+    <NewProjectModal OnConfirm="OnNewProjectConfirmed" @ref="_NewProjectModal"/>
+
+</div>
+
+@code {
+    private bool                 _IsBusy;
+    private string?              _ErrorMessage;
+    private List<ProjectSummary> _Projects = new();
+    private NewProjectModal?     _NewProjectModal;
+
+    private sealed record ProjectSummary(string Location, string Name, int KeyCount, int LangCount, bool IsOnline);
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Ask the browser to keep our storage durable so offline projects and pending edits aren't evicted.
+        await _Idb.PersistAsync();
+        await RefreshAsync();
+    }
+
+    private async Task RefreshAsync()
+    {
+        _ErrorMessage = null;
+        List<ProjectSummary> found = new();
+
+        try
+        {
+            foreach (string location in await _Idb.ListLocationsAsync())
+            {
+                IProjectFileStore store = _StoreFactory.Create(location);
+                string? metaJson = await store.ReadTextAsync(ProjectFileService.METADATA_FILE_NAME);
+                if (metaJson is null) continue;
+
+                LocProjectMetadata? meta = JsonConvert.DeserializeObject<LocProjectMetadata>(metaJson);
+                if (meta is null) continue;
+
+                int keyCount = (await store.ListJsonFilesAsync(ProjectFileService.KEYS_FOLDER)).Count;
+                found.Add(new ProjectSummary(location, meta.Name, keyCount, meta.Languages.Count, meta.IsOnline));
+            }
+
+            _Projects = found.OrderBy(p => p.Name, StringComparer.OrdinalIgnoreCase).ToList();
+        }
+        catch (Exception ex)
+        {
+            _ErrorMessage = $"Could not read stored projects: {ex.Message}";
+        }
+    }
+
+    private async Task OpenProject(string location)
+    {
+        _IsBusy       = true;
+        _ErrorMessage = null;
+        StateHasChanged();
+
+        try
+        {
+            IProjectFileStore store   = _StoreFactory.Create(location);
+            LocProject        project = await ProjectFileService.OpenAsync(store);
+
+            // Replay pending (unpushed) changes so the editor reflects in-flight local edits.
+            foreach (LocEntryChange change in project.UncommitedChanges)
+                EntryChangeExeService.ExecuteChange(project, change, out _);
+
+            // Offline projects use the offline member. Online onboarding (login) is handled separately.
+            _ProjectState.LoadProject(project, location, LocProjectMember.OfflineMember.UserId, Guid.Empty);
+            _Nav.NavigateTo("/translate");
+        }
+        catch (Exception ex)
+        {
+            _ErrorMessage = $"Failed to open project: {ex.Message}";
+            _IsBusy       = false;
+        }
+    }
+
+    private void OpenNewProjectModal() => _NewProjectModal?.Show();
+
+    private void OnNewProjectConfirmed(NewProjectModal.NewProjectArgs args)
+    {
+        _ProjectState.CreateNewProject(args.Name, args.Slug, args.Description, args.MainLanguageCode);
+        _Nav.NavigateTo("/translate");
+    }
+
+    private async Task ImportZip()
+    {
+        _IsBusy       = true;
+        _ErrorMessage = null;
+        StateHasChanged();
+
+        try
+        {
+            string? location = await _Archive.ImportAsync();
+            if (location is null)
+            {
+                _IsBusy = false;
+                return; // cancelled or not a project zip
+            }
+
+            await OpenProject(location);
+        }
+        catch (Exception ex)
+        {
+            _ErrorMessage = $"Import failed: {ex.Message}";
+            _IsBusy       = false;
+        }
+    }
+
+    private async Task ExportProject(ProjectSummary p)
+    {
+        try
+        {
+            string slug = string.IsNullOrWhiteSpace(p.Name) ? "project" : p.Name.Replace(' ', '-');
+            await _Archive.ExportAsync(p.Location, $"{slug}.zip");
+        }
+        catch (Exception ex)
+        {
+            _ErrorMessage = $"Export failed: {ex.Message}";
+        }
+    }
+
+    private async Task DeleteProject(ProjectSummary p)
+    {
+        try
+        {
+            await _Idb.DeleteLocationAsync(p.Location);
+            await RefreshAsync();
+        }
+        catch (Exception ex)
+        {
+            _ErrorMessage = $"Delete failed: {ex.Message}";
+        }
+    }
+}
