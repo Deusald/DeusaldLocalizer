@@ -14,11 +14,18 @@
         <OutputType>Exe</OutputType>
         <RootNamespace>App</RootNamespace>
         <AssemblyName>DeusaldLocalizer</AssemblyName>
+
+        <!-- .NET 10 names the MacCatalyst .app bundle after ApplicationTitle ("Deusald Localizer.app"),
+             but the IDE/`dotnet run` launches "$(AssemblyName).app". Pin the bundle folder name to the
+             assembly name so the two match; the user-facing display name still comes from ApplicationTitle. -->
+        <_AppBundleName>$(AssemblyName)</_AppBundleName>
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
         <ImplicitUsings>enable</ImplicitUsings>
         <EnableDefaultCssItems>false</EnableDefaultCssItems>
         <Nullable>enable</Nullable>
+        <!-- Required by MacCloseGuard's Objective-C runtime callback (delegate* unmanaged). -->
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
         <!-- Enable XAML source generation for faster build times and improved performance.
              This generates C# code from XAML at compile time instead of runtime inflation.

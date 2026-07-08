@@ -1,4 +1,6 @@
-﻿using DeusaldSharp;
+#if WINDOWS
+using DeusaldSharp;
+#endif
 
 namespace App
 {
@@ -19,6 +21,12 @@ namespace App
             {
                 winUiWindow.AppWindow.Closing += OnWindowClosing;
             }
+            #elif MACCATALYST
+            // On macOS, MAUI exposes no cancellable close event, so hook AppKit's
+            // applicationShouldTerminate: (fired by the red close button and ⌘Q).
+            MacCloseGuard.Install(
+                hasUnsavedChanges: () => projectState.HasProject && projectState.IsDirty,
+                prompt:            PromptAndCloseMac);
             #endif
         }
 
@@ -28,7 +36,7 @@ namespace App
         {
             InnerOnWindowClosing(sender, args).Forget();
         }
-        
+
         private async Task InnerOnWindowClosing(Microsoft.UI.Windowing.AppWindow sender,
                                            Microsoft.UI.Windowing.AppWindowClosingEventArgs args)
         {
@@ -47,6 +55,25 @@ namespace App
             sender.Closing -= OnWindowClosing;
             sender.Destroy();
         }
+        #elif MACCATALYST
+        // Cancels the pending terminate, prompts the user, and re-issues the terminate
+        // (via MacCloseGuard) once they choose Save or Discard.
+        private async void PromptAndCloseMac()
+        {
+            bool? result = await ShowSavePromptAsync();
+
+            if (result == true)
+            {
+                await SaveAsync();
+                MacCloseGuard.Terminate();
+            }
+            else if (result == false)
+            {
+                MacCloseGuard.Terminate();
+            }
+            // null = Cancel — leave window open.
+        }
+        #endif
 
         private async Task<bool?> ShowSavePromptAsync()
         {
@@ -63,39 +90,6 @@ namespace App
                 _                 => null,
             };
         }
-        #else
-        // macOS: override the cross-platform close-requested handler.
-        protected override bool OnCloseRequested()
-        {
-            if (!projectState.HasProject || !projectState.IsDirty || projectState.CurrentProject!.Metadata.IsOnline)
-                return false; // false = allow close
-
-            // Fire-and-forget the async prompt; cancel the immediate close and
-            // re-trigger programmatically after user responds.
-            _ = PromptAndCloseMacAsync();
-            return true; // true = cancel the close for now
-        }
-
-        private async Task PromptAndCloseMacAsync()
-        {
-            string action = await Application.Current!.Windows[0].Page!.DisplayActionSheetAsync(
-                title:       "Unsaved changes",
-                cancel:      "Cancel",
-                destruction: "Discard changes",
-                buttons: ["Save and close"]);
-
-            if (action == "Save and close")
-            {
-                await SaveAsync();
-                Close();
-            }
-            else if (action == "Discard changes")
-            {
-                Close();
-            }
-            // "Cancel" — do nothing, window stays open
-        }
-        #endif
 
         private async Task SaveAsync()
         {
