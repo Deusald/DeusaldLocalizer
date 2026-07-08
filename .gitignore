@@ -1,6 +1,6 @@
 ## Deusald C# .gitignore
 ## Author: Adam "Deusald" Orliński
-## Version: 1.0.1
+## Version: 1.1.1
 
 # User-specific files
 *.suo
@@ -88,6 +88,7 @@ DocProject/Help/html
 
 # Click-Once directory
 publish/
+dist/
 
 # Publish Web Output
 *.Publish.xml
@@ -107,6 +108,7 @@ AppPackages/
 
 # Others
 sql/
+graphify-out/
 *.Cache
 ClientBin/
 [Ss]tyle[Cc]op.*
@@ -116,6 +118,8 @@ ClientBin/
 *.[Pp]ublish.xml
 *.pfx
 *.publishsettings
+.vs
+packages
 
 # RIA/Silverlight projects
 Generated_Code/
@@ -148,19 +152,4 @@ $RECYCLE.BIN/
 # Mac crap
 .DS_Store
 
-#############
-## Custom
-#############
-
-# Claude Code
-CLAUDE.md
-graphify-out/
-.vs
-packages
-
-# graphify knowledge graph (locally-built, regenerable)
-graphify-out/
-
 # Ignore project specific:
-# Release artifacts
-dist/
