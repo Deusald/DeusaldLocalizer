@@ -9,6 +9,15 @@
         <!-- When App Sandbox is enabled, this value is required to open outgoing network connections. -->
         <key>com.apple.security.network.client</key>
         <true/>
+        <!-- Required so the folder/file pickers (UIDocumentPickerViewController) can grant access to
+             user-selected locations under the sandbox. Without this the picker deadlocks and no
+             window ever appears. -->
+        <key>com.apple.security.files.user-selected.read-write</key>
+        <true/>
+        <!-- Allows persisting security-scoped bookmarks so a chosen project folder stays accessible
+             across launches. -->
+        <key>com.apple.security.files.bookmarks.app-scope</key>
+        <true/>
     </dict>
 </plist>
 

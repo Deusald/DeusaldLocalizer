@@ -72,10 +72,19 @@ at all, so there is **no macOS channel** — its release asset is just a plain `
 
 ## macOS entitlements & signing
 
-`build-release-mac.sh` publishes the app with [scripts/mac-entitlements.plist](../scripts/mac-entitlements.plist)
-(hardened-runtime allowances, **no App Sandbox**) instead of the default
-[App/Platforms/MacCatalyst/Entitlements.plist](../App/Platforms/MacCatalyst/Entitlements.plist) (which
-enables the sandbox for the Mac App Store). A direct-download desktop app should not be sandboxed.
+A direct-download desktop app should **not** be sandboxed, so [scripts/mac-entitlements.plist](../scripts/mac-entitlements.plist)
+(hardened-runtime allowances, **no App Sandbox**) is the default for **every** build — local, Debug, and
+release alike. `App.csproj` sets it via `CodesignEntitlements` for the `maccatalyst` target, overriding
+the Mac Catalyst SDK convention that would otherwise auto-apply
+[App/Platforms/MacCatalyst/Entitlements.plist](../App/Platforms/MacCatalyst/Entitlements.plist) and
+enable the sandbox. `build-release-mac.sh` also passes it explicitly (`-p:CodesignEntitlements=...`).
+
+The sandboxed `App/Platforms/MacCatalyst/Entitlements.plist` is kept **only** for a future Mac App Store
+build (it enables the App Sandbox and grants the user-selected-files entitlement the folder picker needs
+under the sandbox). To produce a sandboxed build, override the default:
+`-p:CodesignEntitlements=Platforms/MacCatalyst/Entitlements.plist`. Do not sandbox local/Debug builds —
+the sandbox reproduces bugs (security-scoped file-access denials from the folder picker) that never occur
+in the shipped, non-sandboxed app.
 
 The build is **unsigned** (ad-hoc), so macOS Gatekeeper quarantines it on other Macs. After
 downloading + unzipping, the recipient clears it once:

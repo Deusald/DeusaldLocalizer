@@ -175,7 +175,9 @@
                 FileTypes = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
                 {
                     { DevicePlatform.WinUI, [".xlsx"] },
-                    { DevicePlatform.macOS, ["xlsx"] },
+                    // Mac Catalyst reports DevicePlatform.MacCatalyst (not macOS) and expects a UTI, not
+                    // a bare extension. org.openxmlformats.spreadsheetml.sheet is the UTI for .xlsx.
+                    { DevicePlatform.MacCatalyst, ["org.openxmlformats.spreadsheetml.sheet"] },
                 }),
             };
 

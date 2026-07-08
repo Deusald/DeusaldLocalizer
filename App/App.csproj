@@ -50,6 +50,14 @@
         <WindowsPackageType>None</WindowsPackageType>
         
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
+
+        <!-- By convention the Mac Catalyst SDK auto-applies Platforms/MacCatalyst/Entitlements.plist,
+             which enables the App Sandbox. But this app ships direct-download and is NOT sandboxed
+             (see docs/Releasing.md), so a sandboxed local/Debug build only reproduces bugs that never
+             occur in production (e.g. security-scoped file access denials from the folder picker).
+             Default local builds to the same non-sandbox entitlements as the release. The release
+             script and any Mac App Store build override this with -p:CodesignEntitlements=... . -->
+        <CodesignEntitlements Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">..\scripts\mac-entitlements.plist</CodesignEntitlements>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
         <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
     </PropertyGroup>
