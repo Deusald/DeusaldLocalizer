@@ -16,9 +16,17 @@
                     <i class="bi bi-arrow-up-circle home-update-icon"></i>
                     <div class="home-update-text">
                         <span class="home-update-title">Update available</span>
-                        <span class="home-update-sub">Version @_UpdateInfo.LatestVersion is ready to download.</span>
+                        <span class="home-update-sub">Version @_UpdateInfo.LatestVersion is available.</span>
                     </div>
-                    @if (_IsUpdating)
+                    @if (_UpdateInfo.DownloadPageUrl is not null)
+                    {
+                        @* macOS: no in-place update — open the releases page to download manually. *@
+                        <button class="home-update-download" @onclick="OpenReleasePage">Download</button>
+                        <button class="home-update-dismiss" @onclick="() => _UpdateInfo = null" title="Dismiss">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    }
+                    else if (_IsUpdating)
                     {
                         <button class="home-update-download" disabled>
                             <span class="dl-spinner" style="width:14px;height:14px;flex-shrink:0;"></span>
@@ -215,6 +223,13 @@
         if (info is null) return;
         _UpdateInfo = info;
         await InvokeAsync(StateHasChanged);
+    }
+
+    // macOS path: the app can't update itself, so open the GitHub releases page for a manual download.
+    private async Task OpenReleasePage()
+    {
+        if (_UpdateInfo?.DownloadPageUrl is { } url)
+            await Launcher.Default.OpenAsync(url);
     }
 
     private async Task DownloadUpdate()

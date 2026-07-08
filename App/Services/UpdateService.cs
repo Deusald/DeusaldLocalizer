@@ -1,37 +1,94 @@
 using JetBrains.Annotations;
+#if !MACCATALYST
 using Velopack;
 using Velopack.Sources;
+#else
+using System.Text.Json;
+#endif
 
 namespace App
 {
     /// <summary>
-    /// Details of a newer release found on GitHub.
+    /// Details of a newer release found on GitHub. When <see cref="DownloadPageUrl"/> is set, the app
+    /// cannot update itself (macOS) and the UI should open that page for a manual download; otherwise
+    /// the update is applied in place (Windows, via Velopack).
     /// </summary>
-    public sealed record UpdateInfo(string LatestVersion, string? ReleaseNotesHtml);
+    public sealed record UpdateInfo(string LatestVersion, string? ReleaseNotesHtml, string? DownloadPageUrl = null);
 
     /// <summary>
-    /// Wraps Velopack's <see cref="UpdateManager"/> to check GitHub Releases for a newer build and,
-    /// on request, download it and relaunch into it. Never throws to the caller — offline, rate-limited,
-    /// or not-installed (dev / portable) runs simply yield <c>null</c> (no update).
+    /// Checks GitHub Releases for a newer build. On Windows it wraps Velopack's <see cref="UpdateManager"/>
+    /// to download and relaunch in place. On macOS in-place update is not supported, so it only detects a
+    /// newer release via the GitHub API and hands the UI the releases page to download manually. Never
+    /// throws to the caller — offline, rate-limited, or not-installed runs simply yield <c>null</c>.
     /// </summary>
     [PublicAPI]
     public sealed class UpdateService
     {
         private const string _REPO_URL = "https://github.com/Deusald/DeusaldLocalizer";
 
+#if MACCATALYST
+        // ── macOS ────────────────────────────────────────────────────────────────
+        // Velopack's in-place update doesn't work under Mac Catalyst, so we only detect a newer
+        // release through the GitHub API and send the user to the releases page to download it by hand.
+        private const string _RELEASES_API  = "https://api.github.com/repos/Deusald/DeusaldLocalizer/releases/latest";
+        private const string _RELEASES_PAGE = _REPO_URL + "/releases/latest";
+
+        // Dedicated client so the shared app HttpClient's base address / headers can't affect the call.
+        private static readonly HttpClient _Http = new();
+
+        public async Task<UpdateInfo?> CheckForUpdateAsync()
+        {
+            try
+            {
+                using var request = new HttpRequestMessage(HttpMethod.Get, _RELEASES_API);
+                request.Headers.UserAgent.ParseAdd("DeusaldLocalizer");
+                request.Headers.Accept.ParseAdd("application/vnd.github+json");
+
+                using HttpResponseMessage response = await _Http.SendAsync(request);
+                if (!response.IsSuccessStatusCode) return null;
+
+                await using Stream stream = await response.Content.ReadAsStreamAsync();
+                using JsonDocument doc = await JsonDocument.ParseAsync(stream);
+
+                if (!doc.RootElement.TryGetProperty("tag_name", out JsonElement tagElement)) return null;
+                string? tag = tagElement.GetString();
+                if (string.IsNullOrWhiteSpace(tag)) return null;
+
+                if (!IsNewer(tag, BuildInfo.Version)) return null;
+
+                string page = doc.RootElement.TryGetProperty("html_url", out JsonElement urlElement)
+                           && urlElement.GetString() is { Length: > 0 } url
+                                  ? url
+                                  : _RELEASES_PAGE;
+
+                return new UpdateInfo(tag.TrimStart('v', 'V'), ReleaseNotesHtml: null, DownloadPageUrl: page);
+            }
+            catch
+            {
+                // Offline, DNS failure, rate-limited, or unparseable response — treat as "no update".
+                return null;
+            }
+        }
+
+        // Compares dotted numeric versions ("1.2.4" vs "1.2.3"), tolerating a leading 'v'.
+        private static bool IsNewer(string candidate, string current)
+        {
+            return Version.TryParse(candidate.TrimStart('v', 'V'), out Version? c)
+                && Version.TryParse(current.TrimStart('v', 'V'),   out Version? cur)
+                && c > cur;
+        }
+
+        // Never used on macOS — the UI opens DownloadPageUrl in the browser instead. Present so the
+        // service exposes the same surface on both platforms.
+        public Task<bool> DownloadAndApplyAsync(Action<int>? progress = null) => Task.FromResult(false);
+#else
+        // ── Windows ──────────────────────────────────────────────────────────────
         // Local-test hook: set this env var to a folder (or URL) containing a Velopack release
         // (releases.win.json + .nupkg) to update from there instead of GitHub. Unset in production.
         private const string _SOURCE_OVERRIDE_ENV = "DEUSALD_UPDATE_SOURCE";
 
-        // Null when the platform cannot host a Velopack UpdateManager. Under Mac Catalyst the
-        // manager cannot be built at all: MauiProgram swallows the PlatformNotSupportedException
-        // that VelopackApp.Build().Run() throws there, so no VelopackLocator is ever established and
-        // constructing an UpdateManager then throws "No VelopackLocator has been set"
-        // (InvalidOperationException). Any such failure must be swallowed here — if it escaped this
-        // singleton's field initializer it would surface during DI resolution when a component injects
-        // UpdateService, aborting Blazor's first render and leaving the app stuck on the loading splash.
-        // In-app auto-update is a best-effort, Windows-only feature, so treat any construction failure
-        // as "updates unavailable".
+        // Null only when the UpdateManager cannot be constructed (e.g. not a Velopack install). The
+        // try/catch degrades to "updates unavailable" rather than crashing startup.
         private readonly UpdateManager? _Manager = CreateManager();
 
         private static UpdateManager? CreateManager()
@@ -45,7 +102,7 @@ namespace App
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine($"UpdateManager unavailable on this platform: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"UpdateManager unavailable: {ex.Message}");
                 return null;
             }
         }
@@ -59,7 +116,6 @@ namespace App
         /// </summary>
         public async Task<UpdateInfo?> CheckForUpdateAsync()
         {
-            // Update manager could not be created on this platform (e.g. Mac Catalyst) — updates off.
             if (_Manager is null) return null;
 
             try
@@ -100,5 +156,6 @@ namespace App
                 return false;
             }
         }
+#endif
     }
 }

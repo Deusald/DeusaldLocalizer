@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+#if WINDOWS
 using Velopack;
+#endif
 
 namespace App;
 
@@ -8,20 +10,21 @@ public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
-        // Must run before any other startup code: handles Velopack's install / update /
-        // uninstall hooks (the app is relaunched with special args during those) and exits
-        // the process early when one is being serviced, so it never reaches the MAUI window.
+        #if WINDOWS
+        // Must run before any other startup code: handles Velopack's install / update / uninstall
+        // hooks (the app is relaunched with special args during those) and exits the process early
+        // when one is being serviced, so it never reaches the MAUI window. Windows only — macOS
+        // uses manual download from GitHub Releases (Velopack in-place update is unsupported there).
         try
         {
             VelopackApp.Build().Run();
         }
-        catch (PlatformNotSupportedException ex)
+        catch (Exception ex)
         {
-            // Velopack 1.2.0 cannot resolve the platform under Mac Catalyst (it reports the OS
-            // platform as '') and throws while creating its locator. Skip its servicing hooks
-            // there so the app can still launch; Velopack auto-update remains Windows-only.
-            System.Diagnostics.Debug.WriteLine($"Velopack init skipped on this platform: {ex.Message}");
+            // Never let a Velopack init problem block app launch; auto-update simply stays disabled.
+            System.Diagnostics.Debug.WriteLine($"Velopack init skipped: {ex.Message}");
         }
+        #endif
 
         var builder = MauiApp.CreateBuilder();
         builder
