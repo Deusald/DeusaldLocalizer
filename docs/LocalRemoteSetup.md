@@ -100,10 +100,15 @@ LocProject project = await ProjectFileService.OpenAsync(source);
 
 project.Metadata.ApiUrl = apiUrl;
 
-// Initial token == username: lets each member sign in the first time with their username,
-// after which the app rotates them to a real random token.
+// Issue each member a random one-time sign-in token. Print it so you can hand it to them over a
+// secure channel; MustResetAccessToken forces the app to rotate it to their own token on first sign-in.
 foreach (LocProjectMember member in project.ProjectMembers)
-    member.HashedAccessToken = AccessTokenService.InitialTokenHash(member.Username);
+{
+    string token = AccessTokenService.GenerateToken();
+    member.HashedAccessToken    = AccessTokenService.HashToken(token);
+    member.MustResetAccessToken = true;
+    Console.WriteLine($"{member.Username}: {token}");
+}
 
 await ProjectFileService.SaveAsync(project, dest);   // mints a fresh SyncId
 

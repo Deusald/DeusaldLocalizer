@@ -44,6 +44,9 @@ namespace DeusaldLocalizerCommon
                         case nameof(LocProjectMember.HashedAccessToken):
                             existing.HashedAccessToken = change.ChangeData;
                             break;
+                        case nameof(LocProjectMember.MustResetAccessToken):
+                            existing.MustResetAccessToken = bool.TryParse(change.ChangeData, out bool mustReset) && mustReset;
+                            break;
                     }
 
                     commitString = $"Update member {existing.Username} ({change.EntrySubId})";
@@ -173,6 +176,7 @@ namespace DeusaldLocalizerCommon
                 {
                     LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
                     if (key == null) return;
+                    if (!project.Metadata.Languages.Contains(change.EntrySubId)) return; // ignore unknown languages
 
                     LocTranslationSuggestion? suggestion = JsonConvert.DeserializeObject<LocTranslationSuggestion>(change.ChangeData);
                     if (suggestion == null) return;
@@ -195,9 +199,9 @@ namespace DeusaldLocalizerCommon
                     LocKeyTranslation? translation = key.Translations.Find(t => t.LanguageId == change.EntrySubId);
                     if (translation == null) return;
 
+                    // A vote only updates an existing suggestion; it must never create one.
                     int idx = translation.Suggestions.FindIndex(s => s.Id == incoming.Id);
                     if (idx >= 0) translation.Suggestions[idx] = incoming;
-                    else translation.Suggestions.Add(incoming);
 
                     commitString = $"Vote on suggestion for {change.EntrySubId} on key {key.KeyName}";
                     break;

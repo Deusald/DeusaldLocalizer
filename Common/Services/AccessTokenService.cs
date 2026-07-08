@@ -24,20 +24,6 @@ namespace DeusaldLocalizerCommon
             return BCrypt.Net.BCrypt.Verify(rawToken, hashedToken);
         }
 
-        /// <summary>
-        /// The initial hash handed to a freshly created member: the hash of their own
-        /// username. This lets them sign in the first time using their username as the
-        /// access token, at which point they are prompted to store a real one.
-        /// </summary>
-        public static string InitialTokenHash(string username) => HashToken(username);
-
-        /// <summary>
-        /// True when the member still carries the initial (username-based) token —
-        /// i.e. they have never generated a real access token for themselves.
-        /// </summary>
-        public static bool IsInitialToken(LocProjectMember member) =>
-            VerifyToken(member.Username, member.HashedAccessToken);
-
         /// <summary>Generates a new cryptographically-random, URL-safe access token.</summary>
         public static string GenerateToken()
         {

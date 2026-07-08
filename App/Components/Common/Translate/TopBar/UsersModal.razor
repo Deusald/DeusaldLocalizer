@@ -216,6 +216,11 @@
 
         if (_EditingMember == null)
         {
+            // Issue a random one-time sign-in token shown to the admin below; the member is forced to
+            // rotate it to their own token on first sign-in (MustResetAccessToken). The token is never
+            // derived from public data (like the username), so nobody with repo access can guess it.
+            string initialToken = AccessTokenService.GenerateToken();
+
             LocProjectMember member = new()
             {
                 UserId                    = Guid.NewGuid(),
@@ -223,39 +228,32 @@
                 ReviewLanguagePermissions = [.._SelectedLangs],
                 IsAdmin                   = false,
                 IsBanned                  = false,
-                // Initial token is the hash of the username — the member signs in the
-                // first time with their username and is then prompted to set a real one.
-                HashedAccessToken         = AccessTokenService.InitialTokenHash(name)
+                HashedAccessToken         = AccessTokenService.HashToken(initialToken),
+                MustResetAccessToken      = true
             };
 
             project.ProjectMembers.Add(member);
             _ProjectState.RecordMemberAdded(member);
+
+            CloseForm();
+            _AccessTokenModal?.Show(initialToken, "Member sign-in token",
+                $"Share this one-time token with {name} over a secure channel. " +
+                "They'll sign in with it once and then set their own token.");
+            return;
         }
-        else
-        {
-            // Record one change per actually-changed field (compared before mutating).
-            bool usernameChanged = _EditingMember.Username != name;
-            bool langsChanged    = !_EditingMember.ReviewLanguagePermissions.SetEquals(_SelectedLangs);
-            bool bannedChanged   = _EditingMember.IsBanned != _IsBanned;
 
-            // If the member never set a real token, its initial hash is tied to the old
-            // username — re-hash so they can still sign in with their (new) username.
-            bool rehashInitial = usernameChanged && AccessTokenService.IsInitialToken(_EditingMember);
+        // Record one change per actually-changed field (compared before mutating).
+        bool usernameChanged = _EditingMember.Username != name;
+        bool langsChanged    = !_EditingMember.ReviewLanguagePermissions.SetEquals(_SelectedLangs);
+        bool bannedChanged   = _EditingMember.IsBanned != _IsBanned;
 
-            _EditingMember.Username                  = name;
-            _EditingMember.ReviewLanguagePermissions = [.._SelectedLangs];
-            _EditingMember.IsBanned                  = _IsBanned;
+        _EditingMember.Username                  = name;
+        _EditingMember.ReviewLanguagePermissions = [.._SelectedLangs];
+        _EditingMember.IsBanned                  = _IsBanned;
 
-            if (usernameChanged) _ProjectState.RecordMemberUsernameChanged(_EditingMember);
-            if (langsChanged)    _ProjectState.RecordMemberReviewPermissionsChanged(_EditingMember);
-            if (bannedChanged)   _ProjectState.RecordMemberBanStatusChanged(_EditingMember);
-
-            if (rehashInitial)
-            {
-                _EditingMember.HashedAccessToken = AccessTokenService.InitialTokenHash(name);
-                _ProjectState.RecordMemberAccessTokenChanged(_EditingMember);
-            }
-        }
+        if (usernameChanged) _ProjectState.RecordMemberUsernameChanged(_EditingMember);
+        if (langsChanged)    _ProjectState.RecordMemberReviewPermissionsChanged(_EditingMember);
+        if (bannedChanged)   _ProjectState.RecordMemberBanStatusChanged(_EditingMember);
 
         CloseForm();
     }
@@ -284,15 +282,19 @@
             "Your previous token no longer works. Copy this one and keep it safe — you'll use it to sign in from now on.");
     }
 
-    /// <summary>Admin resets a member back to the initial (username-based) token.</summary>
+    /// <summary>Admin resets a member to a fresh random one-time token they must rotate on next sign-in.</summary>
     private void ResetToken(LocProjectMember member)
     {
-        member.HashedAccessToken = AccessTokenService.InitialTokenHash(member.Username);
-        _ProjectState.RecordMemberAccessTokenChanged(member);
+        string newToken = AccessTokenService.GenerateToken();
 
-        _AccessTokenModal?.Show(member.Username, "Access token reset",
-            $"{member.Username}'s token was reset. They can now sign in using their username as the access token, " +
-            "and will be asked to set a new one.");
+        member.HashedAccessToken    = AccessTokenService.HashToken(newToken);
+        member.MustResetAccessToken = true;
+        _ProjectState.RecordMemberAccessTokenChanged(member);
+        _ProjectState.RecordMemberMustResetChanged(member);
+
+        _AccessTokenModal?.Show(newToken, "Access token reset",
+            $"{member.Username}'s token was reset. Share this one-time token with them over a secure channel; " +
+            "they'll sign in with it once and then set their own.");
     }
 
     // ── Display helpers ──────────────────────────────────────────────────────

@@ -335,13 +335,15 @@ public class ProjectStateService
     public async Task<InitialTokenResult> RotateInitialTokenAsync(
         LocProject project, string path, LocProjectMember member, string previousToken)
     {
-        string         newToken = AccessTokenService.GenerateToken();
-        LocEntryChange change   = HashRotationChange(member.UserId, newToken);
+        string         newToken    = AccessTokenService.GenerateToken();
+        LocEntryChange tokenChange = HashRotationChange(member.UserId, newToken);
+        LocEntryChange flagChange  = MustResetChange(member.UserId, false);
 
         PushResponse? push;
         try
         {
-            push = await PushSingleAsync(project, member.UserId, previousToken, change);
+            push = await PushBatchAsync(project, member.UserId, previousToken,
+                new List<LocEntryChange> { tokenChange, flagChange });
         }
         catch (Exception ex)
         {
@@ -351,10 +353,11 @@ public class ProjectStateService
         if (push is null || push.Status != PushStatus.Success)
             return new InitialTokenResult { Error = push?.Message ?? "The server rejected the sign-in. Please try again." };
 
-        // The server now knows the new token. Reflect the new hash in the local files immediately so
-        // a failed follow-up pull can never lock the member out, then cache the token for next time.
-        member.HashedAccessToken = change.ChangeData;
-        await ProjectFileService.WriteEntityForChangeAsync(project, path, change);
+        // The server now knows the new token. Reflect the new hash + cleared reset flag in the local
+        // files immediately so a failed follow-up pull can never lock the member out, then cache the token.
+        member.HashedAccessToken    = tokenChange.ChangeData;
+        member.MustResetAccessToken = false;
+        await ProjectFileService.WriteEntityForChangeAsync(project, path, tokenChange);
         await AuthTokenStorage.SaveAsync(project.Metadata.Id, path, member.UserId, newToken);
 
         LocProject reloaded = await PullLatestAsync(project, path, member.UserId, newToken);
@@ -420,6 +423,14 @@ public class ProjectStateService
         ChangeData = AccessTokenService.HashToken(rawToken),
     };
 
+    private static LocEntryChange MustResetChange(Guid userId, bool value) => new()
+    {
+        Type       = EntryChangeType.MemberUpdated,
+        EntryId    = userId,
+        EntrySubId = nameof(LocProjectMember.MustResetAccessToken),
+        ChangeData = value.ToString(),
+    };
+
     /// <summary>Maps a transport-layer failure to a short, user-facing reason; other errors pass through.</summary>
     private static string FriendlyError(Exception ex) =>
         ex is System.Net.Http.HttpRequestException or TaskCanceledException
@@ -428,8 +439,12 @@ public class ProjectStateService
 
     /// <summary>Pushes a single change to the bot, authenticated with an explicit token.</summary>
     private Task<PushResponse?> PushSingleAsync(LocProject project, Guid userId, string authToken, LocEntryChange change) =>
+        PushBatchAsync(project, userId, authToken, new List<LocEntryChange> { change });
+
+    /// <summary>Pushes a batch of changes to the bot, authenticated with an explicit token.</summary>
+    private Task<PushResponse?> PushBatchAsync(LocProject project, Guid userId, string authToken, List<LocEntryChange> changes) =>
         _Api.PushAsync(project.Metadata.ApiUrl, project.Metadata.Id, userId, authToken,
-            project.Metadata.SyncId, new List<LocEntryChange> { change });
+            project.Metadata.SyncId, changes);
 
     /// <summary>
     /// Best-effort pull of the latest repo state into <paramref name="path"/> without touching the
@@ -782,6 +797,9 @@ public class ProjectStateService
 
     public void RecordMemberAccessTokenChanged(LocProjectMember member) =>
         AddMemberFieldChange(member, nameof(LocProjectMember.HashedAccessToken), member.HashedAccessToken);
+
+    public void RecordMemberMustResetChanged(LocProjectMember member) =>
+        AddMemberFieldChange(member, nameof(LocProjectMember.MustResetAccessToken), member.MustResetAccessToken.ToString());
 
     private void AddMemberFieldChange(LocProjectMember member, string fieldName, string changeData)
     {

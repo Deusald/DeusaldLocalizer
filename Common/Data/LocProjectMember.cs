@@ -21,6 +21,12 @@ namespace DeusaldLocalizerCommon
         public bool            IsBanned                  { get; set; }
         public string          HashedAccessToken         { get; set; } = string.Empty;
 
+        /// <summary>
+        /// True while the member still carries a one-time token issued by an admin (on creation or a
+        /// token reset). First sign-in rotates it to a member-chosen token and clears this flag.
+        /// </summary>
+        public bool            MustResetAccessToken      { get; set; }
+
         public bool IsOfflineUser => UserId == _OfflineId;
     }
 }

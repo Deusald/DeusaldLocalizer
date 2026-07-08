@@ -79,6 +79,11 @@ public sealed class PushService
             for (int x = 0; x < changes.Count; ++x)
             {
                 LocEntryChange change = changes[x];
+
+                // Server owns identity/tallies: strip any forged author or votes before applying, so a
+                // member can only author their own suggestion and cast their own single vote.
+                EntryChangeAuthorityService.Normalize(project, member, change);
+
                 EntryChangeExeService.ExecuteChange(project, change, out string commitString);
                 if (string.IsNullOrEmpty(commitString)) commitString = $"Apply {change.Type}";
 

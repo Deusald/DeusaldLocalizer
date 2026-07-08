@@ -344,12 +344,12 @@
 
         Guid projectId = _PendingProject.Metadata.Id;
 
-        // First sign-in: the member is still carrying the initial (username-based) token. Rotate it
-        // to a fresh random token and push that single change straight away — authenticated with the
-        // token the user just entered, because the server still only knows the initial token and so
-        // the new one cannot push itself. Only once the server accepts it do we adopt it locally and
-        // show it once for the user to store.
-        if (AccessTokenService.IsInitialToken(member!))
+        // First sign-in: the member is still carrying the one-time token an admin issued. Rotate it
+        // to a fresh random token and push that straight away — authenticated with the token the user
+        // just entered, because the server still only knows the one-time token and so the new one
+        // cannot push itself. Only once the server accepts it do we adopt it locally and show it once
+        // for the user to store.
+        if (member!.MustResetAccessToken)
         {
             InitialTokenResult result = await _ProjectState.RotateInitialTokenAsync(
                 _PendingProject, _PendingPath, member!, credentials.accessToken);

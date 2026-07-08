@@ -84,10 +84,12 @@ namespace DeusaldLocalizerCommon
                 case EntryChangeType.FlagRemoved:
                     return member.ReviewLanguagePermissions.Count > 0;
 
-                // A member may rotate their own access token, but touch nothing else about members.
+                // A member may rotate their own access token (and clear their own reset flag as part of
+                // that first-sign-in rotation), but touch nothing else about members.
                 case EntryChangeType.MemberUpdated:
                     return change.EntryId == member.UserId
-                        && change.EntrySubId == nameof(LocProjectMember.HashedAccessToken);
+                        && (change.EntrySubId == nameof(LocProjectMember.HashedAccessToken)
+                         || change.EntrySubId == nameof(LocProjectMember.MustResetAccessToken));
 
                 // Everything else (members, languages, keys, categories, tags, variables, enums) is admin-only.
                 default:
