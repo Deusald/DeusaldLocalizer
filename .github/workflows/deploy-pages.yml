@@ -1,0 +1,77 @@
+name: Deploy WebApp to GitHub Pages
+
+# Builds the Blazor WebAssembly client and publishes it to GitHub Pages.
+# The MAUI App and Backend are never built here — only WebApp and its
+# dependencies (WebCommon, Common), so no MAUI workload is needed.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'WebApp/**'
+      - 'WebCommon/**'
+      - 'Common/**'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:
+
+# The site lives at https://<owner>.github.io/DeusaldLocalizer/, so every asset
+# must be served from that sub-path. Change this if the repo is renamed or a
+# custom domain is used (a custom domain would use '/').
+env:
+  BASE_PATH: /DeusaldLocalizer/
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment; let a newer push cancel an in-flight run.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      # Rewrite the base href in the SOURCE index.html *before* publish, so the
+      # service-worker asset manifest hashes the final file (a post-publish edit
+      # would break the offline integrity check and stop the PWA from caching).
+      - name: Set base href for project pages
+        run: sed -i "s|<base href=\"/\" />|<base href=\"${BASE_PATH}\" />|" WebApp/wwwroot/index.html
+
+      - name: Publish
+        run: dotnet publish WebApp/WebApp.csproj -c Release -o publish
+
+      # GitHub Pages has no server-side SPA rewrite: serve index.html for unknown
+      # paths so deep links (e.g. /translate) and refreshes work.
+      - name: SPA 404 fallback
+        run: cp publish/wwwroot/index.html publish/wwwroot/404.html
+
+      # Jekyll (the Pages default) ignores folders starting with '_' such as
+      # _framework/. This disables it. (Also shipped in wwwroot, belt-and-braces.)
+      - name: Disable Jekyll
+        run: touch publish/wwwroot/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: publish/wwwroot
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

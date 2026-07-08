@@ -74,3 +74,19 @@ Backend  (ASP.NET Core)                                       ← unchanged beha
 - **`wasm-tools` workload** is required for `publish` (not installed yet).
 - **App updates**: PWA service worker downloads updates in the background; they apply on the next launch
   (or immediately with an update-available prompt).
+
+## Deployment (GitHub Pages)
+
+`.github/workflows/deploy-pages.yml` builds **only** WebApp (+ WebCommon + Common — no MAUI workload) and
+publishes it to Pages on every push to `main` that touches those projects (or via manual dispatch).
+
+- **Base path**: the site serves from `https://deusald.github.io/DeusaldLocalizer/`, so the workflow rewrites
+  `<base href="/">` → `<base href="/DeusaldLocalizer/">` in the source `index.html` **before** `dotnet publish`
+  (so the service-worker asset manifest hashes the final file). The `BASE_PATH` env var is the single knob —
+  change it if the repo is renamed, or set it to `/` for a custom domain.
+- **`.nojekyll`** ships in `wwwroot` and is re-touched in CI so Pages does not strip `_framework/`.
+- **`404.html`** is a copy of the published `index.html` — GitHub Pages' SPA deep-link fallback.
+- **No `wasm-tools` workload** is needed: a standard (non-AOT) publish only restores the wasm runtime pack.
+
+**One-time manual step**: in the repo, **Settings → Pages → Source = GitHub Actions**. Until that is set the
+`deploy-pages` job cannot publish.
