@@ -14,6 +14,18 @@
 
         <div class="nkm-body">
 
+            @if (_NoCategories)
+            {
+                <div class="nkm-warning">
+                    <i class="bi bi-exclamation-triangle nkm-warning-icon"></i>
+                    <div class="nkm-warning-text">
+                        <span class="nkm-warning-title">No categories yet</span>
+                        A key must belong to a category. Create at least one category from the Keys column before adding a key.
+                    </div>
+                </div>
+            }
+            else
+            {
             <div class="nkm-field">
                 <label class="nkm-label">
                     Key name
@@ -104,14 +116,18 @@
                     <code class="nkm-preview-value">@_PreviewFullKey</code>
                 </div>
             }
+            }
 
         </div>
 
         <div class="nkm-footer">
-            <button class="nkm-btn nkm-btn-ghost" @onclick="Cancel">Cancel</button>
-            <button class="nkm-btn nkm-btn-primary" @onclick="Confirm" disabled="@(!_CanConfirm)">
-                @(_EditingKey == null ? "Create key" : "Save changes")
-            </button>
+            <button class="nkm-btn nkm-btn-ghost" @onclick="Cancel">@(_NoCategories ? "Close" : "Cancel")</button>
+            @if (!_NoCategories)
+            {
+                <button class="nkm-btn nkm-btn-primary" @onclick="Confirm" disabled="@(!_CanConfirm)">
+                    @(_EditingKey == null ? "Create key" : "Save changes")
+                </button>
+            }
         </div>
 
     </div>
@@ -134,6 +150,8 @@
     private static bool IsValidKeyName(string s) => !string.IsNullOrEmpty(s) && _KeyNamePattern.IsMatch(s);
 
     private bool _CanConfirm => IsValidKeyName(_KeyName) && _SelectedCategory != null && !_IsDuplicateKey;
+
+    private bool _NoCategories => _EditingKey == null && _ProjectState.CurrentProject!.Categories.Count == 0;
 
     private bool _IsDuplicateKey
     {
