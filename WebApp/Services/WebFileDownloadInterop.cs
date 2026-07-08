@@ -1,5 +1,3 @@
-using System;
-using System.Threading.Tasks;
 using Microsoft.JSInterop;
 
 namespace DeusaldLocalizerWeb;
@@ -8,15 +6,12 @@ namespace DeusaldLocalizerWeb;
 /// Shared bridge to <c>wwwroot/js/excel.js</c>: pick a file as bytes, or trigger a browser download.
 /// Reused by the Excel interop and the project zip export/import.
 /// </summary>
-public sealed class WebFileDownloadInterop : IAsyncDisposable
+public sealed class WebFileDownloadInterop(IJSRuntime js) : IAsyncDisposable
 {
-    private readonly IJSRuntime          _Js;
     private          IJSObjectReference? _Module;
 
-    public WebFileDownloadInterop(IJSRuntime js) => _Js = js;
-
     private async ValueTask<IJSObjectReference> ModuleAsync() =>
-        _Module ??= await _Js.InvokeAsync<IJSObjectReference>("import", "./js/excel.js");
+        _Module ??= await js.InvokeAsync<IJSObjectReference>("import", "./js/excel.js");
 
     /// <summary>Prompts the user to pick a file and returns its bytes, or null if cancelled.</summary>
     public async Task<byte[]?> PickBytesAsync()

@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using DeusaldLocalizerCommon;
 using Newtonsoft.Json;
 
@@ -11,25 +9,16 @@ namespace DeusaldLocalizerWeb
     /// entries also clears their cached sign-in credentials via <see cref="IAuthTokenStore"/>, so no token
     /// lingers for a project the user can no longer see.
     /// </summary>
-    public sealed class RecentProjectsStore
+    public sealed class RecentProjectsStore(IPreferencesStore prefs, IAuthTokenStore authTokens)
     {
         private const string _RECENT_PROJECTS_KEY = "RecentProjects";
         private const int    _MAX_RECENT_PROJECTS = 10;
-
-        private readonly IPreferencesStore _Prefs;
-        private readonly IAuthTokenStore   _AuthTokens;
-
-        public RecentProjectsStore(IPreferencesStore prefs, IAuthTokenStore authTokens)
-        {
-            _Prefs      = prefs;
-            _AuthTokens = authTokens;
-        }
 
         public List<RecentProjectEntry> LoadRecentProjects()
         {
             try
             {
-                string json = _Prefs.Get(_RECENT_PROJECTS_KEY, "[]");
+                string json = prefs.Get(_RECENT_PROJECTS_KEY, "[]");
                 return JsonConvert.DeserializeObject<List<RecentProjectEntry>>(json) ?? new List<RecentProjectEntry>();
             }
             catch
@@ -40,10 +29,10 @@ namespace DeusaldLocalizerWeb
 
         public void ClearRecentProjects()
         {
-            _Prefs.Remove(_RECENT_PROJECTS_KEY);
+            prefs.Remove(_RECENT_PROJECTS_KEY);
             // Forgetting the projects should also forget the sign-ins cached for them, so no access
             // token lingers in secure storage for a project the user can no longer see.
-            _AuthTokens.RemoveAll();
+            authTokens.RemoveAll();
         }
 
         /// <summary>
@@ -55,10 +44,10 @@ namespace DeusaldLocalizerWeb
         {
             List<RecentProjectEntry> projects = LoadRecentProjects();
             projects.RemoveAll(r => r.Path == entry.Path);
-            _Prefs.Set(_RECENT_PROJECTS_KEY, JsonConvert.SerializeObject(projects));
+            prefs.Set(_RECENT_PROJECTS_KEY, JsonConvert.SerializeObject(projects));
 
             if (entry.ProjectId != Guid.Empty)
-                _AuthTokens.Remove(entry.ProjectId, entry.Path);
+                authTokens.Remove(entry.ProjectId, entry.Path);
 
             return projects;
         }
@@ -92,7 +81,7 @@ namespace DeusaldLocalizerWeb
             if (projects.Count > _MAX_RECENT_PROJECTS)
                 projects = projects.GetRange(0, _MAX_RECENT_PROJECTS);
 
-            _Prefs.Set(_RECENT_PROJECTS_KEY, JsonConvert.SerializeObject(projects));
+            prefs.Set(_RECENT_PROJECTS_KEY, JsonConvert.SerializeObject(projects));
             return projects;
         }
     }

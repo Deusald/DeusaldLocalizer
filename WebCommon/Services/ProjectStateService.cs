@@ -8,7 +8,12 @@ namespace DeusaldLocalizerWeb;
 /// Inject as a singleton so all pages share the same state.
 /// </summary>
 [PublicAPI]
-public class ProjectStateService
+public class ProjectStateService(
+    LocalizerApiClient api,
+    IAuthTokenStore authTokens,
+    RecentProjectsStore recents,
+    IProjectStoreFactory storeFactory,
+    IProjectLocationService location)
 {
     // ── State ────────────────────────────────────────────────────────────────
 
@@ -30,6 +35,7 @@ public class ProjectStateService
     /// (after a sync). While this is non-empty, pushing is blocked until the user resolves them.
     /// </summary>
     public IReadOnlyList<EntryChangeConflict> SyncConflicts => _SyncConflicts;
+
     private List<EntryChangeConflict> _SyncConflicts = new();
 
     /// <summary>
@@ -65,28 +71,8 @@ public class ProjectStateService
 
     // ── Construction ───────────────────────────────────────────────────────────
 
-    private readonly LocalizerApiClient      _Api;
-    private readonly IAuthTokenStore         _AuthTokens;
-    private readonly RecentProjectsStore     _Recents;
-    private readonly IProjectStoreFactory    _StoreFactory;
-    private readonly IProjectLocationService _Location;
-
-    public ProjectStateService(
-        LocalizerApiClient      api,
-        IAuthTokenStore         authTokens,
-        RecentProjectsStore     recents,
-        IProjectStoreFactory    storeFactory,
-        IProjectLocationService location)
-    {
-        _Api          = api;
-        _AuthTokens   = authTokens;
-        _Recents      = recents;
-        _StoreFactory = storeFactory;
-        _Location     = location;
-    }
-
     /// <summary>The file store for the currently open project's location handle.</summary>
-    private IProjectFileStore CurrentStore => _StoreFactory.Create(CurrentProjectPath!);
+    private IProjectFileStore _CurrentStore => storeFactory.Create(CurrentProjectPath!);
 
     // ── Actions ──────────────────────────────────────────────────────────────
 
@@ -112,7 +98,7 @@ public class ProjectStateService
         ChangedLocKeys.Clear();
         _SyncConflicts.Clear();
         _SyncBaseline = null;
-        CurrentUser = LocProjectMember.OfflineMember;
+        CurrentUser   = LocProjectMember.OfflineMember;
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
     }
@@ -125,8 +111,8 @@ public class ProjectStateService
         ChangedLocKeys.Clear();
         _SyncConflicts.Clear();
         _SyncBaseline = null;
-        CurrentUser = userId == LocProjectMember.OfflineMember.UserId ? LocProjectMember.OfflineMember : project.ProjectMembers.Find(m => m.UserId == userId)!;
-        AccessToken = accessToken;
+        CurrentUser   = userId == LocProjectMember.OfflineMember.UserId ? LocProjectMember.OfflineMember : project.ProjectMembers.Find(m => m.UserId == userId)!;
+        AccessToken   = accessToken;
 
         // When changes are staged (online, or offline uncommitted mode) the key files hold the last-committed
         // state, so any unapplied edits live only in the pending queue. Replay them onto the freshly-loaded
@@ -146,7 +132,7 @@ public class ProjectStateService
         ChangedLocKeys.Clear();
         _SyncConflicts.Clear();
         _SyncBaseline = null;
-        CurrentUser = LocProjectMember.OfflineMember;
+        CurrentUser   = LocProjectMember.OfflineMember;
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
     }
@@ -159,29 +145,29 @@ public class ProjectStateService
         // A brand-new offline project without a path still falls through to the folder-pick full save below.
         if (!string.IsNullOrEmpty(CurrentProjectPath) && CurrentProject!.Metadata.UsesUncommittedChanges)
         {
-            await ProjectFileService.SaveUncommittedOnlyAsync(CurrentProject, CurrentStore);
+            await ProjectFileService.SaveUncommittedOnlyAsync(CurrentProject, _CurrentStore);
             MarkClean();
             return;
         }
 
         if (string.IsNullOrEmpty(CurrentProjectPath))
         {
-            string? location = await _Location.PickSaveLocationAsync();
+            string? saveLocation = await location.PickSaveLocationAsync();
 
-            if (!string.IsNullOrEmpty(location))
+            if (!string.IsNullOrEmpty(saveLocation))
             {
-                CurrentProjectPath = location;
-                await ProjectFileService.SaveAsync(CurrentProject!, CurrentStore);
+                CurrentProjectPath = saveLocation;
+                await ProjectFileService.SaveAsync(CurrentProject!, _CurrentStore);
                 MarkClean();
             }
         }
         else
         {
-            await ProjectFileService.SaveIncrementalAsync(CurrentProject!, CurrentStore, ChangedLocKeys);
+            await ProjectFileService.SaveIncrementalAsync(CurrentProject!, _CurrentStore, ChangedLocKeys);
             MarkClean();
         }
 
-        if (!string.IsNullOrEmpty(CurrentProjectPath)) _Recents.UpdateRecentProjects(CurrentProject!, CurrentProjectPath!, CurrentProject!.Metadata.IsOnline);
+        if (!string.IsNullOrEmpty(CurrentProjectPath)) recents.UpdateRecentProjects(CurrentProject!, CurrentProjectPath!, CurrentProject!.Metadata.IsOnline);
     }
 
     // ── Online sync / push ─────────────────────────────────────────────────────
@@ -198,16 +184,16 @@ public class ProjectStateService
         if (!CurrentProject.Metadata.IsOnline)
             return new SyncOperationResult { Outcome = SyncOutcome.NotOnline };
 
-        (Guid UserId, string Token)? creds = await _AuthTokens.GetAsync(CurrentProject.Metadata.Id, CurrentProjectPath!);
+        (Guid UserId, string Token)? creds = await authTokens.GetAsync(CurrentProject.Metadata.Id, CurrentProjectPath!);
         if (creds is null)
             return new SyncOperationResult { Outcome = SyncOutcome.NoCredentials };
 
         SyncResponse? response;
         try
         {
-            response = await _Api.SyncAsync(
-                CurrentProject.Metadata.ApiUrl, CurrentProject.Metadata.Id,
-                creds.Value.UserId, creds.Value.Token, CurrentProject.Metadata.SyncId);
+            response = await api.SyncAsync(
+                           CurrentProject.Metadata.ApiUrl, CurrentProject.Metadata.Id,
+                           creds.Value.UserId, creds.Value.Token, CurrentProject.Metadata.SyncId);
         }
         catch (Exception ex)
         {
@@ -242,7 +228,7 @@ public class ProjectStateService
         // Preserve the pending queue across the reload (server files never touch UncommittedChanges/).
         List<LocEntryChange> pending = CurrentProject.UncommitedChanges;
 
-        await ApplyServerFilesAsync(CurrentStore, response);
+        await ApplyServerFilesAsync(_CurrentStore, response);
 
         await RebuildWorkingCopyAsync(pending);
 
@@ -272,17 +258,17 @@ public class ProjectStateService
         if (CurrentProject.UncommitedChanges.Count == 0)
             return new PushOperationResult { Outcome = PushOutcome.Success };
 
-        (Guid UserId, string Token)? creds = await _AuthTokens.GetAsync(CurrentProject.Metadata.Id, CurrentProjectPath!);
+        (Guid UserId, string Token)? creds = await authTokens.GetAsync(CurrentProject.Metadata.Id, CurrentProjectPath!);
         if (creds is null)
             return new PushOperationResult { Outcome = PushOutcome.NoCredentials };
 
         PushResponse? response;
         try
         {
-            response = await _Api.PushAsync(
-                CurrentProject.Metadata.ApiUrl, CurrentProject.Metadata.Id,
-                creds.Value.UserId, creds.Value.Token,
-                CurrentProject.Metadata.SyncId, CurrentProject.UncommitedChanges);
+            response = await api.PushAsync(
+                           CurrentProject.Metadata.ApiUrl, CurrentProject.Metadata.Id,
+                           creds.Value.UserId, creds.Value.Token,
+                           CurrentProject.Metadata.SyncId, CurrentProject.UncommitedChanges);
         }
         catch (Exception ex)
         {
@@ -325,7 +311,7 @@ public class ProjectStateService
                 // Clear the queue first so the follow-up sync does not see our own changes as conflicts,
                 // then sync (still holding the old SyncId) to pull the just-pushed state into local files.
                 CurrentProject.UncommitedChanges.Clear();
-                await ProjectFileService.ClearUncommittedChangesAsync(CurrentStore);
+                await ProjectFileService.ClearUncommittedChangesAsync(_CurrentStore);
                 MarkClean();
 
                 await SyncAsync();
@@ -363,8 +349,7 @@ public class ProjectStateService
         PushResponse? push;
         try
         {
-            push = await PushBatchAsync(project, member.UserId, previousToken,
-                new List<LocEntryChange> { tokenChange, flagChange });
+            push = await PushBatchAsync(project, member.UserId, previousToken, [tokenChange, flagChange]);
         }
         catch (Exception ex)
         {
@@ -378,8 +363,8 @@ public class ProjectStateService
         // files immediately so a failed follow-up pull can never lock the member out, then cache the token.
         member.HashedAccessToken    = tokenChange.ChangeData;
         member.MustResetAccessToken = false;
-        await ProjectFileService.WriteEntityForChangeAsync(project, _StoreFactory.Create(path), tokenChange);
-        await _AuthTokens.SaveAsync(project.Metadata.Id, path, member.UserId, newToken);
+        await ProjectFileService.WriteEntityForChangeAsync(project, storeFactory.Create(path), tokenChange);
+        await authTokens.SaveAsync(project.Metadata.Id, path, member.UserId, newToken);
 
         LocProject reloaded = await PullLatestAsync(project, path, member.UserId, newToken);
 
@@ -404,7 +389,7 @@ public class ProjectStateService
         if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath) || !CurrentProject.Metadata.IsOnline)
             return new InitialTokenResult { Error = "No online project is open." };
 
-        (Guid UserId, string Token)? creds = await _AuthTokens.GetAsync(CurrentProject.Metadata.Id, CurrentProjectPath!);
+        (Guid UserId, string Token)? creds = await authTokens.GetAsync(CurrentProject.Metadata.Id, CurrentProjectPath!);
         if (creds is null)
             return new InitialTokenResult { Error = "You are not signed in on this device." };
 
@@ -428,8 +413,8 @@ public class ProjectStateService
         // failed follow-up sync can't lock the user out), then pull the new state down — SyncAsync
         // preserves the pending queue and re-validates it against the freshly pulled project.
         CurrentUser.HashedAccessToken = change.ChangeData;
-        await ProjectFileService.WriteEntityForChangeAsync(CurrentProject, CurrentStore, change);
-        await _AuthTokens.SaveAsync(CurrentProject.Metadata.Id, CurrentProjectPath!, CurrentUser.UserId, newToken);
+        await ProjectFileService.WriteEntityForChangeAsync(CurrentProject, _CurrentStore, change);
+        await authTokens.SaveAsync(CurrentProject.Metadata.Id, CurrentProjectPath!, CurrentUser.UserId, newToken);
 
         await SyncAsync();
 
@@ -454,17 +439,17 @@ public class ProjectStateService
 
     /// <summary>Maps a transport-layer failure to a short, user-facing reason; other errors pass through.</summary>
     private static string FriendlyError(Exception ex) =>
-        ex is System.Net.Http.HttpRequestException or TaskCanceledException
+        ex is HttpRequestException or TaskCanceledException
             ? "Could not reach the server. Check your connection and try again."
             : ex.Message;
 
     /// <summary>Pushes a single change to the bot, authenticated with an explicit token.</summary>
     private Task<PushResponse?> PushSingleAsync(LocProject project, Guid userId, string authToken, LocEntryChange change) =>
-        PushBatchAsync(project, userId, authToken, new List<LocEntryChange> { change });
+        PushBatchAsync(project, userId, authToken, [change]);
 
     /// <summary>Pushes a batch of changes to the bot, authenticated with an explicit token.</summary>
     private Task<PushResponse?> PushBatchAsync(LocProject project, Guid userId, string authToken, List<LocEntryChange> changes) =>
-        _Api.PushAsync(project.Metadata.ApiUrl, project.Metadata.Id, userId, authToken,
+        api.PushAsync(project.Metadata.ApiUrl, project.Metadata.Id, userId, authToken,
             project.Metadata.SyncId, changes);
 
     /// <summary>
@@ -476,13 +461,13 @@ public class ProjectStateService
     {
         try
         {
-            SyncResponse? response = await _Api.SyncAsync(
-                project.Metadata.ApiUrl, project.Metadata.Id, userId, token, project.Metadata.SyncId);
+            SyncResponse? response = await api.SyncAsync(
+                                         project.Metadata.ApiUrl, project.Metadata.Id, userId, token, project.Metadata.SyncId);
 
             if (response is null || response.Status == SyncStatus.UpToDate)
                 return project;
 
-            IProjectFileStore pullStore = _StoreFactory.Create(path);
+            IProjectFileStore pullStore = storeFactory.Create(path);
             await ApplyServerFilesAsync(pullStore, response);
             return await ProjectFileService.OpenAsync(pullStore);
         }
@@ -502,8 +487,8 @@ public class ProjectStateService
         // the result is empty regardless.
         LocProject baseline = _SyncBaseline ?? CurrentProject!;
         _SyncConflicts = CurrentProject!.Metadata.IsOnline
-            ? EntryChangeConflictService.Validate(baseline, CurrentProject.UncommitedChanges)
-            : new List<EntryChangeConflict>();
+                             ? EntryChangeConflictService.Validate(baseline, CurrentProject.UncommitedChanges)
+                             : new List<EntryChangeConflict>();
     }
 
     /// <summary>
@@ -514,9 +499,9 @@ public class ProjectStateService
     /// </summary>
     private async Task RebuildWorkingCopyAsync(List<LocEntryChange> pending)
     {
-        _SyncBaseline = await ProjectFileService.OpenAsync(CurrentStore);
+        _SyncBaseline = await ProjectFileService.OpenAsync(_CurrentStore);
 
-        LocProject working = await ProjectFileService.OpenAsync(CurrentStore);
+        LocProject working = await ProjectFileService.OpenAsync(_CurrentStore);
         working.UncommitedChanges = pending;
         CurrentProject            = working;
 
@@ -527,7 +512,7 @@ public class ProjectStateService
         RevalidateConflicts();
         ReapplyPendingChanges();
 
-        await ProjectFileService.SaveUncommittedOnlyAsync(CurrentProject, CurrentStore);
+        await ProjectFileService.SaveUncommittedOnlyAsync(CurrentProject, _CurrentStore);
     }
 
     /// <summary>
@@ -541,10 +526,10 @@ public class ProjectStateService
         if (CurrentProject is null) return;
 
         List<(Guid KeyId, string Lang)> pairs = CurrentProject.UncommitedChanges
-            .Where(c => c.Type == EntryChangeType.TranslationUpdated)
-            .Select(c => (c.EntryId, c.EntrySubId))
-            .Distinct()
-            .ToList();
+                                                              .Where(c => c.Type == EntryChangeType.TranslationUpdated)
+                                                              .Select(c => (c.EntryId, c.EntrySubId))
+                                                              .Distinct()
+                                                              .ToList();
 
         foreach ((Guid keyId, string lang) in pairs)
         {
@@ -555,10 +540,10 @@ public class ProjectStateService
             LocKeyTranslation?  baseDest = baseKey?.Translations.Find(t => t.LanguageId == lang);
             if (baseDest is null) continue;
 
-            bool redundant = mine.Text          == baseDest.Text
-                          && mine.Status        == baseDest.Status
+            bool redundant = mine.Text == baseDest.Text
+                          && mine.Status == baseDest.Status
                           && mine.SourceChanged == baseDest.SourceChanged
-                          && mine.BaseTextHash  == baseDest.BaseTextHash;
+                          && mine.BaseTextHash == baseDest.BaseTextHash;
 
             if (redundant)
                 CurrentProject.UncommitedChanges.RemoveAll(c =>
@@ -597,8 +582,8 @@ public class ProjectStateService
     public async Task RemoveUncommittedChangeAsync(int index)
     {
         if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath)) return;
-        if (!CurrentProject.Metadata.UsesUncommittedChanges)                     return;
-        if (index < 0 || index >= CurrentProject.UncommitedChanges.Count)        return;
+        if (!CurrentProject.Metadata.UsesUncommittedChanges) return;
+        if (index < 0 || index >= CurrentProject.UncommitedChanges.Count) return;
 
         List<LocEntryChange> pending = new(CurrentProject.UncommitedChanges);
         pending.RemoveAt(index);
@@ -617,8 +602,8 @@ public class ProjectStateService
     public async Task ClearUncommittedChangesAsync()
     {
         if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath)) return;
-        if (!CurrentProject.Metadata.UsesUncommittedChanges)                     return;
-        if (CurrentProject.UncommitedChanges.Count == 0)                         return;
+        if (!CurrentProject.Metadata.UsesUncommittedChanges) return;
+        if (CurrentProject.UncommitedChanges.Count == 0) return;
 
         await RebuildWorkingCopyAsync(new List<LocEntryChange>());
 
@@ -636,14 +621,14 @@ public class ProjectStateService
     {
         if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath)) return;
         if (CurrentProject.Metadata.IsOnline || !CurrentProject.Metadata.UncommittedMode) return;
-        if (CurrentProject.UncommitedChanges.Count == 0)                         return;
+        if (CurrentProject.UncommitedChanges.Count == 0) return;
 
         CurrentProject.UncommitedChanges.Clear();
         ChangedLocKeys.Clear();
 
         // A full save writes every key file from the in-memory state and rewrites the (now empty)
         // UncommittedChanges folder, so nothing pending is left behind on disk.
-        await ProjectFileService.SaveAsync(CurrentProject, CurrentStore);
+        await ProjectFileService.SaveAsync(CurrentProject, _CurrentStore);
         MarkClean();
 
         ProjectChanged?.Invoke();
@@ -659,16 +644,16 @@ public class ProjectStateService
     public async Task SetUncommittedModeAsync(bool enabled)
     {
         if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath)) return;
-        if (CurrentProject.Metadata.IsOnline)                                    return;
-        if (CurrentProject.Metadata.UncommittedMode == enabled)                  return;
-        if (!enabled && CurrentProject.UncommitedChanges.Count > 0)              return;
+        if (CurrentProject.Metadata.IsOnline) return;
+        if (CurrentProject.Metadata.UncommittedMode == enabled) return;
+        if (!enabled && CurrentProject.UncommitedChanges.Count > 0) return;
 
         CurrentProject.Metadata.UncommittedMode = enabled;
         ChangedLocKeys.Clear();
 
         // A full save persists the flag along with the whole state: on enable it commits any pre-existing
         // session edits as the baseline; on disable the queue is already empty, so it just rewrites cleanly.
-        await ProjectFileService.SaveAsync(CurrentProject, CurrentStore);
+        await ProjectFileService.SaveAsync(CurrentProject, _CurrentStore);
         MarkClean();
 
         ProjectChanged?.Invoke();
@@ -792,7 +777,7 @@ public class ProjectStateService
         }
 
         RevalidateConflicts();
-        await ProjectFileService.SaveUncommittedOnlyAsync(CurrentProject, CurrentStore);
+        await ProjectFileService.SaveUncommittedOnlyAsync(CurrentProject, _CurrentStore);
         MarkClean();
 
         ProjectDataChanged?.Invoke();
@@ -828,7 +813,7 @@ public class ProjectStateService
     }
 
     // ── Member change recording ──────────────────────────────────────────────
-    
+
     /// <summary>Records a brand-new member (whole object).</summary>
     public void RecordMemberAdded(LocProjectMember member)
     {
@@ -1016,7 +1001,7 @@ public class ProjectStateService
     /// The previous source hash is the translation's <see cref="LocKeyTranslation.BaseTextHash"/>.
     /// </summary>
     public void RecordTranslationUpdated(Guid keyId, LocKeyTranslation translation, string? prevDestHash = null) =>
-        AddKeyChange(keyId, EntryChangeType.TranslationUpdated, translation.LanguageId,
+        AddKeyChange(keyId,                                           EntryChangeType.TranslationUpdated, translation.LanguageId,
             Newtonsoft.Json.JsonConvert.SerializeObject(translation), translation.BaseTextHash,
             prevDestHash ?? TextHashHelper.Compute(translation.Text));
 
@@ -1064,7 +1049,7 @@ public class ProjectStateService
         AddKeyChange(keyId, EntryChangeType.VariableRemoved, string.Empty, variableId.ToString());
 
     private void AddKeyChange(Guid keyId, EntryChangeType type, string entrySubId, string changeData,
-        string prevSourceHashData = "", string prevDestHashData = "")
+                              string prevSourceHashData = "", string prevDestHashData = "")
     {
         ChangedLocKeys.Add(keyId);
         if (CurrentProject!.Metadata.UsesUncommittedChanges)
@@ -1144,8 +1129,10 @@ public enum ConflictResolution
 {
     /// <summary>Overwrite the server's translation with my queued edit.</summary>
     KeepMine,
+
     /// <summary>Keep the server's translation and add my edit as a suggestion for voting.</summary>
     SuggestMine,
+
     /// <summary>Discard my queued edit and keep the server's translation.</summary>
     KeepServer,
 }

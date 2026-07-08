@@ -7,39 +7,26 @@ namespace DeusaldLocalizerBackend;
 /// Fetches the latest remote first; validates each change against the freshly-pulled state
 /// (defense-in-depth); and if the remote moves during processing, discards everything.
 /// </summary>
-public sealed class PushService
+public sealed class PushService(
+    ProjectRegistry registry,
+    ProjectSerializer serializer,
+    RepoPreparer preparer,
+    GitService git,
+    AuthService auth,
+    ILogger<PushService> logger)
 {
-    private readonly ProjectRegistry     _Registry;
-    private readonly ProjectSerializer   _Serializer;
-    private readonly RepoPreparer        _Preparer;
-    private readonly GitService          _Git;
-    private readonly AuthService         _Auth;
-    private readonly ILogger<PushService> _Logger;
-
-    public PushService(
-        ProjectRegistry registry, ProjectSerializer serializer, RepoPreparer preparer,
-        GitService git, AuthService auth, ILogger<PushService> logger)
-    {
-        _Registry   = registry;
-        _Serializer = serializer;
-        _Preparer   = preparer;
-        _Git        = git;
-        _Auth       = auth;
-        _Logger     = logger;
-    }
-
     public async Task<ServiceResult<PushResponse>> PushAsync(
         Guid projectId, Guid userId, string token, IReadOnlyList<LocEntryChange> changes, CancellationToken ct)
     {
-        ProjectConfig? config = _Registry.Find(projectId);
+        ProjectConfig? config = registry.Find(projectId);
         if (config == null) return ServiceResult<PushResponse>.NotFound();
 
-        using IDisposable _ = await _Serializer.AcquireAsync(projectId, ct);
+        using IDisposable _ = await serializer.AcquireAsync(projectId, ct);
 
-        string     repoPath = await _Preparer.ToLatestAsync(config, ct);
-        LocProject project  = await _Preparer.LoadAsync(repoPath);
+        string     repoPath = await preparer.ToLatestAsync(config, ct);
+        LocProject project  = await preparer.LoadAsync(repoPath);
 
-        LocProjectMember? member = _Auth.Authenticate(project, userId, token);
+        LocProjectMember? member = auth.Authenticate(project, userId, token);
         if (member == null) return ServiceResult<PushResponse>.Unauthorized();
 
         // Authorization: the client hides actions the member's role forbids, but a crafted request
@@ -47,7 +34,7 @@ public sealed class PushService
         List<EntryChangePermissionError> denied = EntryChangePermissionService.Validate(project, member, changes);
         if (denied.Count > 0)
         {
-            _Logger.LogWarning("Push rejected for '{Slug}': member '{User}' lacks permission for {Count} change(s): {Types}",
+            logger.LogWarning("Push rejected for '{Slug}': member '{User}' lacks permission for {Count} change(s): {Types}",
                 config.Slug, member.Username, denied.Count, string.Join(", ", denied.Select(d => d.Type)));
             return ServiceResult<PushResponse>.Ok(new PushResponse
             {
@@ -68,11 +55,11 @@ public sealed class PushService
 
         Guid   newSyncId = Guid.NewGuid();
         string syncTag   = SyncTag.For(newSyncId);
-        string baseSha   = await _Git.RevParseAsync(repoPath, "HEAD", ct);
+        string baseSha   = await git.RevParseAsync(repoPath, "HEAD", ct);
 
         string authorEmail    = $"{member.UserId}@localizer";
-        string committerName  = _Registry.Options.CommitterName;
-        string committerEmail = _Registry.Options.CommitterEmail;
+        string committerName  = registry.Options.CommitterName;
+        string committerEmail = registry.Options.CommitterEmail;
 
         try
         {
@@ -97,8 +84,8 @@ public sealed class PushService
                     await ProjectFileService.SaveMetadataOnlyAsync(project, repoPath);
                 }
 
-                await _Git.StageAllAsync(repoPath, ct);
-                await _Git.CommitAsync(repoPath,
+                await git.StageAllAsync(repoPath, ct);
+                await git.CommitAsync(repoPath,
                     $"{commitString}\n\n{syncTag}\nAuthor: {member.Username}",
                     member.Username, authorEmail, committerName, committerEmail, ct);
             }
@@ -109,16 +96,16 @@ public sealed class PushService
                 project.Metadata.SyncId    = newSyncId;
                 project.Metadata.UpdatedAt = DateTime.UtcNow;
                 await ProjectFileService.SaveMetadataOnlyAsync(project, repoPath);
-                await _Git.StageAllAsync(repoPath, ct);
-                await _Git.CommitAsync(repoPath, $"Bump sync id\n\n{syncTag}",
+                await git.StageAllAsync(repoPath, ct);
+                await git.CommitAsync(repoPath, $"Bump sync id\n\n{syncTag}",
                     member.Username, authorEmail, committerName, committerEmail, ct);
             }
 
             // A plain push refuses to merge: if the remote moved while we worked, it is rejected.
-            GitResult push = await _Git.PushAsync(repoPath, config.Branch, ct);
+            GitResult push = await git.PushAsync(repoPath, config.Branch, ct);
             if (!push.Success)
             {
-                _Logger.LogWarning("Push rejected for '{Slug}' (remote moved). Discarding batch. {Err}",
+                logger.LogWarning("Push rejected for '{Slug}' (remote moved). Discarding batch. {Err}",
                     config.Slug, push.StdErr);
                 await RollbackAsync(repoPath, baseSha, ct);
                 return ServiceResult<PushResponse>.Ok(new PushResponse
@@ -136,7 +123,7 @@ public sealed class PushService
         }
         catch (Exception ex)
         {
-            _Logger.LogError(ex, "Push failed for '{Slug}', rolling back to {BaseSha}", config.Slug, baseSha);
+            logger.LogError(ex, "Push failed for '{Slug}', rolling back to {BaseSha}", config.Slug, baseSha);
             await RollbackAsync(repoPath, baseSha, ct);
             throw;
         }
@@ -144,7 +131,7 @@ public sealed class PushService
 
     private async Task RollbackAsync(string repoPath, string baseSha, CancellationToken ct)
     {
-        await _Git.ResetHardAsync(repoPath, baseSha, ct);
-        await _Git.CleanAsync(repoPath, ct);
+        await git.ResetHardAsync(repoPath, baseSha, ct);
+        await git.CleanAsync(repoPath, ct);
     }
 }

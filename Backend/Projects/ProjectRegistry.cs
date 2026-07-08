@@ -5,25 +5,16 @@ namespace DeusaldLocalizerBackend;
 /// <summary>
 /// Resolves configured projects and guarantees each one has a local working-tree clone.
 /// </summary>
-public sealed class ProjectRegistry
+public sealed class ProjectRegistry(IOptions<BotOptions> options, GitService git, ILogger<ProjectRegistry> logger)
 {
-    private readonly BotOptions               _Options;
-    private readonly GitService               _Git;
-    private readonly ILogger<ProjectRegistry> _Logger;
-
-    public ProjectRegistry(IOptions<BotOptions> options, GitService git, ILogger<ProjectRegistry> logger)
-    {
-        _Options = options.Value;
-        _Git     = git;
-        _Logger  = logger;
-    }
+    private readonly BotOptions               _Options = options.Value;
 
     public BotOptions Options => _Options;
 
     public ProjectConfig? Find(Guid projectId) =>
         _Options.Projects.FirstOrDefault(p => p.ProjectId == projectId);
 
-    public string LocalPath(ProjectConfig config) =>
+    private string LocalPath(ProjectConfig config) =>
         Path.Combine(_Options.ReposRoot, config.Slug);
 
     /// <summary>
@@ -40,8 +31,8 @@ public sealed class ProjectRegistry
         Directory.CreateDirectory(_Options.ReposRoot);
         if (Directory.Exists(path)) Directory.Delete(path, recursive: true); // stale non-git dir
 
-        _Logger.LogInformation("Cloning project '{Slug}' into {Path}", config.Slug, path);
-        await _Git.CloneAsync(config.RemoteUrl, path, ct);
+        logger.LogInformation("Cloning project '{Slug}' into {Path}", config.Slug, path);
+        await git.CloneAsync(config.RemoteUrl, path, ct);
         return path;
     }
 }

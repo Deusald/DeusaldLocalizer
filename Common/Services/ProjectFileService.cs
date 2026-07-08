@@ -349,7 +349,7 @@ namespace DeusaldLocalizerCommon
         {
             string? json = await store.ReadTextAsync(path);
             if (string.IsNullOrWhiteSpace(json)) return null;
-            return JsonConvert.DeserializeObject<T>(json!, _JsonSettings);
+            return JsonConvert.DeserializeObject<T>(json, _JsonSettings);
         }
 
         private static Task WriteJsonAsync<T>(IProjectFileStore store, string path, T value)

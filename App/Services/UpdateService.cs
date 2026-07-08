@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 #if !MACCATALYST
 using Velopack;
 using Velopack.Sources;
+
 #else
 using System.Text.Json;
 #endif
@@ -13,7 +14,7 @@ namespace App
     /// cannot update itself (macOS) and the UI should open that page for a manual download; otherwise
     /// the update is applied in place (Windows, via Velopack).
     /// </summary>
-    public sealed record UpdateInfo(string LatestVersion, string? ReleaseNotesHtml, string? DownloadPageUrl = null);
+    public sealed record UpdateInfo(string LatestVersion, string? DownloadPageUrl = null);
 
     /// <summary>
     /// Checks GitHub Releases for a newer build. On Windows it wraps Velopack's <see cref="UpdateManager"/>
@@ -26,11 +27,11 @@ namespace App
     {
         private const string _REPO_URL = "https://github.com/Deusald/DeusaldLocalizer";
 
-#if MACCATALYST
+        #if MACCATALYST
         // ── macOS ────────────────────────────────────────────────────────────────
         // Velopack's in-place update doesn't work under Mac Catalyst, so we only detect a newer
         // release through the GitHub API and send the user to the releases page to download it by hand.
-        private const string _RELEASES_API  = "https://api.github.com/repos/Deusald/DeusaldLocalizer/releases/latest";
+        private const string _RELEASES_API = "https://api.github.com/repos/Deusald/DeusaldLocalizer/releases/latest";
         private const string _RELEASES_PAGE = _REPO_URL + "/releases/latest";
 
         // Dedicated client so the shared app HttpClient's base address / headers can't affect the call.
@@ -61,7 +62,7 @@ namespace App
                                   ? url
                                   : _RELEASES_PAGE;
 
-                return new UpdateInfo(tag.TrimStart('v', 'V'), ReleaseNotesHtml: null, DownloadPageUrl: page);
+                return new UpdateInfo(tag.TrimStart('v', 'V'), DownloadPageUrl: page);
             }
             catch
             {
@@ -81,7 +82,7 @@ namespace App
         // Never used on macOS — the UI opens DownloadPageUrl in the browser instead. Present so the
         // service exposes the same surface on both platforms.
         public Task<bool> DownloadAndApplyAsync(Action<int>? progress = null) => Task.FromResult(false);
-#else
+        #else
         // ── Windows ──────────────────────────────────────────────────────────────
         // Local-test hook: set this env var to a folder (or URL) containing a Velopack release
         // (releases.win.json + .nupkg) to update from there instead of GitHub. Unset in production.
@@ -97,8 +98,8 @@ namespace App
             {
                 string? overrideSource = Environment.GetEnvironmentVariable(_SOURCE_OVERRIDE_ENV);
                 return string.IsNullOrWhiteSpace(overrideSource)
-                    ? new UpdateManager(new GithubSource(_REPO_URL, accessToken: null, prerelease: false))
-                    : new UpdateManager(overrideSource);
+                           ? new UpdateManager(new GithubSource(_REPO_URL, accessToken: null, prerelease: false))
+                           : new UpdateManager(overrideSource);
             }
             catch (Exception ex)
             {
@@ -128,7 +129,7 @@ namespace App
 
                 _Pending = updates;
                 VelopackAsset target = updates.TargetFullRelease;
-                return new UpdateInfo(target.Version.ToString(), target.NotesHTML);
+                return new UpdateInfo(target.Version.ToString());
             }
             catch
             {
@@ -156,6 +157,6 @@ namespace App
                 return false;
             }
         }
-#endif
+        #endif
     }
 }

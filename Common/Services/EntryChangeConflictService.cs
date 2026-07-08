@@ -28,7 +28,7 @@ namespace DeusaldLocalizerCommon
     /// (re-validating a push against the freshly-pulled repo, as defense-in-depth).
     ///
     /// Only <see cref="EntryChangeType.TranslationUpdated"/> changes can conflict. Two cases,
-    /// both compared against a <paramref name="baseline"/> = the current repo state *before*
+    /// both compared against a "baseline" — the current repo state *before*
     /// any of these changes are applied:
     ///   • SourceChanged — the source text drifted (someone else edited the main language).
     ///   • DestChanged   — the destination translation was edited by someone else.

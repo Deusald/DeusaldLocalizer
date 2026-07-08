@@ -18,7 +18,7 @@ namespace DeusaldLocalizerCommon
     public static class LocalizationExportService
     {
         /// <summary>Header suffix that marks the per-language hash column (e.g. "en #hash").</summary>
-        public const string HashHeaderSuffix = " #hash";
+        public const string HASH_HEADER_SUFFIX = " #hash";
 
         public static MemoryStream ExportToStream(LocProject project, LocExportOptions? options = null)
         {
@@ -27,7 +27,7 @@ namespace DeusaldLocalizerCommon
 
             // ── Build ordered language list: source first, rest alphabetical ──
             // When options select a language subset, keep only those (empty = all).
-            bool            hasLangFilter = options != null && options.Languages.Count > 0;
+            bool            hasLangFilter = options is { Languages: { Count: > 0 } };
             HashSet<string> selectedLangs = hasLangFilter
                 ? new HashSet<string>(options!.Languages)
                 : new HashSet<string>();
@@ -42,7 +42,7 @@ namespace DeusaldLocalizerCommon
                     languages.Add(lang);
             }
 
-            bool includeTagsCol = options != null && options.IncludeTagsColumn;
+            bool includeTagsCol = options is { IncludeTagsColumn: true };
 
             // ── Header row ──────────────────────────────────────────────────
             int col = 1;
@@ -67,7 +67,7 @@ namespace DeusaldLocalizerCommon
             {
                 langTextCols.Add(col);
                 sheet.Cell(1, col++).Value = lang;
-                sheet.Cell(1, col++).Value = lang + HashHeaderSuffix;
+                sheet.Cell(1, col++).Value = lang + HASH_HEADER_SUFFIX;
             }
 
             // ── Style header ────────────────────────────────────────────────

@@ -9,8 +9,8 @@ namespace DeusaldLocalizerCommon
     {
         public EntryChangeType Type       { get; set; }
         public Guid            EntryId    { get; set; }
-        public string         EntrySubId { get; set; } = string.Empty;
-        public string         Message    { get; set; } = string.Empty;
+        public string          EntrySubId { get; set; } = string.Empty;
+        public string          Message    { get; set; } = string.Empty;
     }
 
     /// <summary>
@@ -48,8 +48,8 @@ namespace DeusaldLocalizerCommon
                     Type       = change.Type,
                     EntryId    = change.EntryId,
                     EntrySubId = change.EntrySubId,
-                    Message    = "You do not have permission to perform '" + change.Type + "' (requires "
-                               + RequiredRole(project, change) + ").",
+                    Message = "You do not have permission to perform '" + change.Type + "' (requires "
+                            + RequiredRole(project, change) + ").",
                 });
             }
 
@@ -60,7 +60,7 @@ namespace DeusaldLocalizerCommon
         public static bool IsAllowed(LocProject project, LocProjectMember member, LocEntryChange change)
         {
             if (member.IsBanned) return false;
-            if (member.IsAdmin)  return true; // admins may do anything
+            if (member.IsAdmin) return true; // admins may do anything
 
             switch (change.Type)
             {
@@ -106,8 +106,8 @@ namespace DeusaldLocalizerCommon
                     return "any member";
                 case EntryChangeType.TranslationUpdated:
                     return change.EntrySubId == project.Metadata.MainLanguageId
-                        ? "admin"
-                        : "reviewer of '" + change.EntrySubId + "'";
+                               ? "admin"
+                               : "reviewer of '" + change.EntrySubId + "'";
                 case EntryChangeType.SuggestionRemoved:
                     return "reviewer of '" + change.EntrySubId + "'";
                 case EntryChangeType.FlagAdded:

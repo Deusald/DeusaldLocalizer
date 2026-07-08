@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -59,6 +58,7 @@ namespace DeusaldLocalizerCommon
 
             IReadOnlyList<string> names = Directory.GetFiles(full, "*.json")
                                                    .Select(Path.GetFileName)
+                                                    // ReSharper disable once RedundantSuppressNullableWarningExpression
                                                    .ToList()!;
             return Task.FromResult(names);
         }

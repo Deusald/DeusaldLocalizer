@@ -72,7 +72,7 @@ namespace DeusaldLocalizerCommon
     public static class LocalizationImportService
     {
         public static ImportResult ImportFromStream(Stream stream, LocProject project, Guid authorId,
-            LocImportOptions? options = null)
+                                                    LocImportOptions? options = null)
         {
             options ??= new LocImportOptions();
 
@@ -100,17 +100,27 @@ namespace DeusaldLocalizerCommon
 
                 switch (header)
                 {
-                    case "KeyId":          ctx.KeyIdCol   = c; continue;
-                    case "KeyName":        ctx.KeyNameCol = c; continue;
-                    case "KeyDescription": ctx.DescCol    = c; continue;
-                    case "Tags":           ctx.TagsCol    = c; continue;
-                    case "MaxLength":      ctx.MaxLenCol  = c; continue;
-                    case "SourceHash":     continue;
+                    case "KeyId":
+                        ctx.KeyIdCol = c;
+                        continue;
+                    case "KeyName":
+                        ctx.KeyNameCol = c;
+                        continue;
+                    case "KeyDescription":
+                        ctx.DescCol = c;
+                        continue;
+                    case "Tags":
+                        ctx.TagsCol = c;
+                        continue;
+                    case "MaxLength":
+                        ctx.MaxLenCol = c;
+                        continue;
+                    case "SourceHash": continue;
                 }
 
-                if (header.EndsWith(LocalizationExportService.HashHeaderSuffix))
+                if (header.EndsWith(LocalizationExportService.HASH_HEADER_SUFFIX))
                 {
-                    string lang = header.Substring(0, header.Length - LocalizationExportService.HashHeaderSuffix.Length);
+                    string lang                                                       = header.Substring(0, header.Length - LocalizationExportService.HASH_HEADER_SUFFIX.Length);
                     if (project.Metadata.Languages.Contains(lang)) ctx.HashCols[lang] = c;
                 }
                 else if (project.Metadata.Languages.Contains(header))
@@ -157,7 +167,6 @@ namespace DeusaldLocalizerCommon
         {
             string rawId = ctx.Sheet.Cell(row, ctx.KeyIdCol).GetString().Trim();
 
-            Guid keyId;
             if (string.IsNullOrEmpty(rawId))
             {
                 if (!ctx.Options.CreateNewKeys) return; // legacy: blank-id rows are ignored
@@ -165,7 +174,7 @@ namespace DeusaldLocalizerCommon
                 return;
             }
 
-            if (!Guid.TryParse(rawId, out keyId))
+            if (!Guid.TryParse(rawId, out var keyId))
             {
                 ctx.Result.Warnings.Add($"Row {row}: invalid KeyId '{rawId}', skipped.");
                 ctx.Result.KeysSkipped++;
@@ -191,14 +200,14 @@ namespace DeusaldLocalizerCommon
         {
             bool touched = UpdateKeyMetadata(ctx, row, key);
 
-            string newSourceHash    = string.Empty;
+            string newSourceHash     = string.Empty;
             bool   sourceTextChanged = false;
             if (ctx.Options.UpdateSourceText && ctx.SourceCol > 0)
             {
-                (bool srcTouched, bool textChanged, string newHash) = ApplySourceCell(ctx, row, key);
-                touched          |= srcTouched;
-                sourceTextChanged = textChanged;
-                newSourceHash     = newHash;
+                (bool srcTouched, bool textChanged, string newHash) =  ApplySourceCell(ctx, row, key);
+                touched                                             |= srcTouched;
+                sourceTextChanged                                   =  textChanged;
+                newSourceHash                                       =  newHash;
             }
 
             foreach (KeyValuePair<int, string> langEntry in ctx.LangCols)
@@ -301,7 +310,7 @@ namespace DeusaldLocalizerCommon
 
         /// <summary>Applies a non-source translation cell as a suggestion or as direct text.</summary>
         private static bool ApplyTranslationCell(ImportContext ctx, int row, LocLocalizationKey key,
-            int col, string langCode)
+                                                 int col, string langCode)
         {
             string text = ctx.Sheet.Cell(row, col).GetString();
             if (string.IsNullOrEmpty(text)) return false;
@@ -314,7 +323,7 @@ namespace DeusaldLocalizerCommon
             }
 
             LocKeyTranslation translation = key.Translations.Find(t => t.LanguageId == langCode)
-                                            ?? AddTranslation(key, langCode);
+                                         ?? AddTranslation(key, langCode);
 
             if (ctx.Options.ImportAsSuggestions)
             {
@@ -339,7 +348,7 @@ namespace DeusaldLocalizerCommon
 
             if (translation.Text == text) return false;
 
-            string oldDestHash = TextHashHelper.Compute(translation.Text);
+            string             oldDestHash   = TextHashHelper.Compute(translation.Text);
             LocKeyTranslation? currentSource = key.Translations.Find(t => t.LanguageId == ctx.MainLang);
 
             translation.Text          = text;
@@ -350,8 +359,8 @@ namespace DeusaldLocalizerCommon
 
             ctx.Changes.Add(new ImportedChange
             {
-                Kind = ImportChangeKind.TranslationUpdated, KeyId = key.Id, LanguageId = langCode,
-                Translation = translation, PrevDestHash = oldDestHash
+                Kind        = ImportChangeKind.TranslationUpdated, KeyId = key.Id, LanguageId = langCode,
+                Translation = translation, PrevDestHash                  = oldDestHash
             });
             ctx.Result.TranslationsUpdated++;
             return true;
@@ -371,7 +380,7 @@ namespace DeusaldLocalizerCommon
             }
 
             LocKeyTranslation source = key.Translations.Find(t => t.LanguageId == ctx.MainLang)
-                                       ?? AddTranslation(key, ctx.MainLang);
+                                    ?? AddTranslation(key, ctx.MainLang);
 
             if (ctx.Options.ImportAsSuggestions)
             {
@@ -402,8 +411,8 @@ namespace DeusaldLocalizerCommon
 
             ctx.Changes.Add(new ImportedChange
             {
-                Kind = ImportChangeKind.TranslationUpdated, KeyId = key.Id, LanguageId = ctx.MainLang,
-                Translation = source, PrevDestHash = oldHash
+                Kind        = ImportChangeKind.TranslationUpdated, KeyId = key.Id, LanguageId = ctx.MainLang,
+                Translation = source, PrevDestHash                       = oldHash
             });
             ctx.Result.TranslationsUpdated++;
             return (true, oldHash != newHash, newHash);
@@ -424,8 +433,8 @@ namespace DeusaldLocalizerCommon
                     other.SourceChanged = sourceChanged;
                     ctx.Changes.Add(new ImportedChange
                     {
-                        Kind = ImportChangeKind.TranslationUpdated, KeyId = key.Id,
-                        LanguageId = other.LanguageId, Translation = other
+                        Kind       = ImportChangeKind.TranslationUpdated, KeyId = key.Id,
+                        LanguageId = other.LanguageId, Translation              = other
                     });
                     touched = true;
                 }
@@ -457,9 +466,9 @@ namespace DeusaldLocalizerCommon
                 KeyName    = keyName
             };
 
-            if (ctx.DescCol   > 0) key.Description = ctx.Sheet.Cell(row, ctx.DescCol).GetString();
-            if (ctx.MaxLenCol > 0) key.MaxLength   = ReadMaxLength(ctx, row);
-            if (ctx.TagsCol   > 0) key.Tags        = ParseTags(ctx.Sheet.Cell(row, ctx.TagsCol).GetString());
+            if (ctx.DescCol > 0) key.Description = ctx.Sheet.Cell(row, ctx.DescCol).GetString();
+            if (ctx.MaxLenCol > 0) key.MaxLength = ReadMaxLength(ctx, row);
+            if (ctx.TagsCol > 0) key.Tags        = ParseTags(ctx.Sheet.Cell(row, ctx.TagsCol).GetString());
 
             // Seed the source first so the other languages can base their hash on it.
             string sourceText = ctx.SourceCol > 0 ? ctx.Sheet.Cell(row, ctx.SourceCol).GetString() : string.Empty;
@@ -479,7 +488,7 @@ namespace DeusaldLocalizerCommon
 
         /// <summary>Adds an approved translation to a brand-new key, honouring the key's max length.</summary>
         private static void AddSeedTranslation(ImportContext ctx, int row, LocLocalizationKey key,
-            string langCode, string text, string sourceHash)
+                                               string langCode, string text, string sourceHash)
         {
             if (string.IsNullOrEmpty(text)) return;
             if (key.MaxLength != 0 && text.Length > key.MaxLength)
@@ -559,18 +568,18 @@ namespace DeusaldLocalizerCommon
         {
             int dot = full.LastIndexOf('.');
             return dot < 0
-                ? (string.Empty, full.Trim())
-                : (full.Substring(0, dot).Trim(), full.Substring(dot + 1).Trim());
+                       ? (string.Empty, full.Trim())
+                       : (full.Substring(0, dot).Trim(), full.Substring(dot + 1).Trim());
         }
 
         /// <summary>Mutable per-import scratch space, so the many helpers don't each need a dozen parameters.</summary>
         private sealed class ImportContext
         {
-            public LocProject               Project  = null!;
-            public IXLWorksheet             Sheet    = null!;
-            public LocImportOptions         Options  = null!;
-            public Guid                     AuthorId;
-            public string                   MainLang = string.Empty;
+            public LocProject       Project = null!;
+            public IXLWorksheet     Sheet   = null!;
+            public LocImportOptions Options = null!;
+            public Guid             AuthorId;
+            public string           MainLang = string.Empty;
 
             public int KeyIdCol;
             public int KeyNameCol;
@@ -579,10 +588,10 @@ namespace DeusaldLocalizerCommon
             public int MaxLenCol;
             public int SourceCol;
 
-            public Dictionary<int, string>  LangCols = null!;
-            public Dictionary<string, int>  HashCols = null!;
-            public List<ImportedChange>     Changes  = null!;
-            public ImportResult             Result   = null!;
+            public Dictionary<int, string> LangCols = null!;
+            public Dictionary<string, int> HashCols = null!;
+            public List<ImportedChange>    Changes  = null!;
+            public ImportResult            Result   = null!;
         }
     }
 }

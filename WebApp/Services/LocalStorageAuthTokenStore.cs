@@ -1,5 +1,3 @@
-using System;
-using System.Threading.Tasks;
 using Microsoft.JSInterop;
 
 namespace DeusaldLocalizerWeb;
@@ -10,13 +8,11 @@ namespace DeusaldLocalizerWeb;
 /// trade-off: the token is readable by scripts on the origin (XSS-exposed), acceptable for a community
 /// tool; the only truly safe boundary remains a successful push.
 /// </summary>
-public sealed class LocalStorageAuthTokenStore : IAuthTokenStore
+public sealed class LocalStorageAuthTokenStore(IJSRuntime js) : IAuthTokenStore
 {
     private const string _KEY_PREFIX = "dloc:auth:";
 
-    private readonly IJSInProcessRuntime _Js;
-
-    public LocalStorageAuthTokenStore(IJSRuntime js) => _Js = (IJSInProcessRuntime)js;
+    private readonly IJSInProcessRuntime _Js = (IJSInProcessRuntime)js;
 
     private static string Key(Guid projectId, string location) => $"{_KEY_PREFIX}{projectId}:{location}";
 

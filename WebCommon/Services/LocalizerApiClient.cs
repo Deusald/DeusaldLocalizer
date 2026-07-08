@@ -1,4 +1,3 @@
-using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -13,16 +12,12 @@ namespace DeusaldLocalizerWeb;
 /// project's <see cref="LocProjectMetadata.ApiUrl"/>.
 /// </summary>
 [PublicAPI]
-public sealed class LocalizerApiClient
+public sealed class LocalizerApiClient(HttpClient http)
 {
-    private readonly HttpClient _Http;
-
     private static readonly JsonSerializerOptions _Json = new(JsonSerializerDefaults.Web)
     {
         Converters = { new JsonStringEnumConverter() },
     };
-
-    public LocalizerApiClient(HttpClient http) => _Http = http;
 
     public async Task<SyncResponse?> SyncAsync(
         string apiUrl, Guid projectId, Guid userId, string token, Guid syncId, CancellationToken ct = default)
@@ -30,7 +25,7 @@ public sealed class LocalizerApiClient
         using HttpRequestMessage request = Build(apiUrl, projectId, "sync", userId, token);
         request.Content = JsonContent.Create(new SyncRequest { SyncId = syncId }, options: _Json);
 
-        using HttpResponseMessage response = await _Http.SendAsync(request, ct);
+        using HttpResponseMessage response = await http.SendAsync(request, ct);
         response.EnsureSuccessStatusCode();
         return await response.Content.ReadFromJsonAsync<SyncResponse>(_Json, ct);
     }
@@ -42,7 +37,7 @@ public sealed class LocalizerApiClient
         using HttpRequestMessage request = Build(apiUrl, projectId, "push", userId, token);
         request.Content = JsonContent.Create(new PushRequest { SyncId = syncId, Changes = changes }, options: _Json);
 
-        using HttpResponseMessage response = await _Http.SendAsync(request, ct);
+        using HttpResponseMessage response = await http.SendAsync(request, ct);
         response.EnsureSuccessStatusCode();
         return await response.Content.ReadFromJsonAsync<PushResponse>(_Json, ct);
     }

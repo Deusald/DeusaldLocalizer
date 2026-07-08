@@ -1,6 +1,9 @@
+using JetBrains.Annotations;
+
 namespace DeusaldLocalizerBackend;
 
 /// <summary>Bound from the <c>Bot</c> section of configuration.</summary>
+[PublicAPI]
 public sealed class BotOptions
 {
     public const string SECTION_NAME = "Bot";
@@ -16,6 +19,7 @@ public sealed class BotOptions
 }
 
 /// <summary>One managed project: its identity plus where to clone it from and which branch to track.</summary>
+[PublicAPI]
 public sealed class ProjectConfig
 {
     public Guid   ProjectId { get; set; }

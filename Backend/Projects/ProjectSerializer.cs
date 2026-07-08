@@ -18,16 +18,13 @@ public sealed class ProjectSerializer
         return new Releaser(gate);
     }
 
-    private sealed class Releaser : IDisposable
+    private sealed class Releaser(SemaphoreSlim gate) : IDisposable
     {
-        private readonly SemaphoreSlim _Gate;
-        private          int           _Disposed;
-
-        public Releaser(SemaphoreSlim gate) => _Gate = gate;
+        private int _Disposed;
 
         public void Dispose()
         {
-            if (Interlocked.Exchange(ref _Disposed, 1) == 0) _Gate.Release();
+            if (Interlocked.Exchange(ref _Disposed, 1) == 0) gate.Release();
         }
     }
 }

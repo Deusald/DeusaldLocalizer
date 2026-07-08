@@ -9,22 +9,13 @@ namespace DeusaldLocalizerBackend;
 /// </summary>
 [ApiController]
 [Route("projects/{projectId:guid}")]
-public sealed class ProjectsController : ControllerBase
+public sealed class ProjectsController(SyncService sync, PushService push) : ControllerBase
 {
-    private readonly SyncService _Sync;
-    private readonly PushService _Push;
-
-    public ProjectsController(SyncService sync, PushService push)
-    {
-        _Sync = sync;
-        _Push = push;
-    }
-
     [HttpPost("sync")]
     public async Task<IActionResult> Sync(Guid projectId, [FromBody] SyncRequest request, CancellationToken ct)
     {
         if (!TryGetAuth(out Guid userId, out string token)) return Unauthorized();
-        ServiceResult<SyncResponse> result = await _Sync.SyncAsync(projectId, userId, token, request.SyncId, ct);
+        ServiceResult<SyncResponse> result = await sync.SyncAsync(projectId, userId, token, request.SyncId, ct);
         return Map(result);
     }
 
@@ -32,7 +23,7 @@ public sealed class ProjectsController : ControllerBase
     public async Task<IActionResult> Push(Guid projectId, [FromBody] PushRequest request, CancellationToken ct)
     {
         if (!TryGetAuth(out Guid userId, out string token)) return Unauthorized();
-        ServiceResult<PushResponse> result = await _Push.PushAsync(projectId, userId, token, request.Changes, ct);
+        ServiceResult<PushResponse> result = await push.PushAsync(projectId, userId, token, request.Changes, ct);
         return Map(result);
     }
 

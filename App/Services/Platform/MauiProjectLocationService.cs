@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using CommunityToolkit.Maui.Storage;
 using DeusaldLocalizerWeb;
 using JetBrains.Annotations;

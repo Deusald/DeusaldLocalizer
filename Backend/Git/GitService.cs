@@ -13,17 +13,10 @@ public sealed class GitResult
 }
 
 /// <summary>Thrown when a git command that is expected to succeed returns a non-zero exit code.</summary>
-public sealed class GitCommandException : Exception
+public sealed class GitCommandException(string command, int exitCode, string stdErr) : Exception($"git {command} failed (exit {exitCode}): {stdErr}")
 {
-    public int    ExitCode { get; }
-    public string StdErr   { get; }
-
-    public GitCommandException(string command, int exitCode, string stdErr)
-        : base($"git {command} failed (exit {exitCode}): {stdErr}")
-    {
-        ExitCode = exitCode;
-        StdErr   = stdErr;
-    }
+    public int    ExitCode { get; } = exitCode;
+    public string StdErr   { get; } = stdErr;
 }
 
 /// <summary>A single file change reported by <c>git diff --name-status</c>.</summary>
@@ -34,16 +27,12 @@ public readonly record struct GitFileChange(char Status, string Path);
 /// repository working directory. All calls for one repository must be serialized by the caller
 /// (see <see cref="ProjectSerializer"/>) — git is not safe to run concurrently on one work-tree.
 /// </summary>
-public sealed class GitService
+public sealed class GitService(ILogger<GitService> logger)
 {
-    private readonly ILogger<GitService> _Logger;
-
-    public GitService(ILogger<GitService> logger) => _Logger = logger;
-
     // ── Low-level runner ──────────────────────────────────────────────────────
 
     /// <summary>Runs git and returns the raw result without throwing on a non-zero exit.</summary>
-    public async Task<GitResult> RunAsync(string workingDir, IReadOnlyList<string> args, CancellationToken ct = default)
+    private async Task<GitResult> RunAsync(string workingDir, IReadOnlyList<string> args, CancellationToken ct = default)
     {
         ProcessStartInfo psi = new()
         {
@@ -59,7 +48,8 @@ public sealed class GitService
         // Never let git block on an interactive credential/host prompt.
         psi.Environment["GIT_TERMINAL_PROMPT"] = "0";
 
-        using Process process = new() { StartInfo = psi };
+        using Process process = new();
+        process.StartInfo = psi;
 
         StringBuilder stdOut = new();
         StringBuilder stdErr = new();
@@ -80,13 +70,13 @@ public sealed class GitService
         };
 
         if (!result.Success)
-            _Logger.LogDebug("git {Args} -> exit {Exit}: {StdErr}", string.Join(' ', args), result.ExitCode, result.StdErr);
+            logger.LogDebug("git {Args} -> exit {Exit}: {StdErr}", string.Join(' ', args), result.ExitCode, result.StdErr);
 
         return result;
     }
 
     /// <summary>Runs git and throws <see cref="GitCommandException"/> on a non-zero exit.</summary>
-    public async Task<string> RunOrThrowAsync(string workingDir, IReadOnlyList<string> args, CancellationToken ct = default)
+    private async Task<string> RunOrThrowAsync(string workingDir, IReadOnlyList<string> args, CancellationToken ct = default)
     {
         GitResult result = await RunAsync(workingDir, args, ct);
         if (!result.Success)
@@ -97,22 +87,22 @@ public sealed class GitService
     // ── High-level operations ─────────────────────────────────────────────────
 
     public Task CloneAsync(string remoteUrl, string targetDir, CancellationToken ct = default) =>
-        RunOrThrowAsync(Directory.GetCurrentDirectory(), new[] { "clone", remoteUrl, targetDir }, ct);
+        RunOrThrowAsync(Directory.GetCurrentDirectory(), ["clone", remoteUrl, targetDir], ct);
 
     public Task FetchAsync(string repoDir, CancellationToken ct = default) =>
-        RunOrThrowAsync(repoDir, new[] { "fetch", "--prune", "origin" }, ct);
+        RunOrThrowAsync(repoDir, ["fetch", "--prune", "origin"], ct);
 
     /// <summary>Resolves a revision to a commit SHA (throws if it cannot be resolved).</summary>
     public Task<string> RevParseAsync(string repoDir, string rev, CancellationToken ct = default) =>
-        RunOrThrowAsync(repoDir, new[] { "rev-parse", rev }, ct);
+        RunOrThrowAsync(repoDir, ["rev-parse", rev], ct);
 
     /// <summary>Hard-resets the work-tree to a revision, discarding all local changes.</summary>
     public Task ResetHardAsync(string repoDir, string rev, CancellationToken ct = default) =>
-        RunOrThrowAsync(repoDir, new[] { "reset", "--hard", rev }, ct);
+        RunOrThrowAsync(repoDir, ["reset", "--hard", rev], ct);
 
     /// <summary>Removes untracked files/dirs left behind after a reset.</summary>
     public Task CleanAsync(string repoDir, CancellationToken ct = default) =>
-        RunOrThrowAsync(repoDir, new[] { "clean", "-fd" }, ct);
+        RunOrThrowAsync(repoDir, ["clean", "-fd"], ct);
 
     /// <summary>
     /// Finds the newest commit whose message contains <paramref name="token"/>. Returns the SHA,
@@ -121,7 +111,7 @@ public sealed class GitService
     public async Task<string?> FindCommitByMessageAsync(string repoDir, string token, CancellationToken ct = default)
     {
         string sha = await RunOrThrowAsync(repoDir,
-            new[] { "log", "-1", "--fixed-strings", $"--grep={token}", "--format=%H" }, ct);
+                         ["log", "-1", "--fixed-strings", $"--grep={token}", "--format=%H"], ct);
         return string.IsNullOrWhiteSpace(sha) ? null : sha.Trim();
     }
 
@@ -130,9 +120,9 @@ public sealed class GitService
         string repoDir, string fromSha, string toSha, CancellationToken ct = default)
     {
         string output = await RunOrThrowAsync(repoDir,
-            new[] { "diff", "--name-status", "--no-renames", fromSha, toSha }, ct);
+                            ["diff", "--name-status", "--no-renames", fromSha, toSha], ct);
 
-        List<GitFileChange> changes = new();
+        List<GitFileChange> changes = [];
         foreach (string line in output.Split('\n', StringSplitOptions.RemoveEmptyEntries))
         {
             string trimmed = line.Trim();
@@ -146,7 +136,7 @@ public sealed class GitService
     }
 
     public Task StageAllAsync(string repoDir, CancellationToken ct = default) =>
-        RunOrThrowAsync(repoDir, new[] { "add", "-A" }, ct);
+        RunOrThrowAsync(repoDir, ["add", "-A"], ct);
 
     /// <summary>
     /// Commits the currently staged changes with the given author and committer identity.
@@ -159,13 +149,13 @@ public sealed class GitService
         CancellationToken ct = default)
     {
         string[] args =
-        {
+        [
             "-c", $"user.name={committerName}",
             "-c", $"user.email={committerEmail}",
             "commit",
             "--author", $"{authorName} <{authorEmail}>",
-            "-m", message,
-        };
+            "-m", message
+        ];
 
         GitResult result = await RunAsync(repoDir, args, ct);
         if (result.Success) return true;
@@ -180,5 +170,5 @@ public sealed class GitService
 
     /// <summary>Pushes the branch. Returns the raw result so the caller can detect a rejected push.</summary>
     public Task<GitResult> PushAsync(string repoDir, string branch, CancellationToken ct = default) =>
-        RunAsync(repoDir, new[] { "push", "origin", $"HEAD:{branch}" }, ct);
+        RunAsync(repoDir, ["push", "origin", $"HEAD:{branch}"], ct);
 }

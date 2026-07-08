@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.JSInterop;
 
 namespace DeusaldLocalizerWeb;
@@ -9,15 +6,12 @@ namespace DeusaldLocalizerWeb;
 /// Thin typed wrapper over <c>wwwroot/js/idb.js</c>: the IndexedDB key/value store that backs the web
 /// client's projects. Registered as a scoped service; the JS module is imported lazily on first use.
 /// </summary>
-public sealed class IndexedDbInterop : IAsyncDisposable
+public sealed class IndexedDbInterop(IJSRuntime js) : IAsyncDisposable
 {
-    private readonly IJSRuntime            _Js;
-    private          IJSObjectReference?   _Module;
-
-    public IndexedDbInterop(IJSRuntime js) => _Js = js;
+    private          IJSObjectReference? _Module;
 
     private async ValueTask<IJSObjectReference> ModuleAsync() =>
-        _Module ??= await _Js.InvokeAsync<IJSObjectReference>("import", "./js/idb.js");
+        _Module ??= await js.InvokeAsync<IJSObjectReference>("import", "./js/idb.js");
 
     public async Task<string?> GetAsync(string location, string path) =>
         await (await ModuleAsync()).InvokeAsync<string?>("get", location, path);

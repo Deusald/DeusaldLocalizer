@@ -6,44 +6,32 @@ namespace DeusaldLocalizerBackend;
 /// Implements the "pull" half of the protocol: given the client's <c>SyncId</c>, return the files
 /// that changed since the commit carrying that id, or that the client is already up to date.
 /// </summary>
-public sealed class SyncService
+public sealed class SyncService(
+    ProjectRegistry registry,
+    ProjectSerializer serializer,
+    RepoPreparer preparer,
+    GitService git,
+    AuthService auth)
 {
-    private readonly ProjectRegistry   _Registry;
-    private readonly ProjectSerializer _Serializer;
-    private readonly RepoPreparer      _Preparer;
-    private readonly GitService        _Git;
-    private readonly AuthService       _Auth;
-
-    public SyncService(
-        ProjectRegistry registry, ProjectSerializer serializer, RepoPreparer preparer,
-        GitService git, AuthService auth)
-    {
-        _Registry   = registry;
-        _Serializer = serializer;
-        _Preparer   = preparer;
-        _Git        = git;
-        _Auth       = auth;
-    }
-
     public async Task<ServiceResult<SyncResponse>> SyncAsync(
         Guid projectId, Guid userId, string token, Guid clientSyncId, CancellationToken ct)
     {
-        ProjectConfig? config = _Registry.Find(projectId);
+        ProjectConfig? config = registry.Find(projectId);
         if (config == null) return ServiceResult<SyncResponse>.NotFound();
 
-        using IDisposable _ = await _Serializer.AcquireAsync(projectId, ct);
+        using IDisposable _ = await serializer.AcquireAsync(projectId, ct);
 
-        string     repoPath = await _Preparer.ToLatestAsync(config, ct);
-        LocProject project  = await _Preparer.LoadAsync(repoPath);
+        string     repoPath = await preparer.ToLatestAsync(config, ct);
+        LocProject project  = await preparer.LoadAsync(repoPath);
 
-        LocProjectMember? member = _Auth.Authenticate(project, userId, token);
+        LocProjectMember? member = auth.Authenticate(project, userId, token);
         if (member == null) return ServiceResult<SyncResponse>.Unauthorized();
 
         Guid   currentSyncId = project.Metadata.SyncId;
-        string headSha       = await _Git.RevParseAsync(repoPath, "HEAD", ct);
+        string headSha       = await git.RevParseAsync(repoPath, "HEAD", ct);
 
         // Locate the commit the client last saw.
-        string? baseSha = await _Git.FindCommitByMessageAsync(repoPath, SyncTag.For(clientSyncId), ct);
+        string? baseSha = await git.FindCommitByMessageAsync(repoPath, SyncTag.For(clientSyncId), ct);
 
         if (baseSha == null && clientSyncId != currentSyncId)
             return ServiceResult<SyncResponse>.Ok(await BuildFullResyncAsync(repoPath, currentSyncId, ct));
@@ -62,7 +50,7 @@ public sealed class SyncService
             NewSyncId = currentSyncId,
         };
 
-        IReadOnlyList<GitFileChange> diff = await _Git.DiffNameStatusAsync(repoPath, baseSha!, headSha, ct);
+        IReadOnlyList<GitFileChange> diff = await git.DiffNameStatusAsync(repoPath, baseSha!, headSha, ct);
         foreach (GitFileChange change in diff)
         {
             if (change.Status == 'D')
