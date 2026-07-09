@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>DeusaldLocalizerWeb</RootNamespace>
     <AssemblyName>DeusaldLocalizerWeb</AssemblyName>
-    <Version>1.3.4</Version>
+    <Version>1.4.5</Version>
     <OverrideHtmlAssetPlaceholders>true</OverrideHtmlAssetPlaceholders>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
     <!-- Load the full ICU dataset so every culture (e.g. Chinese) is available in
