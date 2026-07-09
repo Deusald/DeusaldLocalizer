@@ -57,6 +57,15 @@
                     }
                 </button>
             </div>
+
+            <div class="home-version">
+                <span>v@(BuildInfo.Version)</span>
+                @if (!string.IsNullOrEmpty(BuildInfo.CommitHash))
+                {
+                    <span class="home-version-sep">·</span>
+                    <span class="home-version-hash">@BuildInfo.CommitHash</span>
+                }
+            </div>
         </div>
     </div>
 
@@ -82,6 +91,9 @@
                     ProjectSummary p       = _Projects[x];
                     string         initial = p.Name.Length > 0 ? p.Name[0].ToString().ToUpper() : "P";
                     string         swatch  = swatches[x % swatches.Length];
+                    string meta = p.KeyCount > 0
+                                      ? $"{p.KeyCount} keys · {p.LangCount} langs · {LastEditedLabel(p.UpdatedAt)}"
+                                      : LastEditedLabel(p.UpdatedAt);
 
                     <div class="home-recent-item-wrap">
                         <button class="home-recent-item" @onclick="() => OpenProject(p.Location)" disabled="@_IsBusy" title="@p.Name">
@@ -94,14 +106,32 @@
                                         <span class="home-recent-tag-remote">REMOTE</span>
                                     }
                                 </div>
-                                <div class="home-recent-sub">@p.KeyCount keys · @p.LangCount langs</div>
+                                <div class="home-recent-sub">@meta</div>
                             </div>
+                            @if (p.KeyCount > 0)
+                            {
+                                <div class="home-recent-progress">
+                                    <div class="home-recent-progress-top">
+                                        <span>@p.LangCount langs</span>
+                                        <span class="home-recent-progress-pct">@p.TranslationPct%</span>
+                                    </div>
+                                    <div class="home-recent-progress-bar">
+                                        <div class="home-recent-progress-fill" style="width: @p.TranslationPct%"></div>
+                                    </div>
+                                </div>
+                            }
                             <i class="bi bi-chevron-right home-recent-arrow"></i>
                         </button>
-                        <button class="home-recent-remove" @onclick="() => ExportProject(p)" disabled="@_IsBusy" title="Download a copy (.zip)">
+                        <button class="home-recent-remove home-recent-export"
+                                @onclick="() => ExportProject(p)"
+                                disabled="@_IsBusy"
+                                title="Download a copy (.zip)">
                             <i class="bi bi-download"></i>
                         </button>
-                        <button class="home-recent-remove" @onclick="() => DeleteProject(p)" disabled="@_IsBusy" title="Delete from this browser">
+                        <button class="home-recent-remove home-recent-delete"
+                                @onclick="() => AskDelete(p)"
+                                disabled="@_IsBusy"
+                                title="Delete from this browser">
                             <i class="bi bi-x"></i>
                         </button>
                     </div>
@@ -112,6 +142,31 @@
 
     <NewProjectModal OnConfirm="OnNewProjectConfirmed" @ref="_NewProjectModal"/>
 
+    @* ── Delete confirmation ──────────────────────────────────────────── *@
+    @if (_PendingDelete is not null)
+    {
+        <div class="home-confirm-backdrop" @onclick="CancelDelete"></div>
+        <div class="home-confirm-box" @onclick:stopPropagation="true">
+            <div class="home-confirm-header">
+                <span class="home-confirm-title">Delete project?</span>
+            </div>
+            <div class="home-confirm-body">
+                <strong>@_PendingDelete.Name</strong> will be removed from this browser.
+            </div>
+            <div class="home-confirm-warn">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <span>
+                    This project lives only in this browser — deleting it is permanent and
+                    cannot be undone. Download a copy (.zip) first if you want to keep it.
+                </span>
+            </div>
+            <div class="home-confirm-footer">
+                <button class="home-confirm-btn home-confirm-btn-ghost" @onclick="CancelDelete" disabled="@_IsBusy">Cancel</button>
+                <button class="home-confirm-btn home-confirm-btn-danger" @onclick="ConfirmDelete" disabled="@_IsBusy">Delete permanently</button>
+            </div>
+        </div>
+    }
+
 </div>
 
 @code {
@@ -119,8 +174,16 @@
     private string?              _ErrorMessage;
     private List<ProjectSummary> _Projects = new();
     private NewProjectModal?     _NewProjectModal;
+    private ProjectSummary?      _PendingDelete;
 
-    private sealed record ProjectSummary(string Location, string Name, int KeyCount, int LangCount, bool IsOnline);
+    private sealed record ProjectSummary(
+        string   Location,
+        string   Name,
+        int      KeyCount,
+        int      LangCount,
+        int      TranslationPct,
+        DateTime UpdatedAt,
+        bool     IsOnline);
 
     protected override async Task OnInitializedAsync()
     {
@@ -139,22 +202,54 @@
             foreach (string location in await _Idb.ListLocationsAsync())
             {
                 IProjectFileStore store = _StoreFactory.Create(location);
-                string? metaJson = await store.ReadTextAsync(ProjectFileService.METADATA_FILE_NAME);
-                if (metaJson is null) continue;
 
-                LocProjectMetadata? meta = JsonConvert.DeserializeObject<LocProjectMetadata>(metaJson);
-                if (meta is null) continue;
+                // Fully open each project so the card can show the same stats as the desktop app
+                // (translation %, last-edited). Skip anything that isn't a valid project folder.
+                LocProject project;
+                try
+                {
+                    project = await ProjectFileService.OpenAsync(store);
+                }
+                catch
+                {
+                    continue;
+                }
 
-                int keyCount = (await store.ListJsonFilesAsync(ProjectFileService.KEYS_FOLDER)).Count;
-                found.Add(new ProjectSummary(location, meta.Name, keyCount, meta.Languages.Count, meta.IsOnline));
+                int pct = 0;
+                if (project is { Metadata.Languages.Count: > 1, Keys.Count: > 0 })
+                {
+                    int totalSlots = project.Keys.Count * project.Metadata.Languages.Count;
+                    int translated = project.TotalNumberOfApprovedKeys();
+                    pct = totalSlots > 0 ? (int)Math.Round(translated * 100.0 / totalSlots) : 0;
+                }
+
+                found.Add(new ProjectSummary(
+                    location,
+                    project.Metadata.Name,
+                    project.Keys.Count,
+                    project.Metadata.Languages.Count,
+                    pct,
+                    project.Metadata.UpdatedAt,
+                    project.Metadata.IsOnline));
             }
 
-            _Projects = found.OrderBy(p => p.Name, StringComparer.OrdinalIgnoreCase).ToList();
+            _Projects = found.OrderByDescending(p => p.UpdatedAt).ToList();
         }
         catch (Exception ex)
         {
             _ErrorMessage = $"Could not read stored projects: {ex.Message}";
         }
+    }
+
+    /// <summary>Mirrors <c>RecentProjectEntry.LastEditedLabel</c> so web cards read like the desktop ones.</summary>
+    private static string LastEditedLabel(DateTime lastEdited)
+    {
+        TimeSpan diff = DateTime.Now - lastEdited;
+        if (diff.TotalMinutes < 2) return "just now";
+        if (diff.TotalHours < 1) return $"{(int)diff.TotalMinutes}m ago";
+        if (diff.TotalDays < 1) return $"{(int)diff.TotalHours}h ago";
+        if (diff.TotalDays < 7) return $"{(int)diff.TotalDays}d ago";
+        return lastEdited.ToString("MMM d");
     }
 
     private async Task OpenProject(string location)
@@ -228,16 +323,32 @@
         }
     }
 
-    private async Task DeleteProject(ProjectSummary p)
+    // ── Delete (with confirmation — removal from the browser is permanent) ──
+
+    private void AskDelete(ProjectSummary p) => _PendingDelete = p;
+
+    private void CancelDelete() => _PendingDelete = null;
+
+    private async Task ConfirmDelete()
     {
+        if (_PendingDelete is null) return;
+
+        _IsBusy = true;
+        StateHasChanged();
+
         try
         {
-            await _Idb.DeleteLocationAsync(p.Location);
+            await _Idb.DeleteLocationAsync(_PendingDelete.Location);
+            _PendingDelete = null;
             await RefreshAsync();
         }
         catch (Exception ex)
         {
             _ErrorMessage = $"Delete failed: {ex.Message}";
+        }
+        finally
+        {
+            _IsBusy = false;
         }
     }
 }

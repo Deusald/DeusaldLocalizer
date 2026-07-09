@@ -1,0 +1,469 @@
+/* ── Welcome page ────────────────────────────────────────────────────────── */
+
+.home-root {
+    display: flex;
+    height: 100vh;
+    background: #0e0f13;
+}
+
+/* ── Left panel ──────────────────────────────────────────────────────────── */
+
+.home-left {
+    width: 380px;
+    flex: none;
+    background: linear-gradient(160deg, #13141a, #0e0f13);
+    border-right: 1px solid #1f2027;
+    padding: 52px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ── Logo ────────────────────────────────────────────────────────────────── */
+
+.home-logo {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 52px;
+}
+
+.home-logo-orbs {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+}
+
+.home-orb {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+.home-orb-1 { left: 0;    top: 5px;  background: rgba(91,108,255,.85); }
+.home-orb-2 { left: 11px; top: 0;    background: rgba(120,160,255,.55); mix-blend-mode: screen; }
+.home-orb-3 { left: 6px;  top: 11px; background: rgba(160,120,255,.5);  mix-blend-mode: screen; }
+
+.home-logo-text-name {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    color: #e8e8ea;
+}
+
+.home-logo-text-sub {
+    font-size: 11px;
+    color: #6a6b73;
+    letter-spacing: .06em;
+    margin-top: 2px;
+}
+
+/* ── Headline ────────────────────────────────────────────────────────────── */
+
+.home-headline {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -.015em;
+    margin-bottom: 14px;
+    color: #e8e8ea;
+}
+
+.home-sub {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #8a8b93;
+}
+
+/* ── Action buttons ──────────────────────────────────────────────────────── */
+
+.home-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 13px 16px;
+    border-radius: 9px;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    transition: background .15s, border-color .15s;
+    border: 1px solid transparent;
+    line-height: 1;
+}
+
+.home-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.home-btn-primary {
+    background: #5b6cff;
+    border-color: #5b6cff;
+    color: #fff;
+}
+.home-btn-primary:hover:not(:disabled) { background: #6c7cff; border-color: #6c7cff; }
+
+.home-btn-secondary {
+    background: #191a21;
+    border-color: #2a2b33;
+    color: #d6d6db;
+}
+.home-btn-secondary:hover:not(:disabled) { background: #1e1f27; border-color: #34353f; }
+
+.home-btn-icon {
+    font-size: 15px;
+    line-height: 1;
+    color: #8a8b93;
+    flex-shrink: 0;
+    width: 16px;
+    text-align: center;
+}
+.home-btn-primary .home-btn-icon { color: rgba(255,255,255,.65); }
+
+/* ── Connect indicator dot ───────────────────────────────────────────────── */
+
+.home-btn-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #3ad98a;
+    box-shadow: 0 0 0 3px rgba(58,217,138,.18);
+    flex-shrink: 0;
+}
+
+/* ── Right panel ─────────────────────────────────────────────────────────── */
+
+.home-right {
+    flex: 1;
+    padding: 52px 44px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.home-recents-label {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .07em;
+    color: #7a7b83;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.home-clear-btn {
+    font-size: 12.5px;
+    font-weight: 400;
+    color: #5b6cff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity .15s;
+}
+.home-clear-btn:hover { opacity: 0.7; }
+
+/* ── Recent list ─────────────────────────────────────────────────────────── */
+
+.home-recent-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 4px;
+}
+
+.home-recent-item-wrap {
+    position: relative;
+    flex: none;
+}
+
+.home-recent-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: #15161c;
+    border: 1px solid #20212a;
+    border-radius: 11px;
+    cursor: pointer;
+    transition: border-color .15s, background .15s;
+    text-align: left;
+    width: 100%;
+    flex: none;
+}
+
+.home-recent-item:hover:not(:disabled) {
+    background: #181922;
+    border-color: #2f303a;
+}
+
+.home-recent-item:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Per-item action buttons (overlay the item, appear on hover) ──────────── */
+
+.home-recent-remove {
+    position: absolute;
+    top: 8px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    background: rgba(0,0,0,.4);
+    color: #9a9ba3;
+    font-size: 15px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .15s, background .15s, color .15s;
+}
+
+/* Two stacked actions: download (left of) delete. */
+.home-recent-delete { right: 8px; }
+.home-recent-export { right: 36px; }
+
+.home-recent-item-wrap:hover .home-recent-remove { opacity: 1; }
+.home-recent-export:hover { background: rgba(91,108,255,.18); color: #7d8bff; }
+.home-recent-delete:hover { background: rgba(255,107,107,.16); color: #ff6b6b; }
+.home-recent-remove:disabled { cursor: not-allowed; opacity: 0; }
+
+.home-recent-swatch {
+    width: 42px;
+    height: 42px;
+    flex: none;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.home-recent-meta {
+    flex: 1;
+    min-width: 0;
+}
+
+.home-recent-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.home-recent-name {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #e8e8ea;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.home-recent-tag-remote {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    color: #3ad98a;
+    background: rgba(58,217,138,.1);
+    padding: 2px 6px;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.home-recent-sub {
+    font-size: 12px;
+    color: #7a7b83;
+}
+
+/* ── Progress bar section ────────────────────────────────────────────────── */
+
+.home-recent-progress {
+    width: 130px;
+    flex: none;
+}
+
+.home-recent-progress-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #8a8b93;
+    margin-bottom: 6px;
+}
+
+.home-recent-progress-pct {
+    color: #c8c8cf;
+    font-weight: 500;
+}
+
+.home-recent-progress-bar {
+    height: 4px;
+    background: #23242b;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.home-recent-progress-fill {
+    height: 100%;
+    background: #5b6cff;
+    border-radius: 3px;
+    transition: width .3s;
+}
+
+.home-recent-arrow {
+    font-size: 11px;
+    color: #3a3b44;
+    flex-shrink: 0;
+    margin-left: 4px;
+}
+
+/* ── Empty state ─────────────────────────────────────────────────────────── */
+
+.home-empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+}
+
+.home-empty-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a4b54;
+}
+
+.home-empty-sub {
+    font-size: 12.5px;
+    color: #33343d;
+    line-height: 1.55;
+}
+
+/* ── Error ───────────────────────────────────────────────────────────────── */
+
+.home-error { margin-bottom: 1rem; }
+
+/* ── Version footer ──────────────────────────────────────────────────────── */
+
+.home-version {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 20px;
+    font-size: 11.5px;
+    color: #4a4b54;
+    letter-spacing: .02em;
+}
+
+.home-version-sep { color: #33343d; }
+
+.home-version-hash {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    color: #6a6b73;
+}
+
+/* ── Delete confirmation dialog ──────────────────────────────────────────── */
+
+.home-confirm-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    z-index: 40;
+}
+
+.home-confirm-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    max-width: calc(100vw - 32px);
+    background: #15161c;
+    border: 1px solid #262731;
+    border-radius: 14px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.5);
+    z-index: 41;
+    overflow: hidden;
+}
+
+.home-confirm-header {
+    padding: 18px 20px 0;
+}
+
+.home-confirm-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #e8e8ea;
+}
+
+.home-confirm-body {
+    padding: 10px 20px 4px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #b6b7bf;
+}
+
+.home-confirm-body strong { color: #e8e8ea; font-weight: 600; }
+
+.home-confirm-warn {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin: 14px 20px 0;
+    padding: 11px 13px;
+    background: rgba(255,107,107,.08);
+    border: 1px solid rgba(255,107,107,.28);
+    border-radius: 9px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #f0b4b4;
+}
+
+.home-confirm-warn i {
+    font-size: 15px;
+    color: #ff6b6b;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.home-confirm-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    padding: 18px 20px 20px;
+}
+
+.home-confirm-btn {
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background .15s, border-color .15s;
+}
+
+.home-confirm-btn-ghost {
+    background: #191a21;
+    border-color: #2a2b33;
+    color: #d6d6db;
+}
+.home-confirm-btn-ghost:hover { background: #1e1f27; border-color: #34353f; }
+
+.home-confirm-btn-danger {
+    background: #ff6b6b;
+    border-color: #ff6b6b;
+    color: #fff;
+}
+.home-confirm-btn-danger:hover { background: #ff7d7d; border-color: #ff7d7d; }
