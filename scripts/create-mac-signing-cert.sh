@@ -54,13 +54,13 @@ openssl req -x509 -newkey rsa:2048 -nodes \
     -keyout "$tmp/key.pem" -out "$tmp/cert.pem" \
     -days 3650 -config "$tmp/openssl.cnf" >/dev/null 2>&1
 
-openssl pkcs12 -export -out "$tmp/cert.p12" \
-    -inkey "$tmp/key.pem" -in "$tmp/cert.pem" \
-    -name "$identityName" -passout pass: >/dev/null 2>&1
-
-# Import cert + private key, pre-authorizing codesign to use the key without a UI prompt.
-security import "$tmp/cert.p12" -k "$keychain" -P "" \
-    -T /usr/bin/codesign -T /usr/bin/security >/dev/null
+# Import the private key and certificate directly as PEM, pre-authorizing codesign to use the key without
+# a UI prompt. This deliberately avoids PKCS#12: OpenSSL 3.x writes a MAC that macOS `security import`
+# rejects ("MAC verification failed") and the format flags to work around it are unreliable across
+# OpenSSL/LibreSSL. Two PEM imports into the same keychain still form a code-signing identity — macOS pairs
+# the key and cert by public key. Order matters: import the key first so the cert links to it.
+security import "$tmp/key.pem"  -k "$keychain" -T /usr/bin/codesign -T /usr/bin/security >/dev/null
+security import "$tmp/cert.pem" -k "$keychain" -T /usr/bin/codesign -T /usr/bin/security >/dev/null
 
 # Let codesign read the private key non-interactively (partition list).
 security set-key-partition-list -S apple-tool:,apple: -k "" "$keychain" >/dev/null 2>&1 || true
