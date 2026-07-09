@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using DeusaldLocalizerBackend;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -61,5 +62,21 @@ app.UseCors();
 
 app.MapControllers();
 app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
+
+// ── Startup log ─────────────────────────────────────────────────────────────────
+// List the configured projects at boot (never the RemoteUrl — it carries the PAT credential).
+{
+    ILogger logger  = app.Services.GetRequiredService<ILoggerFactory>().CreateLogger("Startup");
+    BotOptions bot  = app.Services.GetRequiredService<IOptions<BotOptions>>().Value;
+
+    if (bot.Projects.Count == 0)
+        logger.LogWarning("No projects configured under the 'Bot' section; the bot has nothing to serve.");
+    else
+    {
+        logger.LogInformation("Configured {Count} project(s), repos root '{ReposRoot}':", bot.Projects.Count, bot.ReposRoot);
+        foreach (ProjectConfig p in bot.Projects)
+            logger.LogInformation("  • '{Slug}' ({ProjectId}) tracking branch '{Branch}'", p.Slug, p.ProjectId, p.Branch);
+    }
+}
 
 app.Run();
