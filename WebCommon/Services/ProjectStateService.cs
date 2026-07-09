@@ -1,4 +1,5 @@
-﻿using DeusaldLocalizerCommon;
+﻿using System.Net;
+using DeusaldLocalizerCommon;
 using JetBrains.Annotations;
 
 namespace DeusaldLocalizerWeb;
@@ -419,6 +420,85 @@ public class ProjectStateService(
         await SyncAsync();
 
         return new InitialTokenResult { RawToken = newToken };
+    }
+
+    // ── Connect to server (first-time full download) ──────────────────────────
+
+    /// <summary>
+    /// Downloads a whole online project from the bot into a brand-new location and prepares it for
+    /// sign-in, without touching the current session. Authenticates the initial full download by
+    /// <paramref name="username"/> + <paramref name="token"/> (a fresh member does not yet know their
+    /// <c>UserId</c>), writes every file to the store produced by <paramref name="resolveLocation"/>
+    /// (given the downloaded metadata, so the caller can name the folder after the slug), stamps the
+    /// local <see cref="LocProjectMetadata.ApiUrl"/> so the project reads as online, and returns the
+    /// hydrated project + matched member. The caller then drives the usual first-sign-in token
+    /// rotation and <c>FinalizeLoad</c>, exactly like the local open flow.
+    /// </summary>
+    public async Task<ConnectResult> ConnectToServerAsync(
+        string apiUrl, Guid projectId, string username, string token,
+        Func<LocProjectMetadata, string> resolveLocation)
+    {
+        string normalizedApiUrl = apiUrl.Trim().TrimEnd('/');
+
+        SyncResponse? resp;
+        try
+        {
+            resp = await api.BootstrapAsync(normalizedApiUrl, projectId, username, token);
+        }
+        catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.Unauthorized)
+        {
+            return new ConnectResult { Error = "Username or access token is incorrect." };
+        }
+        catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
+        {
+            return new ConnectResult { Error = "No project with that ID exists on this server." };
+        }
+        catch (Exception ex)
+        {
+            return new ConnectResult { Error = FriendlyError(ex) };
+        }
+
+        if (resp is null || resp.ChangedFiles.Count == 0)
+            return new ConnectResult { Error = "The server did not return any project files." };
+
+        // Read the project slug from the downloaded metadata so the caller can name the folder after it.
+        SyncFile? metaFile = resp.ChangedFiles.Find(f => f.Path == ProjectFileService.METADATA_FILE_NAME);
+        LocProjectMetadata? metadata = metaFile is null
+            ? null
+            : Newtonsoft.Json.JsonConvert.DeserializeObject<LocProjectMetadata>(metaFile.Content);
+        if (metadata is null || string.IsNullOrWhiteSpace(metadata.Slug))
+            return new ConnectResult { Error = "The server returned an invalid project." };
+
+        string            location = resolveLocation(metadata);
+        IProjectFileStore store    = storeFactory.Create(location);
+
+        if (await store.FileExistsAsync(ProjectFileService.METADATA_FILE_NAME))
+            return new ConnectResult { Error = "A project already exists at that location." };
+
+        LocProject project;
+        try
+        {
+            await ApplyServerFilesAsync(store, resp);
+            project = await ProjectFileService.OpenAsync(store);
+        }
+        catch (ProjectFolderException)
+        {
+            return new ConnectResult { Error = "The server returned an invalid project." };
+        }
+        catch (Exception ex)
+        {
+            return new ConnectResult { Error = FriendlyError(ex) };
+        }
+
+        // A project is "online" purely by having an ApiUrl. The server repo may carry a different (or
+        // empty) one, so stamp the URL the user connected with and persist it without minting a new SyncId.
+        project.Metadata.ApiUrl = normalizedApiUrl;
+        await ProjectFileService.SaveMetadataOnlyAsync(project, store);
+
+        LocProjectMember? member = project.ProjectMembers.Find(m =>
+            string.Equals(m.Username, username, StringComparison.OrdinalIgnoreCase));
+
+        return new ConnectResult { Project = project, Location = location, Member = member };
     }
 
     private static LocEntryChange HashRotationChange(Guid userId, string rawToken) => new()

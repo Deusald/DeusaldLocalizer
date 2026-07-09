@@ -30,6 +30,25 @@ public sealed class LocalizerApiClient(HttpClient http)
         return await response.Content.ReadFromJsonAsync<SyncResponse>(_Json, ct);
     }
 
+    /// <summary>
+    /// First-time full download of a whole repo, authenticated by <paramref name="username"/> + token
+    /// (a fresh member does not yet know their <c>UserId</c>). Returns a <see cref="SyncStatus.FullResync"/>
+    /// <see cref="SyncResponse"/> carrying every project file. Non-2xx (bad creds / unknown project)
+    /// surfaces as an <see cref="HttpRequestException"/> for the caller to map.
+    /// </summary>
+    public async Task<SyncResponse?> BootstrapAsync(
+        string apiUrl, Guid projectId, string username, string token, CancellationToken ct = default)
+    {
+        string baseUrl = apiUrl.TrimEnd('/');
+        using HttpRequestMessage request = new(HttpMethod.Post, $"{baseUrl}/projects/{projectId}/bootstrap");
+        request.Headers.TryAddWithoutValidation("Authorization", $"Bearer {token}");
+        request.Content = JsonContent.Create(new BootstrapRequest { Username = username }, options: _Json);
+
+        using HttpResponseMessage response = await http.SendAsync(request, ct);
+        response.EnsureSuccessStatusCode();
+        return await response.Content.ReadFromJsonAsync<SyncResponse>(_Json, ct);
+    }
+
     public async Task<PushResponse?> PushAsync(
         string apiUrl, Guid projectId, Guid userId, string token, Guid syncId,
         List<LocEntryChange> changes, CancellationToken ct = default)

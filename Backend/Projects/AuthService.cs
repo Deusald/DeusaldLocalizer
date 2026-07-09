@@ -21,4 +21,20 @@ public sealed class AuthService
 
         return AccessTokenService.VerifyToken(rawToken, member.HashedAccessToken) ? member : null;
     }
+
+    /// <summary>
+    /// Authenticates by username instead of <c>UserId</c>. Used for the first-time full download,
+    /// where the connecting user only holds a username + one-time token and does not yet know their
+    /// <c>UserId</c>. Returns null when the user is unknown, banned, or the token does not verify.
+    /// </summary>
+    public LocProjectMember? AuthenticateByUsername(LocProject project, string username, string rawToken)
+    {
+        if (string.IsNullOrWhiteSpace(username) || string.IsNullOrEmpty(rawToken)) return null;
+
+        LocProjectMember? member = project.ProjectMembers.Find(m =>
+            string.Equals(m.Username, username, StringComparison.OrdinalIgnoreCase));
+        if (member == null || member.IsBanned) return null;
+
+        return AccessTokenService.VerifyToken(rawToken, member.HashedAccessToken) ? member : null;
+    }
 }

@@ -33,6 +33,18 @@ namespace DeusaldLocalizerCommon
         public List<string>   DeletedFiles { get; set; } = new();
     }
 
+    // ── Bootstrap (first-time full download) ─────────────────────────────────────
+
+    public class BootstrapRequest
+    {
+        /// <summary>
+        /// The connecting member's username. A first-time user only holds a username + one-time
+        /// token (not their <c>UserId</c>), so the initial full download authenticates by username
+        /// and answers with a <see cref="SyncStatus.FullResync"/> <see cref="SyncResponse"/>.
+        /// </summary>
+        public string Username { get; set; } = string.Empty;
+    }
+
     // ── Push ───────────────────────────────────────────────────────────────────
 
     public class PushRequest

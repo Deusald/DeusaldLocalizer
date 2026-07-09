@@ -1,0 +1,188 @@
+@namespace DeusaldLocalizerWeb.Components.Common
+@inject IProjectLocationService _LocationPicker
+
+@if (_Visible)
+{
+    <div class="csm-backdrop" @onclick="Cancel"></div>
+
+    <div class="csm-box" @onclick:stopPropagation="true">
+
+        <div class="csm-header">
+            <div>
+                <div class="csm-title">Connect to server</div>
+                <div class="csm-subtitle">Download an online project from the bot</div>
+            </div>
+            <button class="csm-close" @onclick="Cancel" title="Close" disabled="@_Busy">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+
+        <div class="csm-body">
+
+            @* ── Server URL ────────────────────────────────────────────── *@
+            <div class="csm-field">
+                <label class="csm-label">Server URL</label>
+                <input class="csm-input csm-input-mono" type="text"
+                       placeholder="https://bot.example.com"
+                       @bind="_ApiUrl" @bind:event="oninput" disabled="@_Busy" />
+            </div>
+
+            @* ── Project ID ────────────────────────────────────────────── *@
+            <div class="csm-field">
+                <label class="csm-label">
+                    Project ID
+                    <span class="csm-label-hint">the project's unique id</span>
+                </label>
+                <input class="csm-input csm-input-mono" type="text"
+                       placeholder="00000000-0000-0000-0000-000000000000"
+                       @bind="_ProjectId" @bind:event="oninput" disabled="@_Busy" />
+                @if (!string.IsNullOrEmpty(_ProjectId) && !Guid.TryParse(_ProjectId, out _))
+                {
+                    <div class="csm-field-error">Not a valid project id</div>
+                }
+            </div>
+
+            @* ── Username ──────────────────────────────────────────────── *@
+            <div class="csm-field">
+                <label class="csm-label">Username</label>
+                <input class="csm-input" type="text" placeholder="jane.doe"
+                       @bind="_Username" @bind:event="oninput" disabled="@_Busy" />
+            </div>
+
+            @* ── Access token ──────────────────────────────────────────── *@
+            <div class="csm-field">
+                <label class="csm-label">Access token</label>
+                <input class="csm-input" type="password" placeholder="Paste your access token…"
+                       @bind="_Token" @bind:event="oninput" disabled="@_Busy" />
+            </div>
+
+            @* ── Storage location ──────────────────────────────────────── *@
+            <div class="csm-field">
+                <label class="csm-label">
+                    Store in
+                    <span class="csm-label-hint">a folder named after the project is created here</span>
+                </label>
+                <div class="csm-location">
+                    <span class="csm-location-path @(string.IsNullOrEmpty(_Location) ? "csm-location-empty" : "")">
+                        @(string.IsNullOrEmpty(_Location) ? "No folder selected" : _Location)
+                    </span>
+                    <button class="csm-btn csm-btn-ghost csm-btn-sm" @onclick="Browse" disabled="@_Busy">
+                        <i class="bi bi-folder2-open"></i> Browse…
+                    </button>
+                </div>
+            </div>
+
+            @if (_Error != null)
+            {
+                <div class="csm-error">
+                    <i class="bi bi-exclamation-triangle"></i> @_Error
+                </div>
+            }
+
+        </div>
+
+        <div class="csm-footer">
+            <button class="csm-btn csm-btn-ghost" @onclick="Cancel" disabled="@_Busy">Cancel</button>
+            <button class="csm-btn csm-btn-primary" @onclick="Confirm" disabled="@(!_CanConfirm || _Busy)">
+                @if (_Busy)
+                {
+                    <span class="dl-spinner" style="width:14px;height:14px;flex-shrink:0;"></span>
+                    <span>Connecting…</span>
+                }
+                else
+                {
+                    <span>Connect</span>
+                }
+            </button>
+        </div>
+
+    </div>
+}
+
+@code {
+    [Parameter] public EventCallback<ConnectArgs> OnConfirm { get; set; }
+    [Parameter] public EventCallback              OnCancel  { get; set; }
+
+    // ── State ──────────────────────────────────────────────────────────────
+
+    private bool    _Visible;
+    private bool    _Busy;
+    private string  _ApiUrl    = "";
+    private string  _ProjectId = "";
+    private string  _Username  = "";
+    private string  _Token     = "";
+    private string  _Location  = "";
+    private string? _Error;
+
+    // ── Public API ─────────────────────────────────────────────────────────
+
+    public void Show()
+    {
+        _ApiUrl    = "";
+        _ProjectId = "";
+        _Username  = "";
+        _Token     = "";
+        _Location  = "";
+        _Error     = null;
+        _Busy      = false;
+        _Visible   = true;
+        StateHasChanged();
+    }
+
+    /// <summary>Surfaces a connect failure inline and re-enables the form for another attempt.</summary>
+    public void ShowError(string error)
+    {
+        _Error = error;
+        _Busy  = false;
+        StateHasChanged();
+    }
+
+    // ── Validation ─────────────────────────────────────────────────────────
+
+    private bool _CanConfirm =>
+        !string.IsNullOrWhiteSpace(_ApiUrl)   &&
+        Guid.TryParse(_ProjectId, out _)      &&
+        !string.IsNullOrWhiteSpace(_Username) &&
+        !string.IsNullOrWhiteSpace(_Token)    &&
+        !string.IsNullOrEmpty(_Location);
+
+    // ── Handlers ───────────────────────────────────────────────────────────
+
+    private async Task Browse()
+    {
+        string? picked = await _LocationPicker.PickSaveLocationAsync();
+        if (!string.IsNullOrEmpty(picked)) _Location = picked!;
+    }
+
+    private async Task Confirm()
+    {
+        if (!_CanConfirm || _Busy) return;
+        _Error = null;
+        _Busy  = true;
+        StateHasChanged();
+        await OnConfirm.InvokeAsync(new ConnectArgs(
+            _ApiUrl.Trim(), Guid.Parse(_ProjectId), _Username.Trim(), _Token.Trim(), _Location));
+    }
+
+    private async Task Cancel()
+    {
+        if (_Busy) return;
+        _Visible = false;
+        await OnCancel.InvokeAsync();
+    }
+
+    /// <summary>Hides the modal (parent calls this once the connect succeeds).</summary>
+    public void Hide()
+    {
+        _Visible = false;
+        StateHasChanged();
+    }
+
+    /// <summary>Result passed back to the parent when the user confirms.</summary>
+    public record ConnectArgs(
+        string ApiUrl,
+        Guid   ProjectId,
+        string Username,
+        string Token,
+        string ParentLocation);
+}

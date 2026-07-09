@@ -90,6 +90,12 @@
                         <span>Open project…</span>
                     }
                 </button>
+
+                <button class="home-btn home-btn-secondary"
+                        @onclick="OpenConnectModal" disabled="@_IsLoading">
+                    <span class="home-btn-dot"></span>
+                    <span>Connect to server…</span>
+                </button>
             </div>
 
             <div class="home-version">
@@ -178,6 +184,10 @@
 
     <NewProjectModal OnConfirm="OnNewProjectConfirmed" @ref="_NewProjectModal"/>
 
+    <ConnectServerModal @ref="_ConnectModal"
+                        OnConfirm="OnConnectConfirmed"
+                        OnCancel="OnConnectCancelled"/>
+
     @if (_ShowLoginModal)
     {
         <LoginModal @ref="_LoginModal"
@@ -202,9 +212,10 @@
     private Guid        _PendingUserId;
     private bool        _ShowLoginModal;
 
-    private NewProjectModal?  _NewProjectModal;
-    private LoginModal?       _LoginModal;
-    private AccessTokenModal? _AccessTokenModal;
+    private NewProjectModal?    _NewProjectModal;
+    private ConnectServerModal? _ConnectModal;
+    private LoginModal?         _LoginModal;
+    private AccessTokenModal?   _AccessTokenModal;
 
     private UpdateInfo? _UpdateInfo;
     private bool        _IsUpdating;
@@ -453,6 +464,72 @@
     {
         _ProjectState.CreateNewProject(args.Name, args.Slug, args.Description, args.MainLanguageCode);
         _Nav.NavigateTo("/translate");
+    }
+
+    // ── Connect to server ─────────────────────────────────────────────────
+
+    private void OpenConnectModal() => _ConnectModal?.Show();
+
+    private void OnConnectCancelled() { /* modal hides itself */ }
+
+    /// <summary>
+    /// Downloads a whole online project from the bot into a new folder named after the project slug,
+    /// then finalizes exactly like opening a local online project. A member still carrying the admin's
+    /// one-time token (first sign-in) rotates it to their own; a returning member — redownloading or
+    /// setting up on another PC — keeps their existing token and loads straight in, no reset.
+    /// </summary>
+    private async Task OnConnectConfirmed(ConnectServerModal.ConnectArgs args)
+    {
+        ConnectResult result = await _ProjectState.ConnectToServerAsync(
+            args.ApiUrl, args.ProjectId, args.Username, args.Token,
+            meta => Path.Combine(args.ParentLocation, SanitizeFolder(meta.Slug)));
+
+        if (result.Error != null || result.Project is null || result.Location is null || result.Member is null)
+        {
+            _ConnectModal?.ShowError(result.Error ?? "Could not connect to the project. Please try again.");
+            return;
+        }
+
+        LocProjectMember member = result.Member;
+
+        // First connect: the member still carries the admin-issued one-time token. Rotate it to a fresh
+        // random token straight away (authenticated with the token the user just entered — the only one
+        // the server knows), then show it once for them to store. Mirrors OnLoginConfirmed.
+        if (member.MustResetAccessToken)
+        {
+            InitialTokenResult rotation = await _ProjectState.RotateInitialTokenAsync(
+                result.Project, result.Location, member, args.Token);
+
+            if (rotation.RawToken == null)
+            {
+                _ConnectModal?.ShowError(rotation.Error ?? "Could not complete sign-in. Please try again.");
+                return;
+            }
+
+            _PendingProject = rotation.Project!;
+            _PendingPath    = result.Location;
+            _PendingUserId  = member.UserId;
+            _ConnectModal?.Hide();
+            StateHasChanged();
+
+            _AccessTokenModal?.Show(rotation.RawToken, "Your access token",
+                "This is your new sign-in token. Copy it now and keep it safe — you'll use it to sign in from now on.");
+            return; // FinalizeLoad runs once the user closes the token modal
+        }
+
+        // Returning member — cache the raw token for next time and load straight in.
+        await _AuthTokens.SaveAsync(result.Project.Metadata.Id, result.Location, member.UserId, args.Token);
+        _ConnectModal?.Hide();
+        FinalizeLoad(result.Project, result.Location, member.UserId, Guid.NewGuid());
+    }
+
+    /// <summary>Strips characters that are illegal in a folder name; the slug is normally already safe.</summary>
+    private static string SanitizeFolder(string slug)
+    {
+        foreach (char c in Path.GetInvalidFileNameChars())
+            slug = slug.Replace(c.ToString(), string.Empty);
+        slug = slug.Trim();
+        return slug.Length == 0 ? "project" : slug;
     }
 
     // ── Recents ───────────────────────────────────────────────────────────

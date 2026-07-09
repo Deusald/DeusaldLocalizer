@@ -72,6 +72,28 @@ public sealed class SyncService(
             : ServiceResult<SyncResponse>.Ok(response);
     }
 
+    /// <summary>
+    /// First-time full download: authenticate the caller by username (a fresh member only holds a
+    /// username + one-time token, not their <c>UserId</c>) and return every project file as a
+    /// <see cref="SyncStatus.FullResync"/>. This is the entry point for a client "connect to server".
+    /// </summary>
+    public async Task<ServiceResult<SyncResponse>> BootstrapAsync(
+        Guid projectId, string username, string token, CancellationToken ct)
+    {
+        ProjectConfig? config = registry.Find(projectId);
+        if (config == null) return ServiceResult<SyncResponse>.NotFound();
+
+        using IDisposable _ = await serializer.AcquireAsync(projectId, ct);
+
+        string     repoPath = await preparer.ToLatestAsync(config, ct);
+        LocProject project  = await preparer.LoadAsync(repoPath);
+
+        LocProjectMember? member = auth.AuthenticateByUsername(project, username, token);
+        if (member == null) return ServiceResult<SyncResponse>.Unauthorized();
+
+        return ServiceResult<SyncResponse>.Ok(await BuildFullResyncAsync(repoPath, project.Metadata.SyncId, ct));
+    }
+
     private static async Task<SyncResponse> BuildFullResyncAsync(string repoPath, Guid currentSyncId, CancellationToken ct)
     {
         SyncResponse response = new()

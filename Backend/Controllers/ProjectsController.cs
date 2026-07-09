@@ -27,18 +27,34 @@ public sealed class ProjectsController(SyncService sync, PushService push) : Con
         return Map(result);
     }
 
+    [HttpPost("bootstrap")]
+    public async Task<IActionResult> Bootstrap(Guid projectId, [FromBody] BootstrapRequest request, CancellationToken ct)
+    {
+        // First-time full download: the caller has no UserId yet, so auth is by username + token.
+        if (!TryGetToken(out string token)) return Unauthorized();
+        ServiceResult<SyncResponse> result = await sync.BootstrapAsync(projectId, request.Username, token, ct);
+        return Map(result);
+    }
+
     private bool TryGetAuth(out Guid userId, out string token)
     {
         userId = Guid.Empty;
-        token  = string.Empty;
+        if (!TryGetToken(out token)) return false;
+
+        string? uid = Request.Headers["X-User-Id"].FirstOrDefault();
+        return Guid.TryParse(uid, out userId);
+    }
+
+    private bool TryGetToken(out string token)
+    {
+        token = string.Empty;
 
         string? auth = Request.Headers.Authorization.FirstOrDefault();
         if (string.IsNullOrEmpty(auth) || !auth.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
             return false;
 
         token = auth["Bearer ".Length..].Trim();
-        string? uid = Request.Headers["X-User-Id"].FirstOrDefault();
-        return Guid.TryParse(uid, out userId) && token.Length > 0;
+        return token.Length > 0;
     }
 
     private IActionResult Map<T>(ServiceResult<T> result) where T : class => result.Outcome switch
