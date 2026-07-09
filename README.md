@@ -10,6 +10,10 @@ folder of JSON files in a Git repository.**
   <img src="docs/screenshots/editor.png" alt="Translation editor" width="800">
 </p>
 
+> **Try it in your browser:** a web version runs at
+> **<https://deusald.github.io/DeusaldLocalizer/>** — no install required. The same editor also
+> ships as a desktop app (see [Getting started](#getting-started-desktop-app)).
+
 ---
 
 ## Table of contents
