@@ -4,6 +4,7 @@
 @inject IProjectStoreFactory  _StoreFactory
 @inject IndexedDbInterop      _Idb
 @inject WebProjectArchive     _Archive
+@inject IAuthTokenStore       _AuthTokens
 @inject NavigationManager     _Nav
 
 <PageTitle>Deusald Localizer</PageTitle>
@@ -55,6 +56,11 @@
                         <span class="home-btn-icon"><i class="bi bi-file-earmark-zip"></i></span>
                         <span>Import .zip…</span>
                     }
+                </button>
+
+                <button class="home-btn home-btn-secondary" @onclick="OpenConnectModal" disabled="@_IsBusy">
+                    <span class="home-btn-dot"></span>
+                    <span>Connect to server…</span>
                 </button>
             </div>
 
@@ -142,6 +148,13 @@
 
     <NewProjectModal OnConfirm="OnNewProjectConfirmed" @ref="_NewProjectModal"/>
 
+    <ConnectServerModal @ref="_ConnectModal"
+                        AutoLocation="true"
+                        OnConfirm="OnConnectConfirmed"
+                        OnCancel="OnConnectCancelled"/>
+
+    <AccessTokenModal @ref="_AccessTokenModal" OnClose="OnAccessTokenAcknowledged"/>
+
     @* ── Delete confirmation ──────────────────────────────────────────── *@
     @if (_PendingDelete is not null)
     {
@@ -174,7 +187,14 @@
     private string?              _ErrorMessage;
     private List<ProjectSummary> _Projects = new();
     private NewProjectModal?     _NewProjectModal;
+    private ConnectServerModal?  _ConnectModal;
+    private AccessTokenModal?    _AccessTokenModal;
     private ProjectSummary?      _PendingDelete;
+
+    // Carries the connected project across the token-modal step, when a first sign-in must rotate its token.
+    private LocProject? _PendingProject;
+    private string?     _PendingLocation;
+    private Guid        _PendingUserId;
 
     private sealed record ProjectSummary(
         string   Location,
@@ -283,6 +303,76 @@
     private void OnNewProjectConfirmed(NewProjectModal.NewProjectArgs args)
     {
         _ProjectState.CreateNewProject(args.Name, args.Slug, args.Description, args.MainLanguageCode);
+        _Nav.NavigateTo("translate");
+    }
+
+    // ── Connect to server ─────────────────────────────────────────────────
+
+    private void OpenConnectModal() => _ConnectModal?.Show();
+
+    private void OnConnectCancelled() { /* modal hides itself */ }
+
+    /// <summary>
+    /// Downloads a whole online project from the bot into a freshly minted IndexedDB namespace, then loads
+    /// it exactly like opening a local online project. A member still carrying the admin's one-time token
+    /// (first sign-in) rotates it to their own and is shown the new token once; a returning member — setting
+    /// up on another browser — keeps their existing token and loads straight in. Mirrors the desktop flow,
+    /// except the download target is the opaque location the web location service minted (no folder nesting).
+    /// </summary>
+    private async Task OnConnectConfirmed(ConnectServerModal.ConnectArgs args)
+    {
+        ConnectResult result = await _ProjectState.ConnectToServerAsync(
+            args.ApiUrl, args.ProjectId, args.Username, args.Token, _ => args.ParentLocation);
+
+        if (result.Error != null || result.Project is null || result.Location is null || result.Member is null)
+        {
+            _ConnectModal?.ShowError(result.Error ?? "Could not connect to the project. Please try again.");
+            return;
+        }
+
+        LocProjectMember member = result.Member;
+
+        // First connect: the member still carries the admin-issued one-time token. Rotate it to a fresh
+        // random token straight away (authenticated with the token the user just entered — the only one
+        // the server knows), then show it once for them to store.
+        if (member.MustResetAccessToken)
+        {
+            InitialTokenResult rotation = await _ProjectState.RotateInitialTokenAsync(
+                result.Project, result.Location, member, args.Token);
+
+            if (rotation.RawToken == null)
+            {
+                _ConnectModal?.ShowError(rotation.Error ?? "Could not complete sign-in. Please try again.");
+                return;
+            }
+
+            _PendingProject  = rotation.Project!;
+            _PendingLocation = result.Location;
+            _PendingUserId   = member.UserId;
+            _ConnectModal?.Hide();
+            StateHasChanged();
+
+            _AccessTokenModal?.Show(rotation.RawToken, "Your access token",
+                "This is your new sign-in token. Copy it now and keep it safe — you'll use it to sign in from now on.");
+            return; // FinalizeLoad runs once the user closes the token modal
+        }
+
+        // Returning member — cache the raw token for next time and load straight in.
+        await _AuthTokens.SaveAsync(result.Project.Metadata.Id, result.Location, member.UserId, args.Token);
+        _ConnectModal?.Hide();
+        FinalizeLoad(result.Project, result.Location, member.UserId, Guid.NewGuid());
+    }
+
+    private void OnAccessTokenAcknowledged()
+    {
+        if (_PendingProject is null || _PendingLocation is null) return;
+        FinalizeLoad(_PendingProject, _PendingLocation, _PendingUserId, Guid.NewGuid());
+    }
+
+    /// <summary>Loads the connected online project into the session and opens the editor.</summary>
+    private void FinalizeLoad(LocProject project, string location, Guid userId, Guid sessionToken)
+    {
+        _ProjectState.LoadProject(project, location, userId, sessionToken);
         _Nav.NavigateTo("translate");
     }
 

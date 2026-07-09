@@ -57,20 +57,25 @@
             </div>
 
             @* ── Storage location ──────────────────────────────────────── *@
-            <div class="csm-field">
-                <label class="csm-label">
-                    Store in
-                    <span class="csm-label-hint">a folder named after the project is created here</span>
-                </label>
-                <div class="csm-location">
-                    <span class="csm-location-path @(string.IsNullOrEmpty(_Location) ? "csm-location-empty" : "")">
-                        @(string.IsNullOrEmpty(_Location) ? "No folder selected" : _Location)
-                    </span>
-                    <button class="csm-btn csm-btn-ghost csm-btn-sm" @onclick="Browse" disabled="@_Busy">
-                        <i class="bi bi-folder2-open"></i> Browse…
-                    </button>
+            @* On the web a project lives in its own IndexedDB namespace, minted automatically on connect,
+               so there is nothing for the user to pick — the folder picker is desktop-only. *@
+            @if (!AutoLocation)
+            {
+                <div class="csm-field">
+                    <label class="csm-label">
+                        Store in
+                        <span class="csm-label-hint">a folder named after the project is created here</span>
+                    </label>
+                    <div class="csm-location">
+                        <span class="csm-location-path @(string.IsNullOrEmpty(_Location) ? "csm-location-empty" : "")">
+                            @(string.IsNullOrEmpty(_Location) ? "No folder selected" : _Location)
+                        </span>
+                        <button class="csm-btn csm-btn-ghost csm-btn-sm" @onclick="Browse" disabled="@_Busy">
+                            <i class="bi bi-folder2-open"></i> Browse…
+                        </button>
+                    </div>
                 </div>
-            </div>
+            }
 
             @if (_Error != null)
             {
@@ -102,6 +107,13 @@
 @code {
     [Parameter] public EventCallback<ConnectArgs> OnConfirm { get; set; }
     [Parameter] public EventCallback              OnCancel  { get; set; }
+
+    /// <summary>
+    /// When true the storage-location picker is hidden and the location is minted automatically on
+    /// connect. Used by the web client, where a project is simply a fresh IndexedDB namespace with no
+    /// folder for the user to choose; desktop leaves this false and shows the native folder picker.
+    /// </summary>
+    [Parameter] public bool AutoLocation { get; set; }
 
     // ── State ──────────────────────────────────────────────────────────────
 
@@ -144,7 +156,7 @@
         Guid.TryParse(_ProjectId, out _)      &&
         !string.IsNullOrWhiteSpace(_Username) &&
         !string.IsNullOrWhiteSpace(_Token)    &&
-        !string.IsNullOrEmpty(_Location);
+        (AutoLocation || !string.IsNullOrEmpty(_Location));
 
     // ── Handlers ───────────────────────────────────────────────────────────
 
@@ -160,8 +172,14 @@
         _Error = null;
         _Busy  = true;
         StateHasChanged();
+
+        // Web: no folder was picked, so mint the IndexedDB namespace to download into now.
+        string location = _Location;
+        if (AutoLocation && string.IsNullOrEmpty(location))
+            location = await _LocationPicker.PickSaveLocationAsync() ?? string.Empty;
+
         await OnConfirm.InvokeAsync(new ConnectArgs(
-            _ApiUrl.Trim(), Guid.Parse(_ProjectId), _Username.Trim(), _Token.Trim(), _Location));
+            _ApiUrl.Trim(), Guid.Parse(_ProjectId), _Username.Trim(), _Token.Trim(), location));
     }
 
     private async Task Cancel()
