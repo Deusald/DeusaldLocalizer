@@ -82,11 +82,7 @@ public static class WebViewConsoleBridge
                 else if (details.TryGetProperty("text", out var text))
                     message = text.GetString() ?? message;
             }
-            // "Blazor has already started." is a benign MAUI/WebView2 startup race: the framework's
-            // own auto-start script runs twice during the initial navigation while the .NET runtime
-            // persists across the reload, so the second start throws. The app is fully functional; it
-            // is not an app bug we can fix from here, so keep it out of the ERROR stream as noise.
-            if (message.Contains("Blazor has already started")) return;
+            if (IsBenignWebViewNoise(message)) return;
             AppLog.Write("ERROR", "WebView.exception", message);
         }
         catch (Exception ex) { AppLog.LogFatal("WebViewConsoleBridge.Exception", ex); }
@@ -126,7 +122,9 @@ public static class WebViewConsoleBridge
         "['log','info','warn','error','debug'].forEach(function(m){var o=console[m]?console[m].bind(console):function(){};" +
         "console[m]=function(){send(m,arguments);o.apply(console,arguments);};});" +
         "window.addEventListener('error',function(e){send('error',[e.message+' @ '+(e.filename||'')+':'+(e.lineno||'')]);});" +
-        "window.addEventListener('unhandledrejection',function(e){send('error',['UnhandledRejection: '+((e.reason&&e.reason.stack)||e.reason)]);});" +
+        // WebKit's Error.stack omits the message, so send message + stack — otherwise a
+        // rejection like "Blazor has already started." shows only a cryptic minified frame.
+        "window.addEventListener('unhandledrejection',function(e){var r=e.reason||{};var m=(r.message||r);var s=(r.stack?' '+r.stack:'');send('error',['UnhandledRejection: '+m+s]);});" +
         "})();";
 
     private static void OnInitialized(WKWebView webView)
@@ -156,6 +154,7 @@ public static class WebViewConsoleBridge
                 var root = doc.RootElement;
                 string level = root.TryGetProperty("level", out var l) ? l.GetString() ?? "log" : "log";
                 string text  = root.TryGetProperty("text",  out var t) ? t.GetString() ?? ""    : "";
+                if (IsBenignWebViewNoise(text)) return;
                 AppLog.Write(LevelForConsoleType(level), "WebView.console", text);
             }
             catch (Exception ex) { AppLog.LogFatal("WebViewConsoleBridge.Console", ex); }
@@ -164,6 +163,14 @@ public static class WebViewConsoleBridge
     #else
     private static void OnInitialized(object webView) { }
     #endif
+
+    // "Blazor has already started." is a benign MAUI WebView startup race: the framework's own
+    // auto-start script runs twice during the initial navigation while the .NET runtime persists
+    // across the reload, so the second start fails. On Windows it surfaces as a thrown exception;
+    // on MacCatalyst/iOS as an unhandled promise rejection (a rejected start promise). Either way
+    // the app is fully functional and it is not an app bug we can fix from here — keep it out of
+    // the ERROR stream as noise.
+    private static bool IsBenignWebViewNoise(string message) => message.Contains("Blazor has already started");
 
     private static string LevelForConsoleType(string type) => type switch
     {
