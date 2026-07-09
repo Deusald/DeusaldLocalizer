@@ -174,7 +174,7 @@
 
             // Offline projects use the offline member. Online onboarding (login) is handled separately.
             _ProjectState.LoadProject(project, location, LocProjectMember.OfflineMember.UserId, Guid.Empty);
-            _Nav.NavigateTo("/translate");
+            _Nav.NavigateTo("translate");
         }
         catch (Exception ex)
         {
@@ -188,7 +188,7 @@
     private void OnNewProjectConfirmed(NewProjectModal.NewProjectArgs args)
     {
         _ProjectState.CreateNewProject(args.Name, args.Slug, args.Description, args.MainLanguageCode);
-        _Nav.NavigateTo("/translate");
+        _Nav.NavigateTo("translate");
     }
 
     private async Task ImportZip()
