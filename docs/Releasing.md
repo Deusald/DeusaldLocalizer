@@ -86,7 +86,7 @@ under the sandbox). To produce a sandboxed build, override the default:
 the sandbox reproduces bugs (security-scoped file-access denials from the folder picker) that never occur
 in the shipped, non-sandboxed app.
 
-By default the build is **unsigned** (ad-hoc), so macOS Gatekeeper quarantines it on other Macs. After
+The build is **unsigned** (ad-hoc), so macOS Gatekeeper quarantines it on other Macs. After
 downloading + unzipping, the recipient clears it once:
 ```bash
 xattr -dr com.apple.quarantine "/path/to/Deusald Localizer.app"
@@ -94,40 +94,6 @@ xattr -dr com.apple.quarantine "/path/to/Deusald Localizer.app"
 (or right-click the app → **Open** the first time). Fine for testing / small distribution. For public
 distribution, sign + notarize the `.app` before zipping (Developer ID + `xcrun notarytool` +
 `xcrun stapler staple`) — intentionally left out of the script.
-
-### Self-signed signing (makes SecureStorage / sign-in work)
-
-MAUI `SecureStorage` on Mac Catalyst uses the iOS-style **data-protection Keychain**, which needs the
-app to carry a *stable code signature* **and** a `keychain-access-groups` entitlement. An **ad-hoc**
-signature has neither, so every Keychain write fails with `errSecMissingEntitlement (-34018)`. In the app
-that shows up as: connecting to a remote project works (the token is still in memory), but the next
-**sync/push** reports *"you must be authenticated"* because the token was never persisted. (As a safety
-net `MauiAuthTokenStore` falls back to plaintext `Preferences` when the Keychain is unavailable, so an
-ad-hoc build still works — it just doesn't use the secure store.)
-
-To build with the real Keychain, sign with a **self-signed code-signing certificate**:
-
-1. **One-time, per machine** — create the identity (default name `Deusald Localizer Self-Signed`):
-   ```bash
-   ./scripts/create-mac-signing-cert.sh
-   ```
-   It generates a self-signed code-signing cert in your **login keychain**, authorizes `codesign` to use
-   its private key, and trusts it for code signing (expect one admin prompt). Verify with
-   `security find-identity -v -p codesigning`.
-2. **Build signed** — pass the identity (or set `MAC_SIGN_IDENTITY`):
-   ```bash
-   ./scripts/build-release-mac.sh --sign-identity "Deusald Localizer Self-Signed"
-   ```
-   The script publishes, then re-signs the `.app` with that identity and
-   [scripts/mac-entitlements-signed.plist](../scripts/mac-entitlements-signed.plist) (the usual
-   hardened-runtime allowances **plus** the `com.deusald.localizer` keychain access group — no team-ID
-   prefix, because a self-signed cert has none). It verifies the signature and that the keychain group is
-   present.
-
-A self-signed cert is **not** a Developer ID and is **not** notarized, so Gatekeeper still quarantines the
-app on other Macs (recipients clear quarantine exactly as above). Reuse the **same** cert across rebuilds:
-signing with a *different* key changes the code signature the Keychain binds items to, so previously
-stored tokens become unreadable and users must sign in again (the `Preferences` fallback covers that).
 
 ## One-time setup (per machine)
 
