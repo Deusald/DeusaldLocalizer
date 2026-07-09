@@ -16,8 +16,11 @@ public static class AppLog
     private static readonly object _Gate = new();
 
     /// Full path of the current log file. Surfaced so the UI (or a menu item) can
-    /// reveal it. Lives under the per-user app-data dir, stable across launches.
-    public static string LogFilePath { get; } = Path.Combine(FileSystem.AppDataDirectory, "logs", "app.log");
+    /// reveal it. Nested under a product-named folder (not straight in the shared
+    /// app-data / ~/Library area) so the folder we reveal is unmistakably ours and
+    /// holds only our logs. Stable across launches.
+    public static string LogFilePath { get; } =
+        Path.Combine(FileSystem.AppDataDirectory, "DeusaldLocalizer", "Logs", "deusald-localizer.log");
 
     /// Wire the file logger into the MAUI logging builder.
     public static ILoggingBuilder AddAppFileLog(this ILoggingBuilder builder)
