@@ -262,7 +262,10 @@
     private void LeaveAndUnload()
     {
         _ProjectState.CloseProject();
-        _Nav.NavigateTo("");
+        // Navigate to the absolute base URI, not "" or "/". An empty relative path resolves against the
+        // current URL (/translate) inside the MAUI WebView, so it never leaves the editor; an absolute "/"
+        // ignores the web app's rewritten base href on GitHub Pages and 404s. BaseUri is correct for both.
+        _Nav.NavigateTo(_Nav.BaseUri);
     }
 
     private async Task SaveAndLeave()
