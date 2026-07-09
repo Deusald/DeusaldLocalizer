@@ -21,11 +21,26 @@
 
 <body>
     <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
+        <div class="app-boot">
+            <div class="app-boot-logo">
+                <svg class="app-boot-orbs" viewBox="0 0 456 456" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="6" result="blur" />
+                            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                        </filter>
+                    </defs>
+                    <circle cx="187" cy="219" r="77" fill="rgba(91,108,255,0.92)" filter="url(#glow)" />
+                    <circle cx="265" cy="185" r="77" fill="rgba(130,170,255,0.70)" style="mix-blend-mode:screen" filter="url(#glow)" />
+                    <circle cx="228" cy="256" r="77" fill="rgba(170,130,255,0.62)" style="mix-blend-mode:screen" filter="url(#glow)" />
+                </svg>
+                <svg class="loading-progress">
+                    <circle r="40%" cx="50%" cy="50%" />
+                    <circle r="40%" cx="50%" cy="50%" />
+                </svg>
+            </div>
+            <div class="loading-progress-text"></div>
+        </div>
     </div>
 
     <div id="blazor-error-ui">

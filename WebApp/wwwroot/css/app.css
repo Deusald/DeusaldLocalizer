@@ -265,4 +265,55 @@ p { margin: 0; }
 }
 #blazor-error-ui .reload { color: var(--dl-accent, #8ea2ff); text-decoration: underline; cursor: pointer; }
 #blazor-error-ui .dismiss { cursor: pointer; position: absolute; right: 0.9rem; top: 0.55rem; }
+
+/* ── App boot / loading screen ──────────────────────────────────────────
+   Shown while the WASM runtime downloads. Matches the desktop MAUI splash:
+   the three glowing orb logo on the flat #0e0f13 background, with a themed
+   progress ring driven by Blazor's --blazor-load-percentage. */
+.app-boot {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    background: #0e0f13;
+}
+.app-boot-logo {
+    position: relative;
+    width: 9rem;
+    height: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app-boot-orbs {
+    width: 5.75rem;
+    height: 5.75rem;
+}
+.loading-progress {
+    position: absolute;
+    inset: 0;
+    width: 9rem;
+    height: 9rem;
+}
+.loading-progress circle {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.08);
+    stroke-width: 0.2rem;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+}
+.loading-progress circle:last-child {
+    stroke: var(--dl-accent, #7c6af7);
+    stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%));
+    transition: stroke-dasharray 0.1s ease-in-out;
+}
+.loading-progress-text {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #8ea2ff;
+}
+.loading-progress-text:after { content: var(--blazor-load-percentage-text, "Loading…"); }
 .form-label { font-size: 0.75rem; font-weight: 500; color: var(--dl-text-2); margin-bottom: 0.25rem; }
