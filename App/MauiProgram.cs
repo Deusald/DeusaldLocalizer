@@ -11,6 +11,10 @@ public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
+        // Install process-wide exception handlers first, so anything that blows up
+        // during the rest of startup still lands in the log file.
+        AppLog.HookGlobalExceptions();
+
         #if WINDOWS
         // Must run before any other startup code: handles Velopack's install / update / uninstall
         // hooks (the app is relaunched with special args during those) and exits the process early
@@ -34,6 +38,9 @@ public static class MauiProgram
            .ConfigureFonts(fonts => { fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular"); });
 
         builder.Services.AddMauiBlazorWebView();
+
+        // File log on every build (not just DEBUG) so shipped builds leave a trace too.
+        builder.Logging.AddAppFileLog();
 
         #if DEBUG
         builder.Services.AddBlazorWebViewDeveloperTools();
