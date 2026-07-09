@@ -1,4 +1,5 @@
 using System.Text.Json;
+using Microsoft.AspNetCore.Components.WebView.Maui;
 #if MACCATALYST || IOS
 using Foundation;
 using WebKit;
@@ -16,15 +17,17 @@ public static class WebViewConsoleBridge
     /// Hook the given BlazorWebView. Call once, right after InitializeComponent().
     public static void Attach(BlazorWebView webView)
     {
-        webView.BlazorWebViewInitialized += OnInitialized;
+        // Subscribe with a lambda so the platform-specific event-args type is never
+        // named here; e.WebView is already the concrete platform web view.
+        webView.BlazorWebViewInitialized += (_, e) => OnInitialized(e.WebView);
     }
 
     #if WINDOWS
-    private static async void OnInitialized(object? sender, Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewInitializedEventArgs e)
+    private static async void OnInitialized(Microsoft.UI.Xaml.Controls.WebView2 webView)
     {
         try
         {
-            var core = e.WebView.CoreWebView2;
+            var core = webView.CoreWebView2;
 
             // console.log / warn / error / info / debug
             core.GetDevToolsProtocolEventReceiver("Runtime.consoleAPICalled").DevToolsProtocolEventReceived += (_, ev) =>
@@ -121,16 +124,16 @@ public static class WebViewConsoleBridge
         "window.addEventListener('unhandledrejection',function(e){send('error',['UnhandledRejection: '+((e.reason&&e.reason.stack)||e.reason)]);});" +
         "})();";
 
-    private static void OnInitialized(object? sender, Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewInitializedEventArgs e)
+    private static void OnInitialized(WKWebView webView)
     {
         try
         {
-            var controller = e.WebView.Configuration.UserContentController;
+            var controller = webView.Configuration.UserContentController;
             controller.AddScriptMessageHandler(new ConsoleScriptHandler(), "appLog");
             // Applies to future loads/reloads…
             controller.AddUserScript(new WKUserScript(new NSString(_INJECTED_JS), WKUserScriptInjectionTime.AtDocumentStart, true));
             // …and inject once now for the already-loaded page.
-            e.WebView.EvaluateJavaScript(_INJECTED_JS, (_, _) => { });
+            webView.EvaluateJavaScript(_INJECTED_JS, (_, _) => { });
         }
         catch (Exception ex)
         {
@@ -154,7 +157,7 @@ public static class WebViewConsoleBridge
         }
     }
     #else
-    private static void OnInitialized(object? sender, Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewInitializedEventArgs e) { }
+    private static void OnInitialized(object webView) { }
     #endif
 
     private static string LevelForConsoleType(string type) => type switch
