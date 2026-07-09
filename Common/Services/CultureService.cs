@@ -15,8 +15,12 @@ namespace DeusaldLocalizerCommon
 
         static CultureService()
         {
+            // Include neutral cultures (language / language+script, e.g. "zh-Hant",
+            // "pt") alongside specific ones. Translators localize per language, so a
+            // script-level tag like Traditional Chinese must be selectable even when
+            // no region-qualified variant is installed.
             _All = CultureInfo
-                  .GetCultures(CultureTypes.SpecificCultures)
+                  .GetCultures(CultureTypes.SpecificCultures | CultureTypes.NeutralCultures)
                   .Where(c => !string.IsNullOrEmpty(c.Name))
                   .Select(c => new CultureEntry(c))
                   .OrderBy(c => c.EnglishName)
@@ -62,9 +66,11 @@ namespace DeusaldLocalizerCommon
             EnglishName = culture.EnglishName; // e.g. "English (United States)"
             NativeName  = culture.NativeName;  // e.g. "English (United States)"
 
-            // Strip parenthetical region for a short display name
+            // Strip the parenthetical region for a short display name, but keep it
+            // for neutral cultures where the parenthetical carries the script
+            // (e.g. "Chinese (Traditional)") — the only thing distinguishing them.
             int paren = EnglishName.IndexOf('(');
-            ShortName = paren > 0
+            ShortName = paren > 0 && !culture.IsNeutralCulture
                             ? EnglishName.Substring(0, paren).TrimEnd()
                             : EnglishName;
 
