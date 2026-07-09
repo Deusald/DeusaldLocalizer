@@ -105,6 +105,10 @@
                     <span class="home-version-sep">·</span>
                     <span class="home-version-hash">@BuildInfo.CommitHash</span>
                 }
+                <button class="home-logs-btn" @onclick="OpenLogsFolder"
+                        title="Open logs folder">
+                    <i class="bi bi-bug"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -457,6 +461,9 @@
     }
 
     // ── New project ───────────────────────────────────────────────────────
+
+    // Opens the desktop log folder in Explorer / Finder so users can grab logs for a bug report.
+    private void OpenLogsFolder() => global::App.AppLog.OpenLogsFolder();
 
     private void OpenNewProjectModal() => _NewProjectModal?.Show();
 

@@ -55,6 +55,31 @@ public static class AppLog
         Write("INFO", "AppLog", $"Logging to {LogFilePath}");
     }
 
+    /// Reveal the folder that holds the log file in the OS file manager
+    /// (Explorer on Windows, Finder on macOS). Best-effort — never throws.
+    public static void OpenLogsFolder()
+    {
+        try
+        {
+            string folder = Path.GetDirectoryName(LogFilePath)!;
+            Directory.CreateDirectory(folder); // the folder may not exist yet on a first, log-less launch
+
+            #if WINDOWS
+            var psi = new System.Diagnostics.ProcessStartInfo { FileName = "explorer.exe", UseShellExecute = true };
+            psi.ArgumentList.Add(folder);
+            System.Diagnostics.Process.Start(psi);
+            #elif MACCATALYST
+            var psi = new System.Diagnostics.ProcessStartInfo { FileName = "open", UseShellExecute = false };
+            psi.ArgumentList.Add(folder);
+            System.Diagnostics.Process.Start(psi);
+            #endif
+        }
+        catch (Exception ex)
+        {
+            LogFatal("AppLog.OpenLogsFolder", ex);
+        }
+    }
+
     /// Append a single fatal entry (with full exception detail) to the log.
     public static void LogFatal(string source, Exception? ex)
     {

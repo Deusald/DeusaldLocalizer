@@ -82,6 +82,11 @@ public static class WebViewConsoleBridge
                 else if (details.TryGetProperty("text", out var text))
                     message = text.GetString() ?? message;
             }
+            // "Blazor has already started." is a benign MAUI/WebView2 startup race: the framework's
+            // own auto-start script runs twice during the initial navigation while the .NET runtime
+            // persists across the reload, so the second start throws. The app is fully functional; it
+            // is not an app bug we can fix from here, so keep it out of the ERROR stream as noise.
+            if (message.Contains("Blazor has already started")) return;
             AppLog.Write("ERROR", "WebView.exception", message);
         }
         catch (Exception ex) { AppLog.LogFatal("WebViewConsoleBridge.Exception", ex); }
