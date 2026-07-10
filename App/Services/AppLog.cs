@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Text;
 using Microsoft.Extensions.Logging;
 
@@ -13,13 +14,13 @@ public static class AppLog
 {
     private const long _MAX_BYTES = 5 * 1024 * 1024; // rotate once the log passes ~5 MB
 
-    private static readonly object _Gate = new();
+    private static readonly Lock _Gate = new();
 
     /// Full path of the current log file. Surfaced so the UI (or a menu item) can
     /// reveal it. Nested under a product-named folder (not straight in the shared
     /// app-data / ~/Library area) so the folder we reveal is unmistakably ours and
     /// holds only our logs. Stable across launches.
-    public static string LogFilePath { get; } =
+    private static string _LogFilePath { get; } =
         Path.Combine(FileSystem.AppDataDirectory, "DeusaldLocalizer", "Logs", "deusald-localizer.log");
 
     /// Wire the file logger into the MAUI logging builder.
@@ -55,7 +56,7 @@ public static class AppLog
         }
         #endif
 
-        Write("INFO", "AppLog", $"Logging to {LogFilePath}");
+        Write("INFO", "AppLog", $"Logging to {_LogFilePath}");
     }
 
     /// Reveal the folder that holds the log file in the OS file manager
@@ -64,17 +65,17 @@ public static class AppLog
     {
         try
         {
-            string folder = Path.GetDirectoryName(LogFilePath)!;
+            string folder = Path.GetDirectoryName(_LogFilePath)!;
             Directory.CreateDirectory(folder); // the folder may not exist yet on a first, log-less launch
 
             #if WINDOWS
-            var psi = new System.Diagnostics.ProcessStartInfo { FileName = "explorer.exe", UseShellExecute = true };
+            ProcessStartInfo psi = new ProcessStartInfo { FileName = "explorer.exe", UseShellExecute = true };
             psi.ArgumentList.Add(folder);
-            System.Diagnostics.Process.Start(psi);
+            Process.Start(psi);
             #elif MACCATALYST
-            var psi = new System.Diagnostics.ProcessStartInfo { FileName = "open", UseShellExecute = false };
+            ProcessStartInfo psi = new ProcessStartInfo { FileName = "open", UseShellExecute = false };
             psi.ArgumentList.Add(folder);
-            System.Diagnostics.Process.Start(psi);
+            Process.Start(psi);
             #endif
         }
         catch (Exception ex)
@@ -97,12 +98,12 @@ public static class AppLog
         {
             lock (_Gate)
             {
-                Directory.CreateDirectory(Path.GetDirectoryName(LogFilePath)!);
+                Directory.CreateDirectory(Path.GetDirectoryName(_LogFilePath)!);
                 RotateIfNeeded();
 
                 string line = $"{DateTimeOffset.Now:yyyy-MM-dd HH:mm:ss.fff} [{level,-5}] {category}: {message}{Environment.NewLine}";
-                File.AppendAllText(LogFilePath, line, Encoding.UTF8);
-                System.Diagnostics.Debug.Write(line); // also mirror to the IDE when a debugger is attached
+                File.AppendAllText(_LogFilePath, line, Encoding.UTF8);
+                Debug.Write(line); // also mirror to the IDE when a debugger is attached
             }
         }
         catch
@@ -113,36 +114,32 @@ public static class AppLog
 
     private static void RotateIfNeeded()
     {
-        var info = new FileInfo(LogFilePath);
+        FileInfo info = new FileInfo(_LogFilePath);
         if (!info.Exists || info.Length < _MAX_BYTES) return;
 
-        string archive = LogFilePath + ".1";
+        string archive = _LogFilePath + ".1";
         if (File.Exists(archive)) File.Delete(archive);
-        File.Move(LogFilePath, archive);
+        File.Move(_LogFilePath, archive);
     }
 
     private sealed class FileLoggerProvider : ILoggerProvider
     {
         public ILogger CreateLogger(string categoryName) => new FileLogger(categoryName);
-        public void Dispose() { }
+        public void    Dispose()                         { }
     }
 
-    private sealed class FileLogger : ILogger
+    private sealed class FileLogger(string category) : ILogger
     {
-        private readonly string _Category;
-
-        public FileLogger(string category) => _Category = category;
-
         public IDisposable? BeginScope<TState>(TState state) where TState : notnull => null;
-        public bool IsEnabled(LogLevel logLevel) => logLevel >= LogLevel.Information;
+        public bool         IsEnabled(LogLevel logLevel)                            => logLevel >= LogLevel.Information;
 
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
         {
             if (!IsEnabled(logLevel)) return;
 
-            string message = formatter(state, exception);
+            string message                 = formatter(state, exception);
             if (exception != null) message += Environment.NewLine + exception;
-            Write(logLevel.ToString().ToUpperInvariant(), _Category, message);
+            Write(logLevel.ToString().ToUpperInvariant(), category, message);
         }
     }
 }

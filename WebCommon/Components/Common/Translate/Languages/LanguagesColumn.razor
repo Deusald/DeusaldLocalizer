@@ -189,7 +189,7 @@
         _ProjectState.RecordLanguageRemoved(code);
         if (SelectedLanguage != code) return;
         string fallback = project.Metadata.Languages.Find(l => l != project.Metadata.MainLanguageId)
-                       ?? project.Metadata.MainLanguageId;
+                          ?? project.Metadata.MainLanguageId;
         await OnLanguageSelected.InvokeAsync(fallback);
     }
 

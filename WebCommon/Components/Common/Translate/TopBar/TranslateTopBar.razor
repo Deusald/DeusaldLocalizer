@@ -173,13 +173,13 @@
 
     protected override void OnInitialized()
     {
-        _ProjectState.DirtyStateChanged += OnDirty;
+        _ProjectState.DirtyStateChanged  += OnDirty;
         _ProjectState.ProjectDataChanged += OnDirty;
     }
 
     private async Task Sync()
     {
-        _Busy = true;
+        _Busy          = true;
         _StatusMessage = "Syncing…";
         StateHasChanged();
 
@@ -207,7 +207,7 @@
             return;
         }
 
-        _Busy = true;
+        _Busy          = true;
         _StatusMessage = "Pushing…";
         StateHasChanged();
 
@@ -292,7 +292,7 @@
 
     public void Dispose()
     {
-        _ProjectState.DirtyStateChanged -= OnDirty;
+        _ProjectState.DirtyStateChanged  -= OnDirty;
         _ProjectState.ProjectDataChanged -= OnDirty;
     }
 

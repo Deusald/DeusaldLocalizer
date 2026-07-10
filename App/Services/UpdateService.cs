@@ -31,7 +31,7 @@ namespace App
         // ── macOS ────────────────────────────────────────────────────────────────
         // Velopack's in-place update doesn't work under Mac Catalyst, so we only detect a newer
         // release through the GitHub API and send the user to the releases page to download it by hand.
-        private const string _RELEASES_API = "https://api.github.com/repos/Deusald/DeusaldLocalizer/releases/latest";
+        private const string _RELEASES_API  = "https://api.github.com/repos/Deusald/DeusaldLocalizer/releases/latest";
         private const string _RELEASES_PAGE = _REPO_URL + "/releases/latest";
 
         // Dedicated client so the shared app HttpClient's base address / headers can't affect the call.
@@ -41,7 +41,7 @@ namespace App
         {
             try
             {
-                using var request = new HttpRequestMessage(HttpMethod.Get, _RELEASES_API);
+                using HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, _RELEASES_API);
                 request.Headers.UserAgent.ParseAdd("DeusaldLocalizer");
                 request.Headers.Accept.ParseAdd("application/vnd.github+json");
 
@@ -49,7 +49,7 @@ namespace App
                 if (!response.IsSuccessStatusCode) return null;
 
                 await using Stream stream = await response.Content.ReadAsStreamAsync();
-                using JsonDocument doc = await JsonDocument.ParseAsync(stream);
+                using JsonDocument doc    = await JsonDocument.ParseAsync(stream);
 
                 if (!doc.RootElement.TryGetProperty("tag_name", out JsonElement tagElement)) return null;
                 string? tag = tagElement.GetString();

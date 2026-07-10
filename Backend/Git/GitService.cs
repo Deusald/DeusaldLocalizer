@@ -53,8 +53,14 @@ public sealed class GitService(ILogger<GitService> logger)
 
         StringBuilder stdOut = new();
         StringBuilder stdErr = new();
-        process.OutputDataReceived += (_, e) => { if (e.Data != null) stdOut.AppendLine(e.Data); };
-        process.ErrorDataReceived  += (_, e) => { if (e.Data != null) stdErr.AppendLine(e.Data); };
+        process.OutputDataReceived += (_, e) =>
+        {
+            if (e.Data != null) stdOut.AppendLine(e.Data);
+        };
+        process.ErrorDataReceived += (_, e) =>
+        {
+            if (e.Data != null) stdErr.AppendLine(e.Data);
+        };
 
         process.Start();
         process.BeginOutputReadLine();
@@ -69,8 +75,7 @@ public sealed class GitService(ILogger<GitService> logger)
             StdErr   = stdErr.ToString().TrimEnd('\r', '\n'),
         };
 
-        if (!result.Success)
-            logger.LogDebug("git {Args} -> exit {Exit}: {StdErr}", string.Join(' ', args), result.ExitCode, result.StdErr);
+        if (!result.Success) logger.LogDebug("git {Args} -> exit {Exit}: {StdErr}", string.Join(' ', args), result.ExitCode, result.StdErr);
 
         return result;
     }
@@ -79,8 +84,7 @@ public sealed class GitService(ILogger<GitService> logger)
     private async Task<string> RunOrThrowAsync(string workingDir, IReadOnlyList<string> args, CancellationToken ct = default)
     {
         GitResult result = await RunAsync(workingDir, args, ct);
-        if (!result.Success)
-            throw new GitCommandException(string.Join(' ', args), result.ExitCode, result.StdErr);
+        if (!result.Success) throw new GitCommandException(string.Join(' ', args), result.ExitCode, result.StdErr);
         return result.StdOut;
     }
 
@@ -110,17 +114,14 @@ public sealed class GitService(ILogger<GitService> logger)
     /// </summary>
     public async Task<string?> FindCommitByMessageAsync(string repoDir, string token, CancellationToken ct = default)
     {
-        string sha = await RunOrThrowAsync(repoDir,
-                         ["log", "-1", "--fixed-strings", $"--grep={token}", "--format=%H"], ct);
+        string sha = await RunOrThrowAsync(repoDir, ["log", "-1", "--fixed-strings", $"--grep={token}", "--format=%H"], ct);
         return string.IsNullOrWhiteSpace(sha) ? null : sha.Trim();
     }
 
     /// <summary>Returns the added/modified/deleted files between two commits.</summary>
-    public async Task<IReadOnlyList<GitFileChange>> DiffNameStatusAsync(
-        string repoDir, string fromSha, string toSha, CancellationToken ct = default)
+    public async Task<IReadOnlyList<GitFileChange>> DiffNameStatusAsync(string repoDir, string fromSha, string toSha, CancellationToken ct = default)
     {
-        string output = await RunOrThrowAsync(repoDir,
-                            ["diff", "--name-status", "--no-renames", fromSha, toSha], ct);
+        string output = await RunOrThrowAsync(repoDir, ["diff", "--name-status", "--no-renames", fromSha, toSha], ct);
 
         List<GitFileChange> changes = [];
         foreach (string line in output.Split('\n', StringSplitOptions.RemoveEmptyEntries))
@@ -135,8 +136,7 @@ public sealed class GitService(ILogger<GitService> logger)
         return changes;
     }
 
-    public Task StageAllAsync(string repoDir, CancellationToken ct = default) =>
-        RunOrThrowAsync(repoDir, ["add", "-A"], ct);
+    public Task StageAllAsync(string repoDir, CancellationToken ct = default) => RunOrThrowAsync(repoDir, ["add", "-A"], ct);
 
     /// <summary>
     /// Commits the currently staged changes with the given author and committer identity.
@@ -169,6 +169,5 @@ public sealed class GitService(ILogger<GitService> logger)
     }
 
     /// <summary>Pushes the branch. Returns the raw result so the caller can detect a rejected push.</summary>
-    public Task<GitResult> PushAsync(string repoDir, string branch, CancellationToken ct = default) =>
-        RunAsync(repoDir, ["push", "origin", $"HEAD:{branch}"], ct);
+    public Task<GitResult> PushAsync(string repoDir, string branch, CancellationToken ct = default) => RunAsync(repoDir, ["push", "origin", $"HEAD:{branch}"], ct);
 }

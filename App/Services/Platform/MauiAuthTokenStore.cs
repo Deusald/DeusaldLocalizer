@@ -14,7 +14,7 @@ namespace App;
 /// <see cref="SecureStorage"/> is Keychain-backed on macOS and needs a code-signing entitlement, so on an
 /// <em>unsigned</em> build every call fails (errSecMissingEntitlement). When that happens we transparently
 /// fall back to <see cref="Preferences"/> so sign-in still survives a restart — the token was previously
-/// silently dropped, which read as "you must be authenticated" on the next sync/push. Preferences is not
+/// silently dropped, which read as "you must be authenticated" on the next sync/push. Preferences are not
 /// encrypted, so this is a deliberate downgrade that only kicks in when the OS secure store is unavailable.
 /// </para>
 /// </summary>

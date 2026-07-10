@@ -69,10 +69,10 @@
 </div>
 
 @code {
-    [Parameter] public HashSet<FlagType> SelectedFlagTypes { get; set; } = new();
-    [Parameter] public HashSet<string>   SelectedTags      { get; set; } = new();
-    [Parameter] public EventCallback<HashSet<FlagType>> OnFlagsChanged { get; set; }
-    [Parameter] public EventCallback<HashSet<string>>   OnTagsChanged  { get; set; }
+    [Parameter] public HashSet<FlagType>                SelectedFlagTypes { get; set; } = new();
+    [Parameter] public HashSet<string>                  SelectedTags      { get; set; } = new();
+    [Parameter] public EventCallback<HashSet<FlagType>> OnFlagsChanged    { get; set; }
+    [Parameter] public EventCallback<HashSet<string>>   OnTagsChanged     { get; set; }
 
     private bool _Expanded;
 
@@ -80,10 +80,10 @@
 
     private List<string> _AllTags =>
         _ProjectState.CurrentProject!.Keys
-                     .SelectMany(k => k.Tags)
-                     .Distinct(StringComparer.OrdinalIgnoreCase)
-                     .OrderBy(t => t, StringComparer.OrdinalIgnoreCase)
-                     .ToList();
+                      .SelectMany(k => k.Tags)
+                      .Distinct(StringComparer.OrdinalIgnoreCase)
+                      .OrderBy(t => t, StringComparer.OrdinalIgnoreCase)
+                      .ToList();
 
     private string _TriggerLabel
     {
@@ -139,4 +139,5 @@
         FlagType.Disputed       => "bi-exclamation-triangle",
         _                       => "bi-flag",
     };
+
 }

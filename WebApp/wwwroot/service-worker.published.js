@@ -1,3 +1,10 @@
+// This file MUST stay at the wwwroot root. On publish, MSBuild uses it as the
+// PublishedContent for the <ServiceWorker> item in WebApp.csproj and emits it into the
+// output AS service-worker.js — so it must sit beside index.html and service-worker-assets.js.
+// A service worker only controls its own directory and below, and GitHub Pages can't set
+// the 'Service-Worker-Allowed' header to widen scope, so moving it into js/ would break
+// offline caching. Do not ship this file's name directly; it's a build-time template.
+
 // Caution! Be sure you understand the caveats before publishing an application with
 // offline support. See https://aka.ms/blazor-offline-considerations
 

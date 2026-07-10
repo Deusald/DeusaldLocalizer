@@ -31,7 +31,7 @@
                     <div class="um-field">
                         <label class="um-label">Username</label>
                         <input class="um-input" type="text" placeholder="jane.doe"
-                               @bind="_Username" @bind:event="oninput" maxlength="60" />
+                               @bind="_Username" @bind:event="oninput" maxlength="60"/>
                     </div>
 
                     <div class="um-field">
@@ -62,7 +62,7 @@
                     {
                         <div class="um-field">
                             <label class="um-ban-toggle">
-                                <input type="checkbox" @bind="_IsBanned" />
+                                <input type="checkbox" @bind="_IsBanned"/>
                                 <span>Banned <span class="um-label-hint">blocks this member from contributing</span></span>
                             </label>
                         </div>
@@ -122,7 +122,7 @@
                             @if (isSelf && !member.IsOfflineUser)
                             {
                                 <button class="um-edit-btn" title="Regenerate my access token"
-                                        @onclick="() => RegenerateToken(member)">
+                                        @onclick="RegenerateToken">
                                     <i class="bi bi-arrow-repeat"></i>
                                 </button>
                             }
@@ -147,7 +147,7 @@
 
     </div>
 
-    <AccessTokenModal @ref="_AccessTokenModal" />
+    <AccessTokenModal @ref="_AccessTokenModal"/>
 }
 
 @code {
@@ -252,8 +252,8 @@
         _EditingMember.IsBanned                  = _IsBanned;
 
         if (usernameChanged) _ProjectState.RecordMemberUsernameChanged(_EditingMember);
-        if (langsChanged)    _ProjectState.RecordMemberReviewPermissionsChanged(_EditingMember);
-        if (bannedChanged)   _ProjectState.RecordMemberBanStatusChanged(_EditingMember);
+        if (langsChanged) _ProjectState.RecordMemberReviewPermissionsChanged(_EditingMember);
+        if (bannedChanged) _ProjectState.RecordMemberBanStatusChanged(_EditingMember);
 
         CloseForm();
     }
@@ -265,7 +265,7 @@
     /// immediately, authenticated with the current token — the new one cannot push itself because the
     /// server does not know it yet. Only once the server accepts it is the new token adopted.
     /// </summary>
-    private async Task RegenerateToken(LocProjectMember member)
+    private async Task RegenerateToken()
     {
         _TokenError = null;
 
@@ -323,4 +323,5 @@
         if (member.ReviewLanguagePermissions.Count == 0) return "No review languages";
         return string.Join(", ", member.ReviewLanguagePermissions.Select(LangLabel));
     }
+
 }

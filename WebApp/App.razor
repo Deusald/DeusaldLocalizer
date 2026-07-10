@@ -1,6 +1,6 @@
 @* The Translate page lives in WebCommon, so the router must also scan that assembly. *@
 <Router AppAssembly="@typeof(App).Assembly"
-        AdditionalAssemblies="new[] { typeof(ProjectStateService).Assembly }"
+        AdditionalAssemblies="[typeof(ProjectStateService).Assembly]"
         NotFoundPage="typeof(Pages.NotFound)">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>

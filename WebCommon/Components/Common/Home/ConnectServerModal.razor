@@ -24,7 +24,7 @@
                 <label class="csm-label">Server URL</label>
                 <input class="csm-input csm-input-mono" type="text"
                        placeholder="https://bot.example.com"
-                       @bind="_ApiUrl" @bind:event="oninput" disabled="@_Busy" />
+                       @bind="_ApiUrl" @bind:event="oninput" disabled="@_Busy"/>
             </div>
 
             @* ── Project ID ────────────────────────────────────────────── *@
@@ -35,7 +35,7 @@
                 </label>
                 <input class="csm-input csm-input-mono" type="text"
                        placeholder="00000000-0000-0000-0000-000000000000"
-                       @bind="_ProjectId" @bind:event="oninput" disabled="@_Busy" />
+                       @bind="_ProjectId" @bind:event="oninput" disabled="@_Busy"/>
                 @if (!string.IsNullOrEmpty(_ProjectId) && !Guid.TryParse(_ProjectId, out _))
                 {
                     <div class="csm-field-error">Not a valid project id</div>
@@ -46,14 +46,14 @@
             <div class="csm-field">
                 <label class="csm-label">Username</label>
                 <input class="csm-input" type="text" placeholder="jane.doe"
-                       @bind="_Username" @bind:event="oninput" disabled="@_Busy" />
+                       @bind="_Username" @bind:event="oninput" disabled="@_Busy"/>
             </div>
 
             @* ── Access token ──────────────────────────────────────────── *@
             <div class="csm-field">
                 <label class="csm-label">Access token</label>
                 <input class="csm-input" type="password" placeholder="Paste your access token…"
-                       @bind="_Token" @bind:event="oninput" disabled="@_Busy" />
+                       @bind="_Token" @bind:event="oninput" disabled="@_Busy"/>
             </div>
 
             @* ── Storage location ──────────────────────────────────────── *@
@@ -113,7 +113,8 @@
     /// connect. Used by the web client, where a project is simply a fresh IndexedDB namespace with no
     /// folder for the user to choose; desktop leaves this false and shows the native folder picker.
     /// </summary>
-    [Parameter] public bool AutoLocation { get; set; }
+    [Parameter]
+    public bool AutoLocation { get; set; }
 
     // ── State ──────────────────────────────────────────────────────────────
 
@@ -152,18 +153,18 @@
     // ── Validation ─────────────────────────────────────────────────────────
 
     private bool _CanConfirm =>
-        !string.IsNullOrWhiteSpace(_ApiUrl)   &&
-        Guid.TryParse(_ProjectId, out _)      &&
+        !string.IsNullOrWhiteSpace(_ApiUrl) &&
+        Guid.TryParse(_ProjectId, out _) &&
         !string.IsNullOrWhiteSpace(_Username) &&
-        !string.IsNullOrWhiteSpace(_Token)    &&
+        !string.IsNullOrWhiteSpace(_Token) &&
         (AutoLocation || !string.IsNullOrEmpty(_Location));
 
     // ── Handlers ───────────────────────────────────────────────────────────
 
     private async Task Browse()
     {
-        string? picked = await _LocationPicker.PickSaveLocationAsync();
-        if (!string.IsNullOrEmpty(picked)) _Location = picked!;
+        string? picked                               = await _LocationPicker.PickSaveLocationAsync();
+        if (!string.IsNullOrEmpty(picked)) _Location = picked;
     }
 
     private async Task Confirm()
@@ -199,8 +200,9 @@
     /// <summary>Result passed back to the parent when the user confirms.</summary>
     public record ConnectArgs(
         string ApiUrl,
-        Guid   ProjectId,
+        Guid ProjectId,
         string Username,
         string Token,
         string ParentLocation);
+
 }

@@ -26,8 +26,8 @@
                 <div class="pem-enum-list">
                     @foreach (var e in _ProjectState.CurrentProject!.Enums)
                     {
-                        var locEnum = e;
-                        bool active = _SelectedEnum?.Id == locEnum.Id;
+                        var  locEnum = e;
+                        bool active  = _SelectedEnum?.Id == locEnum.Id;
                         <button class="pem-enum-item @(active ? "active" : "")"
                                 @onclick="() => SelectEnum(locEnum)">
                             <span class="pem-enum-item-name">@(string.IsNullOrEmpty(locEnum.Name) ? "Unnamed" : locEnum.Name)</span>
@@ -55,13 +55,13 @@
                             <label class="pem-label">Name</label>
                             <input class="pem-input" type="text" placeholder="WeekDay"
                                    @bind="_SelectedEnum.Name" @bind:event="oninput"
-                                   @bind:after="MarkDirty" />
+                                   @bind:after="MarkDirty"/>
                         </div>
                         <div class="pem-field">
                             <label class="pem-label">Description <span class="pem-label-hint">optional</span></label>
                             <input class="pem-input" type="text" placeholder="Days of the week"
                                    @bind="_SelectedEnum.Description" @bind:event="oninput"
-                                   @bind:after="MarkDirty" />
+                                   @bind:after="MarkDirty"/>
                         </div>
                     </div>
 
@@ -80,11 +80,11 @@
                                 <input class="pem-input pem-entry-int" type="number"
                                        placeholder="0"
                                        value="@ent.IntValue"
-                                       @onchange="e => { ent.IntValue = int.TryParse(e.Value?.ToString(), out int v) ? v : 0; MarkDirty(); }" />
+                                       @onchange="e => { ent.IntValue = int.TryParse(e.Value?.ToString(), out int v) ? v : 0; MarkDirty(); }"/>
                                 <input class="pem-input pem-entry-str" type="text"
                                        placeholder="Monday"
                                        @bind="ent.StringValue" @bind:event="oninput"
-                                       @bind:after="MarkDirty" />
+                                       @bind:after="MarkDirty"/>
                                 <button class="pem-entry-remove" @onclick="() => RemoveEntry(ent)">
                                     <i class="bi bi-x"></i>
                                 </button>
@@ -147,7 +147,7 @@
             currentIds.Add(e.Id);
             string json = JsonConvert.SerializeObject(e);
             if (!_Snapshot.TryGetValue(e.Id, out string? old)) _ProjectState.RecordEnumAdded(e);
-            else if (old != json)                              _ProjectState.RecordEnumUpdated(e);
+            else if (old != json) _ProjectState.RecordEnumUpdated(e);
         }
 
         foreach (Guid removedId in _Snapshot.Keys.Where(id => !currentIds.Contains(id)).ToList())
@@ -178,7 +178,8 @@
     {
         if (_SelectedEnum == null) return;
         int next = _SelectedEnum.Entries.Count > 0
-            ? _SelectedEnum.Entries.Max(e => e.IntValue) + 1 : 0;
+                       ? _SelectedEnum.Entries.Max(e => e.IntValue) + 1
+                       : 0;
         _SelectedEnum.Entries.Add(new LocEnumEntry { IntValue = next });
         MarkDirty();
     }

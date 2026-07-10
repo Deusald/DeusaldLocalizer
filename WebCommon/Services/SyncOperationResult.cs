@@ -60,11 +60,11 @@ public sealed class ConnectResult
 public sealed class InitialTokenResult
 {
     /// <summary>The freshly generated raw token to show the user once. Null when the rotation failed.</summary>
-    public string?     RawToken { get; set; }
+    public string? RawToken { get; set; }
 
     /// <summary>The project reloaded after the rotation was pushed. Only set when <see cref="RawToken"/> is.</summary>
-    public LocProject? Project  { get; set; }
+    public LocProject? Project { get; set; }
 
     /// <summary>Human-readable failure reason, set only when <see cref="RawToken"/> is null.</summary>
-    public string?     Error    { get; set; }
+    public string? Error { get; set; }
 }

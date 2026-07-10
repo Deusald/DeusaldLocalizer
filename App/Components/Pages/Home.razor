@@ -196,10 +196,10 @@
     {
         <LoginModal @ref="_LoginModal"
                     OnConfirm="OnLoginConfirmed"
-                    OnCancel="OnLoginCancelled" />
+                    OnCancel="OnLoginCancelled"/>
     }
 
-    <AccessTokenModal @ref="_AccessTokenModal" OnClose="OnAccessTokenAcknowledged" />
+    <AccessTokenModal @ref="_AccessTokenModal" OnClose="OnAccessTokenAcknowledged"/>
 
 </div>
 
@@ -211,7 +211,7 @@
     private List<RecentProjectEntry> _RecentProjects = [];
 
     // Tracks the path being opened when the login / token modal is showing
-    private string?    _PendingPath;
+    private string?     _PendingPath;
     private LocProject? _PendingProject;
     private Guid        _PendingUserId;
     private bool        _ShowLoginModal;
@@ -231,7 +231,7 @@
     {
         _ProjectState.ProjectChanged += OnProjectChanged;
         _RecentProjects              =  _Recents.LoadRecentProjects();
-        _ = CheckForUpdateAsync();
+        _                            =  CheckForUpdateAsync();
     }
 
     private async Task CheckForUpdateAsync()
@@ -258,7 +258,11 @@
 
         // The progress callback fires off the UI thread — marshal each tick back onto it.
         bool ok = await _Update.DownloadAndApplyAsync(pct =>
-            _ = InvokeAsync(() => { _UpdateProgress = pct; StateHasChanged(); }));
+                      _ = InvokeAsync(() =>
+                      {
+                          _UpdateProgress = pct;
+                          StateHasChanged();
+                      }));
 
         // On success the app relaunches into the new version and never returns here.
         if (!ok)
@@ -384,7 +388,7 @@
         if (member!.MustResetAccessToken)
         {
             InitialTokenResult result = await _ProjectState.RotateInitialTokenAsync(
-                _PendingProject, _PendingPath, member!, credentials.accessToken);
+                                            _PendingProject, _PendingPath, member, credentials.accessToken);
 
             if (result.RawToken == null)
             {
@@ -395,7 +399,7 @@
 
             _PendingProject = result.Project!;
             _ShowLoginModal = false;
-            _PendingUserId  = member!.UserId;
+            _PendingUserId  = member.UserId;
             StateHasChanged();
 
             _AccessTokenModal?.Show(result.RawToken, "Your access token",
@@ -404,7 +408,7 @@
         }
 
         // Returning user — cache the raw token for next time and load straight in.
-        await _AuthTokens.SaveAsync(projectId, _PendingPath, member!.UserId, credentials.accessToken);
+        await _AuthTokens.SaveAsync(projectId, _PendingPath, member.UserId, credentials.accessToken);
 
         _ShowLoginModal = false;
         FinalizeLoad(_PendingProject, _PendingPath, member.UserId, Guid.NewGuid());
@@ -430,9 +434,9 @@
     /// and that the BCrypt hash of their access token matches the stored hash.
     /// </summary>
     private static bool VerifyCredentials(
-        LocProject          project,
-        Guid                userId,
-        string              accessToken)
+        LocProject project,
+        Guid userId,
+        string accessToken)
     {
         LocProjectMember? member = project.ProjectMembers.Find(m => m.UserId == userId);
         if (member == null) return false;
@@ -441,9 +445,9 @@
 
     /// <summary>Overload that looks up by username string instead of Guid.</summary>
     private static bool VerifyCredentials(
-        LocProject          project,
-        string              username,
-        string              accessToken,
+        LocProject project,
+        string username,
+        string accessToken,
         out LocProjectMember? member)
     {
         member = project.ProjectMembers.Find(m =>
@@ -463,7 +467,7 @@
     // ── New project ───────────────────────────────────────────────────────
 
     // Opens the desktop log folder in Explorer / Finder so users can grab logs for a bug report.
-    private void OpenLogsFolder() => global::App.AppLog.OpenLogsFolder();
+    private void OpenLogsFolder() => AppLog.OpenLogsFolder();
 
     private void OpenNewProjectModal() => _NewProjectModal?.Show();
 
@@ -477,7 +481,10 @@
 
     private void OpenConnectModal() => _ConnectModal?.Show();
 
-    private void OnConnectCancelled() { /* modal hides itself */ }
+    private void OnConnectCancelled()
+    {
+        /* modal hides itself */
+    }
 
     /// <summary>
     /// Downloads a whole online project from the bot into a new folder named after the project slug,
@@ -488,8 +495,8 @@
     private async Task OnConnectConfirmed(ConnectServerModal.ConnectArgs args)
     {
         ConnectResult result = await _ProjectState.ConnectToServerAsync(
-            args.ApiUrl, args.ProjectId, args.Username, args.Token,
-            meta => Path.Combine(args.ParentLocation, SanitizeFolder(meta.Slug)));
+                                   args.ApiUrl, args.ProjectId, args.Username, args.Token,
+                                   meta => Path.Combine(args.ParentLocation, SanitizeFolder(meta.Slug)));
 
         if (result.Error != null || result.Project is null || result.Location is null || result.Member is null)
         {
@@ -505,7 +512,7 @@
         if (member.MustResetAccessToken)
         {
             InitialTokenResult rotation = await _ProjectState.RotateInitialTokenAsync(
-                result.Project, result.Location, member, args.Token);
+                                              result.Project, result.Location, member, args.Token);
 
             if (rotation.RawToken == null)
             {
@@ -551,4 +558,5 @@
     {
         _RecentProjects = _Recents.RemoveRecentProject(recent);
     }
+
 }

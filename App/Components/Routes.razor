@@ -1,6 +1,6 @@
 ﻿<Router AppAssembly="typeof(MauiProgram).Assembly"
-        AdditionalAssemblies="new[] { typeof(DeusaldLocalizerWeb.ProjectStateService).Assembly }"
-        NotFoundPage="typeof(Pages.NotFound)">
+        AdditionalAssemblies="[typeof(ProjectStateService).Assembly]"
+        NotFoundPage="typeof(NotFound)">
     <Found Context="routeData">
         <RouteView RouteData="routeData" DefaultLayout="typeof(MainLayout)"/>
         <FocusOnNavigate RouteData="routeData" Selector="h1"/>

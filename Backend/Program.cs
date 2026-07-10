@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 using DeusaldLocalizerBackend;
 using Microsoft.Extensions.Options;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // ── Configuration ─────────────────────────────────────────────────────────────
 builder.Services.Configure<BotOptions>(builder.Configuration.GetSection(BotOptions.SECTION_NAME));
@@ -40,11 +40,10 @@ builder.Services
 
 builder.Services.AddOpenApi();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 // ── Pipeline ──────────────────────────────────────────────────────────────────
-if (app.Environment.IsDevelopment())
-    app.MapOpenApi();
+if (app.Environment.IsDevelopment()) app.MapOpenApi();
 
 // Answer Chrome's Private Network Access preflight before the CORS middleware terminates it, so a
 // deployed HTTPS web build (e.g. GitHub Pages) can reach a backend running on the local machine. Runs
@@ -66,8 +65,8 @@ app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
 // ── Startup log ─────────────────────────────────────────────────────────────────
 // List the configured projects at boot (never the RemoteUrl — it carries the PAT credential).
 {
-    ILogger logger  = app.Services.GetRequiredService<ILoggerFactory>().CreateLogger("Startup");
-    BotOptions bot  = app.Services.GetRequiredService<IOptions<BotOptions>>().Value;
+    ILogger    logger = app.Services.GetRequiredService<ILoggerFactory>().CreateLogger("Startup");
+    BotOptions bot    = app.Services.GetRequiredService<IOptions<BotOptions>>().Value;
 
     if (bot.Projects.Count == 0)
         logger.LogWarning("No projects configured under the 'Bot' section; the bot has nothing to serve.");

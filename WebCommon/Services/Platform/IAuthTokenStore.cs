@@ -3,7 +3,7 @@ namespace DeusaldLocalizerWeb
     /// <summary>
     /// Per-project sign-in credential storage, abstracted over the host. On desktop this is MAUI
     /// <c>SecureStorage</c> keyed by a hash of the project folder path; on the web it is browser storage
-    /// keyed by the project id and its location handle. The <paramref name="location"/> is the same opaque
+    /// keyed by the project id and its location handle. The <c>location</c> is the same opaque
     /// handle <see cref="ProjectStateService"/> uses to identify a project copy (a disc path on desktop,
     /// an IndexedDB namespace on the web).
     /// </summary>

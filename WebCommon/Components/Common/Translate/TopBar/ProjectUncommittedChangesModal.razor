@@ -269,7 +269,7 @@
     private async Task OnToggleMode(ChangeEventArgs e)
     {
         if (_Busy) return;
-        bool enabled = e.Value is bool value && value;
+        bool enabled = e.Value is true;
         _Busy = true;
         try
         {

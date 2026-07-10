@@ -7,8 +7,7 @@ public sealed class LocalStoragePreferencesStore(IJSRuntime js) : IPreferencesSt
 {
     private readonly IJSInProcessRuntime _Js = (IJSInProcessRuntime)js;
 
-    public string Get(string key, string defaultValue) =>
-        _Js.Invoke<string?>("localStorage.getItem", key) ?? defaultValue;
+    public string Get(string key, string defaultValue) => _Js.Invoke<string?>("localStorage.getItem", key) ?? defaultValue;
 
     public void Set(string key, string value) => _Js.InvokeVoid("localStorage.setItem", key, value);
 

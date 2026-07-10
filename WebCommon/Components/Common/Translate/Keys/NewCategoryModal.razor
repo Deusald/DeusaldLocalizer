@@ -17,7 +17,7 @@
             <div class="ncm-field">
                 <label class="ncm-label">Category name</label>
                 <input class="ncm-input" type="text" placeholder="Menu"
-                       @bind="_Name" @bind:event="oninput" maxlength="80" />
+                       @bind="_Name" @bind:event="oninput" maxlength="80"/>
             </div>
 
             <div class="ncm-field">
@@ -43,7 +43,7 @@
                                    placeholder="Search category…"
                                    @bind="_ParentQuery" @bind:event="oninput"
                                    @onfocus="() => _ParentOpen = true"
-                                   @onblur="OnParentBlur" />
+                                   @onblur="OnParentBlur"/>
                         }
                     </div>
 
@@ -70,9 +70,9 @@
                             {
                                 @foreach (LocCategory cat in results)
                                 {
-                                    LocCategory c = cat;
-                                    bool active = _SelectedParent?.Id == c.Id;
-                                    string path = FullPath(c);
+                                    LocCategory c      = cat;
+                                    bool        active = _SelectedParent?.Id == c.Id;
+                                    string      path   = FullPath(c);
                                     <button class="ncm-parent-item @(active ? "active" : "")"
                                             @onclick="() => SelectParent(c)"
                                             @onclick:preventDefault="true">
@@ -133,8 +133,8 @@
                                          : DescendantsAndSelf(_EditingCategory);
 
             IEnumerable<LocCategory> cats = _ProjectState.CurrentProject!.Categories
-                                                         .Where(c => !excluded.Contains(c.Id))
-                                                         .AsEnumerable();
+                                                          .Where(c => !excluded.Contains(c.Id))
+                                                          .AsEnumerable();
 
             if (!string.IsNullOrWhiteSpace(_ParentQuery))
             {
@@ -149,7 +149,7 @@
     private HashSet<Guid> DescendantsAndSelf(LocCategory cat)
     {
         LocProject    project = _ProjectState.CurrentProject!;
-        HashSet<Guid> result  = new HashSet<Guid> { cat.Id };
+        HashSet<Guid> result  = [cat.Id];
 
         void Walk(Guid parentId)
         {
@@ -167,8 +167,8 @@
     private string FullPath(LocCategory cat)
     {
         LocProject   project = _ProjectState.CurrentProject!;
-        List<string> parts   = new List<string> { cat.Name };
-        LocCategory          current = cat;
+        List<string> parts   = [cat.Name];
+        LocCategory  current = cat;
         while (current.ParentCategoryId != null)
         {
             LocCategory? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
@@ -181,28 +181,28 @@
 
     public void Show()
     {
-        _Name = "";
-        _Description = "";
-        _ParentQuery = "";
-        _ParentOpen = false;
+        _Name              = "";
+        _Description       = "";
+        _ParentQuery       = "";
+        _ParentOpen        = false;
         _SuppressBlurClose = false;
-        _SelectedParent = null;
-        _EditingCategory = null;
-        _Visible = true;
+        _SelectedParent    = null;
+        _EditingCategory   = null;
+        _Visible           = true;
         StateHasChanged();
     }
 
     public void EditCategory(LocCategory category)
     {
-        _EditingCategory = category;
-        _Name = category.Name;
-        _Description = category.Description;
-        _ParentQuery = "";
-        _ParentOpen = false;
+        _EditingCategory   = category;
+        _Name              = category.Name;
+        _Description       = category.Description;
+        _ParentQuery       = "";
+        _ParentOpen        = false;
         _SuppressBlurClose = false;
         _SelectedParent = category.ParentCategoryId == null
-            ? null
-            : _ProjectState.CurrentProject!.Categories.Find(c => c.Id == category.ParentCategoryId);
+                              ? null
+                              : _ProjectState.CurrentProject!.Categories.Find(c => c.Id == category.ParentCategoryId);
         _Visible = true;
         StateHasChanged();
     }
@@ -210,8 +210,8 @@
     private void SelectParent(LocCategory? cat)
     {
         _SelectedParent = cat;
-        _ParentQuery = "";
-        _ParentOpen = false;
+        _ParentQuery    = "";
+        _ParentOpen     = false;
     }
 
     private async Task OnParentBlur()
@@ -258,17 +258,17 @@
             string newDescription = _Description.Trim();
             Guid?  newParentId    = _SelectedParent?.Id;
 
-            bool nameChanged        = _EditingCategory.Name             != newName;
-            bool descriptionChanged = _EditingCategory.Description      != newDescription;
+            bool nameChanged        = _EditingCategory.Name != newName;
+            bool descriptionChanged = _EditingCategory.Description != newDescription;
             bool parentChanged      = _EditingCategory.ParentCategoryId != newParentId;
 
             _EditingCategory.Name             = newName;
             _EditingCategory.Description      = newDescription;
             _EditingCategory.ParentCategoryId = newParentId;
 
-            if (nameChanged)        _ProjectState.RecordCategoryNameChanged(_EditingCategory);
+            if (nameChanged) _ProjectState.RecordCategoryNameChanged(_EditingCategory);
             if (descriptionChanged) _ProjectState.RecordCategoryDescriptionChanged(_EditingCategory);
-            if (parentChanged)      _ProjectState.RecordCategoryParentChanged(_EditingCategory);
+            if (parentChanged) _ProjectState.RecordCategoryParentChanged(_EditingCategory);
         }
 
         _Visible = false;

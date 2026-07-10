@@ -2,7 +2,7 @@
 
 namespace App;
 
-public partial class App : Application
+public partial class App
 {
     private readonly ProjectStateService _ProjectState;
 

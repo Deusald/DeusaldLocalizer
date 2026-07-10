@@ -37,12 +37,12 @@
                             @(_AllSelected ? "Deselect all" : "Select all")
                         </button>
                     </div>
-                    <label class="im-check"><input type="checkbox" @bind="_Options.CreateNewKeys" /><span>Create keys missing from the project</span></label>
-                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateCategories" /><span>Update categories <span class="im-check-hint">— creates missing</span></span></label>
-                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateDescriptions" /><span>Update descriptions</span></label>
-                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateTags" /><span>Update tags</span></label>
-                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateMaxLength" /><span>Update max length</span></label>
-                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateSourceText" /><span>Update source text</span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.CreateNewKeys"/><span>Create keys missing from the project</span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateCategories"/><span>Update categories <span class="im-check-hint">— creates missing</span></span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateDescriptions"/><span>Update descriptions</span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateTags"/><span>Update tags</span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateMaxLength"/><span>Update max length</span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateSourceText"/><span>Update source text</span></label>
                 </div>
 
                 @* ── How to import translations ─────────────────────────── *@
@@ -50,9 +50,11 @@
                     <span class="im-section-title">Translations import as</span>
                     <div class="im-seg">
                         <button class="im-seg-btn @(_Options.ImportAsSuggestions ? "active" : "")"
-                                @onclick="() => _Options.ImportAsSuggestions = true">Suggestions</button>
+                                @onclick="() => _Options.ImportAsSuggestions = true">Suggestions
+                        </button>
                         <button class="im-seg-btn @(!_Options.ImportAsSuggestions ? "active" : "")"
-                                @onclick="() => _Options.ImportAsSuggestions = false">Direct text</button>
+                                @onclick="() => _Options.ImportAsSuggestions = false">Direct text
+                        </button>
                     </div>
                     <div class="im-section-hint">
                         @(_Options.ImportAsSuggestions
@@ -131,8 +133,7 @@
     private LocImportOptions _Options = new();
 
     private bool _AllSelected =>
-        _Options.CreateNewKeys && _Options.UpdateCategories && _Options.UpdateDescriptions &&
-        _Options.UpdateTags && _Options.UpdateMaxLength && _Options.UpdateSourceText;
+        _Options is { CreateNewKeys: true, UpdateCategories: true, UpdateDescriptions: true, UpdateTags: true, UpdateMaxLength: true, UpdateSourceText: true };
 
     public void Show()
     {
@@ -205,15 +206,15 @@
     {
         switch (change.Kind)
         {
-            case ImportChangeKind.CategoryAdded:         _ProjectState.RecordCategoryAdded(change.Category!);                                    break;
-            case ImportChangeKind.KeyAdded:              _ProjectState.RecordKeyAdded(change.Key!);                                              break;
-            case ImportChangeKind.KeyCategoryChanged:    _ProjectState.RecordKeyCategoryChanged(change.Key!);                                    break;
-            case ImportChangeKind.KeyDescriptionChanged: _ProjectState.RecordKeyDescriptionChanged(change.Key!);                                 break;
-            case ImportChangeKind.KeyMaxLengthChanged:   _ProjectState.RecordKeyMaxLengthChanged(change.Key!);                                   break;
-            case ImportChangeKind.TagAdded:              _ProjectState.RecordTagAdded(change.KeyId, change.Tag);                                 break;
-            case ImportChangeKind.TagRemoved:            _ProjectState.RecordTagRemoved(change.KeyId, change.Tag);                               break;
+            case ImportChangeKind.CategoryAdded:         _ProjectState.RecordCategoryAdded(change.Category!); break;
+            case ImportChangeKind.KeyAdded:              _ProjectState.RecordKeyAdded(change.Key!); break;
+            case ImportChangeKind.KeyCategoryChanged:    _ProjectState.RecordKeyCategoryChanged(change.Key!); break;
+            case ImportChangeKind.KeyDescriptionChanged: _ProjectState.RecordKeyDescriptionChanged(change.Key!); break;
+            case ImportChangeKind.KeyMaxLengthChanged:   _ProjectState.RecordKeyMaxLengthChanged(change.Key!); break;
+            case ImportChangeKind.TagAdded:              _ProjectState.RecordTagAdded(change.KeyId, change.Tag); break;
+            case ImportChangeKind.TagRemoved:            _ProjectState.RecordTagRemoved(change.KeyId, change.Tag); break;
             case ImportChangeKind.TranslationUpdated:    _ProjectState.RecordTranslationUpdated(change.KeyId, change.Translation!, change.PrevDestHash); break;
-            case ImportChangeKind.SuggestionAdded:       _ProjectState.RecordSuggestionAdded(change.KeyId, change.LanguageId, change.Suggestion!);       break;
+            case ImportChangeKind.SuggestionAdded:       _ProjectState.RecordSuggestionAdded(change.KeyId, change.LanguageId, change.Suggestion!); break;
         }
     }
 

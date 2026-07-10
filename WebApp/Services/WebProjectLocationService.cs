@@ -7,6 +7,5 @@ namespace DeusaldLocalizerWeb;
 /// </summary>
 public sealed class WebProjectLocationService : IProjectLocationService
 {
-    public Task<string?> PickSaveLocationAsync() =>
-        Task.FromResult<string?>(Guid.NewGuid().ToString("N"));
+    public Task<string?> PickSaveLocationAsync() => Task.FromResult<string?>(Guid.NewGuid().ToString("N"));
 }

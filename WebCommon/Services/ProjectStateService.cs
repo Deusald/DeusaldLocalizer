@@ -464,13 +464,13 @@ public class ProjectStateService(
         // Read the project slug from the downloaded metadata so the caller can name the folder after it.
         SyncFile? metaFile = resp.ChangedFiles.Find(f => f.Path == ProjectFileService.METADATA_FILE_NAME);
         LocProjectMetadata? metadata = metaFile is null
-            ? null
-            : Newtonsoft.Json.JsonConvert.DeserializeObject<LocProjectMetadata>(metaFile.Content);
+                                           ? null
+                                           : Newtonsoft.Json.JsonConvert.DeserializeObject<LocProjectMetadata>(metaFile.Content);
         if (metadata is null || string.IsNullOrWhiteSpace(metadata.Slug))
             return new ConnectResult { Error = "The server returned an invalid project." };
 
-        string            location = resolveLocation(metadata);
-        IProjectFileStore store    = storeFactory.Create(location);
+        string            saveLocation = resolveLocation(metadata);
+        IProjectFileStore store        = storeFactory.Create(saveLocation);
 
         if (await store.FileExistsAsync(ProjectFileService.METADATA_FILE_NAME))
             return new ConnectResult { Error = "A project already exists at that location." };
@@ -498,7 +498,7 @@ public class ProjectStateService(
         LocProjectMember? member = project.ProjectMembers.Find(m =>
             string.Equals(m.Username, username, StringComparison.OrdinalIgnoreCase));
 
-        return new ConnectResult { Project = project, Location = location, Member = member };
+        return new ConnectResult { Project = project, Location = saveLocation, Member = member };
     }
 
     private static LocEntryChange HashRotationChange(Guid userId, string rawToken) => new()

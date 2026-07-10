@@ -40,18 +40,18 @@
 
             @* ── Sync conflict ───────────────────────────────────────────── *@
             <ConflictResolutionBox Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage"
-                                   OnChanged="StateHasChanged" />
+                                   OnChanged="StateHasChanged"/>
 
             @* ── Translation editor ──────────────────────────────────────── *@
             <TranslationEditor Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage"
                                OnChanged="StateHasChanged"
-                               OnDraftChanged="OnDraftChanged" />
+                               OnDraftChanged="OnDraftChanged"/>
 
             @* ── Preview ──────────────────────────────────────────────────── *@
             <PreviewSection Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage"
                             PreviewOverrides="@(_VariablesSection?.CurrentPreviewOverrides ?? _EmptyOverrides)"
                             SourceDraft="@_SourceDraft"
-                            TranslationDraft="@_TranslationDraft" />
+                            TranslationDraft="@_TranslationDraft"/>
 
             @* ── Suggestions ──────────────────────────────────────────────── *@
             <SuggestionsSection Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage" OnChanged="StateHasChanged"

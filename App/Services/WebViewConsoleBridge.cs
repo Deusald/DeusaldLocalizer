@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Microsoft.AspNetCore.Components.WebView.Maui;
+using Microsoft.Web.WebView2.Core;
 #if MACCATALYST || IOS
 using Foundation;
 using WebKit;
@@ -27,7 +28,7 @@ public static class WebViewConsoleBridge
     {
         try
         {
-            var core = webView.CoreWebView2;
+            CoreWebView2? core = webView.CoreWebView2;
 
             // console.log / warn / error / info / debug
             core.GetDevToolsProtocolEventReceiver("Runtime.consoleAPICalled").DevToolsProtocolEventReceived += (_, ev) =>
@@ -42,7 +43,7 @@ public static class WebViewConsoleBridge
                 LogEntryAdded(ev.ParameterObjectAsJson);
 
             await core.CallDevToolsProtocolMethodAsync("Runtime.enable", "{}");
-            await core.CallDevToolsProtocolMethodAsync("Log.enable", "{}");
+            await core.CallDevToolsProtocolMethodAsync("Log.enable",     "{}");
         }
         catch (Exception ex)
         {
@@ -54,63 +55,72 @@ public static class WebViewConsoleBridge
     {
         try
         {
-            using var doc = JsonDocument.Parse(json);
-            var root = doc.RootElement;
-            string type = root.TryGetProperty("type", out var t) ? t.GetString() ?? "log" : "log";
+            using JsonDocument doc  = JsonDocument.Parse(json);
+            JsonElement        root = doc.RootElement;
+            string             type = root.TryGetProperty("type", out JsonElement t) ? t.GetString() ?? "log" : "log";
 
-            var parts = new List<string>();
-            if (root.TryGetProperty("args", out var args) && args.ValueKind == JsonValueKind.Array)
+            List<string> parts = new List<string>();
+            if (root.TryGetProperty("args", out JsonElement args) && args.ValueKind == JsonValueKind.Array)
             {
-                foreach (var arg in args.EnumerateArray())
+                foreach (JsonElement arg in args.EnumerateArray())
                     parts.Add(DescribeRemoteObject(arg));
             }
             AppLog.Write(LevelForConsoleType(type), "WebView.console", string.Join(" ", parts));
         }
-        catch (Exception ex) { AppLog.LogFatal("WebViewConsoleBridge.Console", ex); }
+        catch (Exception ex)
+        {
+            AppLog.LogFatal("WebViewConsoleBridge.Console", ex);
+        }
     }
 
     private static void LogExceptionThrown(string json)
     {
         try
         {
-            using var doc = JsonDocument.Parse(json);
-            string message = "<unknown JS exception>";
-            if (doc.RootElement.TryGetProperty("exceptionDetails", out var details))
+            using JsonDocument doc     = JsonDocument.Parse(json);
+            string             message = "<unknown JS exception>";
+            if (doc.RootElement.TryGetProperty("exceptionDetails", out JsonElement details))
             {
-                if (details.TryGetProperty("exception", out var ex) && ex.TryGetProperty("description", out var desc))
+                if (details.TryGetProperty("exception", out JsonElement ex) && ex.TryGetProperty("description", out JsonElement desc))
                     message = desc.GetString() ?? message;
-                else if (details.TryGetProperty("text", out var text))
+                else if (details.TryGetProperty("text", out JsonElement text))
                     message = text.GetString() ?? message;
             }
             if (IsBenignWebViewNoise(message)) return;
             AppLog.Write("ERROR", "WebView.exception", message);
         }
-        catch (Exception ex) { AppLog.LogFatal("WebViewConsoleBridge.Exception", ex); }
+        catch (Exception ex)
+        {
+            AppLog.LogFatal("WebViewConsoleBridge.Exception", ex);
+        }
     }
 
     private static void LogEntryAdded(string json)
     {
         try
         {
-            using var doc = JsonDocument.Parse(json);
-            if (!doc.RootElement.TryGetProperty("entry", out var entry)) return;
+            using JsonDocument doc = JsonDocument.Parse(json);
+            if (!doc.RootElement.TryGetProperty("entry", out JsonElement entry)) return;
 
-            string level  = entry.TryGetProperty("level",  out var l) ? l.GetString() ?? "info" : "info";
-            string source = entry.TryGetProperty("source", out var s) ? s.GetString() ?? "log"  : "log";
-            string text   = entry.TryGetProperty("text",   out var x) ? x.GetString() ?? ""     : "";
-            if (entry.TryGetProperty("url", out var u) && u.GetString() is { Length: > 0 } url)
+            string level  = entry.TryGetProperty("level",  out JsonElement l) ? l.GetString() ?? "info" : "info";
+            string source = entry.TryGetProperty("source", out JsonElement s) ? s.GetString() ?? "log" : "log";
+            string text   = entry.TryGetProperty("text",   out JsonElement x) ? x.GetString() ?? "" : "";
+            if (entry.TryGetProperty("url", out JsonElement u) && u.GetString() is { Length: > 0 } url)
                 text += $" ({url})";
 
             AppLog.Write(LevelForConsoleType(level), $"WebView.{source}", text);
         }
-        catch (Exception ex) { AppLog.LogFatal("WebViewConsoleBridge.LogEntry", ex); }
+        catch (Exception ex)
+        {
+            AppLog.LogFatal("WebViewConsoleBridge.LogEntry", ex);
+        }
     }
 
     private static string DescribeRemoteObject(JsonElement arg)
     {
-        if (arg.TryGetProperty("value", out var value)) return value.ToString();
-        if (arg.TryGetProperty("description", out var desc)) return desc.GetString() ?? "";
-        return arg.TryGetProperty("type", out var t) ? $"<{t.GetString()}>" : "<?>";
+        if (arg.TryGetProperty("value",       out JsonElement value)) return value.ToString();
+        if (arg.TryGetProperty("description", out JsonElement desc)) return desc.GetString() ?? "";
+        return arg.TryGetProperty("type", out JsonElement t) ? $"<{t.GetString()}>" : "<?>";
     }
     #elif MACCATALYST || IOS
     // WKWebView has no DevTools protocol reachable from native, so inject a shim that
@@ -153,7 +163,7 @@ public static class WebViewConsoleBridge
                 using var doc = JsonDocument.Parse(message.Body?.ToString() ?? "{}");
                 var root = doc.RootElement;
                 string level = root.TryGetProperty("level", out var l) ? l.GetString() ?? "log" : "log";
-                string text  = root.TryGetProperty("text",  out var t) ? t.GetString() ?? ""    : "";
+                string text = root.TryGetProperty("text",  out var t) ? t.GetString() ?? ""    : "";
                 if (IsBenignWebViewNoise(text)) return;
                 AppLog.Write(LevelForConsoleType(level), "WebView.console", text);
             }
@@ -168,15 +178,15 @@ public static class WebViewConsoleBridge
     // auto-start script runs twice during the initial navigation while the .NET runtime persists
     // across the reload, so the second start fails. On Windows it surfaces as a thrown exception;
     // on MacCatalyst/iOS as an unhandled promise rejection (a rejected start promise). Either way
-    // the app is fully functional and it is not an app bug we can fix from here — keep it out of
+    // the app is fully functional, and it is not an app bug we can fix from here — keep it out of
     // the ERROR stream as noise.
     private static bool IsBenignWebViewNoise(string message) => message.Contains("Blazor has already started");
 
     private static string LevelForConsoleType(string type) => type switch
     {
-        "error"                       => "ERROR",
-        "warn" or "warning"           => "WARN",
+        "error"                         => "ERROR",
+        "warn" or "warning"             => "WARN",
         "debug" or "verbose" or "trace" => "DEBUG",
-        _                             => "INFO",
+        _                               => "INFO",
     };
 }

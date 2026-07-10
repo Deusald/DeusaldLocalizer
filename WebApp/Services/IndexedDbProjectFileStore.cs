@@ -18,6 +18,5 @@ public sealed class IndexedDbProjectFileStore(IndexedDbInterop idb, string locat
 
     public Task DeleteFileAsync(string path) => idb.DeleteAsync(location, path);
 
-    public async Task<IReadOnlyList<string>> ListJsonFilesAsync(string folder) =>
-        await idb.ListJsonAsync(location, folder);
+    public async Task<IReadOnlyList<string>> ListJsonFilesAsync(string folder) => await idb.ListJsonAsync(location, folder);
 }

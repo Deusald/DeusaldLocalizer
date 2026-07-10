@@ -7,15 +7,13 @@ namespace DeusaldLocalizerBackend;
 /// </summary>
 public sealed class ProjectRegistry(IOptions<BotOptions> options, GitService git, ILogger<ProjectRegistry> logger)
 {
-    private readonly BotOptions               _Options = options.Value;
+    private readonly BotOptions _Options = options.Value;
 
     public BotOptions Options => _Options;
 
-    public ProjectConfig? Find(Guid projectId) =>
-        _Options.Projects.FirstOrDefault(p => p.ProjectId == projectId);
+    public ProjectConfig? Find(Guid projectId) => _Options.Projects.FirstOrDefault(p => p.ProjectId == projectId);
 
-    private string LocalPath(ProjectConfig config) =>
-        Path.Combine(_Options.ReposRoot, config.Slug);
+    private string LocalPath(ProjectConfig config) => Path.Combine(_Options.ReposRoot, config.Slug);
 
     /// <summary>
     /// Ensures the project is cloned locally and returns its working-tree path. Must be called

@@ -26,96 +26,96 @@
             }
             else
             {
-            <div class="nkm-field">
-                <label class="nkm-label">
-                    Key name
-                    <span class="nkm-label-hint">letters, numbers and underscore only</span>
-                </label>
-                <input class="nkm-input nkm-input-mono" type="text" placeholder="button_save"
-                       @bind="_KeyName" @bind:event="oninput" maxlength="120"/>
-                @if (!string.IsNullOrEmpty(_KeyName) && !IsValidKeyName(_KeyName))
-                {
-                    <div class="nkm-field-error">Only letters, numbers and "_" are allowed</div>
-                }
-                else if (_IsDuplicateKey)
-                {
-                    <div class="nkm-field-error">A key with this name already exists in this category</div>
-                }
-            </div>
+                <div class="nkm-field">
+                    <label class="nkm-label">
+                        Key name
+                        <span class="nkm-label-hint">letters, numbers and underscore only</span>
+                    </label>
+                    <input class="nkm-input nkm-input-mono" type="text" placeholder="button_save"
+                           @bind="_KeyName" @bind:event="oninput" maxlength="120"/>
+                    @if (!string.IsNullOrEmpty(_KeyName) && !IsValidKeyName(_KeyName))
+                    {
+                        <div class="nkm-field-error">Only letters, numbers and "_" are allowed</div>
+                    }
+                    else if (_IsDuplicateKey)
+                    {
+                        <div class="nkm-field-error">A key with this name already exists in this category</div>
+                    }
+                </div>
 
-            <div class="nkm-field nkm-field-grow">
-                <label class="nkm-label">Category</label>
-                <div class="nkm-cat-picker" @onclick:stopPropagation="true">
-                    <div class="nkm-cat-search-wrap">
-                        @if (_SelectedCategory != null && !_CatOpen)
-                        {
-                            <span class="nkm-cat-selected-icon">
+                <div class="nkm-field nkm-field-grow">
+                    <label class="nkm-label">Category</label>
+                    <div class="nkm-cat-picker" @onclick:stopPropagation="true">
+                        <div class="nkm-cat-search-wrap">
+                            @if (_SelectedCategory != null && !_CatOpen)
+                            {
+                                <span class="nkm-cat-selected-icon">
                                 <i class="bi bi-folder2"></i>
                             </span>
-                            <button class="nkm-cat-selected-display" @onclick="() => _CatOpen = true">
-                                @FullCategoryPath(_SelectedCategory)
-                            </button>
-                            <button class="nkm-cat-clear" @onclick="ClearCategory" @onclick:stopPropagation="true">
-                                <i class="bi bi-x-lg"></i>
-                            </button>
-                        }
-                        else
-                        {
-                            <i class="bi bi-search nkm-cat-search-icon"></i>
-                            <input class="nkm-input nkm-cat-search" type="text"
-                                   placeholder="Search category…"
-                                   @bind="_CatQuery" @bind:event="oninput"
-                                   @onfocus="() => _CatOpen = true"
-                                   @onblur="OnCatBlur"/>
-                        }
-                    </div>
-
-                    @if (_CatOpen)
-                    {
-                        <div class="nkm-cat-dropdown" @onmousedown="() => _SuppressBlurClose = true">
-                            @{ List<LocCategory> results = _FilteredCategories; }
-                            @if (results.Count == 0)
-                            {
-                                <div class="nkm-cat-empty">No categories found. Create one from the Keys column first.</div>
+                                <button class="nkm-cat-selected-display" @onclick="() => _CatOpen = true">
+                                    @FullCategoryPath(_SelectedCategory)
+                                </button>
+                                <button class="nkm-cat-clear" @onclick="ClearCategory" @onclick:stopPropagation="true">
+                                    <i class="bi bi-x-lg"></i>
+                                </button>
                             }
                             else
                             {
-                                @foreach (LocCategory cat in results)
-                                {
-                                    LocCategory c      = cat;
-                                    bool        active = _SelectedCategory?.Id == c.Id;
-                                    <button class="nkm-cat-item @(active ? "active" : "")"
-                                            @onclick="() => SelectCategory(c)"
-                                            @onclick:preventDefault="true">
-                                        <span class="nkm-cat-item-name">@FullCategoryPath(c)</span>
-                                        @if (active)
-                                        {
-                                            <i class="bi bi-check2"></i>
-                                        }
-                                    </button>
-                                }
+                                <i class="bi bi-search nkm-cat-search-icon"></i>
+                                <input class="nkm-input nkm-cat-search" type="text"
+                                       placeholder="Search category…"
+                                       @bind="_CatQuery" @bind:event="oninput"
+                                       @onfocus="() => _CatOpen = true"
+                                       @onblur="OnCatBlur"/>
                             }
                         </div>
-                    }
-                </div>
-            </div>
 
-            @if (!_CatOpen)
-            {
-                <div class="nkm-field">
-                    <label class="nkm-label">
-                        Max length
-                        <span class="nkm-label-hint">0 = no limit</span>
-                    </label>
-                    <input class="nkm-input" type="number" min="0" max="10000" placeholder="0"
-                           @bind="_MaxLength" @bind:event="oninput"/>
+                        @if (_CatOpen)
+                        {
+                            <div class="nkm-cat-dropdown" @onmousedown="() => _SuppressBlurClose = true">
+                                @{ List<LocCategory> results = _FilteredCategories; }
+                                @if (results.Count == 0)
+                                {
+                                    <div class="nkm-cat-empty">No categories found. Create one from the Keys column first.</div>
+                                }
+                                else
+                                {
+                                    @foreach (LocCategory cat in results)
+                                    {
+                                        LocCategory c      = cat;
+                                        bool        active = _SelectedCategory?.Id == c.Id;
+                                        <button class="nkm-cat-item @(active ? "active" : "")"
+                                                @onclick="() => SelectCategory(c)"
+                                                @onclick:preventDefault="true">
+                                            <span class="nkm-cat-item-name">@FullCategoryPath(c)</span>
+                                            @if (active)
+                                            {
+                                                <i class="bi bi-check2"></i>
+                                            }
+                                        </button>
+                                    }
+                                }
+                            </div>
+                        }
+                    </div>
                 </div>
 
-                <div class="nkm-preview">
-                    <span class="nkm-preview-label">Full key</span>
-                    <code class="nkm-preview-value">@_PreviewFullKey</code>
-                </div>
-            }
+                @if (!_CatOpen)
+                {
+                    <div class="nkm-field">
+                        <label class="nkm-label">
+                            Max length
+                            <span class="nkm-label-hint">0 = no limit</span>
+                        </label>
+                        <input class="nkm-input" type="number" min="0" max="10000" placeholder="0"
+                               @bind="_MaxLength" @bind:event="oninput"/>
+                    </div>
+
+                    <div class="nkm-preview">
+                        <span class="nkm-preview-label">Full key</span>
+                        <code class="nkm-preview-value">@_PreviewFullKey</code>
+                    </div>
+                }
             }
 
         </div>
@@ -283,21 +283,21 @@
         }
         else
         {
-            string newKeyName     = _KeyName.Trim();
-            Guid   newCategoryId  = _SelectedCategory!.Id;
-            int    newMaxLength   = Math.Max(0, _MaxLength);
+            string newKeyName    = _KeyName.Trim();
+            Guid   newCategoryId = _SelectedCategory!.Id;
+            int    newMaxLength  = Math.Max(0, _MaxLength);
 
-            bool nameChanged      = _EditingKey.KeyName    != newKeyName;
+            bool nameChanged      = _EditingKey.KeyName != newKeyName;
             bool categoryChanged  = _EditingKey.CategoryId != newCategoryId;
-            bool maxLengthChanged = _EditingKey.MaxLength  != newMaxLength;
+            bool maxLengthChanged = _EditingKey.MaxLength != newMaxLength;
 
             _EditingKey.KeyName    = newKeyName;
             _EditingKey.CategoryId = newCategoryId;
             _EditingKey.MaxLength  = newMaxLength;
             _EditingKey.UpdatedAt  = DateTime.UtcNow;
 
-            if (nameChanged)      _ProjectState.RecordKeyNameChanged(_EditingKey);
-            if (categoryChanged)  _ProjectState.RecordKeyCategoryChanged(_EditingKey);
+            if (nameChanged) _ProjectState.RecordKeyNameChanged(_EditingKey);
+            if (categoryChanged) _ProjectState.RecordKeyCategoryChanged(_EditingKey);
             if (maxLengthChanged) _ProjectState.RecordKeyMaxLengthChanged(_EditingKey);
 
             _Visible = false;

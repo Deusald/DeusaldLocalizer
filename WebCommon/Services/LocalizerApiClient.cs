@@ -36,10 +36,9 @@ public sealed class LocalizerApiClient(HttpClient http)
     /// <see cref="SyncResponse"/> carrying every project file. Non-2xx (bad creds / unknown project)
     /// surfaces as an <see cref="HttpRequestException"/> for the caller to map.
     /// </summary>
-    public async Task<SyncResponse?> BootstrapAsync(
-        string apiUrl, Guid projectId, string username, string token, CancellationToken ct = default)
+    public async Task<SyncResponse?> BootstrapAsync(string apiUrl, Guid projectId, string username, string token, CancellationToken ct = default)
     {
-        string baseUrl = apiUrl.TrimEnd('/');
+        string                   baseUrl = apiUrl.TrimEnd('/');
         using HttpRequestMessage request = new(HttpMethod.Post, $"{baseUrl}/projects/{projectId}/bootstrap");
         request.Headers.TryAddWithoutValidation("Authorization", $"Bearer {token}");
         request.Content = JsonContent.Create(new BootstrapRequest { Username = username }, options: _Json);
@@ -63,10 +62,10 @@ public sealed class LocalizerApiClient(HttpClient http)
 
     private static HttpRequestMessage Build(string apiUrl, Guid projectId, string action, Guid userId, string token)
     {
-        string baseUrl = apiUrl.TrimEnd('/');
+        string             baseUrl = apiUrl.TrimEnd('/');
         HttpRequestMessage request = new(HttpMethod.Post, $"{baseUrl}/projects/{projectId}/{action}");
         request.Headers.TryAddWithoutValidation("Authorization", $"Bearer {token}");
-        request.Headers.TryAddWithoutValidation("X-User-Id", userId.ToString());
+        request.Headers.TryAddWithoutValidation("X-User-Id",     userId.ToString());
         return request;
     }
 }

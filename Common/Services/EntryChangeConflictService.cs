@@ -17,9 +17,9 @@ namespace DeusaldLocalizerCommon
     {
         public EntryConflictType Type       { get; set; }
         public Guid              KeyId      { get; set; }
-        public string           LanguageId { get; set; } = string.Empty;
-        public string           KeyName    { get; set; } = string.Empty;
-        public string           Message    { get; set; } = string.Empty;
+        public string            LanguageId { get; set; } = string.Empty;
+        public string            KeyName    { get; set; } = string.Empty;
+        public string            Message    { get; set; } = string.Empty;
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace DeusaldLocalizerCommon
         /// </summary>
         public static List<EntryChangeConflict> Validate(LocProject baseline, IEnumerable<LocEntryChange> changes)
         {
-            List<EntryChangeConflict> conflicts   = new List<EntryChangeConflict>();
-            HashSet<string>           touched     = new HashSet<string>();
-            string                    sourceLang  = baseline.Metadata.MainLanguageId;
+            List<EntryChangeConflict> conflicts  = new List<EntryChangeConflict>();
+            HashSet<string>           touched    = new HashSet<string>();
+            string                    sourceLang = baseline.Metadata.MainLanguageId;
 
             foreach (LocEntryChange change in changes)
             {

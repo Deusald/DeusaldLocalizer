@@ -15,8 +15,7 @@ public sealed class PushService(
     AuthService auth,
     ILogger<PushService> logger)
 {
-    public async Task<ServiceResult<PushResponse>> PushAsync(
-        Guid projectId, Guid userId, string token, IReadOnlyList<LocEntryChange> changes, CancellationToken ct)
+    public async Task<ServiceResult<PushResponse>> PushAsync(Guid projectId, Guid userId, string token, IReadOnlyList<LocEntryChange> changes, CancellationToken ct)
     {
         ProjectConfig? config = registry.Find(projectId);
         if (config == null) return ServiceResult<PushResponse>.NotFound();

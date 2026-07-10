@@ -36,9 +36,9 @@
                 {
                     @foreach (CategoryRow row in _FlattenedCategories)
                     {
-                        bool active = SelectedCategoryIds.Contains(row.Category.Id);
-                        LocCategory cat = row.Category;
-                        bool hasKeys = CategoryHasKeys(cat.Id);
+                        bool        active  = SelectedCategoryIds.Contains(row.Category.Id);
+                        LocCategory cat     = row.Category;
+                        bool        hasKeys = CategoryHasKeys(cat.Id);
 
                         <div class="cfp-row"
                              title="@cat.Description"
@@ -91,8 +91,8 @@
 <NewCategoryModal @ref="_NewCategoryModal" OnCreated="StateHasChanged"/>
 
 @code {
-    [Parameter] public HashSet<Guid> SelectedCategoryIds { get; set; } = new();
-    [Parameter] public EventCallback<HashSet<Guid>> OnChanged { get; set; }
+    [Parameter] public HashSet<Guid>                SelectedCategoryIds { get; set; } = new();
+    [Parameter] public EventCallback<HashSet<Guid>> OnChanged           { get; set; }
 
     private bool              _Expanded;
     private NewCategoryModal? _NewCategoryModal;
@@ -133,8 +133,8 @@
             void Walk(Guid? parentId, int depth, string parentPath)
             {
                 IOrderedEnumerable<LocCategory> children = all
-                                                          .Where(c => c.ParentCategoryId == parentId)
-                                                          .OrderBy(c => c.Name, StringComparer.OrdinalIgnoreCase);
+                                                           .Where(c => c.ParentCategoryId == parentId)
+                                                           .OrderBy(c => c.Name, StringComparer.OrdinalIgnoreCase);
 
                 foreach (LocCategory cat in children)
                 {
@@ -176,4 +176,5 @@
     {
         await OnChanged.InvokeAsync(new HashSet<Guid>());
     }
+
 }

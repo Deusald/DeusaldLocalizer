@@ -1,11 +1,11 @@
 @page "/"
 @layout MainLayout
-@inject ProjectStateService   _ProjectState
-@inject IProjectStoreFactory  _StoreFactory
-@inject IndexedDbInterop      _Idb
-@inject WebProjectArchive     _Archive
-@inject IAuthTokenStore       _AuthTokens
-@inject NavigationManager     _Nav
+@inject ProjectStateService  _ProjectState
+@inject IProjectStoreFactory _StoreFactory
+@inject IndexedDbInterop     _Idb
+@inject WebProjectArchive    _Archive
+@inject IAuthTokenStore      _AuthTokens
+@inject NavigationManager    _Nav
 
 <PageTitle>Deusald Localizer</PageTitle>
 
@@ -197,13 +197,13 @@
     private Guid        _PendingUserId;
 
     private sealed record ProjectSummary(
-        string   Location,
-        string   Name,
-        int      KeyCount,
-        int      LangCount,
-        int      TranslationPct,
+        string Location,
+        string Name,
+        int KeyCount,
+        int LangCount,
+        int TranslationPct,
         DateTime UpdatedAt,
-        bool     IsOnline);
+        bool IsOnline);
 
     protected override async Task OnInitializedAsync()
     {
@@ -310,7 +310,10 @@
 
     private void OpenConnectModal() => _ConnectModal?.Show();
 
-    private void OnConnectCancelled() { /* modal hides itself */ }
+    private void OnConnectCancelled()
+    {
+        /* modal hides itself */
+    }
 
     /// <summary>
     /// Downloads a whole online project from the bot into a freshly minted IndexedDB namespace, then loads
@@ -322,7 +325,7 @@
     private async Task OnConnectConfirmed(ConnectServerModal.ConnectArgs args)
     {
         ConnectResult result = await _ProjectState.ConnectToServerAsync(
-            args.ApiUrl, args.ProjectId, args.Username, args.Token, _ => args.ParentLocation);
+                                   args.ApiUrl, args.ProjectId, args.Username, args.Token, _ => args.ParentLocation);
 
         if (result.Error != null || result.Project is null || result.Location is null || result.Member is null)
         {
@@ -338,7 +341,7 @@
         if (member.MustResetAccessToken)
         {
             InitialTokenResult rotation = await _ProjectState.RotateInitialTokenAsync(
-                result.Project, result.Location, member, args.Token);
+                                              result.Project, result.Location, member, args.Token);
 
             if (rotation.RawToken == null)
             {
@@ -441,4 +444,5 @@
             _IsBusy = false;
         }
     }
+
 }

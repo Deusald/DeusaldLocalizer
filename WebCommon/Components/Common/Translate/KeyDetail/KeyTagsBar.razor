@@ -31,7 +31,7 @@
     }
 </div>
 
-<AddTagModal @ref="_AddTagModal" Key="Key" OnAdded="OnAdded" />
+<AddTagModal @ref="_AddTagModal" Key="Key" OnAdded="OnAdded"/>
 
 @code {
     [Parameter] public LocLocalizationKey Key       { get; set; } = null!;
@@ -51,4 +51,5 @@
         _Hovered = null;
         OnChanged.InvokeAsync();
     }
+
 }

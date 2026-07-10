@@ -12,7 +12,7 @@ namespace DeusaldLocalizerCommon
     /// Column layout:
     ///   KeyId | KeyName | KeyDescription | [Tags] | MaxLength | SourceHash | [lang1] | [lang1 #hash] | ...
     /// Languages are ordered source-language first, then the rest alphabetical.
-    /// Each language column is followed by a "#hash" column holding a SHA-256 of the
+    /// Each language column is followed by a "#hash" column holding an SHA-256 of the
     /// exported text, so the importer can tell which cells the translator actually changed.
     /// </summary>
     public static class LocalizationExportService
@@ -27,10 +27,10 @@ namespace DeusaldLocalizerCommon
 
             // ── Build ordered language list: source first, rest alphabetical ──
             // When options select a language subset, keep only those (empty = all).
-            bool            hasLangFilter = options is { Languages: { Count: > 0 } };
+            bool hasLangFilter = options is { Languages: { Count: > 0 } };
             HashSet<string> selectedLangs = hasLangFilter
-                ? new HashSet<string>(options!.Languages)
-                : new HashSet<string>();
+                                                ? new HashSet<string>(options!.Languages)
+                                                : new HashSet<string>();
 
             List<string> languages = new List<string>();
             if (!hasLangFilter || selectedLangs.Contains(project.Metadata.MainLanguageId))
@@ -53,7 +53,7 @@ namespace DeusaldLocalizerCommon
             int tagsCol = -1;
             if (includeTagsCol)
             {
-                tagsCol = col;
+                tagsCol                    = col;
                 sheet.Cell(1, col++).Value = "Tags";
             }
 
@@ -61,8 +61,8 @@ namespace DeusaldLocalizerCommon
             sheet.Cell(1, col++).Value = "MaxLength";
             sheet.Cell(1, col++).Value = "SourceHash";
 
-            int          langStartCol = col;
-            List<int>    langTextCols = new List<int>();
+            int       langStartCol = col;
+            List<int> langTextCols = new List<int>();
             foreach (string lang in languages)
             {
                 langTextCols.Add(col);
@@ -81,7 +81,7 @@ namespace DeusaldLocalizerCommon
             sheet.SheetView.FreezeRows(1);
 
             // ── Data rows ───────────────────────────────────────────────────
-            int row = 2;
+            int                             row          = 2;
             IEnumerable<LocLocalizationKey> exportedKeys = project.Keys;
             if (options != null)
                 exportedKeys = exportedKeys.Where(k => PassesFilter(k, options));
@@ -89,10 +89,10 @@ namespace DeusaldLocalizerCommon
             {
                 // Get the source translation's BaseTextHash as "SourceHash"
                 LocKeyTranslation? sourceTrans = key.Translations
-                    .Find(t => t.LanguageId == project.Metadata.MainLanguageId);
+                                                    .Find(t => t.LanguageId == project.Metadata.MainLanguageId);
                 string sourceHash = sourceTrans?.BaseTextHash ?? string.Empty;
 
-                col = 1;
+                col                          = 1;
                 sheet.Cell(row, col++).Value = key.Id.ToString();
                 sheet.Cell(row, col++).Value = FullKeyName(key, project);
                 sheet.Cell(row, col++).Value = key.Description;
@@ -113,13 +113,13 @@ namespace DeusaldLocalizerCommon
             }
 
             // ── Column widths ───────────────────────────────────────────────
-            sheet.Column(1).Width = 38;  // KeyId (UUID)
-            sheet.Column(2).Width = 40;  // KeyName
-            sheet.Column(3).Width = 40;  // KeyDescription
+            sheet.Column(1).Width = 38; // KeyId (UUID)
+            sheet.Column(2).Width = 40; // KeyName
+            sheet.Column(3).Width = 40; // KeyDescription
             if (tagsCol > 0)
-                sheet.Column(tagsCol).Width = 26;  // Tags
-            sheet.Column(maxLengthCol).Width     = 12;  // MaxLength
-            sheet.Column(maxLengthCol + 1).Width = 66;  // SourceHash (SHA-256 hex)
+                sheet.Column(tagsCol).Width = 26;      // Tags
+            sheet.Column(maxLengthCol).Width     = 12; // MaxLength
+            sheet.Column(maxLengthCol + 1).Width = 66; // SourceHash (SHA-256 hex)
 
             // Language columns — wide text with wrap; hash columns narrow and de-emphasized.
             for (int c = langStartCol; c < col; c++)
@@ -133,8 +133,8 @@ namespace DeusaldLocalizerCommon
                 }
                 else
                 {
-                    sheet.Column(c).Width                     = 50;
-                    sheet.Column(c).Style.Alignment.WrapText  = true;
+                    sheet.Column(c).Width                    = 50;
+                    sheet.Column(c).Style.Alignment.WrapText = true;
                 }
             }
 

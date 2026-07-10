@@ -8,7 +8,7 @@ namespace DeusaldLocalizerWeb;
 /// </summary>
 public sealed class IndexedDbInterop(IJSRuntime js) : IAsyncDisposable
 {
-    private          IJSObjectReference? _Module;
+    private IJSObjectReference? _Module;
 
     private async ValueTask<IJSObjectReference> ModuleAsync() =>
         _Module ??= await js.InvokeAsync<IJSObjectReference>("import", "./js/idb.js");

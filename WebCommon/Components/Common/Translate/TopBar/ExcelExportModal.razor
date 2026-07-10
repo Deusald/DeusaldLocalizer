@@ -63,7 +63,7 @@
                 <div class="ex-section-title">Columns</div>
                 <label class="ex-check">
                     <input type="checkbox" checked="@_IncludeTagsColumn"
-                           @onchange="e => _IncludeTagsColumn = (bool)e.Value!" />
+                           @onchange="e => _IncludeTagsColumn = (bool)e.Value!"/>
                     <span>Add a Tags column listing each key's tags</span>
                 </label>
             </div>
@@ -101,11 +101,13 @@
                         disabled="@(_IsExporting || _MatchingKeyCount == 0 || _SelectedLangs.Count == 0)">
                     @if (_IsExporting)
                     {
-                        <span class="ex-spinner"></span> <span>Exporting…</span>
+                        <span class="ex-spinner"></span>
+                        <span>Exporting…</span>
                     }
                     else
                     {
-                        <i class="bi bi-file-earmark-arrow-down"></i> <span>Export</span>
+                        <i class="bi bi-file-earmark-arrow-down"></i>
+                        <span>Export</span>
                     }
                 </button>
             </div>
@@ -129,24 +131,21 @@
     private static readonly FlagType[] _AllFlagTypes = (FlagType[])Enum.GetValues(typeof(FlagType));
 
     // Flags translators should skip by default; everything else defaults to Include.
-    private static readonly HashSet<FlagType> _DefaultExcludedFlags = new()
-    {
-        FlagType.Outdated, FlagType.DoNotTranslate, FlagType.InProgress
-    };
+    private static readonly HashSet<FlagType> _DefaultExcludedFlags = [FlagType.Outdated, FlagType.DoNotTranslate, FlagType.InProgress];
 
     private List<string> _AllTags =>
         _ProjectState.CurrentProject!.Keys
-                     .SelectMany(k => k.Tags)
-                     .Distinct(StringComparer.OrdinalIgnoreCase)
-                     .OrderBy(t => t, StringComparer.OrdinalIgnoreCase)
-                     .ToList();
+                      .SelectMany(k => k.Tags)
+                      .Distinct(StringComparer.OrdinalIgnoreCase)
+                      .OrderBy(t => t, StringComparer.OrdinalIgnoreCase)
+                      .ToList();
 
     private List<string> _AllLanguages
     {
         get
         {
             LocProjectMetadata meta = _ProjectState.CurrentProject!.Metadata;
-            List<string>       list = new() { meta.MainLanguageId };
+            List<string>       list = [meta.MainLanguageId];
             list.AddRange(meta.Languages.Where(l => l != meta.MainLanguageId).OrderBy(l => l));
             return list;
         }
@@ -157,7 +156,7 @@
     private int _TotalKeyCount => _ProjectState.CurrentProject!.Keys.Count;
 
     private int _MatchingKeyCount =>
-        _ProjectState.CurrentProject!.Keys.Count(k => Matches(k));
+        _ProjectState.CurrentProject!.Keys.Count(Matches);
 
     public void Show()
     {
@@ -174,13 +173,15 @@
 
     private void Close() => _Visible = false;
 
-    private RenderFragment RenderSeg(bool excluded, Action<bool> set) => __builder =>
+    private RenderFragment RenderSeg(bool excluded, Action<bool> set) => _ =>
     {
         <div class="ex-seg">
             <button class="ex-seg-btn ex-seg-inc @(!excluded ? "active" : "")"
-                    @onclick="() => set(false)">Include</button>
+                    @onclick="() => set(false)">Include
+            </button>
             <button class="ex-seg-btn ex-seg-exc @(excluded ? "active" : "")"
-                    @onclick="() => set(true)">Exclude</button>
+                    @onclick="() => set(true)">Exclude
+            </button>
         </div>
     };
 
@@ -195,7 +196,7 @@
         if (_AllLangsSelected)
             _SelectedLangs.Clear();
         else
-            _SelectedLangs = new HashSet<string>(_AllLanguages);
+            _SelectedLangs = [.._AllLanguages];
     }
 
     // Mirrors LocalizationExportService.PassesFilter so the live count matches the export.
@@ -227,9 +228,11 @@
             IncludeTagsColumn = _IncludeTagsColumn
         };
         foreach (KeyValuePair<FlagType, bool> f in _FlagExcluded)
-            if (f.Value) options.ExcludeFlags.Add(f.Key);
+            if (f.Value)
+                options.ExcludeFlags.Add(f.Key);
         foreach (KeyValuePair<string, bool> t in _TagExcluded)
-            if (t.Value) options.ExcludeTags.Add(t.Key);
+            if (t.Value)
+                options.ExcludeTags.Add(t.Key);
         // Preserve source-first ordering of the selected languages.
         foreach (string lang in _AllLanguages.Where(l => _SelectedLangs.Contains(l)))
             options.Languages.Add(lang);
@@ -286,4 +289,5 @@
         FlagType.Disputed       => "bi-exclamation-triangle",
         _                       => "bi-flag",
     };
+
 }

@@ -64,8 +64,8 @@
     private string? _ErrorMessage;
 
     private string _Title => _ProjectState.HasSyncConflicts
-        ? $"{_ProjectState.SyncConflicts.Count} {(_ProjectState.SyncConflicts.Count == 1 ? "conflict" : "conflicts")} to resolve"
-        : "Can't push";
+                                 ? $"{_ProjectState.SyncConflicts.Count} {(_ProjectState.SyncConflicts.Count == 1 ? "conflict" : "conflicts")} to resolve"
+                                 : "Can't push";
 
     /// <summary>Opens the modal to browse the current sync conflicts.</summary>
     public void Show()
@@ -103,4 +103,5 @@
         EntryConflictType.SourceChanged => "cfm-kind-source",
         _                               => "cfm-kind-dest",
     };
+
 }
