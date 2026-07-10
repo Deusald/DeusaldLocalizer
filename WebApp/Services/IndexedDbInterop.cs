@@ -31,8 +31,13 @@ public sealed class IndexedDbInterop(IJSRuntime js) : IAsyncDisposable
     public async Task<string[]> ListAllAsync(string location) =>
         await (await ModuleAsync()).InvokeAsync<string[]>("listAll", location);
 
-    public async Task<string[]> ListLocationsAsync() =>
-        await (await ModuleAsync()).InvokeAsync<string[]>("listLocations");
+    /// <summary>
+    /// Distinct location handles in the store, optionally filtered to those starting with <paramref name="prefix"/>.
+    /// The store is shared across the origin (see <see cref="WebProjectLocationService.LocationPrefix"/>), so pass the
+    /// app prefix to list only this app's projects.
+    /// </summary>
+    public async Task<string[]> ListLocationsAsync(string prefix = "") =>
+        await (await ModuleAsync()).InvokeAsync<string[]>("listLocations", prefix);
 
     public async Task DeleteLocationAsync(string location) =>
         await (await ModuleAsync()).InvokeVoidAsync("deleteLocation", location);

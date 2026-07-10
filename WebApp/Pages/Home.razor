@@ -219,7 +219,8 @@
 
         try
         {
-            foreach (string location in await _Idb.ListLocationsAsync())
+            // Only the Localizer's own projects — the IndexedDB store is shared with the Story web app on this origin.
+            foreach (string location in await _Idb.ListLocationsAsync(WebProjectLocationService.LocationPrefix))
             {
                 IProjectFileStore store = _StoreFactory.Create(location);
 

@@ -9,9 +9,9 @@
 // so no temp-file-rename dance is needed. Eviction is all-or-nothing per origin, and persist() asks the
 // browser to make the storage durable so pending/offline work is not silently reclaimed.
 
-const DB_NAME = 'DeusaldLocalizer';
+const DB_NAME = 'Deusald'; // shared across the origin: Story + Localizer web apps use this one DB
 const STORE = 'files';
-const SEP = '|'; // never appears in a GUID location handle or a JSON file path
+const SEP = '|'; // never appears in a location handle (prefix + GUID) or a JSON file path
 
 let _dbPromise = null;
 
@@ -95,13 +95,17 @@ export async function listAll(location) {
 }
 
 // Returns the distinct location handles that currently have any file stored (used to list projects).
-export async function listLocations() {
+// The store is shared across the origin (the Story web app uses the same DB), so callers pass their
+// app's location prefix (e.g. "loc:") to list only their own projects; "" lists everything.
+export async function listLocations(prefix = '') {
     const db = await openDb();
     const keys = await reqToPromise(tx(db, 'readonly').getAllKeys());
     const set = new Set();
     for (const k of keys) {
         const i = k.indexOf(SEP);
-        if (i > 0) set.add(k.substring(0, i));
+        if (i <= 0) continue;
+        const loc = k.substring(0, i);
+        if (!prefix || loc.startsWith(prefix)) set.add(loc);
     }
     return Array.from(set);
 }

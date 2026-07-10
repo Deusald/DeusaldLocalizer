@@ -48,7 +48,8 @@ public sealed class WebProjectArchive(IndexedDbInterop idb, WebFileDownloadInter
         byte[]? zipBytes = await files.PickBytesAsync();
         if (zipBytes is null) return null;
 
-        string location  = Guid.NewGuid().ToString("N");
+        // Prefix so the imported project is scoped to the Localizer in the shared origin store (see WebProjectLocationService).
+        string location  = WebProjectLocationService.LocationPrefix + Guid.NewGuid().ToString("N");
         bool   hasMeta   = false;
 
         using (MemoryStream buffer = new MemoryStream(zipBytes))
