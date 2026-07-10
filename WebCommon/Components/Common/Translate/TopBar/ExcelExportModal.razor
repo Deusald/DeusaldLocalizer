@@ -116,6 +116,7 @@
     </div>
 }
 
+@* ReSharper disable once UnusedParameter.Local *@
 @code {
     private bool _Visible;
     private bool _IsExporting;
@@ -173,7 +174,7 @@
 
     private void Close() => _Visible = false;
 
-    private RenderFragment RenderSeg(bool excluded, Action<bool> set) => _ =>
+    private RenderFragment RenderSeg(bool excluded, Action<bool> set) => __builder =>
     {
         <div class="ex-seg">
             <button class="ex-seg-btn ex-seg-inc @(!excluded ? "active" : "")"

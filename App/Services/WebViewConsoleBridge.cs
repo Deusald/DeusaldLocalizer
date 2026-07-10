@@ -10,7 +10,7 @@ namespace App;
 
 /// Forwards the Blazor WebView's own console output — JS `console.*`, uncaught
 /// script exceptions, and (on Windows) resource/network load failures — into the
-/// same file log as the .NET side, so `AppLog.LogFilePath` is the single place to
+/// same file log as the .NET side, so the AppLog file is the single place to
 /// look. Without this, anything that happens inside the WebView is only visible in
 /// the browser dev-tools console, never on disc.
 public static class WebViewConsoleBridge
