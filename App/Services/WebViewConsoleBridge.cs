@@ -1,7 +1,8 @@
 using System.Text.Json;
 using Microsoft.AspNetCore.Components.WebView.Maui;
+#if WINDOWS
 using Microsoft.Web.WebView2.Core;
-#if MACCATALYST || IOS
+#elif MACCATALYST || IOS
 using Foundation;
 using WebKit;
 #endif
