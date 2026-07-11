@@ -1,17 +1,14 @@
 name: Deploy WebApp to GitHub Pages
 
-# Builds the Blazor WebAssembly client and publishes it to GitHub Pages.
-# The MAUI App and Backend are never built here — only WebApp and its
-# dependencies (WebCommon, Common), so no MAUI workload is needed.
+# Builds the Blazor WebAssembly client and publishes it to GitHub Pages on a
+# version tag (e.g. v1.4.6), so the web app ships alongside a release rather than
+# on every push to main. The MAUI App and Backend are never built here — only
+# WebApp and its dependencies (WebCommon, Common), so no MAUI workload is needed.
 
 on:
   push:
-    branches: [ main ]
-    paths:
-      - 'WebApp/**'
-      - 'WebCommon/**'
-      - 'Common/**'
-      - '.github/workflows/deploy-pages.yml'
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 # The site lives at https://<owner>.github.io/DeusaldLocalizer/, so every asset
