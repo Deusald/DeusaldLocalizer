@@ -153,7 +153,7 @@ public class ProjectStateService(
 
         if (string.IsNullOrEmpty(CurrentProjectPath))
         {
-            string? saveLocation = await location.PickSaveLocationAsync();
+            string? saveLocation = await location.PickSaveLocationAsync(CurrentProject!.Metadata.Slug);
 
             if (!string.IsNullOrEmpty(saveLocation))
             {

@@ -163,7 +163,7 @@
 
     private async Task Browse()
     {
-        string? picked                               = await _LocationPicker.PickSaveLocationAsync();
+        string? picked                               = await _LocationPicker.PickSaveLocationAsync(string.Empty);
         if (!string.IsNullOrEmpty(picked)) _Location = picked;
     }
 
@@ -177,7 +177,7 @@
         // Web: no folder was picked, so mint the IndexedDB namespace to download into now.
         string location = _Location;
         if (AutoLocation && string.IsNullOrEmpty(location))
-            location = await _LocationPicker.PickSaveLocationAsync() ?? string.Empty;
+            location = await _LocationPicker.PickSaveLocationAsync(string.Empty) ?? string.Empty;
 
         await OnConfirm.InvokeAsync(new ConnectArgs(
             _ApiUrl.Trim(), Guid.Parse(_ProjectId), _Username.Trim(), _Token.Trim(), location));

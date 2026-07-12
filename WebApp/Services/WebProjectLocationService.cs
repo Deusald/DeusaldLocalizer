@@ -15,6 +15,6 @@ public sealed class WebProjectLocationService : IProjectLocationService
     /// </summary>
     public const string LocationPrefix = "loc:";
 
-    public Task<string?> PickSaveLocationAsync() =>
+    public Task<string?> PickSaveLocationAsync(string preferredFolderName) =>
         Task.FromResult<string?>(LocationPrefix + Guid.NewGuid().ToString("N"));
 }
