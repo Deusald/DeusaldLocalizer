@@ -42,9 +42,9 @@
         <ApplicationId>com.deusald.localizer</ApplicationId>
 
         <!-- Versions -->
-        <ApplicationVersion>6</ApplicationVersion>
-        <Version>1.5.6</Version>
-        <ApplicationDisplayVersion>1.5.6</ApplicationDisplayVersion>
+        <ApplicationVersion>7</ApplicationVersion>
+        <Version>1.6.7</Version>
+        <ApplicationDisplayVersion>1.6.7</ApplicationDisplayVersion>
 
         <!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
         <WindowsPackageType>None</WindowsPackageType>
