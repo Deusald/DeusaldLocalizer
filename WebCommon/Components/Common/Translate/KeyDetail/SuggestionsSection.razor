@@ -32,7 +32,7 @@
                         <div class="ss-text">@s.Text</div>
                         @if (preview != s.Text)
                         {
-                            <div class="ss-preview">@preview</div>
+                            <div class="ss-preview">@((MarkupString)PreviewHtmlSanitizer.ToSafeHtml(preview))</div>
                         }
                         <div class="ss-meta">
                             <span class="ss-avatar" style="background:@AvatarColor(s.AuthorId)">@Initial(authorName)</span>

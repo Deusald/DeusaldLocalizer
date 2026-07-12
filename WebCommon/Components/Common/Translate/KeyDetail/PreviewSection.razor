@@ -13,7 +13,7 @@
         <div class="ps-row">
             <span class="ps-row-tag ps-row-tag-source">SRC</span>
             <span class="ps-row-text @(string.IsNullOrEmpty(_RenderedSource) ? "ps-row-text-empty" : "")">
-                @(string.IsNullOrEmpty(_RenderedSource) ? "No source yet" : _RenderedSource)
+                @(string.IsNullOrEmpty(_RenderedSource) ? (MarkupString)"No source yet" : (MarkupString)PreviewHtmlSanitizer.ToSafeHtml(_RenderedSource))
             </span>
         </div>
         @if (!_IsSourceLanguageSelected)
@@ -21,7 +21,7 @@
             <div class="ps-row">
                 <span class="ps-row-tag ps-row-tag-translation">@SelectedLanguage</span>
                 <span class="ps-row-text @(string.IsNullOrEmpty(_RenderedTranslation) ? "ps-row-text-empty" : "")">
-                    @(string.IsNullOrEmpty(_RenderedTranslation) ? "No translation yet" : _RenderedTranslation)
+                    @(string.IsNullOrEmpty(_RenderedTranslation) ? (MarkupString)"No translation yet" : (MarkupString)PreviewHtmlSanitizer.ToSafeHtml(_RenderedTranslation))
                 </span>
             </div>
         }
