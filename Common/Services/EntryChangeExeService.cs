@@ -21,7 +21,7 @@ namespace DeusaldLocalizerCommon
                     if (project.ProjectMembers.All(m => m.UserId != member.UserId))
                         project.ProjectMembers.Add(member);
 
-                    commitString = $"Added member {member.Username}";
+                    commitString = $"content(Localization): Added member {member.Username}";
                     break;
                 }
                 case EntryChangeType.MemberUpdated:
@@ -49,7 +49,7 @@ namespace DeusaldLocalizerCommon
                             break;
                     }
 
-                    commitString = $"Updated member {existing.Username} ({change.EntrySubId})";
+                    commitString = $"content(Localization): Updated member {existing.Username} ({change.EntrySubId})";
                     break;
                 }
                 case EntryChangeType.LanguageAdded:
@@ -58,7 +58,7 @@ namespace DeusaldLocalizerCommon
                     if (!string.IsNullOrEmpty(code) && !project.Metadata.Languages.Contains(code))
                         project.Metadata.Languages.Add(code);
 
-                    commitString = $"Added language {code}";
+                    commitString = $"content(Localization): Added language {code}";
                     break;
                 }
                 case EntryChangeType.LanguageRemoved:
@@ -66,7 +66,7 @@ namespace DeusaldLocalizerCommon
                     string code = change.ChangeData;
                     project.Metadata.Languages.Remove(code);
 
-                    commitString = $"Removed language {code}";
+                    commitString = $"content(Localization): Removed language {code}";
                     break;
                 }
                 case EntryChangeType.KeyAdded:
@@ -77,7 +77,7 @@ namespace DeusaldLocalizerCommon
                     if (project.Keys.All(k => k.Id != key.Id))
                         project.Keys.Add(key);
 
-                    commitString = $"Added key {key.KeyName}";
+                    commitString = $"content(Localization): Added key {key.KeyName}";
                     break;
                 }
                 case EntryChangeType.KeyUpdated:
@@ -101,7 +101,7 @@ namespace DeusaldLocalizerCommon
                             break;
                     }
 
-                    commitString = $"Updated key {key.KeyName} ({change.EntrySubId})";
+                    commitString = $"content(Localization): Updated key {key.KeyName} ({change.EntrySubId})";
                     break;
                 }
                 case EntryChangeType.CategoryAdded:
@@ -112,7 +112,7 @@ namespace DeusaldLocalizerCommon
                     if (project.Categories.All(c => c.Id != category.Id))
                         project.Categories.Add(category);
 
-                    commitString = $"Added category {category.Name}";
+                    commitString = $"content(Localization): Added category {category.Name}";
                     break;
                 }
                 case EntryChangeType.CategoryUpdated:
@@ -133,7 +133,7 @@ namespace DeusaldLocalizerCommon
                             break;
                     }
 
-                    commitString = $"Updated category {category.Name} ({change.EntrySubId})";
+                    commitString = $"content(Localization): Updated category {category.Name} ({change.EntrySubId})";
                     break;
                 }
                 case EntryChangeType.CategoryRemoved:
@@ -142,7 +142,7 @@ namespace DeusaldLocalizerCommon
                     string       name     = category?.Name ?? change.EntryId.ToString();
                     if (category != null) project.Categories.Remove(category);
 
-                    commitString = $"Removed category {name}";
+                    commitString = $"content(Localization): Removed category {name}";
                     break;
                 }
                 case EntryChangeType.TranslationUpdated:
@@ -173,7 +173,7 @@ namespace DeusaldLocalizerCommon
                         existing.UpdatedAt     = incoming.UpdatedAt;
                     }
 
-                    commitString = $"Updated translation {change.EntrySubId} for key {key.KeyName}";
+                    commitString = $"content(Localization): Updated translation {change.EntrySubId} for key {key.KeyName}";
                     break;
                 }
                 case EntryChangeType.SuggestionAdded:
@@ -189,7 +189,7 @@ namespace DeusaldLocalizerCommon
                     if (translation.Suggestions.All(s => s.Id != suggestion.Id))
                         translation.Suggestions.Add(suggestion);
 
-                    commitString = $"Added suggestion for {change.EntrySubId} on key {key.KeyName}";
+                    commitString = $"content(Localization): Added suggestion for {change.EntrySubId} on key {key.KeyName}";
                     break;
                 }
                 case EntryChangeType.SuggestionVoted:
@@ -207,7 +207,7 @@ namespace DeusaldLocalizerCommon
                     int idx                                    = translation.Suggestions.FindIndex(s => s.Id == incoming.Id);
                     if (idx >= 0) translation.Suggestions[idx] = incoming;
 
-                    commitString = $"Voted on suggestion for {change.EntrySubId} on key {key.KeyName}";
+                    commitString = $"content(Localization): Voted on suggestion for {change.EntrySubId} on key {key.KeyName}";
                     break;
                 }
                 case EntryChangeType.SuggestionRemoved:
@@ -219,7 +219,7 @@ namespace DeusaldLocalizerCommon
                     LocKeyTranslation? translation = key.Translations.Find(t => t.LanguageId == change.EntrySubId);
                     translation?.Suggestions.RemoveAll(s => s.Id == suggestionId);
 
-                    commitString = $"Removed suggestion for {change.EntrySubId} on key {key.KeyName}";
+                    commitString = $"content(Localization): Removed suggestion for {change.EntrySubId} on key {key.KeyName}";
                     break;
                 }
                 case EntryChangeType.FlagAdded:
@@ -232,7 +232,7 @@ namespace DeusaldLocalizerCommon
 
                     if (key.Flags.All(f => f.Id != flag.Id)) key.Flags.Add(flag);
 
-                    commitString = $"Added flag to key {key.KeyName}";
+                    commitString = $"content(Localization): Added flag to key {key.KeyName}";
                     break;
                 }
                 case EntryChangeType.FlagRemoved:
@@ -243,7 +243,7 @@ namespace DeusaldLocalizerCommon
 
                     key.Flags.RemoveAll(f => f.Id == flagId);
 
-                    commitString = $"Removed flag from key {key.KeyName}";
+                    commitString = $"content(Localization): Removed flag from key {key.KeyName}";
                     break;
                 }
                 case EntryChangeType.TagAdded:
@@ -254,7 +254,7 @@ namespace DeusaldLocalizerCommon
                     if (!string.IsNullOrEmpty(change.ChangeData) && !key.Tags.Contains(change.ChangeData))
                         key.Tags.Add(change.ChangeData);
 
-                    commitString = $"Added tag {change.ChangeData} to key {key.KeyName}";
+                    commitString = $"content(Localization): Added tag {change.ChangeData} to key {key.KeyName}";
                     break;
                 }
                 case EntryChangeType.TagRemoved:
@@ -264,7 +264,7 @@ namespace DeusaldLocalizerCommon
 
                     key.Tags.Remove(change.ChangeData);
 
-                    commitString = $"Removed tag {change.ChangeData} from key {key.KeyName}";
+                    commitString = $"content(Localization): Removed tag {change.ChangeData} from key {key.KeyName}";
                     break;
                 }
                 case EntryChangeType.VariableAdded:
@@ -277,7 +277,7 @@ namespace DeusaldLocalizerCommon
 
                     if (key.Variables.All(v => v.Id != variable.Id)) key.Variables.Add(variable);
 
-                    commitString = $"Added variable to key {key.KeyName}";
+                    commitString = $"content(Localization): Added variable to key {key.KeyName}";
                     break;
                 }
                 case EntryChangeType.VariableUpdated:
@@ -292,7 +292,7 @@ namespace DeusaldLocalizerCommon
                     if (idx >= 0) key.Variables[idx] = incoming;
                     else key.Variables.Add(incoming);
 
-                    commitString = $"Updated variable on key {key.KeyName}";
+                    commitString = $"content(Localization): Updated variable on key {key.KeyName}";
                     break;
                 }
                 case EntryChangeType.VariableRemoved:
@@ -303,7 +303,7 @@ namespace DeusaldLocalizerCommon
 
                     key.Variables.RemoveAll(v => v.Id == variableId);
 
-                    commitString = $"Removed variable from key {key.KeyName}";
+                    commitString = $"content(Localization): Removed variable from key {key.KeyName}";
                     break;
                 }
                 case EntryChangeType.EnumAdded:
@@ -313,7 +313,7 @@ namespace DeusaldLocalizerCommon
 
                     if (project.Enums.All(e => e.Id != locEnum.Id)) project.Enums.Add(locEnum);
 
-                    commitString = $"Added enum {locEnum.Name}";
+                    commitString = $"content(Localization): Added enum {locEnum.Name}";
                     break;
                 }
                 case EntryChangeType.EnumUpdated:
@@ -325,7 +325,7 @@ namespace DeusaldLocalizerCommon
                     if (idx >= 0) project.Enums[idx] = incoming;
                     else project.Enums.Add(incoming);
 
-                    commitString = $"Updated enum {incoming.Name}";
+                    commitString = $"content(Localization): Updated enum {incoming.Name}";
                     break;
                 }
                 case EntryChangeType.EnumRemoved:
@@ -334,7 +334,7 @@ namespace DeusaldLocalizerCommon
                     string   name    = locEnum?.Name ?? change.EntryId.ToString();
                     if (locEnum != null) project.Enums.Remove(locEnum);
 
-                    commitString = $"Removed enum {name}";
+                    commitString = $"content(Localization): Removed enum {name}";
                     break;
                 }
             }
