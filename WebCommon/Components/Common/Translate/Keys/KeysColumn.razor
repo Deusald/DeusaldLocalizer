@@ -5,7 +5,9 @@
 <div class="kc-root">
 
     <div class="kc-toolbar">
-        <CategoryFilterPanel SelectedCategoryIds="SelectedCategoryIds" OnChanged="OnCategoryFilterChanged"/>
+        <CategoryFilterPanel SelectedCategoryIds="SelectedCategoryIds"
+                             OnChanged="OnCategoryFilterChanged"
+                             OnActiveCategoryChanged="id => _ActiveCategoryId = id"/>
 
         <TagFlagFilterPanel SelectedFlagTypes="_SelectedFlagTypes"
                             SelectedTags="_SelectedTags"
@@ -91,7 +93,7 @@
         else
         {
             <div class="kc-bottom-actions">
-                <button class="kc-add-btn" @onclick="() => _NewKeyModal?.Show()">
+                <button class="kc-add-btn" @onclick="() => _NewKeyModal?.Show(_ActiveCategoryId)">
                     <i class="bi bi-plus-lg"></i> Add key
                 </button>
                 <button class="kc-edit-btn" @onclick="() => _EditMode = true" title="Edit keys">
@@ -122,6 +124,7 @@
     private KeyTab            _Tab    = KeyTab.All;
     private string            _Filter = "";
     private bool              _EditMode;
+    private Guid?             _ActiveCategoryId;
     private HashSet<FlagType> _SelectedFlagTypes = new();
     private HashSet<string>   _SelectedTags      = new(StringComparer.OrdinalIgnoreCase);
 

@@ -105,6 +105,28 @@
     flex-shrink: 0;
 }
 
+.cfp-caret {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: #6a6b73;
+    font-size: 9px;
+    cursor: pointer;
+    transition: background .1s, color .1s;
+}
+.cfp-caret:hover { background: #23242e; color: #d6d6db; }
+
+.cfp-caret-spacer {
+    flex-shrink: 0;
+    width: 18px;
+}
+
 .cfp-item {
     display: flex;
     align-items: center;

@@ -17,3 +17,16 @@
     min-height: 0;
     overflow: hidden;
 }
+
+/* ── Keys / key-detail resize handle ─────────────────────────────────────────── */
+
+.tr-resizer {
+    flex-shrink: 0;
+    width: 5px;
+    margin: 0 -2px;
+    cursor: col-resize;
+    background: transparent;
+    z-index: 5;
+    transition: background .12s;
+}
+.tr-resizer:hover { background: rgba(91,108,255,.35); }

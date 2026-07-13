@@ -36,25 +36,32 @@
                 {
                     @foreach (CategoryRow row in _FlattenedCategories)
                     {
-                        bool        active  = SelectedCategoryIds.Contains(row.Category.Id);
-                        LocCategory cat     = row.Category;
-                        bool        hasKeys = CategoryHasKeys(cat.Id);
+                        bool        active      = SelectedCategoryIds.Contains(row.Category.Id);
+                        LocCategory cat         = row.Category;
+                        bool        hasKeys     = CategoryHasKeys(cat.Id);
+                        bool        hasChildren = row.HasChildren;
+                        bool        collapsed   = _Collapsed.Contains(cat.Id);
 
                         <div class="cfp-row"
+                             style="padding-left:@(row.Depth * 16)px"
                              title="@cat.Description"
                              @onmouseenter="() => _HoveredId = cat.Id"
                              @onmouseleave="() => _HoveredId = null">
+                            @if (hasChildren)
+                            {
+                                <button class="cfp-caret" @onclick="() => ToggleCollapse(cat.Id)"
+                                        title="@(collapsed ? "Expand" : "Collapse")">
+                                    <i class="bi @(collapsed ? "bi-chevron-right" : "bi-chevron-down")"></i>
+                                </button>
+                            }
+                            else
+                            {
+                                <span class="cfp-caret-spacer"></span>
+                            }
                             <button class="cfp-item @(active ? "active" : "")"
-                                    style="padding-left:@(12 + row.Depth * 16)px"
                                     @onclick="() => Toggle(cat.Id)">
                                 <span class="cfp-item-check">@(active ? "✓" : "")</span>
-                                <span class="cfp-item-name">
-                                    @if (row.Depth > 0)
-                                    {
-                                        <span class="cfp-item-path">@row.ParentPath/</span>
-                                    }
-                                    @cat.Name
-                                </span>
+                                <span class="cfp-item-name">@cat.Name</span>
                             </button>
 
                             @if (_IsAdmin && _HoveredId == cat.Id)
@@ -91,12 +98,14 @@
 <NewCategoryModal @ref="_NewCategoryModal" OnCreated="StateHasChanged"/>
 
 @code {
-    [Parameter] public HashSet<Guid>                SelectedCategoryIds { get; set; } = new();
-    [Parameter] public EventCallback<HashSet<Guid>> OnChanged           { get; set; }
+    [Parameter] public HashSet<Guid>                SelectedCategoryIds     { get; set; } = new();
+    [Parameter] public EventCallback<HashSet<Guid>> OnChanged               { get; set; }
+    [Parameter] public EventCallback<Guid?>         OnActiveCategoryChanged { get; set; }
 
     private bool              _Expanded;
     private NewCategoryModal? _NewCategoryModal;
     private Guid?             _HoveredId;
+    private HashSet<Guid>     _Collapsed = new();
 
     private bool _IsAdmin => _ProjectState.CurrentUser.IsAdmin;
 
@@ -121,7 +130,7 @@
         _HoveredId = null;
     }
 
-    private sealed record CategoryRow(LocCategory Category, int Depth, string ParentPath);
+    private sealed record CategoryRow(LocCategory Category, int Depth, string ParentPath, bool HasChildren);
 
     private List<CategoryRow> _FlattenedCategories
     {
@@ -138,15 +147,41 @@
 
                 foreach (LocCategory cat in children)
                 {
-                    rows.Add(new CategoryRow(cat, depth, parentPath));
+                    bool hasChildren = all.Any(c => c.ParentCategoryId == cat.Id);
+                    rows.Add(new CategoryRow(cat, depth, parentPath, hasChildren));
                     string nextPath = string.IsNullOrEmpty(parentPath) ? cat.Name : $"{parentPath}/{cat.Name}";
-                    Walk(cat.Id, depth + 1, nextPath);
+                    if (hasChildren && !_Collapsed.Contains(cat.Id))
+                        Walk(cat.Id, depth + 1, nextPath);
                 }
             }
 
             Walk(null, 0, "");
             return rows;
         }
+    }
+
+    private void ToggleCollapse(Guid id)
+    {
+        if (!_Collapsed.Remove(id)) _Collapsed.Add(id);
+    }
+
+    /// <summary>A category id together with all of its descendant ids.</summary>
+    private List<Guid> SubtreeIds(Guid id)
+    {
+        List<LocCategory> all    = _ProjectState.CurrentProject!.Categories;
+        List<Guid>        result = new List<Guid> { id };
+
+        void Collect(Guid parentId)
+        {
+            foreach (LocCategory child in all.Where(c => c.ParentCategoryId == parentId))
+            {
+                result.Add(child.Id);
+                Collect(child.Id);
+            }
+        }
+
+        Collect(id);
+        return result;
     }
 
     private string _TriggerLabel
@@ -157,24 +192,45 @@
             if (SelectedCategoryIds.Count == 1)
             {
                 Guid         id  = SelectedCategoryIds.First();
-                CategoryRow? row = _FlattenedCategories.Find(r => r.Category.Id == id);
-                if (row == null) return "1 category";
-                return string.IsNullOrEmpty(row.ParentPath) ? row.Category.Name : $"{row.ParentPath}/{row.Category.Name}";
+                LocCategory? cat = _ProjectState.CurrentProject!.Categories.Find(c => c.Id == id);
+                return cat == null ? "1 category" : CategoryPath(cat);
             }
             return $"{SelectedCategoryIds.Count} categories";
         }
     }
 
+    private string CategoryPath(LocCategory cat)
+    {
+        List<string> parts   = new List<string> { cat.Name };
+        LocProject   project = _ProjectState.CurrentProject!;
+        LocCategory  current = cat;
+        while (current.ParentCategoryId != null)
+        {
+            LocCategory? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
+            if (parent == null) break;
+            parts.Insert(0, parent.Name);
+            current = parent;
+        }
+        return string.Join("/", parts);
+    }
+
     private async Task Toggle(Guid id)
     {
-        HashSet<Guid> next = new HashSet<Guid>(SelectedCategoryIds);
-        if (!next.Remove(id)) next.Add(id);
+        HashSet<Guid> next    = new HashSet<Guid>(SelectedCategoryIds);
+        List<Guid>    subtree = SubtreeIds(id);
+        bool          turnOn  = !next.Contains(id);
+
+        if (turnOn) next.UnionWith(subtree);
+        else next.ExceptWith(subtree);
+
         await OnChanged.InvokeAsync(next);
+        await OnActiveCategoryChanged.InvokeAsync(turnOn ? id : (Guid?)null);
     }
 
     private async Task ClearAll()
     {
         await OnChanged.InvokeAsync(new HashSet<Guid>());
+        await OnActiveCategoryChanged.InvokeAsync(null);
     }
 
 }

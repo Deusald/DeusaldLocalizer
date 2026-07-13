@@ -199,14 +199,16 @@
             ? $"{FullCategoryPath(_SelectedCategory)}.{_KeyName}"
             : "—";
 
-    public void Show()
+    public void Show(Guid? prefillCategoryId = null)
     {
         _KeyName           = "";
         _MaxLength         = 0;
         _CatQuery          = "";
         _CatOpen           = false;
         _SuppressBlurClose = false;
-        _SelectedCategory  = null;
+        _SelectedCategory  = prefillCategoryId is Guid id
+            ? _ProjectState.CurrentProject!.Categories.Find(c => c.Id == id)
+            : null;
         _EditingKey        = null;
         _Visible           = true;
         StateHasChanged();

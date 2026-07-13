@@ -2,6 +2,7 @@
 @layout EmptyLayout
 @implements IDisposable
 @inject ProjectStateService _ProjectState
+@inject IJSRuntime _Js
 
 @if (!_ProjectState.HasProject)
 {
@@ -23,6 +24,8 @@
                     OnCategoryFilterChanged="OnCategoryFilterChanged"
                     SelectedKeyId="_SelectedKeyId"
                     OnKeySelected="OnKeySelected"/>
+
+        <div class="tr-resizer" @onpointerdown="StartKeysResize" title="Drag to resize"></div>
 
         <KeyDetailColumn SelectedLanguage="@_SelectedLanguage"
                          SelectedKeyId="_SelectedKeyId"/>
@@ -54,6 +57,11 @@
     public void Dispose()
     {
         _ProjectState.OpenKeyRequested -= OnOpenKeyRequested;
+    }
+
+    private async Task StartKeysResize(PointerEventArgs e)
+    {
+        await _Js.InvokeVoidAsync("columnResize.start", ".kc-root", e.ClientX, 260, 720);
     }
 
     private void OnLanguageSelected(string code)

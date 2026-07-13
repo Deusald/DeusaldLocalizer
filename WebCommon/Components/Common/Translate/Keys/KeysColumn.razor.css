@@ -1,5 +1,5 @@
 ﻿.kc-root {
-    width: 360px;
+    width: var(--kc-width, 360px);
     flex-shrink: 0;
     border-right: 1px solid #1f2027;
     background: #0e0f13;
