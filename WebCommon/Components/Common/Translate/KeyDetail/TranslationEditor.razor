@@ -273,24 +273,29 @@
         // The source is always considered "matching itself".
         source.BaseTextHash = newHash;
 
-        _ProjectState.RecordTranslationUpdated(Key.Id, source, oldHash);
-
-        // Re-evaluate every other-language translation against the new source hash.
-        // A translation is "source changed" when it was based on a different source
-        // version than the current one; reverting the source back to a translation's
-        // BaseTextHash clears the flag again.
-        if (oldHash != newHash)
+        // Editing the source also flips the "source changed" flag on every other-language translation, so the
+        // source edit and those flag updates are recorded as one atomic group — they undo/redo and push together.
+        using (_ProjectState.BeginChangeGroup("edit source"))
         {
-            foreach (LocKeyTranslation other in Key.Translations)
-            {
-                if (other.LanguageId == _SourceLangCode) continue;
-                if (string.IsNullOrEmpty(other.BaseTextHash)) continue;
+            _ProjectState.RecordTranslationUpdated(Key.Id, source, oldHash);
 
-                bool sourceChanged = other.BaseTextHash != newHash;
-                if (other.SourceChanged != sourceChanged)
+            // Re-evaluate every other-language translation against the new source hash.
+            // A translation is "source changed" when it was based on a different source
+            // version than the current one; reverting the source back to a translation's
+            // BaseTextHash clears the flag again.
+            if (oldHash != newHash)
+            {
+                foreach (LocKeyTranslation other in Key.Translations)
                 {
-                    other.SourceChanged = sourceChanged;
-                    _ProjectState.RecordTranslationUpdated(Key.Id, other);
+                    if (other.LanguageId == _SourceLangCode) continue;
+                    if (string.IsNullOrEmpty(other.BaseTextHash)) continue;
+
+                    bool sourceChanged = other.BaseTextHash != newHash;
+                    if (other.SourceChanged != sourceChanged)
+                    {
+                        other.SourceChanged = sourceChanged;
+                        _ProjectState.RecordTranslationUpdated(Key.Id, other);
+                    }
                 }
             }
         }

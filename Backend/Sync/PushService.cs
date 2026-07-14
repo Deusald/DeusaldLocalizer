@@ -42,6 +42,20 @@ public sealed class PushService(
             });
         }
 
+        // Defense-in-depth: a well-behaved client only pushes changes whose atomic-group chain is intact (a
+        // single action's changes must stay together). A broken chain means a crafted or corrupted batch — never
+        // apply it partially; discard the whole push.
+        if (!EntryChangeChainService.ValidateChain(changes))
+        {
+            logger.LogWarning("Push rejected for '{Slug}': member '{User}' sent a batch with a broken change chain.",
+                config.Slug, member.Username);
+            return ServiceResult<PushResponse>.Ok(new PushResponse
+            {
+                Status  = PushStatus.Failed,
+                Message = "The change batch is malformed (broken atomic chain). Please sync and try again.",
+            });
+        }
+
         // Defense-in-depth: validate against the pristine, freshly-pulled project before mutating it.
         List<EntryChangeConflict> conflicts = EntryChangeConflictService.Validate(project, changes);
         if (conflicts.Count > 0)

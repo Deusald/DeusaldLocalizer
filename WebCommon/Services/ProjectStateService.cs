@@ -592,6 +592,10 @@ public partial class ProjectStateService(
         // same edit): they are redundant no-ops, not conflicts, so they must never be flagged or pushed.
         PruneRedundantTranslationChanges(_SyncBaseline);
 
+        // Pruning may have removed a member from the middle of an atomic group; heal the neighbour links so the
+        // reduced queue stays chain-valid (survivors fall back to standalone).
+        EntryChangeChainService.RepairChainLinks(CurrentProject.UncommitedChanges);
+
         RevalidateConflicts();
         ReapplyPendingChanges();
 
@@ -672,8 +676,17 @@ public partial class ProjectStateService(
         if (!CurrentProject.Metadata.UsesUncommittedChanges) return;
         if (index < 0 || index >= CurrentProject.UncommitedChanges.Count) return;
 
-        List<LocEntryChange> pending = new(CurrentProject.UncommitedChanges);
-        pending.RemoveAt(index);
+        // A change can belong to an atomic group (see EntryChangeChainService). Dropping only part of a group
+        // would leave a broken chain that the next load discards wholesale, so expand the removal to the whole
+        // contiguous group the index falls in.
+        List<LocEntryChange> all   = CurrentProject.UncommitedChanges;
+        int                  start = index;
+        while (start > 0 && !string.IsNullOrEmpty(all[start].RequiredBefore)) --start;
+        int end = index;
+        while (end < all.Count - 1 && !string.IsNullOrEmpty(all[end].RequiredNext)) ++end;
+
+        List<LocEntryChange> pending = new(all);
+        pending.RemoveRange(start, end - start + 1);
 
         await RebuildWorkingCopyAsync(pending);
 
@@ -854,8 +867,12 @@ public partial class ProjectStateService(
                 translation.UpdatedAt     = DateTime.UtcNow;
                 translation.Suggestions.Add(suggestion);
 
-                RecordTranslationUpdated(keyId, translation, serverDestHash);
-                RecordSuggestionAdded(keyId, languageId, suggestion);
+                // Keeping the server text while offering mine as a suggestion is one action → keep both atomic.
+                using (BeginChangeGroup("suggest mine"))
+                {
+                    RecordTranslationUpdated(keyId, translation, serverDestHash);
+                    RecordSuggestionAdded(keyId, languageId, suggestion);
+                }
                 key.UpdatedAt = DateTime.UtcNow;
                 break;
 
@@ -915,11 +932,7 @@ public partial class ProjectStateService(
             EntryId    = member.UserId,
             ChangeData = Newtonsoft.Json.JsonConvert.SerializeObject(member)
         };
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
-            CurrentProject.UncommitedChanges.Add(change);
-
-        CaptureUndo(change);
-        MarkDirty();
+        StageChange(change);
     }
 
     public void RecordMemberUsernameChanged(LocProjectMember member) =>
@@ -947,11 +960,7 @@ public partial class ProjectStateService(
             EntrySubId = fieldName,
             ChangeData = changeData
         };
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
-            CurrentProject.UncommitedChanges.Add(change);
-
-        CaptureUndo(change);
-        MarkDirty();
+        StageChange(change);
     }
 
     // ── Language change recording ─────────────────────────────────────────────
@@ -970,11 +979,7 @@ public partial class ProjectStateService(
             EntryId    = CurrentProject!.Metadata.Id,
             ChangeData = code
         };
-        if (CurrentProject.Metadata.UsesUncommittedChanges)
-            CurrentProject.UncommitedChanges.Add(change);
-
-        CaptureUndo(change);
-        MarkDirty();
+        StageChange(change);
     }
 
     // ── Key change recording ──────────────────────────────────────────────────
@@ -989,11 +994,7 @@ public partial class ProjectStateService(
             EntryId    = key.Id,
             ChangeData = Newtonsoft.Json.JsonConvert.SerializeObject(key)
         };
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
-            CurrentProject.UncommitedChanges.Add(change);
-
-        CaptureUndo(change);
-        MarkDirty();
+        StageChange(change);
     }
 
     /// <summary>
@@ -1009,11 +1010,7 @@ public partial class ProjectStateService(
         EntryChangeExeService.ExecuteChange(CurrentProject, change, out _);
 
         ChangedLocKeys.Add(keyId);
-        if (CurrentProject.Metadata.UsesUncommittedChanges)
-            CurrentProject.UncommitedChanges.Add(change);
-
-        CaptureUndo(change);
-        MarkDirty();
+        StageChange(change);
         ProjectChanged?.Invoke();
         ProjectDataChanged?.Invoke();
     }
@@ -1037,11 +1034,7 @@ public partial class ProjectStateService(
         foreach (LocLocalizationKey key in CurrentProject.Keys)
             ChangedLocKeys.Add(key.Id);
 
-        if (CurrentProject.Metadata.UsesUncommittedChanges)
-            CurrentProject.UncommitedChanges.Add(change);
-
-        CaptureUndo(change);
-        MarkDirty();
+        StageChange(change);
         ProjectChanged?.Invoke();
         ProjectDataChanged?.Invoke();
     }
@@ -1065,11 +1058,7 @@ public partial class ProjectStateService(
             EntrySubId = fieldName,
             ChangeData = changeData
         };
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
-            CurrentProject.UncommitedChanges.Add(change);
-
-        CaptureUndo(change);
-        MarkDirty();
+        StageChange(change);
     }
 
     // ── Category change recording ─────────────────────────────────────────────
@@ -1083,11 +1072,7 @@ public partial class ProjectStateService(
             EntryId    = category.Id,
             ChangeData = Newtonsoft.Json.JsonConvert.SerializeObject(category)
         };
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
-            CurrentProject.UncommitedChanges.Add(change);
-
-        CaptureUndo(change);
-        MarkDirty();
+        StageChange(change);
     }
 
     public void RecordCategoryNameChanged(LocCategory category) =>
@@ -1106,11 +1091,7 @@ public partial class ProjectStateService(
             Type    = EntryChangeType.CategoryRemoved,
             EntryId = category.Id
         };
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
-            CurrentProject.UncommitedChanges.Add(change);
-
-        CaptureUndo(change);
-        MarkDirty();
+        StageChange(change);
     }
 
     private void AddCategoryFieldChange(LocCategory category, string fieldName, string changeData)
@@ -1122,11 +1103,7 @@ public partial class ProjectStateService(
             EntrySubId = fieldName,
             ChangeData = changeData
         };
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
-            CurrentProject.UncommitedChanges.Add(change);
-
-        CaptureUndo(change);
-        MarkDirty();
+        StageChange(change);
     }
 
     // ── Key description recording ─────────────────────────────────────────────
@@ -1281,11 +1258,7 @@ public partial class ProjectStateService(
             PrevSourceHashData = prevSourceHashData,
             PrevDestHashData   = prevDestHashData
         };
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
-            CurrentProject.UncommitedChanges.Add(change);
-
-        CaptureUndo(change);
-        MarkDirty();
+        StageChange(change);
     }
 
     // ── Enum change recording ─────────────────────────────────────────────────
@@ -1309,11 +1282,7 @@ public partial class ProjectStateService(
             EntryId    = enumId,
             ChangeData = changeData
         };
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
-            CurrentProject.UncommitedChanges.Add(change);
-
-        CaptureUndo(change);
-        MarkDirty();
+        StageChange(change);
     }
 
     /// <summary>Marks a key as edited (offline incremental save) without recording an online change.</summary>

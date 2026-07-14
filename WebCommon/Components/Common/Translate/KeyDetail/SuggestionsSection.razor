@@ -141,8 +141,12 @@
         translation.Suggestions.Remove(suggestion);
         Key.UpdatedAt = DateTime.UtcNow;
 
-        _ProjectState.RecordTranslationUpdated(Key.Id, translation, oldDestHash);
-        _ProjectState.RecordSuggestionRemoved(Key.Id, SelectedLanguage, suggestion.Id);
+        // The translation update and the suggestion removal are one action — group them so they stay atomic.
+        using (_ProjectState.BeginChangeGroup("accept suggestion"))
+        {
+            _ProjectState.RecordTranslationUpdated(Key.Id, translation, oldDestHash);
+            _ProjectState.RecordSuggestionRemoved(Key.Id, SelectedLanguage, suggestion.Id);
+        }
         OnChanged.InvokeAsync();
     }
 
@@ -153,13 +157,18 @@
 
         translation.Suggestions.Remove(suggestion);
         Key.UpdatedAt = DateTime.UtcNow;
-        _ProjectState.RecordSuggestionRemoved(Key.Id, SelectedLanguage, suggestion.Id);
 
-        // If nothing is left pending and the current translation is approved, clear the flag.
-        if (translation.Suggestions.Count == 0 && translation.Status == TranslationStatus.Approved && translation.SourceChanged)
+        // Rejecting may also clear the source-changed flag; keep both changes atomic when it does.
+        using (_ProjectState.BeginChangeGroup("reject suggestion"))
         {
-            translation.SourceChanged = false;
-            _ProjectState.RecordTranslationUpdated(Key.Id, translation);
+            _ProjectState.RecordSuggestionRemoved(Key.Id, SelectedLanguage, suggestion.Id);
+
+            // If nothing is left pending and the current translation is approved, clear the flag.
+            if (translation.Suggestions.Count == 0 && translation.Status == TranslationStatus.Approved && translation.SourceChanged)
+            {
+                translation.SourceChanged = false;
+                _ProjectState.RecordTranslationUpdated(Key.Id, translation);
+            }
         }
 
         OnChanged.InvokeAsync();

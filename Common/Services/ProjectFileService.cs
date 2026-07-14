@@ -335,6 +335,12 @@ namespace DeusaldLocalizerCommon
                 if (change != null) result.Add(change);
             }
 
+            // Changes that a single action spawned are chained together (see EntryChangeChainService). A broken
+            // link means the on-disk queue was tampered with or corrupted; drop it wholesale rather than replay a
+            // partial, inconsistent batch. (Next save rewrites the now-empty folder, clearing the bad files.)
+            if (!EntryChangeChainService.ValidateChain(result))
+                return new List<LocEntryChange>();
+
             return result;
         }
 

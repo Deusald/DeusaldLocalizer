@@ -15,12 +15,28 @@ namespace DeusaldLocalizerWeb;
 // lossy operation a single re-add cannot restore — so it advances the baseline but records no undo step.
 public partial class ProjectStateService
 {
+    // One undoable unit of work. Usually a single change, but when one action spawns several changes (see
+    // BeginChangeGroup) they are collapsed into one step so a single undo/redo reverses/replays the whole chain.
+    // Forwards are in application order; Inverses hold one inverse per forward at the SAME index (undo applies
+    // them in reverse order, redo applies the forwards in order).
     private sealed class UndoStep
     {
-        public LocEntryChange Undo  { get; init; } = null!;
-        public LocEntryChange Redo  { get; init; } = null!;
-        public string         Label { get; init; } = string.Empty;
+        public IReadOnlyList<LocEntryChange> Forwards { get; init; } = null!;
+        public IReadOnlyList<LocEntryChange> Inverses { get; init; } = null!;
+        public string                        Label    { get; init; } = string.Empty;
     }
+
+    // Collects the changes recorded inside a BeginChangeGroup scope so they can be linked into an atomic chain
+    // and their undo steps collapsed into one. Forwards holds every staged change (for chain linking, in queue
+    // order); Steps holds only the invertible ones (for the combined undo step).
+    private sealed class ChangeGroup
+    {
+        public List<LocEntryChange> Forwards { get; }      = new();
+        public List<UndoStep>       Steps    { get; }      = new();
+        public string               Label    { get; init; } = string.Empty;
+    }
+
+    private ChangeGroup? _ActiveGroup;
 
     private readonly List<UndoStep> _UndoStack = new();
     private readonly List<UndoStep> _RedoStack = new();
@@ -68,12 +84,83 @@ public partial class ProjectStateService
     private static LocProject CloneProject(LocProject project) =>
         JsonConvert.DeserializeObject<LocProject>(JsonConvert.SerializeObject(project))!;
 
+    // ── Recording & change groups ────────────────────────────────────────────
+
+    /// <summary>
+    /// Central sink every recording helper funnels through: queues the change (staged modes), collects it into
+    /// the open change group (if any), captures undo state and marks the project dirty. Keeping this in one place
+    /// lets a group link its changes into an atomic chain and collapse their undo steps.
+    /// </summary>
+    private void StageChange(LocEntryChange change)
+    {
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+            CurrentProject.UncommitedChanges.Add(change);
+
+        _ActiveGroup?.Forwards.Add(change);
+        CaptureUndo(change);
+        MarkDirty();
+    }
+
+    /// <summary>
+    /// Opens an atomic change group: every change recorded until the returned scope is disposed is linked into
+    /// one chain (so a tampered queue is detected and dropped as a unit) and collapsed into a single undo step
+    /// (so one undo/redo reverses/replays the whole action). Nested calls join the outer group. Use with
+    /// <c>using</c> around the recording calls of a single user action that spawns several changes.
+    /// </summary>
+    public IDisposable BeginChangeGroup(string label = "")
+    {
+        if (_ActiveGroup is not null) return new NoOpDisposable();
+        _ActiveGroup = new ChangeGroup { Label = label };
+        return new ChangeGroupScope(this);
+    }
+
+    private void EndChangeGroup()
+    {
+        if (_ActiveGroup is null) return;
+        ChangeGroup group = _ActiveGroup;
+        _ActiveGroup = null;
+
+        // Link the staged changes head-to-tail so the persisted/pushed queue can be integrity-checked.
+        EntryChangeChainService.LinkChain(group.Forwards);
+
+        // Collapse the buffered undo steps into a single step (one undo reverses the whole action).
+        if (group.Steps.Count == 1)
+        {
+            _UndoStack.Add(group.Steps[0]);
+        }
+        else if (group.Steps.Count > 1)
+        {
+            List<LocEntryChange> forwards = new(group.Steps.Count);
+            List<LocEntryChange> inverses = new(group.Steps.Count);
+            foreach (UndoStep step in group.Steps)
+            {
+                forwards.Add(step.Forwards[0]);
+                inverses.Add(step.Inverses[0]);
+            }
+            string label = !string.IsNullOrEmpty(group.Label) ? group.Label : DescribeChange(forwards[0]);
+            _UndoStack.Add(new UndoStep { Forwards = forwards, Inverses = inverses, Label = label });
+        }
+    }
+
+    private sealed class ChangeGroupScope : IDisposable
+    {
+        private ProjectStateService? _Owner;
+        public ChangeGroupScope(ProjectStateService owner) => _Owner = owner;
+        public void Dispose()
+        {
+            _Owner?.EndChangeGroup();
+            _Owner = null;
+        }
+    }
+
+    private sealed class NoOpDisposable : IDisposable { public void Dispose() { } }
+
     // ── Capture ──────────────────────────────────────────────────────────────
 
     /// <summary>
     /// Observes a forward change that the UI has just applied to <see cref="CurrentProject"/>: advances the
-    /// baseline to match and, when the change is invertible, pushes a new undo step (clearing the redo stack —
-    /// a fresh edit breaks the redo chain). Called by every recording helper, in all modes.
+    /// baseline to match and, when the change is invertible, records a new undo step (clearing the redo stack —
+    /// a fresh edit breaks the redo chain). Inside a change group the step is buffered for later collapsing.
     /// </summary>
     private void CaptureUndo(LocEntryChange forward)
     {
@@ -90,7 +177,15 @@ public partial class ProjectStateService
 
         if (inverse is null) return;   // not undoable: baseline advanced, no step recorded
 
-        _UndoStack.Add(new UndoStep { Undo = inverse, Redo = forward, Label = DescribeChange(forward) });
+        UndoStep step = new UndoStep
+        {
+            Forwards = new[] { forward },
+            Inverses = new[] { inverse },
+            Label    = DescribeChange(forward)
+        };
+
+        if (_ActiveGroup is not null) _ActiveGroup.Steps.Add(step);
+        else                          _UndoStack.Add(step);
     }
 
     // ── Apply ────────────────────────────────────────────────────────────────
@@ -101,12 +196,14 @@ public partial class ProjectStateService
         UndoStep step = _UndoStack[^1];
         _UndoStack.RemoveAt(_UndoStack.Count - 1);
 
-        ApplyToWorkingCopy(step.Undo);
+        // Reverse the whole group: apply the inverses in reverse of the forwards' application order.
+        for (int x = step.Inverses.Count - 1; x >= 0; --x)
+            ApplyToWorkingCopy(step.Inverses[x]);
 
-        // If the edit being undone is still pending (its forward change is the queue tail, not yet pushed),
-        // cancel it outright — no need to stage a forward+inverse pair that cancel out. Otherwise (already
-        // pushed, or committed offline) stage the inverse as a fresh change so the revert can still be pushed.
-        StageOrCancel(cancelIf: step.Redo, otherwiseStage: step.Undo);
+        // If the edit being undone is still pending (its forward changes are the queue tail, not yet pushed),
+        // cancel them outright — no need to stage forward+inverse pairs that cancel out. Otherwise (already
+        // pushed, or committed offline) stage the inverses as a fresh chain so the revert can still be pushed.
+        StageOrCancel(cancelIf: step.Forwards, otherwiseStage: Reversed(step.Inverses));
 
         _RedoStack.Add(step);
         MarkDirty();
@@ -120,16 +217,26 @@ public partial class ProjectStateService
         UndoStep step = _RedoStack[^1];
         _RedoStack.RemoveAt(_RedoStack.Count - 1);
 
-        ApplyToWorkingCopy(step.Redo);
+        // Replay the whole group in its original application order.
+        for (int x = 0; x < step.Forwards.Count; ++x)
+            ApplyToWorkingCopy(step.Forwards[x]);
 
-        // Mirror of undo: if the last undo had merely staged the inverse, drop it again; otherwise re-stage
-        // the original edit.
-        StageOrCancel(cancelIf: step.Undo, otherwiseStage: step.Redo);
+        // Mirror of undo: if the last undo had merely staged the inverses, drop them again; otherwise re-stage
+        // the original edits. The cancelIf list must match the order undo staged them in (reversed inverses).
+        StageOrCancel(cancelIf: Reversed(step.Inverses), otherwiseStage: step.Forwards);
 
         _UndoStack.Add(step);
         MarkDirty();
         ProjectChanged?.Invoke();
         ProjectDataChanged?.Invoke();
+    }
+
+    private static List<LocEntryChange> Reversed(IReadOnlyList<LocEntryChange> changes)
+    {
+        List<LocEntryChange> result = new(changes.Count);
+        for (int x = changes.Count - 1; x >= 0; --x)
+            result.Add(changes[x]);
+        return result;
     }
 
     /// <summary>
@@ -158,19 +265,38 @@ public partial class ProjectStateService
 
     /// <summary>
     /// Keeps the uncommitted queue minimal across undo/redo (uncommitted-mode projects only): if
-    /// <paramref name="cancelIf"/> is still the pending tail, remove it; otherwise append
-    /// <paramref name="otherwiseStage"/> as a fresh pending change. Reference identity is used, so a change
-    /// that has since been pushed (and cleared from the queue) falls through to staging.
+    /// <paramref name="cancelIf"/> is still exactly the pending tail (same references, in order), remove it;
+    /// otherwise append <paramref name="otherwiseStage"/> as a fresh atomic chain. Reference identity is used, so
+    /// changes that have since been pushed (and cleared from the queue) fall through to staging.
     /// </summary>
-    private void StageOrCancel(LocEntryChange cancelIf, LocEntryChange otherwiseStage)
+    private void StageOrCancel(IReadOnlyList<LocEntryChange> cancelIf, IReadOnlyList<LocEntryChange> otherwiseStage)
     {
         if (CurrentProject is null || !CurrentProject.Metadata.UsesUncommittedChanges) return;
 
         List<LocEntryChange> queue = CurrentProject.UncommitedChanges;
-        if (queue.Count > 0 && ReferenceEquals(queue[^1], cancelIf))
-            queue.RemoveAt(queue.Count - 1);
+        if (IsQueueTail(queue, cancelIf))
+        {
+            queue.RemoveRange(queue.Count - cancelIf.Count, cancelIf.Count);
+        }
         else
-            queue.Add(otherwiseStage);
+        {
+            // Re-link so the staged revert is itself an integrity-checked atomic chain.
+            List<LocEntryChange> staged = new(otherwiseStage);
+            EntryChangeChainService.LinkChain(staged);
+            queue.AddRange(staged);
+        }
+    }
+
+    /// <summary>True when <paramref name="tail"/> is exactly the last N entries of <paramref name="queue"/>, by reference and order.</summary>
+    private static bool IsQueueTail(List<LocEntryChange> queue, IReadOnlyList<LocEntryChange> tail)
+    {
+        if (tail.Count == 0 || queue.Count < tail.Count) return false;
+
+        int offset = queue.Count - tail.Count;
+        for (int x = 0; x < tail.Count; ++x)
+            if (!ReferenceEquals(queue[offset + x], tail[x])) return false;
+
+        return true;
     }
 
     private static bool IsKeyScoped(EntryChangeType type) => type switch
