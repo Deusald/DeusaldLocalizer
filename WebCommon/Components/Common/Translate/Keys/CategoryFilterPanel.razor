@@ -17,6 +17,15 @@
             <div class="cfp-panel-header">
                 <span class="cfp-panel-title">Filter by category</span>
                 <div class="cfp-panel-actions">
+                    @if (_HasNested)
+                    {
+                        <button class="cfp-collapse-btn" title="Collapse all" @onclick="CollapseAll">
+                            <i class="bi bi-arrows-collapse"></i>
+                        </button>
+                        <button class="cfp-collapse-btn" title="Expand all" @onclick="ExpandAll">
+                            <i class="bi bi-arrows-expand"></i>
+                        </button>
+                    }
                     @if (SelectedCategoryIds.Count > 0)
                     {
                         <button class="cfp-clear-btn" @onclick="ClearAll">Clear</button>
@@ -59,7 +68,10 @@
                                 <span class="cfp-caret-spacer"></span>
                             }
                             <button class="cfp-item @(active ? "active" : "")"
-                                    @onclick="() => Toggle(cat.Id)">
+                                    title="Right-click to select only this category"
+                                    @onclick="() => Toggle(cat.Id)"
+                                    @oncontextmenu="() => ToggleSingle(cat.Id)"
+                                    @oncontextmenu:preventDefault="true">
                                 <span class="cfp-item-check">@(active ? "✓" : "")</span>
                                 <span class="cfp-item-name">@cat.Name</span>
                             </button>
@@ -165,6 +177,21 @@
         if (!_Collapsed.Remove(id)) _Collapsed.Add(id);
     }
 
+    private bool _HasNested =>
+        _ProjectState.CurrentProject!.Categories.Any(c => c.ParentCategoryId != null);
+
+    private void CollapseAll()
+    {
+        List<LocCategory> all = _ProjectState.CurrentProject!.Categories;
+        _Collapsed = new HashSet<Guid>(all.Where(parent => all.Any(c => c.ParentCategoryId == parent.Id))
+                                          .Select(parent => parent.Id));
+    }
+
+    private void ExpandAll()
+    {
+        _Collapsed.Clear();
+    }
+
     /// <summary>A category id together with all of its descendant ids.</summary>
     private List<Guid> SubtreeIds(Guid id)
     {
@@ -222,6 +249,19 @@
 
         if (turnOn) next.UnionWith(subtree);
         else next.ExceptWith(subtree);
+
+        await OnChanged.InvokeAsync(next);
+        await OnActiveCategoryChanged.InvokeAsync(turnOn ? id : (Guid?)null);
+    }
+
+    /// <summary>Toggles only the clicked category, ignoring its descendants (right-click).</summary>
+    private async Task ToggleSingle(Guid id)
+    {
+        HashSet<Guid> next   = new HashSet<Guid>(SelectedCategoryIds);
+        bool          turnOn = !next.Contains(id);
+
+        if (turnOn) next.Add(id);
+        else next.Remove(id);
 
         await OnChanged.InvokeAsync(next);
         await OnActiveCategoryChanged.InvokeAsync(turnOn ? id : (Guid?)null);
