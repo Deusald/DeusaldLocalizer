@@ -75,3 +75,61 @@
     flex-shrink: 0;
 }
 .kd-dates-sep { margin: 0 5px; }
+
+.kd-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.kd-delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    color: #7a7b83;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background .12s, color .12s, border-color .12s;
+}
+
+.kd-delete-btn:hover {
+    background: rgba(255, 107, 107, .12);
+    border-color: rgba(255, 107, 107, .35);
+    color: #ff6b6b;
+}
+
+.kd-delete-confirm {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #d6d6db;
+}
+
+.kd-confirm-yes, .kd-confirm-no {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.kd-confirm-yes {
+    background: #ff6b6b;
+    color: #fff;
+}
+.kd-confirm-yes:hover { opacity: .88; }
+
+.kd-confirm-no {
+    background: transparent;
+    border-color: #2a2b35;
+    color: #8a8b93;
+}
+.kd-confirm-no:hover { background: #1e1f28; color: #d6d6db; }

@@ -305,3 +305,36 @@
     border-color: #2a2b35;
     color: #8d9aff;
 }
+.um-delete-btn:hover {
+    background: rgba(255, 107, 107, .12);
+    border-color: rgba(255, 107, 107, .35);
+    color: #ff6b6b;
+}
+
+.um-delete-confirm {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: #d6d6db;
+    white-space: nowrap;
+}
+.um-confirm-yes, .um-confirm-no {
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.um-confirm-yes {
+    background: #ff6b6b;
+    color: #fff;
+}
+.um-confirm-yes:hover { opacity: .88; }
+.um-confirm-no {
+    background: transparent;
+    border-color: #2a2b35;
+    color: #8a8b93;
+}
+.um-confirm-no:hover { background: #23242e; color: #d6d6db; }

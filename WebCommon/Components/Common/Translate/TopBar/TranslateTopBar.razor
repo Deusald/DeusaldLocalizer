@@ -1,7 +1,8 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
 @inject NavigationManager   _Nav
-@implements IDisposable
+@inject IJSRuntime          _Js
+@implements IAsyncDisposable
 
 @{ if (!_ProjectState.HasProject) return; }
 
@@ -61,6 +62,15 @@
                 <span class="ttb-sync-msg">@_StatusMessage</span>
             }
         }
+
+        <button class="ttb-history-btn" @onclick="Undo" disabled="@(!_ProjectState.CanUndo)"
+                title="@(_ProjectState.CanUndo ? $"Undo {_ProjectState.UndoLabel} (Ctrl+Z)" : "Nothing to undo")">
+            <i class="bi bi-arrow-counterclockwise"></i>
+        </button>
+        <button class="ttb-history-btn" @onclick="Redo" disabled="@(!_ProjectState.CanRedo)"
+                title="@(_ProjectState.CanRedo ? $"Redo {_ProjectState.RedoLabel} (Ctrl+Y)" : "Nothing to redo")">
+            <i class="bi bi-arrow-clockwise"></i>
+        </button>
 
         <button class="ttb-history-btn" @onclick="() => _ExportModal?.Show()" title="Export to Excel">
             <i class="bi bi-file-earmark-arrow-down"></i>
@@ -131,6 +141,9 @@
     private bool    _Busy;
     private string? _StatusMessage;
 
+    private IJSObjectReference?                     _ShortcutsModule;
+    private DotNetObjectReference<TranslateTopBar>? _SelfRef;
+
     private bool _IsOnline         => _ProjectState.CurrentProject!.Metadata.IsOnline;
     private bool _UncommittedMode  => _ProjectState.CurrentProject!.Metadata.UncommittedMode;
     private int  _UncommittedCount => _ProjectState.CurrentProject!.UncommitedChanges.Count;
@@ -176,6 +189,25 @@
         _ProjectState.DirtyStateChanged  += OnDirty;
         _ProjectState.ProjectDataChanged += OnDirty;
     }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+
+        // Document-level Ctrl/Cmd+Z / +Y is handled in JS (Blazor has no global keydown) and calls back into
+        // Undo/Redo below. The module ships from WebCommon, so both the MAUI and web hosts load the same file.
+        _SelfRef         = DotNetObjectReference.Create(this);
+        _ShortcutsModule = await _Js.InvokeAsync<IJSObjectReference>("import", "./_content/DeusaldLocalizerWebCommon/js/shortcuts.js");
+        await _ShortcutsModule.InvokeVoidAsync("register", _SelfRef);
+    }
+
+    // Re-render is driven by ProjectDataChanged -> OnDirty (InvokeAsync-marshalled), which both the button
+    // click and the JS shortcut reach, so these just delegate.
+    [JSInvokable]
+    public void Undo() => _ProjectState.UndoLastChange();
+
+    [JSInvokable]
+    public void Redo() => _ProjectState.RedoLastChange();
 
     private async Task Sync()
     {
@@ -290,10 +322,25 @@
         InvokeAsync(StateHasChanged);
     }
 
-    public void Dispose()
+    public async ValueTask DisposeAsync()
     {
         _ProjectState.DirtyStateChanged  -= OnDirty;
         _ProjectState.ProjectDataChanged -= OnDirty;
+
+        if (_ShortcutsModule is not null)
+        {
+            try
+            {
+                await _ShortcutsModule.InvokeVoidAsync("unregister");
+                await _ShortcutsModule.DisposeAsync();
+            }
+            catch (JSDisconnectedException)
+            {
+                // The circuit / WebView is already gone (navigation, teardown) — nothing left to clean up.
+            }
+        }
+
+        _SelfRef?.Dispose();
     }
 
 }

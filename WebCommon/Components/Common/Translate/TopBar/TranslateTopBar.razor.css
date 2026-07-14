@@ -143,10 +143,15 @@
     transition: background .12s, color .12s, border-color .12s;
 }
 
-.ttb-history-btn:hover {
+.ttb-history-btn:hover:not(:disabled) {
     background: #1e1f28;
     border-color: #2a2b35;
     color: #d6d6db;
+}
+
+.ttb-history-btn:disabled {
+    opacity: .35;
+    cursor: default;
 }
 
 .ttb-spinner {

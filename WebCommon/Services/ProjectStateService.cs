@@ -9,7 +9,7 @@ namespace DeusaldLocalizerWeb;
 /// Inject as a singleton so all pages share the same state.
 /// </summary>
 [PublicAPI]
-public class ProjectStateService(
+public partial class ProjectStateService(
     LocalizerApiClient api,
     IAuthTokenStore authTokens,
     RecentProjectsStore recents,
@@ -100,6 +100,7 @@ public class ProjectStateService(
         _SyncConflicts.Clear();
         _SyncBaseline = null;
         CurrentUser   = LocProjectMember.OfflineMember;
+        ResetUndoHistory();
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
     }
@@ -121,6 +122,7 @@ public class ProjectStateService(
         if (project.Metadata.UsesUncommittedChanges && project.UncommitedChanges.Count > 0)
             ReapplyPendingChanges();
 
+        ResetUndoHistory();
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
     }
@@ -134,6 +136,7 @@ public class ProjectStateService(
         _SyncConflicts.Clear();
         _SyncBaseline = null;
         CurrentUser   = LocProjectMember.OfflineMember;
+        ResetUndoHistory();
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
     }
@@ -592,6 +595,10 @@ public class ProjectStateService(
         RevalidateConflicts();
         ReapplyPendingChanges();
 
+        // The working copy was replaced; re-anchor the undo baseline to it. The undo/redo stacks hold absolute
+        // snapshots and remain valid, so undo keeps working after a sync/push.
+        ReanchorUndoBaseline();
+
         await ProjectFileService.SaveUncommittedOnlyAsync(CurrentProject, _CurrentStore);
     }
 
@@ -670,6 +677,9 @@ public class ProjectStateService(
 
         await RebuildWorkingCopyAsync(pending);
 
+        // Manually dropping a queued change out of order desyncs it from the undo history, so start fresh.
+        ResetUndoHistory();
+
         MarkClean();
         ProjectChanged?.Invoke();
         ProjectDataChanged?.Invoke();
@@ -686,6 +696,8 @@ public class ProjectStateService(
         if (CurrentProject.UncommitedChanges.Count == 0) return;
 
         await RebuildWorkingCopyAsync(new List<LocEntryChange>());
+
+        ResetUndoHistory();
 
         MarkClean();
         ProjectChanged?.Invoke();
@@ -897,16 +909,16 @@ public class ProjectStateService(
     /// <summary>Records a brand-new member (whole object).</summary>
     public void RecordMemberAdded(LocProjectMember member)
     {
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+        LocEntryChange change = new()
         {
-            CurrentProject.UncommitedChanges.Add(new LocEntryChange
-            {
-                Type       = EntryChangeType.MemberAdded,
-                EntryId    = member.UserId,
-                ChangeData = Newtonsoft.Json.JsonConvert.SerializeObject(member)
-            });
-        }
+            Type       = EntryChangeType.MemberAdded,
+            EntryId    = member.UserId,
+            ChangeData = Newtonsoft.Json.JsonConvert.SerializeObject(member)
+        };
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+            CurrentProject.UncommitedChanges.Add(change);
 
+        CaptureUndo(change);
         MarkDirty();
     }
 
@@ -928,17 +940,17 @@ public class ProjectStateService(
 
     private void AddMemberFieldChange(LocProjectMember member, string fieldName, string changeData)
     {
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+        LocEntryChange change = new()
         {
-            CurrentProject.UncommitedChanges.Add(new LocEntryChange
-            {
-                Type       = EntryChangeType.MemberUpdated,
-                EntryId    = member.UserId,
-                EntrySubId = fieldName,
-                ChangeData = changeData
-            });
-        }
+            Type       = EntryChangeType.MemberUpdated,
+            EntryId    = member.UserId,
+            EntrySubId = fieldName,
+            ChangeData = changeData
+        };
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+            CurrentProject.UncommitedChanges.Add(change);
 
+        CaptureUndo(change);
         MarkDirty();
     }
 
@@ -952,16 +964,16 @@ public class ProjectStateService(
 
     private void AddLanguageChange(EntryChangeType type, string code)
     {
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+        LocEntryChange change = new()
         {
-            CurrentProject.UncommitedChanges.Add(new LocEntryChange
-            {
-                Type       = type,
-                EntryId    = CurrentProject.Metadata.Id,
-                ChangeData = code
-            });
-        }
+            Type       = type,
+            EntryId    = CurrentProject!.Metadata.Id,
+            ChangeData = code
+        };
+        if (CurrentProject.Metadata.UsesUncommittedChanges)
+            CurrentProject.UncommitedChanges.Add(change);
 
+        CaptureUndo(change);
         MarkDirty();
     }
 
@@ -971,17 +983,67 @@ public class ProjectStateService(
     public void RecordKeyAdded(LocLocalizationKey key)
     {
         ChangedLocKeys.Add(key.Id);
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+        LocEntryChange change = new()
         {
-            CurrentProject.UncommitedChanges.Add(new LocEntryChange
-            {
-                Type       = EntryChangeType.KeyAdded,
-                EntryId    = key.Id,
-                ChangeData = Newtonsoft.Json.JsonConvert.SerializeObject(key)
-            });
-        }
+            Type       = EntryChangeType.KeyAdded,
+            EntryId    = key.Id,
+            ChangeData = Newtonsoft.Json.JsonConvert.SerializeObject(key)
+        };
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+            CurrentProject.UncommitedChanges.Add(change);
 
+        CaptureUndo(change);
         MarkDirty();
+    }
+
+    /// <summary>
+    /// Deletes a key: removes it and journals a KeyRemoved change (queued for push online / offline
+    /// uncommitted, dirty-tracked plain offline). Undoable. No-op if the key does not exist.
+    /// </summary>
+    public void DeleteKey(Guid keyId)
+    {
+        if (CurrentProject is null || !CurrentUser.IsAdmin) return;   // admin-only; mirrors the server check
+        if (CurrentProject.Keys.All(k => k.Id != keyId)) return;
+
+        LocEntryChange change = new() { Type = EntryChangeType.KeyRemoved, EntryId = keyId };
+        EntryChangeExeService.ExecuteChange(CurrentProject, change, out _);
+
+        ChangedLocKeys.Add(keyId);
+        if (CurrentProject.Metadata.UsesUncommittedChanges)
+            CurrentProject.UncommitedChanges.Add(change);
+
+        CaptureUndo(change);
+        MarkDirty();
+        ProjectChanged?.Invoke();
+        ProjectDataChanged?.Invoke();
+    }
+
+    /// <summary>
+    /// Deletes a member: removes it and reassigns every reference it owned (suggestion authors, votes and flag
+    /// creators) to the offline user (see <see cref="EntryChangeExeService"/>), then journals a MemberRemoved
+    /// change. Never deletes the offline user. Not undoable — the reassignment is lossy. No-op if the member
+    /// does not exist.
+    /// </summary>
+    public void DeleteMember(Guid memberId)
+    {
+        if (CurrentProject is null || !CurrentUser.IsAdmin) return;   // admin-only; mirrors the server check
+        if (memberId == LocProjectMember.OfflineMember.UserId) return;
+        if (CurrentProject.ProjectMembers.All(m => m.UserId != memberId)) return;
+
+        LocEntryChange change = new() { Type = EntryChangeType.MemberRemoved, EntryId = memberId };
+        EntryChangeExeService.ExecuteChange(CurrentProject, change, out _);
+
+        // The reassignment can touch any key, so mark them all dirty for the offline incremental save.
+        foreach (LocLocalizationKey key in CurrentProject.Keys)
+            ChangedLocKeys.Add(key.Id);
+
+        if (CurrentProject.Metadata.UsesUncommittedChanges)
+            CurrentProject.UncommitedChanges.Add(change);
+
+        CaptureUndo(change);
+        MarkDirty();
+        ProjectChanged?.Invoke();
+        ProjectDataChanged?.Invoke();
     }
 
     public void RecordKeyNameChanged(LocLocalizationKey key) =>
@@ -996,17 +1058,17 @@ public class ProjectStateService(
     private void AddKeyFieldChange(LocLocalizationKey key, string fieldName, string changeData)
     {
         ChangedLocKeys.Add(key.Id);
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+        LocEntryChange change = new()
         {
-            CurrentProject.UncommitedChanges.Add(new LocEntryChange
-            {
-                Type       = EntryChangeType.KeyUpdated,
-                EntryId    = key.Id,
-                EntrySubId = fieldName,
-                ChangeData = changeData
-            });
-        }
+            Type       = EntryChangeType.KeyUpdated,
+            EntryId    = key.Id,
+            EntrySubId = fieldName,
+            ChangeData = changeData
+        };
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+            CurrentProject.UncommitedChanges.Add(change);
 
+        CaptureUndo(change);
         MarkDirty();
     }
 
@@ -1015,16 +1077,16 @@ public class ProjectStateService(
     /// <summary>Records a brand-new category (whole object).</summary>
     public void RecordCategoryAdded(LocCategory category)
     {
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+        LocEntryChange change = new()
         {
-            CurrentProject.UncommitedChanges.Add(new LocEntryChange
-            {
-                Type       = EntryChangeType.CategoryAdded,
-                EntryId    = category.Id,
-                ChangeData = Newtonsoft.Json.JsonConvert.SerializeObject(category)
-            });
-        }
+            Type       = EntryChangeType.CategoryAdded,
+            EntryId    = category.Id,
+            ChangeData = Newtonsoft.Json.JsonConvert.SerializeObject(category)
+        };
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+            CurrentProject.UncommitedChanges.Add(change);
 
+        CaptureUndo(change);
         MarkDirty();
     }
 
@@ -1039,31 +1101,31 @@ public class ProjectStateService(
 
     public void RecordCategoryRemoved(LocCategory category)
     {
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+        LocEntryChange change = new()
         {
-            CurrentProject.UncommitedChanges.Add(new LocEntryChange
-            {
-                Type    = EntryChangeType.CategoryRemoved,
-                EntryId = category.Id
-            });
-        }
+            Type    = EntryChangeType.CategoryRemoved,
+            EntryId = category.Id
+        };
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+            CurrentProject.UncommitedChanges.Add(change);
 
+        CaptureUndo(change);
         MarkDirty();
     }
 
     private void AddCategoryFieldChange(LocCategory category, string fieldName, string changeData)
     {
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+        LocEntryChange change = new()
         {
-            CurrentProject.UncommitedChanges.Add(new LocEntryChange
-            {
-                Type       = EntryChangeType.CategoryUpdated,
-                EntryId    = category.Id,
-                EntrySubId = fieldName,
-                ChangeData = changeData
-            });
-        }
+            Type       = EntryChangeType.CategoryUpdated,
+            EntryId    = category.Id,
+            EntrySubId = fieldName,
+            ChangeData = changeData
+        };
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+            CurrentProject.UncommitedChanges.Add(change);
 
+        CaptureUndo(change);
         MarkDirty();
     }
 
@@ -1132,19 +1194,19 @@ public class ProjectStateService(
                               string prevSourceHashData = "", string prevDestHashData = "")
     {
         ChangedLocKeys.Add(keyId);
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+        LocEntryChange change = new()
         {
-            CurrentProject.UncommitedChanges.Add(new LocEntryChange
-            {
-                Type               = type,
-                EntryId            = keyId,
-                EntrySubId         = entrySubId,
-                ChangeData         = changeData,
-                PrevSourceHashData = prevSourceHashData,
-                PrevDestHashData   = prevDestHashData
-            });
-        }
+            Type               = type,
+            EntryId            = keyId,
+            EntrySubId         = entrySubId,
+            ChangeData         = changeData,
+            PrevSourceHashData = prevSourceHashData,
+            PrevDestHashData   = prevDestHashData
+        };
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+            CurrentProject.UncommitedChanges.Add(change);
 
+        CaptureUndo(change);
         MarkDirty();
     }
 
@@ -1163,16 +1225,16 @@ public class ProjectStateService(
 
     private void AddEnumChange(EntryChangeType type, Guid enumId, string changeData)
     {
-        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+        LocEntryChange change = new()
         {
-            CurrentProject.UncommitedChanges.Add(new LocEntryChange
-            {
-                Type       = type,
-                EntryId    = enumId,
-                ChangeData = changeData
-            });
-        }
+            Type       = type,
+            EntryId    = enumId,
+            ChangeData = changeData
+        };
+        if (CurrentProject!.Metadata.UsesUncommittedChanges)
+            CurrentProject.UncommitedChanges.Add(change);
 
+        CaptureUndo(change);
         MarkDirty();
     }
 

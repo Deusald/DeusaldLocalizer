@@ -206,6 +206,16 @@ namespace DeusaldLocalizerCommon
                         await WriteJsonAsync(store, EntityPath(MEMBERS_FOLDER, change.EntryId), member);
                     break;
                 }
+                case EntryChangeType.MemberRemoved:
+                {
+                    // Delete the member file, then rewrite every key file: removing a member reassigns any
+                    // suggestion authors, votes and flag creators it owned to the offline user (see
+                    // EntryChangeExeService.ReassignMemberReferences), so those key files may have changed too.
+                    await store.DeleteFileAsync(EntityPath(MEMBERS_FOLDER, change.EntryId));
+                    foreach (LocLocalizationKey key in project.Keys)
+                        await WriteJsonAsync(store, EntityPath(KEYS_FOLDER, key.Id), key);
+                    break;
+                }
                 case EntryChangeType.LanguageAdded:
                 case EntryChangeType.LanguageRemoved:
                     await WriteJsonAsync(store, METADATA_FILE_NAME, project.Metadata);
@@ -231,6 +241,9 @@ namespace DeusaldLocalizerCommon
                 }
                 case EntryChangeType.EnumRemoved:
                     await store.DeleteFileAsync(EntityPath(ENUMS_FOLDER, change.EntryId));
+                    break;
+                case EntryChangeType.KeyRemoved:
+                    await store.DeleteFileAsync(EntityPath(KEYS_FOLDER, change.EntryId));
                     break;
                 default:
                 {

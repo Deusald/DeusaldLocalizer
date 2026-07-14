@@ -104,6 +104,15 @@ namespace DeusaldLocalizerCommon
                     commitString = $"content(Localization): Updated key {key.KeyName} ({change.EntrySubId})";
                     break;
                 }
+                case EntryChangeType.KeyRemoved:
+                {
+                    LocLocalizationKey? key  = project.Keys.Find(k => k.Id == change.EntryId);
+                    string              name = key?.KeyName ?? change.EntryId.ToString();
+                    if (key != null) project.Keys.Remove(key);
+
+                    commitString = $"content(Localization): Removed key {name}";
+                    break;
+                }
                 case EntryChangeType.CategoryAdded:
                 {
                     LocCategory? category = JsonConvert.DeserializeObject<LocCategory>(change.ChangeData);
@@ -336,6 +345,45 @@ namespace DeusaldLocalizerCommon
 
                     commitString = $"content(Localization): Removed enum {name}";
                     break;
+                }
+                case EntryChangeType.MemberRemoved:
+                {
+                    LocProjectMember? member = project.ProjectMembers.Find(m => m.UserId == change.EntryId);
+                    string            name   = member?.Username ?? change.EntryId.ToString();
+                    if (member != null) project.ProjectMembers.Remove(member);
+
+                    ReassignMemberReferences(project, change.EntryId, LocProjectMember.OfflineMember.UserId);
+
+                    commitString = $"content(Localization): Removed member {name}";
+                    break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Reassigns every reference to a removed member (<paramref name="fromUserId"/>) — suggestion authors,
+        /// votes, and flag creators across all keys — to <paramref name="toUserId"/> (the offline user). Keeps
+        /// contributions attributed to a valid identity once the original member is gone; runs identically on
+        /// the client and the bot so both derive the same state.
+        /// </summary>
+        private static void ReassignMemberReferences(LocProject project, Guid fromUserId, Guid toUserId)
+        {
+            foreach (LocLocalizationKey key in project.Keys)
+            {
+                foreach (LocKeyFlag flag in key.Flags)
+                {
+                    if (flag.CreatedBy == fromUserId) flag.CreatedBy = toUserId;
+                }
+                foreach (LocKeyTranslation translation in key.Translations)
+                {
+                    foreach (LocTranslationSuggestion suggestion in translation.Suggestions)
+                    {
+                        if (suggestion.AuthorId == fromUserId) suggestion.AuthorId = toUserId;
+                        foreach (LocSuggestionVote vote in suggestion.Votes)
+                        {
+                            if (vote.UserId == fromUserId) vote.UserId = toUserId;
+                        }
+                    }
                 }
             }
         }

@@ -21,8 +21,8 @@ namespace DeusaldLocalizerCommon
     /// but are treated as unauthorized here too for defense-in-depth.
     ///
     /// Tiers:
-    ///   • Admin           — structural/management actions (members, languages, keys, categories,
-    ///                        tags, variables, enums) and editing the source/main language.
+    ///   • Admin           — structural/management actions (adding/editing/deleting members, languages,
+    ///                        keys, categories, tags, variables, enums) and editing the source/main language.
     ///   • Reviewer        — confirm/remove translations for a language the member reviews; manage
     ///                        key-level flags if the member reviews any language.
     ///   • Any member      — propose and vote on suggestions.
@@ -90,6 +90,12 @@ namespace DeusaldLocalizerCommon
                     return change.EntryId == member.UserId
                         && (change.EntrySubId == nameof(LocProjectMember.HashedAccessToken)
                          || change.EntrySubId == nameof(LocProjectMember.MustResetAccessToken));
+
+                // Deleting a key or a member is a destructive structural action — admin-only. (Falls under the
+                // default below too, but called out explicitly so the gating is unmistakable.)
+                case EntryChangeType.KeyRemoved:
+                case EntryChangeType.MemberRemoved:
+                    return false;
 
                 // Everything else (members, languages, keys, categories, tags, variables, enums) is admin-only.
                 default:

@@ -28,7 +28,8 @@
         <div class="tr-resizer" @onpointerdown="StartKeysResize" title="Drag to resize"></div>
 
         <KeyDetailColumn SelectedLanguage="@_SelectedLanguage"
-                         SelectedKeyId="_SelectedKeyId"/>
+                         SelectedKeyId="_SelectedKeyId"
+                         OnKeyDeleted="OnKeyDeleted"/>
 
     </div>
 
@@ -77,6 +78,11 @@
     private void OnKeySelected(Guid keyId)
     {
         _SelectedKeyId = keyId;
+    }
+
+    private void OnKeyDeleted()
+    {
+        _SelectedKeyId = null;
     }
 
 }

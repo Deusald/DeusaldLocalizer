@@ -119,24 +119,39 @@
                         </div>
 
                         <div class="um-member-actions">
-                            @if (isSelf && !member.IsOfflineUser)
+                            @if (_PendingDeleteId == member.UserId)
                             {
-                                <button class="um-edit-btn" title="Regenerate my access token"
-                                        @onclick="RegenerateToken">
-                                    <i class="bi bi-arrow-repeat"></i>
-                                </button>
+                                <span class="um-delete-confirm">
+                                    <span>Delete @member.Username?</span>
+                                    <button class="um-confirm-yes" @onclick="() => ConfirmDelete(member)">Delete</button>
+                                    <button class="um-confirm-no" @onclick="() => _PendingDeleteId = null">Cancel</button>
+                                </span>
                             }
-                            @if (_IsAdmin && !isSelf)
+                            else
                             {
-                                <button class="um-edit-btn" title="Edit member" @onclick="() => StartEdit(member)">
-                                    <i class="bi bi-pencil"></i>
-                                </button>
-                                @if (!member.IsOfflineUser)
+                                @if (isSelf && !member.IsOfflineUser)
                                 {
-                                    <button class="um-edit-btn" title="Reset access token"
-                                            @onclick="() => ResetToken(member)">
-                                        <i class="bi bi-key"></i>
+                                    <button class="um-edit-btn" title="Regenerate my access token"
+                                            @onclick="RegenerateToken">
+                                        <i class="bi bi-arrow-repeat"></i>
                                     </button>
+                                }
+                                @if (_IsAdmin && !isSelf)
+                                {
+                                    <button class="um-edit-btn" title="Edit member" @onclick="() => StartEdit(member)">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    @if (!member.IsOfflineUser)
+                                    {
+                                        <button class="um-edit-btn" title="Reset access token"
+                                                @onclick="() => ResetToken(member)">
+                                            <i class="bi bi-key"></i>
+                                        </button>
+                                        <button class="um-edit-btn um-delete-btn" title="Delete member"
+                                                @onclick="() => _PendingDeleteId = member.UserId">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    }
                                 }
                             }
                         </div>
@@ -160,14 +175,22 @@
     private HashSet<string>   _SelectedLangs = new();
     private LocProjectMember? _EditingMember;
     private AccessTokenModal? _AccessTokenModal;
+    private Guid?             _PendingDeleteId;
 
     private bool _IsAdmin => _ProjectState.CurrentUser.IsAdmin;
+
+    private void ConfirmDelete(LocProjectMember member)
+    {
+        _ProjectState.DeleteMember(member.UserId);
+        _PendingDeleteId = null;
+    }
 
     public void Show()
     {
         CloseForm();
-        _TokenError = null;
-        _Visible    = true;
+        _TokenError      = null;
+        _PendingDeleteId = null;
+        _Visible         = true;
         StateHasChanged();
     }
 
