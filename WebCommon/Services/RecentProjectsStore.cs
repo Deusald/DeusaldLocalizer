@@ -58,9 +58,10 @@ namespace DeusaldLocalizerWeb
         {
             List<RecentProjectEntry> projects = LoadRecentProjects();
 
-            // Calculate translation % across all non-main languages
+            // Calculate translation % across every language, including the main/source language, so a
+            // project with only the main language still reflects its approved source keys.
             int pct = 0;
-            if (project is { Metadata.Languages.Count: > 1, Keys.Count: > 0 })
+            if (project is { Metadata.Languages.Count: > 0, Keys.Count: > 0 })
             {
                 int totalSlots = project.Keys.Count * project.Metadata.Languages.Count;
                 int translated = project.TotalNumberOfApprovedKeys();
