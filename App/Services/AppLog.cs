@@ -59,6 +59,16 @@ public static class AppLog
         Write("INFO", "AppLog", $"Logging to {_LogFilePath}");
     }
 
+    /// Tee native <see cref="Console"/> output into the log file. In Blazor Hybrid the Razor
+    /// components run in-process, so a plain <c>Console.WriteLine</c> goes to native stdout — which
+    /// a GUI app has no terminal for — and is otherwise lost. The original writer is preserved so a
+    /// debugger/IDE still sees it. Call once, after <see cref="HookGlobalExceptions"/>.
+    public static void CaptureConsoleOutput()
+    {
+        Console.SetOut(new TeeTextWriter(Console.Out,   "Console",       "INFO"));
+        Console.SetError(new TeeTextWriter(Console.Error, "Console.Error", "ERROR"));
+    }
+
     /// Reveal the folder that holds the log file in the OS file manager
     /// (Explorer on Windows, Finder on macOS). Best-effort — never throws.
     public static void OpenLogsFolder()
@@ -120,6 +130,46 @@ public static class AppLog
         string archive = _LogFilePath + ".1";
         if (File.Exists(archive)) File.Delete(archive);
         File.Move(_LogFilePath, archive);
+    }
+
+    /// A <see cref="TextWriter"/> that mirrors everything to <paramref name="inner"/> and, on each
+    /// completed line, appends it to the log via <see cref="Write"/>. Buffers until a newline so the
+    /// log gets whole lines rather than one entry per character.
+    private sealed class TeeTextWriter(TextWriter inner, string category, string level) : TextWriter
+    {
+        private readonly StringBuilder _line = new();
+
+        public override Encoding Encoding => inner.Encoding;
+
+        public override void Write(char value)
+        {
+            inner.Write(value);
+            lock (_line)
+            {
+                if (value == '\n') Emit();
+                else if (value != '\r') _line.Append(value);
+            }
+        }
+
+        public override void Write(string? value)
+        {
+            inner.Write(value);
+            if (string.IsNullOrEmpty(value)) return;
+            lock (_line)
+                foreach (char c in value)
+                {
+                    if (c == '\n') Emit();
+                    else if (c != '\r') _line.Append(c);
+                }
+        }
+
+        // Caller holds the lock. Skips blank lines so bare WriteLine() doesn't spam the log.
+        private void Emit()
+        {
+            if (_line.Length == 0) return;
+            AppLog.Write(level, category, _line.ToString());
+            _line.Clear();
+        }
     }
 
     private sealed class FileLoggerProvider : ILoggerProvider

@@ -14,6 +14,8 @@ public static class MauiProgram
         // Install process-wide exception handlers first, so anything that blows up
         // during the rest of startup still lands in the log file.
         AppLog.HookGlobalExceptions();
+        // Route native Console output (incl. Blazor Hybrid components' Console.WriteLine) into the log.
+        AppLog.CaptureConsoleOutput();
 
         #if WINDOWS
         // Must run before any other startup code: handles Velopack's install / update / uninstall
