@@ -21,5 +21,8 @@ namespace DeusaldLocalizerCommon
         public bool                           SourceChanged { get; set; }
         public DateTime                       UpdatedAt     { get; set; } = DateTime.UtcNow;
         public List<LocTranslationSuggestion> Suggestions   { get; set; } = new();
+
+        /// <summary>Discussion comments about this key+language translation.</summary>
+        public List<LocComment> Comments { get; set; } = new();
     }
 }

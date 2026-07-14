@@ -29,5 +29,8 @@ namespace DeusaldLocalizerCommon
         
         /// <summary>All translations for this key across every language.</summary>
         public List<LocKeyTranslation> Translations { get; set; } = new();
+
+        /// <summary>Key-level discussion comments (not tied to any single language).</summary>
+        public List<LocComment> Comments { get; set; } = new();
     }
 }

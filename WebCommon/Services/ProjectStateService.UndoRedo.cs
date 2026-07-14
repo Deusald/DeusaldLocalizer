@@ -182,6 +182,8 @@ public partial class ProjectStateService
         EntryChangeType.SuggestionAdded    => true,
         EntryChangeType.SuggestionVoted    => true,
         EntryChangeType.SuggestionRemoved  => true,
+        EntryChangeType.CommentAdded       => true,
+        EntryChangeType.CommentRemoved     => true,
         EntryChangeType.FlagAdded          => true,
         EntryChangeType.FlagRemoved        => true,
         EntryChangeType.TagAdded           => true,
@@ -351,6 +353,38 @@ public partial class ProjectStateService
                            : new LocEntryChange { Type = EntryChangeType.SuggestionVoted, EntryId = c.EntryId, EntrySubId = c.EntrySubId, ChangeData = Json(before) };
             }
 
+            case EntryChangeType.CommentAdded:
+            {
+                LocCommentRef? r = TryDeserialize<LocCommentRef>(c.ChangeData);
+                if (r?.Comment is null) return null;
+                LocCommentRef inv = new LocCommentRef
+                {
+                    Scope        = r.Scope,
+                    LanguageId   = r.LanguageId,
+                    SuggestionId = r.SuggestionId,
+                    CommentId    = r.Comment.Id,
+                };
+                return new LocEntryChange { Type = EntryChangeType.CommentRemoved, EntryId = c.EntryId, ChangeData = Json(inv) };
+            }
+
+            case EntryChangeType.CommentRemoved:
+            {
+                LocCommentRef? r = TryDeserialize<LocCommentRef>(c.ChangeData);
+                if (r is null) return null;
+                LocLocalizationKey? key = baseline.Keys.Find(k => k.Id == c.EntryId);
+                if (key is null) return null;
+                LocComment? comment = CommentLocator.Find(key, r, r.CommentId);
+                if (comment is null) return null;
+                LocCommentRef inv = new LocCommentRef
+                {
+                    Scope        = r.Scope,
+                    LanguageId   = r.LanguageId,
+                    SuggestionId = r.SuggestionId,
+                    Comment      = comment,
+                };
+                return new LocEntryChange { Type = EntryChangeType.CommentAdded, EntryId = c.EntryId, ChangeData = Json(inv) };
+            }
+
             case EntryChangeType.FlagAdded:
             {
                 LocKeyFlag? f = TryDeserialize<LocKeyFlag>(c.ChangeData);
@@ -443,6 +477,8 @@ public partial class ProjectStateService
         EntryChangeType.SuggestionAdded    => "add suggestion",
         EntryChangeType.SuggestionVoted    => "vote",
         EntryChangeType.SuggestionRemoved  => "remove suggestion",
+        EntryChangeType.CommentAdded       => "add comment",
+        EntryChangeType.CommentRemoved     => "remove comment",
         EntryChangeType.FlagAdded          => "add flag",
         EntryChangeType.FlagRemoved        => "remove flag",
         EntryChangeType.TagAdded           => "add tag",

@@ -76,8 +76,15 @@
             <SuggestionsSection Key="@_SelectedKey" SelectedLanguage="@SelectedLanguage" OnChanged="StateHasChanged"
                                 PreviewOverrides="@(_VariablesSection?.CurrentPreviewOverrides ?? _EmptyOverrides)"/>
 
+            @* ── Translation comments ─────────────────────────────────────── *@
+            <CommentThread Key="@_SelectedKey" Scope="CommentScope.Translation" LanguageId="@SelectedLanguage"
+                           Label="@($"Comments · {SelectedLanguage}")" OnChanged="StateHasChanged"/>
+
             @* ── Variables ────────────────────────────────────────────────── *@
             <VariablesSection @ref="_VariablesSection" Key="@_SelectedKey" OnChanged="StateHasChanged"/>
+
+            @* ── Key comments ─────────────────────────────────────────────── *@
+            <CommentThread Key="@_SelectedKey" Scope="CommentScope.Key" Label="Key comments" OnChanged="StateHasChanged"/>
 
         </div>
     }

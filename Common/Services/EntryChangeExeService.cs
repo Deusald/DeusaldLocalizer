@@ -231,6 +231,35 @@ namespace DeusaldLocalizerCommon
                     commitString = $"content(Localization): Removed suggestion for {change.EntrySubId} on key {key.KeyName}";
                     break;
                 }
+                case EntryChangeType.CommentAdded:
+                {
+                    LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+                    if (key == null) return;
+
+                    LocCommentRef? commentRef = JsonConvert.DeserializeObject<LocCommentRef>(change.ChangeData);
+                    if (commentRef?.Comment == null) return;
+
+                    List<LocComment>? list = CommentLocator.ResolveList(key, commentRef, create: true);
+                    if (list == null) return;
+                    if (list.All(c => c.Id != commentRef.Comment.Id)) list.Add(commentRef.Comment);
+
+                    commitString = $"content(Localization): Added comment on {CommentLocator.TargetLabel(commentRef, key)}";
+                    break;
+                }
+                case EntryChangeType.CommentRemoved:
+                {
+                    LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+                    if (key == null) return;
+
+                    LocCommentRef? commentRef = JsonConvert.DeserializeObject<LocCommentRef>(change.ChangeData);
+                    if (commentRef == null) return;
+
+                    List<LocComment>? list = CommentLocator.ResolveList(key, commentRef, create: false);
+                    list?.RemoveAll(c => c.Id == commentRef.CommentId);
+
+                    commitString = $"content(Localization): Removed comment on {CommentLocator.TargetLabel(commentRef, key)}";
+                    break;
+                }
                 case EntryChangeType.FlagAdded:
                 {
                     LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
@@ -374,8 +403,10 @@ namespace DeusaldLocalizerCommon
                 {
                     if (flag.CreatedBy == fromUserId) flag.CreatedBy = toUserId;
                 }
+                ReassignCommentAuthors(key.Comments, fromUserId, toUserId);
                 foreach (LocKeyTranslation translation in key.Translations)
                 {
+                    ReassignCommentAuthors(translation.Comments, fromUserId, toUserId);
                     foreach (LocTranslationSuggestion suggestion in translation.Suggestions)
                     {
                         if (suggestion.AuthorId == fromUserId) suggestion.AuthorId = toUserId;
@@ -383,8 +414,17 @@ namespace DeusaldLocalizerCommon
                         {
                             if (vote.UserId == fromUserId) vote.UserId = toUserId;
                         }
+                        ReassignCommentAuthors(suggestion.Comments, fromUserId, toUserId);
                     }
                 }
+            }
+        }
+
+        private static void ReassignCommentAuthors(List<LocComment> comments, Guid fromUserId, Guid toUserId)
+        {
+            foreach (LocComment comment in comments)
+            {
+                if (comment.AuthorId == fromUserId) comment.AuthorId = toUserId;
             }
         }
 

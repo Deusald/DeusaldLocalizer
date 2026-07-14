@@ -1,0 +1,175 @@
+@namespace DeusaldLocalizerWeb.Components.Common
+@inject ProjectStateService _ProjectState
+
+<div class="ct-root @(Compact ? "ct-compact" : "")">
+
+    <div class="ct-header">
+        <span class="ct-label">@Label</span>
+        @if (_Comments.Count > 0)
+        {
+            <span class="ct-count">@_Comments.Count</span>
+        }
+    </div>
+
+    @if (_Comments.Count > 0)
+    {
+        <div class="ct-list">
+            @foreach (LocComment comment in _Comments)
+            {
+                LocComment c          = comment;
+                string     authorName = AuthorName(c.AuthorId);
+
+                <div class="ct-item">
+                    <span class="ct-avatar" style="background:@AvatarColor(c.AuthorId)">@Initial(authorName)</span>
+                    <div class="ct-body">
+                        <div class="ct-meta">
+                            <span class="ct-author">@authorName</span>
+                            <span class="ct-dot">·</span>
+                            <span class="ct-time">@RelativeTime(c.CreatedAt)</span>
+                        </div>
+                        <div class="ct-text">@c.Text</div>
+                    </div>
+                    @if (CanDelete(c))
+                    {
+                        <button class="ct-delete" title="Delete comment" @onclick="() => Delete(c)">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    }
+                </div>
+            }
+        </div>
+    }
+
+    @if (_CanComment)
+    {
+        <div class="ct-compose">
+            <textarea class="ct-input" rows="1" placeholder="Add a comment…"
+                      @bind="_Draft" @bind:event="oninput"></textarea>
+            <button class="ct-post" @onclick="Post" disabled="@string.IsNullOrWhiteSpace(_Draft)">Post</button>
+        </div>
+    }
+
+</div>
+
+@code {
+    [Parameter] public LocLocalizationKey Key          { get; set; } = null!;
+    [Parameter] public CommentScope       Scope        { get; set; } = CommentScope.Key;
+    [Parameter] public string             LanguageId   { get; set; } = "";
+    [Parameter] public Guid               SuggestionId { get; set; }
+    [Parameter] public string             Label        { get; set; } = "Comments";
+    [Parameter] public bool               Compact      { get; set; }
+    [Parameter] public EventCallback      OnChanged    { get; set; }
+
+    private string _Draft = "";
+
+    /// <summary>Any non-banned member may leave a comment.</summary>
+    private bool _CanComment => !_ProjectState.CurrentUser.IsBanned;
+
+    private LocCommentRef Ref() => new()
+    {
+        Scope        = Scope,
+        LanguageId   = LanguageId,
+        SuggestionId = SuggestionId,
+    };
+
+    /// <summary>The live comment list for this thread's target, or an empty list when it doesn't exist yet.</summary>
+    private List<LocComment> _Comments =>
+        CommentLocator.ResolveList(Key, Ref(), create: false) ?? _Empty;
+
+    private static readonly List<LocComment> _Empty = new();
+
+    private bool CanDelete(LocComment comment) =>
+        _ProjectState.CurrentUser.IsAdmin || comment.AuthorId == _ProjectState.CurrentUser.UserId;
+
+    private async Task Post()
+    {
+        string text = _Draft.Trim();
+        if (string.IsNullOrWhiteSpace(text) || !_CanComment) return;
+
+        LocComment comment = new()
+        {
+            Text     = text,
+            AuthorId = _ProjectState.CurrentUser.UserId,
+        };
+
+        // Mutate the live list (creating a translation row if needed) so the model matches what we record.
+        List<LocComment>? list = CommentLocator.ResolveList(Key, Ref(), create: true);
+        list?.Add(comment);
+        Key.UpdatedAt = DateTime.UtcNow;
+
+        RecordAdded(comment);
+
+        _Draft = "";
+        await OnChanged.InvokeAsync();
+    }
+
+    private async Task Delete(LocComment comment)
+    {
+        List<LocComment>? list = CommentLocator.ResolveList(Key, Ref(), create: false);
+        list?.Remove(comment);
+        Key.UpdatedAt = DateTime.UtcNow;
+
+        RecordRemoved(comment.Id);
+        await OnChanged.InvokeAsync();
+    }
+
+    private void RecordAdded(LocComment comment)
+    {
+        switch (Scope)
+        {
+            case CommentScope.Key:
+                _ProjectState.RecordKeyCommentAdded(Key.Id, comment);
+                break;
+            case CommentScope.Translation:
+                _ProjectState.RecordTranslationCommentAdded(Key.Id, LanguageId, comment);
+                break;
+            case CommentScope.Suggestion:
+                _ProjectState.RecordSuggestionCommentAdded(Key.Id, LanguageId, SuggestionId, comment);
+                break;
+        }
+    }
+
+    private void RecordRemoved(Guid commentId)
+    {
+        switch (Scope)
+        {
+            case CommentScope.Key:
+                _ProjectState.RecordKeyCommentRemoved(Key.Id, commentId);
+                break;
+            case CommentScope.Translation:
+                _ProjectState.RecordTranslationCommentRemoved(Key.Id, LanguageId, commentId);
+                break;
+            case CommentScope.Suggestion:
+                _ProjectState.RecordSuggestionCommentRemoved(Key.Id, LanguageId, SuggestionId, commentId);
+                break;
+        }
+    }
+
+    private string AuthorName(Guid authorId)
+    {
+        LocProjectMember? member = _ProjectState.CurrentProject!.ProjectMembers.Find(m => m.UserId == authorId);
+        if (member != null) return member.Username;
+        return authorId == _ProjectState.CurrentUser.UserId ? _ProjectState.CurrentUser.Username : "Unknown";
+    }
+
+    private static string Initial(string name) => string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();
+
+    private static readonly string[] _AvatarPalette = ["#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0"];
+
+    private static string AvatarColor(Guid userId)
+    {
+        int idx = Math.Abs(userId.GetHashCode()) % _AvatarPalette.Length;
+        return _AvatarPalette[idx];
+    }
+
+    private static string RelativeTime(DateTime time)
+    {
+        TimeSpan diff = DateTime.UtcNow - time;
+        if (diff.TotalMinutes < 1) return "just now";
+        if (diff.TotalHours < 1) return $"{(int)diff.TotalMinutes}m";
+        if (diff.TotalDays < 1) return $"{(int)diff.TotalHours}h";
+        if (diff.TotalDays < 30) return $"{(int)diff.TotalDays}d";
+        return time.ToString("MMM d");
+    }
+
+}

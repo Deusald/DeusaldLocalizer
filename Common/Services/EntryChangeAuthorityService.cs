@@ -15,6 +15,7 @@ namespace DeusaldLocalizerCommon
     ///                       acting member's own vote applied (clamped to ±1). Text, author, creation
     ///                       time and everyone else's votes are taken from the server, never the payload,
     ///                       so a "vote" can neither rewrite a suggestion nor stuff the ballot.
+    ///   • CommentAdded    — the comment's author is forced to whoever is pushing.
     /// The honest client always produces payloads that survive this untouched; a forged one is neutralized
     /// rather than rejected, so a legitimate batch is never blocked.
     /// </summary>
@@ -67,6 +68,17 @@ namespace DeusaldLocalizerCommon
                         });
 
                     change.ChangeData = JsonConvert.SerializeObject(rebuilt);
+                    break;
+                }
+                case EntryChangeType.CommentAdded:
+                {
+                    LocCommentRef? commentRef = JsonConvert.DeserializeObject<LocCommentRef>(change.ChangeData);
+                    if (commentRef?.Comment == null) return;
+
+                    // The author is whoever is pushing — a crafted payload cannot attribute a comment to
+                    // someone else. Text, id and timestamp are the member's own to set.
+                    commentRef.Comment.AuthorId = member.UserId;
+                    change.ChangeData           = JsonConvert.SerializeObject(commentRef);
                     break;
                 }
             }

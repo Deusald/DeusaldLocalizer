@@ -13,5 +13,8 @@ namespace DeusaldLocalizerCommon
 
         /// <summary>SHA-256 of the main-language source text this suggestion was written against.</summary>
         public string SourceHash { get; set; } = string.Empty;
+
+        /// <summary>Discussion comments about this suggestion.</summary>
+        public List<LocComment> Comments { get; set; } = new();
     }
 }

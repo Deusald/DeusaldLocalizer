@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Newtonsoft.Json;
 
 namespace DeusaldLocalizerCommon
 {
@@ -25,7 +26,7 @@ namespace DeusaldLocalizerCommon
     ///                        keys, categories, tags, variables, enums) and editing the source/main language.
     ///   • Reviewer        — confirm/remove translations for a language the member reviews; manage
     ///                        key-level flags if the member reviews any language.
-    ///   • Any member      — propose and vote on suggestions.
+    ///   • Any member      — propose and vote on suggestions; leave comments (and delete their own).
     /// </summary>
     [PublicAPI]
     public static class EntryChangePermissionService
@@ -39,9 +40,27 @@ namespace DeusaldLocalizerCommon
         {
             List<EntryChangePermissionError> errors = new List<EntryChangePermissionError>();
 
+            // Track comments this member adds earlier in the batch: a member may delete a comment they only
+            // just posted (add-then-delete before pushing), which the pristine-project author check below
+            // cannot see because that comment is not applied to the project until later in the push.
+            HashSet<Guid> addedThisBatch = new HashSet<Guid>();
+
             foreach (LocEntryChange change in changes)
             {
+                if (change.Type == EntryChangeType.CommentAdded)
+                {
+                    LocCommentRef? added = JsonConvert.DeserializeObject<LocCommentRef>(change.ChangeData);
+                    if (added?.Comment != null) addedThisBatch.Add(added.Comment.Id);
+                }
+
                 if (IsAllowed(project, member, change)) continue;
+
+                // A member's own just-added comment is theirs to delete even before it lands on the server.
+                if (change.Type == EntryChangeType.CommentRemoved && !member.IsBanned)
+                {
+                    LocCommentRef? removed = JsonConvert.DeserializeObject<LocCommentRef>(change.ChangeData);
+                    if (removed != null && addedThisBatch.Contains(removed.CommentId)) continue;
+                }
 
                 errors.Add(new EntryChangePermissionError
                 {
@@ -64,10 +83,16 @@ namespace DeusaldLocalizerCommon
 
             switch (change.Type)
             {
-                // Any (non-banned) member may propose alternatives and vote on them.
+                // Any (non-banned) member may propose alternatives, vote on them, and leave comments.
                 case EntryChangeType.SuggestionAdded:
                 case EntryChangeType.SuggestionVoted:
+                case EntryChangeType.CommentAdded:
                     return true;
+
+                // A comment may only be deleted by its own author (admins already returned true above,
+                // and drive the bulk "clear old comments" maintenance tool).
+                case EntryChangeType.CommentRemoved:
+                    return IsOwnComment(project, member, change);
 
                 // Confirming a translation is reviewer-only. Editing the source/main language is
                 // admin-only — for a non-admin it is never allowed, whatever their review languages.
@@ -103,13 +128,29 @@ namespace DeusaldLocalizerCommon
             }
         }
 
+        /// <summary>True when <paramref name="change"/> deletes a comment authored by <paramref name="member"/>.</summary>
+        private static bool IsOwnComment(LocProject project, LocProjectMember member, LocEntryChange change)
+        {
+            LocCommentRef? commentRef = JsonConvert.DeserializeObject<LocCommentRef>(change.ChangeData);
+            if (commentRef == null) return false;
+
+            LocLocalizationKey? key = project.Keys.Find(k => k.Id == change.EntryId);
+            if (key == null) return false;
+
+            LocComment? comment = CommentLocator.Find(key, commentRef, commentRef.CommentId);
+            return comment != null && comment.AuthorId == member.UserId;
+        }
+
         private static string RequiredRole(LocProject project, LocEntryChange change)
         {
             switch (change.Type)
             {
                 case EntryChangeType.SuggestionAdded:
                 case EntryChangeType.SuggestionVoted:
+                case EntryChangeType.CommentAdded:
                     return "any member";
+                case EntryChangeType.CommentRemoved:
+                    return "the comment's author or an admin";
                 case EntryChangeType.TranslationUpdated:
                     return change.EntrySubId == project.Metadata.MainLanguageId
                                ? "admin"

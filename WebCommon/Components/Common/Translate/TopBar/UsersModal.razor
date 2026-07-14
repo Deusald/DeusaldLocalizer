@@ -160,6 +160,50 @@
             </div>
         </div>
 
+        @if (_IsAdmin)
+        {
+            <div class="um-section um-maint-section">
+                <div class="um-section-header">
+                    <span class="um-section-label">Comment maintenance</span>
+                </div>
+
+                <p class="um-maint-hint">Delete every comment (on keys, translations and suggestions) older than the chosen age.</p>
+
+                <div class="um-maint-row">
+                    <input class="um-input um-maint-amount" type="number" min="1" max="999"
+                           @bind="_ClearAmount" @bind:event="oninput"/>
+                    <select class="um-input um-maint-unit" @bind="_ClearUnit">
+                        <option value="Days">days</option>
+                        <option value="Months">months</option>
+                    </select>
+
+                    @if (_ConfirmClear)
+                    {
+                        <span class="um-delete-confirm">
+                            <span>Clear @_ClearAmount @(_ClearUnit == "Months" ? "month" : "day")@(_ClearAmount == 1 ? "" : "s")+ old comments?</span>
+                            <button class="um-confirm-yes" @onclick="ClearOldComments">Clear</button>
+                            <button class="um-confirm-no" @onclick="() => _ConfirmClear = false">Cancel</button>
+                        </span>
+                    }
+                    else
+                    {
+                        <button class="um-btn um-btn-primary um-btn-sm" @onclick="() => { _ConfirmClear = true; _ClearResult = null; }"
+                                disabled="@(_ClearAmount < 1)">
+                            <i class="bi bi-trash"></i> Clear old comments
+                        </button>
+                    }
+                </div>
+
+                @if (_ClearResult != null)
+                {
+                    <div class="dl-alert dl-alert-success um-maint-result">
+                        <i class="bi bi-check-circle"></i>
+                        <span>@_ClearResult</span>
+                    </div>
+                }
+            </div>
+        }
+
     </div>
 
     <AccessTokenModal @ref="_AccessTokenModal"/>
@@ -177,7 +221,26 @@
     private AccessTokenModal? _AccessTokenModal;
     private Guid?             _PendingDeleteId;
 
+    private int     _ClearAmount = 30;
+    private string  _ClearUnit   = "Days";
+    private bool    _ConfirmClear;
+    private string? _ClearResult;
+
     private bool _IsAdmin => _ProjectState.CurrentUser.IsAdmin;
+
+    private void ClearOldComments()
+    {
+        _ConfirmClear = false;
+
+        DateTime cutoff = _ClearUnit == "Months"
+                              ? DateTime.UtcNow.AddMonths(-_ClearAmount)
+                              : DateTime.UtcNow.AddDays(-_ClearAmount);
+
+        int cleared = _ProjectState.ClearCommentsOlderThan(cutoff);
+        _ClearResult = cleared == 0
+                           ? "No comments were old enough to clear."
+                           : $"Cleared {cleared} comment{(cleared == 1 ? "" : "s")}.";
+    }
 
     private void ConfirmDelete(LocProjectMember member)
     {
@@ -190,6 +253,8 @@
         CloseForm();
         _TokenError      = null;
         _PendingDeleteId = null;
+        _ConfirmClear    = false;
+        _ClearResult     = null;
         _Visible         = true;
         StateHasChanged();
     }

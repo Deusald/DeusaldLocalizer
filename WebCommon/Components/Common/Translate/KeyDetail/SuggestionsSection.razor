@@ -50,6 +50,20 @@
                         </div>
                     }
                 </div>
+
+                <div class="ss-comments">
+                    <button class="ss-comments-toggle" @onclick="() => ToggleComments(s.Id)">
+                        <i class="bi @(_ExpandedComments.Contains(s.Id) ? "bi-chevron-down" : "bi-chevron-right")"></i>
+                        <i class="bi bi-chat-left-text"></i>
+                        @{ int commentCount = s.Comments.Count; }
+                        <span>@(commentCount > 0 ? $"{commentCount} comment{(commentCount == 1 ? "" : "s")}" : "Comment")</span>
+                    </button>
+                    @if (_ExpandedComments.Contains(s.Id))
+                    {
+                        <CommentThread Key="Key" Scope="CommentScope.Suggestion" LanguageId="@SelectedLanguage"
+                                       SuggestionId="s.Id" Label="Discussion" Compact="true" OnChanged="OnCommentsChanged"/>
+                    }
+                </div>
             }
         </div>
     </div>
@@ -63,6 +77,15 @@
 
     private bool _CanAccept => _ProjectState.CurrentUser.IsAdmin
                                || _ProjectState.CurrentUser.ReviewLanguagePermissions.Contains(SelectedLanguage);
+
+    private readonly HashSet<Guid> _ExpandedComments = new();
+
+    private void ToggleComments(Guid suggestionId)
+    {
+        if (!_ExpandedComments.Add(suggestionId)) _ExpandedComments.Remove(suggestionId);
+    }
+
+    private async Task OnCommentsChanged() => await OnChanged.InvokeAsync();
 
     private List<LocTranslationSuggestion> _SuggestionsForLanguage =>
         Key.Translations.FirstOrDefault(t => t.LanguageId == SelectedLanguage)?.Suggestions

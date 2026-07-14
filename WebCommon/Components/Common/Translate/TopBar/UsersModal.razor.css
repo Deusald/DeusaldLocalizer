@@ -338,3 +338,26 @@
     color: #8a8b93;
 }
 .um-confirm-no:hover { background: #23242e; color: #d6d6db; }
+
+/* ── Comment maintenance ──────────────────────────────────────────────────── */
+
+.um-maint-section { border-top: 1px solid #20212a; }
+
+.um-maint-hint {
+    font-size: 12px;
+    color: #7a7b83;
+    margin: 0 0 10px;
+    line-height: 1.45;
+}
+
+.um-maint-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.um-maint-amount { width: 70px; }
+.um-maint-unit   { width: 100px; }
+
+.um-maint-result { margin-top: 12px; }

@@ -1160,6 +1160,84 @@ public partial class ProjectStateService(
     public void RecordSuggestionRemoved(Guid keyId, string languageId, Guid suggestionId) =>
         AddKeyChange(keyId, EntryChangeType.SuggestionRemoved, languageId, suggestionId.ToString());
 
+    // ── Comment change recording ──────────────────────────────────────────────
+
+    public void RecordKeyCommentAdded(Guid keyId, LocComment comment) =>
+        RecordCommentAdded(keyId, new LocCommentRef { Scope = CommentScope.Key, Comment = comment });
+
+    public void RecordTranslationCommentAdded(Guid keyId, string languageId, LocComment comment) =>
+        RecordCommentAdded(keyId, new LocCommentRef { Scope = CommentScope.Translation, LanguageId = languageId, Comment = comment });
+
+    public void RecordSuggestionCommentAdded(Guid keyId, string languageId, Guid suggestionId, LocComment comment) =>
+        RecordCommentAdded(keyId, new LocCommentRef
+        {
+            Scope        = CommentScope.Suggestion,
+            LanguageId   = languageId,
+            SuggestionId = suggestionId,
+            Comment      = comment,
+        });
+
+    public void RecordKeyCommentRemoved(Guid keyId, Guid commentId) =>
+        RecordCommentRemoved(keyId, new LocCommentRef { Scope = CommentScope.Key, CommentId = commentId });
+
+    public void RecordTranslationCommentRemoved(Guid keyId, string languageId, Guid commentId) =>
+        RecordCommentRemoved(keyId, new LocCommentRef { Scope = CommentScope.Translation, LanguageId = languageId, CommentId = commentId });
+
+    public void RecordSuggestionCommentRemoved(Guid keyId, string languageId, Guid suggestionId, Guid commentId) =>
+        RecordCommentRemoved(keyId, new LocCommentRef
+        {
+            Scope        = CommentScope.Suggestion,
+            LanguageId   = languageId,
+            SuggestionId = suggestionId,
+            CommentId    = commentId,
+        });
+
+    private void RecordCommentAdded(Guid keyId, LocCommentRef commentRef) =>
+        AddKeyChange(keyId, EntryChangeType.CommentAdded, string.Empty, Newtonsoft.Json.JsonConvert.SerializeObject(commentRef));
+
+    private void RecordCommentRemoved(Guid keyId, LocCommentRef commentRef) =>
+        AddKeyChange(keyId, EntryChangeType.CommentRemoved, string.Empty, Newtonsoft.Json.JsonConvert.SerializeObject(commentRef));
+
+    /// <summary>
+    /// Admin maintenance: deletes every comment (across keys, translations and suggestions) created strictly
+    /// before <paramref name="cutoffUtc"/>. Mutates the in-memory project and records one CommentRemoved per
+    /// comment (so each is pushed/undone the normal way). Returns how many comments were cleared.
+    /// </summary>
+    public int ClearCommentsOlderThan(DateTime cutoffUtc)
+    {
+        if (CurrentProject == null) return 0;
+
+        int cleared = 0;
+        foreach (LocLocalizationKey key in CurrentProject.Keys)
+        {
+            foreach (LocComment comment in key.Comments.Where(c => c.CreatedAt < cutoffUtc).ToList())
+            {
+                key.Comments.Remove(comment);
+                RecordKeyCommentRemoved(key.Id, comment.Id);
+                ++cleared;
+            }
+            foreach (LocKeyTranslation translation in key.Translations)
+            {
+                foreach (LocComment comment in translation.Comments.Where(c => c.CreatedAt < cutoffUtc).ToList())
+                {
+                    translation.Comments.Remove(comment);
+                    RecordTranslationCommentRemoved(key.Id, translation.LanguageId, comment.Id);
+                    ++cleared;
+                }
+                foreach (LocTranslationSuggestion suggestion in translation.Suggestions)
+                {
+                    foreach (LocComment comment in suggestion.Comments.Where(c => c.CreatedAt < cutoffUtc).ToList())
+                    {
+                        suggestion.Comments.Remove(comment);
+                        RecordSuggestionCommentRemoved(key.Id, translation.LanguageId, suggestion.Id, comment.Id);
+                        ++cleared;
+                    }
+                }
+            }
+        }
+        return cleared;
+    }
+
     // ── Flag change recording ─────────────────────────────────────────────────
 
     public void RecordFlagAdded(Guid keyId, LocKeyFlag flag) =>
