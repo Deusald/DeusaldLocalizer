@@ -15,21 +15,28 @@
         <div class="lc-list">
             @foreach (string code in _FilteredLanguages)
             {
-                CultureEntry? entry  = CultureService.FindByCode(code);
-                bool          active = code == SelectedLanguage;
-                bool          isMain = code == _ProjectState.CurrentProject!.Metadata.MainLanguageId;
-                int           pct    = ProgressFor(code);
+                LanguageDisplay disp   = CultureService.DescribeLanguage(code);
+                bool            active = code == SelectedLanguage;
+                bool            isMain = code == _ProjectState.CurrentProject!.Metadata.MainLanguageId;
+                int             pct    = ProgressFor(code);
 
                 @if (_EditMode)
                 {
                     <div class="lc-item lc-item-editing">
                         <div class="lc-item-top">
-                            <span class="lc-item-flag">@(entry?.FlagEmoji ?? "🌐")</span>
-                            <span class="lc-item-name">@(entry?.ShortName ?? code)</span>
+                            <span class="lc-item-flag">@disp.Flag</span>
+                            <span class="lc-item-name">@disp.Name</span>
+                            @if (disp.IsVariant)
+                            {
+                                <span class="lc-item-var-badge">SUB</span>
+                            }
                             @if (isMain)
                             {
                                 <span class="lc-item-main-badge">SRC</span>
                             }
+                            <button class="lc-item-subadd" title="Add sub-language" @onclick="() => BeginAddVariant(code)">
+                                <i class="bi bi-plus-lg"></i>
+                            </button>
                             @if (!isMain)
                             {
                                 <button class="lc-item-remove" title="Remove language" @onclick="() => RemoveLanguage(code)">
@@ -37,14 +44,29 @@
                                 </button>
                             }
                         </div>
+                        @if (_VariantParent == code)
+                        {
+                            <div class="lc-variant-add">
+                                <span class="lc-variant-prefix">@(code)_</span>
+                                <input class="lc-variant-input" placeholder="tag e.g. simple" autofocus
+                                       @bind="_VariantTag" @bind:event="oninput"
+                                       @onkeydown="e => OnVariantKeyDown(e, code)"/>
+                                <button class="lc-variant-confirm" title="Add sub-language" @onclick="() => ConfirmAddVariant(code)">
+                                    <i class="bi bi-check-lg"></i>
+                                </button>
+                                <button class="lc-variant-cancel" title="Cancel" @onclick="CancelAddVariant">
+                                    <i class="bi bi-x"></i>
+                                </button>
+                            </div>
+                        }
                     </div>
                 }
                 else
                 {
                     <button class="lc-item @(active ? "active" : "")" @onclick="() => OnLanguageSelected.InvokeAsync(code)">
                         <div class="lc-item-top">
-                            <span class="lc-item-flag">@(entry?.FlagEmoji ?? "🌐")</span>
-                            <span class="lc-item-name">@(entry?.ShortName ?? code)</span>
+                            <span class="lc-item-flag">@disp.Flag</span>
+                            <span class="lc-item-name">@disp.Name</span>
                             @if (isMain)
                             {
                                 <span class="lc-item-main-badge">SRC</span>
@@ -121,10 +143,12 @@
     [Parameter] public string                SelectedLanguage   { get; set; } = "";
     [Parameter] public EventCallback<string> OnLanguageSelected { get; set; }
 
-    private string _Filter = "";
-    private bool   _AddMode;
-    private bool   _EditMode;
-    private string _AddQuery = "";
+    private string  _Filter = "";
+    private bool    _AddMode;
+    private bool    _EditMode;
+    private string  _AddQuery = "";
+    private string? _VariantParent;              // language a sub-language is being added to (edit mode)
+    private string  _VariantTag = "";
 
     private bool _IsAdmin => _ProjectState.CurrentUser.IsAdmin;
 
@@ -142,11 +166,8 @@
             {
                 string q = _Filter.Trim().ToLowerInvariant();
                 langs = langs.Where(code =>
-                {
-                    CultureEntry? entry = CultureService.FindByCode(code);
-                    return code.ToLowerInvariant().Contains(q)
-                           || (entry != null && entry.EnglishName.ToLowerInvariant().Contains(q));
-                });
+                    code.ToLowerInvariant().Contains(q)
+                    || CultureService.DescribeLanguage(code).Name.ToLowerInvariant().Contains(q));
             }
             return langs;
         }
@@ -179,6 +200,56 @@
         project.Metadata.Languages.Add(code);
         _ProjectState.RecordLanguageAdded(code);
         ExitAddMode();
+    }
+
+    // ── Sub-language (variant) add ────────────────────────────────────────────
+
+    private void BeginAddVariant(string parentCode)
+    {
+        _VariantParent = parentCode;
+        _VariantTag    = "";
+    }
+
+    private void CancelAddVariant()
+    {
+        _VariantParent = null;
+        _VariantTag    = "";
+    }
+
+    private void OnVariantKeyDown(KeyboardEventArgs e, string parentCode)
+    {
+        if (e.Key == "Enter")       ConfirmAddVariant(parentCode);
+        else if (e.Key == "Escape") CancelAddVariant();
+    }
+
+    private void ConfirmAddVariant(string parentCode)
+    {
+        string tag = SanitizeTag(_VariantTag);
+        if (tag.Length == 0) return;
+        // Sub-languages are stored as "{parent}_{tag}"; see CultureService.SplitVariant.
+        AddLanguage($"{parentCode}_{tag}");
+        CancelAddVariant();
+    }
+
+    /// <summary>Trims the tag and collapses internal whitespace to hyphens so the code stays clean.</summary>
+    private static string SanitizeTag(string raw)
+    {
+        if (string.IsNullOrWhiteSpace(raw)) return "";
+        System.Text.StringBuilder sb = new();
+        bool pendingDash = false;
+        foreach (char c in raw.Trim())
+        {
+            if (char.IsWhiteSpace(c))
+            {
+                if (sb.Length > 0) pendingDash = true;
+            }
+            else
+            {
+                if (pendingDash) { sb.Append('-'); pendingDash = false; }
+                sb.Append(c);
+            }
+        }
+        return sb.ToString();
     }
 
     private async Task RemoveLanguage(string code)

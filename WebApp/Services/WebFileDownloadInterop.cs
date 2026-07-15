@@ -13,10 +13,13 @@ public sealed class WebFileDownloadInterop(IJSRuntime js) : IAsyncDisposable
     private async ValueTask<IJSObjectReference> ModuleAsync() =>
         _Module ??= await js.InvokeAsync<IJSObjectReference>("import", "./js/excel.js");
 
-    /// <summary>Prompts the user to pick a file and returns its bytes, or null if cancelled.</summary>
-    public async Task<byte[]?> PickBytesAsync()
+    /// <summary>
+    /// Prompts the user to pick a file and returns its bytes, or null if cancelled.
+    /// <paramref name="accept"/> is the OS-dialog file-type filter (e.g. <c>.xlsx</c> or <c>.zip</c>).
+    /// </summary>
+    public async Task<byte[]?> PickBytesAsync(string accept = ".xlsx")
     {
-        string? base64 = await (await ModuleAsync()).InvokeAsync<string?>("pickXlsx");
+        string? base64 = await (await ModuleAsync()).InvokeAsync<string?>("pickFile", accept);
         return base64 is null ? null : Convert.FromBase64String(base64);
     }
 

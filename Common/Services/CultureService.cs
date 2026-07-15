@@ -54,6 +54,56 @@ namespace DeusaldLocalizerCommon
             return _All.FirstOrDefault(c =>
                 string.Equals(c.Code, code, StringComparison.OrdinalIgnoreCase));
         }
+
+        /// <summary>
+        /// Splits a project language code into its base culture code and an optional sub-language
+        /// (variant) tag. Sub-languages are stored as "{baseCode}_{tag}" — e.g. "en-US_simple" is a
+        /// simplified-English variant of "en-US". Underscore never appears in a real BCP-47 code, so it
+        /// unambiguously separates a project-defined variant from the culture it derives from.
+        /// </summary>
+        public static void SplitVariant(string code, out string baseCode, out string? variant)
+        {
+            int i = string.IsNullOrEmpty(code) ? -1 : code.IndexOf('_');
+            if (i < 0)
+            {
+                baseCode = code;
+                variant  = null;
+                return;
+            }
+            baseCode = code.Substring(0, i);
+            variant  = code.Substring(i + 1);
+        }
+
+        /// <summary>
+        /// Flag emoji, display name and variant flag for any project language code, resolving a
+        /// sub-language ("en-US_simple") against its base culture. A variant reuses the base culture's
+        /// flag and appends its tag to the name (e.g. "English · simple").
+        /// </summary>
+        public static LanguageDisplay DescribeLanguage(string code)
+        {
+            SplitVariant(code, out string baseCode, out string? variant);
+            CultureEntry? entry = FindByCode(baseCode);
+            string        flag  = entry != null ? entry.FlagEmoji : "🌐";
+            string        name  = entry != null ? entry.ShortName : baseCode;
+            if (variant != null) name = name + " · " + variant;
+            return new LanguageDisplay(flag, name, variant);
+        }
+    }
+
+    /// <summary>Resolved display info for a project language code (base culture or sub-language).</summary>
+    public readonly struct LanguageDisplay
+    {
+        public LanguageDisplay(string flag, string name, string? variant)
+        {
+            Flag    = flag;
+            Name    = name;
+            Variant = variant;
+        }
+
+        public string  Flag      { get; } // "🇺🇸" (base culture's flag, even for a variant)
+        public string  Name      { get; } // "English" or "English · simple"
+        public string? Variant   { get; } // "simple", or null for a plain base language
+        public bool    IsVariant => Variant != null;
     }
 
     /// <summary>Thin wrapper around a CultureInfo for display purposes.</summary>

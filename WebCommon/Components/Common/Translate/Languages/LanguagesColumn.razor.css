@@ -193,6 +193,88 @@
     color: #ff6b6b;
 }
 
+/* ── Sub-language (variant) ───────────────────────────────────────────────── */
+
+.lc-item-var-badge {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: #8d9aff;
+    background: rgba(91,108,255,.15);
+    padding: 1px 5px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.lc-item-subadd {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #5a5b63;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all .12s;
+}
+.lc-item-subadd:hover {
+    background: rgba(91,108,255,.12);
+    border-color: rgba(91,108,255,.3);
+    color: #8d9aff;
+}
+
+.lc-variant-add {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 6px;
+    padding-left: 23px; /* align under the language name, past the flag */
+}
+
+.lc-variant-prefix {
+    font-size: 10.5px;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    color: #5a5b63;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.lc-variant-input {
+    flex: 1;
+    min-width: 0;
+    background: #1a1b22;
+    border: 1px solid #23242b;
+    border-radius: 6px;
+    color: #e8e8ea;
+    font-size: 12px;
+    padding: 4px 7px;
+}
+.lc-variant-input:focus { border-color: #5b6cff; outline: none; box-shadow: 0 0 0 2px rgba(91,108,255,.18); }
+
+.lc-variant-confirm,
+.lc-variant-cancel {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all .12s;
+}
+.lc-variant-confirm { color: #6ee7a8; }
+.lc-variant-confirm:hover { background: rgba(52,199,89,.12); border-color: rgba(52,199,89,.3); }
+.lc-variant-cancel { color: #5a5b63; }
+.lc-variant-cancel:hover { background: #23242e; color: #d6d6db; }
+
 /* ── Add language mode ────────────────────────────────────────────────────── */
 
 .lc-add-header {

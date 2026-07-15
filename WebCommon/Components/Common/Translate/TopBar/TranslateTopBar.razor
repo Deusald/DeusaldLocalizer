@@ -155,8 +155,10 @@
     {
         get
         {
-            CultureEntry? entry = CultureService.FindByCode(SelectedLanguage);
-            return entry?.EnglishName ?? SelectedLanguage;
+            CultureService.SplitVariant(SelectedLanguage, out string baseCode, out string? variant);
+            CultureEntry? entry = CultureService.FindByCode(baseCode);
+            string        name  = entry?.EnglishName ?? baseCode;
+            return variant != null ? $"{name} · {variant}" : name;
         }
     }
 

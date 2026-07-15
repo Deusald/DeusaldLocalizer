@@ -1,11 +1,12 @@
-// Browser file pick / save for the Excel import/export modals. Bytes cross the interop boundary as
-// base64 strings, which the C# side converts to/from a Stream.
+// Browser file pick / save shared by the Excel import/export modals and the project zip import/export.
+// Bytes cross the interop boundary as base64 strings, which the C# side converts to/from a Stream.
 
-export function pickXlsx() {
+// `accept` is the file-type filter for the OS dialog (e.g. '.xlsx' for Excel, '.zip' for project imports).
+export function pickFile(accept) {
     return new Promise((resolve) => {
         const input = document.createElement('input');
         input.type = 'file';
-        input.accept = '.xlsx';
+        input.accept = accept || '.xlsx';
         input.onchange = async () => {
             const file = input.files && input.files[0];
             if (!file) { resolve(null); return; }

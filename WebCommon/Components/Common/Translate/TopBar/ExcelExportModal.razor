@@ -267,8 +267,11 @@
 
     private string LangLabel(string code)
     {
-        CultureEntry? entry = CultureService.FindByCode(code);
-        return entry != null ? $"{entry.EnglishName} ({code})" : code;
+        CultureService.SplitVariant(code, out string baseCode, out string? variant);
+        CultureEntry? entry = CultureService.FindByCode(baseCode);
+        string        name  = entry?.EnglishName ?? baseCode;
+        if (variant != null) name = $"{name} · {variant}";
+        return $"{name} ({code})";
     }
 
     private static string FlagLabel(FlagType type) => type switch

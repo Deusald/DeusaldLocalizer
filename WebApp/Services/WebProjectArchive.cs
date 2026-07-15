@@ -41,17 +41,17 @@ public sealed class WebProjectArchive(IndexedDbInterop idb, WebFileDownloadInter
 
     /// <summary>
     /// Prompts the user to pick a project <c>.zip</c>, extracts it into a brand-new IndexedDB location and
-    /// returns that location, or null if the user cancelled or the zip held no metadata.
+    /// returns that location, or null if the user cancelled. Throws <see cref="ProjectFolderException"/>
+    /// when the picked file is not a valid project export (so the caller can surface the reason).
     /// </summary>
     public async Task<string?> ImportAsync()
     {
-        byte[]? zipBytes = await files.PickBytesAsync();
-        if (zipBytes is null) return null;
+        byte[]? zipBytes = await files.PickBytesAsync(".zip");
+        if (zipBytes is null) return null; // cancelled — not an error
 
-        // Prefix so the imported project is scoped to the Localizer in the shared origin store (see WebProjectLocationService).
-        string location  = WebProjectLocationService.LocationPrefix + Guid.NewGuid().ToString("N");
-        bool   hasMeta   = false;
-
+        // Read every file into memory first so we can locate metadata.json and normalise the layout before
+        // writing anything. Rejecting an invalid zip then never leaves a half-written location behind.
+        Dictionary<string, string> entries = new Dictionary<string, string>();
         using (MemoryStream buffer = new MemoryStream(zipBytes))
         await using (ZipArchive zip = new ZipArchive(buffer, ZipArchiveMode.Read))
         {
@@ -59,22 +59,56 @@ public sealed class WebProjectArchive(IndexedDbInterop idb, WebFileDownloadInter
             {
                 if (entry.FullName.EndsWith("/")) continue; // directory entry
 
-                string             path    = entry.FullName.Replace('\\', '/');
-                using StreamReader reader  = new StreamReader(await entry.OpenAsync(), Encoding.UTF8);
-                string             content = await reader.ReadToEndAsync();
+                string path = entry.FullName.Replace('\\', '/');
+                if (path.StartsWith("__MACOSX/", StringComparison.Ordinal)) continue; // macOS zip cruft
 
-                await idb.PutAsync(location, path, content);
-                if (path == ProjectFileService.METADATA_FILE_NAME) hasMeta = true;
+                using StreamReader reader = new StreamReader(await entry.OpenAsync(), Encoding.UTF8);
+                entries[path] = await reader.ReadToEndAsync();
             }
         }
 
-        if (!hasMeta)
+        // Accept metadata.json at the root, or one folder deep — some users zip the project *folder*
+        // itself (e.g. "MyProject/metadata.json") rather than its contents. The common prefix is stripped
+        // so every file lands at the root, which is where ProjectFileService.OpenAsync expects it.
+        string? prefix = FindProjectPrefix(entries.Keys);
+        if (prefix is null)
+            throw new ProjectFolderException(
+                $"No '{ProjectFileService.METADATA_FILE_NAME}' found in the zip — this does not look like a project export.");
+
+        // Prefix so the imported project is scoped to the Localizer in the shared origin store (see WebProjectLocationService).
+        string location = WebProjectLocationService.LocationPrefix + Guid.NewGuid().ToString("N");
+        foreach (KeyValuePair<string, string> file in entries)
         {
-            // Not a project zip — clean up the partial import so it never shows in the project list.
-            await idb.DeleteLocationAsync(location);
-            return null;
+            if (!file.Key.StartsWith(prefix, StringComparison.Ordinal)) continue; // outside the project folder
+            string relative = file.Key.Substring(prefix.Length);
+            if (relative.Length == 0) continue;
+            await idb.PutAsync(location, relative, file.Value);
         }
 
         return location;
+    }
+
+    /// <summary>
+    /// Returns the leading path to strip so <c>metadata.json</c> lands at the root, or null if none is present.
+    /// Empty string means metadata.json is already at the root; otherwise it is the wrapping folder
+    /// (e.g. <c>"MyProject/"</c>). The shallowest metadata.json wins, so a root file beats a nested one.
+    /// </summary>
+    private static string? FindProjectPrefix(IEnumerable<string> paths)
+    {
+        string  meta = ProjectFileService.METADATA_FILE_NAME;
+        string? best = null;
+        foreach (string path in paths)
+        {
+            string prefix;
+            if (path == meta)
+                prefix = string.Empty;
+            else if (path.EndsWith("/" + meta, StringComparison.Ordinal))
+                prefix = path.Substring(0, path.Length - meta.Length); // keeps the trailing '/'
+            else
+                continue;
+
+            if (best is null || prefix.Length < best.Length) best = prefix;
+        }
+        return best;
     }
 }

@@ -401,8 +401,8 @@
 
     private static string LangLabel(string code)
     {
-        CultureEntry? entry = CultureService.FindByCode(code);
-        return entry != null ? $"{entry.FlagEmoji} {entry.ShortName}" : code;
+        LanguageDisplay disp = CultureService.DescribeLanguage(code);
+        return $"{disp.Flag} {disp.Name}";
     }
 
     private static string PermissionsSummary(LocProjectMember member)

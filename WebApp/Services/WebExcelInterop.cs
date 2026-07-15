@@ -10,7 +10,7 @@ public sealed class WebExcelInterop(WebFileDownloadInterop files) : IExcelIntero
 
     public async Task<Stream?> PickXlsxForReadAsync()
     {
-        byte[]? bytes = await files.PickBytesAsync();
+        byte[]? bytes = await files.PickBytesAsync(".xlsx");
         return bytes is null ? null : new MemoryStream(bytes);
     }
 
