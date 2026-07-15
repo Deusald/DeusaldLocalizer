@@ -130,6 +130,12 @@
     private Guid?  _LoadedForKeyId;
     private string _LoadedForLanguage = "";
 
+    // Unsaved editor drafts stashed per (key, language) so switching to another
+    // key and coming back restores the in-progress edit instead of losing it.
+    // Only edits that differ from the saved text are kept; anything matching the
+    // saved text is dropped so stale drafts don't shadow later external changes.
+    private readonly Dictionary<(Guid keyId, string languageId), (string source, string translation)> _DraftBuffer = new();
+
     // Snapshots of the last text we knew was saved on the DTO. Used to detect
     // external changes (e.g. a suggestion being accepted elsewhere) so the
     // draft can be re-synced, without clobbering genuine unsaved local edits.
@@ -166,8 +172,24 @@
 
         if (keyOrLanguageChanged)
         {
-            _SourceDraft      = currentSourceText;
-            _TranslationDraft = currentTranslationText;
+            // Stash the outgoing key/language's unsaved edits before loading the
+            // new one, so returning to it restores the draft instead of the last
+            // saved text. _LastKnownSourceText/_LastKnownTranslationText still hold
+            // the outgoing key's saved text at this point.
+            if (_LoadedForKeyId != null)
+                StashDraft(_LoadedForKeyId.Value, _LoadedForLanguage, previousSourceDraft, previousTranslationDraft,
+                           _LastKnownSourceText, _LastKnownTranslationText);
+
+            if (_DraftBuffer.TryGetValue((Key.Id, SelectedLanguage), out (string source, string translation) stashed))
+            {
+                _SourceDraft      = stashed.source;
+                _TranslationDraft = stashed.translation;
+            }
+            else
+            {
+                _SourceDraft      = currentSourceText;
+                _TranslationDraft = currentTranslationText;
+            }
 
             _LoadedForKeyId    = Key.Id;
             _LoadedForLanguage = SelectedLanguage;
@@ -200,6 +222,21 @@
     private async Task NotifyDraftChanged()
     {
         await OnDraftChanged.InvokeAsync((_SourceDraft, _TranslationDraft));
+    }
+
+    /// <summary>
+    /// Remembers an unsaved draft for a (key, language) so it survives a key switch.
+    /// A draft equal to the saved text is not a pending edit, so its buffer entry is
+    /// removed instead — that way a later external save is picked up fresh on return.
+    /// </summary>
+    private void StashDraft(Guid keyId, string languageId, string draftSource, string draftTranslation,
+                           string savedSource, string savedTranslation)
+    {
+        (Guid, string) bufferKey = (keyId, languageId);
+        if (draftSource != savedSource || draftTranslation != savedTranslation)
+            _DraftBuffer[bufferKey] = (draftSource, draftTranslation);
+        else
+            _DraftBuffer.Remove(bufferKey);
     }
 
     private bool _SourceOverLimit =>
