@@ -4,7 +4,7 @@
   "KeyName": "noMatches",
   "Description": "Shown when no existing tags match the query and none can be created.",
   "CreatedAt": "2026-07-16T12:48:41.5579545Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5579551Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7081407Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5579599Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "cd336f52d4a0fa8e3230635b1feb9b95e97bc9d1d21095af93b3a83ce32c48c1",
+      "Text": "Brak pasujących tagów.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7081382Z",
       "Suggestions": [],
       "Comments": []
     }

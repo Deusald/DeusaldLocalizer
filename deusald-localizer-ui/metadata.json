@@ -6,11 +6,12 @@
   "ApiUrl": "",
   "UncommittedMode": false,
   "MainLanguageId": "en-US",
-  "SyncId": "2b0bc4b1-5d74-4c93-b5a6-6394303113a3",
-  "UpdatedAt": "2026-07-16T12:48:41.5643562Z",
+  "SyncId": "f310450c-d1be-4a84-8fe8-e221c5ebc74d",
+  "UpdatedAt": "2026-07-16T13:09:02.6593929Z",
   "FormatVersion": 1,
   "Languages": [
-    "en-US"
+    "en-US",
+    "pl-PL"
   ],
   "IsOnline": false,
   "UsesUncommittedChanges": false

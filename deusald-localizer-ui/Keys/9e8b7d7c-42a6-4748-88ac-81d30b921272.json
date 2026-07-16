@@ -4,7 +4,7 @@
   "KeyName": "commentMaintenanceHint",
   "Description": "Explanatory hint for the comment maintenance section.",
   "CreatedAt": "2026-07-16T12:48:41.5594499Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5594506Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7109989Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5594591Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "2ede98351e7f363e572d5ecc1245fa65da64bbfcf3c8c9bda08b0d987d162b0c",
+      "Text": "Usuń każdy komentarz (do kluczy, tłumaczeń i sugestii) starszy niż wybrany wiek.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7109967Z",
       "Suggestions": [],
       "Comments": []
     }

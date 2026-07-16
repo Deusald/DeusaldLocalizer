@@ -4,7 +4,7 @@
   "KeyName": "statusApproved",
   "Description": "Key status tag: translation approved.",
   "CreatedAt": "2026-07-16T12:48:41.5577367Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5577374Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7079749Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5577392Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "87b42e40c2a290e01d87b721bf381c3c5e259d1eb0a4660e41fdbf8bc73f7ddd",
+      "Text": "Zatwierdzone",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7079727Z",
       "Suggestions": [],
       "Comments": []
     }

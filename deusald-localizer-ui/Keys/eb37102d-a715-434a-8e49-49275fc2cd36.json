@@ -4,7 +4,7 @@
   "KeyName": "nothingToUndo",
   "Description": "Undo button tooltip when there is nothing to undo.",
   "CreatedAt": "2026-07-16T12:48:41.5588954Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5588961Z",
+  "UpdatedAt": "2026-07-16T13:07:17.709697Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.558898Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "8329007820d54938fe5dbf93c1d1ca8d76cd0657ad4c882689605f572e4ae6f0",
+      "Text": "Nie ma nic do cofnięcia",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.709695Z",
       "Suggestions": [],
       "Comments": []
     }

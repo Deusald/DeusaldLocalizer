@@ -4,7 +4,7 @@
   "KeyName": "memberSignInTokenBody",
   "Description": "Body of the modal showing a new member's one-time sign-in token.",
   "CreatedAt": "2026-07-16T12:48:41.5596033Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5596041Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7110597Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5596154Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "80172b04454351564bbde71eeccf56c836febb7a9b63d75cf80faaa3c461845e",
+      "Text": "Udostępnij ten jednorazowy token użytkownikowi {name} bezpiecznym kanałem. Zaloguje się nim raz, a następnie ustawi własny token.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7110572Z",
       "Suggestions": [],
       "Comments": []
     }

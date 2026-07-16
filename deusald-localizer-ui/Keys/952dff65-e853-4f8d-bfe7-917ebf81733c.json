@@ -4,7 +4,7 @@
   "KeyName": "deleteWarn",
   "Description": "Delete-confirmation warning (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793481Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5564288Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7077988Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.556433Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "1b14ecdf77a8456351bdf31fb8b24e836f56966ed745d5f12274234fa5e04b7c",
+      "Text": "Ten projekt istnieje tylko w tej przeglądarce — jego usunięcie jest trwałe i nieodwracalne. Jeśli chcesz go zachować, najpierw pobierz kopię (.zip).",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7077969Z",
       "Suggestions": [],
       "Comments": []
     }

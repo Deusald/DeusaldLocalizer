@@ -4,7 +4,7 @@
   "KeyName": "unknown",
   "Description": "Fallback author name when a member cannot be found.",
   "CreatedAt": "2026-07-16T12:48:41.5598602Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5598608Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7106613Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5598656Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14",
+      "Text": "Nieznany",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7106594Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "unsaved",
   "Description": "Status pill shown when there are unsaved changes.",
   "CreatedAt": "2026-07-16T12:48:41.5587893Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5587931Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7099519Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5587952Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "6250d5725dda6d9fa7aeab21eded4904a7dbbe66200b8035a03694217c7cb1b4",
+      "Text": "Niezapisane",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7099386Z",
       "Suggestions": [],
       "Comments": []
     }

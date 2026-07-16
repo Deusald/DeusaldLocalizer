@@ -4,7 +4,7 @@
   "KeyName": "manyCategories",
   "Description": "Filter trigger label when multiple categories are selected.",
   "CreatedAt": "2026-07-16T12:48:41.5573274Z",
-  "UpdatedAt": "2026-07-16T12:48:41.557328Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7091037Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5573406Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "d2f9f78791aa305fbaef6f5dc71459b8192868172eb5d7473a979141a4644f13",
+      "Text": "{count} kategorii",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7091016Z",
       "Suggestions": [],
       "Comments": []
     }

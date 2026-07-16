@@ -4,7 +4,7 @@
   "KeyName": "noCategoriesFound",
   "Description": "Empty state when no categories match the search.",
   "CreatedAt": "2026-07-16T12:48:41.5576074Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5576081Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7093526Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5576102Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "f66ce16e7e23aeff03b12a999d84af8b8ffc430a8743e04b2ce1697de957fc12",
+      "Text": "Nie znaleziono kategorii. Najpierw utwórz jedną w kolumnie Klucze.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7093505Z",
       "Suggestions": [],
       "Comments": []
     }

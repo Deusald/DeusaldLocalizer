@@ -4,7 +4,7 @@
   "KeyName": "commentsCount",
   "Description": "Count of comments on a suggestion",
   "CreatedAt": "2026-07-16T12:48:41.5584219Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5584226Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7086594Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5584291Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a8bd100abe1f6fc77df9d86644142ae9152bf6c82d2aef86e37f5cf6fac75724",
+      "Text": "{count} {count:plural:komentarz|komentarze|komentarzy}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7086566Z",
       "Suggestions": [],
       "Comments": []
     }

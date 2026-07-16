@@ -4,7 +4,7 @@
   "KeyName": "errOpen",
   "Description": "Error when opening a project fails (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793677Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5564577Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7078491Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5564649Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "e44490607a68c8f3b09da25b914d73e75812b692d0510591006b99d6b4c4a419",
+      "Text": "Nie udało się otworzyć projektu: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7078474Z",
       "Suggestions": [],
       "Comments": []
     }

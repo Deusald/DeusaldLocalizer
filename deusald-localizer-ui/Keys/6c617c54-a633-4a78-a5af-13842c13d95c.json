@@ -4,7 +4,7 @@
   "KeyName": "editCategory",
   "Description": "Tooltip for the edit-category button.",
   "CreatedAt": "2026-07-16T12:48:41.5572031Z",
-  "UpdatedAt": "2026-07-16T12:48:41.557204Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7090703Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5572075Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "21610dd6f1db38ba1d55be436d5531e79df529e673e072d90481e5bab89bb7b6",
+      "Text": "Edytuj kategorię",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7090682Z",
       "Suggestions": [],
       "Comments": []
     }

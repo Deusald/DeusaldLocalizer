@@ -4,7 +4,7 @@
   "KeyName": "warningText",
   "Description": "Security warning shown under a newly generated access token",
   "CreatedAt": "2026-07-16T12:48:41.5611236Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5611243Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7071113Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5611362Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "3cc5d0fd4604a6d99c69ac25368cebe515276096dd98692293cb3a86f87aadc8",
+      "Text": "Przechowaj ten token w bezpiecznym miejscu — ze względów bezpieczeństwa nie zostanie ponownie wyświetlony.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7071085Z",
       "Suggestions": [],
       "Comments": []
     }

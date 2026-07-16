@@ -4,7 +4,7 @@
   "KeyName": "updateFailed",
   "Description": "Error when an in-place update fails (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794495Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5565942Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7077419Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5565985Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "e1de91d94ce8a730e01373f0b6da3148af3552db5eca71e307efff3e47327870",
+      "Text": "Nie udało się zainstalować aktualizacji. Spróbuj ponownie później.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7077402Z",
       "Suggestions": [],
       "Comments": []
     }

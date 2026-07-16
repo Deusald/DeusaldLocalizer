@@ -4,7 +4,7 @@
   "KeyName": "entries",
   "Description": "Header of the enum entries list",
   "CreatedAt": "2026-07-16T12:48:41.5585501Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5585507Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7085221Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5585526Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "7cb76b4af12abb80d576251aa088332aa69ef709dc04c00499ce973fa5f4255f",
+      "Text": "Wpisy",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7085195Z",
       "Suggestions": [],
       "Comments": []
     }

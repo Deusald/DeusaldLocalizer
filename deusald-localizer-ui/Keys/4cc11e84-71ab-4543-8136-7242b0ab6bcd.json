@@ -4,7 +4,7 @@
   "KeyName": "placeholdersHint",
   "Description": "Hint that placeholder tokens are supported in the text",
   "CreatedAt": "2026-07-16T12:48:41.5579734Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5579741Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7087094Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5579772Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "ef3f31cb7018dc53c1efb4f9694f4cad66cf0f7d998b13e35a37a083079147e7",
+      "Text": "Obsługiwane: {placeholders}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7087069Z",
       "Suggestions": [],
       "Comments": []
     }

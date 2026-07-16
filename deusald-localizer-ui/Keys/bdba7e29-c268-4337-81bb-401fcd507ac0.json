@@ -4,7 +4,7 @@
   "KeyName": "suggestionsAdded",
   "Description": "Result stat label for suggestions added.",
   "CreatedAt": "2026-07-16T12:48:41.5605675Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5605682Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7102245Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5605701Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "05354c35e5e359dffd47ce09465f8ab2a197c02ef26559d2577f5609075a7338",
+      "Text": "dodanych sugestii",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7102221Z",
       "Suggestions": [],
       "Comments": []
     }

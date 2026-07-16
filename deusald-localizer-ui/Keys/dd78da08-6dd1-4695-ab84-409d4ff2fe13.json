@@ -4,7 +4,7 @@
   "KeyName": "categoriesCreated",
   "Description": "Result stat label for categories created.",
   "CreatedAt": "2026-07-16T12:48:41.5605776Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5605783Z",
+  "UpdatedAt": "2026-07-16T13:07:17.710064Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5605877Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "5c42acd7b95a6db0fa90a904ee351a63489c07dec0c8ce94af96bdea2389c4df",
+      "Text": "utworzonych kategorii",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.710062Z",
       "Suggestions": [],
       "Comments": []
     }

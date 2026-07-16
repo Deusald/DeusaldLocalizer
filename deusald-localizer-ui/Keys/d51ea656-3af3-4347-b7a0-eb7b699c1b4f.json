@@ -4,7 +4,7 @@
   "KeyName": "directText",
   "Description": "Segment button: import translations as direct text.",
   "CreatedAt": "2026-07-16T12:48:41.5604721Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5604728Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7101075Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5604746Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "d08c5b1b0d46c380bff7a675aaa583837812f9ddc962c3ead85bca0c67b3095f",
+      "Text": "Tekst bezpośredni",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7101048Z",
       "Suggestions": [],
       "Comments": []
     }

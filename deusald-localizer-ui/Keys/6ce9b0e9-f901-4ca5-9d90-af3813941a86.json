@@ -4,7 +4,7 @@
   "KeyName": "maxLength",
   "Description": "Label for the max length input.",
   "CreatedAt": "2026-07-16T12:48:41.5576168Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5576175Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7093194Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5576195Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "49be2ab095c0c1a88822a834711743191dd9af4d925f6005aaa25a6e7da6cb08",
+      "Text": "Maksymalna długość",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7093173Z",
       "Suggestions": [],
       "Comments": []
     }

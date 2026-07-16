@@ -4,7 +4,7 @@
   "KeyName": "accept",
   "Description": "Button accepting a suggestion",
   "CreatedAt": "2026-07-16T12:48:41.5584074Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5584081Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7086412Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.55841Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "89713b9c9c1b8f659c9f49db25e4a47886dd673fee248c3f650391f09a759cef",
+      "Text": "Zaakceptuj",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7086386Z",
       "Suggestions": [],
       "Comments": []
     }

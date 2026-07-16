@@ -4,7 +4,7 @@
   "KeyName": "toggleDisabledTitle",
   "Description": "Tooltip explaining why the uncommitted-mode toggle is disabled.",
   "CreatedAt": "2026-07-16T12:48:41.5600112Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5600119Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7108734Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5600209Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "359a53aaaa9ac42ce84d7c23f7d7222ae01f69fd8022bc5e2cde786d49e98e9f",
+      "Text": "Zastosuj lub odrzuć wszystkie zmiany przed wyłączeniem tego",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7108713Z",
       "Suggestions": [],
       "Comments": []
     }

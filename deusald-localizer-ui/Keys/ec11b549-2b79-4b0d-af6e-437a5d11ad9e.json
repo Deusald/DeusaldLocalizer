@@ -4,7 +4,7 @@
   "KeyName": "expandAll",
   "Description": "Tooltip for the expand-all-categories button.",
   "CreatedAt": "2026-07-16T12:48:41.557147Z",
-  "UpdatedAt": "2026-07-16T12:48:41.557148Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7090879Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.557152Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a3e586be3eff5fb9f768c0846035db47ccf0f0e10727b0f14d829ff3a5913324",
+      "Text": "Rozwiń wszystko",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7090858Z",
       "Suggestions": [],
       "Comments": []
     }

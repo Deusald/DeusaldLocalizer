@@ -4,7 +4,7 @@
   "KeyName": "updateDismiss",
   "Description": "Tooltip on the update-banner dismiss button (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794282Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5565638Z",
+  "UpdatedAt": "2026-07-16T13:07:17.707727Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5565728Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "48845bff334a50a59aaecf499f28a7a24c3b4b891b8b18a9f1169ad8e8a6b261",
+      "Text": "Odrzuć",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7077253Z",
       "Suggestions": [],
       "Comments": []
     }

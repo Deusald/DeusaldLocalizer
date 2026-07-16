@@ -4,7 +4,7 @@
   "KeyName": "flagsTitle",
   "Description": "Section title for the flags list.",
   "CreatedAt": "2026-07-16T12:48:41.5573533Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5573541Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7094351Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.557356Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "f38d9950af4f9fa900a7d326505740a942352e173f1f9dc85cbf17b5aca95c55",
+      "Text": "Flagi",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7094327Z",
       "Suggestions": [],
       "Comments": []
     }

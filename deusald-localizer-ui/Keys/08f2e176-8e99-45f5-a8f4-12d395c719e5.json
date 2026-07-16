@@ -4,7 +4,7 @@
   "KeyName": "errInvalidProject",
   "Description": "Error when the chosen folder isn't a valid project (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0795123Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5566597Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7076313Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5566654Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c47f6c6ba5ab213e9351b1e75cc7024da1e8a51e477a6c10646e29859c5dc749",
+      "Text": "Nieprawidłowy projekt: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7076297Z",
       "Suggestions": [],
       "Comments": []
     }

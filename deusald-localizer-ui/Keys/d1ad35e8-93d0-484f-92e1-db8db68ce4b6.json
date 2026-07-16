@@ -4,7 +4,7 @@
   "KeyName": "createNewKeys",
   "Description": "Checkbox label to create missing keys.",
   "CreatedAt": "2026-07-16T12:48:41.5603644Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5603651Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7100796Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5603669Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c973890a6e4060a261c5584ff1b7909b4f57540835e4488a0591214c922f3e82",
+      "Text": "Utwórz klucze brakujące w projekcie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7100775Z",
       "Suggestions": [],
       "Comments": []
     }

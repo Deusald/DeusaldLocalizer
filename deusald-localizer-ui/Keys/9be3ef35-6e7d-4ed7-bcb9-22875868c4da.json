@@ -4,7 +4,7 @@
   "KeyName": "usernamePlaceholder",
   "Description": "Placeholder example shown in the username input.",
   "CreatedAt": "2026-07-16T12:48:41.5592693Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5592699Z",
+  "UpdatedAt": "2026-07-16T13:09:01.1233886Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5592717Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "d48722fc2e5ea8d2f4b54f8509312bb657f3396633ef60dc43370b5306b81ba9",
+      "Text": "jane.doe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:09:01.1231748Z",
       "Suggestions": [],
       "Comments": []
     }

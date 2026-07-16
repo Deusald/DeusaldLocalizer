@@ -4,7 +4,7 @@
   "KeyName": "tagline",
   "Description": "Tagline under the app logo (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0793941Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5565197Z",
+  "UpdatedAt": "2026-07-16T13:07:17.707712Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5565251Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "370c2d703d4c3052e049ce64dde450effbc7fc59b6a903af1580cf8d5f338cfa",
+      "Text": "LOKALIZACJA SPOŁECZNOŚCIOWA",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.70771Z",
       "Suggestions": [],
       "Comments": []
     }

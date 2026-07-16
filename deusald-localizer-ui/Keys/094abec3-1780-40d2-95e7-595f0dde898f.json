@@ -4,7 +4,7 @@
   "KeyName": "replied",
   "Description": "Notification source label for a reply to a suggestion.",
   "CreatedAt": "2026-07-16T12:48:41.5598817Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5598824Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7106352Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5598842Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "4e686cee486fc30c03bf0dbb9273323d3f32f564df645a0e4c9825366194f156",
+      "Text": "odpowiedział(a)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7106332Z",
       "Suggestions": [],
       "Comments": []
     }

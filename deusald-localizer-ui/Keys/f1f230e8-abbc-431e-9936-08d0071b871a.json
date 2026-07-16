@@ -4,7 +4,7 @@
   "KeyName": "sourceTag",
   "Description": "Tag marking the source row in the preview",
   "CreatedAt": "2026-07-16T12:48:41.5582416Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5582423Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7084583Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5582442Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "58836253710262a14e993598f2c2812fe1df64a30dca6fbeaa04d49d624a6fd1",
+      "Text": "ŹRÓDŁO",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7084562Z",
       "Suggestions": [],
       "Comments": []
     }

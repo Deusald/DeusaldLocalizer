@@ -4,7 +4,7 @@
   "KeyName": "deleteKeyConfirm",
   "Description": "Confirmation prompt before deleting a key.",
   "CreatedAt": "2026-07-16T12:48:41.5576942Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5576948Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7079528Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5576967Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "386a46d6993f190037753d607df09250a9f19d6603c5c2aebbc1fce49184c307",
+      "Text": "Usunąć klucz?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.707951Z",
       "Suggestions": [],
       "Comments": []
     }

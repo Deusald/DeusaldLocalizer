@@ -4,7 +4,7 @@
   "KeyName": "translationsImportAs",
   "Description": "Section title for how translations are imported.",
   "CreatedAt": "2026-07-16T12:48:41.5604405Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5604411Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7102392Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5604546Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "57b214b4f51d5ac2cb4462402a02be27079c386c2d73d0d77166c2d762ece6ca",
+      "Text": "Tłumaczenia importuj jako",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7102369Z",
       "Suggestions": [],
       "Comments": []
     }

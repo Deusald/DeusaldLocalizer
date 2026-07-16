@@ -4,7 +4,7 @@
   "KeyName": "discardAll",
   "Description": "Button that starts discarding all pending changes.",
   "CreatedAt": "2026-07-16T12:48:41.5600018Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5600025Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7107764Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5600043Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "5f30ee8710823ab9b37766ed0714ea763c26270509027c1013b802b192644c52",
+      "Text": "Odrzuć wszystkie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7107734Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "saveTranslation",
   "Description": "Button that saves the translation text",
   "CreatedAt": "2026-07-16T12:48:41.558192Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5581927Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7087326Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5581946Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "1d9eb7b9db2ca33008f14310fc552f82c3ac32527cf9b212eb474b3b3bb5b685",
+      "Text": "Zapisz tłumaczenie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7087304Z",
       "Suggestions": [],
       "Comments": []
     }

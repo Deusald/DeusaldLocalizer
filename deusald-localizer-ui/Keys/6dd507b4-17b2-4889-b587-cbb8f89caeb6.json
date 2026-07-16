@@ -4,7 +4,7 @@
   "KeyName": "noResults",
   "Description": "Empty state when no languages match the search.",
   "CreatedAt": "2026-07-16T12:48:41.5569469Z",
-  "UpdatedAt": "2026-07-16T12:48:41.556948Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7095356Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5569685Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c9a4ff4843dbab2bcd5477b72f59872bfcad51dd85d558b4bc1d95a8a0897374",
+      "Text": "Brak wyników.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7095337Z",
       "Suggestions": [],
       "Comments": []
     }

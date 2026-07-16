@@ -4,7 +4,7 @@
   "KeyName": "sourceLabel",
   "Description": "Label above the source-language text editor",
   "CreatedAt": "2026-07-16T12:48:41.5579651Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5579658Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7087402Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5579691Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "755c4f9d60a114beb6a022e1ce9e4602fbd3fb1425703e7425079851df614a58",
+      "Text": "Źródło · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.708738Z",
       "Suggestions": [],
       "Comments": []
     }

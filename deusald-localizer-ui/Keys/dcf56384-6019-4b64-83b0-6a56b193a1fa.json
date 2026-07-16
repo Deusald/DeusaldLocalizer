@@ -4,7 +4,7 @@
   "KeyName": "updateApply",
   "Description": "Button to download and apply an in-place update (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794444Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5565829Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7077205Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5565873Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c1c1009d3f37ec058070a62e22caf9ac9dae2169d452487c5c271a8bcf57a291",
+      "Text": "Zaktualizuj",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7077189Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "saveAndLeave",
   "Description": "Button that saves changes and then leaves.",
   "CreatedAt": "2026-07-16T12:48:41.5598283Z",
-  "UpdatedAt": "2026-07-16T12:48:41.559829Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7099763Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5598336Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "949d0ead67056f59ca13db2c21ea8279c5ae217ac7c9195710096e6c0f865a3f",
+      "Text": "Zapisz i wyjdź",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7099743Z",
       "Suggestions": [],
       "Comments": []
     }

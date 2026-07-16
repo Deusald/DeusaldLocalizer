@@ -4,7 +4,7 @@
   "KeyName": "upToDate",
   "Description": "Sync result message when nothing changed.",
   "CreatedAt": "2026-07-16T12:48:41.5590239Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5590245Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7099586Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5590408Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "ce29b7f85b9eaf7dac52e625accb4b0cb56a856ebe9a9de9a09b613b6d978dca",
+      "Text": "Aktualne",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7099567Z",
       "Suggestions": [],
       "Comments": []
     }

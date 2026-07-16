@@ -4,7 +4,7 @@
   "KeyName": "langCount",
   "Description": "Language count shown on a project card's progress row.",
   "CreatedAt": "2026-07-16T12:19:57.5419258Z",
-  "UpdatedAt": "2026-07-16T12:48:41.556188Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7075352Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5561958Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "d13cc53daaec14a2f03a39b163bd1a1430ea81edaacfcfa5334450232e5ae58a",
+      "Text": "{count} jęz.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7075334Z",
       "Suggestions": [],
       "Comments": []
     }

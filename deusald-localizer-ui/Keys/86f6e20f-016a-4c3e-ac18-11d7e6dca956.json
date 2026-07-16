@@ -4,7 +4,7 @@
   "KeyName": "searchByNameOrCode",
   "Description": "Placeholder for the add-language search box.",
   "CreatedAt": "2026-07-16T12:48:41.5569379Z",
-  "UpdatedAt": "2026-07-16T12:48:41.556939Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7095519Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5569433Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "7396787a1606b1b6a6552c48eabef290bf823e7c448a5a48856c1dd86087d9af",
+      "Text": "Szukaj według nazwy lub kodu…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.70955Z",
       "Suggestions": [],
       "Comments": []
     }

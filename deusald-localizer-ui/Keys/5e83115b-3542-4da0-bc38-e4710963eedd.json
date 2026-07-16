@@ -4,7 +4,7 @@
   "KeyName": "errReadProjects",
   "Description": "Error when the stored project list can't be read (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793607Z",
-  "UpdatedAt": "2026-07-16T12:48:41.556448Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7078556Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5564563Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "f06f8cb0e3260b4307b9fc1f0eddafa153ce341c878cdb894ba9a24a9a81fefe",
+      "Text": "Nie udało się odczytać zapisanych projektów: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7078538Z",
       "Suggestions": [],
       "Comments": []
     }

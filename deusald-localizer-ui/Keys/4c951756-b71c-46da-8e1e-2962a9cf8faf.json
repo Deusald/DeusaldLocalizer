@@ -4,7 +4,7 @@
   "KeyName": "updateCategoriesHint",
   "Description": "Inline hint next to the update categories checkbox.",
   "CreatedAt": "2026-07-16T12:48:41.5603875Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5603882Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7102598Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5603902Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "89a08629cab2cf29b95bab9326b0792c7ff5096170c2de76112f1376a98d9593",
+      "Text": "— tworzy brakujące",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7102578Z",
       "Suggestions": [],
       "Comments": []
     }

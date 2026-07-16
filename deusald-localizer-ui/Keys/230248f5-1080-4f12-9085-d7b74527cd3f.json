@@ -4,7 +4,7 @@
   "KeyName": "pushRejectedResolve",
   "Description": "Push result message when the server rejected the push due to conflicts.",
   "CreatedAt": "2026-07-16T12:48:41.5591536Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5591543Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7097796Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5591604Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "84e8f5445279b1049dc126e700774fb0a85f117f1e6c5673c660f35385a03bff",
+      "Text": "Wypchnięcie odrzucone — rozwiąż {count} konflikt(ów)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7097774Z",
       "Suggestions": [],
       "Comments": []
     }

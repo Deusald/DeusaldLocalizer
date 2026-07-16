@@ -4,7 +4,7 @@
   "KeyName": "descriptionPlaceholder",
   "Description": "Placeholder for the category description textarea.",
   "CreatedAt": "2026-07-16T12:48:41.5574952Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5574959Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7091635Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5574979Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "f6d0a9cdacf660fcb73b9ee2cda99d542b0a89c9a8bae8d405e0047d33bbb212",
+      "Text": "Jakiego rodzaju klucze się tu znajdują…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7091612Z",
       "Suggestions": [],
       "Comments": []
     }

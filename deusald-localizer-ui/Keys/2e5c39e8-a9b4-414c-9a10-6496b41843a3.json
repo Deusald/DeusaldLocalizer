@@ -4,7 +4,7 @@
   "KeyName": "none",
   "Description": "Option to select no parent category.",
   "CreatedAt": "2026-07-16T12:48:41.5574689Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5574695Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7092021Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5574714Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+      "Text": "Brak",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7092Z",
       "Suggestions": [],
       "Comments": []
     }

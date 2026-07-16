@@ -4,7 +4,7 @@
   "KeyName": "hintStaged",
   "Description": "Hint shown when uncommitted mode is on and no changes are pending.",
   "CreatedAt": "2026-07-16T12:48:41.5600611Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5600618Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7108174Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5600637Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "01bfb91221d8c8b6ebacdf8bbe7f0549039523c692388dd2272540dfb24f6010",
+      "Text": "Edycje są przechowywane, dopóki ich nie zastosujesz.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7108153Z",
       "Suggestions": [],
       "Comments": []
     }

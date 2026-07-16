@@ -4,7 +4,7 @@
   "KeyName": "deleteMemberConfirm",
   "Description": "Inline confirmation prompt before deleting a member.",
   "CreatedAt": "2026-07-16T12:48:41.5594028Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5594034Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7110335Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5594067Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a4b982a9e0bc24133bce18717f9db74bd70095b79c24ee45c57a8194fb727d4d",
+      "Text": "Usunąć {name}?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7110315Z",
       "Suggestions": [],
       "Comments": []
     }

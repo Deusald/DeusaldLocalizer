@@ -4,7 +4,7 @@
   "KeyName": "sourceMatched",
   "Description": "Button confirming the translation still matches the current source",
   "CreatedAt": "2026-07-16T12:48:41.5581807Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5581814Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7087479Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5581877Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "0942f5ccd4fa4eb2451dbfb8df7fd7901e01e56bb538b8130128b33646a83b90",
+      "Text": "Źródło dopasowane",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7087458Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "descriptionLabel",
   "Description": "Field label for the description textarea",
   "CreatedAt": "2026-07-16T12:48:41.5615551Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5615558Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7074083Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5615606Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "526e0087cc3f254d9f86f6c7d8e23d954c4dfda2b312efc29194ae8a860106ba",
+      "Text": "Opis",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7074067Z",
       "Suggestions": [],
       "Comments": []
     }

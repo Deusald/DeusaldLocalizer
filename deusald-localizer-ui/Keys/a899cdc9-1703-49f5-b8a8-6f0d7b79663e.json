@@ -4,7 +4,7 @@
   "KeyName": "noLanguagesFound",
   "Description": "Empty state when a language search returns nothing",
   "CreatedAt": "2026-07-16T12:48:41.5615448Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5615455Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7074535Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5615474Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "58d29fba00468c13baaa08c9cd3cdc1d6b7ef648a4097b84e71afb4ac594371d",
+      "Text": "Nie znaleziono języków",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7074518Z",
       "Suggestions": [],
       "Comments": []
     }

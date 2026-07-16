@@ -4,7 +4,7 @@
   "KeyName": "conflicts",
   "Description": "Plural noun for multiple sync conflicts, used in a count pill.",
   "CreatedAt": "2026-07-16T12:48:41.5588582Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5588588Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7096584Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5588634Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "47ef59b14bb6809086f8885f2f136d0642d49a52c8cb84bfcdba62cf3bab41aa",
+      "Text": "konflikty",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7096558Z",
       "Suggestions": [],
       "Comments": []
     }

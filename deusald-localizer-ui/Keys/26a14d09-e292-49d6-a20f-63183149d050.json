@@ -4,7 +4,7 @@
   "KeyName": "keysCreated",
   "Description": "Result stat label for keys created.",
   "CreatedAt": "2026-07-16T12:48:41.5605282Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5605289Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7101703Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5605307Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "86c49914df0fe24122a297f41da6a4ea33091eda124cb3633f2b3ed465fbd3b0",
+      "Text": "utworzonych kluczy",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7101683Z",
       "Suggestions": [],
       "Comments": []
     }

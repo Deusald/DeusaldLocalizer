@@ -4,7 +4,7 @@
   "KeyName": "addTag",
   "Description": "Title of the add-tag modal.",
   "CreatedAt": "2026-07-16T12:48:41.5579298Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5579305Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7081249Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5579352Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "3e10b08cc874514175b51ba372ff955b27e2817963bc53ab489344968d5a472d",
+      "Text": "Dodaj tag",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7081223Z",
       "Suggestions": [],
       "Comments": []
     }

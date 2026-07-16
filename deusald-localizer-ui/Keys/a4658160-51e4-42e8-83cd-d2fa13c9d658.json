@@ -4,7 +4,7 @@
   "KeyName": "pushRejectedNewerChanges",
   "Description": "Error shown in the conflicts modal when a push was rejected because the server moved ahead.",
   "CreatedAt": "2026-07-16T12:48:41.5591739Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5591745Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7097726Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5591766Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "bec53e88115d0e9e3fcfeb594e5de56222b61451da5c8c75cb328dbcb5db4d79",
+      "Text": "Wypchnięcie zostało odrzucone, ponieważ serwer ma nowsze zmiany. Najnowsza wersja z serwera została pobrana — rozwiąż poniżej każdy konflikt, a następnie wypchnij ponownie.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7097702Z",
       "Suggestions": [],
       "Comments": []
     }

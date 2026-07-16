@@ -4,7 +4,7 @@
   "KeyName": "projectIdLabel",
   "Description": "Field label for the project id input",
   "CreatedAt": "2026-07-16T12:48:41.5611901Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5611908Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7072999Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5611926Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "e511470b21a90cea819fb959f91e38fb462a40fa9745a4dda437d8f48f3de8da",
+      "Text": "Identyfikator projektu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7072982Z",
       "Suggestions": [],
       "Comments": []
     }

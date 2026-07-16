@@ -4,7 +4,7 @@
   "KeyName": "statusSuggested",
   "Description": "Key status tag: translation suggested.",
   "CreatedAt": "2026-07-16T12:48:41.5577426Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5577432Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7079992Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5577485Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "93b63bab4c3a28d73a8bb83bcdfdcc5f6ddecfc8fc702296ca159d94c5dc6e53",
+      "Text": "Zasugerowane",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.707997Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "conflictBannerSingular",
   "Description": "Conflict banner, singular form.",
   "CreatedAt": "2026-07-16T12:48:41.5600708Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5600715Z",
+  "UpdatedAt": "2026-07-16T13:07:17.710744Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5601063Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "774a38de084a45f1d607d9e925dccac484252ba22e7a1506172627540a66319b",
+      "Text": "{count} zmiana koliduje z nowszymi edycjami na serwerze — zsynchronizuj i rozwiąż przed wypchnięciem.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7107419Z",
       "Suggestions": [],
       "Comments": []
     }

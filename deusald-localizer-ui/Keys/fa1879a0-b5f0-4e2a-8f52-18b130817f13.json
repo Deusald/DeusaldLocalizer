@@ -4,7 +4,7 @@
   "KeyName": "storeInHint",
   "Description": "Hint next to the Store in label",
   "CreatedAt": "2026-07-16T12:48:41.5612679Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5612685Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7073171Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5612733Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "bac571473f9990c2d9f02a3224dd0a538de5f72c63cba11aeb48b040588d7dce",
+      "Text": "tutaj zostanie utworzony folder o nazwie projektu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7073152Z",
       "Suggestions": [],
       "Comments": []
     }

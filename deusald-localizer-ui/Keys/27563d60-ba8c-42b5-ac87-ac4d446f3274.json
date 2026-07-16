@@ -4,7 +4,7 @@
   "KeyName": "remoteTag",
   "Description": "Badge marking an online/remote project in the list.",
   "CreatedAt": "2026-07-16T12:19:57.5408007Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5546074Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7075533Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5546127Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "2131cd6371005fcc97970ed7f9f16fa5dcee10496951f4a909f01b0fb5855297",
+      "Text": "ZDALNY",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7075512Z",
       "Suggestions": [],
       "Comments": []
     }

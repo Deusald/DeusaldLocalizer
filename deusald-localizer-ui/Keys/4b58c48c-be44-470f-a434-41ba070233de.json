@@ -4,7 +4,7 @@
   "KeyName": "createdOn",
   "Description": "Shows the date a key was created.",
   "CreatedAt": "2026-07-16T12:48:41.5576689Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5576696Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7079453Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5576731Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "e0c0a13ea2c2b42f3594b9e080d0f7e96b4f6b33806ab8b8791d46ef153424b9",
+      "Text": "Utworzono {date}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7079429Z",
       "Suggestions": [],
       "Comments": []
     }

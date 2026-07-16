@@ -4,7 +4,7 @@
   "KeyName": "sourceChangedDesc",
   "Description": "Conflict description for a source-changed conflict",
   "CreatedAt": "2026-07-16T12:48:41.5586756Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5586762Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7082676Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5586783Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c79f54ab65e0decdc98bf1aaf9e08cdcbf712cbf67cf8714c406b34fb0506d64",
+      "Text": "Tekst źródłowy zmienił się na serwerze od czasu, gdy napisałeś to tłumaczenie, więc może już nie pasować. Wybierz, jak postąpić.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7082649Z",
       "Suggestions": [],
       "Comments": []
     }

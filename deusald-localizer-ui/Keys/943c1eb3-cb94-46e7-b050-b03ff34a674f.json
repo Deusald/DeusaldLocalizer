@@ -4,7 +4,7 @@
   "KeyName": "selectEnumToEdit",
   "Description": "Empty state prompting to select an enum",
   "CreatedAt": "2026-07-16T12:48:41.5584967Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5584973Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7086241Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5584992Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "1d3fec79f898b8bac57ca80d09ac081e5b85359c3513822ba2e9f827ef90e5bb",
+      "Text": "Wybierz typ wyliczeniowy do edycji.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.708622Z",
       "Suggestions": [],
       "Comments": []
     }

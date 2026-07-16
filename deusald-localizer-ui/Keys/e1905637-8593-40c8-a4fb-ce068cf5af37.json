@@ -4,7 +4,7 @@
   "KeyName": "staleWarning",
   "Description": "Warning shown when the source text no longer matches the translation's base hash",
   "CreatedAt": "2026-07-16T12:48:41.5581734Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5581741Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7087742Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5581763Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "d5bfd7e3632f85bcf2a8b761328f6dc5d7f7482a7da55c424421f37c9c6a9b04",
+      "Text": "Źródło zmieniło się od ostatniego zapisania tego tłumaczenia.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.708772Z",
       "Suggestions": [],
       "Comments": []
     }

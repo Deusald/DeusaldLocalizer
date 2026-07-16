@@ -4,7 +4,7 @@
   "KeyName": "switchToCurrent",
   "Description": "Tooltip on the preview-mode toggle when in live mode",
   "CreatedAt": "2026-07-16T12:48:41.5582072Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5582078Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7084663Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5582126Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "43af61dcfc50c5adf24d380e7fc4121647b811530d9ddada0e2df4afe617b928",
+      "Text": "Przełącz na Bieżące (zapisane)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7084643Z",
       "Suggestions": [],
       "Comments": []
     }

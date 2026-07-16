@@ -4,7 +4,7 @@
   "KeyName": "selectEnum",
   "Description": "Placeholder option in the enum dropdown",
   "CreatedAt": "2026-07-16T12:48:41.5583358Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5583366Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7089013Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5583388Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "290bca5e3b346c46fee3802f5fc8bee3377613e75adf8120ffb530c4422807a7",
+      "Text": "— wybierz typ wyliczeniowy —",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7088988Z",
       "Suggestions": [],
       "Comments": []
     }

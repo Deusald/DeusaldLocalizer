@@ -4,7 +4,7 @@
   "KeyName": "errImport",
   "Description": "Error when a .zip import fails (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793735Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5564668Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7078432Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5564727Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "49822a69e47058c3d4f80f9b5d1f1723e961753912c602566ca16701b62927b7",
+      "Text": "Import nie powiódł się: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7078416Z",
       "Suggestions": [],
       "Comments": []
     }

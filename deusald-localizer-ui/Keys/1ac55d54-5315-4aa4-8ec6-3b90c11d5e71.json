@@ -4,7 +4,7 @@
   "KeyName": "switchToLive",
   "Description": "Tooltip on the preview-mode toggle when in current mode",
   "CreatedAt": "2026-07-16T12:48:41.558217Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5582177Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7084734Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5582197Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "92f0e982cb84763f10d084c24c4d92002c993489ed4415bd062fefedd4df525b",
+      "Text": "Przełącz na Na żywo (robocze)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7084712Z",
       "Suggestions": [],
       "Comments": []
     }

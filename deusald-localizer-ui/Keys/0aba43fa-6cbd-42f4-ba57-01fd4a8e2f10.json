@@ -4,7 +4,7 @@
   "KeyName": "clearedComments",
   "Description": "Result message reporting how many comments were cleared.",
   "CreatedAt": "2026-07-16T12:48:41.5595465Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5595472Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7109676Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5595505Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "5547e2717e865513ba0e3f0f799d6f347847e48abe1cd887ecfd86bfc8234a55",
+      "Text": "Wyczyszczono {count} komentarz(y).",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7109657Z",
       "Suggestions": [],
       "Comments": []
     }

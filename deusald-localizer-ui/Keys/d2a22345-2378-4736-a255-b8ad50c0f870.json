@@ -4,7 +4,7 @@
   "KeyName": "tagline",
   "Description": "Tagline under the app logo (web).",
   "CreatedAt": "2026-07-16T12:29:28.0792739Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5563285Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7078933Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5563389Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "da29b65c5f97dbab453b0e12df53372ef3b0414f3cb461251ccd957ca376ff07",
+      "Text": "LOKALIZACJA SPOŁECZNOŚCIOWA · WEB",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7078912Z",
       "Suggestions": [],
       "Comments": []
     }

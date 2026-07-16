@@ -4,7 +4,7 @@
   "KeyName": "applyAllTitle",
   "Description": "Tooltip for the apply-all button.",
   "CreatedAt": "2026-07-16T12:48:41.5599923Z",
-  "UpdatedAt": "2026-07-16T12:48:41.559993Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7107132Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.559995Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "ac39722ca91603adcf2083360c9270086b38df7d06b11590e032c7167023f834",
+      "Text": "Zastosuj każdą zmianę do plików projektu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7107111Z",
       "Suggestions": [],
       "Comments": []
     }

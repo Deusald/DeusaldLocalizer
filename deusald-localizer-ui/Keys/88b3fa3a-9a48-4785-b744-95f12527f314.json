@@ -4,7 +4,7 @@
   "KeyName": "createOption",
   "Description": "Option to create a new tag from the typed query.",
   "CreatedAt": "2026-07-16T12:48:41.5579463Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5579469Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7081317Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5579503Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "1132f342d2db53a0ed8d35ee863677dc591b659bed2026f2d650c46a5f2ddebf",
+      "Text": "Utwórz „{query}”",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.70813Z",
       "Suggestions": [],
       "Comments": []
     }

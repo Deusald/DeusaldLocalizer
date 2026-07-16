@@ -4,7 +4,7 @@
   "KeyName": "editKey",
   "Description": "Modal title when editing a key.",
   "CreatedAt": "2026-07-16T12:48:41.5575243Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5575249Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7092757Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.557533Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "3418de588f7f71c9e8c2763bd87f91a82e462d5f88544e052c18211250c50e5c",
+      "Text": "Edytuj klucz",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7092735Z",
       "Suggestions": [],
       "Comments": []
     }

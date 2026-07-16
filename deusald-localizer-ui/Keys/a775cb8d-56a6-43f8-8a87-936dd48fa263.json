@@ -4,7 +4,7 @@
   "KeyName": "noCommentsOldEnough",
   "Description": "Result message when no comments matched the age cutoff.",
   "CreatedAt": "2026-07-16T12:48:41.5595348Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5595355Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7111165Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5595374Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "37462710ac21bcfa792614ba5be633f9edbcb8b94207f9f556d99edf6d8faeb8",
+      "Text": "Żaden komentarz nie był wystarczająco stary, aby go wyczyścić.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.711114Z",
       "Suggestions": [],
       "Comments": []
     }

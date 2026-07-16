@@ -4,7 +4,7 @@
   "KeyName": "noFlags",
   "Description": "Row label for keys that carry no flags.",
   "CreatedAt": "2026-07-16T12:48:41.5607935Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5607942Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7105097Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5607962Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "50aa828f5be541b85b2e7a563365a8222035ccee0d473ef9a5921e8eac829265",
+      "Text": "Brak flag",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7105076Z",
       "Suggestions": [],
       "Comments": []
     }

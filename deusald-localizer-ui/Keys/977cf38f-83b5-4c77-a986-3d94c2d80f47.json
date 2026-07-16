@@ -4,7 +4,7 @@
   "KeyName": "suggestions",
   "Description": "Segment button: import translations as suggestions.",
   "CreatedAt": "2026-07-16T12:48:41.560462Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5604627Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7102161Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5604645Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "16c1d601fc66950402ca8d54257acea0f5d21be1e00b9eb99224e436da66c950",
+      "Text": "Sugestie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7102141Z",
       "Suggestions": [],
       "Comments": []
     }

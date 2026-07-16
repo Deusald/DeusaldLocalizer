@@ -4,7 +4,7 @@
   "KeyName": "noConflicts",
   "Description": "Empty state shown in the conflicts modal when there are no conflicts.",
   "CreatedAt": "2026-07-16T12:48:41.5597852Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5597859Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7100394Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.559788Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "87672ac7fce69cac7aaeb4a5bc44967eb456e4937e8ae342522042d622384397",
+      "Text": "Brak konfliktów — możesz wypychać.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7100372Z",
       "Suggestions": [],
       "Comments": []
     }

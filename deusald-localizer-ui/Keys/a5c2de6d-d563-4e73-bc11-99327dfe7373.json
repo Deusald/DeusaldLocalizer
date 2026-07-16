@@ -4,7 +4,7 @@
   "KeyName": "newCategory",
   "Description": "Modal title when creating a category.",
   "CreatedAt": "2026-07-16T12:48:41.557424Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5574247Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7091863Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5574266Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "1ab1e121c0df65a86d7a6e14bc46983628befe01585b8cc25ee229315f906f98",
+      "Text": "Nowa kategoria",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7091843Z",
       "Suggestions": [],
       "Comments": []
     }

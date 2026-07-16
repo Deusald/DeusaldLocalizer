@@ -4,7 +4,7 @@
   "KeyName": "deselectAll",
   "Description": "Link button that deselects all languages.",
   "CreatedAt": "2026-07-16T12:48:41.5608795Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5608801Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7103492Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.560882Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "967549497036d51303efbdc904bb5e5654551058d0854be757b36280abd3ec8b",
+      "Text": "Odznacz wszystko",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7103468Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "errSignIn",
   "Description": "Fallback error when server sign-in fails.",
   "CreatedAt": "2026-07-16T12:19:57.5421046Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5562457Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7075278Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5562495Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "f764b902534db6ff57581f7f3f65feb467964cb6c8ba394c1dc03d8b90ef049e",
+      "Text": "Nie udało się dokończyć logowania. Spróbuj ponownie.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.707526Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "allFlagsTags",
   "Description": "Filter trigger label when no flag or tag is selected.",
   "CreatedAt": "2026-07-16T12:48:41.5573735Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5573743Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7093821Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5573761Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "4184237763890177c6549d57447c4666143119129743f223e889331858da9ebe",
+      "Text": "Wszystkie flagi i tagi",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7093802Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "updateDescriptions",
   "Description": "Checkbox label to update descriptions.",
   "CreatedAt": "2026-07-16T12:48:41.5603976Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5603983Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7102681Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5604002Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "2682bcc7a4f771031c3850176cecf49b5c2c14f803700d1ff0e779c9a941f0f9",
+      "Text": "Aktualizuj opisy",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7102661Z",
       "Suggestions": [],
       "Comments": []
     }

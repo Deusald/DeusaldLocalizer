@@ -4,7 +4,7 @@
   "KeyName": "preview",
   "Description": "Header of the preview panel",
   "CreatedAt": "2026-07-16T12:48:41.5582002Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5582009Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7084485Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5582028Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "324b134f57c70c729ae3dc4d298bb451656717d70523e942c1ce667b8024ea07",
+      "Text": "Podgląd",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7084463Z",
       "Suggestions": [],
       "Comments": []
     }

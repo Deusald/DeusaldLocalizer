@@ -4,7 +4,7 @@
   "KeyName": "noMentions",
   "Description": "Empty state in the notifications panel.",
   "CreatedAt": "2026-07-16T12:48:41.5598509Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5598515Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7106214Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5598534Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "7cba971e2f8f36a3969425f30ce94645c118b7b9e6b74b6fa3551e7c257037ef",
+      "Text": "Nikt jeszcze cię nie wspomniał.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7106194Z",
       "Suggestions": [],
       "Comments": []
     }

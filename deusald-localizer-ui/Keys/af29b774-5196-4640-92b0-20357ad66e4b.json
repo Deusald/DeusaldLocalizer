@@ -4,7 +4,7 @@
   "KeyName": "desc",
   "Description": "Description of how Excel import works.",
   "CreatedAt": "2026-07-16T12:48:41.56032Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5603206Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7100888Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5603231Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "8f229d3640de4e79a82cd84e978d76f7fc67962a69d776fcf05fbc8d653f76b8",
+      "Text": "Wybierz plik .xlsx wyeksportowany z tego projektu. Wiersze są dopasowywane po KeyId; komórki, które wciąż pasują do swojego #hash, są pomijane.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7100867Z",
       "Suggestions": [],
       "Comments": []
     }

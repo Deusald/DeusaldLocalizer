@@ -4,7 +4,7 @@
   "KeyName": "noEnums",
   "Description": "Empty state when the project has no enums",
   "CreatedAt": "2026-07-16T12:48:41.5584893Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5584899Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7085848Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5584919Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "bafa7d331377d19bd6686c5d0c8544b7aedb4089d14c92be05d363736875deab",
+      "Text": "Brak typów wyliczeniowych.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7085811Z",
       "Suggestions": [],
       "Comments": []
     }

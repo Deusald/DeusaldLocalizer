@@ -4,7 +4,7 @@
   "KeyName": "syncFromServer",
   "Description": "Tooltip on the sync button.",
   "CreatedAt": "2026-07-16T12:48:41.5588183Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5588189Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7098813Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5588208Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "e3a1c7f66f48051056ba67f56ceea11dbc80a233f4d4157d6a51fab53bc933a1",
+      "Text": "Synchronizuj z serwera",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7098789Z",
       "Suggestions": [],
       "Comments": []
     }

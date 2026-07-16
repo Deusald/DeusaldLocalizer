@@ -4,7 +4,7 @@
   "KeyName": "subtitle",
   "Description": "Home page hero headline.",
   "CreatedAt": "2026-07-16T12:04:10.5323689Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5473966Z",
+  "UpdatedAt": "2026-07-16T13:07:17.707559Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5536189Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "732fc942307fb0e85f33b9591c2327d06f9e8a58d25b6f02677002249c7daca9",
+      "Text": "Tłumacz swoją grę wspólnie.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7075574Z",
       "Suggestions": [],
       "Comments": []
     }

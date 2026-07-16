@@ -4,7 +4,7 @@
   "KeyName": "csharpScript",
   "Description": "Format toggle button for C# script export.",
   "CreatedAt": "2026-07-16T12:48:41.5606774Z",
-  "UpdatedAt": "2026-07-16T12:48:41.560678Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7103417Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5606799Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "1885c7e8974cf44619cdc4aabe4a80e37744b99109f12c23fee07c0d9ddda95b",
+      "Text": "Skrypt C#",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7103398Z",
       "Suggestions": [],
       "Comments": []
     }

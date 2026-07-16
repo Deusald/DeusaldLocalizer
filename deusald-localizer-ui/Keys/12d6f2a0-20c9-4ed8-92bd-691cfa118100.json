@@ -4,7 +4,7 @@
   "KeyName": "flagDisputed",
   "Description": "Label for the Disputed flag.",
   "CreatedAt": "2026-07-16T12:48:41.5574143Z",
-  "UpdatedAt": "2026-07-16T12:48:41.557415Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7093948Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5574168Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "b3b310ca1276b3bb29b580edbcb62728ddb7b6dc5e6dd4365aeb4882e0a07553",
+      "Text": "Sporne",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7093928Z",
       "Suggestions": [],
       "Comments": []
     }

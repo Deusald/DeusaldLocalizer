@@ -4,7 +4,7 @@
   "KeyName": "keepMineHint",
   "Description": "Hint explaining the Keep mine option",
   "CreatedAt": "2026-07-16T12:48:41.558622Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5586227Z",
+  "UpdatedAt": "2026-07-16T13:07:17.708239Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5586248Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "0c019afa29f41c3fe386e5ed59dfdbb6274f1f2e848076c237387038f895af0e",
+      "Text": "— nadpisze wersję z serwera przy następnym wypchnięciu.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7082364Z",
       "Suggestions": [],
       "Comments": []
     }

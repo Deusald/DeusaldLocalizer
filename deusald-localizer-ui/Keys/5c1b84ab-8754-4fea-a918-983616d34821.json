@@ -4,7 +4,7 @@
   "KeyName": "descriptionPlaceholder",
   "Description": "Placeholder example for the enum description field",
   "CreatedAt": "2026-07-16T12:48:41.5585424Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5585431Z",
+  "UpdatedAt": "2026-07-16T13:07:17.708515Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5585451Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "f1f5ac605348ba796d47603c53d3c96195ec50c91bd240cd021ee09b299bf0a5",
+      "Text": "Dni tygodnia",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7085129Z",
       "Suggestions": [],
       "Comments": []
     }

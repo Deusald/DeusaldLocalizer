@@ -4,7 +4,7 @@
   "KeyName": "removedKey",
   "Description": "Fallback name shown for a key that no longer exists.",
   "CreatedAt": "2026-07-16T12:48:41.5602885Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5602891Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7106954Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.560291Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "5f6f8a4cdb5e5718c944cf81fd858753282f8c4c7cafbcf27690f28acb514c5f",
+      "Text": "(usunięty klucz)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7106934Z",
       "Suggestions": [],
       "Comments": []
     }

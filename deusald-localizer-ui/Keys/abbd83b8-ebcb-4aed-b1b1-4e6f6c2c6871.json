@@ -4,7 +4,7 @@
   "KeyName": "clearOldComments",
   "Description": "Button that triggers clearing comments older than the chosen age.",
   "CreatedAt": "2026-07-16T12:48:41.5595258Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5595265Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7109754Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5595283Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "2fc4449ac9d860578eb9a0cd74251e07d9cc1dd87b0d04deb6a3d98d0ee913e3",
+      "Text": "Wyczyść stare komentarze",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7109735Z",
       "Suggestions": [],
       "Comments": []
     }

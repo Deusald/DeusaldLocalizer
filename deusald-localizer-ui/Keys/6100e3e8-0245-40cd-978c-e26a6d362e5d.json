@@ -4,7 +4,7 @@
   "KeyName": "suggestMineHint",
   "Description": "Hint explaining the Suggest mine option",
   "CreatedAt": "2026-07-16T12:48:41.5586298Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5586305Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7083038Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5586357Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "89366d5bb47cc149c822a42f8a7d555f4efa903654ffc48abbaa0b20521e7fe9",
+      "Text": "— zachowaj wersję z serwera i dodaj swoją jako sugestię do głosowania.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7083015Z",
       "Suggestions": [],
       "Comments": []
     }

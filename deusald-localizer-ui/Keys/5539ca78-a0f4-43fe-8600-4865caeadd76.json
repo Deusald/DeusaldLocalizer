@@ -4,7 +4,7 @@
   "KeyName": "editKey",
   "Description": "Tooltip for the edit-key button.",
   "CreatedAt": "2026-07-16T12:48:41.5570298Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5570308Z",
+  "UpdatedAt": "2026-07-16T13:07:17.708941Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5570416Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "3418de588f7f71c9e8c2763bd87f91a82e462d5f88544e052c18211250c50e5c",
+      "Text": "Edytuj klucz",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7089389Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "importFailed",
   "Description": "Error message shown when import fails.",
   "CreatedAt": "2026-07-16T12:48:41.5606306Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5606313Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7101565Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.560635Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "49822a69e47058c3d4f80f9b5d1f1723e961753912c602566ca16701b62927b7",
+      "Text": "Import nie powiódł się: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7101545Z",
       "Suggestions": [],
       "Comments": []
     }

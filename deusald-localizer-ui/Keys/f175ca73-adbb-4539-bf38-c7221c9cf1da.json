@@ -4,7 +4,7 @@
   "KeyName": "resolveConflictsBeforePushing",
   "Description": "Push button tooltip shown when there are unresolved conflicts.",
   "CreatedAt": "2026-07-16T12:48:41.5588331Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5588337Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7098046Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5588384Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "ce642c38ec55b8a935b6d15dc26f054a81771966c898b556cee9264b1ba3e629",
+      "Text": "Rozwiąż konflikty przed wypchnięciem",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7098026Z",
       "Suggestions": [],
       "Comments": []
     }

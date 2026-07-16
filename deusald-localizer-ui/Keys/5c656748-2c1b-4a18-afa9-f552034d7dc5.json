@@ -4,7 +4,7 @@
   "KeyName": "reviewLanguagesHint",
   "Description": "Hint next to the review-languages field label.",
   "CreatedAt": "2026-07-16T12:48:41.5592894Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5592901Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7111702Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5592919Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "5bb29ce9a117dc3da9594841b4b161f7f47b690cecd5e9975dc38c48f38efed6",
+      "Text": "języki, które ten członek może przeglądać",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7111682Z",
       "Suggestions": [],
       "Comments": []
     }

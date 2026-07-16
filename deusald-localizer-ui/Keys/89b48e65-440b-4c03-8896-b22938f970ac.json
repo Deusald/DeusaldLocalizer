@@ -4,7 +4,7 @@
   "KeyName": "recentProjects",
   "Description": "Heading above the recent-projects list (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794769Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5566208Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7076986Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5566246Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "1c564b3ce9f0c80174a406cdfeffcc7b24a28c96ee1f6481383ff77654144fe2",
+      "Text": "Ostatnie projekty",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7076967Z",
       "Suggestions": [],
       "Comments": []
     }

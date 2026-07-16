@@ -4,7 +4,7 @@
   "KeyName": "seeWhatLastSyncChanged",
   "Description": "Tooltip on the recent-changes pill.",
   "CreatedAt": "2026-07-16T12:48:41.5588684Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5588691Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7098346Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.558871Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a749c93abc302a3519acacabe25dc0e5ae344f20ddf5949cb210e57a2eddb9a3",
+      "Text": "Zobacz, co zmieniła ostatnia synchronizacja",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7098326Z",
       "Suggestions": [],
       "Comments": []
     }

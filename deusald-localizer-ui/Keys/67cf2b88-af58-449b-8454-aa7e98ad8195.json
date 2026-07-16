@@ -4,7 +4,7 @@
   "KeyName": "searchLanguagePlaceholder",
   "Description": "Placeholder for the language search input",
   "CreatedAt": "2026-07-16T12:48:41.5615342Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5615348Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7074673Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5615369Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "bd82c2438c06eca4705731e96647cc58b5282cfa311e47452e8d55c0b1a22a42",
+      "Text": "Szukaj języka…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7074657Z",
       "Suggestions": [],
       "Comments": []
     }

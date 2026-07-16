@@ -4,7 +4,7 @@
   "KeyName": "rightClickSelectOnly",
   "Description": "Tooltip explaining the right-click select-only behavior.",
   "CreatedAt": "2026-07-16T12:48:41.5571942Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5571952Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7091301Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5571993Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "f89aa56ae37bf4b54d0957ed61805301fe9707e4e37b770a38a67e7585e05bec",
+      "Text": "Kliknij prawym przyciskiem, aby zaznaczyć tylko tę kategorię",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.709128Z",
       "Suggestions": [],
       "Comments": []
     }

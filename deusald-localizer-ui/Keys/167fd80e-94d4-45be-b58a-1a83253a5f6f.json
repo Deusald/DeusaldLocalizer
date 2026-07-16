@@ -4,7 +4,7 @@
   "KeyName": "addKey",
   "Description": "Button that opens the new key modal.",
   "CreatedAt": "2026-07-16T12:48:41.557064Z",
-  "UpdatedAt": "2026-07-16T12:48:41.557065Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7089238Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5571031Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "12626d65b219dd74ede3ad8e834b1ed810320ca311e3086ce9801666bcb2b7cc",
+      "Text": "Dodaj klucz",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7089217Z",
       "Suggestions": [],
       "Comments": []
     }

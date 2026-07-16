@@ -4,7 +4,7 @@
   "KeyName": "browseButton",
   "Description": "Button that opens the folder picker",
   "CreatedAt": "2026-07-16T12:48:41.5612917Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5612924Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7072558Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5612943Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "93c6b664dce6c207b803d69d853264a42d5aee081ccd1f6651820d794a2064b2",
+      "Text": "Przeglądaj…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7072543Z",
       "Suggestions": [],
       "Comments": []
     }

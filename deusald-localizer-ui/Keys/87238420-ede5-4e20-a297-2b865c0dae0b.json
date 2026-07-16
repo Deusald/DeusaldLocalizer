@@ -4,7 +4,7 @@
   "KeyName": "flags",
   "Description": "Section title for flag include/exclude filters.",
   "CreatedAt": "2026-07-16T12:48:41.5607698Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5607704Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7104391Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5607723Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "f38d9950af4f9fa900a7d326505740a942352e173f1f9dc85cbf17b5aca95c55",
+      "Text": "Flagi",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7104371Z",
       "Suggestions": [],
       "Comments": []
     }

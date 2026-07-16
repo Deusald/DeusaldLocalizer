@@ -4,7 +4,7 @@
   "KeyName": "importAnother",
   "Description": "Footer button to import another file.",
   "CreatedAt": "2026-07-16T12:48:41.5606061Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5606067Z",
+  "UpdatedAt": "2026-07-16T13:07:17.710148Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5606086Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "ea4fe81089cc633697b01d8035a3eb3cf8a401c35ab087e2e1897e42a57d8c05",
+      "Text": "Importuj kolejny",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7101459Z",
       "Suggestions": [],
       "Comments": []
     }

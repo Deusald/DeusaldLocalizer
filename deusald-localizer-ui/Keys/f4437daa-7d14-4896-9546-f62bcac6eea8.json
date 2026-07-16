@@ -4,7 +4,7 @@
   "KeyName": "timeJustNow",
   "Description": "Relative time: less than two minutes ago.",
   "CreatedAt": "2026-07-16T12:19:57.5420006Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5561997Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7075819Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5562107Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "7ddb44d8a533a7535d85cedddf35d7f3414632ad4e10a0d7ca697723e1d97993",
+      "Text": "przed chwilą",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7075799Z",
       "Suggestions": [],
       "Comments": []
     }

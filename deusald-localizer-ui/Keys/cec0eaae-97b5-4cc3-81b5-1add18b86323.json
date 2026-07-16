@@ -4,7 +4,7 @@
   "KeyName": "syncFailed",
   "Description": "Sync result message when the sync failed; error details may follow.",
   "CreatedAt": "2026-07-16T12:48:41.559116Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5591166Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7098731Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5591186Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "abf3e80b5b4ceb363785b0064bb1747b459c5fdddaa090f49ea7b9ce41d83b16",
+      "Text": "Synchronizacja nie powiodła się",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7098711Z",
       "Suggestions": [],
       "Comments": []
     }

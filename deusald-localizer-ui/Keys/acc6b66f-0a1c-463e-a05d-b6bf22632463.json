@@ -4,7 +4,7 @@
   "KeyName": "yourProjects",
   "Description": "Heading above the stored-projects list (web).",
   "CreatedAt": "2026-07-16T12:29:28.079309Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5563661Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7079061Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.55637Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "e82a6eb21afd56d66f69500536f26ceb1bd31571935358e19f8794b701061cb5",
+      "Text": "Twoje projekty",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7079042Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "title",
   "Description": "Header title of the uncommitted changes modal.",
   "CreatedAt": "2026-07-16T12:48:41.5599618Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5599625Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7108657Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5599645Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a388bd2d373c39832003ef3699f39ff89d2c1ebb5c936f1ab8ed4e49f478daef",
+      "Text": "Niezatwierdzone zmiany",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7108532Z",
       "Suggestions": [],
       "Comments": []
     }

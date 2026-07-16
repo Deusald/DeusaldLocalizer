@@ -4,7 +4,7 @@
   "KeyName": "selectAll",
   "Description": "Link button that selects all languages.",
   "CreatedAt": "2026-07-16T12:48:41.5608929Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5608936Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7105346Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5608956Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "1fc9a387654d410febd202b81bddbe62d38368260b69b9f73ee6630164536bdf",
+      "Text": "Zaznacz wszystko",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7105326Z",
       "Suggestions": [],
       "Comments": []
     }

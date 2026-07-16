@@ -4,7 +4,7 @@
   "KeyName": "addMember",
   "Description": "Button and form title for adding a new member.",
   "CreatedAt": "2026-07-16T12:48:41.5592368Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5592374Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7109078Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5592392Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "171084156de6aca4e24f6c05c5ec6dd7e19c8fbb1d5ca090809c65de638f68fd",
+      "Text": "Dodaj członka",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7109058Z",
       "Suggestions": [],
       "Comments": []
     }

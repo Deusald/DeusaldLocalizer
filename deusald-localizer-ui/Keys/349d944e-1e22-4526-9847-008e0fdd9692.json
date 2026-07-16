@@ -4,7 +4,7 @@
   "KeyName": "csharpClass",
   "Description": "Section title for C# class options.",
   "CreatedAt": "2026-07-16T12:48:41.5606874Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5606914Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7103234Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5606934Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "0f556ea705eec299f111589ba3cf1cc54551cf8e8238e8a9b146f70373958a14",
+      "Text": "Klasa C#",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7103214Z",
       "Suggestions": [],
       "Comments": []
     }

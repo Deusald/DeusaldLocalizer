@@ -4,7 +4,7 @@
   "KeyName": "cancel",
   "Description": "Generic Cancel button, reused across dialogs.",
   "CreatedAt": "2026-07-16T12:19:57.5421312Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5567025Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7071584Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5567132Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27",
+      "Text": "Anuluj",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.707156Z",
       "Suggestions": [],
       "Comments": []
     }

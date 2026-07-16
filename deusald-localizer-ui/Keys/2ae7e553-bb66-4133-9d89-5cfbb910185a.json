@@ -4,7 +4,7 @@
   "KeyName": "removeChangeTitle",
   "Description": "Tooltip on the remove button for a single change.",
   "CreatedAt": "2026-07-16T12:48:41.5601784Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5601791Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7108417Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5601838Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "8e970c7f5dcca20f1baea4d6d44412c45e0ed46db5fbfc1e26528c047e15f033",
+      "Text": "Usuń tę zmianę",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7108393Z",
       "Suggestions": [],
       "Comments": []
     }

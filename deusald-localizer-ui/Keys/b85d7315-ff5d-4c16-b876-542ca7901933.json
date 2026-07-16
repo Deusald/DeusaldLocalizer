@@ -4,7 +4,7 @@
   "KeyName": "flagInProgress",
   "Description": "Label for the In progress flag.",
   "CreatedAt": "2026-07-16T12:48:41.5574088Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5574095Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7094106Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5574114Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c1f88e9d6c4145cf0530ae020155384d5688d70ed82a07a35d783bbc4b32238c",
+      "Text": "W toku",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7094086Z",
       "Suggestions": [],
       "Comments": []
     }

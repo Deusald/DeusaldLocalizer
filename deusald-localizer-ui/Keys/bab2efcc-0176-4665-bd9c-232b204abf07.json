@@ -4,7 +4,7 @@
   "KeyName": "importZip",
   "Description": "Button that imports a project from a .zip archive (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793017Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5563609Z",
+  "UpdatedAt": "2026-07-16T13:07:17.707876Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5563644Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "ebbfc7943ccdf7e62ecde126e18919ee7db1ac79ff1de05783703c49b8262b35",
+      "Text": "Importuj .zip…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7078741Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "searchCategory",
   "Description": "Placeholder for the category search input.",
   "CreatedAt": "2026-07-16T12:48:41.5576011Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5576018Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7093747Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5576039Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "ba7cc31a5194d93dc77e8848e9374f669971610d43fef93bb20aa475351db869",
+      "Text": "Szukaj kategorii…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7093723Z",
       "Suggestions": [],
       "Comments": []
     }

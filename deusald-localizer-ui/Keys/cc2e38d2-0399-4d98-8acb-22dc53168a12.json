@@ -4,7 +4,7 @@
   "KeyName": "tags",
   "Description": "Section title for tag include/exclude filters.",
   "CreatedAt": "2026-07-16T12:48:41.560804Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5608046Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7105503Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5608064Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "1331275bc537b4c2bf1e46f7275677967515342e30b572e6852fa6f51b831fe8",
+      "Text": "Tagi",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7105484Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "namespaceLabel",
   "Description": "Field label for the generated namespace.",
   "CreatedAt": "2026-07-16T12:48:41.5607359Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5607365Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7104772Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5607383Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c4e4e7abda206b07f8f017e706795f5fe305d5df2d99923d92a8ed0ab1d40cf8",
+      "Text": "Przestrzeń nazw",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7104752Z",
       "Suggestions": [],
       "Comments": []
     }

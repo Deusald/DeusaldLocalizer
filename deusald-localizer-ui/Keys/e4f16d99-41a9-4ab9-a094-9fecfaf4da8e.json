@@ -4,7 +4,7 @@
   "KeyName": "pendingSuggestions",
   "Description": "Tooltip showing the number of pending suggestions on a key.",
   "CreatedAt": "2026-07-16T12:48:41.5570456Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5570466Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7089682Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5570531Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "fac11e19cde2ed2bd522e52ca2594e3b0771f8061842c76fedf7acd27973bd34",
+      "Text": "{count} oczekująca(-e) sugestia(-e)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7089661Z",
       "Suggestions": [],
       "Comments": []
     }

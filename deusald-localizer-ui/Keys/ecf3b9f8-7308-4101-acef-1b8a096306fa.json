@@ -4,7 +4,7 @@
   "KeyName": "noTags",
   "Description": "Empty-state shown when a key has no tags.",
   "CreatedAt": "2026-07-16T12:48:41.557834Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5578415Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7087013Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5578437Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "147e6bba4382967505b88e720b211ff39956c100e6c9e0b25aa3dcea88332572",
+      "Text": "Brak tagów",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7086992Z",
       "Suggestions": [],
       "Comments": []
     }

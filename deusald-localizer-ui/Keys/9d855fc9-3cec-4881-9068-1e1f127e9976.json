@@ -4,7 +4,7 @@
   "KeyName": "discardAllConfirm",
   "Description": "Confirmation prompt label before discarding all pending changes.",
   "CreatedAt": "2026-07-16T12:48:41.5599715Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5599721Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7107847Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.559974Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "04c37f6dc050d29e869030441b6f8365e71983eb089f9f5336f9dcc6992ab30b",
+      "Text": "Odrzucić wszystkie?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7107826Z",
       "Suggestions": [],
       "Comments": []
     }

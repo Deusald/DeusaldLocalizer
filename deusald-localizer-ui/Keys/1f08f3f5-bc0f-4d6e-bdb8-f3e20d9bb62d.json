@@ -4,7 +4,7 @@
   "KeyName": "suggest",
   "Description": "Button that proposes the current draft as a suggestion",
   "CreatedAt": "2026-07-16T12:48:41.5579977Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5579984Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7087817Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5581044Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "4effad823b048b0440dbeff42665f60a6ddec8e121c378966ed7c074a512c51f",
+      "Text": "Zasugeruj",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7087795Z",
       "Suggestions": [],
       "Comments": []
     }

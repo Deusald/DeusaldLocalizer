@@ -4,7 +4,7 @@
   "KeyName": "push",
   "Description": "Label of the button that pushes changes to the server.",
   "CreatedAt": "2026-07-16T12:48:41.5588257Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5588264Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7097114Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5588282Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "731ce7ed808913b2fb4a3db764cad1d9be4433f3fe232818d7e66c7d3fd2a9c0",
+      "Text": "Wypchnij",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7097095Z",
       "Suggestions": [],
       "Comments": []
     }

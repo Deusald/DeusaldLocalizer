@@ -4,7 +4,7 @@
   "KeyName": "titleCreated",
   "Description": "Tooltip on the key creation date.",
   "CreatedAt": "2026-07-16T12:48:41.5576628Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5576636Z",
+  "UpdatedAt": "2026-07-16T13:07:17.708015Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5576657Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "d70b9e24bca26b409b9458ceca6c9e5c2b5c3171c37ff050c6f6a0d7a4420d2a",
+      "Text": "Utworzono",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7080132Z",
       "Suggestions": [],
       "Comments": []
     }

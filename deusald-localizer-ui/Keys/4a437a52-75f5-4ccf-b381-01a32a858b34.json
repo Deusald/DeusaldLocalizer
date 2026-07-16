@@ -4,7 +4,7 @@
   "KeyName": "classNamePlaceholder",
   "Description": "Placeholder example for the class name field.",
   "CreatedAt": "2026-07-16T12:48:41.5607251Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5607258Z",
+  "UpdatedAt": "2026-07-16T13:08:47.5450253Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5607278Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "031c2d79d71a06afcb07712e2125db23368a1f14dd96ce0140027b36bdfb5d30",
+      "Text": "Localization",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:08:47.5449393Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "delete",
   "Description": "Generic Delete button, reused across dialogs.",
   "CreatedAt": "2026-07-16T12:48:41.556736Z",
-  "UpdatedAt": "2026-07-16T12:48:41.556737Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7071943Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5567411Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "e2d0a54968ead24efc0dffa6ac78fc606dceec34a0f586177a74a54cc2272cf8",
+      "Text": "Usuń",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7071926Z",
       "Suggestions": [],
       "Comments": []
     }

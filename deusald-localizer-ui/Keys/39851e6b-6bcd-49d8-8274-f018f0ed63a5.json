@@ -4,7 +4,7 @@
   "KeyName": "editVariable",
   "Description": "Tooltip on the edit-variable button",
   "CreatedAt": "2026-07-16T12:48:41.5583891Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5583898Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7088573Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5583917Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "93def328dca358c0184bf759f6936425190b5089fc367f2bc165ff995ebbcc4b",
+      "Text": "Edytuj zmienną",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7088551Z",
       "Suggestions": [],
       "Comments": []
     }

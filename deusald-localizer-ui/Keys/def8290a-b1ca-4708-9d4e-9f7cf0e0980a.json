@@ -4,7 +4,7 @@
   "KeyName": "discussion",
   "Description": "Label of the comment thread under a suggestion",
   "CreatedAt": "2026-07-16T12:48:41.5584414Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5584421Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7086758Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.558444Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "5eb6cf647d2c5d14a044e2d103dcef4cf0cdc872434c374debc1043092bc4746",
+      "Text": "Dyskusja",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7086733Z",
       "Suggestions": [],
       "Comments": []
     }

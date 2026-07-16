@@ -4,7 +4,7 @@
   "KeyName": "titleOneConflict",
   "Description": "Conflicts modal title when there is exactly one conflict.",
   "CreatedAt": "2026-07-16T12:48:41.5596803Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5596812Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7100556Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5596922Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "6614cd72ec059d169c8d6d61998d2a1795880739447b4bf2fbd2cdd51e4486c3",
+      "Text": "{count} konflikt do rozwiązania",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7100536Z",
       "Suggestions": [],
       "Comments": []
     }

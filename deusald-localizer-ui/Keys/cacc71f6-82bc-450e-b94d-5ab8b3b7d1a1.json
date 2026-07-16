@@ -4,7 +4,7 @@
   "KeyName": "variantTagPlaceholder",
   "Description": "Placeholder for the sub-language tag input.",
   "CreatedAt": "2026-07-16T12:48:41.5568984Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5568993Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7095857Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5569035Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "f0dce7563b38acf3b42f1cac0e599cf1a816ebbf125a0129e58e74561dbf8d10",
+      "Text": "tag np. simple",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7095838Z",
       "Suggestions": [],
       "Comments": []
     }

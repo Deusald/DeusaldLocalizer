@@ -4,7 +4,7 @@
   "KeyName": "pushChangesToServer",
   "Description": "Push button tooltip when the push is available.",
   "CreatedAt": "2026-07-16T12:48:41.5588433Z",
-  "UpdatedAt": "2026-07-16T12:48:41.558844Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7097195Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5588459Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a105f1f8fcfe6020d3722208f9012d2b4f9d3573c560842ce6808d4ec1ff13af",
+      "Text": "Wypchnij zmiany na serwer",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7097174Z",
       "Suggestions": [],
       "Comments": []
     }

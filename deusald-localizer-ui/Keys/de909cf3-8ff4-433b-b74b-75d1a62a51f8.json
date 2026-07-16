@@ -4,7 +4,7 @@
   "KeyName": "optional",
   "Description": "Marker indicating the namespace field is optional.",
   "CreatedAt": "2026-07-16T12:48:41.560746Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5607467Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7105278Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5607486Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "0059798b7f7023e4d9e5c4595f7b9ba7ee64f69993ee524824d57e5a48b1228c",
+      "Text": "(opcjonalnie)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7105254Z",
       "Suggestions": [],
       "Comments": []
     }

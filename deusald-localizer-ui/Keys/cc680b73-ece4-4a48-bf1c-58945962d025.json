@@ -4,7 +4,7 @@
   "KeyName": "intValueHint",
   "Description": "Hint that an enum preview value is an int",
   "CreatedAt": "2026-07-16T12:48:41.5583645Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5583652Z",
+  "UpdatedAt": "2026-07-16T13:07:17.708873Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5583671Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a0e6a53cc1b4c5f0ba29c92c662aeb4fd5480347ddfe7044c19563a68774890b",
+      "Text": "wartość całkowita",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7088705Z",
       "Suggestions": [],
       "Comments": []
     }

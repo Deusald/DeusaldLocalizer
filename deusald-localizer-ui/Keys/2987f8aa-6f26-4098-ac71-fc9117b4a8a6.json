@@ -4,7 +4,7 @@
   "KeyName": "chooseFile",
   "Description": "Button to pick the xlsx file and start importing.",
   "CreatedAt": "2026-07-16T12:48:41.5605051Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5605058Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7100711Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5605077Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "5c6623857cc7b764cdf1eecad5b2f0f54184bebca4aa2d7f3bbdcedf6a8929d1",
+      "Text": "Wybierz plik…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7100691Z",
       "Suggestions": [],
       "Comments": []
     }

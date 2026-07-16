@@ -4,7 +4,7 @@
   "KeyName": "variables",
   "Description": "Header of the variables section",
   "CreatedAt": "2026-07-16T12:48:41.5582721Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5582727Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7089173Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5582746Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "02db55bac5e3f7ceb98fdea15d7dfcfd40efcc41b777d10c2a8483b571f332bd",
+      "Text": "Zmienne",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7089146Z",
       "Suggestions": [],
       "Comments": []
     }

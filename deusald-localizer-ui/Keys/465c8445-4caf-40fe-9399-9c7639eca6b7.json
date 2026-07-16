@@ -4,7 +4,7 @@
   "KeyName": "deleteCategory",
   "Description": "Tooltip for the delete-category button.",
   "CreatedAt": "2026-07-16T12:48:41.5572231Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5572241Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7090623Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5572278Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a91d00879a3d42dfcab3bfde0b58b1fec025acdfb9b471032425175e14b5f3d2",
+      "Text": "Usuń kategorię",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7090603Z",
       "Suggestions": [],
       "Comments": []
     }

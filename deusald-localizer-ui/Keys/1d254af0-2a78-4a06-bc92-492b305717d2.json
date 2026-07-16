@@ -4,7 +4,7 @@
   "KeyName": "projectMeta",
   "Description": "Sub-line of a project card summarising counts and last edit.",
   "CreatedAt": "2026-07-16T12:19:57.5408044Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5550237Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7075473Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -39,6 +39,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5561833Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "b9e6f786aa35b1ec7c9d401c3f5489b39ba3dcb89913fbcd39a55f4389f96181",
+      "Text": "{keys} kluczy · {langs} jęz. · {edited}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7075455Z",
       "Suggestions": [],
       "Comments": []
     }

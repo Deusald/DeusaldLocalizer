@@ -4,7 +4,7 @@
   "KeyName": "changeData",
   "Description": "Detail row label for a change's data.",
   "CreatedAt": "2026-07-16T12:48:41.5602007Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5602013Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7107196Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5602031Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c3a73a975912065a02db251cc330e500ac5877914c383129e5b40bd8f89aeef4",
+      "Text": "Dane zmiany",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7107175Z",
       "Suggestions": [],
       "Comments": []
     }

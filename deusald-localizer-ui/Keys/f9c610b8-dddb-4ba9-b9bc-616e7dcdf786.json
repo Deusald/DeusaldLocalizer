@@ -4,7 +4,7 @@
   "KeyName": "statusDraft",
   "Description": "Key status tag: draft translation.",
   "CreatedAt": "2026-07-16T12:48:41.5577519Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5577526Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7079831Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5577546Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "ebf12ef47cf575b3ba9a3cc019c5310146fdac88f6d1be6618d6e91158c2f174",
+      "Text": "Wersja robocza",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7079815Z",
       "Suggestions": [],
       "Comments": []
     }

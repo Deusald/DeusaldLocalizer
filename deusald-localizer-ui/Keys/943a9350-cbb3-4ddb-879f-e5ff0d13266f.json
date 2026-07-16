@@ -4,7 +4,7 @@
   "KeyName": "prevDestHash",
   "Description": "Detail row label for previous destination hash.",
   "CreatedAt": "2026-07-16T12:48:41.5602228Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5602234Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7108261Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5602254Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "7c8141153296a9e1229cfb59be786b6a3c479423e8f58ee9a2006b242aab38a2",
+      "Text": "Poprz. hash docelowy",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7108236Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "destChangedDesc",
   "Description": "Conflict description for a concurrent-edit conflict",
   "CreatedAt": "2026-07-16T12:48:41.5586834Z",
-  "UpdatedAt": "2026-07-16T12:48:41.558684Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7082059Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5586889Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "8cac076b7cce5b8adecfc483d5bce88e1d972e77066c758d3ded4631bdf06b5d",
+      "Text": "Ktoś inny zmienił to tłumaczenie na serwerze od czasu twojej edycji. Wybierz, którą wersję zachować.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7082037Z",
       "Suggestions": [],
       "Comments": []
     }

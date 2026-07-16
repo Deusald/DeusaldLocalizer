@@ -4,7 +4,7 @@
   "KeyName": "noTags",
   "Description": "Row label for keys that carry no tags.",
   "CreatedAt": "2026-07-16T12:48:41.5608142Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5608148Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7105187Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5608211Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "147e6bba4382967505b88e720b211ff39956c100e6c9e0b25aa3dcea88332572",
+      "Text": "Brak tagów",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7105165Z",
       "Suggestions": [],
       "Comments": []
     }

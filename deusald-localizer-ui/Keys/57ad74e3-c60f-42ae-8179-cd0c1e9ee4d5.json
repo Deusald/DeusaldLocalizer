@@ -4,7 +4,7 @@
   "KeyName": "newProject",
   "Description": "Button that opens the new-project dialog.",
   "CreatedAt": "2026-07-16T12:19:57.5407653Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5545163Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7075413Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5545858Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a41eb2bf7245d3bcca0c66f7b9a2c8b30a6cf975fc4bed8297811b2777956280",
+      "Text": "Nowy projekt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7075395Z",
       "Suggestions": [],
       "Comments": []
     }

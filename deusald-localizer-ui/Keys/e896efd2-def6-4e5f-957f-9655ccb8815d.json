@@ -4,7 +4,7 @@
   "KeyName": "noDescription",
   "Description": "Shown to non-admins when a key has no description.",
   "CreatedAt": "2026-07-16T12:48:41.557775Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5577757Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7083382Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5577784Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "06a694820920c9ffca34f9d45ae7ccffcc94c67fbc914b082930994b7076cad3",
+      "Text": "Brak opisu.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7083359Z",
       "Suggestions": [],
       "Comments": []
     }

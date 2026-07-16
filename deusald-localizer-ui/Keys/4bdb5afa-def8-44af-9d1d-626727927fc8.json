@@ -4,7 +4,7 @@
   "KeyName": "subtitle",
   "Description": "Subtitle of the connect-to-server modal",
   "CreatedAt": "2026-07-16T12:48:41.5611649Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5611655Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7073315Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.561172Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "b295a8923772301470045e51c7e2321a475a17c48186b08f7100c1bb683012da",
+      "Text": "Pobierz projekt online z bota",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7073298Z",
       "Suggestions": [],
       "Comments": []
     }

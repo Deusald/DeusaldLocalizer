@@ -4,7 +4,7 @@
   "KeyName": "keyCount",
   "Description": "Footer count of matching vs total keys.",
   "CreatedAt": "2026-07-16T12:48:41.5609142Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5609149Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7104635Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -32,6 +32,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5609231Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "df76ef264d2b1995ac7892754150557d8866ab3311b294d889ee6d03bc42f6e6",
+      "Text": "{matching} z {total} kluczy",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7104614Z",
       "Suggestions": [],
       "Comments": []
     }

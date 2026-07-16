@@ -4,7 +4,7 @@
   "KeyName": "importFromExcel",
   "Description": "Tooltip on the import button.",
   "CreatedAt": "2026-07-16T12:48:41.5589287Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5589294Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7096805Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5589312Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a08120408397e0656f989341487855a68af1220425611a1022c2b758d20ddc3f",
+      "Text": "Importuj z Excela",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7096785Z",
       "Suggestions": [],
       "Comments": []
     }

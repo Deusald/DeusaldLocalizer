@@ -4,7 +4,7 @@
   "KeyName": "bannedBadge",
   "Description": "Badge marking a banned member.",
   "CreatedAt": "2026-07-16T12:48:41.5593676Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5593682Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7109377Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5593702Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "7b412527489f5ffedebed690b6ec7252d5b2f4cb75b7e71e3d6eab6e9d0fe98a",
+      "Text": "zbanowany",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7109352Z",
       "Suggestions": [],
       "Comments": []
     }

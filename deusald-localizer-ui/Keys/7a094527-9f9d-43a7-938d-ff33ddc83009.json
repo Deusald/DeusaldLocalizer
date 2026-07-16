@@ -4,7 +4,7 @@
   "KeyName": "emptySub",
   "Description": "Empty-state description (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.079494Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5566374Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7076032Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5566442Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "f2d9860f08959f16b2f471067de0873e47ebfa5c2da6d32a792202d02de39639",
+      "Text": "Otwierane projekty będą się tu pojawiać, abyś mógł szybko do nich wrócić.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7076014Z",
       "Suggestions": [],
       "Comments": []
     }

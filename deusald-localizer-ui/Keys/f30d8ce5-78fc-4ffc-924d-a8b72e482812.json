@@ -4,7 +4,7 @@
   "KeyName": "deselectAll",
   "Description": "Link button that deselects all update options.",
   "CreatedAt": "2026-07-16T12:48:41.5603404Z",
-  "UpdatedAt": "2026-07-16T12:48:41.560341Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7100981Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5603469Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "967549497036d51303efbdc904bb5e5654551058d0854be757b36280abd3ec8b",
+      "Text": "Odznacz wszystko",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7100961Z",
       "Suggestions": [],
       "Comments": []
     }

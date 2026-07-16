@@ -4,7 +4,7 @@
   "KeyName": "unsavedChanges",
   "Description": "Title of the confirm-leave modal.",
   "CreatedAt": "2026-07-16T12:48:41.5597959Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5597965Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7099848Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5598027Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a710c2b90913b5375ca6ac865341e49dd6daa42f6d95182e6ed1a7b1b650ff4c",
+      "Text": "Niezapisane zmiany",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7099829Z",
       "Suggestions": [],
       "Comments": []
     }

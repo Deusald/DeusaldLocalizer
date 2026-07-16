@@ -4,7 +4,7 @@
   "KeyName": "collaborators",
   "Description": "Title of the collaborators (members) modal.",
   "CreatedAt": "2026-07-16T12:48:41.5592109Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5592115Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7109835Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5592218Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "439c0bddcded12eb3e032981d56416fced96dea5b4a08247e7099f44ebd112f6",
+      "Text": "Współtwórcy",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7109815Z",
       "Suggestions": [],
       "Comments": []
     }

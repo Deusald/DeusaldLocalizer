@@ -4,7 +4,7 @@
   "KeyName": "labelNote",
   "Description": "Field label for the optional flag note.",
   "CreatedAt": "2026-07-16T12:48:41.557867Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5578676Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7081105Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5578696Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "d8da2c49df39d91df7ecd199b92da7bf264f026242ccc69b08daeadfe587c45b",
+      "Text": "Notatka",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7081078Z",
       "Suggestions": [],
       "Comments": []
     }

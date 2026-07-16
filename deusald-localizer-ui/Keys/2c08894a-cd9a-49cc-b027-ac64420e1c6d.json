@@ -4,7 +4,7 @@
   "KeyName": "rowsSkipped",
   "Description": "Result stat label for rows skipped.",
   "CreatedAt": "2026-07-16T12:48:41.5605956Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5605963Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7101985Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5605985Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "8bcecb973c1e9abf303690c31e943c76ae340e944f17a0c6dcafe5edbb023bc9",
+      "Text": "pominiętych wierszy",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7101966Z",
       "Suggestions": [],
       "Comments": []
     }

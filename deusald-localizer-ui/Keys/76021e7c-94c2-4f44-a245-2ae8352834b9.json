@@ -4,7 +4,7 @@
   "KeyName": "errLoad",
   "Description": "Error when loading a project from disk fails (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0795182Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5566666Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7076379Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5566889Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "1914b0062830e2ff31bc0bd9ed12432362c296d7c6c88412570b87612235163e",
+      "Text": "Nie udało się załadować projektu: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7076364Z",
       "Suggestions": [],
       "Comments": []
     }

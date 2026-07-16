@@ -4,7 +4,7 @@
   "KeyName": "defaultPreviewValue",
   "Description": "Label for the variable's default preview value field",
   "CreatedAt": "2026-07-16T12:48:41.5583434Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5583441Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7088355Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5583461Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "053563d421f49871951fcf5b3e15690ad3592670aa053cbf99471ee91249b2a3",
+      "Text": "Domyślna wartość podglądu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7088334Z",
       "Suggestions": [],
       "Comments": []
     }

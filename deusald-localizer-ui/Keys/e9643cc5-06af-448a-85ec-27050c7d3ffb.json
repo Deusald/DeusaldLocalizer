@@ -4,7 +4,7 @@
   "KeyName": "addFlag",
   "Description": "Add-flag modal title and confirm button label.",
   "CreatedAt": "2026-07-16T12:48:41.5578493Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5578499Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7080426Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5578517Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "18a5a8787ea6a461be3b98f376286468bf482fddf2d9bc351d7717cedd9743bc",
+      "Text": "Dodaj flagę",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.708041Z",
       "Suggestions": [],
       "Comments": []
     }

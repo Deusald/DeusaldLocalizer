@@ -4,7 +4,7 @@
   "KeyName": "kindEdited",
   "Description": "Tag shown on a conflict caused by a concurrent edit of the destination.",
   "CreatedAt": "2026-07-16T12:48:41.5597519Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5597526Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7100249Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5597545Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "1fb9f4097256db2d7b1e13aff79cee44339891a31c556b9cf6093885773b3618",
+      "Text": "edytowano",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7100228Z",
       "Suggestions": [],
       "Comments": []
     }

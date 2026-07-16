@@ -4,7 +4,7 @@
   "KeyName": "empty",
   "Description": "Placeholder shown when a compared version has no text",
   "CreatedAt": "2026-07-16T12:48:41.5585886Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5585894Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7082206Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5585913Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "d29a0939bcb51176dd565a5e2d33214ce5204806b384bd80a72cb40861cdc7b9",
+      "Text": "(puste)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.708218Z",
       "Suggestions": [],
       "Comments": []
     }

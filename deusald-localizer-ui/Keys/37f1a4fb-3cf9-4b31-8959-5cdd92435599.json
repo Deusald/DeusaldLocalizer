@@ -4,7 +4,7 @@
   "KeyName": "kindConflict",
   "Description": "Generic tag shown on an otherwise-uncategorized conflict.",
   "CreatedAt": "2026-07-16T12:48:41.5597743Z",
-  "UpdatedAt": "2026-07-16T12:48:41.559775Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7100163Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5597784Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "fa9e1d22205ad852b0dc9509ec4e31644e88742c4dfce93c08f011fee1cd8a1a",
+      "Text": "konflikt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7100144Z",
       "Suggestions": [],
       "Comments": []
     }

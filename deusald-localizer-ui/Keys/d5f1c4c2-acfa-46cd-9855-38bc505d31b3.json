@@ -4,7 +4,7 @@
   "KeyName": "placeholderSearch",
   "Description": "Placeholder in the add-tag search input.",
   "CreatedAt": "2026-07-16T12:48:41.5579393Z",
-  "UpdatedAt": "2026-07-16T12:48:41.55794Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7081502Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.557942Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "2d7c50c28de1d2b903e4f6d2689d32590049c683fccbd5d1c96aab255d79cae9",
+      "Text": "Szukaj lub utwórz tag…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7081478Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "hoursAgo",
   "Description": "Compact relative time in hours.",
   "CreatedAt": "2026-07-16T12:48:41.5599266Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5599273Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7105892Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5599305Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "5828ef1c1e95e0bae1c98548d1795a2482cc8e14a8b161b183960a06018ce10d",
+      "Text": "{count} godz.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7105869Z",
       "Suggestions": [],
       "Comments": []
     }

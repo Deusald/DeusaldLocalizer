@@ -4,7 +4,7 @@
   "KeyName": "addDescription",
   "Description": "Clickable prompt shown to admins when a key has no description.",
   "CreatedAt": "2026-07-16T12:48:41.5577658Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5577664Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7083291Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5577712Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c7200c2863966d7fb00d06f90adc1ae81f529851a72a49f6f2d611f78e8f5d20",
+      "Text": "Dodaj opis…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7083265Z",
       "Suggestions": [],
       "Comments": []
     }

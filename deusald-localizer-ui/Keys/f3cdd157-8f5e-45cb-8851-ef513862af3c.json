@@ -4,7 +4,7 @@
   "KeyName": "keepMine",
   "Description": "Button/label for keeping the local version",
   "CreatedAt": "2026-07-16T12:48:41.5585964Z",
-  "UpdatedAt": "2026-07-16T12:48:41.558597Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7082299Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5585989Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "0335c833251799ba6c37ba1823af457b6232b46933570369cf38b4f2766f134c",
+      "Text": "Zachowaj moją",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7082278Z",
       "Suggestions": [],
       "Comments": []
     }

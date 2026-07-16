@@ -4,7 +4,7 @@
   "KeyName": "members",
   "Description": "Section label for the member list; a count follows in parentheses.",
   "CreatedAt": "2026-07-16T12:48:41.5592279Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5592286Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7110507Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5592308Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "1044a4c056d0d685bf4f09174d2bc136137765d62916779fadcacf006a99ffac",
+      "Text": "Członkowie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7110487Z",
       "Suggestions": [],
       "Comments": []
     }

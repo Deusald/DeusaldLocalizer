@@ -4,7 +4,7 @@
   "KeyName": "editLanguages",
   "Description": "Tooltip for the button that enters language edit mode.",
   "CreatedAt": "2026-07-16T12:48:41.5569286Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5569296Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7095285Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5569345Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "057abab05e147521be42bbb46f09fdbbb908a803a9e85b3c0ba5be3f7a0b6634",
+      "Text": "Edytuj języki",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7095265Z",
       "Suggestions": [],
       "Comments": []
     }

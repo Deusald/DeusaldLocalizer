@@ -4,7 +4,7 @@
   "KeyName": "updatedOn",
   "Description": "Shows the date a key was last updated.",
   "CreatedAt": "2026-07-16T12:48:41.5576869Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5576876Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7080341Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.557691Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "328a4d4c6ba2b1acfac3808c3ca8623f892b30f8088b7a0e4299abe560c0f98e",
+      "Text": "Zaktualizowano {date}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7080324Z",
       "Suggestions": [],
       "Comments": []
     }

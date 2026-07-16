@@ -4,7 +4,7 @@
   "KeyName": "categoryName",
   "Description": "Label for the category name input.",
   "CreatedAt": "2026-07-16T12:48:41.5574353Z",
-  "UpdatedAt": "2026-07-16T12:48:41.557436Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7091392Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5574408Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "73ddd937c98b5494155b5a2a92d9a11889c8a8923fdfd719968c549d673fbdae",
+      "Text": "Nazwa kategorii",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7091367Z",
       "Suggestions": [],
       "Comments": []
     }

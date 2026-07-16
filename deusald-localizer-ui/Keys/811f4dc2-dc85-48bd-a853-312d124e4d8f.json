@@ -4,7 +4,7 @@
   "KeyName": "keyNameHint",
   "Description": "Hint describing allowed key name characters.",
   "CreatedAt": "2026-07-16T12:48:41.5575571Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5575583Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7093077Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5575602Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "ba8049b42fa45e9e444d28885d4c0dd910ed5c2f55c0979d8296f85f672a96e6",
+      "Text": "tylko litery, cyfry i podkreślenie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7093048Z",
       "Suggestions": [],
       "Comments": []
     }

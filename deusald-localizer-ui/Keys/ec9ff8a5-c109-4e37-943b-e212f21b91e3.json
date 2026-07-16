@@ -4,7 +4,7 @@
   "KeyName": "errExport",
   "Description": "Error when a .zip export fails (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793819Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5564803Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7078347Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5564872Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "b047cc8c16bbe8c3a1681de6bc2ecfd28d0cce885eb24d970d4ccf027182e721",
+      "Text": "Eksport nie powiódł się: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7078331Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "collapseAll",
   "Description": "Tooltip for the collapse-all-categories button.",
   "CreatedAt": "2026-07-16T12:48:41.5571326Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5571335Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7090553Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5571432Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "25f7b3721119f1ec7fdf7c8c66e779ee9999e2049e569afc3b00a9fbdeece7db",
+      "Text": "Zwiń wszystko",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7090532Z",
       "Suggestions": [],
       "Comments": []
     }

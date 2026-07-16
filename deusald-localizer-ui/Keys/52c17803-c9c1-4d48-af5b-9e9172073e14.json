@@ -4,7 +4,7 @@
   "KeyName": "connectServer",
   "Description": "Button that opens the connect-to-server dialog.",
   "CreatedAt": "2026-07-16T12:19:57.5407813Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5545883Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7075134Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5546061Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "6188f4737a08a90ea3807a25bd9e4e3ed0169cc568f0cbb3908e1e4206e82938",
+      "Text": "Połącz z serwerem…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7075118Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "emptyTitle",
   "Description": "Empty-state title when there are no recent projects (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794864Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5566317Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7076105Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5566357Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "091f4b8e2db678e13a7b55616fbed9f4efd7764fb1291a10b34d84d81107ae2c",
+      "Text": "Brak ostatnich projektów",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7076085Z",
       "Suggestions": [],
       "Comments": []
     }

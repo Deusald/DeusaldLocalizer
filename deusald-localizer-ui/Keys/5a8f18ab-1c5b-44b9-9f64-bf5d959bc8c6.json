@@ -4,7 +4,7 @@
   "KeyName": "uncommittedCount",
   "Description": "Uncommitted-mode status pill label with a pending-change count.",
   "CreatedAt": "2026-07-16T12:48:41.5589965Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5589972Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7099168Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5590032Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "58d42fde96d27052210e44f92eaff991f8cd01fabfaaf51ca84c8a2232507127",
+      "Text": "Niezatwierdzone ({count})",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7099149Z",
       "Suggestions": [],
       "Comments": []
     }

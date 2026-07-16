@@ -4,7 +4,7 @@
   "KeyName": "signInBeforePush",
   "Description": "Error shown when the user must sign in before pushing.",
   "CreatedAt": "2026-07-16T12:48:41.559192Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5591926Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7098419Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5591946Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "670ab1ad66a16ac1daf0bed9e70cb09b45c884fc452fc665f5be6454542a8219",
+      "Text": "Musisz się zalogować na tym urządzeniu, zanim będziesz mógł wypchnąć zmiany.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7098399Z",
       "Suggestions": [],
       "Comments": []
     }

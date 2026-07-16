@@ -4,7 +4,7 @@
   "KeyName": "source",
   "Description": "Badge marking the source (main) language.",
   "CreatedAt": "2026-07-16T12:48:41.5609036Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5609042Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7105421Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5609061Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "41cf6794ba4200b839c53531555f0f3998df4cbb01a4d5cb0b94e3ca5e23947d",
+      "Text": "źródło",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7105397Z",
       "Suggestions": [],
       "Comments": []
     }

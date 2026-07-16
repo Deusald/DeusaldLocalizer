@@ -4,7 +4,7 @@
   "KeyName": "intro",
   "Description": "Home page intro paragraph (web).",
   "CreatedAt": "2026-07-16T12:29:28.079292Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5563425Z",
+  "UpdatedAt": "2026-07-16T13:07:17.707885Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5563544Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "7b85e27db39614cbc6feaeb161a320fae8a6e10c634757a8e0c2250a8bd0c377",
+      "Text": "Edytuj teksty, proponuj alternatywy i pozwól społeczności głosować na najlepsze tłumaczenie każdego klucza — bezpośrednio w przeglądarce.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7078831Z",
       "Suggestions": [],
       "Comments": []
     }

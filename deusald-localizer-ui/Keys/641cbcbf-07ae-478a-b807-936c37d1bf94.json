@@ -4,7 +4,7 @@
   "KeyName": "namespacePlaceholder",
   "Description": "Placeholder example for the namespace field.",
   "CreatedAt": "2026-07-16T12:48:41.5607593Z",
-  "UpdatedAt": "2026-07-16T12:48:41.56076Z",
+  "UpdatedAt": "2026-07-16T13:07:17.710484Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5607619Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "b1a9b2fb8fc7093277f0e8e5f7e12de12453722f62c73280b926ea07d0058b6a",
+      "Text": "np. MyGame.Loc",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.710482Z",
       "Suggestions": [],
       "Comments": []
     }

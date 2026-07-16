@@ -4,7 +4,7 @@
   "KeyName": "name",
   "Description": "Label for the enum name field",
   "CreatedAt": "2026-07-16T12:48:41.5585041Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5585048Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7085581Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5585084Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50",
+      "Text": "Nazwa",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.708556Z",
       "Suggestions": [],
       "Comments": []
     }

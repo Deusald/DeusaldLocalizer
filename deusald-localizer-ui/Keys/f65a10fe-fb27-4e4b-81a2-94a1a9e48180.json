@@ -4,7 +4,7 @@
   "KeyName": "cannotDeleteHasKeys",
   "Description": "Tooltip on a disabled delete button when the category still contains keys.",
   "CreatedAt": "2026-07-16T12:48:41.5572141Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5572151Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7090386Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5572192Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "411db6025e7b928310a8c1903d6a6ff590eb2ad3c1845a51fdc8cf7c2d3c9c69",
+      "Text": "Nie można usunąć: kategoria wciąż zawiera klucze",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7090362Z",
       "Suggestions": [],
       "Comments": []
     }

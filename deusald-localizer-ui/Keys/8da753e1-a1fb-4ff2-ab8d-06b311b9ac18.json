@@ -4,7 +4,7 @@
   "KeyName": "newTokenBody",
   "Description": "Body shown when a freshly rotated access token is displayed.",
   "CreatedAt": "2026-07-16T12:19:57.5422127Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5568253Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7070876Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.55683Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "8fb076c015ff24ce916c9c9d035dfa2b19475c5335eabcb359972874107ff559",
+      "Text": "To jest twój nowy token logowania. Skopiuj go teraz i przechowaj w bezpiecznym miejscu — od teraz będziesz go używać do logowania.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7070831Z",
       "Suggestions": [],
       "Comments": []
     }

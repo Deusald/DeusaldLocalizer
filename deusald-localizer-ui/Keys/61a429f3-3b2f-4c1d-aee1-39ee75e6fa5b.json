@@ -4,7 +4,7 @@
   "KeyName": "clearConfirmPrefix",
   "Description": "Leading word of the confirmation to clear old comments, followed by an amount and unit.",
   "CreatedAt": "2026-07-16T12:48:41.5594832Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5594839Z",
+  "UpdatedAt": "2026-07-16T13:07:17.710954Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5594898Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "83b12c2216efb4fdc924e1deb5182e905e4926ed0c1c324d467107f46d5a26a9",
+      "Text": "Wyczyść",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.710952Z",
       "Suggestions": [],
       "Comments": []
     }

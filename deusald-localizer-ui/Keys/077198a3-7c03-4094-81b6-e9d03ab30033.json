@@ -4,7 +4,7 @@
   "KeyName": "title",
   "Description": "Title of the new project modal",
   "CreatedAt": "2026-07-16T12:48:41.5614524Z",
-  "UpdatedAt": "2026-07-16T12:48:41.561453Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7075063Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.561455Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a41eb2bf7245d3bcca0c66f7b9a2c8b30a6cf975fc4bed8297811b2777956280",
+      "Text": "Nowy projekt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7075046Z",
       "Suggestions": [],
       "Comments": []
     }

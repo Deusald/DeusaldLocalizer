@@ -4,7 +4,7 @@
   "KeyName": "regenerateMyToken",
   "Description": "Tooltip on the button that regenerates the current user's own token.",
   "CreatedAt": "2026-07-16T12:48:41.559413Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5594136Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7111494Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5594155Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "9fd9a74f04af4e51cd19efae5ae68512b592b1b5bc7bc4466b801d0ac7b02c2d",
+      "Text": "Wygeneruj ponownie mój token dostępu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.711147Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "expand",
   "Description": "Tooltip for expanding a collapsed category node.",
   "CreatedAt": "2026-07-16T12:48:41.5571641Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5571697Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7090782Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.557174Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "07548c2c6511d4d1780564de8a237a1966cf9c99a97cf5c8a185e6c2aeacff09",
+      "Text": "Rozwiń",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7090761Z",
       "Suggestions": [],
       "Comments": []
     }

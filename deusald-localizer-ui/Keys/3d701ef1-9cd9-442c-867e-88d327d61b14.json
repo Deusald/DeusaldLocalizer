@@ -4,7 +4,7 @@
   "KeyName": "flagDoNotTranslate",
   "Description": "Label for the Do not translate flag.",
   "CreatedAt": "2026-07-16T12:48:41.5574032Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5574039Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7094018Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5574058Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "0ff0b408c3d7c557c4c1f19a866eea82b8eeeed657ba4e6db01f83dad1a55d62",
+      "Text": "Nie tłumaczyć",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7093992Z",
       "Suggestions": [],
       "Comments": []
     }

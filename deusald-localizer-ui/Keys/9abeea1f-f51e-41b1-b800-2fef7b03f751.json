@@ -4,7 +4,7 @@
   "KeyName": "mustBelongToCategory",
   "Description": "Warning body explaining that a category is required before adding a key.",
   "CreatedAt": "2026-07-16T12:48:41.5575423Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5575429Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7093369Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5575451Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "b5a8c4e17fa8313a55f2497ff493157dc5bb05ebdb767fbb01ca25c540aa8c3d",
+      "Text": "Klucz musi należeć do kategorii. Utwórz przynajmniej jedną kategorię w kolumnie Klucze, zanim dodasz klucz.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7093347Z",
       "Suggestions": [],
       "Comments": []
     }

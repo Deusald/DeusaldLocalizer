@@ -4,7 +4,7 @@
   "KeyName": "storeInLabel",
   "Description": "Field label for the storage location picker",
   "CreatedAt": "2026-07-16T12:48:41.5612579Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5612586Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7073242Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5612604Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "ed5d6111aff737518035da8c9adf64a2742bfd43c2f75752d6d0ee033940d6cf",
+      "Text": "Zapisz w",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7073227Z",
       "Suggestions": [],
       "Comments": []
     }

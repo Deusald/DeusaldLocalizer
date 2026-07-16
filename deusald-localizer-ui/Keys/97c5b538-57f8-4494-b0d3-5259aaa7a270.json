@@ -4,7 +4,7 @@
   "KeyName": "updateTitle",
   "Description": "Title of the update banner (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794047Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5565435Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7077622Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5565477Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "ff8b555d818f0b25bbdd1bec8b479660bac7fc276acbe993e759bf67fed32c34",
+      "Text": "Dostępna aktualizacja",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7077605Z",
       "Suggestions": [],
       "Comments": []
     }

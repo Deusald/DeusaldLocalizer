@@ -4,7 +4,7 @@
   "KeyName": "sourceTextPlaceholder",
   "Description": "Placeholder for the source text area",
   "CreatedAt": "2026-07-16T12:48:41.5579814Z",
-  "UpdatedAt": "2026-07-16T12:48:41.557982Z",
+  "UpdatedAt": "2026-07-16T13:07:17.708765Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5579868Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "fb47d1c45c9eec281483ff0d0567595589b837e9d07f4efe25c33eb54be21dca",
+      "Text": "Tekst źródłowy…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7087629Z",
       "Suggestions": [],
       "Comments": []
     }

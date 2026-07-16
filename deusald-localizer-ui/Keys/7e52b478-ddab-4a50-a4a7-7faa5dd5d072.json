@@ -4,7 +4,7 @@
   "KeyName": "updateFromSheet",
   "Description": "Section title for what to update from the sheet.",
   "CreatedAt": "2026-07-16T12:48:41.5603304Z",
-  "UpdatedAt": "2026-07-16T12:48:41.560331Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7102756Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5603329Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "55c5d30c520e88ea7ed509079ebc79d5c2f052d0e00d1a8a3550e43ae68002f8",
+      "Text": "Aktualizuj z arkusza",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7102737Z",
       "Suggestions": [],
       "Comments": []
     }

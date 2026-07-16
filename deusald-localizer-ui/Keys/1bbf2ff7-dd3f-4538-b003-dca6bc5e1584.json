@@ -4,7 +4,7 @@
   "KeyName": "emptyState",
   "Description": "Empty-state text when the last sync pulled nothing.",
   "CreatedAt": "2026-07-16T12:48:41.5602571Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5602578Z",
+  "UpdatedAt": "2026-07-16T13:07:17.710675Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5602596Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "fd55635d29afd8d4e2639b3f97510fbefcb055da3fd51be6680c16c4099471b0",
+      "Text": "Brak nowości z ostatniej synchronizacji.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7106729Z",
       "Suggestions": [],
       "Comments": []
     }

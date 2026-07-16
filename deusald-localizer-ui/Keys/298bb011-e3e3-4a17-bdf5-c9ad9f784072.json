@@ -4,7 +4,7 @@
   "KeyName": "day",
   "Description": "Singular unit word inside the clear-old-comments confirmation.",
   "CreatedAt": "2026-07-16T12:48:41.5595051Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5595058Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7110124Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5595076Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "944c27e5b97ab7793e4b6e9ff29384890ece0c7c04d2e2bf81c5f763469cc66b",
+      "Text": "dzień",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7110104Z",
       "Suggestions": [],
       "Comments": []
     }

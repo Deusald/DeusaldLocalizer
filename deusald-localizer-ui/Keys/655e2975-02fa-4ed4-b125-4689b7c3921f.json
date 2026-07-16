@@ -4,7 +4,7 @@
   "KeyName": "emptyState",
   "Description": "Empty-state text when there are no pending changes.",
   "CreatedAt": "2026-07-16T12:48:41.5601362Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5601369Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7107924Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.560139Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "5df85eacea82c6583bf2571f79f25e3546c0a80d50ab83317035c62f4cd4c922",
+      "Text": "Brak niezatwierdzonych zmian.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.71079Z",
       "Suggestions": [],
       "Comments": []
     }

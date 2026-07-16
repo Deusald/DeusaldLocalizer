@@ -4,7 +4,7 @@
   "KeyName": "adminFullAccess",
   "Description": "Permissions summary for an admin member.",
   "CreatedAt": "2026-07-16T12:48:41.5593823Z",
-  "UpdatedAt": "2026-07-16T12:48:41.559383Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7109211Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5593849Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c2de60c11e23605896f9dd745625d0565138b2d4b3af165075eb0201106f466b",
+      "Text": "Administrator — pełny dostęp",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7109191Z",
       "Suggestions": [],
       "Comments": []
     }

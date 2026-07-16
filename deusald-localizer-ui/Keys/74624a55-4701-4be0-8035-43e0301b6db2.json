@@ -4,7 +4,7 @@
   "KeyName": "commented",
   "Description": "Notification source label for a key or translation comment.",
   "CreatedAt": "2026-07-16T12:48:41.5598722Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5598729Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7105745Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5598749Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "42674d19d5e05bad9d550c6453799ac6d73f0f853922610e88c6ca99cf937510",
+      "Text": "skomentował(a)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7105718Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "addCommentPlaceholder",
   "Description": "Placeholder for the comment compose box",
   "CreatedAt": "2026-07-16T12:48:41.5587426Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5587433Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7081581Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5587455Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "aa160b93871418106c00de28c0aa6e1b1a41e225fc0cc9d9dadfc9c5257a81bd",
+      "Text": "Dodaj komentarz…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.708156Z",
       "Suggestions": [],
       "Comments": []
     }

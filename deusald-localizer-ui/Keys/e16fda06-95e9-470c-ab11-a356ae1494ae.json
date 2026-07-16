@@ -4,7 +4,7 @@
   "KeyName": "keyComments",
   "Description": "Header label for the key-level comments thread.",
   "CreatedAt": "2026-07-16T12:48:41.5577161Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5577167Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7079679Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5577186Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "27be43c58810bb24d25c0d8598f5969dfe12a26daa297e72da58f682377cab9f",
+      "Text": "Komentarze do klucza",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7079664Z",
       "Suggestions": [],
       "Comments": []
     }

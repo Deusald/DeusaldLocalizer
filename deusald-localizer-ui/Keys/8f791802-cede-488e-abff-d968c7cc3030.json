@@ -4,7 +4,7 @@
   "KeyName": "deleteMember",
   "Description": "Tooltip on the button that deletes a member.",
   "CreatedAt": "2026-07-16T12:48:41.5594324Z",
-  "UpdatedAt": "2026-07-16T12:48:41.559433Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7110265Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.559435Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "483af44e7a14988dbbdb019d972e449e37c8b77a82c73e5d24285156019b7b25",
+      "Text": "Usuń członka",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7110241Z",
       "Suggestions": [],
       "Comments": []
     }

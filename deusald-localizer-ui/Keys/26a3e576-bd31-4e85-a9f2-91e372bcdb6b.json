@@ -4,7 +4,7 @@
   "KeyName": "flagNeedsReview",
   "Description": "Selectable flag type label: Needs review.",
   "CreatedAt": "2026-07-16T12:48:41.5578927Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5578934Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7080781Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5578954Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "07297fa94a997d0f807bd37c61993a8821ca406b5e4498e4f0759e50ab154dd4",
+      "Text": "Wymaga przeglądu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7080765Z",
       "Suggestions": [],
       "Comments": []
     }

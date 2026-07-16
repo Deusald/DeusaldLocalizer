@@ -4,7 +4,7 @@
   "KeyName": "oneCategory",
   "Description": "Filter trigger label fallback when one unknown category is selected.",
   "CreatedAt": "2026-07-16T12:48:41.5573216Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5573223Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7091206Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5573244Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "92b3d7f0debc1e04735fa46948a3202ca2c724d21816f80ca5a922ceef0a3c71",
+      "Text": "1 kategoria",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7091178Z",
       "Suggestions": [],
       "Comments": []
     }

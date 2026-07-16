@@ -4,7 +4,7 @@
   "KeyName": "noteNone",
   "Description": "Placeholder shown in a flag tooltip when the flag has no note.",
   "CreatedAt": "2026-07-16T12:48:41.5577832Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5577838Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7084003Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5577857Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "90e6391f5cb97cc70095a186fbfbe13886a54ea6a4874c399ce9398a47cf96f9",
+      "Text": "Brak notatki",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7083982Z",
       "Suggestions": [],
       "Comments": []
     }

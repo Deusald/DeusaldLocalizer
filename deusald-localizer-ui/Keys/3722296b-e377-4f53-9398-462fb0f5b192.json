@@ -4,7 +4,7 @@
   "KeyName": "updateInstalling",
   "Description": "Update button label while installing (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.079434Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5565738Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7077482Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5565807Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "6f7b95d3a96b7dac0452f14df7f265e1af80a90e8e3c7d96c9dcfe10e814e996",
+      "Text": "Instalowanie… {pct}%",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7077465Z",
       "Suggestions": [],
       "Comments": []
     }

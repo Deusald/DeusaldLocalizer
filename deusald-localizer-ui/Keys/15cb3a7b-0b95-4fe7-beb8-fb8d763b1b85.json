@@ -4,7 +4,7 @@
   "KeyName": "working",
   "Description": "Busy label on the import button while an action runs (web).",
   "CreatedAt": "2026-07-16T12:29:28.0792972Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5563556Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7078987Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.556359Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "5474eef8d0f179c707cf418e2bbb468c77cc24edc5e9f5f4e137e85e06a8eea0",
+      "Text": "Pracuję…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7078971Z",
       "Suggestions": [],
       "Comments": []
     }

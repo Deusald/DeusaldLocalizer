@@ -4,7 +4,7 @@
   "KeyName": "collapse",
   "Description": "Tooltip for collapsing an expanded category node.",
   "CreatedAt": "2026-07-16T12:48:41.5571851Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5571862Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7090457Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5571904Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "be6eb1fc3b05bf9dceebad2eac7841d1b2f40bda9aa2da34df8ca22af02bc3ed",
+      "Text": "Zwiń",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7090436Z",
       "Suggestions": [],
       "Comments": []
     }

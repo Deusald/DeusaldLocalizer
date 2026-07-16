@@ -4,7 +4,7 @@
   "KeyName": "labelFlagType",
   "Description": "Field label for choosing the flag type in the add-flag modal.",
   "CreatedAt": "2026-07-16T12:48:41.5578559Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5578566Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7081023Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5578584Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "154ed4a20d9b42e5430e6bb1072a9cd099d035f70b5982b984cf739eaf01c9d7",
+      "Text": "Typ flagi",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7081007Z",
       "Suggestions": [],
       "Comments": []
     }

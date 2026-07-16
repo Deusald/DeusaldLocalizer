@@ -4,7 +4,7 @@
   "KeyName": "redoLabel",
   "Description": "Redo button tooltip naming the action to be redone.",
   "CreatedAt": "2026-07-16T12:48:41.558903Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5589037Z",
+  "UpdatedAt": "2026-07-16T13:07:17.709795Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5589068Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c38a5f16f3ebb4219b9409d20ea8ab3dcae16ae2036fb96839563a268c6cd7a7",
+      "Text": "Ponów {label} (Ctrl+Y)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7097931Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "titleDeleteKey",
   "Description": "Tooltip on the delete-key button.",
   "CreatedAt": "2026-07-16T12:48:41.5576999Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5577006Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7080211Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5577054Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "6758f1d9b9b43ef45d22cc9bf36c4c24a056ab5b4f2bdaf42da4ef02bd089506",
+      "Text": "Usuń klucz",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7080195Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "errConnect",
   "Description": "Fallback error when connecting to a server project fails.",
   "CreatedAt": "2026-07-16T12:19:57.5420985Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5562371Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7075194Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5562442Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "f823f59299f5b4c256dd5e3df6e681286740fa5f8c6bdfaeb6c64861fe36d9ca",
+      "Text": "Nie udało się połączyć z projektem. Spróbuj ponownie.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7075177Z",
       "Suggestions": [],
       "Comments": []
     }

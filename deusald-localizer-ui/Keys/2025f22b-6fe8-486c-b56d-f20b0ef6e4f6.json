@@ -4,7 +4,7 @@
   "KeyName": "couldNotRegenerateToken",
   "Description": "Error shown when regenerating the current user's token failed.",
   "CreatedAt": "2026-07-16T12:48:41.5596226Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5596233Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7110053Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5596256Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "9573f45c4a2d63b224a5d33f7bb97d41c9934fe22234a3e1c33ae621281fbb8a",
+      "Text": "Nie udało się ponownie wygenerować twojego tokenu. Spróbuj ponownie.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7110032Z",
       "Suggestions": [],
       "Comments": []
     }

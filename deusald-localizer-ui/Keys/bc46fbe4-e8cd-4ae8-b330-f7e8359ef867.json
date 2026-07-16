@@ -4,7 +4,7 @@
   "KeyName": "commentsLabel",
   "Description": "Header label for the translation comments thread of the selected language.",
   "CreatedAt": "2026-07-16T12:48:41.5577087Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5577094Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7079384Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5577127Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a6723ba473a2ec5f2081f34598162c143768285088f9986b506090e27f88bd48",
+      "Text": "Komentarze · {language}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7079368Z",
       "Suggestions": [],
       "Comments": []
     }

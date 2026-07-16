@@ -4,7 +4,7 @@
   "KeyName": "downloadTooltip",
   "Description": "Tooltip on a project card's download button (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793255Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5563845Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7078064Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5563884Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "714deeb190897c7153460b042f63ca1555075e31a17a81528223b2ca251e98ea",
+      "Text": "Pobierz kopię (.zip)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7078048Z",
       "Suggestions": [],
       "Comments": []
     }

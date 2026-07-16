@@ -4,7 +4,7 @@
   "KeyName": "conflictSuffix",
   "Description": "Suffix appended to a sync status message reporting the number of conflicts.",
   "CreatedAt": "2026-07-16T12:48:41.5592Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5592006Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7096676Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5592038Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a1427a9c20cc54d644be5bc004c170c0841378bb8f45addaf2106cb7f9176e84",
+      "Text": " · {count} konflikt(ów)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7096656Z",
       "Suggestions": [],
       "Comments": []
     }

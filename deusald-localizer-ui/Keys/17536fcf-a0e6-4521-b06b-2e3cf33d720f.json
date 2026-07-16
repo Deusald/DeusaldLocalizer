@@ -4,7 +4,7 @@
   "KeyName": "addCategory",
   "Description": "Button that opens the new category modal.",
   "CreatedAt": "2026-07-16T12:48:41.5572314Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5572324Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7090097Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5573022Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "aafdf428fd0256ea3cfadda7cdd0d520470fb7eb3ef17a61ecad8c27c2a9e402",
+      "Text": "Dodaj kategorię",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7090076Z",
       "Suggestions": [],
       "Comments": []
     }

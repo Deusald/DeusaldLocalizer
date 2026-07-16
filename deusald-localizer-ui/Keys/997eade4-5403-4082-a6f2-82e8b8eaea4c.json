@@ -4,7 +4,7 @@
   "KeyName": "signInButton",
   "Description": "Primary button that submits the login form",
   "CreatedAt": "2026-07-16T12:48:41.5614392Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5614399Z",
+  "UpdatedAt": "2026-07-16T13:07:17.70737Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5614437Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "bfd402b2f6f3812529b55596136d3a11c51616317e3b1cd999928e2d4eae7d3f",
+      "Text": "Zaloguj się",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7073683Z",
       "Suggestions": [],
       "Comments": []
     }

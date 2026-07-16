@@ -4,7 +4,7 @@
   "KeyName": "commaSeparated",
   "Description": "Hint that an array preview value is comma-separated",
   "CreatedAt": "2026-07-16T12:48:41.5583508Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5583515Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7088281Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5583598Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "ec9a30de321bde9b81164a5a5455d5e9f73411e70d1ef73311bf94168afd3793",
+      "Text": "oddzielone przecinkami",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7088259Z",
       "Suggestions": [],
       "Comments": []
     }

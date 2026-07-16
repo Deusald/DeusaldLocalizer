@@ -4,7 +4,7 @@
   "KeyName": "descriptionHint",
   "Description": "Hint marking the description field as optional",
   "CreatedAt": "2026-07-16T12:48:41.5615684Z",
-  "UpdatedAt": "2026-07-16T12:48:41.561569Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7074009Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.561571Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "ec91fdd9256cb75ae611249b50cb7eb16533f0fa91b86239ec1d439a1ea033b8",
+      "Text": "opcjonalnie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7073989Z",
       "Suggestions": [],
       "Comments": []
     }

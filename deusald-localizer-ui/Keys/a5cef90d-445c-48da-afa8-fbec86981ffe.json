@@ -4,7 +4,7 @@
   "KeyName": "yourTranslationLabel",
   "Description": "Label for the user's translation comparison panel",
   "CreatedAt": "2026-07-16T12:48:41.5587113Z",
-  "UpdatedAt": "2026-07-16T12:48:41.558712Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7083212Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.558714Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "9f4ffbc37f046ce5d92e30e4d167eaae9b2e0bb258e09c8eee3aa0de5c3e5e1f",
+      "Text": "Twoje tłumaczenie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.708319Z",
       "Suggestions": [],
       "Comments": []
     }

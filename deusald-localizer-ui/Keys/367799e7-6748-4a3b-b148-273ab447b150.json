@@ -4,7 +4,7 @@
   "KeyName": "resetAccessToken",
   "Description": "Tooltip on the admin button that resets a member's token.",
   "CreatedAt": "2026-07-16T12:48:41.5594218Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5594225Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7111562Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5594261Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "cfbbf8338fe9030813b37b05767b1f80a293dc056d54ebf32568a0fa40877cc2",
+      "Text": "Resetuj token dostępu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7111541Z",
       "Suggestions": [],
       "Comments": []
     }

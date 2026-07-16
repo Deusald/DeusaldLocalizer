@@ -4,7 +4,7 @@
   "KeyName": "flagsHint",
   "Description": "Hint explaining flag include/exclude behavior.",
   "CreatedAt": "2026-07-16T12:48:41.5607801Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5607808Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7104459Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5607857Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "96ca81b38aad5069b58ca3798dc9b56b7ef0ac632e39f1c22e18e1fc9d13dd03",
+      "Text": "Wyklucz odrzuca klucze niosące flagę; Uwzględnij je zachowuje.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7104432Z",
       "Suggestions": [],
       "Comments": []
     }

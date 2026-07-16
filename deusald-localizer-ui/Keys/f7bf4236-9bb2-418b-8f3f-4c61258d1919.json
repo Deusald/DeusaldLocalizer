@@ -4,7 +4,7 @@
   "KeyName": "discard",
   "Description": "Button confirming discard of all pending changes.",
   "CreatedAt": "2026-07-16T12:48:41.5599812Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5599818Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7107677Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5599855Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "eb1a70e39274bb762b5d7c1adb5debeea2b05e12af28207f21a375b596853273",
+      "Text": "Odrzuć",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7107657Z",
       "Suggestions": [],
       "Comments": []
     }

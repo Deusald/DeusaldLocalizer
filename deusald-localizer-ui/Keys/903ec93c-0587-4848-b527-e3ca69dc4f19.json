@@ -4,7 +4,7 @@
   "KeyName": "openProject",
   "Description": "Button that opens a project folder (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794649Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5566064Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7076916Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.55661Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "267ee808b9b567723f650693205db343d8db57b072d25a7bc73d0a5cf44fd687",
+      "Text": "Otwórz projekt…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7076899Z",
       "Suggestions": [],
       "Comments": []
     }

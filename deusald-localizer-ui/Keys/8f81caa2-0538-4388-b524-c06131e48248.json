@@ -4,7 +4,7 @@
   "KeyName": "you",
   "Description": "Badge marking the current user in the member list.",
   "CreatedAt": "2026-07-16T12:48:41.5593474Z",
-  "UpdatedAt": "2026-07-16T12:48:41.559348Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7112007Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5593499Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "bb0347a468d97e98a9c00e37cebec1ab930f6f1221cae0f1fbb92b07e1900ba2",
+      "Text": "ty",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7111979Z",
       "Suggestions": [],
       "Comments": []
     }

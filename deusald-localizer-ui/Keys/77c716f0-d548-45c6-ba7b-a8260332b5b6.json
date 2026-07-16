@@ -4,7 +4,7 @@
   "KeyName": "editEnums",
   "Description": "Button opening the project enums editor",
   "CreatedAt": "2026-07-16T12:48:41.5582792Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5582798Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7088503Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5582846Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "766b3446dc2e5a84387f0563b7fb69b947675a6b27ab73a70de54ce8d0fa8023",
+      "Text": "Edytuj typy wyliczeniowe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7088483Z",
       "Suggestions": [],
       "Comments": []
     }

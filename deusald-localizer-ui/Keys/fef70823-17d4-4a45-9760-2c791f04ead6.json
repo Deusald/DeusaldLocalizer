@@ -4,7 +4,7 @@
   "KeyName": "bannedHint",
   "Description": "Hint next to the ban toggle.",
   "CreatedAt": "2026-07-16T12:48:41.5593185Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5593191Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7109466Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.559321Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c8f04969960b71328f65d75fbe1a1b0978a161328d4fe455a53c0876590852a3",
+      "Text": "blokuje temu członkowi możliwość współtworzenia",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7109445Z",
       "Suggestions": [],
       "Comments": []
     }

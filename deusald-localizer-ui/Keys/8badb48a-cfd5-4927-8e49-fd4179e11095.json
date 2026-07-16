@@ -4,7 +4,7 @@
   "KeyName": "tabAll",
   "Description": "Tab showing all keys.",
   "CreatedAt": "2026-07-16T12:48:41.5569861Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5569871Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7089845Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5569914Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a52ace420f2175d08b1577a1bea5445e36801229c074ef9ed6c55a73401fd9c2",
+      "Text": "Wszystkie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7089824Z",
       "Suggestions": [],
       "Comments": []
     }

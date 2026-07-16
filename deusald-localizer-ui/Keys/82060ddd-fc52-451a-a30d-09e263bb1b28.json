@@ -4,7 +4,7 @@
   "KeyName": "newAccessTokenBody",
   "Description": "Body of the modal showing the user's freshly regenerated token.",
   "CreatedAt": "2026-07-16T12:48:41.5596418Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5596424Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7111006Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5596483Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "21d90940db84a9e615221fb9e029f245d0ac6531c2bcd4b032de4f2a2edfa1b0",
+      "Text": "Twój poprzedni token już nie działa. Skopiuj ten i przechowaj go w bezpiecznym miejscu — od teraz będziesz go używać do logowania.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7110974Z",
       "Suggestions": [],
       "Comments": []
     }

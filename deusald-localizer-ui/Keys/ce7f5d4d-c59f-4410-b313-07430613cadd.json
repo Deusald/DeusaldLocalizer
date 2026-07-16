@@ -4,7 +4,7 @@
   "KeyName": "duplicateKey",
   "Description": "Validation error for a duplicate key name in the category.",
   "CreatedAt": "2026-07-16T12:48:41.5575785Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5575791Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7092686Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5575811Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "d30af5f955e974dddfb2b343dfad028b9b6dc15ffc7d4a25ca6d3ef07df5d716",
+      "Text": "Klucz o tej nazwie już istnieje w tej kategorii",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7092557Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "onServerNowLabel",
   "Description": "Label for the server-version comparison panel",
   "CreatedAt": "2026-07-16T12:48:41.5587019Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5587025Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7082592Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5587044Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "7327a69d8e2e2b5b058e3ecb606f75824b307a642090ec7f589b876322182820",
+      "Text": "Aktualnie na serwerze",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.708257Z",
       "Suggestions": [],
       "Comments": []
     }

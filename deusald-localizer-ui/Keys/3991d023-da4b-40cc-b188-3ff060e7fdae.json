@@ -4,7 +4,7 @@
   "KeyName": "noSource",
   "Description": "Empty state when the source text is blank",
   "CreatedAt": "2026-07-16T12:48:41.5582487Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5582493Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7084329Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5582513Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "15314cc74ed23f1abaa6296b52435db2acd42ce5d5be8dac39c076f55d884e3a",
+      "Text": "Brak źródła",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7084308Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "serverUrlLabel",
   "Description": "Field label for the server URL input",
   "CreatedAt": "2026-07-16T12:48:41.56118Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5611807Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7073063Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5611826Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "22f5ebc3ad3ff7638885810bfd9485a3d1b536966124cae45727d4181760f9ba",
+      "Text": "Adres URL serwera",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7073047Z",
       "Suggestions": [],
       "Comments": []
     }

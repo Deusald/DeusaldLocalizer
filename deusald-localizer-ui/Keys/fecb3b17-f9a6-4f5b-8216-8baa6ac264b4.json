@@ -4,7 +4,7 @@
   "KeyName": "changesNotPushed",
   "Description": "Tooltip on the uncommitted status pill for an online project.",
   "CreatedAt": "2026-07-16T12:48:41.5589502Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5589509Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7096258Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5589547Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "6bbbb1d58e82beae3f187ba2519b9f9034075b41034cb4fbc0bbd8217c7c2f76",
+      "Text": "{count} zmian(a) niewypchniętych na serwer",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7096234Z",
       "Suggestions": [],
       "Comments": []
     }

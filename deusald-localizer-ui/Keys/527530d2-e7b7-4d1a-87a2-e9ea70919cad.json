@@ -4,7 +4,7 @@
   "KeyName": "allLocalChangesOnServer",
   "Description": "Tooltip on the committed status pill when nothing is pending.",
   "CreatedAt": "2026-07-16T12:48:41.5589361Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5589368Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7096088Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.558945Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "587b943b40c583694e3fcb37a468f42cb8bb3cee9965a12d30942fc6486dd033",
+      "Text": "Wszystkie lokalne zmiany są na serwerze",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7096064Z",
       "Suggestions": [],
       "Comments": []
     }

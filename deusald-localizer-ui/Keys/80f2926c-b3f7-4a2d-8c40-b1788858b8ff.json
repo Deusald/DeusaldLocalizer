@@ -4,7 +4,7 @@
   "KeyName": "hintApplyOrDiscard",
   "Description": "Hint shown when uncommitted mode is on and changes are pending.",
   "CreatedAt": "2026-07-16T12:48:41.5600476Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5600483Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7108Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5600542Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "7a087e3fcd70b96c194a585015fb93333cb81539391bb6d9502a239c50d00f7c",
+      "Text": "Zastosuj lub odrzuć wszystkie zmiany, aby to wyłączyć.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7107979Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "post",
   "Description": "Button posting a new comment",
   "CreatedAt": "2026-07-16T12:48:41.5587508Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5587514Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7081738Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5587534Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a5554622c655c7a7e470c115f374d92595fa3b1f431dc6ee3d1edfbc103846ed",
+      "Text": "Opublikuj",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7081717Z",
       "Suggestions": [],
       "Comments": []
     }

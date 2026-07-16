@@ -4,7 +4,7 @@
   "KeyName": "conflictsIntro",
   "Description": "Intro paragraph explaining the conflict list.",
   "CreatedAt": "2026-07-16T12:48:41.5597311Z",
-  "UpdatedAt": "2026-07-16T12:48:41.559732Z",
+  "UpdatedAt": "2026-07-16T13:07:17.71001Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5597356Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "e419e60b7c33ad5618f85fb2c2963c29f7991ff710c2442e4484604be349f131",
+      "Text": "Te zmiany kolidują z nowszymi edycjami już obecnymi na serwerze. Otwórz każdą z nich, aby wybrać sposób rozwiązania, a następnie wypchnij ponownie.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7100078Z",
       "Suggestions": [],
       "Comments": []
     }

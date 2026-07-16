@@ -4,7 +4,7 @@
   "KeyName": "suggestMine",
   "Description": "Button/label for adding the local version as a suggestion",
   "CreatedAt": "2026-07-16T12:48:41.5586039Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5586046Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7082953Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5586093Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "34827e0620645682ca8b921a9260db675378f05a501fa9a7cd09c5d679e210f6",
+      "Text": "Zasugeruj moją",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7082828Z",
       "Suggestions": [],
       "Comments": []
     }

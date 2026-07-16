@@ -4,7 +4,7 @@
   "KeyName": "noCategoriesYet",
   "Description": "Warning title shown when there are no categories to add a key to.",
   "CreatedAt": "2026-07-16T12:48:41.5575364Z",
-  "UpdatedAt": "2026-07-16T12:48:41.557537Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7093604Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5575389Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "7465b45646c600fd127321591be805a04e9f1f284a3d9630c68ede4b9c53dc31",
+      "Text": "Brak kategorii",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.709358Z",
       "Suggestions": [],
       "Comments": []
     }

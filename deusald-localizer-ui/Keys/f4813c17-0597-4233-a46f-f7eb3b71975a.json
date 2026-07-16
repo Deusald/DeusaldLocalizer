@@ -4,7 +4,7 @@
   "KeyName": "slugLabel",
   "Description": "Field label for the slug input",
   "CreatedAt": "2026-07-16T12:48:41.5614733Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5614739Z",
+  "UpdatedAt": "2026-07-16T13:08:24.2238576Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5614887Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "d15387ecc6c5e22dee4fb57610138e155c1c84cc8c1a187ff7fa2f1edb3beff6",
+      "Text": "Slug",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:08:24.2234726Z",
       "Suggestions": [],
       "Comments": []
     }

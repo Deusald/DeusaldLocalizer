@@ -4,7 +4,7 @@
   "KeyName": "slugHint",
   "Description": "Hint next to the Slug label",
   "CreatedAt": "2026-07-16T12:48:41.5614974Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5614982Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7074757Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5615011Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c1ebdfc240e26552e773efdc9a3a02ff2866fa2e37f9ee0697003694cc2ffcd6",
+      "Text": "używany w nazwach plików i API",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7074734Z",
       "Suggestions": [],
       "Comments": []
     }

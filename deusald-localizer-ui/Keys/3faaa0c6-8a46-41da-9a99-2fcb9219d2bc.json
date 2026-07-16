@@ -4,7 +4,7 @@
   "KeyName": "done",
   "Description": "Footer button to close the import modal.",
   "CreatedAt": "2026-07-16T12:48:41.5606163Z",
-  "UpdatedAt": "2026-07-16T12:48:41.560617Z",
+  "UpdatedAt": "2026-07-16T13:07:17.710118Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.560623Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516",
+      "Text": "Gotowe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7101145Z",
       "Suggestions": [],
       "Comments": []
     }

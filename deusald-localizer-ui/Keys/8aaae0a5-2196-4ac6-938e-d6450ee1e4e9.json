@@ -4,7 +4,7 @@
   "KeyName": "unknownAuthor",
   "Description": "Fallback name for an unknown suggestion author",
   "CreatedAt": "2026-07-16T12:48:41.5584492Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5584499Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7086922Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5584585Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14",
+      "Text": "Nieznany",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7086897Z",
       "Suggestions": [],
       "Comments": []
     }

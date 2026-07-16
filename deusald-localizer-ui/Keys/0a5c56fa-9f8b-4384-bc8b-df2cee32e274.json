@@ -4,7 +4,7 @@
   "KeyName": "entryStringPlaceholder",
   "Description": "Placeholder example for an enum entry's string value",
   "CreatedAt": "2026-07-16T12:48:41.5585618Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5585625Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7085285Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5585644Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "6a00dfc1dc867e8454c2c8856e1512d9bf02a76710e3411c0972aec886c76c61",
+      "Text": "Poniedziałek",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7085263Z",
       "Suggestions": [],
       "Comments": []
     }

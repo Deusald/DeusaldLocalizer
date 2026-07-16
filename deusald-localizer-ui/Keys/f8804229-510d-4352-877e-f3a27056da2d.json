@@ -4,7 +4,7 @@
   "KeyName": "unnamed",
   "Description": "Fallback name for an enum with no name",
   "CreatedAt": "2026-07-16T12:48:41.5584791Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5584797Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7086339Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5584844Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "e504e61521948e34f657dd693f242682055ba6ed4d8cfccbd826ef229c7825ff",
+      "Text": "Bez nazwy",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7086319Z",
       "Suggestions": [],
       "Comments": []
     }

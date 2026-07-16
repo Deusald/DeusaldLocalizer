@@ -4,7 +4,7 @@
   "KeyName": "accessTokenResetTitle",
   "Description": "Title of the modal shown after an admin resets a member's token.",
   "CreatedAt": "2026-07-16T12:48:41.559655Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5596556Z",
+  "UpdatedAt": "2026-07-16T13:07:17.710899Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5596576Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "0729ea02564af650a30c40c2ae634ab43b96a901b80c69d688d5143f9cf578f1",
+      "Text": "Reset tokenu dostępu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.710897Z",
       "Suggestions": [],
       "Comments": []
     }

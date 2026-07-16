@@ -4,7 +4,7 @@
   "KeyName": "noReviewLanguages",
   "Description": "Permissions summary when a member has no review languages.",
   "CreatedAt": "2026-07-16T12:48:41.5593912Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5593919Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7111408Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5593965Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "ae28422fbafb1d5d9a5c4f87c7663a4d8677d933d7af833cac6203902643d5be",
+      "Text": "Brak języków przeglądu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7111389Z",
       "Suggestions": [],
       "Comments": []
     }

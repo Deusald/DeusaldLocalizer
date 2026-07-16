@@ -4,7 +4,7 @@
   "KeyName": "syncedFiles",
   "Description": "Sync result message reporting how many files changed.",
   "CreatedAt": "2026-07-16T12:48:41.5590474Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5590483Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7098648Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5590555Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "9c31c3fdd3a658d09d12576f5d7c40d48ff60d600f39c8af7563b2263ae492ac",
+      "Text": "Zsynchronizowano {count} plik(ów)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7098629Z",
       "Suggestions": [],
       "Comments": []
     }

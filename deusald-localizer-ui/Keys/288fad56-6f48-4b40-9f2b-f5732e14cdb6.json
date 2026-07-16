@@ -4,7 +4,7 @@
   "KeyName": "tokenPlaceholder",
   "Description": "Placeholder for the access token input",
   "CreatedAt": "2026-07-16T12:48:41.561429Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5614296Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7073838Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5614317Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "f7eee1e9ccda63085f7f1dd495aa7e629f24898f0ce7a0ebf1c0c0d8be2810d9",
+      "Text": "Wklej swój token dostępu…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7073821Z",
       "Suggestions": [],
       "Comments": []
     }

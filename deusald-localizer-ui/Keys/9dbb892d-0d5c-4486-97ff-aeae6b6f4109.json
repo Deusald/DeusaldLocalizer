@@ -4,7 +4,7 @@
   "KeyName": "searchKeys",
   "Description": "Placeholder for the key search box.",
   "CreatedAt": "2026-07-16T12:48:41.5569763Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5569774Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7089764Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5569825Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "de973d355b143041a29eda922b13f1f35a8ad879994cd1125c883c9367ea45e1",
+      "Text": "Szukaj kluczy…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7089743Z",
       "Suggestions": [],
       "Comments": []
     }

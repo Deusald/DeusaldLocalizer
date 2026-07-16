@@ -4,7 +4,7 @@
   "KeyName": "dragToResize",
   "Description": "Tooltip on the column resizer handle",
   "CreatedAt": "2026-07-16T12:48:41.5616148Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5616155Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7095934Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5616174Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "31b2f1cdb2e93ebb29fc58ab6565f5f4eb5412110ac402ffd1a9114fdd097e00",
+      "Text": "Przeciągnij, aby zmienić rozmiar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7095914Z",
       "Suggestions": [],
       "Comments": []
     }

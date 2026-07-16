@@ -4,7 +4,7 @@
   "KeyName": "hintDirect",
   "Description": "Hint shown when importing as direct text.",
   "CreatedAt": "2026-07-16T12:48:41.560495Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5604957Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7101291Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5604976Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c8090b59fc22c20cea0b42231eb98c9a11e76f814a95e9fe3121f985d062275d",
+      "Text": "Zmienione komórki nadpisują zatwierdzone tłumaczenie bezpośrednio.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7101259Z",
       "Suggestions": [],
       "Comments": []
     }

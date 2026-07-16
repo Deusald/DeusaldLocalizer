@@ -4,7 +4,7 @@
   "KeyName": "intro",
   "Description": "Home page intro paragraph (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794003Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5565261Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7076667Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5565415Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "b27b63023828f0023843ffdfd25d8fd22114b3b40ddb9173e8f6f40bb1a67b15",
+      "Text": "Edytuj teksty, proponuj alternatywy i pozwól społeczności głosować na najlepsze tłumaczenie każdego klucza.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7076507Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "removeTooltip",
   "Description": "Tooltip on a recent-project card's remove button (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794987Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5566453Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7077053Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.556649Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "9720cab17eed1ba051d70a16696de70e8d9bc480918e66c43c60f7b4b097de2b",
+      "Text": "Usuń z ostatnich",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7077037Z",
       "Suggestions": [],
       "Comments": []
     }

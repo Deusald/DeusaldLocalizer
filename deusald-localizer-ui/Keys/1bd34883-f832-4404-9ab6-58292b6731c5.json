@@ -4,7 +4,7 @@
   "KeyName": "months",
   "Description": "Unit option for the comment-age selector.",
   "CreatedAt": "2026-07-16T12:48:41.5594743Z",
-  "UpdatedAt": "2026-07-16T12:48:41.559475Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7110917Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5594767Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "16837433443196b57199277283d81f9432152d4d389026deae3266b96bbe980d",
+      "Text": "miesiące",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7110897Z",
       "Suggestions": [],
       "Comments": []
     }

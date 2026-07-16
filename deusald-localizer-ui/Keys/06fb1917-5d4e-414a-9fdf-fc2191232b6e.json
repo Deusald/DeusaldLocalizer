@@ -4,7 +4,7 @@
   "KeyName": "hintSuggestions",
   "Description": "Hint shown when importing as suggestions.",
   "CreatedAt": "2026-07-16T12:48:41.5604849Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5604856Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7101391Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5604876Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "b0be11579efd8c2d694758c5f8e944546ffad3586b27f721a6c3ece6096c4aa6",
+      "Text": "Zmienione komórki stają się sugestiami do przeglądu i zatwierdzenia.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7101356Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "translatingInto",
   "Description": "Prefix label shown before the target language name in the top bar.",
   "CreatedAt": "2026-07-16T12:48:41.5587818Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5587825Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7098949Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5587844Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "243eb2e8859cb888b15c98ec267c039664d5468c6aec087443b8fe358c4a792a",
+      "Text": "Tłumaczenie na",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7098926Z",
       "Suggestions": [],
       "Comments": []
     }

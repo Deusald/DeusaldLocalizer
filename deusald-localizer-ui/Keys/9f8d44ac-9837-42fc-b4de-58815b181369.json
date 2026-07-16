@@ -4,7 +4,7 @@
   "KeyName": "csharpHint",
   "Description": "Hint describing the generated C# class.",
   "CreatedAt": "2026-07-16T12:48:41.5607011Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5607017Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7103324Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5607038Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "35f9d1f7e3c8c048fbc0af836fdfd2d46e26aa7f88d53140455c3581f8a3061a",
+      "Text": "Generuje jedną statyczną klasę identyfikatorów kluczy (pogrupowanych według kategorii) oraz tabelę tłumaczeń i metodę wyszukiwania Get(language, keyId, values).",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.71033Z",
       "Suggestions": [],
       "Comments": []
     }

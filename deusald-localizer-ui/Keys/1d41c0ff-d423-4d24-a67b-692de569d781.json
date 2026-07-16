@@ -4,7 +4,7 @@
   "KeyName": "emptySub",
   "Description": "Empty-state description (web).",
   "CreatedAt": "2026-07-16T12:29:28.079318Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5563787Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7078121Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5563825Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "96d68a90b8e058dfd60aa9965d78ba4cd859b699763b471b4390e2de4e14d883",
+      "Text": "Utwórz nowy projekt lub zaimportuj plik .zip, aby zacząć. Są one zapisywane w tej przeglądarce.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7078103Z",
       "Suggestions": [],
       "Comments": []
     }

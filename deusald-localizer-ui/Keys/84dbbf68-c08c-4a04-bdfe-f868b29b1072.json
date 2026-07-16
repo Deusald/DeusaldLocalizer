@@ -4,7 +4,7 @@
   "KeyName": "timeDays",
   "Description": "Relative time in days.",
   "CreatedAt": "2026-07-16T12:19:57.5420265Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5562267Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7075659Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5562319Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "18bb766fcc18ee05561610c102177f848fc469d5f353dd8843f329d2b9acb78d",
+      "Text": "{d} dni temu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.707564Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "invalidSlug",
   "Description": "Validation error for an invalid slug",
   "CreatedAt": "2026-07-16T12:48:41.5615088Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5615095Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7074236Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5615117Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "cab9d57b26717e7678aff9f31e47d20c7abd47ead0342ca7704c9c184fce3c45",
+      "Text": "Tylko małe litery, cyfry i myślniki",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7074219Z",
       "Suggestions": [],
       "Comments": []
     }

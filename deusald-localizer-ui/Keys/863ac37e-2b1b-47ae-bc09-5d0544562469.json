@@ -4,7 +4,7 @@
   "KeyName": "addLanguage",
   "Description": "Button and header for adding a language.",
   "CreatedAt": "2026-07-16T12:48:41.5569154Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5569164Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7094651Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5569248Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "7ef7c4415c8ea5dee02a700e54f32a353dde5aec3e2feeaf555111fc3f02272e",
+      "Text": "Dodaj język",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.709463Z",
       "Suggestions": [],
       "Comments": []
     }

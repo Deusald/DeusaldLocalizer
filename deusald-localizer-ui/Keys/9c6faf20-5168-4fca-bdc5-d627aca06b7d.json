@@ -4,7 +4,7 @@
   "KeyName": "errFirstSignIn",
   "Description": "Error when the first-time token rotation fails (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0795317Z",
-  "UpdatedAt": "2026-07-16T12:48:41.556697Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7076177Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5567006Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "39188f3d9c2ffecc7f822966c19cd2df88b199be082b2f5908f03f8101316db4",
+      "Text": "Nie udało się dokończyć pierwszego logowania. Spróbuj ponownie.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.707616Z",
       "Suggestions": [],
       "Comments": []
     }

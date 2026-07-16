@@ -4,7 +4,7 @@
   "KeyName": "prevSourceHash",
   "Description": "Detail row label for previous source hash.",
   "CreatedAt": "2026-07-16T12:48:41.5602103Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5602109Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7108348Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5602157Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "e4df7502d1df11dc280b2cd2f72dba3584d3faa91abc57ef5c7362d47d3f111a",
+      "Text": "Poprz. hash źródła",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7108328Z",
       "Suggestions": [],
       "Comments": []
     }

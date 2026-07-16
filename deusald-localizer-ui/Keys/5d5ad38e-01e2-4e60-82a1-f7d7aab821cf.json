@@ -4,7 +4,7 @@
   "KeyName": "addVariable",
   "Description": "Button adding a new variable to the key",
   "CreatedAt": "2026-07-16T12:48:41.558289Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5582897Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7088193Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5582917Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "e10f539e38e1a1059e3848c5cfe7a53e9df104a685bdebd67768b0fbc72a0913",
+      "Text": "Dodaj zmienną",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7088172Z",
       "Suggestions": [],
       "Comments": []
     }

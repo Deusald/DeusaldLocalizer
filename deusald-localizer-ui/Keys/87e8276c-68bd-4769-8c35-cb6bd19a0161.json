@@ -4,7 +4,7 @@
   "KeyName": "accessTokenLabel",
   "Description": "Field label for the access token input",
   "CreatedAt": "2026-07-16T12:48:41.5612339Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5612345Z",
+  "UpdatedAt": "2026-07-16T13:07:17.707248Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5612395Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "9a911b08feb9d2928240dda42c6efa8794ab3457f8b59a7cfb5187e817f948e3",
+      "Text": "Token dostępu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7072353Z",
       "Suggestions": [],
       "Comments": []
     }

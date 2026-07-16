@@ -4,7 +4,7 @@
   "KeyName": "pushed",
   "Description": "Push result message on success.",
   "CreatedAt": "2026-07-16T12:48:41.5591357Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5591363Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7097396Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5591383Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "579e8c6aaa20ba38de7da799bcef6fea443b99b0f02518c8b83cd65d77754c56",
+      "Text": "Wypchnięto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7097373Z",
       "Suggestions": [],
       "Comments": []
     }

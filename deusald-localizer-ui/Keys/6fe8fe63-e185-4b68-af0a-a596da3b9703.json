@@ -4,7 +4,7 @@
   "KeyName": "communitySuggestions",
   "Description": "Header of the suggestions list",
   "CreatedAt": "2026-07-16T12:48:41.5583974Z",
-  "UpdatedAt": "2026-07-16T12:48:41.558398Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7086669Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5583999Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c7882e28b145eb70e7849656712c05ed8e98be6f432bd71d1863e16c4885c7d0",
+      "Text": "Sugestie społeczności",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7086648Z",
       "Suggestions": [],
       "Comments": []
     }

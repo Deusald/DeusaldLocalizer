@@ -4,7 +4,7 @@
   "KeyName": "conflictBannerPlural",
   "Description": "Conflict banner, plural form.",
   "CreatedAt": "2026-07-16T12:48:41.5601198Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5601207Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7107357Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.560129Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "56553d09faa107a6afa866dbfd5018fd53c41eb20fcacb76129ade490e27d330",
+      "Text": "{count} zmian koliduje z nowszymi edycjami na serwerze — zsynchronizuj i rozwiąż przed wypchnięciem.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7107335Z",
       "Suggestions": [],
       "Comments": []
     }

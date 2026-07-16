@@ -4,7 +4,7 @@
   "KeyName": "saveChanges",
   "Description": "Confirm button label when editing an existing member.",
   "CreatedAt": "2026-07-16T12:48:41.5593272Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5593279Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7111779Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5593297Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "dd0ae7a5cbcf233968657563dce34639e681861e2df6d3f845c08d49981c0999",
+      "Text": "Zapisz zmiany",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.711176Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "deleteComment",
   "Description": "Tooltip on the delete-comment button",
   "CreatedAt": "2026-07-16T12:48:41.5587278Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5587285Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7081658Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5587372Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "e43811a170283c8ebe08b698097e8064f2cd53355ade98b43633378c695bbbad",
+      "Text": "Usuń komentarz",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7081636Z",
       "Suggestions": [],
       "Comments": []
     }

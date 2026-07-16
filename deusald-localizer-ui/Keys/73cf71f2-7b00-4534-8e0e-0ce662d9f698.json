@@ -4,7 +4,7 @@
   "KeyName": "filterByCategory",
   "Description": "Title of the category filter panel.",
   "CreatedAt": "2026-07-16T12:48:41.5571234Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5571243Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7090952Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5571289Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a9b0a2e6303f4ad3a906770739467653e07c9fce3d262107b3e890251064bdc5",
+      "Text": "Filtruj według kategorii",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7090932Z",
       "Suggestions": [],
       "Comments": []
     }

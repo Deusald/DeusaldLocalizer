@@ -4,7 +4,7 @@
   "KeyName": "conflictTagTitle",
   "Description": "Tooltip on a per-row conflict tag.",
   "CreatedAt": "2026-07-16T12:48:41.5601463Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5601469Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7107589Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5601489Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "b873c2a676a650d798c7c584be1cc58fd76ab9fdb8efbc1220c88a31552967d1",
+      "Text": "Koliduje z nowszą edycją na serwerze",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7107568Z",
       "Suggestions": [],
       "Comments": []
     }

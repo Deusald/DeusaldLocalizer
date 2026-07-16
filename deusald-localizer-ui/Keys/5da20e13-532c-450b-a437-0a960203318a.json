@@ -4,7 +4,7 @@
   "KeyName": "sync",
   "Description": "Label of the button that syncs from the server.",
   "CreatedAt": "2026-07-16T12:48:41.5588078Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5588085Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7098573Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5588133Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "8d261a372fde1461cc4a5f53e938b337cfe335e2bd6d4e58d866ab97c5556052",
+      "Text": "Synchronizuj",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7098554Z",
       "Suggestions": [],
       "Comments": []
     }

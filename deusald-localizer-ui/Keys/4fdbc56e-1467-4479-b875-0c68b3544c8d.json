@@ -4,7 +4,7 @@
   "KeyName": "conflictTitle",
   "Description": "Generic conflict header",
   "CreatedAt": "2026-07-16T12:48:41.5586678Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5586685Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7081896Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5586705Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "014659ab9d98c8fea5fed2a5a3bc3c41d6478904a9184c65a57769c439940d14",
+      "Text": "Konflikt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7081874Z",
       "Suggestions": [],
       "Comments": []
     }

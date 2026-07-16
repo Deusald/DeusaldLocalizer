@@ -4,7 +4,7 @@
   "KeyName": "opening",
   "Description": "Busy label on the open-project button (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794599Z",
-  "UpdatedAt": "2026-07-16T12:48:41.556601Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7076761Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5566046Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c926c2c50e65d5a5799f548604472ee8554b53c376e45be580b3a06a484d8fc0",
+      "Text": "Otwieranie…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7076744Z",
       "Suggestions": [],
       "Comments": []
     }

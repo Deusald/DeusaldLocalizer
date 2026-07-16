@@ -4,7 +4,7 @@
   "KeyName": "title",
   "Description": "Header title of the recent changes modal.",
   "CreatedAt": "2026-07-16T12:48:41.5602344Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5602351Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7107043Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.560237Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "f66a12ef4fd99fa604a5229012d70e40f68a73c531b583e5e9b6a77ed5a5c6fc",
+      "Text": "Ostatnie zmiany",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7107023Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "openLogsTooltip",
   "Description": "Tooltip on the logs-folder button (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794694Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5566117Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7076845Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5566195Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "9d19ac7b20394489ece37952abffced2a57895041bb9cb211ea68356751c6a5d",
+      "Text": "Otwórz folder z logami",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7076824Z",
       "Suggestions": [],
       "Comments": []
     }

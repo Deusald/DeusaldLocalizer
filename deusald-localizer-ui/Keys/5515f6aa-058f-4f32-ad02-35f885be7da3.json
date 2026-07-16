@@ -4,7 +4,7 @@
   "KeyName": "deleteBody",
   "Description": "Delete-confirmation body naming the project (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793418Z",
-  "UpdatedAt": "2026-07-16T12:48:41.556419Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7077686Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5564274Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "df4ee618bb5991be393dd05e08490bea64f3063ecebf7d14fa586097f975d73a",
+      "Text": "{name} zostanie usunięty z tej przeglądarki.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7077668Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "flagOutdated",
   "Description": "Label for the Outdated flag.",
   "CreatedAt": "2026-07-16T12:48:41.5573947Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5573953Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7094262Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5573972Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "c759f42e45685095736f036355f5687cb4bd6d35015bea57718eb3480d4b8a6c",
+      "Text": "Nieaktualne",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7094244Z",
       "Suggestions": [],
       "Comments": []
     }

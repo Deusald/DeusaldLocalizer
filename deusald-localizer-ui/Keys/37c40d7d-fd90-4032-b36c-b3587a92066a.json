@@ -4,7 +4,7 @@
   "KeyName": "undoLabel",
   "Description": "Undo button tooltip naming the action to be undone.",
   "CreatedAt": "2026-07-16T12:48:41.5588836Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5588843Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7099323Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -25,6 +25,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5588904Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "caaecb964244327090ff76780817ae0d0e2f4cc4adb7d0cef8a906bba71f17fb",
+      "Text": "Cofnij {label} (Ctrl+Z)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7099303Z",
       "Suggestions": [],
       "Comments": []
     }

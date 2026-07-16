@@ -4,7 +4,7 @@
   "KeyName": "editMember",
   "Description": "Form title and button tooltip for editing an existing member.",
   "CreatedAt": "2026-07-16T12:48:41.5592453Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5592459Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7110422Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5592545Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "a07deaf5beb8e62b77c15f3dd1f576aa206a77c554bdd0abfbeffd6004ac74b5",
+      "Text": "Edytuj członka",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7110398Z",
       "Suggestions": [],
       "Comments": []
     }

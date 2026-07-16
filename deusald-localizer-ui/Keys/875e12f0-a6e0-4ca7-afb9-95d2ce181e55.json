@@ -4,7 +4,7 @@
   "KeyName": "connectButton",
   "Description": "Primary button that starts the connection",
   "CreatedAt": "2026-07-16T12:48:41.5613688Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5613697Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7072631Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5613727Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "1a2303ede07493acc7caaa7c737f3c52bcc9cf04372be19ed1b0af6b9f2c791e",
+      "Text": "Połącz",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7072614Z",
       "Suggestions": [],
       "Comments": []
     }

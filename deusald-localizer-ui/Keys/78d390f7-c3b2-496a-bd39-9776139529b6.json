@@ -4,7 +4,7 @@
   "KeyName": "banned",
   "Description": "Label for the ban toggle in the member form.",
   "CreatedAt": "2026-07-16T12:48:41.5593097Z",
-  "UpdatedAt": "2026-07-16T12:48:41.5593104Z",
+  "UpdatedAt": "2026-07-16T13:07:17.7109281Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -17,6 +17,16 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T12:48:41.5593123Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "05eb210744d1ac5a0c285e8ea472ededbe223a67bd12900db669e6f3d71b663d",
+      "Text": "Zbanowany",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T13:07:17.7109262Z",
       "Suggestions": [],
       "Comments": []
     }
