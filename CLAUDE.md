@@ -10,7 +10,7 @@ Deusald Localizer is a community localization tool for games: translators edit s
 
 Five projects (`DeusaldLocalizer.sln`), all on **.NET 10**:
 
-- **Common** — shared class library (`DeusaldLocalizerCommon` namespace): all domain models (`Loc*`), persistence, business services, and the sync/conflict logic. Multi-targets `netstandard2.1;net10.0`, pinned to **`LangVersion` 9** with `ImplicitUsings` **disabled** — files here need explicit `using`s and cannot use newer C# syntax. Consumed by everything, including any external reader (e.g. a Unity importer).
+- **Common** — shared class library (`DeusaldLocalizerCommon` namespace): all domain models (`Loc*`), persistence, business services, and the sync/conflict logic. Multi-targets `netstandard2.1;net10.0`, pinned to **`LangVersion` 9** with `ImplicitUsings` **disabled** — files here need explicit `using`s and cannot use newer C# syntax. Consumed by everything, including any external reader (e.g. a Unity importer) — published to NuGet as **`DeusaldLocalizerCommon`** via `.github/workflows/deploy-nuget.yml` on a version tag (`GeneratePackageOnBuild` is off).
 - **WebCommon** — Razor class library (assembly `DeusaldLocalizerWebCommon`, **`RootNamespace` `DeusaldLocalizerWeb`**): **all the Blazor editor UI**, `ProjectStateService`, `LocalizerApiClient`, and the **platform-abstraction interfaces**. Shared by both clients. References Common (+ DeusaldSharp).
 - **App** — .NET MAUI Blazor Hybrid **desktop** client (Windows / MacCatalyst). Just a shell + MAUI implementations of the platform interfaces; the UI comes from WebCommon.
 - **WebApp** — Blazor **WebAssembly PWA** web client (assembly `DeusaldLocalizerWeb`), deployable to GitHub Pages. Shell + browser implementations of the platform interfaces; UI from WebCommon.
@@ -45,6 +45,8 @@ There are **no test projects**, so there is no test command. To verify web behav
 ## Domain model
 
 `LocProject` (`Common/Data/_LocProject.cs`) is the aggregate root: `Metadata`, `ProjectMembers`, `Categories`, `Enums`, `UncommitedChanges`, `Keys`. Each key has `Translations` (per language) plus tags/flags/variables. Data classes in `Common/Data/`, enums in `Common/Enums/`.
+
+**Comments** (`LocComment`) are immutable discussion notes that attach to a key, a key+language translation, or a suggestion — scope routed by `LocCommentRef`, resolved via `CommentLocator`; `@username` mentions are parsed against real member usernames by `MentionParser`. **Sub-languages** are regional variants stored as `"{baseCode}_{tag}"` (e.g. `en-US_simple`) and split/resolved by `CultureService`, reusing the base culture's formatting.
 
 **Online vs offline** is derived, not stored: `LocProjectMetadata.IsOnline` is just `ApiUrl` being non-empty. This drives the save strategy.
 
@@ -88,10 +90,11 @@ Three save paths, chosen in `ProjectStateService.SaveAsync()` by online/offline 
 ## UI structure
 
 - **Shared** (WebCommon/Components): the whole editor. Feature components live under `Components/Common/**` but all declare the **flat** namespace **`DeusaldLocalizerWeb.Components.Common`** (folder does not derive the namespace — a project convention). Layouts are `DeusaldLocalizerWeb.Components.Layout`, the `Translate` page (`/translate`, the three-column `LanguagesColumn | KeysColumn | KeyDetailColumn`, `EmptyLayout`) is `DeusaldLocalizerWeb.Components.Pages`. Each `.razor` has a co-located scoped `.razor.css`.
-- **Host-specific**: `Routes`, `NotFound`, and the **`Home` project picker** live in each client, because they differ by platform — App's `Home` uses the native folder picker + Velopack updates; WebApp's `Home` lists IndexedDB projects and does new / open / import-zip / export / delete. Each host's `Router` sets `AdditionalAssemblies` to WebCommon so the shared `/translate` route is discovered.
+- **Host-specific**: `Routes`, `NotFound`, and the **`Home` project picker** live in each client, because they differ by platform — App's `Home` uses the native folder picker + Velopack updates; WebApp's `Home` lists IndexedDB projects and does new / open / import-zip / export / delete, plus **connect-to-server** onboarding for online projects (`ConnectServerModal`). Each host's `Router` sets `AdditionalAssemblies` to WebCommon so the shared `/translate` route is discovered.
 - The only JS interop the shared components use is `copyToClipboard`; other browser features (IndexedDB, zip, file pick) sit behind the platform interfaces. Web zip export/import (`WebProjectArchive`) uses `System.IO.Compression` and round-trips the **exact desktop project-folder format**, so a project moves between clients (and the desktop app) as a `.zip`. `IndexedDbInterop` calls `navigator.storage.persist()` so offline projects and pending changes are not evicted.
+- **The app localizes its own UI.** UI strings live as a Localizer project in `deusald-localizer-ui/` (11 languages), C#-exported into `WebCommon/Services/Localization.cs`. `UiLocalizationService` (BCP-47 `CurrentLanguage`, persisted as the `ui.language` preference; source-language fallback) serves them at runtime; components deriving from `LocalizedComponentBase` inject it as `Loc` and re-render on `CultureChanged`. Reference strings via `Loc.T(Localization.<Category>.<key>)`. The in-editor picker was removed — UI language is chosen on `Home` (`LanguagePicker`).
 
-> Web **online onboarding** (connect to a remote repo → login → FullResync bootstrap into IndexedDB) is **not built yet** — WebApp's `Home` covers offline/local projects; the sync/push plumbing underneath is shared and ready.
+> Web **online onboarding** is **built**: `ConnectServerModal` + `Home.OnConnectConfirmed` (`WebApp/Pages/Home.razor`) download a whole online project from the bot into a freshly minted IndexedDB namespace, then load it like any local online project. First sign-in rotates the admin-issued **one-time token** to the member's own (`RotateInitialTokenAsync`, shown once); returning members set their own token. The sync/push plumbing underneath is shared with the desktop client.
 
 ## Web deployment (GitHub Pages)
 
@@ -99,8 +102,8 @@ Three save paths, chosen in `ProjectStateService.SaveAsync()` by online/offline 
 
 ## Notable libraries
 
-- **SmartFormat** — `VariablePreviewService` renders translation previews with named variables.
-- **ClosedXML** — Excel `.xlsx` import/export (`LocalizationImportService` / `LocalizationExportService`). Heavy in WASM — treat web Excel as untested.
+- **SmartFormat** — `VariablePreviewService` renders translation previews with named variables. Also the runtime used by `UiLocalizationService.T(...)` and by the C#-export `Get(...)` lookup.
+- **ClosedXML** — Excel `.xlsx` import/export (`LocalizationImportService` / `LocalizationExportService`, both `...Async` with an `Action<double> onProgress`). Heavy in WASM — treat web Excel as untested. Export options live in `LocExportOptions` (language subset, tag/flag exclusions, `ModifiedAfter` date). Alongside Excel, `CSharpExportService` emits a self-contained C# file (nested static-class tree of key GUIDs + a `Get(language, keyId, values)` SmartFormat lookup) for baking strings into a game.
 - **BCrypt.Net-Next** — hashing access tokens (`HashedAccessToken`).
 - **Newtonsoft.Json** with `StringEnumConverter` — the project-file serializer (enums as strings). Note: Newtonsoft, not `System.Text.Json` (the API client `LocalizerApiClient` does use `System.Text.Json`).
 - **Velopack** — desktop auto-update (Windows in-place; macOS manual download).

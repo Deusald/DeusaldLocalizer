@@ -5,14 +5,17 @@ translations, and vote on the best one per key — working offline against local
 online against a Git-backed backend, with no database and no lock-in: **a project is just a
 folder of JSON files in a Git repository.**
 
+The same editor ships as **two clients that share one UI**: a **.NET MAUI desktop app**
+(Windows / macOS) and a **Blazor WebAssembly web app** that runs entirely in the browser.
+
 <!-- TODO: hero screenshot of the three-column translation editor -->
 <p align="center">
   <img src="docs/screenshots/editor.png" alt="Translation editor" width="800">
 </p>
 
-> **Try it in your browser:** a web version runs at
+> **Try it in your browser:** the web version runs at
 > **<https://deusald.github.io/DeusaldLocalizer/>** — no install required. The same editor also
-> ships as a desktop app (see [Getting started](#getting-started-desktop-app)).
+> ships as a desktop app (see [Getting started](#getting-started)).
 
 ---
 
@@ -20,15 +23,19 @@ folder of JSON files in a Git repository.**
 
 - [What it does](#what-it-does)
 - [Screenshots](#screenshots)
+- [Two clients, one UI](#two-clients-one-ui)
 - [Tech stack](#tech-stack)
 - [Solution layout](#solution-layout)
 - [How a project is stored](#how-a-project-is-stored)
-- [Getting started (desktop app)](#getting-started-desktop-app)
+- [Getting started](#getting-started)
+  - [Desktop app](#desktop-app)
+  - [Web app](#web-app)
 - [Online sync protocol](#online-sync-protocol)
 - [Backend setup](#backend-setup)
   - [Run locally](#run-the-backend-locally)
   - [Run in Docker](#run-the-backend-in-docker)
   - [Configuration reference](#configuration-reference)
+- [Using translations in your game (`DeusaldLocalizerCommon` on NuGet)](#using-translations-in-your-game-deusaldlocalizercommon-on-nuget)
 - [Building from source](#building-from-source)
 - [License](#license)
 
@@ -36,9 +43,10 @@ folder of JSON files in a Git repository.**
 
 ## What it does
 
-Deusald Localizer is a desktop app built for translating game text collaboratively. The whole
-UI is a three-column editor: **languages** on the left, the **key list** in the middle, and the
-**key detail** on the right.
+Deusald Localizer is built for translating game text collaboratively. The whole UI is a
+three-column editor: **languages** on the left, the **key list** in the middle, and the **key
+detail** on the right. The middle column resizes by dragging, and keys are browsed through a
+collapsible **category tree**.
 
 - **Per-key translation editing** — every localization key holds one translation per language,
   each with a status (untranslated / suggested / approved) and a character-length limit that
@@ -46,22 +54,37 @@ UI is a three-column editor: **languages** on the left, the **key list** in the 
 - **Suggestions & voting** — translators propose alternative wordings for a key/language pair.
   Each suggestion collects votes, so the community can converge on the best translation instead
   of one person overwriting another's work.
+- **Comments & @mentions** — free-form comment threads attach to a key, a single key+language
+  translation, or a suggestion, and members can `@mention` each other; a notification bell
+  surfaces mentions and recent changes.
 - **Source-drift detection** — a translation stores a SHA-256 hash of the source text it was
   written against. When the source language string changes, dependent translations are flagged
   as "source changed" so they can be revisited.
-- **Categories** — keys are organized into categories (folders) and can be filtered by category.
+- **Categories** — keys are organized into a category tree (folders) and can be filtered by
+  category, including collapse-all and single-select.
+- **Languages & sub-languages** — any BCP-47 language, plus **sub-languages** (regional variants
+  stored as `{base}_{tag}`, e.g. `en-US_simple`) that reuse the base culture's formatting.
 - **Tags & flags** — keys carry free-form tags (e.g. `ui`, `button`) for search/filter, plus
   structured workflow flags (with notes and authorship) to mark keys that need attention. The
   key list can be filtered by both.
 - **Variables & live preview** — keys declare typed variables (including project-level enums)
   and the editor renders a live [SmartFormat](https://github.com/axuno/SmartFormat) preview so
-  translators see plural/gender/conditional output as they type.
+  translators see plural/gender/conditional output (and basic HTML tags) as they type.
 - **Project enums** — define named integer→string enums once and reference them from variables,
   enabling SmartFormat `choose`/conditional formatting across translations.
-- **Excel import/export** — round-trip translations through `.xlsx` for external translators,
-  with per-language / tag / flag filters on export.
+- **Excel & C# export/import** — round-trip translations through `.xlsx` for external
+  translators (async, with a progress bar), or export a ready-to-use **C# script** — a nested
+  static-class tree of key GUIDs plus a `Get(language, keyId, values)` SmartFormat lookup — to
+  drop straight into a game project. Exports filter by language subset, tags, flags, and a
+  **"modified after" date**, and remember their settings per project.
+- **Undo/redo & deletion** — a session undo/redo stack; keys and members can be deleted
+  (removing a member reassigns its work to the offline user).
 - **Members & access tokens** — projects have members with per-language review permissions and
   an admin role; online access is authenticated with hashed access tokens.
+- **Localized UI** — the app's own interface ships in **11 languages** (English plus Czech,
+  German, Spanish, French, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Russian),
+  selectable from the Home screen. The UI strings are themselves authored as a Localizer
+  project (`deusald-localizer-ui/`) and C#-exported into the app — the tool localizes itself.
 - **Works offline or online** — a project with no API URL is purely local files; add an API URL
   and the app syncs against the backend Git bot (see below). The distinction is derived from the
   project, not a manual toggle.
@@ -77,25 +100,47 @@ UI is a three-column editor: **languages** on the left, the **key list** in the 
 |---|---|---|
 | ![Export](docs/screenshots/export.png) | ![Variables](docs/screenshots/variables.png) | ![Members](docs/screenshots/members.png) |
 
+## Two clients, one UI
+
+The entire editor is one shared Blazor UI (`WebCommon`), hosted two ways:
+
+- **Desktop** (`App`) — a .NET MAUI Blazor Hybrid shell for Windows and macOS, with native
+  folder pickers and [Velopack](https://github.com/velopack/velopack) auto-update. Projects are
+  plain folders on disc.
+- **Web** (`WebApp`) — a Blazor WebAssembly PWA that runs entirely in the browser and stores
+  projects in **IndexedDB** (with `navigator.storage.persist()` so offline work isn't evicted).
+  From the Home screen you can create, open, import (`.zip`), export (`.zip`), and delete local
+  projects; the zip **round-trips the exact desktop project-folder format**, so a project moves
+  between web and desktop as a file. Online projects can also be connected and downloaded into
+  the browser over the sync protocol.
+
+Because both hosts render the same components, a feature lands in both clients at once. The
+platform-specific bits (file pickers, secure storage, IndexedDB vs. disc) sit behind interfaces
+implemented per host.
+
 ## Tech stack
 
 Everything targets **.NET 10**.
 
 | Project | Type | Key libraries |
 |---|---|---|
-| **App** | .NET MAUI Blazor Hybrid desktop app (Windows / MacCatalyst) — the UI is Blazor in a `BlazorWebView`; MAUI is just the shell. | `CommunityToolkit.Maui` (native file/folder pickers, drag-drop) |
+| **App** | .NET MAUI Blazor Hybrid desktop app (Windows / MacCatalyst) — the UI is Blazor in a `BlazorWebView`; MAUI is just the shell. | `CommunityToolkit.Maui` (native file/folder pickers), [Velopack](https://github.com/velopack/velopack) (auto-update) |
+| **WebApp** | Blazor WebAssembly PWA (`DeusaldLocalizerWeb`), deployable to GitHub Pages — browser shell + IndexedDB storage. | `Microsoft.AspNetCore.Components.WebAssembly` |
+| **WebCommon** | Razor class library — the whole shared editor UI, session state, and the platform-abstraction interfaces. Consumed by both `App` and `WebApp`. | — |
 | **Common** | Shared class library (`DeusaldLocalizerCommon`): all domain models, file persistence, and business services. Multi-targets `netstandard2.1;net10.0`, pinned to **C# 9** with implicit usings **disabled**. | [SmartFormat](https://github.com/axuno/SmartFormat) (previews), [ClosedXML](https://github.com/ClosedXML/ClosedXML) (`.xlsx`), [BCrypt.Net-Next](https://github.com/BcryptNet/bcrypt.net) (token hashing), [Newtonsoft.Json](https://www.newtonsoft.com/json) (project files, enums as strings) |
 | **Backend** | ASP.NET Core Web API (`DeusaldLocalizerBackend`) — the Git "bot" that mediates online sync/push. | `Microsoft.AspNetCore.OpenApi` |
 
-`App` and `Backend` both reference `Common`.
+Reference graph: `App → WebCommon → Common`, `WebApp → WebCommon → Common`, `Backend → Common`.
 
 ## Solution layout
 
 ```
 DeusaldLocalizer.sln
-├── App/        .NET MAUI Blazor Hybrid desktop app  → references Common
-├── Common/     Shared domain models + services      (netstandard2.1 / net10.0, C# 9)
-└── Backend/    ASP.NET Core Git-sync bot            → references Common
+├── App/         .NET MAUI Blazor Hybrid desktop app  → WebCommon → Common
+├── WebApp/      Blazor WebAssembly PWA (web client)  → WebCommon → Common
+├── WebCommon/   Shared Blazor editor UI + interfaces → Common
+├── Common/      Shared domain models + services      (netstandard2.1 / net10.0, C# 9)
+└── Backend/     ASP.NET Core Git-sync bot            → Common
 ```
 
 `LocProject` is the aggregate root for one project, holding `Metadata`, `ProjectMembers`,
@@ -120,7 +165,12 @@ Writes go to a `.tmp` sibling and are then renamed, so a project survives a mid-
 Because a project is plain files, it lives naturally in a Git repository — which is exactly
 what the backend uses.
 
-## Getting started (desktop app)
+## Getting started
+
+The quickest way to try the editor is the hosted web version at
+**<https://deusald.github.io/DeusaldLocalizer/>** — nothing to install. To run it yourself:
+
+### Desktop app
 
 **Prerequisites**
 
@@ -141,6 +191,24 @@ log in to an online project by pointing it at a backend API URL.
 > — a small offline "Example RPG" project (English / German / French / Polish) that exercises
 > most features: categories, tags, workflow flags, SmartFormat variables and enums, competing
 > suggestions with votes, and a key whose source text has drifted out of sync.
+
+### Web app
+
+**Prerequisites:** just the [.NET 10 SDK](https://dotnet.microsoft.com/download) — no MAUI
+workload needed.
+
+```bash
+# Dev server (F5-able from the IDE too)
+dotnet run --project WebApp
+
+# Publish to static files for hosting
+dotnet publish WebApp -c Release -o publish
+```
+
+Projects live in the browser's IndexedDB. Create a new one, open an existing local project, or
+import a project `.zip` exported from the desktop app; you can export any project back to a
+`.zip` to move it elsewhere. The web app deploys to GitHub Pages via
+`.github/workflows/deploy-pages.yml` — see `docs/WebApp-Plan.md`.
 
 ## Online sync protocol
 
@@ -290,21 +358,38 @@ All settings live under the top-level **`Bot`** section.
 | `Bot:Projects[].RemoteUrl` | `""` | Git remote to clone/push. **Embed the GitHub PAT here** for HTTPS push. |
 | `Bot:Projects[].Branch` | `main` | Branch the bot tracks. |
 
+## Using translations in your game (`DeusaldLocalizerCommon` on NuGet)
+
+The **Common** project is published to NuGet as
+**[`DeusaldLocalizerCommon`](https://www.nuget.org/packages/DeusaldLocalizerCommon)** so external
+readers — for example a Unity importer — can load a project folder and read translations with the
+same domain models the editor uses. It multi-targets `netstandard2.1;net10.0` (so it works in
+Unity), and publishes automatically from `.github/workflows/deploy-nuget.yml` on a version tag.
+
+For games that just want the strings baked in, prefer the editor's **C# script export**: it
+emits a self-contained file with a nested static-class tree of key GUIDs and a
+`Get(language, keyId, values)` SmartFormat lookup — no runtime dependency required.
+
 ## Building from source
 
 ```bash
-# Build the whole solution
+# Build the whole solution (needs the MAUI + WASM workloads)
 dotnet build DeusaldLocalizer.sln
 
-# Build just the shared library (fast — no MAUI workload needed)
+# Build just the shared library (fast — no MAUI/WASM workload needed)
 dotnet build Common/Common.csproj
 
 # Run the desktop app (Windows)
 dotnet build App/App.csproj -t:Run -f net10.0-windows10.0.19041.0
 
+# Run the web app (dev server)
+dotnet run --project WebApp
+
 # Run the backend API
 dotnet run --project Backend
 ```
+
+There are no test projects, so there is no test command.
 
 When contributing to **Common**, remember it is pinned to **C# 9** with implicit usings
 disabled — files there need explicit `using` directives and cannot use newer C# syntax.
