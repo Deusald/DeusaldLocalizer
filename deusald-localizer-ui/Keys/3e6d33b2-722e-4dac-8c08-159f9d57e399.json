@@ -4,7 +4,7 @@
   "KeyName": "deleteTitle",
   "Description": "Title of the delete-confirmation dialog (web).",
   "CreatedAt": "2026-07-16T12:29:28.079334Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7077824Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2188538Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7077808Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "493a274349f6ee7006d680a48a8c15fe9a0e0c9e618f50318152ad287c51abcc",
+      "Text": "Smazat projekt?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188264Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "493a274349f6ee7006d680a48a8c15fe9a0e0c9e618f50318152ad287c51abcc",
+      "Text": "Projekt löschen?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188287Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "493a274349f6ee7006d680a48a8c15fe9a0e0c9e618f50318152ad287c51abcc",
+      "Text": "¿Eliminar proyecto?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.218831Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "493a274349f6ee7006d680a48a8c15fe9a0e0c9e618f50318152ad287c51abcc",
+      "Text": "Supprimer le projet ?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188332Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "493a274349f6ee7006d680a48a8c15fe9a0e0c9e618f50318152ad287c51abcc",
+      "Text": "Eliminare il progetto?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188359Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "493a274349f6ee7006d680a48a8c15fe9a0e0c9e618f50318152ad287c51abcc",
+      "Text": "プロジェクトを削除しますか？",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188381Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "493a274349f6ee7006d680a48a8c15fe9a0e0c9e618f50318152ad287c51abcc",
+      "Text": "프로젝트를 삭제하시겠습니까?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188403Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "493a274349f6ee7006d680a48a8c15fe9a0e0c9e618f50318152ad287c51abcc",
+      "Text": "Excluir projeto?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188452Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "493a274349f6ee7006d680a48a8c15fe9a0e0c9e618f50318152ad287c51abcc",
+      "Text": "Удалить проект?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188473Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "493a274349f6ee7006d680a48a8c15fe9a0e0c9e618f50318152ad287c51abcc",
+      "Text": "删除项目？",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188496Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "493a274349f6ee7006d680a48a8c15fe9a0e0c9e618f50318152ad287c51abcc",
+      "Text": "刪除專案？",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188519Z",
       "Suggestions": [],
       "Comments": []
     }

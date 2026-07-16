@@ -4,7 +4,7 @@
   "KeyName": "deleteBody",
   "Description": "Delete-confirmation body naming the project (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793418Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7077686Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2187595Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7077668Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "df4ee618bb5991be393dd05e08490bea64f3063ecebf7d14fa586097f975d73a",
+      "Text": "{name} bude odebrán z tohoto prohlížeče.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2187172Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "df4ee618bb5991be393dd05e08490bea64f3063ecebf7d14fa586097f975d73a",
+      "Text": "{name} wird aus diesem Browser entfernt.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2187198Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "df4ee618bb5991be393dd05e08490bea64f3063ecebf7d14fa586097f975d73a",
+      "Text": "{name} se quitará de este navegador.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2187221Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "df4ee618bb5991be393dd05e08490bea64f3063ecebf7d14fa586097f975d73a",
+      "Text": "{name} sera retiré de ce navigateur.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2187249Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "df4ee618bb5991be393dd05e08490bea64f3063ecebf7d14fa586097f975d73a",
+      "Text": "{name} verrà rimosso da questo browser.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2187277Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "df4ee618bb5991be393dd05e08490bea64f3063ecebf7d14fa586097f975d73a",
+      "Text": "{name}はこのブラウザーから削除されます。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.21873Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "df4ee618bb5991be393dd05e08490bea64f3063ecebf7d14fa586097f975d73a",
+      "Text": "{name}이(가) 이 브라우저에서 제거됩니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2187326Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "df4ee618bb5991be393dd05e08490bea64f3063ecebf7d14fa586097f975d73a",
+      "Text": "{name} será removido deste navegador.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2187506Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "df4ee618bb5991be393dd05e08490bea64f3063ecebf7d14fa586097f975d73a",
+      "Text": "{name} будет удалён из этого браузера.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2187531Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "df4ee618bb5991be393dd05e08490bea64f3063ecebf7d14fa586097f975d73a",
+      "Text": "{name} 将从此浏览器中移除。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2187553Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "df4ee618bb5991be393dd05e08490bea64f3063ecebf7d14fa586097f975d73a",
+      "Text": "{name} 將從此瀏覽器中移除。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2187576Z",
       "Suggestions": [],
       "Comments": []
     }

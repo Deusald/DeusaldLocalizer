@@ -4,7 +4,7 @@
   "KeyName": "updateMaxLength",
   "Description": "Checkbox label to update max length.",
   "CreatedAt": "2026-07-16T12:48:41.5604204Z",
-  "UpdatedAt": "2026-07-16T13:07:17.710282Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2399461Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.71028Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "e1de518b1372461dfd7475f7ea04374bf1b3c99f64808413a7e10b8d1effc32b",
+      "Text": "Aktualizovat maximální délku",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399122Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "e1de518b1372461dfd7475f7ea04374bf1b3c99f64808413a7e10b8d1effc32b",
+      "Text": "Maximale Länge aktualisieren",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399147Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "e1de518b1372461dfd7475f7ea04374bf1b3c99f64808413a7e10b8d1effc32b",
+      "Text": "Actualizar longitud máxima",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399198Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "e1de518b1372461dfd7475f7ea04374bf1b3c99f64808413a7e10b8d1effc32b",
+      "Text": "Mettre à jour la longueur maximale",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.239922Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "e1de518b1372461dfd7475f7ea04374bf1b3c99f64808413a7e10b8d1effc32b",
+      "Text": "Aggiorna lunghezza massima",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399243Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "e1de518b1372461dfd7475f7ea04374bf1b3c99f64808413a7e10b8d1effc32b",
+      "Text": "最大長を更新",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399264Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "e1de518b1372461dfd7475f7ea04374bf1b3c99f64808413a7e10b8d1effc32b",
+      "Text": "최대 길이 업데이트",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399309Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "e1de518b1372461dfd7475f7ea04374bf1b3c99f64808413a7e10b8d1effc32b",
+      "Text": "Atualizar comprimento máximo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399357Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "e1de518b1372461dfd7475f7ea04374bf1b3c99f64808413a7e10b8d1effc32b",
+      "Text": "Обновить максимальную длину",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399379Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "e1de518b1372461dfd7475f7ea04374bf1b3c99f64808413a7e10b8d1effc32b",
+      "Text": "更新最大长度",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399424Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "e1de518b1372461dfd7475f7ea04374bf1b3c99f64808413a7e10b8d1effc32b",
+      "Text": "更新最大長度",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399447Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "conflictBannerSingular",
   "Description": "Conflict banner, singular form.",
   "CreatedAt": "2026-07-16T12:48:41.5600708Z",
-  "UpdatedAt": "2026-07-16T13:07:17.710744Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2450718Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7107419Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "774a38de084a45f1d607d9e925dccac484252ba22e7a1506172627540a66319b",
+      "Text": "{count} změna koliduje s novějšími serverovými úpravami — před odesláním synchronizujte a vyřešte.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2450115Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "774a38de084a45f1d607d9e925dccac484252ba22e7a1506172627540a66319b",
+      "Text": "{count} Änderung kollidiert mit neueren Serverbearbeitungen — synchronisiere und löse sie vor dem Pushen.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2450173Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "774a38de084a45f1d607d9e925dccac484252ba22e7a1506172627540a66319b",
+      "Text": "{count} cambio choca con ediciones más recientes del servidor: sincroniza y resuelve antes de enviar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2450254Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "774a38de084a45f1d607d9e925dccac484252ba22e7a1506172627540a66319b",
+      "Text": "{count} modification entre en conflit avec des modifications serveur plus récentes — synchronisez et résolvez avant l'envoi.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2450293Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "774a38de084a45f1d607d9e925dccac484252ba22e7a1506172627540a66319b",
+      "Text": "{count} modifica entra in conflitto con modifiche del server più recenti — sincronizza e risolvi prima di inviare.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2450333Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "774a38de084a45f1d607d9e925dccac484252ba22e7a1506172627540a66319b",
+      "Text": "{count}件の変更が新しいサーバー編集と競合しています — プッシュ前に同期して解決してください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.245037Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "774a38de084a45f1d607d9e925dccac484252ba22e7a1506172627540a66319b",
+      "Text": "변경 사항 {count}개가 최신 서버 편집과 충돌합니다 — 푸시 전에 동기화하고 해결하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2450436Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "774a38de084a45f1d607d9e925dccac484252ba22e7a1506172627540a66319b",
+      "Text": "{count} alteração conflita com edições mais recentes do servidor — sincronize e resolva antes de enviar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2450519Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "774a38de084a45f1d607d9e925dccac484252ba22e7a1506172627540a66319b",
+      "Text": "{count} изменение конфликтует с более новыми серверными правками — синхронизируйте и разрешите перед отправкой.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2450556Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "774a38de084a45f1d607d9e925dccac484252ba22e7a1506172627540a66319b",
+      "Text": "{count} 项更改与更新的服务器编辑冲突——请在推送前同步并解决。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2450653Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "774a38de084a45f1d607d9e925dccac484252ba22e7a1506172627540a66319b",
+      "Text": "{count} 項變更與較新的伺服器編輯衝突——請在推送前同步並解決。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2450694Z",
       "Suggestions": [],
       "Comments": []
     }

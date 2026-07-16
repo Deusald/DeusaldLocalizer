@@ -4,7 +4,7 @@
   "KeyName": "currentSourceLabel",
   "Description": "Label for the current-source comparison panel",
   "CreatedAt": "2026-07-16T12:48:41.5586941Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7081967Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2217972Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7081946Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "fc8a8bfccc3038cfa2fa6795df53ad05ac94b4819a9687253ebf57821e38e5e4",
+      "Text": "Aktuální zdroj",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2217687Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "fc8a8bfccc3038cfa2fa6795df53ad05ac94b4819a9687253ebf57821e38e5e4",
+      "Text": "Aktuelle Quelle",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2217716Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "fc8a8bfccc3038cfa2fa6795df53ad05ac94b4819a9687253ebf57821e38e5e4",
+      "Text": "Fuente actual",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2217743Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "fc8a8bfccc3038cfa2fa6795df53ad05ac94b4819a9687253ebf57821e38e5e4",
+      "Text": "Source actuelle",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2217765Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "fc8a8bfccc3038cfa2fa6795df53ad05ac94b4819a9687253ebf57821e38e5e4",
+      "Text": "Origine attuale",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2217788Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "fc8a8bfccc3038cfa2fa6795df53ad05ac94b4819a9687253ebf57821e38e5e4",
+      "Text": "現在のソース",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2217817Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "fc8a8bfccc3038cfa2fa6795df53ad05ac94b4819a9687253ebf57821e38e5e4",
+      "Text": "현재 원본",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2217839Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "fc8a8bfccc3038cfa2fa6795df53ad05ac94b4819a9687253ebf57821e38e5e4",
+      "Text": "Origem atual",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2217886Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "fc8a8bfccc3038cfa2fa6795df53ad05ac94b4819a9687253ebf57821e38e5e4",
+      "Text": "Текущий источник",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2217913Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "fc8a8bfccc3038cfa2fa6795df53ad05ac94b4819a9687253ebf57821e38e5e4",
+      "Text": "当前源",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2217934Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "fc8a8bfccc3038cfa2fa6795df53ad05ac94b4819a9687253ebf57821e38e5e4",
+      "Text": "目前來源",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2217958Z",
       "Suggestions": [],
       "Comments": []
     }

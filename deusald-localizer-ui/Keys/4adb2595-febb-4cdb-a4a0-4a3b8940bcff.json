@@ -4,7 +4,7 @@
   "KeyName": "reviewLanguages",
   "Description": "Field label for the languages a member can review.",
   "CreatedAt": "2026-07-16T12:48:41.5592778Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7111628Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2631447Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7111608Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "79bef03315b6e6d1e4f4f63ed94425402f149fa695883eebbede19f1b4df0add",
+      "Text": "Jazyky ke kontrole",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631009Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "79bef03315b6e6d1e4f4f63ed94425402f149fa695883eebbede19f1b4df0add",
+      "Text": "Prüfsprachen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631119Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "79bef03315b6e6d1e4f4f63ed94425402f149fa695883eebbede19f1b4df0add",
+      "Text": "Idiomas de revisión",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631174Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "79bef03315b6e6d1e4f4f63ed94425402f149fa695883eebbede19f1b4df0add",
+      "Text": "Langues de révision",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631218Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "79bef03315b6e6d1e4f4f63ed94425402f149fa695883eebbede19f1b4df0add",
+      "Text": "Lingue di revisione",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631257Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "79bef03315b6e6d1e4f4f63ed94425402f149fa695883eebbede19f1b4df0add",
+      "Text": "レビュー言語",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631286Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "79bef03315b6e6d1e4f4f63ed94425402f149fa695883eebbede19f1b4df0add",
+      "Text": "검토 언어",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631316Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "79bef03315b6e6d1e4f4f63ed94425402f149fa695883eebbede19f1b4df0add",
+      "Text": "Idiomas de revisão",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631362Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "79bef03315b6e6d1e4f4f63ed94425402f149fa695883eebbede19f1b4df0add",
+      "Text": "Языки для проверки",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631384Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "79bef03315b6e6d1e4f4f63ed94425402f149fa695883eebbede19f1b4df0add",
+      "Text": "审核语言",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.263141Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "79bef03315b6e6d1e4f4f63ed94425402f149fa695883eebbede19f1b4df0add",
+      "Text": "審閱語言",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631433Z",
       "Suggestions": [],
       "Comments": []
     }

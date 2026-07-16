@@ -4,7 +4,7 @@
   "KeyName": "body",
   "Description": "Body text of the desktop client not-found page",
   "CreatedAt": "2026-07-16T12:48:41.561665Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7079116Z",
+  "UpdatedAt": "2026-07-16T20:46:27.219805Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7079099Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "aa34ee5b966c1e9c10b4f985a2b41607010665a7c91cf34fc604b4ac8d5f2772",
+      "Text": "Je nám líto, obsah, který hledáte, neexistuje.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197773Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "aa34ee5b966c1e9c10b4f985a2b41607010665a7c91cf34fc604b4ac8d5f2772",
+      "Text": "Der gesuchte Inhalt existiert leider nicht.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.21978Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "aa34ee5b966c1e9c10b4f985a2b41607010665a7c91cf34fc604b4ac8d5f2772",
+      "Text": "Lo sentimos, el contenido que buscas no existe.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197823Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "aa34ee5b966c1e9c10b4f985a2b41607010665a7c91cf34fc604b4ac8d5f2772",
+      "Text": "Désolé, le contenu que vous recherchez n'existe pas.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197845Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "aa34ee5b966c1e9c10b4f985a2b41607010665a7c91cf34fc604b4ac8d5f2772",
+      "Text": "Spiacenti, il contenuto che cerchi non esiste.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197871Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "aa34ee5b966c1e9c10b4f985a2b41607010665a7c91cf34fc604b4ac8d5f2772",
+      "Text": "申し訳ありません。お探しのコンテンツは存在しません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197893Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "aa34ee5b966c1e9c10b4f985a2b41607010665a7c91cf34fc604b4ac8d5f2772",
+      "Text": "죄송합니다. 찾으시는 콘텐츠가 존재하지 않습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197917Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "aa34ee5b966c1e9c10b4f985a2b41607010665a7c91cf34fc604b4ac8d5f2772",
+      "Text": "Desculpe, o conteúdo que você procura não existe.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197966Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "aa34ee5b966c1e9c10b4f985a2b41607010665a7c91cf34fc604b4ac8d5f2772",
+      "Text": "К сожалению, искомого содержимого не существует.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197988Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "aa34ee5b966c1e9c10b4f985a2b41607010665a7c91cf34fc604b4ac8d5f2772",
+      "Text": "抱歉，你查找的内容不存在。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2198009Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "aa34ee5b966c1e9c10b4f985a2b41607010665a7c91cf34fc604b4ac8d5f2772",
+      "Text": "抱歉，你查找的內容不存在。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2198036Z",
       "Suggestions": [],
       "Comments": []
     }

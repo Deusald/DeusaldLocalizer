@@ -4,7 +4,7 @@
   "KeyName": "updateFromSheet",
   "Description": "Section title for what to update from the sheet.",
   "CreatedAt": "2026-07-16T12:48:41.5603304Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7102756Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2399092Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7102737Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "55c5d30c520e88ea7ed509079ebc79d5c2f052d0e00d1a8a3550e43ae68002f8",
+      "Text": "Aktualizovat z listu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2398491Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "55c5d30c520e88ea7ed509079ebc79d5c2f052d0e00d1a8a3550e43ae68002f8",
+      "Text": "Aus Tabelle aktualisieren",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2398592Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "55c5d30c520e88ea7ed509079ebc79d5c2f052d0e00d1a8a3550e43ae68002f8",
+      "Text": "Actualizar desde la hoja",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2398631Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "55c5d30c520e88ea7ed509079ebc79d5c2f052d0e00d1a8a3550e43ae68002f8",
+      "Text": "Mettre à jour depuis la feuille",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2398675Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "55c5d30c520e88ea7ed509079ebc79d5c2f052d0e00d1a8a3550e43ae68002f8",
+      "Text": "Aggiorna dal foglio",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2398716Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "55c5d30c520e88ea7ed509079ebc79d5c2f052d0e00d1a8a3550e43ae68002f8",
+      "Text": "シートから更新",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2398755Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "55c5d30c520e88ea7ed509079ebc79d5c2f052d0e00d1a8a3550e43ae68002f8",
+      "Text": "시트에서 업데이트",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2398792Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "55c5d30c520e88ea7ed509079ebc79d5c2f052d0e00d1a8a3550e43ae68002f8",
+      "Text": "Atualizar a partir da planilha",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.23989Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "55c5d30c520e88ea7ed509079ebc79d5c2f052d0e00d1a8a3550e43ae68002f8",
+      "Text": "Обновить из листа",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2398941Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "55c5d30c520e88ea7ed509079ebc79d5c2f052d0e00d1a8a3550e43ae68002f8",
+      "Text": "从工作表更新",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2398982Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "55c5d30c520e88ea7ed509079ebc79d5c2f052d0e00d1a8a3550e43ae68002f8",
+      "Text": "從工作表更新",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399076Z",
       "Suggestions": [],
       "Comments": []
     }

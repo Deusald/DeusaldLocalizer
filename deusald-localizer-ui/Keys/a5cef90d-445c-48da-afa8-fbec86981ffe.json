@@ -4,7 +4,7 @@
   "KeyName": "yourTranslationLabel",
   "Description": "Label for the user's translation comparison panel",
   "CreatedAt": "2026-07-16T12:48:41.5587113Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7083212Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2225151Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.708319Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "9f4ffbc37f046ce5d92e30e4d167eaae9b2e0bb258e09c8eee3aa0de5c3e5e1f",
+      "Text": "Váš překlad",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2224465Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "9f4ffbc37f046ce5d92e30e4d167eaae9b2e0bb258e09c8eee3aa0de5c3e5e1f",
+      "Text": "Deine Übersetzung",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2224551Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "9f4ffbc37f046ce5d92e30e4d167eaae9b2e0bb258e09c8eee3aa0de5c3e5e1f",
+      "Text": "Tu traducción",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2224606Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "9f4ffbc37f046ce5d92e30e4d167eaae9b2e0bb258e09c8eee3aa0de5c3e5e1f",
+      "Text": "Votre traduction",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2224646Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "9f4ffbc37f046ce5d92e30e4d167eaae9b2e0bb258e09c8eee3aa0de5c3e5e1f",
+      "Text": "La tua traduzione",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2224689Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "9f4ffbc37f046ce5d92e30e4d167eaae9b2e0bb258e09c8eee3aa0de5c3e5e1f",
+      "Text": "あなたの翻訳",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2224729Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "9f4ffbc37f046ce5d92e30e4d167eaae9b2e0bb258e09c8eee3aa0de5c3e5e1f",
+      "Text": "내 번역",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2224945Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "9f4ffbc37f046ce5d92e30e4d167eaae9b2e0bb258e09c8eee3aa0de5c3e5e1f",
+      "Text": "Sua tradução",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2224998Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "9f4ffbc37f046ce5d92e30e4d167eaae9b2e0bb258e09c8eee3aa0de5c3e5e1f",
+      "Text": "Ваш перевод",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225037Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "9f4ffbc37f046ce5d92e30e4d167eaae9b2e0bb258e09c8eee3aa0de5c3e5e1f",
+      "Text": "你的翻译",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225083Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "9f4ffbc37f046ce5d92e30e4d167eaae9b2e0bb258e09c8eee3aa0de5c3e5e1f",
+      "Text": "你的翻譯",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225124Z",
       "Suggestions": [],
       "Comments": []
     }

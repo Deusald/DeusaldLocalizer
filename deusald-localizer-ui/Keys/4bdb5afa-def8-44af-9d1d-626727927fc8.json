@@ -4,7 +4,7 @@
   "KeyName": "subtitle",
   "Description": "Subtitle of the connect-to-server modal",
   "CreatedAt": "2026-07-16T12:48:41.5611649Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7073315Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2155711Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7073298Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "b295a8923772301470045e51c7e2321a475a17c48186b08f7100c1bb683012da",
+      "Text": "Stáhnout online projekt z bota",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155134Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "b295a8923772301470045e51c7e2321a475a17c48186b08f7100c1bb683012da",
+      "Text": "Ein Online-Projekt vom Bot herunterladen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155239Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "b295a8923772301470045e51c7e2321a475a17c48186b08f7100c1bb683012da",
+      "Text": "Descargar un proyecto en línea desde el bot",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155283Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "b295a8923772301470045e51c7e2321a475a17c48186b08f7100c1bb683012da",
+      "Text": "Télécharger un projet en ligne depuis le bot",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155326Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "b295a8923772301470045e51c7e2321a475a17c48186b08f7100c1bb683012da",
+      "Text": "Scarica un progetto online dal bot",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155376Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "b295a8923772301470045e51c7e2321a475a17c48186b08f7100c1bb683012da",
+      "Text": "ボットからオンラインプロジェクトをダウンロード",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155418Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "b295a8923772301470045e51c7e2321a475a17c48186b08f7100c1bb683012da",
+      "Text": "봇에서 온라인 프로젝트 다운로드",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155462Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "b295a8923772301470045e51c7e2321a475a17c48186b08f7100c1bb683012da",
+      "Text": "Baixar um projeto on-line do bot",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155555Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "b295a8923772301470045e51c7e2321a475a17c48186b08f7100c1bb683012da",
+      "Text": "Загрузить онлайн-проект от бота",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155598Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "b295a8923772301470045e51c7e2321a475a17c48186b08f7100c1bb683012da",
+      "Text": "从机器人下载在线项目",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.215564Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "b295a8923772301470045e51c7e2321a475a17c48186b08f7100c1bb683012da",
+      "Text": "從機器人下載線上專案",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155683Z",
       "Suggestions": [],
       "Comments": []
     }

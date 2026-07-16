@@ -4,7 +4,7 @@
   "KeyName": "addCommentPlaceholder",
   "Description": "Placeholder for the comment compose box",
   "CreatedAt": "2026-07-16T12:48:41.5587426Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7081581Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2215723Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.708156Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "aa160b93871418106c00de28c0aa6e1b1a41e225fc0cc9d9dadfc9c5257a81bd",
+      "Text": "Přidat komentář…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215079Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "aa160b93871418106c00de28c0aa6e1b1a41e225fc0cc9d9dadfc9c5257a81bd",
+      "Text": "Kommentar hinzufügen…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215121Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "aa160b93871418106c00de28c0aa6e1b1a41e225fc0cc9d9dadfc9c5257a81bd",
+      "Text": "Añadir un comentario…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215392Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "aa160b93871418106c00de28c0aa6e1b1a41e225fc0cc9d9dadfc9c5257a81bd",
+      "Text": "Ajouter un commentaire…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215438Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "aa160b93871418106c00de28c0aa6e1b1a41e225fc0cc9d9dadfc9c5257a81bd",
+      "Text": "Aggiungi un commento…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.221547Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "aa160b93871418106c00de28c0aa6e1b1a41e225fc0cc9d9dadfc9c5257a81bd",
+      "Text": "コメントを追加…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215505Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "aa160b93871418106c00de28c0aa6e1b1a41e225fc0cc9d9dadfc9c5257a81bd",
+      "Text": "댓글 추가…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215554Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "aa160b93871418106c00de28c0aa6e1b1a41e225fc0cc9d9dadfc9c5257a81bd",
+      "Text": "Adicionar um comentário…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215633Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "aa160b93871418106c00de28c0aa6e1b1a41e225fc0cc9d9dadfc9c5257a81bd",
+      "Text": "Добавить комментарий…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215658Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "aa160b93871418106c00de28c0aa6e1b1a41e225fc0cc9d9dadfc9c5257a81bd",
+      "Text": "添加评论…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215686Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "aa160b93871418106c00de28c0aa6e1b1a41e225fc0cc9d9dadfc9c5257a81bd",
+      "Text": "新增註解…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215708Z",
       "Suggestions": [],
       "Comments": []
     }

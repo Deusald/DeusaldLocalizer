@@ -4,7 +4,7 @@
   "KeyName": "updateCategoriesHint",
   "Description": "Inline hint next to the update categories checkbox.",
   "CreatedAt": "2026-07-16T12:48:41.5603875Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7102598Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2395091Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7102578Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "89a08629cab2cf29b95bab9326b0792c7ff5096170c2de76112f1376a98d9593",
+      "Text": "— vytvoří chybějící",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394738Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "89a08629cab2cf29b95bab9326b0792c7ff5096170c2de76112f1376a98d9593",
+      "Text": "— erstellt fehlende",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394762Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "89a08629cab2cf29b95bab9326b0792c7ff5096170c2de76112f1376a98d9593",
+      "Text": "— crea las que faltan",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394785Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "89a08629cab2cf29b95bab9326b0792c7ff5096170c2de76112f1376a98d9593",
+      "Text": "— crée celles qui manquent",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394826Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "89a08629cab2cf29b95bab9326b0792c7ff5096170c2de76112f1376a98d9593",
+      "Text": "— crea quelle mancanti",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394848Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "89a08629cab2cf29b95bab9326b0792c7ff5096170c2de76112f1376a98d9593",
+      "Text": "— 不足分を作成",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394869Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "89a08629cab2cf29b95bab9326b0792c7ff5096170c2de76112f1376a98d9593",
+      "Text": "— 없는 것 생성",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394932Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "89a08629cab2cf29b95bab9326b0792c7ff5096170c2de76112f1376a98d9593",
+      "Text": "— cria as ausentes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394979Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "89a08629cab2cf29b95bab9326b0792c7ff5096170c2de76112f1376a98d9593",
+      "Text": "— создаёт отсутствующие",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2395001Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "89a08629cab2cf29b95bab9326b0792c7ff5096170c2de76112f1376a98d9593",
+      "Text": "——创建缺失的",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2395055Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "89a08629cab2cf29b95bab9326b0792c7ff5096170c2de76112f1376a98d9593",
+      "Text": "——建立缺少的",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2395077Z",
       "Suggestions": [],
       "Comments": []
     }

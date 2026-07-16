@@ -4,7 +4,7 @@
   "KeyName": "keepMineHint",
   "Description": "Hint explaining the Keep mine option",
   "CreatedAt": "2026-07-16T12:48:41.558622Z",
-  "UpdatedAt": "2026-07-16T13:07:17.708239Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2220145Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7082364Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "0c019afa29f41c3fe386e5ed59dfdbb6274f1f2e848076c237387038f895af0e",
+      "Text": "— při příštím odeslání přepíše verzi serveru.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.221986Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "0c019afa29f41c3fe386e5ed59dfdbb6274f1f2e848076c237387038f895af0e",
+      "Text": "— überschreibt die Serverversion bei deinem nächsten Push.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2219886Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "0c019afa29f41c3fe386e5ed59dfdbb6274f1f2e848076c237387038f895af0e",
+      "Text": "— sobrescribe la versión del servidor en tu próximo envío.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2219919Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "0c019afa29f41c3fe386e5ed59dfdbb6274f1f2e848076c237387038f895af0e",
+      "Text": "— écrase la version du serveur lors de votre prochain envoi.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2219943Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "0c019afa29f41c3fe386e5ed59dfdbb6274f1f2e848076c237387038f895af0e",
+      "Text": "— sovrascrive la versione del server al tuo prossimo invio.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2219965Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "0c019afa29f41c3fe386e5ed59dfdbb6274f1f2e848076c237387038f895af0e",
+      "Text": "— 次回のプッシュ時にサーバーのバージョンを上書きします。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2219992Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "0c019afa29f41c3fe386e5ed59dfdbb6274f1f2e848076c237387038f895af0e",
+      "Text": "— 다음 푸시 시 서버 버전을 덮어씁니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2220014Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "0c019afa29f41c3fe386e5ed59dfdbb6274f1f2e848076c237387038f895af0e",
+      "Text": "— sobrescreve a versão do servidor no seu próximo envio.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.222006Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "0c019afa29f41c3fe386e5ed59dfdbb6274f1f2e848076c237387038f895af0e",
+      "Text": "— перезапишет версию сервера при следующей отправке.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2220087Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "0c019afa29f41c3fe386e5ed59dfdbb6274f1f2e848076c237387038f895af0e",
+      "Text": "——在你下次推送时覆盖服务器版本。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2220109Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "0c019afa29f41c3fe386e5ed59dfdbb6274f1f2e848076c237387038f895af0e",
+      "Text": "——在你下次推送時覆寫伺服器版本。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2220131Z",
       "Suggestions": [],
       "Comments": []
     }

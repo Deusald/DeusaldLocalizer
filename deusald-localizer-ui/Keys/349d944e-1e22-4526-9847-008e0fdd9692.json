@@ -4,7 +4,7 @@
   "KeyName": "csharpClass",
   "Description": "Section title for C# class options.",
   "CreatedAt": "2026-07-16T12:48:41.5606874Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7103234Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2404055Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7103214Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "0f556ea705eec299f111589ba3cf1cc54551cf8e8238e8a9b146f70373958a14",
+      "Text": "Třída C#",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.240348Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "0f556ea705eec299f111589ba3cf1cc54551cf8e8238e8a9b146f70373958a14",
+      "Text": "C#-Klasse",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403518Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "0f556ea705eec299f111589ba3cf1cc54551cf8e8238e8a9b146f70373958a14",
+      "Text": "Clase C#",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403557Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "0f556ea705eec299f111589ba3cf1cc54551cf8e8238e8a9b146f70373958a14",
+      "Text": "Classe C#",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403634Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "0f556ea705eec299f111589ba3cf1cc54551cf8e8238e8a9b146f70373958a14",
+      "Text": "Classe C#",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403676Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "0f556ea705eec299f111589ba3cf1cc54551cf8e8238e8a9b146f70373958a14",
+      "Text": "C#クラス",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403716Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "0f556ea705eec299f111589ba3cf1cc54551cf8e8238e8a9b146f70373958a14",
+      "Text": "C# 클래스",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403753Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "0f556ea705eec299f111589ba3cf1cc54551cf8e8238e8a9b146f70373958a14",
+      "Text": "Classe C#",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403876Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "0f556ea705eec299f111589ba3cf1cc54551cf8e8238e8a9b146f70373958a14",
+      "Text": "Класс C#",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.240392Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "0f556ea705eec299f111589ba3cf1cc54551cf8e8238e8a9b146f70373958a14",
+      "Text": "C# 类",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403961Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "0f556ea705eec299f111589ba3cf1cc54551cf8e8238e8a9b146f70373958a14",
+      "Text": "C# 類別",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2404025Z",
       "Suggestions": [],
       "Comments": []
     }

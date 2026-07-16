@@ -4,7 +4,7 @@
   "KeyName": "pushFailed",
   "Description": "Push result message when the push failed; error details may follow.",
   "CreatedAt": "2026-07-16T12:48:41.5591658Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7097468Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2348569Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7097449Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "91809be5c9ab027d2fc3262e96eb1d2d5d2e6946dfcfb7b38e73f7f54e5835e8",
+      "Text": "Odeslání selhalo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348291Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "91809be5c9ab027d2fc3262e96eb1d2d5d2e6946dfcfb7b38e73f7f54e5835e8",
+      "Text": "Push fehlgeschlagen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348314Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "91809be5c9ab027d2fc3262e96eb1d2d5d2e6946dfcfb7b38e73f7f54e5835e8",
+      "Text": "Error al enviar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348336Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "91809be5c9ab027d2fc3262e96eb1d2d5d2e6946dfcfb7b38e73f7f54e5835e8",
+      "Text": "Échec de l'envoi",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348363Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "91809be5c9ab027d2fc3262e96eb1d2d5d2e6946dfcfb7b38e73f7f54e5835e8",
+      "Text": "Invio non riuscito",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348386Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "91809be5c9ab027d2fc3262e96eb1d2d5d2e6946dfcfb7b38e73f7f54e5835e8",
+      "Text": "プッシュに失敗",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348407Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "91809be5c9ab027d2fc3262e96eb1d2d5d2e6946dfcfb7b38e73f7f54e5835e8",
+      "Text": "푸시 실패",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348436Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "91809be5c9ab027d2fc3262e96eb1d2d5d2e6946dfcfb7b38e73f7f54e5835e8",
+      "Text": "Falha no envio",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348482Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "91809be5c9ab027d2fc3262e96eb1d2d5d2e6946dfcfb7b38e73f7f54e5835e8",
+      "Text": "Ошибка отправки",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348504Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "91809be5c9ab027d2fc3262e96eb1d2d5d2e6946dfcfb7b38e73f7f54e5835e8",
+      "Text": "推送失败",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348534Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "91809be5c9ab027d2fc3262e96eb1d2d5d2e6946dfcfb7b38e73f7f54e5835e8",
+      "Text": "推送失敗",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348555Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "removedKey",
   "Description": "Fallback label for a notification whose key no longer exists.",
   "CreatedAt": "2026-07-16T12:48:41.5599479Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7106294Z",
+  "UpdatedAt": "2026-07-16T20:46:27.243432Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7106274Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "5f6f8a4cdb5e5718c944cf81fd858753282f8c4c7cafbcf27690f28acb514c5f",
+      "Text": "(odstraněný klíč)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2433812Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "5f6f8a4cdb5e5718c944cf81fd858753282f8c4c7cafbcf27690f28acb514c5f",
+      "Text": "(entfernter Schlüssel)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2433858Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "5f6f8a4cdb5e5718c944cf81fd858753282f8c4c7cafbcf27690f28acb514c5f",
+      "Text": "(clave eliminada)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2433943Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "5f6f8a4cdb5e5718c944cf81fd858753282f8c4c7cafbcf27690f28acb514c5f",
+      "Text": "(clé supprimée)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2433987Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "5f6f8a4cdb5e5718c944cf81fd858753282f8c4c7cafbcf27690f28acb514c5f",
+      "Text": "(chiave rimossa)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2434026Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "5f6f8a4cdb5e5718c944cf81fd858753282f8c4c7cafbcf27690f28acb514c5f",
+      "Text": "（削除されたキー）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2434053Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "5f6f8a4cdb5e5718c944cf81fd858753282f8c4c7cafbcf27690f28acb514c5f",
+      "Text": "(제거된 키)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2434118Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "5f6f8a4cdb5e5718c944cf81fd858753282f8c4c7cafbcf27690f28acb514c5f",
+      "Text": "(chave removida)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2434196Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "5f6f8a4cdb5e5718c944cf81fd858753282f8c4c7cafbcf27690f28acb514c5f",
+      "Text": "(удалённый ключ)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2434259Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "5f6f8a4cdb5e5718c944cf81fd858753282f8c4c7cafbcf27690f28acb514c5f",
+      "Text": "（已移除的键）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2434283Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "5f6f8a4cdb5e5718c944cf81fd858753282f8c4c7cafbcf27690f28acb514c5f",
+      "Text": "（已移除的索引鍵）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2434305Z",
       "Suggestions": [],
       "Comments": []
     }

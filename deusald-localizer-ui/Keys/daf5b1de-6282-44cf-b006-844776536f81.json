@@ -4,7 +4,7 @@
   "KeyName": "suggestMine",
   "Description": "Button/label for adding the local version as a suggestion",
   "CreatedAt": "2026-07-16T12:48:41.5586039Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7082953Z",
+  "UpdatedAt": "2026-07-16T20:46:27.222342Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7082828Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "34827e0620645682ca8b921a9260db675378f05a501fa9a7cd09c5d679e210f6",
+      "Text": "Navrhnout moji",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223146Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "34827e0620645682ca8b921a9260db675378f05a501fa9a7cd09c5d679e210f6",
+      "Text": "Meine vorschlagen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223172Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "34827e0620645682ca8b921a9260db675378f05a501fa9a7cd09c5d679e210f6",
+      "Text": "Sugerir la mía",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223194Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "34827e0620645682ca8b921a9260db675378f05a501fa9a7cd09c5d679e210f6",
+      "Text": "Suggérer la mienne",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223216Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "34827e0620645682ca8b921a9260db675378f05a501fa9a7cd09c5d679e210f6",
+      "Text": "Suggerisci la mia",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223242Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "34827e0620645682ca8b921a9260db675378f05a501fa9a7cd09c5d679e210f6",
+      "Text": "自分のを提案",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223264Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "34827e0620645682ca8b921a9260db675378f05a501fa9a7cd09c5d679e210f6",
+      "Text": "내 것 제안",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223286Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "34827e0620645682ca8b921a9260db675378f05a501fa9a7cd09c5d679e210f6",
+      "Text": "Sugerir a minha",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223335Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "34827e0620645682ca8b921a9260db675378f05a501fa9a7cd09c5d679e210f6",
+      "Text": "Предложить мою",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223358Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "34827e0620645682ca8b921a9260db675378f05a501fa9a7cd09c5d679e210f6",
+      "Text": "建议我的",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.222338Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "34827e0620645682ca8b921a9260db675378f05a501fa9a7cd09c5d679e210f6",
+      "Text": "建議我的",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223406Z",
       "Suggestions": [],
       "Comments": []
     }

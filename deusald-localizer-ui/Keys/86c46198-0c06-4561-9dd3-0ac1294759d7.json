@@ -4,7 +4,7 @@
   "KeyName": "saveSource",
   "Description": "Button that saves the source text",
   "CreatedAt": "2026-07-16T12:48:41.557991Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7087258Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2251231Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7087232Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "36d26ce8c3f6dae5f347ec0a616724bad9cfb01409d1aac80cafea675f135e0e",
+      "Text": "Uložit zdroj",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.225078Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "36d26ce8c3f6dae5f347ec0a616724bad9cfb01409d1aac80cafea675f135e0e",
+      "Text": "Quelle speichern",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2250821Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "36d26ce8c3f6dae5f347ec0a616724bad9cfb01409d1aac80cafea675f135e0e",
+      "Text": "Guardar fuente",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2250857Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "36d26ce8c3f6dae5f347ec0a616724bad9cfb01409d1aac80cafea675f135e0e",
+      "Text": "Enregistrer la source",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2250892Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "36d26ce8c3f6dae5f347ec0a616724bad9cfb01409d1aac80cafea675f135e0e",
+      "Text": "Salva origine",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2250937Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "36d26ce8c3f6dae5f347ec0a616724bad9cfb01409d1aac80cafea675f135e0e",
+      "Text": "ソースを保存",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2250973Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "36d26ce8c3f6dae5f347ec0a616724bad9cfb01409d1aac80cafea675f135e0e",
+      "Text": "원본 저장",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.225101Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "36d26ce8c3f6dae5f347ec0a616724bad9cfb01409d1aac80cafea675f135e0e",
+      "Text": "Salvar origem",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2251091Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "36d26ce8c3f6dae5f347ec0a616724bad9cfb01409d1aac80cafea675f135e0e",
+      "Text": "Сохранить источник",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2251129Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "36d26ce8c3f6dae5f347ec0a616724bad9cfb01409d1aac80cafea675f135e0e",
+      "Text": "保存源",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2251167Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "36d26ce8c3f6dae5f347ec0a616724bad9cfb01409d1aac80cafea675f135e0e",
+      "Text": "儲存來源",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2251202Z",
       "Suggestions": [],
       "Comments": []
     }

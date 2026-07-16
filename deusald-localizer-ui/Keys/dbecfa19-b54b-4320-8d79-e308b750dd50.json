@@ -4,7 +4,7 @@
   "KeyName": "accessTokenResetBody",
   "Description": "Body of the modal shown after an admin resets a member's token.",
   "CreatedAt": "2026-07-16T12:48:41.5596643Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7108912Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2466804Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7108892Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "9c9a042359a80db248edf9036a953b48ebd01383354f618409c96b49bd58b2ba",
+      "Text": "Token uživatele {name} byl resetován. Sdílejte tento jednorázový token s ním zabezpečeným kanálem; jednou se s ním přihlásí a poté si nastaví vlastní.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465699Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "9c9a042359a80db248edf9036a953b48ebd01383354f618409c96b49bd58b2ba",
+      "Text": "Das Token von {name} wurde zurückgesetzt. Teile dieses Einmal-Token über einen sicheren Kanal mit; sie melden sich einmal damit an und legen dann ihr eigenes fest.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465767Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "9c9a042359a80db248edf9036a953b48ebd01383354f618409c96b49bd58b2ba",
+      "Text": "El token de {name} se restableció. Comparte este token de un solo uso con esa persona por un canal seguro; iniciará sesión con él una vez y luego establecerá el suyo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465805Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "9c9a042359a80db248edf9036a953b48ebd01383354f618409c96b49bd58b2ba",
+      "Text": "Le jeton de {name} a été réinitialisé. Partagez ce jeton à usage unique avec cette personne via un canal sécurisé ; elle se connectera une fois avec, puis définira le sien.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465845Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "9c9a042359a80db248edf9036a953b48ebd01383354f618409c96b49bd58b2ba",
+      "Text": "Il token di {name} è stato reimpostato. Condividi questo token monouso con questa persona tramite un canale sicuro; accederà una volta con esso e poi imposterà il proprio.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465879Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "9c9a042359a80db248edf9036a953b48ebd01383354f618409c96b49bd58b2ba",
+      "Text": "{name}のトークンがリセットされました。この使い捨てトークンを安全なチャネルで本人と共有してください。本人は一度これでログインし、その後自分のトークンを設定します。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465972Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "9c9a042359a80db248edf9036a953b48ebd01383354f618409c96b49bd58b2ba",
+      "Text": "{name}님의 토큰이 재설정되었습니다. 이 일회용 토큰을 안전한 채널로 해당 사용자와 공유하세요. 한 번 로그인한 후 자신의 토큰을 설정합니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2466012Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "9c9a042359a80db248edf9036a953b48ebd01383354f618409c96b49bd58b2ba",
+      "Text": "O token de {name} foi redefinido. Compartilhe este token de uso único com essa pessoa por um canal seguro; ela entrará com ele uma vez e depois definirá o próprio.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2466136Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "9c9a042359a80db248edf9036a953b48ebd01383354f618409c96b49bd58b2ba",
+      "Text": "Токен пользователя {name} был сброшен. Поделитесь этим одноразовым токеном с ним по защищённому каналу; он войдёт с ним один раз, а затем задаст свой собственный.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2466172Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "9c9a042359a80db248edf9036a953b48ebd01383354f618409c96b49bd58b2ba",
+      "Text": "{name} 的令牌已重置。请通过安全渠道与其分享此一次性令牌；他们用它登录一次，然后设置自己的令牌。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2466623Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "9c9a042359a80db248edf9036a953b48ebd01383354f618409c96b49bd58b2ba",
+      "Text": "{name} 的權杖已重設。請透過安全管道與其分享此一次性權杖；他們用它登入一次，然後設定自己的權杖。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2466739Z",
       "Suggestions": [],
       "Comments": []
     }

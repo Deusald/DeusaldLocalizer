@@ -4,7 +4,7 @@
   "KeyName": "couldNotRegenerateToken",
   "Description": "Error shown when regenerating the current user's token failed.",
   "CreatedAt": "2026-07-16T12:48:41.5596226Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7110053Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2476477Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7110032Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "9573f45c4a2d63b224a5d33f7bb97d41c9934fe22234a3e1c33ae621281fbb8a",
+      "Text": "Nepodařilo se znovu vygenerovat váš token. Zkuste to znovu.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2476068Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "9573f45c4a2d63b224a5d33f7bb97d41c9934fe22234a3e1c33ae621281fbb8a",
+      "Text": "Dein Token konnte nicht neu generiert werden. Bitte versuche es erneut.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2476154Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "9573f45c4a2d63b224a5d33f7bb97d41c9934fe22234a3e1c33ae621281fbb8a",
+      "Text": "No se pudo regenerar tu token. Inténtalo de nuevo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2476197Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "9573f45c4a2d63b224a5d33f7bb97d41c9934fe22234a3e1c33ae621281fbb8a",
+      "Text": "Impossible de régénérer votre jeton. Veuillez réessayer.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2476221Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "9573f45c4a2d63b224a5d33f7bb97d41c9934fe22234a3e1c33ae621281fbb8a",
+      "Text": "Impossibile rigenerare il tuo token. Riprova.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2476245Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "9573f45c4a2d63b224a5d33f7bb97d41c9934fe22234a3e1c33ae621281fbb8a",
+      "Text": "トークンを再生成できませんでした。もう一度お試しください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2476293Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "9573f45c4a2d63b224a5d33f7bb97d41c9934fe22234a3e1c33ae621281fbb8a",
+      "Text": "토큰을 다시 생성할 수 없습니다. 다시 시도하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2476317Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "9573f45c4a2d63b224a5d33f7bb97d41c9934fe22234a3e1c33ae621281fbb8a",
+      "Text": "Não foi possível regenerar seu token. Tente novamente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2476364Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "9573f45c4a2d63b224a5d33f7bb97d41c9934fe22234a3e1c33ae621281fbb8a",
+      "Text": "Не удалось повторно сгенерировать ваш токен. Попробуйте ещё раз.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.247641Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "9573f45c4a2d63b224a5d33f7bb97d41c9934fe22234a3e1c33ae621281fbb8a",
+      "Text": "无法重新生成你的令牌。请重试。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.247644Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "9573f45c4a2d63b224a5d33f7bb97d41c9934fe22234a3e1c33ae621281fbb8a",
+      "Text": "無法重新產生你的權杖。請重試。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2476463Z",
       "Suggestions": [],
       "Comments": []
     }

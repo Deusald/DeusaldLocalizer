@@ -4,7 +4,7 @@
   "KeyName": "placeholdersHint",
   "Description": "Hint that placeholder tokens are supported in the text",
   "CreatedAt": "2026-07-16T12:48:41.5579734Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7087094Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2249907Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7087069Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "ef3f31cb7018dc53c1efb4f9694f4cad66cf0f7d998b13e35a37a083079147e7",
+      "Text": "{placeholders} podporováno",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2249463Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "ef3f31cb7018dc53c1efb4f9694f4cad66cf0f7d998b13e35a37a083079147e7",
+      "Text": "{placeholders} unterstützt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2249509Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "ef3f31cb7018dc53c1efb4f9694f4cad66cf0f7d998b13e35a37a083079147e7",
+      "Text": "{placeholders} admitidos",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2249549Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "ef3f31cb7018dc53c1efb4f9694f4cad66cf0f7d998b13e35a37a083079147e7",
+      "Text": "{placeholders} pris en charge",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2249587Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "ef3f31cb7018dc53c1efb4f9694f4cad66cf0f7d998b13e35a37a083079147e7",
+      "Text": "{placeholders} supportati",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2249622Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "ef3f31cb7018dc53c1efb4f9694f4cad66cf0f7d998b13e35a37a083079147e7",
+      "Text": "{placeholders}に対応",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2249662Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "ef3f31cb7018dc53c1efb4f9694f4cad66cf0f7d998b13e35a37a083079147e7",
+      "Text": "{placeholders} 지원됨",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2249697Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "ef3f31cb7018dc53c1efb4f9694f4cad66cf0f7d998b13e35a37a083079147e7",
+      "Text": "{placeholders} suportados",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2249769Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "ef3f31cb7018dc53c1efb4f9694f4cad66cf0f7d998b13e35a37a083079147e7",
+      "Text": "{placeholders} поддерживается",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.224981Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "ef3f31cb7018dc53c1efb4f9694f4cad66cf0f7d998b13e35a37a083079147e7",
+      "Text": "支持 {placeholders}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2249849Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "ef3f31cb7018dc53c1efb4f9694f4cad66cf0f7d998b13e35a37a083079147e7",
+      "Text": "支援 {placeholders}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2249884Z",
       "Suggestions": [],
       "Comments": []
     }

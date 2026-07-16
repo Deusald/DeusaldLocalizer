@@ -4,7 +4,7 @@
   "KeyName": "emptyState",
   "Description": "Empty-state text when the last sync pulled nothing.",
   "CreatedAt": "2026-07-16T12:48:41.5602571Z",
-  "UpdatedAt": "2026-07-16T13:07:17.710675Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2440621Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7106729Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "fd55635d29afd8d4e2639b3f97510fbefcb055da3fd51be6680c16c4099471b0",
+      "Text": "Od poslední synchronizace nic nového.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2439932Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "fd55635d29afd8d4e2639b3f97510fbefcb055da3fd51be6680c16c4099471b0",
+      "Text": "Nichts Neues seit der letzten Synchronisierung.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.244008Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "fd55635d29afd8d4e2639b3f97510fbefcb055da3fd51be6680c16c4099471b0",
+      "Text": "Nada nuevo desde la última sincronización.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.244012Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "fd55635d29afd8d4e2639b3f97510fbefcb055da3fd51be6680c16c4099471b0",
+      "Text": "Rien de nouveau depuis la dernière synchronisation.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2440155Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "fd55635d29afd8d4e2639b3f97510fbefcb055da3fd51be6680c16c4099471b0",
+      "Text": "Niente di nuovo dall'ultima sincronizzazione.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2440249Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "fd55635d29afd8d4e2639b3f97510fbefcb055da3fd51be6680c16c4099471b0",
+      "Text": "前回の同期以降、新しいものはありません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2440285Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "fd55635d29afd8d4e2639b3f97510fbefcb055da3fd51be6680c16c4099471b0",
+      "Text": "마지막 동기화 이후 새로운 항목 없음.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2440323Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "fd55635d29afd8d4e2639b3f97510fbefcb055da3fd51be6680c16c4099471b0",
+      "Text": "Nada novo desde a última sincronização.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2440453Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "fd55635d29afd8d4e2639b3f97510fbefcb055da3fd51be6680c16c4099471b0",
+      "Text": "С последней синхронизации ничего нового.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2440493Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "fd55635d29afd8d4e2639b3f97510fbefcb055da3fd51be6680c16c4099471b0",
+      "Text": "自上次同步以来没有新内容。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2440528Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "fd55635d29afd8d4e2639b3f97510fbefcb055da3fd51be6680c16c4099471b0",
+      "Text": "自上次同步以來沒有新內容。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2440565Z",
       "Suggestions": [],
       "Comments": []
     }

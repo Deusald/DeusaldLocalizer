@@ -4,7 +4,7 @@
   "KeyName": "editLanguages",
   "Description": "Tooltip for the button that enters language edit mode.",
   "CreatedAt": "2026-07-16T12:48:41.5569286Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7095285Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2333957Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7095265Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "057abab05e147521be42bbb46f09fdbbb908a803a9e85b3c0ba5be3f7a0b6634",
+      "Text": "Upravit jazyky",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2333433Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "057abab05e147521be42bbb46f09fdbbb908a803a9e85b3c0ba5be3f7a0b6634",
+      "Text": "Sprachen bearbeiten",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2333457Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "057abab05e147521be42bbb46f09fdbbb908a803a9e85b3c0ba5be3f7a0b6634",
+      "Text": "Editar idiomas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2333479Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "057abab05e147521be42bbb46f09fdbbb908a803a9e85b3c0ba5be3f7a0b6634",
+      "Text": "Modifier les langues",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.23335Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "057abab05e147521be42bbb46f09fdbbb908a803a9e85b3c0ba5be3f7a0b6634",
+      "Text": "Modifica lingue",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2333681Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "057abab05e147521be42bbb46f09fdbbb908a803a9e85b3c0ba5be3f7a0b6634",
+      "Text": "言語を編集",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2333706Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "057abab05e147521be42bbb46f09fdbbb908a803a9e85b3c0ba5be3f7a0b6634",
+      "Text": "언어 편집",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2333728Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "057abab05e147521be42bbb46f09fdbbb908a803a9e85b3c0ba5be3f7a0b6634",
+      "Text": "Editar idiomas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2333803Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "057abab05e147521be42bbb46f09fdbbb908a803a9e85b3c0ba5be3f7a0b6634",
+      "Text": "Редактировать языки",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2333842Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "057abab05e147521be42bbb46f09fdbbb908a803a9e85b3c0ba5be3f7a0b6634",
+      "Text": "编辑语言",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2333881Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "057abab05e147521be42bbb46f09fdbbb908a803a9e85b3c0ba5be3f7a0b6634",
+      "Text": "編輯語言",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2333926Z",
       "Suggestions": [],
       "Comments": []
     }

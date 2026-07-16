@@ -4,7 +4,7 @@
   "KeyName": "pushRejectedResolve",
   "Description": "Push result message when the server rejected the push due to conflicts.",
   "CreatedAt": "2026-07-16T12:48:41.5591536Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7097796Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2350668Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7097774Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "84e8f5445279b1049dc126e700774fb0a85f117f1e6c5673c660f35385a03bff",
+      "Text": "Odeslání odmítnuto — vyřešte {count} konfliktů",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350368Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "84e8f5445279b1049dc126e700774fb0a85f117f1e6c5673c660f35385a03bff",
+      "Text": "Push abgelehnt — löse {count} Konflikt(e)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350404Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "84e8f5445279b1049dc126e700774fb0a85f117f1e6c5673c660f35385a03bff",
+      "Text": "Envío rechazado: resuelve {count} conflicto(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350427Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "84e8f5445279b1049dc126e700774fb0a85f117f1e6c5673c660f35385a03bff",
+      "Text": "Envoi rejeté — résolvez {count} conflit(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350449Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "84e8f5445279b1049dc126e700774fb0a85f117f1e6c5673c660f35385a03bff",
+      "Text": "Invio rifiutato — risolvi {count} conflitto/i",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350481Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "84e8f5445279b1049dc126e700774fb0a85f117f1e6c5673c660f35385a03bff",
+      "Text": "プッシュが拒否されました — {count}件の競合を解決してください",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350504Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "84e8f5445279b1049dc126e700774fb0a85f117f1e6c5673c660f35385a03bff",
+      "Text": "푸시 거부됨 — 충돌 {count}개를 해결하세요",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350527Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "84e8f5445279b1049dc126e700774fb0a85f117f1e6c5673c660f35385a03bff",
+      "Text": "Envio rejeitado — resolva {count} conflito(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350582Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "84e8f5445279b1049dc126e700774fb0a85f117f1e6c5673c660f35385a03bff",
+      "Text": "Отправка отклонена — разрешите {count} конфликтов",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350605Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "84e8f5445279b1049dc126e700774fb0a85f117f1e6c5673c660f35385a03bff",
+      "Text": "推送被拒绝——请解决 {count} 个冲突",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350627Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "84e8f5445279b1049dc126e700774fb0a85f117f1e6c5673c660f35385a03bff",
+      "Text": "推送遭拒——請解決 {count} 個衝突",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350649Z",
       "Suggestions": [],
       "Comments": []
     }

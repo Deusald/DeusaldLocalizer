@@ -4,7 +4,7 @@
   "KeyName": "updateFailed",
   "Description": "Error when an in-place update fails (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794495Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7077419Z",
+  "UpdatedAt": "2026-07-16T20:46:27.218583Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7077402Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "e1de91d94ce8a730e01373f0b6da3148af3552db5eca71e307efff3e47327870",
+      "Text": "Aktualizaci se nepodařilo nainstalovat. Zkuste to prosím později.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.218541Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "e1de91d94ce8a730e01373f0b6da3148af3552db5eca71e307efff3e47327870",
+      "Text": "Das Update konnte nicht installiert werden. Bitte versuche es später erneut.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2185438Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "e1de91d94ce8a730e01373f0b6da3148af3552db5eca71e307efff3e47327870",
+      "Text": "No se pudo instalar la actualización. Inténtalo de nuevo más tarde.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2185465Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "e1de91d94ce8a730e01373f0b6da3148af3552db5eca71e307efff3e47327870",
+      "Text": "La mise à jour n'a pas pu être installée. Veuillez réessayer plus tard.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2185488Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "e1de91d94ce8a730e01373f0b6da3148af3552db5eca71e307efff3e47327870",
+      "Text": "Impossibile installare l'aggiornamento. Riprova più tardi.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2185512Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "e1de91d94ce8a730e01373f0b6da3148af3552db5eca71e307efff3e47327870",
+      "Text": "更新をインストールできませんでした。後でもう一度お試しください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2185535Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "e1de91d94ce8a730e01373f0b6da3148af3552db5eca71e307efff3e47327870",
+      "Text": "업데이트를 설치할 수 없습니다. 나중에 다시 시도하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2185563Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "e1de91d94ce8a730e01373f0b6da3148af3552db5eca71e307efff3e47327870",
+      "Text": "Não foi possível instalar a atualização. Tente novamente mais tarde.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.218561Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "e1de91d94ce8a730e01373f0b6da3148af3552db5eca71e307efff3e47327870",
+      "Text": "Не удалось установить обновление. Повторите попытку позже.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2185633Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "e1de91d94ce8a730e01373f0b6da3148af3552db5eca71e307efff3e47327870",
+      "Text": "无法安装更新。请稍后重试。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2185787Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "e1de91d94ce8a730e01373f0b6da3148af3552db5eca71e307efff3e47327870",
+      "Text": "無法安裝更新。請稍後重試。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2185814Z",
       "Suggestions": [],
       "Comments": []
     }

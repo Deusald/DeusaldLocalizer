@@ -4,7 +4,7 @@
   "KeyName": "nothingToUndo",
   "Description": "Undo button tooltip when there is nothing to undo.",
   "CreatedAt": "2026-07-16T12:48:41.5588954Z",
-  "UpdatedAt": "2026-07-16T13:07:17.709697Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2346248Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.709695Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "8329007820d54938fe5dbf93c1d1ca8d76cd0657ad4c882689605f572e4ae6f0",
+      "Text": "Není co vrátit zpět",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345929Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "8329007820d54938fe5dbf93c1d1ca8d76cd0657ad4c882689605f572e4ae6f0",
+      "Text": "Nichts zum Rückgängigmachen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345992Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "8329007820d54938fe5dbf93c1d1ca8d76cd0657ad4c882689605f572e4ae6f0",
+      "Text": "Nada que deshacer",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.234602Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "8329007820d54938fe5dbf93c1d1ca8d76cd0657ad4c882689605f572e4ae6f0",
+      "Text": "Rien à annuler",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346041Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "8329007820d54938fe5dbf93c1d1ca8d76cd0657ad4c882689605f572e4ae6f0",
+      "Text": "Niente da annullare",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346069Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "8329007820d54938fe5dbf93c1d1ca8d76cd0657ad4c882689605f572e4ae6f0",
+      "Text": "元に戻す操作がありません",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346091Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "8329007820d54938fe5dbf93c1d1ca8d76cd0657ad4c882689605f572e4ae6f0",
+      "Text": "실행 취소할 항목 없음",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346114Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "8329007820d54938fe5dbf93c1d1ca8d76cd0657ad4c882689605f572e4ae6f0",
+      "Text": "Nada para desfazer",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346163Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "8329007820d54938fe5dbf93c1d1ca8d76cd0657ad4c882689605f572e4ae6f0",
+      "Text": "Нечего отменить",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346185Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "8329007820d54938fe5dbf93c1d1ca8d76cd0657ad4c882689605f572e4ae6f0",
+      "Text": "没有可撤销的内容",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346207Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "8329007820d54938fe5dbf93c1d1ca8d76cd0657ad4c882689605f572e4ae6f0",
+      "Text": "沒有可復原的內容",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346233Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "clearConfirmSuffix",
   "Description": "Trailing part of the clear-old-comments confirmation, after the amount and unit.",
   "CreatedAt": "2026-07-16T12:48:41.5595169Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7109613Z",
+  "UpdatedAt": "2026-07-16T20:46:27.247204Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7109593Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "5124f232855889ba001c6f90d1f37747e2a76394d791bcf8ec257564452cd8cf",
+      "Text": "+ staré komentáře?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2471412Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "5124f232855889ba001c6f90d1f37747e2a76394d791bcf8ec257564452cd8cf",
+      "Text": "+ alte Kommentare?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2471466Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "5124f232855889ba001c6f90d1f37747e2a76394d791bcf8ec257564452cd8cf",
+      "Text": "+ comentarios antiguos?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2471513Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "5124f232855889ba001c6f90d1f37747e2a76394d791bcf8ec257564452cd8cf",
+      "Text": "+ anciens commentaires ?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2471552Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "5124f232855889ba001c6f90d1f37747e2a76394d791bcf8ec257564452cd8cf",
+      "Text": "+ vecchi commenti?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.247159Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "5124f232855889ba001c6f90d1f37747e2a76394d791bcf8ec257564452cd8cf",
+      "Text": "+ 古いコメント？",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2471669Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "5124f232855889ba001c6f90d1f37747e2a76394d791bcf8ec257564452cd8cf",
+      "Text": "+ 오래된 댓글?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2471705Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "5124f232855889ba001c6f90d1f37747e2a76394d791bcf8ec257564452cd8cf",
+      "Text": "+ comentários antigos?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.247175Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "5124f232855889ba001c6f90d1f37747e2a76394d791bcf8ec257564452cd8cf",
+      "Text": "+ старые комментарии?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2471789Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "5124f232855889ba001c6f90d1f37747e2a76394d791bcf8ec257564452cd8cf",
+      "Text": "+ 旧评论？",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2471811Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "5124f232855889ba001c6f90d1f37747e2a76394d791bcf8ec257564452cd8cf",
+      "Text": "+ 舊註解？",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2471834Z",
       "Suggestions": [],
       "Comments": []
     }

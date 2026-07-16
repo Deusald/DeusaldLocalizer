@@ -4,7 +4,7 @@
   "KeyName": "mainLanguageLabel",
   "Description": "Field label for the main language picker",
   "CreatedAt": "2026-07-16T12:48:41.5615195Z",
-  "UpdatedAt": "2026-07-16T13:07:17.707445Z",
+  "UpdatedAt": "2026-07-16T20:46:27.216713Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.70743Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "d8428119b571d9fcfaa87c6d82ce7157bbac404ad0f1760e9a99677cc808e5b3",
+      "Text": "Hlavní jazyk",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166852Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "d8428119b571d9fcfaa87c6d82ce7157bbac404ad0f1760e9a99677cc808e5b3",
+      "Text": "Hauptsprache",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.216688Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "d8428119b571d9fcfaa87c6d82ce7157bbac404ad0f1760e9a99677cc808e5b3",
+      "Text": "Idioma principal",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166907Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "d8428119b571d9fcfaa87c6d82ce7157bbac404ad0f1760e9a99677cc808e5b3",
+      "Text": "Langue principale",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.216693Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "d8428119b571d9fcfaa87c6d82ce7157bbac404ad0f1760e9a99677cc808e5b3",
+      "Text": "Lingua principale",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166952Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "d8428119b571d9fcfaa87c6d82ce7157bbac404ad0f1760e9a99677cc808e5b3",
+      "Text": "メイン言語",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166973Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "d8428119b571d9fcfaa87c6d82ce7157bbac404ad0f1760e9a99677cc808e5b3",
+      "Text": "기본 언어",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2167Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "d8428119b571d9fcfaa87c6d82ce7157bbac404ad0f1760e9a99677cc808e5b3",
+      "Text": "Idioma principal",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2167046Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "d8428119b571d9fcfaa87c6d82ce7157bbac404ad0f1760e9a99677cc808e5b3",
+      "Text": "Основной язык",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2167068Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "d8428119b571d9fcfaa87c6d82ce7157bbac404ad0f1760e9a99677cc808e5b3",
+      "Text": "主语言",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2167094Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "d8428119b571d9fcfaa87c6d82ce7157bbac404ad0f1760e9a99677cc808e5b3",
+      "Text": "主要語言",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2167116Z",
       "Suggestions": [],
       "Comments": []
     }

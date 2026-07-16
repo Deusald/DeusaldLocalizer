@@ -4,7 +4,7 @@
   "KeyName": "errFirstSignIn",
   "Description": "Error when the first-time token rotation fails (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0795317Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7076177Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2179056Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.707616Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "39188f3d9c2ffecc7f822966c19cd2df88b199be082b2f5908f03f8101316db4",
+      "Text": "Nepodařilo se dokončit první přihlášení. Zkuste to znovu.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2178551Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "39188f3d9c2ffecc7f822966c19cd2df88b199be082b2f5908f03f8101316db4",
+      "Text": "Erste Anmeldung konnte nicht abgeschlossen werden. Bitte versuche es erneut.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2178616Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "39188f3d9c2ffecc7f822966c19cd2df88b199be082b2f5908f03f8101316db4",
+      "Text": "No se pudo completar el primer inicio de sesión. Inténtalo de nuevo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2178816Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "39188f3d9c2ffecc7f822966c19cd2df88b199be082b2f5908f03f8101316db4",
+      "Text": "Impossible de terminer la première connexion. Veuillez réessayer.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2178843Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "39188f3d9c2ffecc7f822966c19cd2df88b199be082b2f5908f03f8101316db4",
+      "Text": "Impossibile completare il primo accesso. Riprova.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2178867Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "39188f3d9c2ffecc7f822966c19cd2df88b199be082b2f5908f03f8101316db4",
+      "Text": "最初のログインを完了できませんでした。もう一度お試しください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.217889Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "39188f3d9c2ffecc7f822966c19cd2df88b199be082b2f5908f03f8101316db4",
+      "Text": "첫 로그인을 완료할 수 없습니다. 다시 시도하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2178918Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "39188f3d9c2ffecc7f822966c19cd2df88b199be082b2f5908f03f8101316db4",
+      "Text": "Não foi possível concluir a primeira entrada. Tente novamente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2178967Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "39188f3d9c2ffecc7f822966c19cd2df88b199be082b2f5908f03f8101316db4",
+      "Text": "Не удалось завершить первый вход. Попробуйте ещё раз.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2178994Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "39188f3d9c2ffecc7f822966c19cd2df88b199be082b2f5908f03f8101316db4",
+      "Text": "无法完成首次登录。请重试。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179016Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "39188f3d9c2ffecc7f822966c19cd2df88b199be082b2f5908f03f8101316db4",
+      "Text": "無法完成首次登入。請重試。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179041Z",
       "Suggestions": [],
       "Comments": []
     }

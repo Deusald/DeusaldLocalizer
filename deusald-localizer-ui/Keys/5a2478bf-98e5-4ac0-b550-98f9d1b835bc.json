@@ -4,7 +4,7 @@
   "KeyName": "backToProjects",
   "Description": "Tooltip on the back button that returns to the project picker.",
   "CreatedAt": "2026-07-16T12:48:41.5587741Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7096159Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2340696Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7096139Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "d9088c8aee0118cbc5f36d530001d9c73b9ac7187e02edebb05f322b61ec0ca0",
+      "Text": "Zpět na projekty",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2339901Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "d9088c8aee0118cbc5f36d530001d9c73b9ac7187e02edebb05f322b61ec0ca0",
+      "Text": "Zurück zu den Projekten",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2339942Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "d9088c8aee0118cbc5f36d530001d9c73b9ac7187e02edebb05f322b61ec0ca0",
+      "Text": "Volver a los proyectos",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2339966Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "d9088c8aee0118cbc5f36d530001d9c73b9ac7187e02edebb05f322b61ec0ca0",
+      "Text": "Retour aux projets",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2339993Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "d9088c8aee0118cbc5f36d530001d9c73b9ac7187e02edebb05f322b61ec0ca0",
+      "Text": "Torna ai progetti",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340015Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "d9088c8aee0118cbc5f36d530001d9c73b9ac7187e02edebb05f322b61ec0ca0",
+      "Text": "プロジェクトに戻る",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340038Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "d9088c8aee0118cbc5f36d530001d9c73b9ac7187e02edebb05f322b61ec0ca0",
+      "Text": "프로젝트로 돌아가기",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340065Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "d9088c8aee0118cbc5f36d530001d9c73b9ac7187e02edebb05f322b61ec0ca0",
+      "Text": "Voltar aos projetos",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340114Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "d9088c8aee0118cbc5f36d530001d9c73b9ac7187e02edebb05f322b61ec0ca0",
+      "Text": "Назад к проектам",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340444Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "d9088c8aee0118cbc5f36d530001d9c73b9ac7187e02edebb05f322b61ec0ca0",
+      "Text": "返回项目",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340655Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "d9088c8aee0118cbc5f36d530001d9c73b9ac7187e02edebb05f322b61ec0ca0",
+      "Text": "返回專案",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340682Z",
       "Suggestions": [],
       "Comments": []
     }

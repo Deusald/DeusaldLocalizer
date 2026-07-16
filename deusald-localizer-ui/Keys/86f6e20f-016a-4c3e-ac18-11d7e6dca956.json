@@ -4,7 +4,7 @@
   "KeyName": "searchByNameOrCode",
   "Description": "Placeholder for the add-language search box.",
   "CreatedAt": "2026-07-16T12:48:41.5569379Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7095519Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2335662Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.70955Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "7396787a1606b1b6a6552c48eabef290bf823e7c448a5a48856c1dd86087d9af",
+      "Text": "Hledat podle názvu nebo kódu…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335288Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "7396787a1606b1b6a6552c48eabef290bf823e7c448a5a48856c1dd86087d9af",
+      "Text": "Nach Name oder Code suchen…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335331Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "7396787a1606b1b6a6552c48eabef290bf823e7c448a5a48856c1dd86087d9af",
+      "Text": "Buscar por nombre o código…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335374Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "7396787a1606b1b6a6552c48eabef290bf823e7c448a5a48856c1dd86087d9af",
+      "Text": "Rechercher par nom ou code…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335412Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "7396787a1606b1b6a6552c48eabef290bf823e7c448a5a48856c1dd86087d9af",
+      "Text": "Cerca per nome o codice…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335451Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "7396787a1606b1b6a6552c48eabef290bf823e7c448a5a48856c1dd86087d9af",
+      "Text": "名前またはコードで検索…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335491Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "7396787a1606b1b6a6552c48eabef290bf823e7c448a5a48856c1dd86087d9af",
+      "Text": "이름 또는 코드로 검색…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335525Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "7396787a1606b1b6a6552c48eabef290bf823e7c448a5a48856c1dd86087d9af",
+      "Text": "Buscar por nome ou código…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335575Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "7396787a1606b1b6a6552c48eabef290bf823e7c448a5a48856c1dd86087d9af",
+      "Text": "Поиск по названию или коду…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335597Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "7396787a1606b1b6a6552c48eabef290bf823e7c448a5a48856c1dd86087d9af",
+      "Text": "按名称或代码搜索…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335624Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "7396787a1606b1b6a6552c48eabef290bf823e7c448a5a48856c1dd86087d9af",
+      "Text": "依名稱或代碼搜尋…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335648Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "desc",
   "Description": "Description of how Excel import works.",
   "CreatedAt": "2026-07-16T12:48:41.56032Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7100888Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2382405Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7100867Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "8f229d3640de4e79a82cd84e978d76f7fc67962a69d776fcf05fbc8d653f76b8",
+      "Text": "Vyberte soubor .xlsx exportovaný z tohoto projektu. Řádky se párují podle KeyId; buňky, které stále odpovídají svému #hash, se přeskočí.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2381627Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "8f229d3640de4e79a82cd84e978d76f7fc67962a69d776fcf05fbc8d653f76b8",
+      "Text": "Wähle eine aus diesem Projekt exportierte .xlsx aus. Zeilen werden über die KeyId abgeglichen; Zellen, die noch mit ihrem #hash übereinstimmen, werden übersprungen.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2381653Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "8f229d3640de4e79a82cd84e978d76f7fc67962a69d776fcf05fbc8d653f76b8",
+      "Text": "Selecciona un .xlsx exportado desde este proyecto. Las filas se emparejan por KeyId; las celdas que aún coinciden con su #hash se omiten.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2381999Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "8f229d3640de4e79a82cd84e978d76f7fc67962a69d776fcf05fbc8d653f76b8",
+      "Text": "Sélectionnez un .xlsx exporté depuis ce projet. Les lignes sont associées par KeyId ; les cellules qui correspondent encore à leur #hash sont ignorées.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2382046Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "8f229d3640de4e79a82cd84e978d76f7fc67962a69d776fcf05fbc8d653f76b8",
+      "Text": "Seleziona un .xlsx esportato da questo progetto. Le righe sono abbinate per KeyId; le celle che corrispondono ancora al loro #hash vengono ignorate.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2382148Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "8f229d3640de4e79a82cd84e978d76f7fc67962a69d776fcf05fbc8d653f76b8",
+      "Text": "このプロジェクトからエクスポートした.xlsxを選択してください。行はKeyIdで照合され、#hashがまだ一致するセルはスキップされます。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2382186Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "8f229d3640de4e79a82cd84e978d76f7fc67962a69d776fcf05fbc8d653f76b8",
+      "Text": "이 프로젝트에서 내보낸 .xlsx를 선택하세요. 행은 KeyId로 매칭되며, #hash가 여전히 일치하는 셀은 건너뜁니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2382236Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "8f229d3640de4e79a82cd84e978d76f7fc67962a69d776fcf05fbc8d653f76b8",
+      "Text": "Selecione um .xlsx exportado deste projeto. As linhas são correspondidas por KeyId; células que ainda correspondem ao seu #hash são ignoradas.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2382316Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "8f229d3640de4e79a82cd84e978d76f7fc67962a69d776fcf05fbc8d653f76b8",
+      "Text": "Выберите .xlsx, экспортированный из этого проекта. Строки сопоставляются по KeyId; ячейки, всё ещё совпадающие со своим #hash, пропускаются.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.238234Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "8f229d3640de4e79a82cd84e978d76f7fc67962a69d776fcf05fbc8d653f76b8",
+      "Text": "选择从此项目导出的 .xlsx。行按 KeyId 匹配；仍与其 #hash 匹配的单元格将被跳过。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2382366Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "8f229d3640de4e79a82cd84e978d76f7fc67962a69d776fcf05fbc8d653f76b8",
+      "Text": "選擇從此專案匯出的 .xlsx。列會依 KeyId 比對；仍與其 #hash 相符的儲存格將被略過。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.238239Z",
       "Suggestions": [],
       "Comments": []
     }

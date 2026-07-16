@@ -4,7 +4,7 @@
   "KeyName": "titleOneConflict",
   "Description": "Conflicts modal title when there is exactly one conflict.",
   "CreatedAt": "2026-07-16T12:48:41.5596803Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7100556Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2378515Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7100536Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "6614cd72ec059d169c8d6d61998d2a1795880739447b4bf2fbd2cdd51e4486c3",
+      "Text": "{count} konflikt k vyřešení",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.237764Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "6614cd72ec059d169c8d6d61998d2a1795880739447b4bf2fbd2cdd51e4486c3",
+      "Text": "{count} Konflikt zu lösen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2377668Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "6614cd72ec059d169c8d6d61998d2a1795880739447b4bf2fbd2cdd51e4486c3",
+      "Text": "{count} conflicto por resolver",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.237769Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "6614cd72ec059d169c8d6d61998d2a1795880739447b4bf2fbd2cdd51e4486c3",
+      "Text": "{count} conflit à résoudre",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2377713Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "6614cd72ec059d169c8d6d61998d2a1795880739447b4bf2fbd2cdd51e4486c3",
+      "Text": "{count} conflitto da risolvere",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2377744Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "6614cd72ec059d169c8d6d61998d2a1795880739447b4bf2fbd2cdd51e4486c3",
+      "Text": "解決すべき競合が{count}件",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2377765Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "6614cd72ec059d169c8d6d61998d2a1795880739447b4bf2fbd2cdd51e4486c3",
+      "Text": "해결할 충돌 {count}개",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2377786Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "6614cd72ec059d169c8d6d61998d2a1795880739447b4bf2fbd2cdd51e4486c3",
+      "Text": "{count} conflito para resolver",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.237843Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "6614cd72ec059d169c8d6d61998d2a1795880739447b4bf2fbd2cdd51e4486c3",
+      "Text": "{count} конфликт для разрешения",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2378453Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "6614cd72ec059d169c8d6d61998d2a1795880739447b4bf2fbd2cdd51e4486c3",
+      "Text": "{count} 个冲突待解决",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2378475Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "6614cd72ec059d169c8d6d61998d2a1795880739447b4bf2fbd2cdd51e4486c3",
+      "Text": "{count} 個衝突待解決",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2378497Z",
       "Suggestions": [],
       "Comments": []
     }

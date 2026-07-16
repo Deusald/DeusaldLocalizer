@@ -4,7 +4,7 @@
   "KeyName": "enumLabel",
   "Description": "Label for the enum selection field",
   "CreatedAt": "2026-07-16T12:48:41.5583193Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7088636Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2266338Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7088615Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "54108dafaac5aca21c195078149151f46c91f5d7fa036238bcd4f1d0dc2cacf7",
+      "Text": "Výčet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2265877Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "54108dafaac5aca21c195078149151f46c91f5d7fa036238bcd4f1d0dc2cacf7",
+      "Text": "Enum",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2265923Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "54108dafaac5aca21c195078149151f46c91f5d7fa036238bcd4f1d0dc2cacf7",
+      "Text": "Enum",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2265961Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "54108dafaac5aca21c195078149151f46c91f5d7fa036238bcd4f1d0dc2cacf7",
+      "Text": "Énumération",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2265998Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "54108dafaac5aca21c195078149151f46c91f5d7fa036238bcd4f1d0dc2cacf7",
+      "Text": "Enum",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2266035Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "54108dafaac5aca21c195078149151f46c91f5d7fa036238bcd4f1d0dc2cacf7",
+      "Text": "列挙型",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2266078Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "54108dafaac5aca21c195078149151f46c91f5d7fa036238bcd4f1d0dc2cacf7",
+      "Text": "열거형",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2266118Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "54108dafaac5aca21c195078149151f46c91f5d7fa036238bcd4f1d0dc2cacf7",
+      "Text": "Enum",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.226619Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "54108dafaac5aca21c195078149151f46c91f5d7fa036238bcd4f1d0dc2cacf7",
+      "Text": "Перечисление",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2266236Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "54108dafaac5aca21c195078149151f46c91f5d7fa036238bcd4f1d0dc2cacf7",
+      "Text": "枚举",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2266275Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "54108dafaac5aca21c195078149151f46c91f5d7fa036238bcd4f1d0dc2cacf7",
+      "Text": "列舉",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2266312Z",
       "Suggestions": [],
       "Comments": []
     }

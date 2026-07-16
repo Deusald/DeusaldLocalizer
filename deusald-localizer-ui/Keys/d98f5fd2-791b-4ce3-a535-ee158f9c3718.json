@@ -4,7 +4,7 @@
   "KeyName": "updateDescriptions",
   "Description": "Checkbox label to update descriptions.",
   "CreatedAt": "2026-07-16T12:48:41.5603976Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7102681Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2397888Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7102661Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "2682bcc7a4f771031c3850176cecf49b5c2c14f803700d1ff0e779c9a941f0f9",
+      "Text": "Aktualizovat popisy",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2396865Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "2682bcc7a4f771031c3850176cecf49b5c2c14f803700d1ff0e779c9a941f0f9",
+      "Text": "Beschreibungen aktualisieren",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2396956Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "2682bcc7a4f771031c3850176cecf49b5c2c14f803700d1ff0e779c9a941f0f9",
+      "Text": "Actualizar descripciones",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2397024Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "2682bcc7a4f771031c3850176cecf49b5c2c14f803700d1ff0e779c9a941f0f9",
+      "Text": "Mettre à jour les descriptions",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2397049Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "2682bcc7a4f771031c3850176cecf49b5c2c14f803700d1ff0e779c9a941f0f9",
+      "Text": "Aggiorna descrizioni",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2397072Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "2682bcc7a4f771031c3850176cecf49b5c2c14f803700d1ff0e779c9a941f0f9",
+      "Text": "説明を更新",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2397578Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "2682bcc7a4f771031c3850176cecf49b5c2c14f803700d1ff0e779c9a941f0f9",
+      "Text": "설명 업데이트",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2397665Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "2682bcc7a4f771031c3850176cecf49b5c2c14f803700d1ff0e779c9a941f0f9",
+      "Text": "Atualizar descrições",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2397741Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "2682bcc7a4f771031c3850176cecf49b5c2c14f803700d1ff0e779c9a941f0f9",
+      "Text": "Обновить описания",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2397778Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "2682bcc7a4f771031c3850176cecf49b5c2c14f803700d1ff0e779c9a941f0f9",
+      "Text": "更新描述",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2397822Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "2682bcc7a4f771031c3850176cecf49b5c2c14f803700d1ff0e779c9a941f0f9",
+      "Text": "更新描述",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2397859Z",
       "Suggestions": [],
       "Comments": []
     }

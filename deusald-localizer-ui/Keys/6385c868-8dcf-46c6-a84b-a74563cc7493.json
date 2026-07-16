@@ -4,7 +4,7 @@
   "KeyName": "manyCategories",
   "Description": "Filter trigger label when multiple categories are selected.",
   "CreatedAt": "2026-07-16T12:48:41.5573274Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7091037Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2293552Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7091016Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "d2f9f78791aa305fbaef6f5dc71459b8192868172eb5d7473a979141a4644f13",
+      "Text": "{count} kategorií",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2293095Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "d2f9f78791aa305fbaef6f5dc71459b8192868172eb5d7473a979141a4644f13",
+      "Text": "{count} Kategorien",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2293136Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "d2f9f78791aa305fbaef6f5dc71459b8192868172eb5d7473a979141a4644f13",
+      "Text": "{count} categorías",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2293177Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "d2f9f78791aa305fbaef6f5dc71459b8192868172eb5d7473a979141a4644f13",
+      "Text": "{count} catégories",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.229322Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "d2f9f78791aa305fbaef6f5dc71459b8192868172eb5d7473a979141a4644f13",
+      "Text": "{count} categorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2293257Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "d2f9f78791aa305fbaef6f5dc71459b8192868172eb5d7473a979141a4644f13",
+      "Text": "{count}カテゴリ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2293293Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "d2f9f78791aa305fbaef6f5dc71459b8192868172eb5d7473a979141a4644f13",
+      "Text": "카테고리 {count}개",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2293332Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "d2f9f78791aa305fbaef6f5dc71459b8192868172eb5d7473a979141a4644f13",
+      "Text": "{count} categorias",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.229341Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "d2f9f78791aa305fbaef6f5dc71459b8192868172eb5d7473a979141a4644f13",
+      "Text": "{count} категорий",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2293448Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "d2f9f78791aa305fbaef6f5dc71459b8192868172eb5d7473a979141a4644f13",
+      "Text": "{count} 个类别",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2293484Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "d2f9f78791aa305fbaef6f5dc71459b8192868172eb5d7473a979141a4644f13",
+      "Text": "{count} 個分類",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2293526Z",
       "Suggestions": [],
       "Comments": []
     }

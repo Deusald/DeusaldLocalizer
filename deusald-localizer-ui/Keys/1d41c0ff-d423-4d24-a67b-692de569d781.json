@@ -4,7 +4,7 @@
   "KeyName": "emptySub",
   "Description": "Empty-state description (web).",
   "CreatedAt": "2026-07-16T12:29:28.079318Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7078121Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2191265Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7078103Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "96d68a90b8e058dfd60aa9965d78ba4cd859b699763b471b4390e2de4e14d883",
+      "Text": "Začněte vytvořením nového projektu nebo importem .zip. Ukládají se v tomto prohlížeči.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2190974Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "96d68a90b8e058dfd60aa9965d78ba4cd859b699763b471b4390e2de4e14d883",
+      "Text": "Erstelle ein neues Projekt oder importiere eine .zip, um zu beginnen. Sie werden in diesem Browser gespeichert.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191002Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "96d68a90b8e058dfd60aa9965d78ba4cd859b699763b471b4390e2de4e14d883",
+      "Text": "Crea un nuevo proyecto o importa un .zip para empezar. Se guardan en este navegador.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191031Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "96d68a90b8e058dfd60aa9965d78ba4cd859b699763b471b4390e2de4e14d883",
+      "Text": "Créez un nouveau projet ou importez un .zip pour commencer. Ils sont enregistrés dans ce navigateur.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191054Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "96d68a90b8e058dfd60aa9965d78ba4cd859b699763b471b4390e2de4e14d883",
+      "Text": "Crea un nuovo progetto o importa un .zip per iniziare. Vengono salvati in questo browser.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191077Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "96d68a90b8e058dfd60aa9965d78ba4cd859b699763b471b4390e2de4e14d883",
+      "Text": "新規プロジェクトを作成するか、.zipをインポートして始めましょう。このブラウザーに保存されます。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191106Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "96d68a90b8e058dfd60aa9965d78ba4cd859b699763b471b4390e2de4e14d883",
+      "Text": "새 프로젝트를 만들거나 .zip을 가져와 시작하세요. 이 브라우저에 저장됩니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.219113Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "96d68a90b8e058dfd60aa9965d78ba4cd859b699763b471b4390e2de4e14d883",
+      "Text": "Crie um novo projeto ou importe um .zip para começar. Eles são salvos neste navegador.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191177Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "96d68a90b8e058dfd60aa9965d78ba4cd859b699763b471b4390e2de4e14d883",
+      "Text": "Создайте новый проект или импортируйте .zip, чтобы начать. Они сохраняются в этом браузере.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191205Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "96d68a90b8e058dfd60aa9965d78ba4cd859b699763b471b4390e2de4e14d883",
+      "Text": "创建新项目或导入 .zip 以开始。它们会保存在此浏览器中。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191228Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "96d68a90b8e058dfd60aa9965d78ba4cd859b699763b471b4390e2de4e14d883",
+      "Text": "建立新專案或匯入 .zip 以開始。它們會儲存在此瀏覽器中。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191251Z",
       "Suggestions": [],
       "Comments": []
     }

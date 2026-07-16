@@ -4,7 +4,7 @@
   "KeyName": "noDescription",
   "Description": "Shown to non-admins when a key has no description.",
   "CreatedAt": "2026-07-16T12:48:41.557775Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7083382Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2225922Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7083359Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "06a694820920c9ffca34f9d45ae7ccffcc94c67fbc914b082930994b7076cad3",
+      "Text": "Bez popisu.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225637Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "06a694820920c9ffca34f9d45ae7ccffcc94c67fbc914b082930994b7076cad3",
+      "Text": "Keine Beschreibung.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225666Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "06a694820920c9ffca34f9d45ae7ccffcc94c67fbc914b082930994b7076cad3",
+      "Text": "Sin descripción.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225695Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "06a694820920c9ffca34f9d45ae7ccffcc94c67fbc914b082930994b7076cad3",
+      "Text": "Aucune description.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225715Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "06a694820920c9ffca34f9d45ae7ccffcc94c67fbc914b082930994b7076cad3",
+      "Text": "Nessuna descrizione.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225738Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "06a694820920c9ffca34f9d45ae7ccffcc94c67fbc914b082930994b7076cad3",
+      "Text": "説明はありません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225764Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "06a694820920c9ffca34f9d45ae7ccffcc94c67fbc914b082930994b7076cad3",
+      "Text": "설명 없음.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225786Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "06a694820920c9ffca34f9d45ae7ccffcc94c67fbc914b082930994b7076cad3",
+      "Text": "Sem descrição.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.222583Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "06a694820920c9ffca34f9d45ae7ccffcc94c67fbc914b082930994b7076cad3",
+      "Text": "Нет описания.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.222586Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "06a694820920c9ffca34f9d45ae7ccffcc94c67fbc914b082930994b7076cad3",
+      "Text": "无描述。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225882Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "06a694820920c9ffca34f9d45ae7ccffcc94c67fbc914b082930994b7076cad3",
+      "Text": "無描述。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225908Z",
       "Suggestions": [],
       "Comments": []
     }

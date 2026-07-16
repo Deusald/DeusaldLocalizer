@@ -4,7 +4,7 @@
   "KeyName": "changeData",
   "Description": "Detail row label for a change's data.",
   "CreatedAt": "2026-07-16T12:48:41.5602007Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7107196Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2446195Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7107175Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c3a73a975912065a02db251cc330e500ac5877914c383129e5b40bd8f89aeef4",
+      "Text": "Data změny",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445632Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c3a73a975912065a02db251cc330e500ac5877914c383129e5b40bd8f89aeef4",
+      "Text": "Änderungsdaten",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445713Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c3a73a975912065a02db251cc330e500ac5877914c383129e5b40bd8f89aeef4",
+      "Text": "Datos del cambio",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445749Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c3a73a975912065a02db251cc330e500ac5877914c383129e5b40bd8f89aeef4",
+      "Text": "Données de la modification",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445789Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c3a73a975912065a02db251cc330e500ac5877914c383129e5b40bd8f89aeef4",
+      "Text": "Dati della modifica",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445856Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c3a73a975912065a02db251cc330e500ac5877914c383129e5b40bd8f89aeef4",
+      "Text": "変更データ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445894Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c3a73a975912065a02db251cc330e500ac5877914c383129e5b40bd8f89aeef4",
+      "Text": "변경 데이터",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445929Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c3a73a975912065a02db251cc330e500ac5877914c383129e5b40bd8f89aeef4",
+      "Text": "Dados da alteração",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2446029Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c3a73a975912065a02db251cc330e500ac5877914c383129e5b40bd8f89aeef4",
+      "Text": "Данные изменения",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2446065Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c3a73a975912065a02db251cc330e500ac5877914c383129e5b40bd8f89aeef4",
+      "Text": "更改数据",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2446102Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c3a73a975912065a02db251cc330e500ac5877914c383129e5b40bd8f89aeef4",
+      "Text": "變更資料",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2446141Z",
       "Suggestions": [],
       "Comments": []
     }

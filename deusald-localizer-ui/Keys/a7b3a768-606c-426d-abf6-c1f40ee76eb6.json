@@ -4,7 +4,7 @@
   "KeyName": "yourEditLabel",
   "Description": "Label for the user's edit comparison panel",
   "CreatedAt": "2026-07-16T12:48:41.5587191Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7083123Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2224053Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7083098Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "ee63402f04116c0e91ba50b732f542c0eb49d60b1412fb94fc2782f52fbe79d4",
+      "Text": "Vaše úprava",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223776Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "ee63402f04116c0e91ba50b732f542c0eb49d60b1412fb94fc2782f52fbe79d4",
+      "Text": "Deine Bearbeitung",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223803Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "ee63402f04116c0e91ba50b732f542c0eb49d60b1412fb94fc2782f52fbe79d4",
+      "Text": "Tu edición",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223829Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "ee63402f04116c0e91ba50b732f542c0eb49d60b1412fb94fc2782f52fbe79d4",
+      "Text": "Votre modification",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223852Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "ee63402f04116c0e91ba50b732f542c0eb49d60b1412fb94fc2782f52fbe79d4",
+      "Text": "La tua modifica",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223873Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "ee63402f04116c0e91ba50b732f542c0eb49d60b1412fb94fc2782f52fbe79d4",
+      "Text": "あなたの編集",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223902Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "ee63402f04116c0e91ba50b732f542c0eb49d60b1412fb94fc2782f52fbe79d4",
+      "Text": "내 편집",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223927Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "ee63402f04116c0e91ba50b732f542c0eb49d60b1412fb94fc2782f52fbe79d4",
+      "Text": "Sua edição",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223968Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "ee63402f04116c0e91ba50b732f542c0eb49d60b1412fb94fc2782f52fbe79d4",
+      "Text": "Ваша правка",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.222399Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "ee63402f04116c0e91ba50b732f542c0eb49d60b1412fb94fc2782f52fbe79d4",
+      "Text": "你的编辑",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2224016Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "ee63402f04116c0e91ba50b732f542c0eb49d60b1412fb94fc2782f52fbe79d4",
+      "Text": "你的編輯",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2224039Z",
       "Suggestions": [],
       "Comments": []
     }

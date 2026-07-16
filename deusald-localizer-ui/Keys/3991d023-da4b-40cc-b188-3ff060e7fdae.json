@@ -4,7 +4,7 @@
   "KeyName": "noSource",
   "Description": "Empty state when the source text is blank",
   "CreatedAt": "2026-07-16T12:48:41.5582487Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7084329Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2231501Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7084308Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "15314cc74ed23f1abaa6296b52435db2acd42ce5d5be8dac39c076f55d884e3a",
+      "Text": "Zatím žádný zdroj",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231217Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "15314cc74ed23f1abaa6296b52435db2acd42ce5d5be8dac39c076f55d884e3a",
+      "Text": "Noch keine Quelle",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231247Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "15314cc74ed23f1abaa6296b52435db2acd42ce5d5be8dac39c076f55d884e3a",
+      "Text": "Aún no hay fuente",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.223127Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "15314cc74ed23f1abaa6296b52435db2acd42ce5d5be8dac39c076f55d884e3a",
+      "Text": "Pas encore de source",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231292Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "15314cc74ed23f1abaa6296b52435db2acd42ce5d5be8dac39c076f55d884e3a",
+      "Text": "Ancora nessuna origine",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231314Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "15314cc74ed23f1abaa6296b52435db2acd42ce5d5be8dac39c076f55d884e3a",
+      "Text": "まだソースがありません",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231341Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "15314cc74ed23f1abaa6296b52435db2acd42ce5d5be8dac39c076f55d884e3a",
+      "Text": "아직 원본 없음",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231366Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "15314cc74ed23f1abaa6296b52435db2acd42ce5d5be8dac39c076f55d884e3a",
+      "Text": "Ainda sem origem",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231412Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "15314cc74ed23f1abaa6296b52435db2acd42ce5d5be8dac39c076f55d884e3a",
+      "Text": "Пока нет источника",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231439Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "15314cc74ed23f1abaa6296b52435db2acd42ce5d5be8dac39c076f55d884e3a",
+      "Text": "尚无源",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231465Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "15314cc74ed23f1abaa6296b52435db2acd42ce5d5be8dac39c076f55d884e3a",
+      "Text": "尚無來源",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231487Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "switchToCurrent",
   "Description": "Tooltip on the preview-mode toggle when in live mode",
   "CreatedAt": "2026-07-16T12:48:41.5582072Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7084663Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2233866Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7084643Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "43af61dcfc50c5adf24d380e7fc4121647b811530d9ddada0e2df4afe617b928",
+      "Text": "Přepnout na Aktuální (uložené)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233588Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "43af61dcfc50c5adf24d380e7fc4121647b811530d9ddada0e2df4afe617b928",
+      "Text": "Zu Aktuell wechseln (gespeichert)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233614Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "43af61dcfc50c5adf24d380e7fc4121647b811530d9ddada0e2df4afe617b928",
+      "Text": "Cambiar a Actual (guardado)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233637Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "43af61dcfc50c5adf24d380e7fc4121647b811530d9ddada0e2df4afe617b928",
+      "Text": "Passer à Actuelle (enregistrée)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233664Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "43af61dcfc50c5adf24d380e7fc4121647b811530d9ddada0e2df4afe617b928",
+      "Text": "Passa ad Attuale (salvata)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233687Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "43af61dcfc50c5adf24d380e7fc4121647b811530d9ddada0e2df4afe617b928",
+      "Text": "「現在」に切り替え（保存済み）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233709Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "43af61dcfc50c5adf24d380e7fc4121647b811530d9ddada0e2df4afe617b928",
+      "Text": "현재로 전환 (저장됨)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233731Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "43af61dcfc50c5adf24d380e7fc4121647b811530d9ddada0e2df4afe617b928",
+      "Text": "Alternar para Atual (salva)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233781Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "43af61dcfc50c5adf24d380e7fc4121647b811530d9ddada0e2df4afe617b928",
+      "Text": "Переключить на Текущий (сохранённый)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233804Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "43af61dcfc50c5adf24d380e7fc4121647b811530d9ddada0e2df4afe617b928",
+      "Text": "切换到当前（已保存）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233826Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "43af61dcfc50c5adf24d380e7fc4121647b811530d9ddada0e2df4afe617b928",
+      "Text": "切換至目前（已儲存）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233852Z",
       "Suggestions": [],
       "Comments": []
     }

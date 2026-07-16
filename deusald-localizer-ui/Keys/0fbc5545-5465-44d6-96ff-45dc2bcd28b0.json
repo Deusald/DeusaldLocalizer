@@ -4,7 +4,7 @@
   "KeyName": "createButton",
   "Description": "Primary button that creates the new project",
   "CreatedAt": "2026-07-16T12:48:41.5615896Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7073941Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2162451Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7073925Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "fa67e4d0dae58c3c8058225d684422aeed4bab255589b96fc99c6422faabbcb5",
+      "Text": "Vytvořit projekt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2161397Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "fa67e4d0dae58c3c8058225d684422aeed4bab255589b96fc99c6422faabbcb5",
+      "Text": "Projekt erstellen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2161438Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "fa67e4d0dae58c3c8058225d684422aeed4bab255589b96fc99c6422faabbcb5",
+      "Text": "Crear proyecto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2161476Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "fa67e4d0dae58c3c8058225d684422aeed4bab255589b96fc99c6422faabbcb5",
+      "Text": "Créer le projet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2162071Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "fa67e4d0dae58c3c8058225d684422aeed4bab255589b96fc99c6422faabbcb5",
+      "Text": "Crea progetto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2162142Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "fa67e4d0dae58c3c8058225d684422aeed4bab255589b96fc99c6422faabbcb5",
+      "Text": "プロジェクトを作成",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2162182Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "fa67e4d0dae58c3c8058225d684422aeed4bab255589b96fc99c6422faabbcb5",
+      "Text": "프로젝트 만들기",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.216222Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "fa67e4d0dae58c3c8058225d684422aeed4bab255589b96fc99c6422faabbcb5",
+      "Text": "Criar projeto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2162302Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "fa67e4d0dae58c3c8058225d684422aeed4bab255589b96fc99c6422faabbcb5",
+      "Text": "Создать проект",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.216234Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "fa67e4d0dae58c3c8058225d684422aeed4bab255589b96fc99c6422faabbcb5",
+      "Text": "创建项目",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2162379Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "fa67e4d0dae58c3c8058225d684422aeed4bab255589b96fc99c6422faabbcb5",
+      "Text": "建立專案",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2162421Z",
       "Suggestions": [],
       "Comments": []
     }

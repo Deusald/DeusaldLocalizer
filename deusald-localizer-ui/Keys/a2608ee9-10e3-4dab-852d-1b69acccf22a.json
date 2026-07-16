@@ -4,7 +4,7 @@
   "KeyName": "conflictsIntro",
   "Description": "Intro paragraph explaining the conflict list.",
   "CreatedAt": "2026-07-16T12:48:41.5597311Z",
-  "UpdatedAt": "2026-07-16T13:07:17.71001Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2374748Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7100078Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "e419e60b7c33ad5618f85fb2c2963c29f7991ff710c2442e4484604be349f131",
+      "Text": "Tyto změny kolidují s novějšími úpravami, které jsou již na serveru. Otevřete každou z nich, vyberte způsob řešení a poté odešlete znovu.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.237402Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "e419e60b7c33ad5618f85fb2c2963c29f7991ff710c2442e4484604be349f131",
+      "Text": "Diese Änderungen kollidieren mit neueren Bearbeitungen, die bereits auf dem Server sind. Öffne jede einzelne, um zu wählen, wie sie gelöst wird, und pushe dann erneut.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2374071Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "e419e60b7c33ad5618f85fb2c2963c29f7991ff710c2442e4484604be349f131",
+      "Text": "Estos cambios chocan con ediciones más recientes que ya están en el servidor. Abre cada uno para elegir cómo resolverlo y vuelve a enviar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2374109Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "e419e60b7c33ad5618f85fb2c2963c29f7991ff710c2442e4484604be349f131",
+      "Text": "Ces modifications entrent en conflit avec des modifications plus récentes déjà présentes sur le serveur. Ouvrez chacune pour choisir comment la résoudre, puis renvoyez.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2374151Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "e419e60b7c33ad5618f85fb2c2963c29f7991ff710c2442e4484604be349f131",
+      "Text": "Queste modifiche entrano in conflitto con modifiche più recenti già presenti sul server. Apri ciascuna per scegliere come risolverla, poi invia di nuovo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2374419Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "e419e60b7c33ad5618f85fb2c2963c29f7991ff710c2442e4484604be349f131",
+      "Text": "これらの変更は、すでにサーバー上にある新しい編集と競合しています。それぞれを開いて解決方法を選択し、もう一度プッシュしてください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2374464Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "e419e60b7c33ad5618f85fb2c2963c29f7991ff710c2442e4484604be349f131",
+      "Text": "이 변경 사항은 이미 서버에 있는 최신 편집과 충돌합니다. 각각을 열어 해결 방법을 선택한 후 다시 푸시하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2374503Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "e419e60b7c33ad5618f85fb2c2963c29f7991ff710c2442e4484604be349f131",
+      "Text": "Estas alterações conflitam com edições mais recentes já presentes no servidor. Abra cada uma para escolher como resolvê-la e envie novamente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2374596Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "e419e60b7c33ad5618f85fb2c2963c29f7991ff710c2442e4484604be349f131",
+      "Text": "Эти изменения конфликтуют с более новыми правками, уже имеющимися на сервере. Откройте каждую, чтобы выбрать способ разрешения, затем отправьте снова.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2374636Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "e419e60b7c33ad5618f85fb2c2963c29f7991ff710c2442e4484604be349f131",
+      "Text": "这些更改与服务器上已有的更新编辑冲突。请逐个打开以选择解决方式，然后再次推送。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2374673Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "e419e60b7c33ad5618f85fb2c2963c29f7991ff710c2442e4484604be349f131",
+      "Text": "這些變更與伺服器上已有的較新編輯衝突。請逐一開啟以選擇解決方式，然後再次推送。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2374719Z",
       "Suggestions": [],
       "Comments": []
     }

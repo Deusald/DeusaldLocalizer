@@ -4,7 +4,7 @@
   "KeyName": "newTokenTitle",
   "Description": "Title shown when a freshly rotated access token is displayed.",
   "CreatedAt": "2026-07-16T12:19:57.5421974Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7071012Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2139519Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7070972Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "0f88f7d749c6c69e46a48c6d35aa9e03b6b89644a81b971c93c9b9fa5cd33f37",
+      "Text": "Váš přístupový token",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139012Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "0f88f7d749c6c69e46a48c6d35aa9e03b6b89644a81b971c93c9b9fa5cd33f37",
+      "Text": "Dein Zugriffstoken",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139043Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "0f88f7d749c6c69e46a48c6d35aa9e03b6b89644a81b971c93c9b9fa5cd33f37",
+      "Text": "Tu token de acceso",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139073Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "0f88f7d749c6c69e46a48c6d35aa9e03b6b89644a81b971c93c9b9fa5cd33f37",
+      "Text": "Votre jeton d'accès",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139115Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "0f88f7d749c6c69e46a48c6d35aa9e03b6b89644a81b971c93c9b9fa5cd33f37",
+      "Text": "Il tuo token di accesso",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139166Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "0f88f7d749c6c69e46a48c6d35aa9e03b6b89644a81b971c93c9b9fa5cd33f37",
+      "Text": "あなたのアクセストークン",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139226Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "0f88f7d749c6c69e46a48c6d35aa9e03b6b89644a81b971c93c9b9fa5cd33f37",
+      "Text": "내 액세스 토큰",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139282Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "0f88f7d749c6c69e46a48c6d35aa9e03b6b89644a81b971c93c9b9fa5cd33f37",
+      "Text": "Seu token de acesso",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139357Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "0f88f7d749c6c69e46a48c6d35aa9e03b6b89644a81b971c93c9b9fa5cd33f37",
+      "Text": "Ваш токен доступа",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139405Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "0f88f7d749c6c69e46a48c6d35aa9e03b6b89644a81b971c93c9b9fa5cd33f37",
+      "Text": "你的访问令牌",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139443Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "0f88f7d749c6c69e46a48c6d35aa9e03b6b89644a81b971c93c9b9fa5cd33f37",
+      "Text": "你的存取權杖",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139481Z",
       "Suggestions": [],
       "Comments": []
     }

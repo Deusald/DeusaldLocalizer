@@ -4,7 +4,7 @@
   "KeyName": "saveAndLeave",
   "Description": "Button that saves changes and then leaves.",
   "CreatedAt": "2026-07-16T12:48:41.5598283Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7099763Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2372343Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7099743Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "949d0ead67056f59ca13db2c21ea8279c5ae217ac7c9195710096e6c0f865a3f",
+      "Text": "Uložit a odejít",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2371428Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "949d0ead67056f59ca13db2c21ea8279c5ae217ac7c9195710096e6c0f865a3f",
+      "Text": "Speichern & verlassen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2371483Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "949d0ead67056f59ca13db2c21ea8279c5ae217ac7c9195710096e6c0f865a3f",
+      "Text": "Guardar y salir",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2371521Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "949d0ead67056f59ca13db2c21ea8279c5ae217ac7c9195710096e6c0f865a3f",
+      "Text": "Enregistrer et quitter",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2371558Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "949d0ead67056f59ca13db2c21ea8279c5ae217ac7c9195710096e6c0f865a3f",
+      "Text": "Salva ed esci",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2371598Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "949d0ead67056f59ca13db2c21ea8279c5ae217ac7c9195710096e6c0f865a3f",
+      "Text": "保存して退出",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2372158Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "949d0ead67056f59ca13db2c21ea8279c5ae217ac7c9195710096e6c0f865a3f",
+      "Text": "저장하고 나가기",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2372204Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "949d0ead67056f59ca13db2c21ea8279c5ae217ac7c9195710096e6c0f865a3f",
+      "Text": "Salvar e sair",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.237225Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "949d0ead67056f59ca13db2c21ea8279c5ae217ac7c9195710096e6c0f865a3f",
+      "Text": "Сохранить и выйти",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2372278Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "949d0ead67056f59ca13db2c21ea8279c5ae217ac7c9195710096e6c0f865a3f",
+      "Text": "保存并退出",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2372307Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "949d0ead67056f59ca13db2c21ea8279c5ae217ac7c9195710096e6c0f865a3f",
+      "Text": "儲存並離開",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2372329Z",
       "Suggestions": [],
       "Comments": []
     }

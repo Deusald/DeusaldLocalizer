@@ -4,7 +4,7 @@
   "KeyName": "remoteTag",
   "Description": "Badge marking an online/remote project in the list.",
   "CreatedAt": "2026-07-16T12:19:57.5408007Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7075533Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2173979Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7075512Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "2131cd6371005fcc97970ed7f9f16fa5dcee10496951f4a909f01b0fb5855297",
+      "Text": "VZDÁLENÝ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173707Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "2131cd6371005fcc97970ed7f9f16fa5dcee10496951f4a909f01b0fb5855297",
+      "Text": "REMOTE",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173731Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "2131cd6371005fcc97970ed7f9f16fa5dcee10496951f4a909f01b0fb5855297",
+      "Text": "REMOTO",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173753Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "2131cd6371005fcc97970ed7f9f16fa5dcee10496951f4a909f01b0fb5855297",
+      "Text": "DISTANT",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173775Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "2131cd6371005fcc97970ed7f9f16fa5dcee10496951f4a909f01b0fb5855297",
+      "Text": "REMOTO",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173801Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "2131cd6371005fcc97970ed7f9f16fa5dcee10496951f4a909f01b0fb5855297",
+      "Text": "リモート",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173822Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "2131cd6371005fcc97970ed7f9f16fa5dcee10496951f4a909f01b0fb5855297",
+      "Text": "원격",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173844Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "2131cd6371005fcc97970ed7f9f16fa5dcee10496951f4a909f01b0fb5855297",
+      "Text": "REMOTO",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173894Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "2131cd6371005fcc97970ed7f9f16fa5dcee10496951f4a909f01b0fb5855297",
+      "Text": "УДАЛЁННЫЙ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173915Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "2131cd6371005fcc97970ed7f9f16fa5dcee10496951f4a909f01b0fb5855297",
+      "Text": "远程",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173937Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "2131cd6371005fcc97970ed7f9f16fa5dcee10496951f4a909f01b0fb5855297",
+      "Text": "遠端",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173958Z",
       "Suggestions": [],
       "Comments": []
     }

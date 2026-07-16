@@ -4,7 +4,7 @@
   "KeyName": "rightClickSelectOnly",
   "Description": "Tooltip explaining the right-click select-only behavior.",
   "CreatedAt": "2026-07-16T12:48:41.5571942Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7091301Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2296048Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.709128Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "f89aa56ae37bf4b54d0957ed61805301fe9707e4e37b770a38a67e7585e05bec",
+      "Text": "Klikněte pravým tlačítkem pro výběr pouze této kategorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2295572Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "f89aa56ae37bf4b54d0957ed61805301fe9707e4e37b770a38a67e7585e05bec",
+      "Text": "Rechtsklick, um nur diese Kategorie auszuwählen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2295617Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "f89aa56ae37bf4b54d0957ed61805301fe9707e4e37b770a38a67e7585e05bec",
+      "Text": "Haz clic derecho para seleccionar solo esta categoría",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2295661Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "f89aa56ae37bf4b54d0957ed61805301fe9707e4e37b770a38a67e7585e05bec",
+      "Text": "Clic droit pour ne sélectionner que cette catégorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.22957Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "f89aa56ae37bf4b54d0957ed61805301fe9707e4e37b770a38a67e7585e05bec",
+      "Text": "Clic destro per selezionare solo questa categoria",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2295738Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "f89aa56ae37bf4b54d0957ed61805301fe9707e4e37b770a38a67e7585e05bec",
+      "Text": "右クリックでこのカテゴリのみを選択",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2295775Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "f89aa56ae37bf4b54d0957ed61805301fe9707e4e37b770a38a67e7585e05bec",
+      "Text": "이 카테고리만 선택하려면 마우스 오른쪽 버튼을 클릭하세요",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2295818Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "f89aa56ae37bf4b54d0957ed61805301fe9707e4e37b770a38a67e7585e05bec",
+      "Text": "Clique com o botão direito para selecionar apenas esta categoria",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2295898Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "f89aa56ae37bf4b54d0957ed61805301fe9707e4e37b770a38a67e7585e05bec",
+      "Text": "Щёлкните правой кнопкой, чтобы выбрать только эту категорию",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2295935Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "f89aa56ae37bf4b54d0957ed61805301fe9707e4e37b770a38a67e7585e05bec",
+      "Text": "右键单击以仅选择此类别",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2295982Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "f89aa56ae37bf4b54d0957ed61805301fe9707e4e37b770a38a67e7585e05bec",
+      "Text": "以滑鼠右鍵點按以僅選擇此分類",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2296022Z",
       "Suggestions": [],
       "Comments": []
     }

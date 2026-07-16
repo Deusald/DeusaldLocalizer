@@ -4,7 +4,7 @@
   "KeyName": "allLocalChangesOnServer",
   "Description": "Tooltip on the committed status pill when nothing is pending.",
   "CreatedAt": "2026-07-16T12:48:41.5589361Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7096088Z",
+  "UpdatedAt": "2026-07-16T20:46:27.233959Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7096064Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "587b943b40c583694e3fcb37a468f42cb8bb3cee9965a12d30942fc6486dd033",
+      "Text": "Všechny místní změny jsou na serveru",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.233887Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "587b943b40c583694e3fcb37a468f42cb8bb3cee9965a12d30942fc6486dd033",
+      "Text": "Alle lokalen Änderungen sind auf dem Server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338901Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "587b943b40c583694e3fcb37a468f42cb8bb3cee9965a12d30942fc6486dd033",
+      "Text": "Todos los cambios locales están en el servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338923Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "587b943b40c583694e3fcb37a468f42cb8bb3cee9965a12d30942fc6486dd033",
+      "Text": "Toutes les modifications locales sont sur le serveur",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338952Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "587b943b40c583694e3fcb37a468f42cb8bb3cee9965a12d30942fc6486dd033",
+      "Text": "Tutte le modifiche locali sono sul server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338974Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "587b943b40c583694e3fcb37a468f42cb8bb3cee9965a12d30942fc6486dd033",
+      "Text": "すべてのローカル変更はサーバー上にあります",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338996Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "587b943b40c583694e3fcb37a468f42cb8bb3cee9965a12d30942fc6486dd033",
+      "Text": "모든 로컬 변경 사항이 서버에 있습니다",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2339024Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "587b943b40c583694e3fcb37a468f42cb8bb3cee9965a12d30942fc6486dd033",
+      "Text": "Todas as alterações locais estão no servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2339074Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "587b943b40c583694e3fcb37a468f42cb8bb3cee9965a12d30942fc6486dd033",
+      "Text": "Все локальные изменения на сервере",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2339096Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "587b943b40c583694e3fcb37a468f42cb8bb3cee9965a12d30942fc6486dd033",
+      "Text": "所有本地更改都已在服务器上",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2339119Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "587b943b40c583694e3fcb37a468f42cb8bb3cee9965a12d30942fc6486dd033",
+      "Text": "所有本機變更都已在伺服器上",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2339145Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "keyComments",
   "Description": "Header label for the key-level comments thread.",
   "CreatedAt": "2026-07-16T12:48:41.5577161Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7079679Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2202537Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7079664Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "27be43c58810bb24d25c0d8598f5969dfe12a26daa297e72da58f682377cab9f",
+      "Text": "Komentáře ke klíči",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2202124Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "27be43c58810bb24d25c0d8598f5969dfe12a26daa297e72da58f682377cab9f",
+      "Text": "Schlüsselkommentare",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2202149Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "27be43c58810bb24d25c0d8598f5969dfe12a26daa297e72da58f682377cab9f",
+      "Text": "Comentarios de la clave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.220217Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "27be43c58810bb24d25c0d8598f5969dfe12a26daa297e72da58f682377cab9f",
+      "Text": "Commentaires de la clé",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2202197Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "27be43c58810bb24d25c0d8598f5969dfe12a26daa297e72da58f682377cab9f",
+      "Text": "Commenti della chiave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2202219Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "27be43c58810bb24d25c0d8598f5969dfe12a26daa297e72da58f682377cab9f",
+      "Text": "キーのコメント",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.220224Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "27be43c58810bb24d25c0d8598f5969dfe12a26daa297e72da58f682377cab9f",
+      "Text": "키 댓글",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2202261Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "27be43c58810bb24d25c0d8598f5969dfe12a26daa297e72da58f682377cab9f",
+      "Text": "Comentários da chave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2202313Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "27be43c58810bb24d25c0d8598f5969dfe12a26daa297e72da58f682377cab9f",
+      "Text": "Комментарии к ключу",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2202335Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "27be43c58810bb24d25c0d8598f5969dfe12a26daa297e72da58f682377cab9f",
+      "Text": "键评论",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2202358Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "27be43c58810bb24d25c0d8598f5969dfe12a26daa297e72da58f682377cab9f",
+      "Text": "索引鍵註解",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2202521Z",
       "Suggestions": [],
       "Comments": []
     }

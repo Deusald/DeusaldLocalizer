@@ -4,7 +4,7 @@
   "KeyName": "emptyState",
   "Description": "Empty-state hint shown when no key is selected in the key detail column.",
   "CreatedAt": "2026-07-16T12:48:41.5576494Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7079603Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2202067Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7079583Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "a246987d191cf9e7d49be5cbc609996073528f3a4a6503fd77a34f15cec94c29",
+      "Text": "Vyberte klíč a začněte překládat",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2201679Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a246987d191cf9e7d49be5cbc609996073528f3a4a6503fd77a34f15cec94c29",
+      "Text": "Wähle einen Schlüssel aus, um mit dem Übersetzen zu beginnen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2201745Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "a246987d191cf9e7d49be5cbc609996073528f3a4a6503fd77a34f15cec94c29",
+      "Text": "Selecciona una clave para empezar a traducir",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.220183Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a246987d191cf9e7d49be5cbc609996073528f3a4a6503fd77a34f15cec94c29",
+      "Text": "Sélectionnez une clé pour commencer à traduire",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2201855Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "a246987d191cf9e7d49be5cbc609996073528f3a4a6503fd77a34f15cec94c29",
+      "Text": "Seleziona una chiave per iniziare a tradurre",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2201883Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "a246987d191cf9e7d49be5cbc609996073528f3a4a6503fd77a34f15cec94c29",
+      "Text": "翻訳を始めるにはキーを選択してください",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2201906Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "a246987d191cf9e7d49be5cbc609996073528f3a4a6503fd77a34f15cec94c29",
+      "Text": "번역을 시작하려면 키를 선택하세요",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2201928Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "a246987d191cf9e7d49be5cbc609996073528f3a4a6503fd77a34f15cec94c29",
+      "Text": "Selecione uma chave para começar a traduzir",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2201978Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "a246987d191cf9e7d49be5cbc609996073528f3a4a6503fd77a34f15cec94c29",
+      "Text": "Выберите ключ, чтобы начать перевод",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2202001Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "a246987d191cf9e7d49be5cbc609996073528f3a4a6503fd77a34f15cec94c29",
+      "Text": "选择一个键开始翻译",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2202024Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "a246987d191cf9e7d49be5cbc609996073528f3a4a6503fd77a34f15cec94c29",
+      "Text": "選擇一個索引鍵開始翻譯",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2202047Z",
       "Suggestions": [],
       "Comments": []
     }

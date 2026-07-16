@@ -4,7 +4,7 @@
   "KeyName": "translationPlaceholder",
   "Description": "Placeholder for the translation text area",
   "CreatedAt": "2026-07-16T12:48:41.5581649Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7088117Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2259796Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7088094Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "5bc5c6a24e44c6543457243ebed2d655a4aefa030fc075ff77429c2d1967f834",
+      "Text": "Zadejte svůj překlad…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2259203Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "5bc5c6a24e44c6543457243ebed2d655a4aefa030fc075ff77429c2d1967f834",
+      "Text": "Gib deine Übersetzung ein…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2259323Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "5bc5c6a24e44c6543457243ebed2d655a4aefa030fc075ff77429c2d1967f834",
+      "Text": "Escribe tu traducción…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2259371Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "5bc5c6a24e44c6543457243ebed2d655a4aefa030fc075ff77429c2d1967f834",
+      "Text": "Saisissez votre traduction…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2259412Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "5bc5c6a24e44c6543457243ebed2d655a4aefa030fc075ff77429c2d1967f834",
+      "Text": "Digita la tua traduzione…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2259474Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "5bc5c6a24e44c6543457243ebed2d655a4aefa030fc075ff77429c2d1967f834",
+      "Text": "翻訳を入力…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2259511Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "5bc5c6a24e44c6543457243ebed2d655a4aefa030fc075ff77429c2d1967f834",
+      "Text": "번역을 입력하세요…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2259551Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "5bc5c6a24e44c6543457243ebed2d655a4aefa030fc075ff77429c2d1967f834",
+      "Text": "Digite sua tradução…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2259638Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "5bc5c6a24e44c6543457243ebed2d655a4aefa030fc075ff77429c2d1967f834",
+      "Text": "Введите свой перевод…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.225968Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "5bc5c6a24e44c6543457243ebed2d655a4aefa030fc075ff77429c2d1967f834",
+      "Text": "输入你的翻译…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2259722Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "5bc5c6a24e44c6543457243ebed2d655a4aefa030fc075ff77429c2d1967f834",
+      "Text": "輸入你的翻譯…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2259768Z",
       "Suggestions": [],
       "Comments": []
     }

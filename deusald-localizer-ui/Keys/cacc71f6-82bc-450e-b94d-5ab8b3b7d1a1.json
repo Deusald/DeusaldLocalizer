@@ -4,7 +4,7 @@
   "KeyName": "variantTagPlaceholder",
   "Description": "Placeholder for the sub-language tag input.",
   "CreatedAt": "2026-07-16T12:48:41.5568984Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7095857Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2337583Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7095838Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "f0dce7563b38acf3b42f1cac0e599cf1a816ebbf125a0129e58e74561dbf8d10",
+      "Text": "štítek, např. simple",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337314Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "f0dce7563b38acf3b42f1cac0e599cf1a816ebbf125a0129e58e74561dbf8d10",
+      "Text": "Tag, z. B. simple",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337342Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "f0dce7563b38acf3b42f1cac0e599cf1a816ebbf125a0129e58e74561dbf8d10",
+      "Text": "etiqueta p. ej. simple",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337365Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "f0dce7563b38acf3b42f1cac0e599cf1a816ebbf125a0129e58e74561dbf8d10",
+      "Text": "étiquette, p. ex. simple",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337387Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "f0dce7563b38acf3b42f1cac0e599cf1a816ebbf125a0129e58e74561dbf8d10",
+      "Text": "tag es. simple",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337409Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "f0dce7563b38acf3b42f1cac0e599cf1a816ebbf125a0129e58e74561dbf8d10",
+      "Text": "タグ（例：simple）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337435Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "f0dce7563b38acf3b42f1cac0e599cf1a816ebbf125a0129e58e74561dbf8d10",
+      "Text": "태그, 예: simple",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337457Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "f0dce7563b38acf3b42f1cac0e599cf1a816ebbf125a0129e58e74561dbf8d10",
+      "Text": "tag, ex.: simple",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.23375Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "f0dce7563b38acf3b42f1cac0e599cf1a816ebbf125a0129e58e74561dbf8d10",
+      "Text": "тег, напр. simple",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337525Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "f0dce7563b38acf3b42f1cac0e599cf1a816ebbf125a0129e58e74561dbf8d10",
+      "Text": "标签，例如 simple",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337547Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "f0dce7563b38acf3b42f1cac0e599cf1a816ebbf125a0129e58e74561dbf8d10",
+      "Text": "標籤，例如 simple",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337569Z",
       "Suggestions": [],
       "Comments": []
     }

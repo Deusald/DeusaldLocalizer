@@ -4,7 +4,7 @@
   "KeyName": "defaultPreviewValue",
   "Description": "Label for the variable's default preview value field",
   "CreatedAt": "2026-07-16T12:48:41.5583434Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7088355Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2261578Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7088334Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "053563d421f49871951fcf5b3e15690ad3592670aa053cbf99471ee91249b2a3",
+      "Text": "Výchozí hodnota náhledu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261271Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "053563d421f49871951fcf5b3e15690ad3592670aa053cbf99471ee91249b2a3",
+      "Text": "Standard-Vorschauwert",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261315Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "053563d421f49871951fcf5b3e15690ad3592670aa053cbf99471ee91249b2a3",
+      "Text": "Valor de vista previa predeterminado",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261347Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "053563d421f49871951fcf5b3e15690ad3592670aa053cbf99471ee91249b2a3",
+      "Text": "Valeur d'aperçu par défaut",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261369Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "053563d421f49871951fcf5b3e15690ad3592670aa053cbf99471ee91249b2a3",
+      "Text": "Valore di anteprima predefinito",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261394Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "053563d421f49871951fcf5b3e15690ad3592670aa053cbf99471ee91249b2a3",
+      "Text": "デフォルトのプレビュー値",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261415Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "053563d421f49871951fcf5b3e15690ad3592670aa053cbf99471ee91249b2a3",
+      "Text": "기본 미리 보기 값",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261442Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "053563d421f49871951fcf5b3e15690ad3592670aa053cbf99471ee91249b2a3",
+      "Text": "Valor de pré-visualização padrão",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261492Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "053563d421f49871951fcf5b3e15690ad3592670aa053cbf99471ee91249b2a3",
+      "Text": "Значение предпросмотра по умолчанию",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261513Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "053563d421f49871951fcf5b3e15690ad3592670aa053cbf99471ee91249b2a3",
+      "Text": "默认预览值",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261542Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "053563d421f49871951fcf5b3e15690ad3592670aa053cbf99471ee91249b2a3",
+      "Text": "預設預覽值",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261564Z",
       "Suggestions": [],
       "Comments": []
     }

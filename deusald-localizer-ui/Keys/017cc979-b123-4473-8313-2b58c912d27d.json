@@ -4,7 +4,7 @@
   "KeyName": "flagsHint",
   "Description": "Hint explaining flag include/exclude behavior.",
   "CreatedAt": "2026-07-16T12:48:41.5607801Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7104459Z",
+  "UpdatedAt": "2026-07-16T20:46:27.241624Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7104432Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "96ca81b38aad5069b58ca3798dc9b56b7ef0ac632e39f1c22e18e1fc9d13dd03",
+      "Text": "Vyloučit vynechá klíče s příznakem; Zahrnout je ponechá.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2415728Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "96ca81b38aad5069b58ca3798dc9b56b7ef0ac632e39f1c22e18e1fc9d13dd03",
+      "Text": "Ausschließen entfernt Schlüssel mit der Markierung; Einschließen behält sie.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2415812Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "96ca81b38aad5069b58ca3798dc9b56b7ef0ac632e39f1c22e18e1fc9d13dd03",
+      "Text": "Excluir descarta las claves que llevan la marca; Incluir las conserva.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.241586Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "96ca81b38aad5069b58ca3798dc9b56b7ef0ac632e39f1c22e18e1fc9d13dd03",
+      "Text": "Exclure retire les clés portant l'indicateur ; Inclure les conserve.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2415898Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "96ca81b38aad5069b58ca3798dc9b56b7ef0ac632e39f1c22e18e1fc9d13dd03",
+      "Text": "Escludi rimuove le chiavi che hanno il contrassegno; Includi le mantiene.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2415937Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "96ca81b38aad5069b58ca3798dc9b56b7ef0ac632e39f1c22e18e1fc9d13dd03",
+      "Text": "「除外」はフラグの付いたキーを除きます。「含める」は残します。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.241601Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "96ca81b38aad5069b58ca3798dc9b56b7ef0ac632e39f1c22e18e1fc9d13dd03",
+      "Text": "제외는 플래그가 있는 키를 제거하고, 포함은 유지합니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2416054Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "96ca81b38aad5069b58ca3798dc9b56b7ef0ac632e39f1c22e18e1fc9d13dd03",
+      "Text": "Excluir remove chaves que carregam a sinalização; Incluir as mantém.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2416125Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "96ca81b38aad5069b58ca3798dc9b56b7ef0ac632e39f1c22e18e1fc9d13dd03",
+      "Text": "Исключить отбрасывает ключи с этим флагом; Включить оставляет их.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2416179Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "96ca81b38aad5069b58ca3798dc9b56b7ef0ac632e39f1c22e18e1fc9d13dd03",
+      "Text": "“排除”会丢弃带有该标记的键；“包含”则保留它们。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2416203Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "96ca81b38aad5069b58ca3798dc9b56b7ef0ac632e39f1c22e18e1fc9d13dd03",
+      "Text": "「排除」會捨棄帶有該標記的索引鍵；「包含」則保留它們。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2416225Z",
       "Suggestions": [],
       "Comments": []
     }

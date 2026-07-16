@@ -4,7 +4,7 @@
   "KeyName": "emptyState",
   "Description": "Empty-state text when there are no pending changes.",
   "CreatedAt": "2026-07-16T12:48:41.5601362Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7107924Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2456775Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.71079Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "5df85eacea82c6583bf2571f79f25e3546c0a80d50ab83317035c62f4cd4c922",
+      "Text": "Žádné necommittnuté změny.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2456108Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "5df85eacea82c6583bf2571f79f25e3546c0a80d50ab83317035c62f4cd4c922",
+      "Text": "Keine nicht committeten Änderungen.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2456151Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "5df85eacea82c6583bf2571f79f25e3546c0a80d50ab83317035c62f4cd4c922",
+      "Text": "No hay cambios sin confirmar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2456189Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "5df85eacea82c6583bf2571f79f25e3546c0a80d50ab83317035c62f4cd4c922",
+      "Text": "Aucune modification non validée.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2456223Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "5df85eacea82c6583bf2571f79f25e3546c0a80d50ab83317035c62f4cd4c922",
+      "Text": "Nessuna modifica non committata.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2456433Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "5df85eacea82c6583bf2571f79f25e3546c0a80d50ab83317035c62f4cd4c922",
+      "Text": "未コミットの変更はありません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2456481Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "5df85eacea82c6583bf2571f79f25e3546c0a80d50ab83317035c62f4cd4c922",
+      "Text": "커밋되지 않은 변경 사항 없음.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2456516Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "5df85eacea82c6583bf2571f79f25e3546c0a80d50ab83317035c62f4cd4c922",
+      "Text": "Nenhuma alteração não confirmada.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2456617Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "5df85eacea82c6583bf2571f79f25e3546c0a80d50ab83317035c62f4cd4c922",
+      "Text": "Нет незакоммиченных изменений.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2456651Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "5df85eacea82c6583bf2571f79f25e3546c0a80d50ab83317035c62f4cd4c922",
+      "Text": "没有未提交的更改。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2456687Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "5df85eacea82c6583bf2571f79f25e3546c0a80d50ab83317035c62f4cd4c922",
+      "Text": "沒有未提交的變更。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.245675Z",
       "Suggestions": [],
       "Comments": []
     }

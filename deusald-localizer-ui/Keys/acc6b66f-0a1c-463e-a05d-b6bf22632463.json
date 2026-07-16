@@ -4,7 +4,7 @@
   "KeyName": "yourProjects",
   "Description": "Heading above the stored-projects list (web).",
   "CreatedAt": "2026-07-16T12:29:28.079309Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7079061Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2197753Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7079042Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "e82a6eb21afd56d66f69500536f26ceb1bd31571935358e19f8794b701061cb5",
+      "Text": "Vaše projekty",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197434Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "e82a6eb21afd56d66f69500536f26ceb1bd31571935358e19f8794b701061cb5",
+      "Text": "Deine Projekte",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197494Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "e82a6eb21afd56d66f69500536f26ceb1bd31571935358e19f8794b701061cb5",
+      "Text": "Tus proyectos",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197518Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "e82a6eb21afd56d66f69500536f26ceb1bd31571935358e19f8794b701061cb5",
+      "Text": "Vos projets",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197541Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "e82a6eb21afd56d66f69500536f26ceb1bd31571935358e19f8794b701061cb5",
+      "Text": "I tuoi progetti",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.219757Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "e82a6eb21afd56d66f69500536f26ceb1bd31571935358e19f8794b701061cb5",
+      "Text": "あなたのプロジェクト",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197593Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "e82a6eb21afd56d66f69500536f26ceb1bd31571935358e19f8794b701061cb5",
+      "Text": "내 프로젝트",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197616Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "e82a6eb21afd56d66f69500536f26ceb1bd31571935358e19f8794b701061cb5",
+      "Text": "Seus projetos",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197665Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "e82a6eb21afd56d66f69500536f26ceb1bd31571935358e19f8794b701061cb5",
+      "Text": "Ваши проекты",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197687Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "e82a6eb21afd56d66f69500536f26ceb1bd31571935358e19f8794b701061cb5",
+      "Text": "你的项目",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197712Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "e82a6eb21afd56d66f69500536f26ceb1bd31571935358e19f8794b701061cb5",
+      "Text": "你的專案",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2197735Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "noEnums",
   "Description": "Empty state when the project has no enums",
   "CreatedAt": "2026-07-16T12:48:41.5584893Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7085848Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2239174Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7085811Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "bafa7d331377d19bd6686c5d0c8544b7aedb4089d14c92be05d363736875deab",
+      "Text": "Zatím žádné výčty.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2238736Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "bafa7d331377d19bd6686c5d0c8544b7aedb4089d14c92be05d363736875deab",
+      "Text": "Noch keine Enums.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2238828Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "bafa7d331377d19bd6686c5d0c8544b7aedb4089d14c92be05d363736875deab",
+      "Text": "Aún no hay enums.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2238874Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "bafa7d331377d19bd6686c5d0c8544b7aedb4089d14c92be05d363736875deab",
+      "Text": "Pas encore d'énumérations.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2238913Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "bafa7d331377d19bd6686c5d0c8544b7aedb4089d14c92be05d363736875deab",
+      "Text": "Ancora nessun enum.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2238951Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "bafa7d331377d19bd6686c5d0c8544b7aedb4089d14c92be05d363736875deab",
+      "Text": "まだ列挙型がありません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2238989Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "bafa7d331377d19bd6686c5d0c8544b7aedb4089d14c92be05d363736875deab",
+      "Text": "아직 열거형이 없습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239036Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "bafa7d331377d19bd6686c5d0c8544b7aedb4089d14c92be05d363736875deab",
+      "Text": "Ainda sem enums.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239087Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "bafa7d331377d19bd6686c5d0c8544b7aedb4089d14c92be05d363736875deab",
+      "Text": "Пока нет перечислений.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239109Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "bafa7d331377d19bd6686c5d0c8544b7aedb4089d14c92be05d363736875deab",
+      "Text": "尚无枚举。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239136Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "bafa7d331377d19bd6686c5d0c8544b7aedb4089d14c92be05d363736875deab",
+      "Text": "尚無列舉。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.223916Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "deleteKeyConfirm",
   "Description": "Confirmation prompt before deleting a key.",
   "CreatedAt": "2026-07-16T12:48:41.5576942Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7079528Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2201182Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.707951Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "386a46d6993f190037753d607df09250a9f19d6603c5c2aebbc1fce49184c307",
+      "Text": "Smazat klíč?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2200697Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "386a46d6993f190037753d607df09250a9f19d6603c5c2aebbc1fce49184c307",
+      "Text": "Schlüssel löschen?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2200924Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "386a46d6993f190037753d607df09250a9f19d6603c5c2aebbc1fce49184c307",
+      "Text": "¿Eliminar clave?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2200947Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "386a46d6993f190037753d607df09250a9f19d6603c5c2aebbc1fce49184c307",
+      "Text": "Supprimer la clé ?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2200969Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "386a46d6993f190037753d607df09250a9f19d6603c5c2aebbc1fce49184c307",
+      "Text": "Eliminare la chiave?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2200996Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "386a46d6993f190037753d607df09250a9f19d6603c5c2aebbc1fce49184c307",
+      "Text": "キーを削除しますか？",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2201019Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "386a46d6993f190037753d607df09250a9f19d6603c5c2aebbc1fce49184c307",
+      "Text": "키를 삭제하시겠습니까?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2201045Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "386a46d6993f190037753d607df09250a9f19d6603c5c2aebbc1fce49184c307",
+      "Text": "Excluir chave?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2201093Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "386a46d6993f190037753d607df09250a9f19d6603c5c2aebbc1fce49184c307",
+      "Text": "Удалить ключ?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2201115Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "386a46d6993f190037753d607df09250a9f19d6603c5c2aebbc1fce49184c307",
+      "Text": "删除键？",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2201142Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "386a46d6993f190037753d607df09250a9f19d6603c5c2aebbc1fce49184c307",
+      "Text": "刪除索引鍵？",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2201164Z",
       "Suggestions": [],
       "Comments": []
     }

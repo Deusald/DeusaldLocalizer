@@ -4,7 +4,7 @@
   "KeyName": "pushing",
   "Description": "Status message shown while a push is in progress.",
   "CreatedAt": "2026-07-16T12:48:41.5591239Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7097551Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2349091Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7097532Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "54ef55cff2ef9b2d7aae0a231c5eb40dc980481594880bdef7f0654756f7e32e",
+      "Text": "Odesílání…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348613Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "54ef55cff2ef9b2d7aae0a231c5eb40dc980481594880bdef7f0654756f7e32e",
+      "Text": "Pushe…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348638Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "54ef55cff2ef9b2d7aae0a231c5eb40dc980481594880bdef7f0654756f7e32e",
+      "Text": "Enviando…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348664Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "54ef55cff2ef9b2d7aae0a231c5eb40dc980481594880bdef7f0654756f7e32e",
+      "Text": "Envoi…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348688Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "54ef55cff2ef9b2d7aae0a231c5eb40dc980481594880bdef7f0654756f7e32e",
+      "Text": "Invio…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348709Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "54ef55cff2ef9b2d7aae0a231c5eb40dc980481594880bdef7f0654756f7e32e",
+      "Text": "プッシュ中…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.234873Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "54ef55cff2ef9b2d7aae0a231c5eb40dc980481594880bdef7f0654756f7e32e",
+      "Text": "푸시 중…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2348919Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "54ef55cff2ef9b2d7aae0a231c5eb40dc980481594880bdef7f0654756f7e32e",
+      "Text": "Enviando…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2349004Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "54ef55cff2ef9b2d7aae0a231c5eb40dc980481594880bdef7f0654756f7e32e",
+      "Text": "Отправка…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2349026Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "54ef55cff2ef9b2d7aae0a231c5eb40dc980481594880bdef7f0654756f7e32e",
+      "Text": "正在推送…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2349053Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "54ef55cff2ef9b2d7aae0a231c5eb40dc980481594880bdef7f0654756f7e32e",
+      "Text": "正在推送…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2349076Z",
       "Suggestions": [],
       "Comments": []
     }

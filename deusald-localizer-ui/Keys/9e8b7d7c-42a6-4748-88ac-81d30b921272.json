@@ -4,7 +4,7 @@
   "KeyName": "commentMaintenanceHint",
   "Description": "Explanatory hint for the comment maintenance section.",
   "CreatedAt": "2026-07-16T12:48:41.5594499Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7109989Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2476024Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7109967Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "2ede98351e7f363e572d5ecc1245fa65da64bbfcf3c8c9bda08b0d987d162b0c",
+      "Text": "Smaže všechny komentáře (u klíčů, překladů a návrhů) starší než zvolené stáří.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2475126Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "2ede98351e7f363e572d5ecc1245fa65da64bbfcf3c8c9bda08b0d987d162b0c",
+      "Text": "Lösche jeden Kommentar (zu Schlüsseln, Übersetzungen und Vorschlägen), der älter als das gewählte Alter ist.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2475536Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "2ede98351e7f363e572d5ecc1245fa65da64bbfcf3c8c9bda08b0d987d162b0c",
+      "Text": "Elimina todos los comentarios (en claves, traducciones y sugerencias) más antiguos que la edad elegida.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2475622Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "2ede98351e7f363e572d5ecc1245fa65da64bbfcf3c8c9bda08b0d987d162b0c",
+      "Text": "Supprimez tous les commentaires (sur les clés, traductions et suggestions) plus anciens que l'âge choisi.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2475648Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "2ede98351e7f363e572d5ecc1245fa65da64bbfcf3c8c9bda08b0d987d162b0c",
+      "Text": "Elimina ogni commento (su chiavi, traduzioni e suggerimenti) più vecchio dell'età scelta.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2475671Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "2ede98351e7f363e572d5ecc1245fa65da64bbfcf3c8c9bda08b0d987d162b0c",
+      "Text": "選択した期間より古いすべてのコメント（キー、翻訳、提案）を削除します。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2475694Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "2ede98351e7f363e572d5ecc1245fa65da64bbfcf3c8c9bda08b0d987d162b0c",
+      "Text": "선택한 기간보다 오래된 모든 댓글(키, 번역, 제안)을 삭제합니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2475768Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "2ede98351e7f363e572d5ecc1245fa65da64bbfcf3c8c9bda08b0d987d162b0c",
+      "Text": "Exclua todos os comentários (em chaves, traduções e sugestões) mais antigos que a idade escolhida.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2475829Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "2ede98351e7f363e572d5ecc1245fa65da64bbfcf3c8c9bda08b0d987d162b0c",
+      "Text": "Удаляет все комментарии (к ключам, переводам и предложениям) старше выбранного возраста.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2475921Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "2ede98351e7f363e572d5ecc1245fa65da64bbfcf3c8c9bda08b0d987d162b0c",
+      "Text": "删除所有早于所选时长的评论（针对键、翻译和建议）。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2475962Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "2ede98351e7f363e572d5ecc1245fa65da64bbfcf3c8c9bda08b0d987d162b0c",
+      "Text": "刪除所有早於所選時長的註解（針對索引鍵、翻譯和建議）。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2476Z",
       "Suggestions": [],
       "Comments": []
     }

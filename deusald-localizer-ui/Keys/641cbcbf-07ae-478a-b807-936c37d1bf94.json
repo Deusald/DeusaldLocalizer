@@ -4,7 +4,7 @@
   "KeyName": "namespacePlaceholder",
   "Description": "Placeholder example for the namespace field.",
   "CreatedAt": "2026-07-16T12:48:41.5607593Z",
-  "UpdatedAt": "2026-07-16T13:07:17.710484Z",
+  "UpdatedAt": "2026-07-16T20:46:27.24206Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.710482Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "b1a9b2fb8fc7093277f0e8e5f7e12de12453722f62c73280b926ea07d0058b6a",
+      "Text": "např. MyGame.Loc",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2420203Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "b1a9b2fb8fc7093277f0e8e5f7e12de12453722f62c73280b926ea07d0058b6a",
+      "Text": "z. B. MyGame.Loc",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2420293Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "b1a9b2fb8fc7093277f0e8e5f7e12de12453722f62c73280b926ea07d0058b6a",
+      "Text": "p. ej. MyGame.Loc",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2420319Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "b1a9b2fb8fc7093277f0e8e5f7e12de12453722f62c73280b926ea07d0058b6a",
+      "Text": "p. ex. MyGame.Loc",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2420343Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "b1a9b2fb8fc7093277f0e8e5f7e12de12453722f62c73280b926ea07d0058b6a",
+      "Text": "es. MyGame.Loc",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2420365Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "b1a9b2fb8fc7093277f0e8e5f7e12de12453722f62c73280b926ea07d0058b6a",
+      "Text": "例：MyGame.Loc",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2420421Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "b1a9b2fb8fc7093277f0e8e5f7e12de12453722f62c73280b926ea07d0058b6a",
+      "Text": "예: MyGame.Loc",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2420445Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "b1a9b2fb8fc7093277f0e8e5f7e12de12453722f62c73280b926ea07d0058b6a",
+      "Text": "ex.: MyGame.Loc",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2420493Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "b1a9b2fb8fc7093277f0e8e5f7e12de12453722f62c73280b926ea07d0058b6a",
+      "Text": "напр. MyGame.Loc",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2420541Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "b1a9b2fb8fc7093277f0e8e5f7e12de12453722f62c73280b926ea07d0058b6a",
+      "Text": "例如 MyGame.Loc",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2420564Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "b1a9b2fb8fc7093277f0e8e5f7e12de12453722f62c73280b926ea07d0058b6a",
+      "Text": "例如 MyGame.Loc",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2420586Z",
       "Suggestions": [],
       "Comments": []
     }

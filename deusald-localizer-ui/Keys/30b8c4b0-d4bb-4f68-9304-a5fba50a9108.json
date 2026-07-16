@@ -4,7 +4,7 @@
   "KeyName": "importFromExcel",
   "Description": "Tooltip on the import button.",
   "CreatedAt": "2026-07-16T12:48:41.5589287Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7096805Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2345106Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7096785Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "a08120408397e0656f989341487855a68af1220425611a1022c2b758d20ddc3f",
+      "Text": "Importovat z Excelu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344575Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a08120408397e0656f989341487855a68af1220425611a1022c2b758d20ddc3f",
+      "Text": "Aus Excel importieren",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344604Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "a08120408397e0656f989341487855a68af1220425611a1022c2b758d20ddc3f",
+      "Text": "Importar desde Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344627Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a08120408397e0656f989341487855a68af1220425611a1022c2b758d20ddc3f",
+      "Text": "Importer depuis Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.234465Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "a08120408397e0656f989341487855a68af1220425611a1022c2b758d20ddc3f",
+      "Text": "Importa da Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344676Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "a08120408397e0656f989341487855a68af1220425611a1022c2b758d20ddc3f",
+      "Text": "Excelからインポート",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344718Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "a08120408397e0656f989341487855a68af1220425611a1022c2b758d20ddc3f",
+      "Text": "Excel에서 가져오기",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.234476Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "a08120408397e0656f989341487855a68af1220425611a1022c2b758d20ddc3f",
+      "Text": "Importar do Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345012Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "a08120408397e0656f989341487855a68af1220425611a1022c2b758d20ddc3f",
+      "Text": "Импорт из Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345041Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "a08120408397e0656f989341487855a68af1220425611a1022c2b758d20ddc3f",
+      "Text": "从 Excel 导入",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345063Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "a08120408397e0656f989341487855a68af1220425611a1022c2b758d20ddc3f",
+      "Text": "從 Excel 匯入",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345086Z",
       "Suggestions": [],
       "Comments": []
     }

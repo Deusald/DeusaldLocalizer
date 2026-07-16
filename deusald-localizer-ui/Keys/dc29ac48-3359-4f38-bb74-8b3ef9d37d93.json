@@ -4,7 +4,7 @@
   "KeyName": "translationLabel",
   "Description": "Label above the translation text editor",
   "CreatedAt": "2026-07-16T12:48:41.5581425Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7087905Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2258484Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7087883Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "cd1e7b84eae3736c527ace8129f9da388699ae9d700b6e87f5cc230bfa784487",
+      "Text": "Překlad · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.225803Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "cd1e7b84eae3736c527ace8129f9da388699ae9d700b6e87f5cc230bfa784487",
+      "Text": "Übersetzung · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.225806Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "cd1e7b84eae3736c527ace8129f9da388699ae9d700b6e87f5cc230bfa784487",
+      "Text": "Traducción · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2258101Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "cd1e7b84eae3736c527ace8129f9da388699ae9d700b6e87f5cc230bfa784487",
+      "Text": "Traduction · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2258139Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "cd1e7b84eae3736c527ace8129f9da388699ae9d700b6e87f5cc230bfa784487",
+      "Text": "Traduzione · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2258183Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "cd1e7b84eae3736c527ace8129f9da388699ae9d700b6e87f5cc230bfa784487",
+      "Text": "翻訳 · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.225822Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "cd1e7b84eae3736c527ace8129f9da388699ae9d700b6e87f5cc230bfa784487",
+      "Text": "번역 · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2258253Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "cd1e7b84eae3736c527ace8129f9da388699ae9d700b6e87f5cc230bfa784487",
+      "Text": "Tradução · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2258336Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "cd1e7b84eae3736c527ace8129f9da388699ae9d700b6e87f5cc230bfa784487",
+      "Text": "Перевод · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2258371Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "cd1e7b84eae3736c527ace8129f9da388699ae9d700b6e87f5cc230bfa784487",
+      "Text": "翻译 · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2258408Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "cd1e7b84eae3736c527ace8129f9da388699ae9d700b6e87f5cc230bfa784487",
+      "Text": "翻譯 · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2258449Z",
       "Suggestions": [],
       "Comments": []
     }

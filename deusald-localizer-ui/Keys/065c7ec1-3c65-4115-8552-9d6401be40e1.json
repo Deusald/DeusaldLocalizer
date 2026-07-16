@@ -4,7 +4,7 @@
   "KeyName": "keyCount",
   "Description": "Footer count of matching vs total keys.",
   "CreatedAt": "2026-07-16T12:48:41.5609142Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7104635Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2418702Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -42,6 +42,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7104614Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "df76ef264d2b1995ac7892754150557d8866ab3311b294d889ee6d03bc42f6e6",
+      "Text": "{matching} z {total} klíčů",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2418177Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "df76ef264d2b1995ac7892754150557d8866ab3311b294d889ee6d03bc42f6e6",
+      "Text": "{matching} von {total} Schlüsseln",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.241828Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "df76ef264d2b1995ac7892754150557d8866ab3311b294d889ee6d03bc42f6e6",
+      "Text": "{matching} de {total} claves",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2418321Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "df76ef264d2b1995ac7892754150557d8866ab3311b294d889ee6d03bc42f6e6",
+      "Text": "{matching} clés sur {total}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2418406Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "df76ef264d2b1995ac7892754150557d8866ab3311b294d889ee6d03bc42f6e6",
+      "Text": "{matching} di {total} chiavi",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2418449Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "df76ef264d2b1995ac7892754150557d8866ab3311b294d889ee6d03bc42f6e6",
+      "Text": "{total}キー中{matching}キー",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2418472Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "df76ef264d2b1995ac7892754150557d8866ab3311b294d889ee6d03bc42f6e6",
+      "Text": "전체 {total}개 중 {matching}개 키",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2418541Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "df76ef264d2b1995ac7892754150557d8866ab3311b294d889ee6d03bc42f6e6",
+      "Text": "{matching} de {total} chaves",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2418586Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "df76ef264d2b1995ac7892754150557d8866ab3311b294d889ee6d03bc42f6e6",
+      "Text": "{matching} из {total} ключей",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2418608Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "df76ef264d2b1995ac7892754150557d8866ab3311b294d889ee6d03bc42f6e6",
+      "Text": "{total} 个键中的 {matching} 个",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2418666Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "df76ef264d2b1995ac7892754150557d8866ab3311b294d889ee6d03bc42f6e6",
+      "Text": "{total} 個索引鍵中的 {matching} 個",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2418688Z",
       "Suggestions": [],
       "Comments": []
     }

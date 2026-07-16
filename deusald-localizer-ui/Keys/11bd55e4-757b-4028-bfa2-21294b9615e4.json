@@ -4,7 +4,7 @@
   "KeyName": "intro",
   "Description": "Home page intro paragraph (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794003Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7076667Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2181368Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7076507Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "b27b63023828f0023843ffdfd25d8fd22114b3b40ddb9173e8f6f40bb1a67b15",
+      "Text": "Upravujte řetězce, navrhujte alternativy a nechte komunitu hlasovat o nejlepším překladu každého klíče.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.218108Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "b27b63023828f0023843ffdfd25d8fd22114b3b40ddb9173e8f6f40bb1a67b15",
+      "Text": "Bearbeite Texte, schlage Alternativen vor und lass die Community über die beste Übersetzung für jeden Schlüssel abstimmen.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181109Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "b27b63023828f0023843ffdfd25d8fd22114b3b40ddb9173e8f6f40bb1a67b15",
+      "Text": "Edita cadenas, propón alternativas y deja que la comunidad vote la mejor traducción de cada clave.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181133Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "b27b63023828f0023843ffdfd25d8fd22114b3b40ddb9173e8f6f40bb1a67b15",
+      "Text": "Modifiez les chaînes, proposez des alternatives et laissez la communauté voter pour la meilleure traduction de chaque clé.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181156Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "b27b63023828f0023843ffdfd25d8fd22114b3b40ddb9173e8f6f40bb1a67b15",
+      "Text": "Modifica le stringhe, proponi alternative e lascia che la community voti la migliore traduzione per ogni chiave.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181182Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "b27b63023828f0023843ffdfd25d8fd22114b3b40ddb9173e8f6f40bb1a67b15",
+      "Text": "文字列を編集し、代替案を提案し、各キーの最良の翻訳をコミュニティに投票してもらいましょう。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181206Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "b27b63023828f0023843ffdfd25d8fd22114b3b40ddb9173e8f6f40bb1a67b15",
+      "Text": "문자열을 편집하고 대안을 제안하며, 커뮤니티가 각 키의 최적 번역에 투표하도록 하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181229Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "b27b63023828f0023843ffdfd25d8fd22114b3b40ddb9173e8f6f40bb1a67b15",
+      "Text": "Edite textos, proponha alternativas e deixe a comunidade votar na melhor tradução para cada chave.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181279Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "b27b63023828f0023843ffdfd25d8fd22114b3b40ddb9173e8f6f40bb1a67b15",
+      "Text": "Редактируйте строки, предлагайте альтернативы и позвольте сообществу голосовать за лучший перевод каждого ключа.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181302Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "b27b63023828f0023843ffdfd25d8fd22114b3b40ddb9173e8f6f40bb1a67b15",
+      "Text": "编辑字符串、提出替代方案，并让社区为每个键投票选出最佳翻译。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181324Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "b27b63023828f0023843ffdfd25d8fd22114b3b40ddb9173e8f6f40bb1a67b15",
+      "Text": "編輯字串、提出替代方案，並讓社群為每個索引鍵投票選出最佳翻譯。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181352Z",
       "Suggestions": [],
       "Comments": []
     }

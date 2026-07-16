@@ -4,7 +4,7 @@
   "KeyName": "removeLanguage",
   "Description": "Tooltip for the button that removes a language.",
   "CreatedAt": "2026-07-16T12:48:41.5568827Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7095443Z",
+  "UpdatedAt": "2026-07-16T20:46:27.233523Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7095424Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "24782c7d43210b06e1261d68d9a97171821736611b615dad9ed6ea38830677a6",
+      "Text": "Odebrat jazyk",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2334929Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "24782c7d43210b06e1261d68d9a97171821736611b615dad9ed6ea38830677a6",
+      "Text": "Sprache entfernen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2334953Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "24782c7d43210b06e1261d68d9a97171821736611b615dad9ed6ea38830677a6",
+      "Text": "Quitar idioma",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2334976Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "24782c7d43210b06e1261d68d9a97171821736611b615dad9ed6ea38830677a6",
+      "Text": "Retirer la langue",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335002Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "24782c7d43210b06e1261d68d9a97171821736611b615dad9ed6ea38830677a6",
+      "Text": "Rimuovi lingua",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335025Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "24782c7d43210b06e1261d68d9a97171821736611b615dad9ed6ea38830677a6",
+      "Text": "言語を削除",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335049Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "24782c7d43210b06e1261d68d9a97171821736611b615dad9ed6ea38830677a6",
+      "Text": "언어 제거",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335072Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "24782c7d43210b06e1261d68d9a97171821736611b615dad9ed6ea38830677a6",
+      "Text": "Remover idioma",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.233512Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "24782c7d43210b06e1261d68d9a97171821736611b615dad9ed6ea38830677a6",
+      "Text": "Убрать язык",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335141Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "24782c7d43210b06e1261d68d9a97171821736611b615dad9ed6ea38830677a6",
+      "Text": "移除语言",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335164Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "24782c7d43210b06e1261d68d9a97171821736611b615dad9ed6ea38830677a6",
+      "Text": "移除語言",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335205Z",
       "Suggestions": [],
       "Comments": []
     }

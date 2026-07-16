@@ -4,7 +4,7 @@
   "KeyName": "errExport",
   "Description": "Error when a .zip export fails (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793819Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7078347Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2192851Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7078331Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "b047cc8c16bbe8c3a1681de6bc2ecfd28d0cce885eb24d970d4ccf027182e721",
+      "Text": "Export selhal: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2192531Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "b047cc8c16bbe8c3a1681de6bc2ecfd28d0cce885eb24d970d4ccf027182e721",
+      "Text": "Export fehlgeschlagen: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2192592Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "b047cc8c16bbe8c3a1681de6bc2ecfd28d0cce885eb24d970d4ccf027182e721",
+      "Text": "Error al exportar: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2192616Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "b047cc8c16bbe8c3a1681de6bc2ecfd28d0cce885eb24d970d4ccf027182e721",
+      "Text": "Échec de l'exportation : {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.219264Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "b047cc8c16bbe8c3a1681de6bc2ecfd28d0cce885eb24d970d4ccf027182e721",
+      "Text": "Esportazione non riuscita: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2192669Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "b047cc8c16bbe8c3a1681de6bc2ecfd28d0cce885eb24d970d4ccf027182e721",
+      "Text": "エクスポートに失敗しました：{msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2192692Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "b047cc8c16bbe8c3a1681de6bc2ecfd28d0cce885eb24d970d4ccf027182e721",
+      "Text": "내보내기 실패: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2192713Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "b047cc8c16bbe8c3a1681de6bc2ecfd28d0cce885eb24d970d4ccf027182e721",
+      "Text": "Falha ao exportar: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2192766Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "b047cc8c16bbe8c3a1681de6bc2ecfd28d0cce885eb24d970d4ccf027182e721",
+      "Text": "Не удалось экспортировать: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2192787Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "b047cc8c16bbe8c3a1681de6bc2ecfd28d0cce885eb24d970d4ccf027182e721",
+      "Text": "导出失败：{msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2192808Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "b047cc8c16bbe8c3a1681de6bc2ecfd28d0cce885eb24d970d4ccf027182e721",
+      "Text": "匯出失敗：{msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2192837Z",
       "Suggestions": [],
       "Comments": []
     }

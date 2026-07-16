@@ -4,7 +4,7 @@
   "KeyName": "rowsSkipped",
   "Description": "Result stat label for rows skipped.",
   "CreatedAt": "2026-07-16T12:48:41.5605956Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7101985Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2389876Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7101966Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "8bcecb973c1e9abf303690c31e943c76ae340e944f17a0c6dcafe5edbb023bc9",
+      "Text": "přeskočených řádků",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2389537Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "8bcecb973c1e9abf303690c31e943c76ae340e944f17a0c6dcafe5edbb023bc9",
+      "Text": "Zeilen übersprungen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2389561Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "8bcecb973c1e9abf303690c31e943c76ae340e944f17a0c6dcafe5edbb023bc9",
+      "Text": "filas omitidas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2389584Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "8bcecb973c1e9abf303690c31e943c76ae340e944f17a0c6dcafe5edbb023bc9",
+      "Text": "lignes ignorées",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2389627Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "8bcecb973c1e9abf303690c31e943c76ae340e944f17a0c6dcafe5edbb023bc9",
+      "Text": "righe ignorate",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.238965Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "8bcecb973c1e9abf303690c31e943c76ae340e944f17a0c6dcafe5edbb023bc9",
+      "Text": "行スキップ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2389672Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "8bcecb973c1e9abf303690c31e943c76ae340e944f17a0c6dcafe5edbb023bc9",
+      "Text": "건너뛴 행",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2389694Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "8bcecb973c1e9abf303690c31e943c76ae340e944f17a0c6dcafe5edbb023bc9",
+      "Text": "linhas ignoradas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2389767Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "8bcecb973c1e9abf303690c31e943c76ae340e944f17a0c6dcafe5edbb023bc9",
+      "Text": "строк пропущено",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2389788Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "8bcecb973c1e9abf303690c31e943c76ae340e944f17a0c6dcafe5edbb023bc9",
+      "Text": "个已跳过行",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.238981Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "8bcecb973c1e9abf303690c31e943c76ae340e944f17a0c6dcafe5edbb023bc9",
+      "Text": "個已略過列",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2389861Z",
       "Suggestions": [],
       "Comments": []
     }

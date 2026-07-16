@@ -4,7 +4,7 @@
   "KeyName": "entries",
   "Description": "Header of the enum entries list",
   "CreatedAt": "2026-07-16T12:48:41.5585501Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7085221Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2236084Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7085195Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "7cb76b4af12abb80d576251aa088332aa69ef709dc04c00499ce973fa5f4255f",
+      "Text": "Položky",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2235809Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "7cb76b4af12abb80d576251aa088332aa69ef709dc04c00499ce973fa5f4255f",
+      "Text": "Einträge",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2235838Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "7cb76b4af12abb80d576251aa088332aa69ef709dc04c00499ce973fa5f4255f",
+      "Text": "Entradas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2235861Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "7cb76b4af12abb80d576251aa088332aa69ef709dc04c00499ce973fa5f4255f",
+      "Text": "Entrées",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2235883Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "7cb76b4af12abb80d576251aa088332aa69ef709dc04c00499ce973fa5f4255f",
+      "Text": "Voci",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2235905Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "7cb76b4af12abb80d576251aa088332aa69ef709dc04c00499ce973fa5f4255f",
+      "Text": "項目",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2235931Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "7cb76b4af12abb80d576251aa088332aa69ef709dc04c00499ce973fa5f4255f",
+      "Text": "항목",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2235953Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "7cb76b4af12abb80d576251aa088332aa69ef709dc04c00499ce973fa5f4255f",
+      "Text": "Entradas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2236Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "7cb76b4af12abb80d576251aa088332aa69ef709dc04c00499ce973fa5f4255f",
+      "Text": "Записи",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2236026Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "7cb76b4af12abb80d576251aa088332aa69ef709dc04c00499ce973fa5f4255f",
+      "Text": "条目",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2236049Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "7cb76b4af12abb80d576251aa088332aa69ef709dc04c00499ce973fa5f4255f",
+      "Text": "項目",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.223607Z",
       "Suggestions": [],
       "Comments": []
     }

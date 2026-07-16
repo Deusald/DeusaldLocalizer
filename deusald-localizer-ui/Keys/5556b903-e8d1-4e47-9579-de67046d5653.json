@@ -4,7 +4,7 @@
   "KeyName": "noCategoriesYet",
   "Description": "Empty state when the project has no categories.",
   "CreatedAt": "2026-07-16T12:48:41.5571558Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7091109Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2294938Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7091087Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "7373b4794213e9d2d951790d344b9636520143b14d7c33342b35ae0bbbf4a68e",
+      "Text": "Zatím žádné kategorie.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2294186Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "7373b4794213e9d2d951790d344b9636520143b14d7c33342b35ae0bbbf4a68e",
+      "Text": "Noch keine Kategorien.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2294282Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "7373b4794213e9d2d951790d344b9636520143b14d7c33342b35ae0bbbf4a68e",
+      "Text": "Aún no hay categorías.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2294324Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "7373b4794213e9d2d951790d344b9636520143b14d7c33342b35ae0bbbf4a68e",
+      "Text": "Pas encore de catégories.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2294369Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "7373b4794213e9d2d951790d344b9636520143b14d7c33342b35ae0bbbf4a68e",
+      "Text": "Ancora nessuna categoria.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2294408Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "7373b4794213e9d2d951790d344b9636520143b14d7c33342b35ae0bbbf4a68e",
+      "Text": "まだカテゴリがありません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2294444Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "7373b4794213e9d2d951790d344b9636520143b14d7c33342b35ae0bbbf4a68e",
+      "Text": "아직 카테고리가 없습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2294481Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "7373b4794213e9d2d951790d344b9636520143b14d7c33342b35ae0bbbf4a68e",
+      "Text": "Ainda sem categorias.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2294794Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "7373b4794213e9d2d951790d344b9636520143b14d7c33342b35ae0bbbf4a68e",
+      "Text": "Пока нет категорий.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2294834Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "7373b4794213e9d2d951790d344b9636520143b14d7c33342b35ae0bbbf4a68e",
+      "Text": "尚无类别。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2294871Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "7373b4794213e9d2d951790d344b9636520143b14d7c33342b35ae0bbbf4a68e",
+      "Text": "尚無分類。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2294913Z",
       "Suggestions": [],
       "Comments": []
     }

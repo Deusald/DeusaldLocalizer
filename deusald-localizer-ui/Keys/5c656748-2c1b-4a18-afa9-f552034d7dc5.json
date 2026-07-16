@@ -4,7 +4,7 @@
   "KeyName": "reviewLanguagesHint",
   "Description": "Hint next to the review-languages field label.",
   "CreatedAt": "2026-07-16T12:48:41.5592894Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7111702Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2631773Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7111682Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "5bb29ce9a117dc3da9594841b4b161f7f47b690cecd5e9975dc38c48f38efed6",
+      "Text": "jazyky, které tento člen může kontrolovat",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631483Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "5bb29ce9a117dc3da9594841b4b161f7f47b690cecd5e9975dc38c48f38efed6",
+      "Text": "Sprachen, die dieses Mitglied prüfen kann",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631509Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "5bb29ce9a117dc3da9594841b4b161f7f47b690cecd5e9975dc38c48f38efed6",
+      "Text": "idiomas que este miembro puede revisar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631541Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "5bb29ce9a117dc3da9594841b4b161f7f47b690cecd5e9975dc38c48f38efed6",
+      "Text": "langues que ce membre peut réviser",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631563Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "5bb29ce9a117dc3da9594841b4b161f7f47b690cecd5e9975dc38c48f38efed6",
+      "Text": "lingue che questo membro può revisionare",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631584Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "5bb29ce9a117dc3da9594841b4b161f7f47b690cecd5e9975dc38c48f38efed6",
+      "Text": "このメンバーがレビューできる言語",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.263161Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "5bb29ce9a117dc3da9594841b4b161f7f47b690cecd5e9975dc38c48f38efed6",
+      "Text": "이 멤버가 검토할 수 있는 언어",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631632Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "5bb29ce9a117dc3da9594841b4b161f7f47b690cecd5e9975dc38c48f38efed6",
+      "Text": "idiomas que este membro pode revisar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631683Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "5bb29ce9a117dc3da9594841b4b161f7f47b690cecd5e9975dc38c48f38efed6",
+      "Text": "языки, которые этот участник может проверять",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631713Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "5bb29ce9a117dc3da9594841b4b161f7f47b690cecd5e9975dc38c48f38efed6",
+      "Text": "此成员可审核的语言",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631736Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "5bb29ce9a117dc3da9594841b4b161f7f47b690cecd5e9975dc38c48f38efed6",
+      "Text": "此成員可審閱的語言",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2631758Z",
       "Suggestions": [],
       "Comments": []
     }

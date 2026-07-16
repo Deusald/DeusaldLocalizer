@@ -4,7 +4,7 @@
   "KeyName": "warningText",
   "Description": "Security warning shown under a newly generated access token",
   "CreatedAt": "2026-07-16T12:48:41.5611236Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7071113Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2140179Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7071085Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "3cc5d0fd4604a6d99c69ac25368cebe515276096dd98692293cb3a86f87aadc8",
+      "Text": "Uložte tento token na bezpečné místo — z bezpečnostních důvodů se už znovu nezobrazí.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139573Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "3cc5d0fd4604a6d99c69ac25368cebe515276096dd98692293cb3a86f87aadc8",
+      "Text": "Bewahre dieses Token sicher auf — aus Sicherheitsgründen wird es nicht erneut angezeigt.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139619Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "3cc5d0fd4604a6d99c69ac25368cebe515276096dd98692293cb3a86f87aadc8",
+      "Text": "Guarda este token en un lugar seguro: por seguridad, no se volverá a mostrar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139659Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "3cc5d0fd4604a6d99c69ac25368cebe515276096dd98692293cb3a86f87aadc8",
+      "Text": "Conservez ce jeton en lieu sûr : pour des raisons de sécurité, il ne sera plus affiché.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139705Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "3cc5d0fd4604a6d99c69ac25368cebe515276096dd98692293cb3a86f87aadc8",
+      "Text": "Conserva questo token in un luogo sicuro: per motivi di sicurezza non verrà mostrato di nuovo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139755Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "3cc5d0fd4604a6d99c69ac25368cebe515276096dd98692293cb3a86f87aadc8",
+      "Text": "このトークンは安全な場所に保管してください。セキュリティのため、再表示されません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139791Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "3cc5d0fd4604a6d99c69ac25368cebe515276096dd98692293cb3a86f87aadc8",
+      "Text": "이 토큰을 안전한 곳에 보관하세요. 보안을 위해 다시 표시되지 않습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2139814Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "3cc5d0fd4604a6d99c69ac25368cebe515276096dd98692293cb3a86f87aadc8",
+      "Text": "Guarde este token em local seguro — por segurança, ele não será exibido novamente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2140085Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "3cc5d0fd4604a6d99c69ac25368cebe515276096dd98692293cb3a86f87aadc8",
+      "Text": "Храните этот токен в надёжном месте — в целях безопасности он больше не будет показан.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2140113Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "3cc5d0fd4604a6d99c69ac25368cebe515276096dd98692293cb3a86f87aadc8",
+      "Text": "请妥善保管此令牌——出于安全考虑，它不会再次显示。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2140137Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "3cc5d0fd4604a6d99c69ac25368cebe515276096dd98692293cb3a86f87aadc8",
+      "Text": "請妥善保管此權杖——基於安全考量，它不會再次顯示。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2140164Z",
       "Suggestions": [],
       "Comments": []
     }

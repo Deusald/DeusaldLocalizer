@@ -4,7 +4,7 @@
   "KeyName": "importing",
   "Description": "Progress text while importing.",
   "CreatedAt": "2026-07-16T12:48:41.5605181Z",
-  "UpdatedAt": "2026-07-16T13:07:17.710163Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2387666Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7101605Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00",
+      "Text": "Importování…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2387216Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00",
+      "Text": "Importiere…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2387306Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00",
+      "Text": "Importando…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2387342Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00",
+      "Text": "Importation…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2387376Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00",
+      "Text": "Importazione…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2387414Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00",
+      "Text": "インポート中…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2387486Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00",
+      "Text": "가져오는 중…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.238751Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00",
+      "Text": "Importando…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2387553Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00",
+      "Text": "Импорт…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2387607Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00",
+      "Text": "正在导入…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.238763Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00",
+      "Text": "正在匯入…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2387652Z",
       "Suggestions": [],
       "Comments": []
     }

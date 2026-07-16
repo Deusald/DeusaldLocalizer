@@ -4,7 +4,7 @@
   "KeyName": "storeInHint",
   "Description": "Hint next to the Store in label",
   "CreatedAt": "2026-07-16T12:48:41.5612679Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7073171Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2153608Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7073152Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "bac571473f9990c2d9f02a3224dd0a538de5f72c63cba11aeb48b040588d7dce",
+      "Text": "zde se vytvoří složka pojmenovaná podle projektu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2153078Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "bac571473f9990c2d9f02a3224dd0a538de5f72c63cba11aeb48b040588d7dce",
+      "Text": "hier wird ein Ordner mit dem Projektnamen erstellt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2153126Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "bac571473f9990c2d9f02a3224dd0a538de5f72c63cba11aeb48b040588d7dce",
+      "Text": "aquí se crea una carpeta con el nombre del proyecto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2153167Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "bac571473f9990c2d9f02a3224dd0a538de5f72c63cba11aeb48b040588d7dce",
+      "Text": "un dossier portant le nom du projet est créé ici",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2153212Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "bac571473f9990c2d9f02a3224dd0a538de5f72c63cba11aeb48b040588d7dce",
+      "Text": "qui viene creata una cartella con il nome del progetto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2153288Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "bac571473f9990c2d9f02a3224dd0a538de5f72c63cba11aeb48b040588d7dce",
+      "Text": "ここにプロジェクト名のフォルダーが作成されます",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2153331Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "bac571473f9990c2d9f02a3224dd0a538de5f72c63cba11aeb48b040588d7dce",
+      "Text": "여기에 프로젝트 이름의 폴더가 생성됩니다",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2153369Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "bac571473f9990c2d9f02a3224dd0a538de5f72c63cba11aeb48b040588d7dce",
+      "Text": "uma pasta com o nome do projeto é criada aqui",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2153455Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "bac571473f9990c2d9f02a3224dd0a538de5f72c63cba11aeb48b040588d7dce",
+      "Text": "здесь создаётся папка с именем проекта",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2153496Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "bac571473f9990c2d9f02a3224dd0a538de5f72c63cba11aeb48b040588d7dce",
+      "Text": "这里会创建一个以项目命名的文件夹",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2153535Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "bac571473f9990c2d9f02a3224dd0a538de5f72c63cba11aeb48b040588d7dce",
+      "Text": "這裡會建立一個以專案命名的資料夾",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2153573Z",
       "Suggestions": [],
       "Comments": []
     }

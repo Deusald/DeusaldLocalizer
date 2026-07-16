@@ -4,7 +4,7 @@
   "KeyName": "destChangedDesc",
   "Description": "Conflict description for a concurrent-edit conflict",
   "CreatedAt": "2026-07-16T12:48:41.5586834Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7082059Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2218315Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7082037Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "8cac076b7cce5b8adecfc483d5bce88e1d972e77066c758d3ded4631bdf06b5d",
+      "Text": "Někdo jiný změnil tento překlad na serveru od vaší úpravy. Vyberte, kterou verzi ponechat.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218025Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "8cac076b7cce5b8adecfc483d5bce88e1d972e77066c758d3ded4631bdf06b5d",
+      "Text": "Jemand anderes hat diese Übersetzung seit deiner Bearbeitung auf dem Server geändert. Wähle, welche Version behalten werden soll.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.221806Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "8cac076b7cce5b8adecfc483d5bce88e1d972e77066c758d3ded4631bdf06b5d",
+      "Text": "Otra persona ha cambiado esta traducción en el servidor desde tu edición. Elige qué versión conservar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218083Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "8cac076b7cce5b8adecfc483d5bce88e1d972e77066c758d3ded4631bdf06b5d",
+      "Text": "Quelqu'un d'autre a modifié cette traduction sur le serveur depuis votre modification. Choisissez la version à conserver.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218106Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "8cac076b7cce5b8adecfc483d5bce88e1d972e77066c758d3ded4631bdf06b5d",
+      "Text": "Qualcun altro ha modificato questa traduzione sul server dopo la tua modifica. Scegli quale versione mantenere.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218133Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "8cac076b7cce5b8adecfc483d5bce88e1d972e77066c758d3ded4631bdf06b5d",
+      "Text": "あなたの編集後、他の誰かがサーバー上でこの翻訳を変更しました。保持するバージョンを選択してください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218156Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "8cac076b7cce5b8adecfc483d5bce88e1d972e77066c758d3ded4631bdf06b5d",
+      "Text": "편집 후 다른 사람이 서버에서 이 번역을 변경했습니다. 유지할 버전을 선택하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218179Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "8cac076b7cce5b8adecfc483d5bce88e1d972e77066c758d3ded4631bdf06b5d",
+      "Text": "Outra pessoa alterou esta tradução no servidor desde a sua edição. Escolha qual versão manter.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218229Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "8cac076b7cce5b8adecfc483d5bce88e1d972e77066c758d3ded4631bdf06b5d",
+      "Text": "Кто-то другой изменил этот перевод на сервере после вашей правки. Выберите, какую версию сохранить.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218252Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "8cac076b7cce5b8adecfc483d5bce88e1d972e77066c758d3ded4631bdf06b5d",
+      "Text": "在你编辑之后，其他人在服务器上更改了此翻译。请选择要保留的版本。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218274Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "8cac076b7cce5b8adecfc483d5bce88e1d972e77066c758d3ded4631bdf06b5d",
+      "Text": "在你編輯之後，其他人在伺服器上變更了此翻譯。請選擇要保留的版本。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218301Z",
       "Suggestions": [],
       "Comments": []
     }

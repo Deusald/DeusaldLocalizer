@@ -4,7 +4,7 @@
   "KeyName": "errInvalidProject",
   "Description": "Error when the chosen folder isn't a valid project (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0795123Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7076313Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2179718Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7076297Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c47f6c6ba5ab213e9351b1e75cc7024da1e8a51e477a6c10646e29859c5dc749",
+      "Text": "Neplatný projekt: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179437Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c47f6c6ba5ab213e9351b1e75cc7024da1e8a51e477a6c10646e29859c5dc749",
+      "Text": "Ungültiges Projekt: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179462Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c47f6c6ba5ab213e9351b1e75cc7024da1e8a51e477a6c10646e29859c5dc749",
+      "Text": "Proyecto no válido: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179485Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c47f6c6ba5ab213e9351b1e75cc7024da1e8a51e477a6c10646e29859c5dc749",
+      "Text": "Projet non valide : {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179507Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c47f6c6ba5ab213e9351b1e75cc7024da1e8a51e477a6c10646e29859c5dc749",
+      "Text": "Progetto non valido: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179537Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c47f6c6ba5ab213e9351b1e75cc7024da1e8a51e477a6c10646e29859c5dc749",
+      "Text": "無効なプロジェクト：{msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179559Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c47f6c6ba5ab213e9351b1e75cc7024da1e8a51e477a6c10646e29859c5dc749",
+      "Text": "유효하지 않은 프로젝트: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179581Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c47f6c6ba5ab213e9351b1e75cc7024da1e8a51e477a6c10646e29859c5dc749",
+      "Text": "Projeto inválido: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179635Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c47f6c6ba5ab213e9351b1e75cc7024da1e8a51e477a6c10646e29859c5dc749",
+      "Text": "Недопустимый проект: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179657Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c47f6c6ba5ab213e9351b1e75cc7024da1e8a51e477a6c10646e29859c5dc749",
+      "Text": "无效的项目：{msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179677Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c47f6c6ba5ab213e9351b1e75cc7024da1e8a51e477a6c10646e29859c5dc749",
+      "Text": "無效的專案：{msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179699Z",
       "Suggestions": [],
       "Comments": []
     }

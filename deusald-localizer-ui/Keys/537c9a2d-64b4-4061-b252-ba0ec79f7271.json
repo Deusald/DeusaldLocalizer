@@ -4,7 +4,7 @@
   "KeyName": "newAccessTokenTitle",
   "Description": "Title of the modal showing the user's freshly regenerated token.",
   "CreatedAt": "2026-07-16T12:48:41.5596323Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7111078Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2623489Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7111058Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "aee5cdf609d4d49fcd173915ef3c0282d8ff4db47ba1989b6feb994db83d02d5",
+      "Text": "Nový přístupový token",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2623013Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "aee5cdf609d4d49fcd173915ef3c0282d8ff4db47ba1989b6feb994db83d02d5",
+      "Text": "Neues Zugriffstoken",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2623062Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "aee5cdf609d4d49fcd173915ef3c0282d8ff4db47ba1989b6feb994db83d02d5",
+      "Text": "Nuevo token de acceso",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2623105Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "aee5cdf609d4d49fcd173915ef3c0282d8ff4db47ba1989b6feb994db83d02d5",
+      "Text": "Nouveau jeton d'accès",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2623139Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "aee5cdf609d4d49fcd173915ef3c0282d8ff4db47ba1989b6feb994db83d02d5",
+      "Text": "Nuovo token di accesso",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2623176Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "aee5cdf609d4d49fcd173915ef3c0282d8ff4db47ba1989b6feb994db83d02d5",
+      "Text": "新しいアクセストークン",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2623218Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "aee5cdf609d4d49fcd173915ef3c0282d8ff4db47ba1989b6feb994db83d02d5",
+      "Text": "새 액세스 토큰",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2623254Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "aee5cdf609d4d49fcd173915ef3c0282d8ff4db47ba1989b6feb994db83d02d5",
+      "Text": "Novo token de acesso",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2623334Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "aee5cdf609d4d49fcd173915ef3c0282d8ff4db47ba1989b6feb994db83d02d5",
+      "Text": "Новый токен доступа",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.262338Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "aee5cdf609d4d49fcd173915ef3c0282d8ff4db47ba1989b6feb994db83d02d5",
+      "Text": "新访问令牌",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2623424Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "aee5cdf609d4d49fcd173915ef3c0282d8ff4db47ba1989b6feb994db83d02d5",
+      "Text": "新存取權杖",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2623463Z",
       "Suggestions": [],
       "Comments": []
     }

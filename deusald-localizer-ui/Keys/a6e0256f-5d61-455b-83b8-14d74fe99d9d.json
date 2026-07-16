@@ -4,7 +4,7 @@
   "KeyName": "noProjectOpen",
   "Description": "Empty state shown on the translate page when no project is open",
   "CreatedAt": "2026-07-16T12:48:41.5616042Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7096014Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2338838Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7095994Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "a80c18fe4f9caff97b5220151334182db2393db13b70fc20b92d924db9942d6e",
+      "Text": "Není otevřen žádný projekt.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338528Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a80c18fe4f9caff97b5220151334182db2393db13b70fc20b92d924db9942d6e",
+      "Text": "Kein Projekt geöffnet.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338586Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "a80c18fe4f9caff97b5220151334182db2393db13b70fc20b92d924db9942d6e",
+      "Text": "Ningún proyecto abierto.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338609Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a80c18fe4f9caff97b5220151334182db2393db13b70fc20b92d924db9942d6e",
+      "Text": "Aucun projet ouvert.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338632Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "a80c18fe4f9caff97b5220151334182db2393db13b70fc20b92d924db9942d6e",
+      "Text": "Nessun progetto aperto.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338659Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "a80c18fe4f9caff97b5220151334182db2393db13b70fc20b92d924db9942d6e",
+      "Text": "開いているプロジェクトがありません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338681Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "a80c18fe4f9caff97b5220151334182db2393db13b70fc20b92d924db9942d6e",
+      "Text": "열린 프로젝트가 없습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338702Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "a80c18fe4f9caff97b5220151334182db2393db13b70fc20b92d924db9942d6e",
+      "Text": "Nenhum projeto aberto.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338751Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "a80c18fe4f9caff97b5220151334182db2393db13b70fc20b92d924db9942d6e",
+      "Text": "Нет открытого проекта.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338774Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "a80c18fe4f9caff97b5220151334182db2393db13b70fc20b92d924db9942d6e",
+      "Text": "未打开项目。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338796Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "a80c18fe4f9caff97b5220151334182db2393db13b70fc20b92d924db9942d6e",
+      "Text": "未開啟專案。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338818Z",
       "Suggestions": [],
       "Comments": []
     }

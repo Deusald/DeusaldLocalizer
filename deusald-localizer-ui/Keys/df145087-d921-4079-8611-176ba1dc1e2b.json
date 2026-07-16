@@ -4,7 +4,7 @@
   "KeyName": "excel",
   "Description": "Format toggle button for Excel export.",
   "CreatedAt": "2026-07-16T12:48:41.5606671Z",
-  "UpdatedAt": "2026-07-16T13:08:49.8624086Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2408486Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:08:49.8622968Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "48d53635551c8fd4564251d49f4e6eba58c2774469144e4346310955fbadbf4c",
+      "Text": "Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2407409Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "48d53635551c8fd4564251d49f4e6eba58c2774469144e4346310955fbadbf4c",
+      "Text": "Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2407439Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "48d53635551c8fd4564251d49f4e6eba58c2774469144e4346310955fbadbf4c",
+      "Text": "Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.240746Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "48d53635551c8fd4564251d49f4e6eba58c2774469144e4346310955fbadbf4c",
+      "Text": "Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2407481Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "48d53635551c8fd4564251d49f4e6eba58c2774469144e4346310955fbadbf4c",
+      "Text": "Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2407531Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "48d53635551c8fd4564251d49f4e6eba58c2774469144e4346310955fbadbf4c",
+      "Text": "Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2407567Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "48d53635551c8fd4564251d49f4e6eba58c2774469144e4346310955fbadbf4c",
+      "Text": "Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2407605Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "48d53635551c8fd4564251d49f4e6eba58c2774469144e4346310955fbadbf4c",
+      "Text": "Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.240838Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "48d53635551c8fd4564251d49f4e6eba58c2774469144e4346310955fbadbf4c",
+      "Text": "Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2408406Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "48d53635551c8fd4564251d49f4e6eba58c2774469144e4346310955fbadbf4c",
+      "Text": "Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2408428Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "48d53635551c8fd4564251d49f4e6eba58c2774469144e4346310955fbadbf4c",
+      "Text": "Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2408449Z",
       "Suggestions": [],
       "Comments": []
     }

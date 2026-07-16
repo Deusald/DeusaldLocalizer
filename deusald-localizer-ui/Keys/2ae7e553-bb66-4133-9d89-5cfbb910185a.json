@@ -4,7 +4,7 @@
   "KeyName": "removeChangeTitle",
   "Description": "Tooltip on the remove button for a single change.",
   "CreatedAt": "2026-07-16T12:48:41.5601784Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7108417Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2462957Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7108393Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "8e970c7f5dcca20f1baea4d6d44412c45e0ed46db5fbfc1e26528c047e15f033",
+      "Text": "Odebrat tuto změnu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462568Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "8e970c7f5dcca20f1baea4d6d44412c45e0ed46db5fbfc1e26528c047e15f033",
+      "Text": "Diese Änderung entfernen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462617Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "8e970c7f5dcca20f1baea4d6d44412c45e0ed46db5fbfc1e26528c047e15f033",
+      "Text": "Quitar este cambio",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462645Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "8e970c7f5dcca20f1baea4d6d44412c45e0ed46db5fbfc1e26528c047e15f033",
+      "Text": "Retirer cette modification",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462669Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "8e970c7f5dcca20f1baea4d6d44412c45e0ed46db5fbfc1e26528c047e15f033",
+      "Text": "Rimuovi questa modifica",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.246269Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "8e970c7f5dcca20f1baea4d6d44412c45e0ed46db5fbfc1e26528c047e15f033",
+      "Text": "この変更を削除",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462731Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "8e970c7f5dcca20f1baea4d6d44412c45e0ed46db5fbfc1e26528c047e15f033",
+      "Text": "이 변경 사항 제거",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462754Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "8e970c7f5dcca20f1baea4d6d44412c45e0ed46db5fbfc1e26528c047e15f033",
+      "Text": "Remover esta alteração",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462844Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "8e970c7f5dcca20f1baea4d6d44412c45e0ed46db5fbfc1e26528c047e15f033",
+      "Text": "Убрать это изменение",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462868Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "8e970c7f5dcca20f1baea4d6d44412c45e0ed46db5fbfc1e26528c047e15f033",
+      "Text": "移除此更改",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.246289Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "8e970c7f5dcca20f1baea4d6d44412c45e0ed46db5fbfc1e26528c047e15f033",
+      "Text": "移除此變更",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462912Z",
       "Suggestions": [],
       "Comments": []
     }

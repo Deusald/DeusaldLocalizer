@@ -4,7 +4,7 @@
   "KeyName": "updateTags",
   "Description": "Checkbox label to update tags.",
   "CreatedAt": "2026-07-16T12:48:41.5604076Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7102957Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2400816Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7102937Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "f8f758727160d182359452a1fbec18f92ae5ac99d1f5763298fcc0783eee3691",
+      "Text": "Aktualizovat štítky",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399955Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "f8f758727160d182359452a1fbec18f92ae5ac99d1f5763298fcc0783eee3691",
+      "Text": "Tags aktualisieren",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2400262Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "f8f758727160d182359452a1fbec18f92ae5ac99d1f5763298fcc0783eee3691",
+      "Text": "Actualizar etiquetas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2400323Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "f8f758727160d182359452a1fbec18f92ae5ac99d1f5763298fcc0783eee3691",
+      "Text": "Mettre à jour les étiquettes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2400363Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "f8f758727160d182359452a1fbec18f92ae5ac99d1f5763298fcc0783eee3691",
+      "Text": "Aggiorna tag",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.24004Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "f8f758727160d182359452a1fbec18f92ae5ac99d1f5763298fcc0783eee3691",
+      "Text": "タグを更新",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.24005Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "f8f758727160d182359452a1fbec18f92ae5ac99d1f5763298fcc0783eee3691",
+      "Text": "태그 업데이트",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2400542Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "f8f758727160d182359452a1fbec18f92ae5ac99d1f5763298fcc0783eee3691",
+      "Text": "Atualizar tags",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2400623Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "f8f758727160d182359452a1fbec18f92ae5ac99d1f5763298fcc0783eee3691",
+      "Text": "Обновить теги",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2400716Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "f8f758727160d182359452a1fbec18f92ae5ac99d1f5763298fcc0783eee3691",
+      "Text": "更新标签",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2400751Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "f8f758727160d182359452a1fbec18f92ae5ac99d1f5763298fcc0783eee3691",
+      "Text": "更新標籤",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2400789Z",
       "Suggestions": [],
       "Comments": []
     }

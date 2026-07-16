@@ -4,7 +4,7 @@
   "KeyName": "months",
   "Description": "Unit option for the comment-age selector.",
   "CreatedAt": "2026-07-16T12:48:41.5594743Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7110917Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2482666Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7110897Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "16837433443196b57199277283d81f9432152d4d389026deae3266b96bbe980d",
+      "Text": "měsíce",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2481893Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "16837433443196b57199277283d81f9432152d4d389026deae3266b96bbe980d",
+      "Text": "Monate",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2481928Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "16837433443196b57199277283d81f9432152d4d389026deae3266b96bbe980d",
+      "Text": "meses",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2481962Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "16837433443196b57199277283d81f9432152d4d389026deae3266b96bbe980d",
+      "Text": "mois",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2481994Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "16837433443196b57199277283d81f9432152d4d389026deae3266b96bbe980d",
+      "Text": "mesi",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2482291Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "16837433443196b57199277283d81f9432152d4d389026deae3266b96bbe980d",
+      "Text": "か月",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.248234Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "16837433443196b57199277283d81f9432152d4d389026deae3266b96bbe980d",
+      "Text": "개월",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2482381Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "16837433443196b57199277283d81f9432152d4d389026deae3266b96bbe980d",
+      "Text": "meses",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.24825Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "16837433443196b57199277283d81f9432152d4d389026deae3266b96bbe980d",
+      "Text": "месяцев",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2482539Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "16837433443196b57199277283d81f9432152d4d389026deae3266b96bbe980d",
+      "Text": "个月",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2482575Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "16837433443196b57199277283d81f9432152d4d389026deae3266b96bbe980d",
+      "Text": "個月",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2482607Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "openProject",
   "Description": "Button that opens a project folder (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794649Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7076916Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2182955Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7076899Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "267ee808b9b567723f650693205db343d8db57b072d25a7bc73d0a5cf44fd687",
+      "Text": "Otevřít projekt…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182628Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "267ee808b9b567723f650693205db343d8db57b072d25a7bc73d0a5cf44fd687",
+      "Text": "Projekt öffnen…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182696Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "267ee808b9b567723f650693205db343d8db57b072d25a7bc73d0a5cf44fd687",
+      "Text": "Abrir proyecto…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182729Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "267ee808b9b567723f650693205db343d8db57b072d25a7bc73d0a5cf44fd687",
+      "Text": "Ouvrir un projet…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182752Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "267ee808b9b567723f650693205db343d8db57b072d25a7bc73d0a5cf44fd687",
+      "Text": "Apri progetto…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182774Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "267ee808b9b567723f650693205db343d8db57b072d25a7bc73d0a5cf44fd687",
+      "Text": "プロジェクトを開く…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182796Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "267ee808b9b567723f650693205db343d8db57b072d25a7bc73d0a5cf44fd687",
+      "Text": "프로젝트 열기…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182823Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "267ee808b9b567723f650693205db343d8db57b072d25a7bc73d0a5cf44fd687",
+      "Text": "Abrir projeto…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182869Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "267ee808b9b567723f650693205db343d8db57b072d25a7bc73d0a5cf44fd687",
+      "Text": "Открыть проект…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182892Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "267ee808b9b567723f650693205db343d8db57b072d25a7bc73d0a5cf44fd687",
+      "Text": "打开项目…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182918Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "267ee808b9b567723f650693205db343d8db57b072d25a7bc73d0a5cf44fd687",
+      "Text": "開啟專案…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.218294Z",
       "Suggestions": [],
       "Comments": []
     }

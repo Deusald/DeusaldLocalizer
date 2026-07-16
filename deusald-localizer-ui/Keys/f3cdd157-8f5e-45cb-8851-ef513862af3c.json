@@ -4,7 +4,7 @@
   "KeyName": "keepMine",
   "Description": "Button/label for keeping the local version",
   "CreatedAt": "2026-07-16T12:48:41.5585964Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7082299Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2219814Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7082278Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "0335c833251799ba6c37ba1823af457b6232b46933570369cf38b4f2766f134c",
+      "Text": "Ponechat moji",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2219538Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "0335c833251799ba6c37ba1823af457b6232b46933570369cf38b4f2766f134c",
+      "Text": "Meine behalten",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2219563Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "0335c833251799ba6c37ba1823af457b6232b46933570369cf38b4f2766f134c",
+      "Text": "Conservar la mía",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2219594Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "0335c833251799ba6c37ba1823af457b6232b46933570369cf38b4f2766f134c",
+      "Text": "Garder la mienne",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2219616Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "0335c833251799ba6c37ba1823af457b6232b46933570369cf38b4f2766f134c",
+      "Text": "Mantieni la mia",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2219639Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "0335c833251799ba6c37ba1823af457b6232b46933570369cf38b4f2766f134c",
+      "Text": "自分のを保持",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.221966Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "0335c833251799ba6c37ba1823af457b6232b46933570369cf38b4f2766f134c",
+      "Text": "내 것 유지",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2219687Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "0335c833251799ba6c37ba1823af457b6232b46933570369cf38b4f2766f134c",
+      "Text": "Manter a minha",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.221973Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "0335c833251799ba6c37ba1823af457b6232b46933570369cf38b4f2766f134c",
+      "Text": "Сохранить мою",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2219752Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "0335c833251799ba6c37ba1823af457b6232b46933570369cf38b4f2766f134c",
+      "Text": "保留我的",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2219779Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "0335c833251799ba6c37ba1823af457b6232b46933570369cf38b4f2766f134c",
+      "Text": "保留我的",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.22198Z",
       "Suggestions": [],
       "Comments": []
     }

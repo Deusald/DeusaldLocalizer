@@ -4,7 +4,7 @@
   "KeyName": "columns",
   "Description": "Section title for Excel column options.",
   "CreatedAt": "2026-07-16T12:48:41.5608289Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7103169Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2403439Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7103145Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "53aade77cd69a77bbb51bf8ca4e7ea8b282db75edce8883775e47042478d35b5",
+      "Text": "Sloupce",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402884Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "53aade77cd69a77bbb51bf8ca4e7ea8b282db75edce8883775e47042478d35b5",
+      "Text": "Spalten",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402909Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "53aade77cd69a77bbb51bf8ca4e7ea8b282db75edce8883775e47042478d35b5",
+      "Text": "Columnas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402937Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "53aade77cd69a77bbb51bf8ca4e7ea8b282db75edce8883775e47042478d35b5",
+      "Text": "Colonnes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402983Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "53aade77cd69a77bbb51bf8ca4e7ea8b282db75edce8883775e47042478d35b5",
+      "Text": "Colonne",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403007Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "53aade77cd69a77bbb51bf8ca4e7ea8b282db75edce8883775e47042478d35b5",
+      "Text": "列",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403029Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "53aade77cd69a77bbb51bf8ca4e7ea8b282db75edce8883775e47042478d35b5",
+      "Text": "열",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403051Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "53aade77cd69a77bbb51bf8ca4e7ea8b282db75edce8883775e47042478d35b5",
+      "Text": "Colunas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403124Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "53aade77cd69a77bbb51bf8ca4e7ea8b282db75edce8883775e47042478d35b5",
+      "Text": "Столбцы",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403153Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "53aade77cd69a77bbb51bf8ca4e7ea8b282db75edce8883775e47042478d35b5",
+      "Text": "列",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403174Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "53aade77cd69a77bbb51bf8ca4e7ea8b282db75edce8883775e47042478d35b5",
+      "Text": "欄",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2403405Z",
       "Suggestions": [],
       "Comments": []
     }

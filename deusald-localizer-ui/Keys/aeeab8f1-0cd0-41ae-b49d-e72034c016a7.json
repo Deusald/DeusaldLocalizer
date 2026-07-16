@@ -4,7 +4,7 @@
   "KeyName": "syncFromServer",
   "Description": "Tooltip on the sync button.",
   "CreatedAt": "2026-07-16T12:48:41.5588183Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7098813Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2361102Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7098789Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "e3a1c7f66f48051056ba67f56ceea11dbc80a233f4d4157d6a51fab53bc933a1",
+      "Text": "Synchronizovat ze serveru",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360686Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "e3a1c7f66f48051056ba67f56ceea11dbc80a233f4d4157d6a51fab53bc933a1",
+      "Text": "Vom Server synchronisieren",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360723Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "e3a1c7f66f48051056ba67f56ceea11dbc80a233f4d4157d6a51fab53bc933a1",
+      "Text": "Sincronizar desde el servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360753Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "e3a1c7f66f48051056ba67f56ceea11dbc80a233f4d4157d6a51fab53bc933a1",
+      "Text": "Synchroniser depuis le serveur",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360777Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "e3a1c7f66f48051056ba67f56ceea11dbc80a233f4d4157d6a51fab53bc933a1",
+      "Text": "Sincronizza dal server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360799Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "e3a1c7f66f48051056ba67f56ceea11dbc80a233f4d4157d6a51fab53bc933a1",
+      "Text": "サーバーから同期",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360832Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "e3a1c7f66f48051056ba67f56ceea11dbc80a233f4d4157d6a51fab53bc933a1",
+      "Text": "서버에서 동기화",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360877Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "e3a1c7f66f48051056ba67f56ceea11dbc80a233f4d4157d6a51fab53bc933a1",
+      "Text": "Sincronizar do servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360948Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "e3a1c7f66f48051056ba67f56ceea11dbc80a233f4d4157d6a51fab53bc933a1",
+      "Text": "Синхронизировать с сервера",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360988Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "e3a1c7f66f48051056ba67f56ceea11dbc80a233f4d4157d6a51fab53bc933a1",
+      "Text": "从服务器同步",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2361038Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "e3a1c7f66f48051056ba67f56ceea11dbc80a233f4d4157d6a51fab53bc933a1",
+      "Text": "從伺服器同步",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2361076Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "newAccessTokenBody",
   "Description": "Body of the modal showing the user's freshly regenerated token.",
   "CreatedAt": "2026-07-16T12:48:41.5596418Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7111006Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2622853Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7110974Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "21d90940db84a9e615221fb9e029f245d0ac6531c2bcd4b032de4f2a2edfa1b0",
+      "Text": "Váš předchozí token již nefunguje. Zkopírujte tento a uložte jej na bezpečné místo — od této chvíle jej budete používat k přihlášení.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2483441Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "21d90940db84a9e615221fb9e029f245d0ac6531c2bcd4b032de4f2a2edfa1b0",
+      "Text": "Dein vorheriges Token funktioniert nicht mehr. Kopiere dieses und bewahre es sicher auf — du benötigst es von nun an zum Anmelden.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2483558Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "21d90940db84a9e615221fb9e029f245d0ac6531c2bcd4b032de4f2a2edfa1b0",
+      "Text": "Tu token anterior ya no funciona. Copia este y guárdalo en un lugar seguro: lo usarás para iniciar sesión a partir de ahora.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2483653Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "21d90940db84a9e615221fb9e029f245d0ac6531c2bcd4b032de4f2a2edfa1b0",
+      "Text": "Votre jeton précédent ne fonctionne plus. Copiez celui-ci et conservez-le en lieu sûr : vous l'utiliserez pour vous connecter à partir de maintenant.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2622177Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "21d90940db84a9e615221fb9e029f245d0ac6531c2bcd4b032de4f2a2edfa1b0",
+      "Text": "Il tuo token precedente non funziona più. Copia questo e conservalo in un luogo sicuro: lo userai per accedere d'ora in poi.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2622518Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "21d90940db84a9e615221fb9e029f245d0ac6531c2bcd4b032de4f2a2edfa1b0",
+      "Text": "以前のトークンは使用できなくなりました。これをコピーして安全な場所に保管してください。今後のログインに使用します。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2622563Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "21d90940db84a9e615221fb9e029f245d0ac6531c2bcd4b032de4f2a2edfa1b0",
+      "Text": "이전 토큰은 더 이상 작동하지 않습니다. 이것을 복사하여 안전한 곳에 보관하세요. 앞으로 로그인할 때 사용합니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2622621Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "21d90940db84a9e615221fb9e029f245d0ac6531c2bcd4b032de4f2a2edfa1b0",
+      "Text": "Seu token anterior não funciona mais. Copie este e guarde-o em local seguro — você o usará para entrar a partir de agora.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2622703Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "21d90940db84a9e615221fb9e029f245d0ac6531c2bcd4b032de4f2a2edfa1b0",
+      "Text": "Ваш прежний токен больше не работает. Скопируйте этот и храните его в надёжном месте — вы будете использовать его для входа с этого момента.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.262274Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "21d90940db84a9e615221fb9e029f245d0ac6531c2bcd4b032de4f2a2edfa1b0",
+      "Text": "你之前的令牌已失效。请复制此令牌并妥善保管——今后你将用它登录。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2622788Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "21d90940db84a9e615221fb9e029f245d0ac6531c2bcd4b032de4f2a2edfa1b0",
+      "Text": "你先前的權杖已失效。請複製此權杖並妥善保管——今後你將用它登入。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2622824Z",
       "Suggestions": [],
       "Comments": []
     }

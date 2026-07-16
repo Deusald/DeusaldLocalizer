@@ -4,7 +4,7 @@
   "KeyName": "hintApplyOrDiscard",
   "Description": "Hint shown when uncommitted mode is on and changes are pending.",
   "CreatedAt": "2026-07-16T12:48:41.5600476Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7108Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2458525Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7107979Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "7a087e3fcd70b96c194a585015fb93333cb81539391bb6d9502a239c50d00f7c",
+      "Text": "Chcete-li toto vypnout, použijte nebo zahoďte všechny změny.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2457527Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "7a087e3fcd70b96c194a585015fb93333cb81539391bb6d9502a239c50d00f7c",
+      "Text": "Wende alle Änderungen an oder verwirf sie, um dies zu deaktivieren.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2457645Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "7a087e3fcd70b96c194a585015fb93333cb81539391bb6d9502a239c50d00f7c",
+      "Text": "Aplica o descarta todos los cambios para desactivar esto.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2457688Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "7a087e3fcd70b96c194a585015fb93333cb81539391bb6d9502a239c50d00f7c",
+      "Text": "Appliquez ou abandonnez toutes les modifications pour désactiver ceci.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2457779Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "7a087e3fcd70b96c194a585015fb93333cb81539391bb6d9502a239c50d00f7c",
+      "Text": "Applica o scarta tutte le modifiche per disattivare questa opzione.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.245782Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "7a087e3fcd70b96c194a585015fb93333cb81539391bb6d9502a239c50d00f7c",
+      "Text": "これを無効にするには、すべての変更を適用または破棄してください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2457856Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "7a087e3fcd70b96c194a585015fb93333cb81539391bb6d9502a239c50d00f7c",
+      "Text": "이 기능을 끄려면 모든 변경 사항을 적용하거나 취소하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2457898Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "7a087e3fcd70b96c194a585015fb93333cb81539391bb6d9502a239c50d00f7c",
+      "Text": "Aplique ou descarte todas as alterações para desativar isto.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2458289Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "7a087e3fcd70b96c194a585015fb93333cb81539391bb6d9502a239c50d00f7c",
+      "Text": "Примените или отклоните все изменения, чтобы отключить это.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.245833Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "7a087e3fcd70b96c194a585015fb93333cb81539391bb6d9502a239c50d00f7c",
+      "Text": "应用或放弃所有更改以关闭此项。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2458371Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "7a087e3fcd70b96c194a585015fb93333cb81539391bb6d9502a239c50d00f7c",
+      "Text": "套用或捨棄所有變更以關閉此項。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2458487Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "timeDays",
   "Description": "Relative time in days.",
   "CreatedAt": "2026-07-16T12:19:57.5420265Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7075659Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2175152Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.707564Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "18bb766fcc18ee05561610c102177f848fc469d5f353dd8843f329d2b9acb78d",
+      "Text": "před {d} dny",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174879Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "18bb766fcc18ee05561610c102177f848fc469d5f353dd8843f329d2b9acb78d",
+      "Text": "vor {d} T",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174907Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "18bb766fcc18ee05561610c102177f848fc469d5f353dd8843f329d2b9acb78d",
+      "Text": "hace {d} d",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174933Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "18bb766fcc18ee05561610c102177f848fc469d5f353dd8843f329d2b9acb78d",
+      "Text": "il y a {d} j",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174956Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "18bb766fcc18ee05561610c102177f848fc469d5f353dd8843f329d2b9acb78d",
+      "Text": "{d} g fa",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174979Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "18bb766fcc18ee05561610c102177f848fc469d5f353dd8843f329d2b9acb78d",
+      "Text": "{d}日前",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2175001Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "18bb766fcc18ee05561610c102177f848fc469d5f353dd8843f329d2b9acb78d",
+      "Text": "{d}일 전",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2175023Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "18bb766fcc18ee05561610c102177f848fc469d5f353dd8843f329d2b9acb78d",
+      "Text": "há {d} d",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2175071Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "18bb766fcc18ee05561610c102177f848fc469d5f353dd8843f329d2b9acb78d",
+      "Text": "{d} дн. назад",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2175092Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "18bb766fcc18ee05561610c102177f848fc469d5f353dd8843f329d2b9acb78d",
+      "Text": "{d} 天前",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2175114Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "18bb766fcc18ee05561610c102177f848fc469d5f353dd8843f329d2b9acb78d",
+      "Text": "{d} 天前",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2175134Z",
       "Suggestions": [],
       "Comments": []
     }

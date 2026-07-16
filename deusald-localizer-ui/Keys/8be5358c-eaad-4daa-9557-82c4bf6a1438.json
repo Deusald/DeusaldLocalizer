@@ -4,7 +4,7 @@
   "KeyName": "titleAddFlag",
   "Description": "Tooltip on the add-flag button in the flags bar.",
   "CreatedAt": "2026-07-16T12:48:41.5577894Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7084085Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2229551Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7084064Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "18a5a8787ea6a461be3b98f376286468bf482fddf2d9bc351d7717cedd9743bc",
+      "Text": "Přidat příznak",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.222927Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "18a5a8787ea6a461be3b98f376286468bf482fddf2d9bc351d7717cedd9743bc",
+      "Text": "Markierung hinzufügen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2229295Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "18a5a8787ea6a461be3b98f376286468bf482fddf2d9bc351d7717cedd9743bc",
+      "Text": "Añadir marca",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2229322Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "18a5a8787ea6a461be3b98f376286468bf482fddf2d9bc351d7717cedd9743bc",
+      "Text": "Ajouter un indicateur",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2229344Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "18a5a8787ea6a461be3b98f376286468bf482fddf2d9bc351d7717cedd9743bc",
+      "Text": "Aggiungi contrassegno",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2229366Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "18a5a8787ea6a461be3b98f376286468bf482fddf2d9bc351d7717cedd9743bc",
+      "Text": "フラグを追加",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2229388Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "18a5a8787ea6a461be3b98f376286468bf482fddf2d9bc351d7717cedd9743bc",
+      "Text": "플래그 추가",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2229417Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "18a5a8787ea6a461be3b98f376286468bf482fddf2d9bc351d7717cedd9743bc",
+      "Text": "Adicionar sinalização",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2229463Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "18a5a8787ea6a461be3b98f376286468bf482fddf2d9bc351d7717cedd9743bc",
+      "Text": "Добавить флаг",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2229484Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "18a5a8787ea6a461be3b98f376286468bf482fddf2d9bc351d7717cedd9743bc",
+      "Text": "添加标记",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2229514Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "18a5a8787ea6a461be3b98f376286468bf482fddf2d9bc351d7717cedd9743bc",
+      "Text": "新增標記",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2229537Z",
       "Suggestions": [],
       "Comments": []
     }

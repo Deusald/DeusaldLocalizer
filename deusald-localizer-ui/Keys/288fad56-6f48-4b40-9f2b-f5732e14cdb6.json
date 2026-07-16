@@ -4,7 +4,7 @@
   "KeyName": "tokenPlaceholder",
   "Description": "Placeholder for the access token input",
   "CreatedAt": "2026-07-16T12:48:41.561429Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7073838Z",
+  "UpdatedAt": "2026-07-16T20:46:27.216018Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7073821Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "f7eee1e9ccda63085f7f1dd495aa7e629f24898f0ce7a0ebf1c0c0d8be2810d9",
+      "Text": "Vložte svůj přístupový token…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.215981Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "f7eee1e9ccda63085f7f1dd495aa7e629f24898f0ce7a0ebf1c0c0d8be2810d9",
+      "Text": "Füge dein Zugriffstoken ein…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159833Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "f7eee1e9ccda63085f7f1dd495aa7e629f24898f0ce7a0ebf1c0c0d8be2810d9",
+      "Text": "Pega tu token de acceso…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159855Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "f7eee1e9ccda63085f7f1dd495aa7e629f24898f0ce7a0ebf1c0c0d8be2810d9",
+      "Text": "Collez votre jeton d'accès…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159876Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "f7eee1e9ccda63085f7f1dd495aa7e629f24898f0ce7a0ebf1c0c0d8be2810d9",
+      "Text": "Incolla il tuo token di accesso…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159901Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "f7eee1e9ccda63085f7f1dd495aa7e629f24898f0ce7a0ebf1c0c0d8be2810d9",
+      "Text": "アクセストークンを貼り付け…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159922Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "f7eee1e9ccda63085f7f1dd495aa7e629f24898f0ce7a0ebf1c0c0d8be2810d9",
+      "Text": "액세스 토큰을 붙여넣으세요…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159952Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "f7eee1e9ccda63085f7f1dd495aa7e629f24898f0ce7a0ebf1c0c0d8be2810d9",
+      "Text": "Cole seu token de acesso…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2160033Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "f7eee1e9ccda63085f7f1dd495aa7e629f24898f0ce7a0ebf1c0c0d8be2810d9",
+      "Text": "Вставьте свой токен доступа…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2160069Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "f7eee1e9ccda63085f7f1dd495aa7e629f24898f0ce7a0ebf1c0c0d8be2810d9",
+      "Text": "粘贴你的访问令牌…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2160107Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "f7eee1e9ccda63085f7f1dd495aa7e629f24898f0ce7a0ebf1c0c0d8be2810d9",
+      "Text": "貼上你的存取權杖…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2160147Z",
       "Suggestions": [],
       "Comments": []
     }

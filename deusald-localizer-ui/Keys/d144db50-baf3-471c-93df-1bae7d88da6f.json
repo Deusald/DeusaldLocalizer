@@ -4,7 +4,7 @@
   "KeyName": "uncommittedModeNoChanges",
   "Description": "Tooltip on the uncommitted-mode pill when there is nothing to apply.",
   "CreatedAt": "2026-07-16T12:48:41.5589791Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7099258Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2367783Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7099232Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "0837ced77c8c191591020ff38ec17aa8446a9630be156b61c224e7e72c4c8d5a",
+      "Text": "Necommittnutý režim — žádné změny k použití",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367429Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "0837ced77c8c191591020ff38ec17aa8446a9630be156b61c224e7e72c4c8d5a",
+      "Text": "Nicht-committet-Modus — keine Änderungen anzuwenden",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367506Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "0837ced77c8c191591020ff38ec17aa8446a9630be156b61c224e7e72c4c8d5a",
+      "Text": "Modo sin confirmar: no hay cambios que aplicar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367533Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "0837ced77c8c191591020ff38ec17aa8446a9630be156b61c224e7e72c4c8d5a",
+      "Text": "Mode non validé — aucune modification à appliquer",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367556Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "0837ced77c8c191591020ff38ec17aa8446a9630be156b61c224e7e72c4c8d5a",
+      "Text": "Modalità non committato — nessuna modifica da applicare",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367587Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "0837ced77c8c191591020ff38ec17aa8446a9630be156b61c224e7e72c4c8d5a",
+      "Text": "未コミットモード — 適用する変更がありません",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367609Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "0837ced77c8c191591020ff38ec17aa8446a9630be156b61c224e7e72c4c8d5a",
+      "Text": "커밋되지 않음 모드 — 적용할 변경 사항 없음",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367632Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "0837ced77c8c191591020ff38ec17aa8446a9630be156b61c224e7e72c4c8d5a",
+      "Text": "Modo não confirmado — nenhuma alteração para aplicar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.236769Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "0837ced77c8c191591020ff38ec17aa8446a9630be156b61c224e7e72c4c8d5a",
+      "Text": "Режим без коммитов — нет изменений для применения",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367713Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "0837ced77c8c191591020ff38ec17aa8446a9630be156b61c224e7e72c4c8d5a",
+      "Text": "未提交模式——没有可应用的更改",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367735Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "0837ced77c8c191591020ff38ec17aa8446a9630be156b61c224e7e72c4c8d5a",
+      "Text": "未提交模式——沒有可套用的變更",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367769Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "commentsLabel",
   "Description": "Header label for the translation comments thread of the selected language.",
   "CreatedAt": "2026-07-16T12:48:41.5577087Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7079384Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2200145Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7079368Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "a6723ba473a2ec5f2081f34598162c143768285088f9986b506090e27f88bd48",
+      "Text": "Komentáře · {language}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2199836Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a6723ba473a2ec5f2081f34598162c143768285088f9986b506090e27f88bd48",
+      "Text": "Kommentare · {language}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2199887Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "a6723ba473a2ec5f2081f34598162c143768285088f9986b506090e27f88bd48",
+      "Text": "Comentarios · {language}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2199916Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a6723ba473a2ec5f2081f34598162c143768285088f9986b506090e27f88bd48",
+      "Text": "Commentaires · {language}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.219994Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "a6723ba473a2ec5f2081f34598162c143768285088f9986b506090e27f88bd48",
+      "Text": "Commenti · {language}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2199963Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "a6723ba473a2ec5f2081f34598162c143768285088f9986b506090e27f88bd48",
+      "Text": "コメント · {language}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2199989Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "a6723ba473a2ec5f2081f34598162c143768285088f9986b506090e27f88bd48",
+      "Text": "댓글 · {language}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2200012Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "a6723ba473a2ec5f2081f34598162c143768285088f9986b506090e27f88bd48",
+      "Text": "Comentários · {language}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2200056Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "a6723ba473a2ec5f2081f34598162c143768285088f9986b506090e27f88bd48",
+      "Text": "Комментарии · {language}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2200083Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "a6723ba473a2ec5f2081f34598162c143768285088f9986b506090e27f88bd48",
+      "Text": "评论 · {language}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2200104Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "a6723ba473a2ec5f2081f34598162c143768285088f9986b506090e27f88bd48",
+      "Text": "註解 · {language}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.220013Z",
       "Suggestions": [],
       "Comments": []
     }

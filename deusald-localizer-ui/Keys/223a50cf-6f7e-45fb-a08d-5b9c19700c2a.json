@@ -4,7 +4,7 @@
   "KeyName": "noConflicts",
   "Description": "Empty state shown in the conflicts modal when there are no conflicts.",
   "CreatedAt": "2026-07-16T12:48:41.5597852Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7100394Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2377224Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7100372Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "87672ac7fce69cac7aaeb4a5bc44967eb456e4937e8ae342522042d622384397",
+      "Text": "Žádné konflikty — můžete odeslat.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2376635Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "87672ac7fce69cac7aaeb4a5bc44967eb456e4937e8ae342522042d622384397",
+      "Text": "Keine Konflikte — du kannst pushen.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2376681Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "87672ac7fce69cac7aaeb4a5bc44967eb456e4937e8ae342522042d622384397",
+      "Text": "Sin conflictos: puedes enviar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2376897Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "87672ac7fce69cac7aaeb4a5bc44967eb456e4937e8ae342522042d622384397",
+      "Text": "Aucun conflit — vous pouvez envoyer.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2376924Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "87672ac7fce69cac7aaeb4a5bc44967eb456e4937e8ae342522042d622384397",
+      "Text": "Nessun conflitto — puoi inviare.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.237695Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "87672ac7fce69cac7aaeb4a5bc44967eb456e4937e8ae342522042d622384397",
+      "Text": "競合はありません — プッシュできます。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2376973Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "87672ac7fce69cac7aaeb4a5bc44967eb456e4937e8ae342522042d622384397",
+      "Text": "충돌 없음 — 푸시할 수 있습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2377001Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "87672ac7fce69cac7aaeb4a5bc44967eb456e4937e8ae342522042d622384397",
+      "Text": "Sem conflitos — você pode enviar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2377072Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "87672ac7fce69cac7aaeb4a5bc44967eb456e4937e8ae342522042d622384397",
+      "Text": "Конфликтов нет — можно отправлять.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2377119Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "87672ac7fce69cac7aaeb4a5bc44967eb456e4937e8ae342522042d622384397",
+      "Text": "没有冲突——你可以推送。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.237716Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "87672ac7fce69cac7aaeb4a5bc44967eb456e4937e8ae342522042d622384397",
+      "Text": "沒有衝突——你可以推送。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2377198Z",
       "Suggestions": [],
       "Comments": []
     }

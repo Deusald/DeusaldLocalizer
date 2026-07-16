@@ -4,7 +4,7 @@
   "KeyName": "sourceChangedTitle",
   "Description": "Conflict header when the source drifted",
   "CreatedAt": "2026-07-16T12:48:41.5586485Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7082758Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2223093Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7082736Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "61aed12a625743583a35c5974397dbe3a08bc2969fa60ef387a7a78e716a5d1a",
+      "Text": "Zdroj se na serveru změnil",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.222264Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "61aed12a625743583a35c5974397dbe3a08bc2969fa60ef387a7a78e716a5d1a",
+      "Text": "Quelle auf dem Server geändert",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2222696Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "61aed12a625743583a35c5974397dbe3a08bc2969fa60ef387a7a78e716a5d1a",
+      "Text": "La fuente cambió en el servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2222722Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "61aed12a625743583a35c5974397dbe3a08bc2969fa60ef387a7a78e716a5d1a",
+      "Text": "La source a changé sur le serveur",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2222745Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "61aed12a625743583a35c5974397dbe3a08bc2969fa60ef387a7a78e716a5d1a",
+      "Text": "L'origine è cambiata sul server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2222771Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "61aed12a625743583a35c5974397dbe3a08bc2969fa60ef387a7a78e716a5d1a",
+      "Text": "ソースがサーバー上で変更されました",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2222795Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "61aed12a625743583a35c5974397dbe3a08bc2969fa60ef387a7a78e716a5d1a",
+      "Text": "서버에서 원본이 변경됨",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2222816Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "61aed12a625743583a35c5974397dbe3a08bc2969fa60ef387a7a78e716a5d1a",
+      "Text": "A origem mudou no servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223005Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "61aed12a625743583a35c5974397dbe3a08bc2969fa60ef387a7a78e716a5d1a",
+      "Text": "Источник изменился на сервере",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.222303Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "61aed12a625743583a35c5974397dbe3a08bc2969fa60ef387a7a78e716a5d1a",
+      "Text": "源已在服务器上更改",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223052Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "61aed12a625743583a35c5974397dbe3a08bc2969fa60ef387a7a78e716a5d1a",
+      "Text": "來源已在伺服器上變更",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223074Z",
       "Suggestions": [],
       "Comments": []
     }

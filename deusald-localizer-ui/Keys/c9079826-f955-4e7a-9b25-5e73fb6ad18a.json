@@ -4,7 +4,7 @@
   "KeyName": "regenerateMyToken",
   "Description": "Tooltip on the button that regenerates the current user's own token.",
   "CreatedAt": "2026-07-16T12:48:41.559413Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7111494Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2629667Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.711147Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "9fd9a74f04af4e51cd19efae5ae68512b592b1b5bc7bc4466b801d0ac7b02c2d",
+      "Text": "Znovu vygenerovat můj přístupový token",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2628958Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "9fd9a74f04af4e51cd19efae5ae68512b592b1b5bc7bc4466b801d0ac7b02c2d",
+      "Text": "Mein Zugriffstoken neu generieren",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2628997Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "9fd9a74f04af4e51cd19efae5ae68512b592b1b5bc7bc4466b801d0ac7b02c2d",
+      "Text": "Regenerar mi token de acceso",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2629035Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "9fd9a74f04af4e51cd19efae5ae68512b592b1b5bc7bc4466b801d0ac7b02c2d",
+      "Text": "Régénérer mon jeton d'accès",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2629076Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "9fd9a74f04af4e51cd19efae5ae68512b592b1b5bc7bc4466b801d0ac7b02c2d",
+      "Text": "Rigenera il mio token di accesso",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2629114Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "9fd9a74f04af4e51cd19efae5ae68512b592b1b5bc7bc4466b801d0ac7b02c2d",
+      "Text": "自分のアクセストークンを再生成",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2629153Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "9fd9a74f04af4e51cd19efae5ae68512b592b1b5bc7bc4466b801d0ac7b02c2d",
+      "Text": "내 액세스 토큰 다시 생성",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2629193Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "9fd9a74f04af4e51cd19efae5ae68512b592b1b5bc7bc4466b801d0ac7b02c2d",
+      "Text": "Regenerar meu token de acesso",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2629284Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "9fd9a74f04af4e51cd19efae5ae68512b592b1b5bc7bc4466b801d0ac7b02c2d",
+      "Text": "Повторно сгенерировать мой токен доступа",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2629324Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "9fd9a74f04af4e51cd19efae5ae68512b592b1b5bc7bc4466b801d0ac7b02c2d",
+      "Text": "重新生成我的访问令牌",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2629363Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "9fd9a74f04af4e51cd19efae5ae68512b592b1b5bc7bc4466b801d0ac7b02c2d",
+      "Text": "重新產生我的存取權杖",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2629644Z",
       "Suggestions": [],
       "Comments": []
     }

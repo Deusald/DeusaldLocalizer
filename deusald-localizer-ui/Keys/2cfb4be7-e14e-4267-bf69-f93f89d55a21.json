@@ -4,7 +4,7 @@
   "KeyName": "hintDirect",
   "Description": "Hint shown when importing as direct text.",
   "CreatedAt": "2026-07-16T12:48:41.560495Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7101291Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2385037Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7101259Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c8090b59fc22c20cea0b42231eb98c9a11e76f814a95e9fe3121f985d062275d",
+      "Text": "Změněné buňky přímo přepíšou schválený překlad.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2384578Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c8090b59fc22c20cea0b42231eb98c9a11e76f814a95e9fe3121f985d062275d",
+      "Text": "Geänderte Zellen überschreiben die genehmigte Übersetzung direkt.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2384625Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c8090b59fc22c20cea0b42231eb98c9a11e76f814a95e9fe3121f985d062275d",
+      "Text": "Las celdas cambiadas sobrescriben la traducción aprobada directamente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2384667Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c8090b59fc22c20cea0b42231eb98c9a11e76f814a95e9fe3121f985d062275d",
+      "Text": "Les cellules modifiées écrasent directement la traduction approuvée.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2384705Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c8090b59fc22c20cea0b42231eb98c9a11e76f814a95e9fe3121f985d062275d",
+      "Text": "Le celle modificate sovrascrivono direttamente la traduzione approvata.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.238476Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c8090b59fc22c20cea0b42231eb98c9a11e76f814a95e9fe3121f985d062275d",
+      "Text": "変更されたセルは承認済みの翻訳を直接上書きします。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2384798Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c8090b59fc22c20cea0b42231eb98c9a11e76f814a95e9fe3121f985d062275d",
+      "Text": "변경된 셀은 승인된 번역을 직접 덮어씁니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2384841Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c8090b59fc22c20cea0b42231eb98c9a11e76f814a95e9fe3121f985d062275d",
+      "Text": "Células alteradas sobrescrevem a tradução aprovada diretamente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2384933Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c8090b59fc22c20cea0b42231eb98c9a11e76f814a95e9fe3121f985d062275d",
+      "Text": "Изменённые ячейки напрямую перезаписывают утверждённый перевод.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2384972Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c8090b59fc22c20cea0b42231eb98c9a11e76f814a95e9fe3121f985d062275d",
+      "Text": "更改的单元格会直接覆盖已批准的翻译。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2384996Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c8090b59fc22c20cea0b42231eb98c9a11e76f814a95e9fe3121f985d062275d",
+      "Text": "變更的儲存格會直接覆寫已核准的翻譯。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2385018Z",
       "Suggestions": [],
       "Comments": []
     }

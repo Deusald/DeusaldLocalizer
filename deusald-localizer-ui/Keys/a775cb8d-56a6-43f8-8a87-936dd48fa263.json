@@ -4,7 +4,7 @@
   "KeyName": "noCommentsOldEnough",
   "Description": "Result message when no comments matched the age cutoff.",
   "CreatedAt": "2026-07-16T12:48:41.5595348Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7111165Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2624372Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.711114Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "37462710ac21bcfa792614ba5be633f9edbcb8b94207f9f556d99edf6d8faeb8",
+      "Text": "Žádný komentář nebyl dost starý na vymazání.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2623906Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "37462710ac21bcfa792614ba5be633f9edbcb8b94207f9f556d99edf6d8faeb8",
+      "Text": "Kein Kommentar war alt genug, um geleert zu werden.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2623973Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "37462710ac21bcfa792614ba5be633f9edbcb8b94207f9f556d99edf6d8faeb8",
+      "Text": "Ningún comentario era lo bastante antiguo para borrarse.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2624012Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "37462710ac21bcfa792614ba5be633f9edbcb8b94207f9f556d99edf6d8faeb8",
+      "Text": "Aucun commentaire n'était assez ancien pour être effacé.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2624047Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "37462710ac21bcfa792614ba5be633f9edbcb8b94207f9f556d99edf6d8faeb8",
+      "Text": "Nessun commento era abbastanza vecchio da essere cancellato.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2624082Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "37462710ac21bcfa792614ba5be633f9edbcb8b94207f9f556d99edf6d8faeb8",
+      "Text": "クリアするのに十分古いコメントはありませんでした。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2624125Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "37462710ac21bcfa792614ba5be633f9edbcb8b94207f9f556d99edf6d8faeb8",
+      "Text": "지울 만큼 오래된 댓글이 없습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2624159Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "37462710ac21bcfa792614ba5be633f9edbcb8b94207f9f556d99edf6d8faeb8",
+      "Text": "Nenhum comentário era antigo o suficiente para ser limpo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2624231Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "37462710ac21bcfa792614ba5be633f9edbcb8b94207f9f556d99edf6d8faeb8",
+      "Text": "Ни один комментарий не был достаточно старым для очистки.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2624272Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "37462710ac21bcfa792614ba5be633f9edbcb8b94207f9f556d99edf6d8faeb8",
+      "Text": "没有评论旧到足以被清除。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2624309Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "37462710ac21bcfa792614ba5be633f9edbcb8b94207f9f556d99edf6d8faeb8",
+      "Text": "沒有註解舊到足以被清除。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2624348Z",
       "Suggestions": [],
       "Comments": []
     }

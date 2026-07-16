@@ -4,7 +4,7 @@
   "KeyName": "uncommitted",
   "Description": "Status pill shown when there are uncommitted changes (online project).",
   "CreatedAt": "2026-07-16T12:48:41.5589675Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7099024Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2364835Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7099003Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "d8194812c0189838887978356e0f8682d535f60f5106f9b0e5c1a32364fe69ca",
+      "Text": "Necommittnuto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2363235Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "d8194812c0189838887978356e0f8682d535f60f5106f9b0e5c1a32364fe69ca",
+      "Text": "Nicht committet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2363285Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "d8194812c0189838887978356e0f8682d535f60f5106f9b0e5c1a32364fe69ca",
+      "Text": "Sin confirmar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2363311Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "d8194812c0189838887978356e0f8682d535f60f5106f9b0e5c1a32364fe69ca",
+      "Text": "Non validé",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2363333Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "d8194812c0189838887978356e0f8682d535f60f5106f9b0e5c1a32364fe69ca",
+      "Text": "Non committato",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2363355Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "d8194812c0189838887978356e0f8682d535f60f5106f9b0e5c1a32364fe69ca",
+      "Text": "未コミット",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2363381Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "d8194812c0189838887978356e0f8682d535f60f5106f9b0e5c1a32364fe69ca",
+      "Text": "커밋되지 않음",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2363404Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "d8194812c0189838887978356e0f8682d535f60f5106f9b0e5c1a32364fe69ca",
+      "Text": "Não confirmado",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2363449Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "d8194812c0189838887978356e0f8682d535f60f5106f9b0e5c1a32364fe69ca",
+      "Text": "Не закоммичено",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2363652Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "d8194812c0189838887978356e0f8682d535f60f5106f9b0e5c1a32364fe69ca",
+      "Text": "未提交",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2364713Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "d8194812c0189838887978356e0f8682d535f60f5106f9b0e5c1a32364fe69ca",
+      "Text": "未提交",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2364807Z",
       "Suggestions": [],
       "Comments": []
     }

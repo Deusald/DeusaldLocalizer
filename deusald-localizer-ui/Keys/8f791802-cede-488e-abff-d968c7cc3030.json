@@ -4,7 +4,7 @@
   "KeyName": "deleteMember",
   "Description": "Tooltip on the button that deletes a member.",
   "CreatedAt": "2026-07-16T12:48:41.5594324Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7110265Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2478301Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7110241Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "483af44e7a14988dbbdb019d972e449e37c8b77a82c73e5d24285156019b7b25",
+      "Text": "Smazat člena",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2477893Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "483af44e7a14988dbbdb019d972e449e37c8b77a82c73e5d24285156019b7b25",
+      "Text": "Mitglied löschen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2477987Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "483af44e7a14988dbbdb019d972e449e37c8b77a82c73e5d24285156019b7b25",
+      "Text": "Eliminar miembro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478013Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "483af44e7a14988dbbdb019d972e449e37c8b77a82c73e5d24285156019b7b25",
+      "Text": "Supprimer le membre",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478036Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "483af44e7a14988dbbdb019d972e449e37c8b77a82c73e5d24285156019b7b25",
+      "Text": "Elimina membro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478082Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "483af44e7a14988dbbdb019d972e449e37c8b77a82c73e5d24285156019b7b25",
+      "Text": "メンバーを削除",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478104Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "483af44e7a14988dbbdb019d972e449e37c8b77a82c73e5d24285156019b7b25",
+      "Text": "멤버 삭제",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478128Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "483af44e7a14988dbbdb019d972e449e37c8b77a82c73e5d24285156019b7b25",
+      "Text": "Excluir membro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478197Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "483af44e7a14988dbbdb019d972e449e37c8b77a82c73e5d24285156019b7b25",
+      "Text": "Удалить участника",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.247822Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "483af44e7a14988dbbdb019d972e449e37c8b77a82c73e5d24285156019b7b25",
+      "Text": "删除成员",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478243Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "483af44e7a14988dbbdb019d972e449e37c8b77a82c73e5d24285156019b7b25",
+      "Text": "刪除成員",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478265Z",
       "Suggestions": [],
       "Comments": []
     }

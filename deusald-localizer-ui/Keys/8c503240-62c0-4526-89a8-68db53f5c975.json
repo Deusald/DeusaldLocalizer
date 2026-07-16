@@ -4,7 +4,7 @@
   "KeyName": "pushChangesToServer",
   "Description": "Push button tooltip when the push is available.",
   "CreatedAt": "2026-07-16T12:48:41.5588433Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7097195Z",
+  "UpdatedAt": "2026-07-16T20:46:27.234751Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7097174Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "a105f1f8fcfe6020d3722208f9012d2b4f9d3573c560842ce6808d4ec1ff13af",
+      "Text": "Odeslat změny na server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.234724Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a105f1f8fcfe6020d3722208f9012d2b4f9d3573c560842ce6808d4ec1ff13af",
+      "Text": "Änderungen auf Server pushen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2347266Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "a105f1f8fcfe6020d3722208f9012d2b4f9d3573c560842ce6808d4ec1ff13af",
+      "Text": "Enviar cambios al servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2347293Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a105f1f8fcfe6020d3722208f9012d2b4f9d3573c560842ce6808d4ec1ff13af",
+      "Text": "Envoyer les modifications au serveur",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2347316Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "a105f1f8fcfe6020d3722208f9012d2b4f9d3573c560842ce6808d4ec1ff13af",
+      "Text": "Invia le modifiche al server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2347337Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "a105f1f8fcfe6020d3722208f9012d2b4f9d3573c560842ce6808d4ec1ff13af",
+      "Text": "変更をサーバーにプッシュ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2347359Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "a105f1f8fcfe6020d3722208f9012d2b4f9d3573c560842ce6808d4ec1ff13af",
+      "Text": "변경 사항을 서버에 푸시",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2347385Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "a105f1f8fcfe6020d3722208f9012d2b4f9d3573c560842ce6808d4ec1ff13af",
+      "Text": "Enviar alterações ao servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2347427Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "a105f1f8fcfe6020d3722208f9012d2b4f9d3573c560842ce6808d4ec1ff13af",
+      "Text": "Отправить изменения на сервер",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2347448Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "a105f1f8fcfe6020d3722208f9012d2b4f9d3573c560842ce6808d4ec1ff13af",
+      "Text": "将更改推送到服务器",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2347475Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "a105f1f8fcfe6020d3722208f9012d2b4f9d3573c560842ce6808d4ec1ff13af",
+      "Text": "將變更推送到伺服器",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2347496Z",
       "Suggestions": [],
       "Comments": []
     }

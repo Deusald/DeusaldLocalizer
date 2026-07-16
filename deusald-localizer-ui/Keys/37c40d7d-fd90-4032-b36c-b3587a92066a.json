@@ -4,7 +4,7 @@
   "KeyName": "undoLabel",
   "Description": "Undo button tooltip naming the action to be undone.",
   "CreatedAt": "2026-07-16T12:48:41.5588836Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7099323Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2368844Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7099303Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "caaecb964244327090ff76780817ae0d0e2f4cc4adb7d0cef8a906bba71f17fb",
+      "Text": "Vrátit zpět {label} (Ctrl+Z)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367813Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "caaecb964244327090ff76780817ae0d0e2f4cc4adb7d0cef8a906bba71f17fb",
+      "Text": "{label} rückgängig machen (Strg+Z)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367839Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "caaecb964244327090ff76780817ae0d0e2f4cc4adb7d0cef8a906bba71f17fb",
+      "Text": "Deshacer {label} (Ctrl+Z)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367862Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "caaecb964244327090ff76780817ae0d0e2f4cc4adb7d0cef8a906bba71f17fb",
+      "Text": "Annuler {label} (Ctrl+Z)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367889Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "caaecb964244327090ff76780817ae0d0e2f4cc4adb7d0cef8a906bba71f17fb",
+      "Text": "Annulla {label} (Ctrl+Z)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367911Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "caaecb964244327090ff76780817ae0d0e2f4cc4adb7d0cef8a906bba71f17fb",
+      "Text": "{label}を元に戻す（Ctrl+Z）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367932Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "caaecb964244327090ff76780817ae0d0e2f4cc4adb7d0cef8a906bba71f17fb",
+      "Text": "{label} 실행 취소 (Ctrl+Z)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2367954Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "caaecb964244327090ff76780817ae0d0e2f4cc4adb7d0cef8a906bba71f17fb",
+      "Text": "Desfazer {label} (Ctrl+Z)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2368706Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "caaecb964244327090ff76780817ae0d0e2f4cc4adb7d0cef8a906bba71f17fb",
+      "Text": "Отменить {label} (Ctrl+Z)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2368744Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "caaecb964244327090ff76780817ae0d0e2f4cc4adb7d0cef8a906bba71f17fb",
+      "Text": "撤销 {label}（Ctrl+Z）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2368782Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "caaecb964244327090ff76780817ae0d0e2f4cc4adb7d0cef8a906bba71f17fb",
+      "Text": "復原 {label}（Ctrl+Z）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2368822Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "slugHint",
   "Description": "Hint next to the Slug label",
   "CreatedAt": "2026-07-16T12:48:41.5614974Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7074757Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2169428Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7074734Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c1ebdfc240e26552e773efdc9a3a02ff2866fa2e37f9ee0697003694cc2ffcd6",
+      "Text": "používá se v názvech souborů a v API",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.216893Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c1ebdfc240e26552e773efdc9a3a02ff2866fa2e37f9ee0697003694cc2ffcd6",
+      "Text": "wird in Dateinamen und APIs verwendet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2168981Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c1ebdfc240e26552e773efdc9a3a02ff2866fa2e37f9ee0697003694cc2ffcd6",
+      "Text": "se usa en nombres de archivo y API",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169022Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c1ebdfc240e26552e773efdc9a3a02ff2866fa2e37f9ee0697003694cc2ffcd6",
+      "Text": "utilisé dans les noms de fichiers et les API",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169061Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c1ebdfc240e26552e773efdc9a3a02ff2866fa2e37f9ee0697003694cc2ffcd6",
+      "Text": "usato nei nomi dei file e nelle API",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169096Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c1ebdfc240e26552e773efdc9a3a02ff2866fa2e37f9ee0697003694cc2ffcd6",
+      "Text": "ファイル名やAPIで使用されます",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169144Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c1ebdfc240e26552e773efdc9a3a02ff2866fa2e37f9ee0697003694cc2ffcd6",
+      "Text": "파일 이름 및 API에 사용됩니다",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169189Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c1ebdfc240e26552e773efdc9a3a02ff2866fa2e37f9ee0697003694cc2ffcd6",
+      "Text": "usado em nomes de arquivos e APIs",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169276Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c1ebdfc240e26552e773efdc9a3a02ff2866fa2e37f9ee0697003694cc2ffcd6",
+      "Text": "используется в именах файлов и API",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169314Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c1ebdfc240e26552e773efdc9a3a02ff2866fa2e37f9ee0697003694cc2ffcd6",
+      "Text": "用于文件名和 API",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.216935Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c1ebdfc240e26552e773efdc9a3a02ff2866fa2e37f9ee0697003694cc2ffcd6",
+      "Text": "用於檔名和 API",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169392Z",
       "Suggestions": [],
       "Comments": []
     }

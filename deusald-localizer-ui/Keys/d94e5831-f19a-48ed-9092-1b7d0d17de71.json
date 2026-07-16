@@ -4,7 +4,7 @@
   "KeyName": "hintStage",
   "Description": "Hint shown when uncommitted mode is off.",
   "CreatedAt": "2026-07-16T12:48:41.560038Z",
-  "UpdatedAt": "2026-07-16T13:07:17.710809Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2459273Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7108066Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "797e350d60d08be6a02142f57068b3d61185f643da781dce470f205c93a64f16",
+      "Text": "Shromažďujte úpravy jako změny, které použijete dávkově.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2458628Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "797e350d60d08be6a02142f57068b3d61185f643da781dce470f205c93a64f16",
+      "Text": "Sammle Bearbeitungen als Änderungen, die du im Stapel anwendest.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2458675Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "797e350d60d08be6a02142f57068b3d61185f643da781dce470f205c93a64f16",
+      "Text": "Agrupa las ediciones como cambios que aplicas en lote.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2458716Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "797e350d60d08be6a02142f57068b3d61185f643da781dce470f205c93a64f16",
+      "Text": "Regroupez les modifications en un lot que vous appliquez ensemble.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.245882Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "797e350d60d08be6a02142f57068b3d61185f643da781dce470f205c93a64f16",
+      "Text": "Raggruppa le modifiche come un batch che applichi insieme.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2458864Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "797e350d60d08be6a02142f57068b3d61185f643da781dce470f205c93a64f16",
+      "Text": "編集をまとめて適用する変更として収集します。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2458907Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "797e350d60d08be6a02142f57068b3d61185f643da781dce470f205c93a64f16",
+      "Text": "편집을 일괄 적용하는 변경 사항으로 모읍니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2458986Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "797e350d60d08be6a02142f57068b3d61185f643da781dce470f205c93a64f16",
+      "Text": "Agrupe edições como alterações que você aplica em lote.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2459077Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "797e350d60d08be6a02142f57068b3d61185f643da781dce470f205c93a64f16",
+      "Text": "Собирайте правки как изменения, применяемые пакетом.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2459117Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "797e350d60d08be6a02142f57068b3d61185f643da781dce470f205c93a64f16",
+      "Text": "将编辑收集为你批量应用的更改。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2459199Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "797e350d60d08be6a02142f57068b3d61185f643da781dce470f205c93a64f16",
+      "Text": "將編輯收集為你批次套用的變更。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2459243Z",
       "Suggestions": [],
       "Comments": []
     }

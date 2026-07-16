@@ -4,7 +4,7 @@
   "KeyName": "resetToDefault",
   "Description": "Tooltip on the reset-preview button",
   "CreatedAt": "2026-07-16T12:48:41.5583818Z",
-  "UpdatedAt": "2026-07-16T13:07:17.708894Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2269477Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7088918Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "3b0b78432b9d615257bd1af1106b3a2e1ea032b622dfd1a2fe422511224ad45c",
+      "Text": "Obnovit na výchozí hodnotu náhledu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.226901Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "3b0b78432b9d615257bd1af1106b3a2e1ea032b622dfd1a2fe422511224ad45c",
+      "Text": "Auf Standard-Vorschauwert zurücksetzen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2269054Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "3b0b78432b9d615257bd1af1106b3a2e1ea032b622dfd1a2fe422511224ad45c",
+      "Text": "Restablecer al valor de vista previa predeterminado",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2269094Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "3b0b78432b9d615257bd1af1106b3a2e1ea032b622dfd1a2fe422511224ad45c",
+      "Text": "Réinitialiser à la valeur d'aperçu par défaut",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2269132Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "3b0b78432b9d615257bd1af1106b3a2e1ea032b622dfd1a2fe422511224ad45c",
+      "Text": "Reimposta al valore di anteprima predefinito",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2269175Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "3b0b78432b9d615257bd1af1106b3a2e1ea032b622dfd1a2fe422511224ad45c",
+      "Text": "デフォルトのプレビュー値にリセット",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2269213Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "3b0b78432b9d615257bd1af1106b3a2e1ea032b622dfd1a2fe422511224ad45c",
+      "Text": "기본 미리 보기 값으로 재설정",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.226925Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "3b0b78432b9d615257bd1af1106b3a2e1ea032b622dfd1a2fe422511224ad45c",
+      "Text": "Redefinir para o valor de pré-visualização padrão",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2269331Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "3b0b78432b9d615257bd1af1106b3a2e1ea032b622dfd1a2fe422511224ad45c",
+      "Text": "Сбросить до значения предпросмотра по умолчанию",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2269369Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "3b0b78432b9d615257bd1af1106b3a2e1ea032b622dfd1a2fe422511224ad45c",
+      "Text": "重置为默认预览值",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2269408Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "3b0b78432b9d615257bd1af1106b3a2e1ea032b622dfd1a2fe422511224ad45c",
+      "Text": "重設為預設預覽值",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2269446Z",
       "Suggestions": [],
       "Comments": []
     }

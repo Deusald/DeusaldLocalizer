@@ -4,7 +4,7 @@
   "KeyName": "errConnect",
   "Description": "Fallback error when connecting to a server project fails.",
   "CreatedAt": "2026-07-16T12:19:57.5420985Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7075194Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2171639Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7075177Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "f823f59299f5b4c256dd5e3df6e681286740fa5f8c6bdfaeb6c64861fe36d9ca",
+      "Text": "Nepodařilo se připojit k projektu. Zkuste to znovu.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.217135Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "f823f59299f5b4c256dd5e3df6e681286740fa5f8c6bdfaeb6c64861fe36d9ca",
+      "Text": "Verbindung zum Projekt fehlgeschlagen. Bitte versuche es erneut.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171383Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "f823f59299f5b4c256dd5e3df6e681286740fa5f8c6bdfaeb6c64861fe36d9ca",
+      "Text": "No se pudo conectar al proyecto. Inténtalo de nuevo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171405Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "f823f59299f5b4c256dd5e3df6e681286740fa5f8c6bdfaeb6c64861fe36d9ca",
+      "Text": "Impossible de se connecter au projet. Veuillez réessayer.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171431Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "f823f59299f5b4c256dd5e3df6e681286740fa5f8c6bdfaeb6c64861fe36d9ca",
+      "Text": "Impossibile connettersi al progetto. Riprova.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171452Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "f823f59299f5b4c256dd5e3df6e681286740fa5f8c6bdfaeb6c64861fe36d9ca",
+      "Text": "プロジェクトに接続できませんでした。もう一度お試しください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171475Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "f823f59299f5b4c256dd5e3df6e681286740fa5f8c6bdfaeb6c64861fe36d9ca",
+      "Text": "프로젝트에 연결할 수 없습니다. 다시 시도하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171506Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "f823f59299f5b4c256dd5e3df6e681286740fa5f8c6bdfaeb6c64861fe36d9ca",
+      "Text": "Não foi possível conectar ao projeto. Tente novamente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171553Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "f823f59299f5b4c256dd5e3df6e681286740fa5f8c6bdfaeb6c64861fe36d9ca",
+      "Text": "Не удалось подключиться к проекту. Попробуйте ещё раз.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171576Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "f823f59299f5b4c256dd5e3df6e681286740fa5f8c6bdfaeb6c64861fe36d9ca",
+      "Text": "无法连接到项目。请重试。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171602Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "f823f59299f5b4c256dd5e3df6e681286740fa5f8c6bdfaeb6c64861fe36d9ca",
+      "Text": "無法連線到專案。請重試。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171625Z",
       "Suggestions": [],
       "Comments": []
     }

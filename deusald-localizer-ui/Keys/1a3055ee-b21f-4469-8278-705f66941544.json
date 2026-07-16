@@ -4,7 +4,7 @@
   "KeyName": "subtitle",
   "Description": "Home page hero headline.",
   "CreatedAt": "2026-07-16T12:04:10.5323689Z",
-  "UpdatedAt": "2026-07-16T13:07:17.707559Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2174835Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7075574Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "732fc942307fb0e85f33b9591c2327d06f9e8a58d25b6f02677002249c7daca9",
+      "Text": "Překládejte svou hru společně.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174358Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "732fc942307fb0e85f33b9591c2327d06f9e8a58d25b6f02677002249c7daca9",
+      "Text": "Übersetze dein Spiel — gemeinsam.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174422Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "732fc942307fb0e85f33b9591c2327d06f9e8a58d25b6f02677002249c7daca9",
+      "Text": "Traduce tu juego, en equipo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174447Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "732fc942307fb0e85f33b9591c2327d06f9e8a58d25b6f02677002249c7daca9",
+      "Text": "Traduisez votre jeu, ensemble.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174469Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "732fc942307fb0e85f33b9591c2327d06f9e8a58d25b6f02677002249c7daca9",
+      "Text": "Traduci il tuo gioco, insieme.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.217449Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "732fc942307fb0e85f33b9591c2327d06f9e8a58d25b6f02677002249c7daca9",
+      "Text": "みんなでゲームを翻訳しよう。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174678Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "732fc942307fb0e85f33b9591c2327d06f9e8a58d25b6f02677002249c7daca9",
+      "Text": "함께 게임을 번역하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174704Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "732fc942307fb0e85f33b9591c2327d06f9e8a58d25b6f02677002249c7daca9",
+      "Text": "Traduza seu jogo, em conjunto.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174749Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "732fc942307fb0e85f33b9591c2327d06f9e8a58d25b6f02677002249c7daca9",
+      "Text": "Переводите свою игру вместе.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174776Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "732fc942307fb0e85f33b9591c2327d06f9e8a58d25b6f02677002249c7daca9",
+      "Text": "一起翻译你的游戏。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174799Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "732fc942307fb0e85f33b9591c2327d06f9e8a58d25b6f02677002249c7daca9",
+      "Text": "一起翻譯你的遊戲。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2174821Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "title",
   "Description": "Title of the login modal",
   "CreatedAt": "2026-07-16T12:48:41.5613819Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7073782Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2159778Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7073761Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "e899d59beb8c0ff15722c53d3903472220b1e9330986f29a130e40bb8d7a2e95",
+      "Text": "Přihlásit se k projektu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159456Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "e899d59beb8c0ff15722c53d3903472220b1e9330986f29a130e40bb8d7a2e95",
+      "Text": "Beim Projekt anmelden",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159508Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "e899d59beb8c0ff15722c53d3903472220b1e9330986f29a130e40bb8d7a2e95",
+      "Text": "Iniciar sesión en el proyecto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159545Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "e899d59beb8c0ff15722c53d3903472220b1e9330986f29a130e40bb8d7a2e95",
+      "Text": "Se connecter au projet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159568Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "e899d59beb8c0ff15722c53d3903472220b1e9330986f29a130e40bb8d7a2e95",
+      "Text": "Accedi al progetto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159592Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "e899d59beb8c0ff15722c53d3903472220b1e9330986f29a130e40bb8d7a2e95",
+      "Text": "プロジェクトにログイン",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159619Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "e899d59beb8c0ff15722c53d3903472220b1e9330986f29a130e40bb8d7a2e95",
+      "Text": "프로젝트에 로그인",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159643Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "e899d59beb8c0ff15722c53d3903472220b1e9330986f29a130e40bb8d7a2e95",
+      "Text": "Entrar no projeto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159694Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "e899d59beb8c0ff15722c53d3903472220b1e9330986f29a130e40bb8d7a2e95",
+      "Text": "Войти в проект",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.215972Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "e899d59beb8c0ff15722c53d3903472220b1e9330986f29a130e40bb8d7a2e95",
+      "Text": "登录到项目",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159743Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "e899d59beb8c0ff15722c53d3903472220b1e9330986f29a130e40bb8d7a2e95",
+      "Text": "登入專案",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2159764Z",
       "Suggestions": [],
       "Comments": []
     }

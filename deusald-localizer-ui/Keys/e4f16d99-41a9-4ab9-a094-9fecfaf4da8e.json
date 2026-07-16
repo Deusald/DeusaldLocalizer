@@ -4,7 +4,7 @@
   "KeyName": "pendingSuggestions",
   "Description": "Tooltip showing the number of pending suggestions on a key.",
   "CreatedAt": "2026-07-16T12:48:41.5570456Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7089682Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2279524Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7089661Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "fac11e19cde2ed2bd522e52ca2594e3b0771f8061842c76fedf7acd27973bd34",
+      "Text": "{count} čekající návrh(y)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2279019Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "fac11e19cde2ed2bd522e52ca2594e3b0771f8061842c76fedf7acd27973bd34",
+      "Text": "{count} ausstehende(r) Vorschlag/Vorschläge",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2279096Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "fac11e19cde2ed2bd522e52ca2594e3b0771f8061842c76fedf7acd27973bd34",
+      "Text": "{count} sugerencia(s) pendiente(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2279138Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "fac11e19cde2ed2bd522e52ca2594e3b0771f8061842c76fedf7acd27973bd34",
+      "Text": "{count} suggestion(s) en attente",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2279175Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "fac11e19cde2ed2bd522e52ca2594e3b0771f8061842c76fedf7acd27973bd34",
+      "Text": "{count} suggerimento/i in sospeso",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2279214Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "fac11e19cde2ed2bd522e52ca2594e3b0771f8061842c76fedf7acd27973bd34",
+      "Text": "{count}件の保留中の提案",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2279257Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "fac11e19cde2ed2bd522e52ca2594e3b0771f8061842c76fedf7acd27973bd34",
+      "Text": "대기 중인 제안 {count}개",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2279297Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "fac11e19cde2ed2bd522e52ca2594e3b0771f8061842c76fedf7acd27973bd34",
+      "Text": "{count} sugestão(ões) pendente(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2279377Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "fac11e19cde2ed2bd522e52ca2594e3b0771f8061842c76fedf7acd27973bd34",
+      "Text": "{count} ожидающих предложений",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.227942Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "fac11e19cde2ed2bd522e52ca2594e3b0771f8061842c76fedf7acd27973bd34",
+      "Text": "{count} 条待处理建议",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.227946Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "fac11e19cde2ed2bd522e52ca2594e3b0771f8061842c76fedf7acd27973bd34",
+      "Text": "{count} 則待處理建議",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2279497Z",
       "Suggestions": [],
       "Comments": []
     }

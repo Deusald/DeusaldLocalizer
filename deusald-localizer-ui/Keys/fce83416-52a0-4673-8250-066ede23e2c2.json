@@ -4,7 +4,7 @@
   "KeyName": "noLanguagesYet",
   "Description": "Empty state shown when the project has no languages to assign.",
   "CreatedAt": "2026-07-16T12:48:41.559298Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7111255Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2625294Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7111236Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "52a50a1bef44b6777a9b682f7b7f80f82628b54a158e05129a8574ea5778dd5a",
+      "Text": "Tento projekt zatím nemá žádné jazyky.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2624816Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "52a50a1bef44b6777a9b682f7b7f80f82628b54a158e05129a8574ea5778dd5a",
+      "Text": "Dieses Projekt hat noch keine Sprachen.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2624867Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "52a50a1bef44b6777a9b682f7b7f80f82628b54a158e05129a8574ea5778dd5a",
+      "Text": "Este proyecto aún no tiene idiomas.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2624907Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "52a50a1bef44b6777a9b682f7b7f80f82628b54a158e05129a8574ea5778dd5a",
+      "Text": "Ce projet n'a pas encore de langues.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2624945Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "52a50a1bef44b6777a9b682f7b7f80f82628b54a158e05129a8574ea5778dd5a",
+      "Text": "Questo progetto non ha ancora lingue.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2624991Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "52a50a1bef44b6777a9b682f7b7f80f82628b54a158e05129a8574ea5778dd5a",
+      "Text": "このプロジェクトにはまだ言語がありません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2625029Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "52a50a1bef44b6777a9b682f7b7f80f82628b54a158e05129a8574ea5778dd5a",
+      "Text": "이 프로젝트에는 아직 언어가 없습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2625067Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "52a50a1bef44b6777a9b682f7b7f80f82628b54a158e05129a8574ea5778dd5a",
+      "Text": "Este projeto ainda não tem idiomas.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2625154Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "52a50a1bef44b6777a9b682f7b7f80f82628b54a158e05129a8574ea5778dd5a",
+      "Text": "В этом проекте пока нет языков.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2625192Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "52a50a1bef44b6777a9b682f7b7f80f82628b54a158e05129a8574ea5778dd5a",
+      "Text": "此项目还没有语言。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2625229Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "52a50a1bef44b6777a9b682f7b7f80f82628b54a158e05129a8574ea5778dd5a",
+      "Text": "此專案還沒有語言。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2625266Z",
       "Suggestions": [],
       "Comments": []
     }

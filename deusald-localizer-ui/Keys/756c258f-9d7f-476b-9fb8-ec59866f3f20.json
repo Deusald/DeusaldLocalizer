@@ -4,7 +4,7 @@
   "KeyName": "browseButton",
   "Description": "Button that opens the folder picker",
   "CreatedAt": "2026-07-16T12:48:41.5612917Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7072558Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2148036Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7072543Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "93c6b664dce6c207b803d69d853264a42d5aee081ccd1f6651820d794a2064b2",
+      "Text": "Procházet…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2147252Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "93c6b664dce6c207b803d69d853264a42d5aee081ccd1f6651820d794a2064b2",
+      "Text": "Durchsuchen…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2147615Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "93c6b664dce6c207b803d69d853264a42d5aee081ccd1f6651820d794a2064b2",
+      "Text": "Explorar…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2147669Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "93c6b664dce6c207b803d69d853264a42d5aee081ccd1f6651820d794a2064b2",
+      "Text": "Parcourir…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.214771Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "93c6b664dce6c207b803d69d853264a42d5aee081ccd1f6651820d794a2064b2",
+      "Text": "Sfoglia…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2147753Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "93c6b664dce6c207b803d69d853264a42d5aee081ccd1f6651820d794a2064b2",
+      "Text": "参照…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2147798Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "93c6b664dce6c207b803d69d853264a42d5aee081ccd1f6651820d794a2064b2",
+      "Text": "찾아보기…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2147832Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "93c6b664dce6c207b803d69d853264a42d5aee081ccd1f6651820d794a2064b2",
+      "Text": "Procurar…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2147879Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "93c6b664dce6c207b803d69d853264a42d5aee081ccd1f6651820d794a2064b2",
+      "Text": "Обзор…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2147924Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "93c6b664dce6c207b803d69d853264a42d5aee081ccd1f6651820d794a2064b2",
+      "Text": "浏览…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2147968Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "93c6b664dce6c207b803d69d853264a42d5aee081ccd1f6651820d794a2064b2",
+      "Text": "瀏覽…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2148011Z",
       "Suggestions": [],
       "Comments": []
     }

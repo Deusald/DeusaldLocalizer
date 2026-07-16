@@ -4,7 +4,7 @@
   "KeyName": "placeholderAdd",
   "Description": "Placeholder in the key description edit textarea.",
   "CreatedAt": "2026-07-16T12:48:41.5577594Z",
-  "UpdatedAt": "2026-07-16T13:07:17.708347Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2226254Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7083445Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "10734b8a55bb46b069e9a9e649eccf42a4921f142a01ca74c6c5b551c3bfa083",
+      "Text": "Přidat popis pro překladatele…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225964Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "10734b8a55bb46b069e9a9e649eccf42a4921f142a01ca74c6c5b551c3bfa083",
+      "Text": "Beschreibung für Übersetzer hinzufügen…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225993Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "10734b8a55bb46b069e9a9e649eccf42a4921f142a01ca74c6c5b551c3bfa083",
+      "Text": "Añadir una descripción para los traductores…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2226017Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "10734b8a55bb46b069e9a9e649eccf42a4921f142a01ca74c6c5b551c3bfa083",
+      "Text": "Ajouter une description pour les traducteurs…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2226039Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "10734b8a55bb46b069e9a9e649eccf42a4921f142a01ca74c6c5b551c3bfa083",
+      "Text": "Aggiungi una descrizione per i traduttori…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2226071Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "10734b8a55bb46b069e9a9e649eccf42a4921f142a01ca74c6c5b551c3bfa083",
+      "Text": "翻訳者向けの説明を追加…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2226096Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "10734b8a55bb46b069e9a9e649eccf42a4921f142a01ca74c6c5b551c3bfa083",
+      "Text": "번역자를 위한 설명 추가…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2226119Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "10734b8a55bb46b069e9a9e649eccf42a4921f142a01ca74c6c5b551c3bfa083",
+      "Text": "Adicionar uma descrição para os tradutores…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2226167Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "10734b8a55bb46b069e9a9e649eccf42a4921f142a01ca74c6c5b551c3bfa083",
+      "Text": "Добавить описание для переводчиков…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2226191Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "10734b8a55bb46b069e9a9e649eccf42a4921f142a01ca74c6c5b551c3bfa083",
+      "Text": "为译者添加描述…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2226213Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "10734b8a55bb46b069e9a9e649eccf42a4921f142a01ca74c6c5b551c3bfa083",
+      "Text": "為譯者新增描述…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2226235Z",
       "Suggestions": [],
       "Comments": []
     }

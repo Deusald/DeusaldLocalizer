@@ -4,7 +4,7 @@
   "KeyName": "exporting",
   "Description": "Text shown on the export button while exporting.",
   "CreatedAt": "2026-07-16T12:48:41.5609312Z",
-  "UpdatedAt": "2026-07-16T13:07:17.710381Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2411137Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7103789Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "a2dd9cbb7013bb70fc7a4e5f3df1335bc1dd3e221592c9fef817d367341c39f4",
+      "Text": "Exportování…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.24104Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a2dd9cbb7013bb70fc7a4e5f3df1335bc1dd3e221592c9fef817d367341c39f4",
+      "Text": "Exportiere…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.241045Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "a2dd9cbb7013bb70fc7a4e5f3df1335bc1dd3e221592c9fef817d367341c39f4",
+      "Text": "Exportando…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.241049Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a2dd9cbb7013bb70fc7a4e5f3df1335bc1dd3e221592c9fef817d367341c39f4",
+      "Text": "Exportation…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2410578Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "a2dd9cbb7013bb70fc7a4e5f3df1335bc1dd3e221592c9fef817d367341c39f4",
+      "Text": "Esportazione…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2410618Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "a2dd9cbb7013bb70fc7a4e5f3df1335bc1dd3e221592c9fef817d367341c39f4",
+      "Text": "エクスポート中…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2410659Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "a2dd9cbb7013bb70fc7a4e5f3df1335bc1dd3e221592c9fef817d367341c39f4",
+      "Text": "내보내는 중…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2410698Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "a2dd9cbb7013bb70fc7a4e5f3df1335bc1dd3e221592c9fef817d367341c39f4",
+      "Text": "Exportando…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2411033Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "a2dd9cbb7013bb70fc7a4e5f3df1335bc1dd3e221592c9fef817d367341c39f4",
+      "Text": "Экспорт…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2411056Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "a2dd9cbb7013bb70fc7a4e5f3df1335bc1dd3e221592c9fef817d367341c39f4",
+      "Text": "正在导出…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2411079Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "a2dd9cbb7013bb70fc7a4e5f3df1335bc1dd3e221592c9fef817d367341c39f4",
+      "Text": "正在匯出…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2411123Z",
       "Suggestions": [],
       "Comments": []
     }

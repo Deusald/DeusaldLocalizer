@@ -4,7 +4,7 @@
   "KeyName": "openLogsTooltip",
   "Description": "Tooltip on the logs-folder button (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794694Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7076845Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2182092Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7076824Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "9d19ac7b20394489ece37952abffced2a57895041bb9cb211ea68356751c6a5d",
+      "Text": "Otevřít složku s protokoly",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.218181Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "9d19ac7b20394489ece37952abffced2a57895041bb9cb211ea68356751c6a5d",
+      "Text": "Log-Ordner öffnen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181839Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "9d19ac7b20394489ece37952abffced2a57895041bb9cb211ea68356751c6a5d",
+      "Text": "Abrir carpeta de registros",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181865Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "9d19ac7b20394489ece37952abffced2a57895041bb9cb211ea68356751c6a5d",
+      "Text": "Ouvrir le dossier des journaux",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181889Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "9d19ac7b20394489ece37952abffced2a57895041bb9cb211ea68356751c6a5d",
+      "Text": "Apri la cartella dei log",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181911Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "9d19ac7b20394489ece37952abffced2a57895041bb9cb211ea68356751c6a5d",
+      "Text": "ログフォルダーを開く",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181933Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "9d19ac7b20394489ece37952abffced2a57895041bb9cb211ea68356751c6a5d",
+      "Text": "로그 폴더 열기",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181961Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "9d19ac7b20394489ece37952abffced2a57895041bb9cb211ea68356751c6a5d",
+      "Text": "Abrir pasta de logs",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182006Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "9d19ac7b20394489ece37952abffced2a57895041bb9cb211ea68356751c6a5d",
+      "Text": "Открыть папку журналов",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182027Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "9d19ac7b20394489ece37952abffced2a57895041bb9cb211ea68356751c6a5d",
+      "Text": "打开日志文件夹",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182055Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "9d19ac7b20394489ece37952abffced2a57895041bb9cb211ea68356751c6a5d",
+      "Text": "開啟記錄檔資料夾",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182078Z",
       "Suggestions": [],
       "Comments": []
     }

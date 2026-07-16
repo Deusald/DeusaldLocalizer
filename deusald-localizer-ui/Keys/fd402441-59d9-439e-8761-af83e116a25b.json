@@ -4,7 +4,7 @@
   "KeyName": "bannedBadge",
   "Description": "Badge marking a banned member.",
   "CreatedAt": "2026-07-16T12:48:41.5593676Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7109377Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2470581Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7109352Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "7b412527489f5ffedebed690b6ec7252d5b2f4cb75b7e71e3d6eab6e9d0fe98a",
+      "Text": "zablokován",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470184Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "7b412527489f5ffedebed690b6ec7252d5b2f4cb75b7e71e3d6eab6e9d0fe98a",
+      "Text": "gesperrt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470256Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "7b412527489f5ffedebed690b6ec7252d5b2f4cb75b7e71e3d6eab6e9d0fe98a",
+      "Text": "bloqueado",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470282Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "7b412527489f5ffedebed690b6ec7252d5b2f4cb75b7e71e3d6eab6e9d0fe98a",
+      "Text": "banni",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470339Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "7b412527489f5ffedebed690b6ec7252d5b2f4cb75b7e71e3d6eab6e9d0fe98a",
+      "Text": "bannato",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470363Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "7b412527489f5ffedebed690b6ec7252d5b2f4cb75b7e71e3d6eab6e9d0fe98a",
+      "Text": "禁止",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470385Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "7b412527489f5ffedebed690b6ec7252d5b2f4cb75b7e71e3d6eab6e9d0fe98a",
+      "Text": "차단됨",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470431Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "7b412527489f5ffedebed690b6ec7252d5b2f4cb75b7e71e3d6eab6e9d0fe98a",
+      "Text": "banido",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470477Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "7b412527489f5ffedebed690b6ec7252d5b2f4cb75b7e71e3d6eab6e9d0fe98a",
+      "Text": "заблокирован",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470499Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "7b412527489f5ffedebed690b6ec7252d5b2f4cb75b7e71e3d6eab6e9d0fe98a",
+      "Text": "已封禁",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470544Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "7b412527489f5ffedebed690b6ec7252d5b2f4cb75b7e71e3d6eab6e9d0fe98a",
+      "Text": "已封鎖",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470566Z",
       "Suggestions": [],
       "Comments": []
     }

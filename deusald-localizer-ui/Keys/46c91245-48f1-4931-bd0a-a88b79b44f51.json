@@ -4,7 +4,7 @@
   "KeyName": "sourceMatched",
   "Description": "Button confirming the translation still matches the current source",
   "CreatedAt": "2026-07-16T12:48:41.5581807Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7087479Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2254055Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7087458Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "0942f5ccd4fa4eb2451dbfb8df7fd7901e01e56bb538b8130128b33646a83b90",
+      "Text": "Zdroj odpovídá",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253587Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "0942f5ccd4fa4eb2451dbfb8df7fd7901e01e56bb538b8130128b33646a83b90",
+      "Text": "Quelle übereinstimmend",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253628Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "0942f5ccd4fa4eb2451dbfb8df7fd7901e01e56bb538b8130128b33646a83b90",
+      "Text": "Fuente coincidente",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253669Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "0942f5ccd4fa4eb2451dbfb8df7fd7901e01e56bb538b8130128b33646a83b90",
+      "Text": "Source correspondante",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253713Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "0942f5ccd4fa4eb2451dbfb8df7fd7901e01e56bb538b8130128b33646a83b90",
+      "Text": "Origine corrispondente",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253751Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "0942f5ccd4fa4eb2451dbfb8df7fd7901e01e56bb538b8130128b33646a83b90",
+      "Text": "ソースが一致",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253787Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "0942f5ccd4fa4eb2451dbfb8df7fd7901e01e56bb538b8130128b33646a83b90",
+      "Text": "원본 일치",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253825Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "0942f5ccd4fa4eb2451dbfb8df7fd7901e01e56bb538b8130128b33646a83b90",
+      "Text": "Origem correspondente",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253909Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "0942f5ccd4fa4eb2451dbfb8df7fd7901e01e56bb538b8130128b33646a83b90",
+      "Text": "Источник совпадает",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253947Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "0942f5ccd4fa4eb2451dbfb8df7fd7901e01e56bb538b8130128b33646a83b90",
+      "Text": "源匹配",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253982Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "0942f5ccd4fa4eb2451dbfb8df7fd7901e01e56bb538b8130128b33646a83b90",
+      "Text": "來源相符",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2254028Z",
       "Suggestions": [],
       "Comments": []
     }

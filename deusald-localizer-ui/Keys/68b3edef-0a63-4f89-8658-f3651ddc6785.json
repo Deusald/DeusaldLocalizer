@@ -4,7 +4,7 @@
   "KeyName": "className",
   "Description": "Field label for the generated class name.",
   "CreatedAt": "2026-07-16T12:48:41.5607116Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7103036Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2402376Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7103016Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "5774209573ced7ef59f350ae855f6753311b9fc1daf97cb8194662325378f228",
+      "Text": "Název třídy",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2401529Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "5774209573ced7ef59f350ae855f6753311b9fc1daf97cb8194662325378f228",
+      "Text": "Klassenname",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402014Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "5774209573ced7ef59f350ae855f6753311b9fc1daf97cb8194662325378f228",
+      "Text": "Nombre de clase",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402057Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "5774209573ced7ef59f350ae855f6753311b9fc1daf97cb8194662325378f228",
+      "Text": "Nom de la classe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402081Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "5774209573ced7ef59f350ae855f6753311b9fc1daf97cb8194662325378f228",
+      "Text": "Nome della classe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402102Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "5774209573ced7ef59f350ae855f6753311b9fc1daf97cb8194662325378f228",
+      "Text": "クラス名",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402199Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "5774209573ced7ef59f350ae855f6753311b9fc1daf97cb8194662325378f228",
+      "Text": "클래스 이름",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402225Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "5774209573ced7ef59f350ae855f6753311b9fc1daf97cb8194662325378f228",
+      "Text": "Nome da classe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402269Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "5774209573ced7ef59f350ae855f6753311b9fc1daf97cb8194662325378f228",
+      "Text": "Имя класса",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402317Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "5774209573ced7ef59f350ae855f6753311b9fc1daf97cb8194662325378f228",
+      "Text": "类名",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402339Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "5774209573ced7ef59f350ae855f6753311b9fc1daf97cb8194662325378f228",
+      "Text": "類別名稱",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402362Z",
       "Suggestions": [],
       "Comments": []
     }

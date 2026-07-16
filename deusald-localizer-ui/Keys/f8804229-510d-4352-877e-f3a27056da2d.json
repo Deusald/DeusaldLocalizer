@@ -4,7 +4,7 @@
   "KeyName": "unnamed",
   "Description": "Fallback name for an enum with no name",
   "CreatedAt": "2026-07-16T12:48:41.5584791Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7086339Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2241382Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7086319Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "e504e61521948e34f657dd693f242682055ba6ed4d8cfccbd826ef229c7825ff",
+      "Text": "Bez názvu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2241053Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "e504e61521948e34f657dd693f242682055ba6ed4d8cfccbd826ef229c7825ff",
+      "Text": "Unbenannt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2241125Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "e504e61521948e34f657dd693f242682055ba6ed4d8cfccbd826ef229c7825ff",
+      "Text": "Sin nombre",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.224115Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "e504e61521948e34f657dd693f242682055ba6ed4d8cfccbd826ef229c7825ff",
+      "Text": "Sans nom",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2241173Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "e504e61521948e34f657dd693f242682055ba6ed4d8cfccbd826ef229c7825ff",
+      "Text": "Senza nome",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2241198Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "e504e61521948e34f657dd693f242682055ba6ed4d8cfccbd826ef229c7825ff",
+      "Text": "名称未設定",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2241222Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "e504e61521948e34f657dd693f242682055ba6ed4d8cfccbd826ef229c7825ff",
+      "Text": "이름 없음",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2241243Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "e504e61521948e34f657dd693f242682055ba6ed4d8cfccbd826ef229c7825ff",
+      "Text": "Sem nome",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2241292Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "e504e61521948e34f657dd693f242682055ba6ed4d8cfccbd826ef229c7825ff",
+      "Text": "Без имени",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2241316Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "e504e61521948e34f657dd693f242682055ba6ed4d8cfccbd826ef229c7825ff",
+      "Text": "未命名",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2241341Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "e504e61521948e34f657dd693f242682055ba6ed4d8cfccbd826ef229c7825ff",
+      "Text": "未命名",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2241363Z",
       "Suggestions": [],
       "Comments": []
     }

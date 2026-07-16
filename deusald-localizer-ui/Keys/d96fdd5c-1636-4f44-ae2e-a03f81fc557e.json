@@ -4,7 +4,7 @@
   "KeyName": "hintStaged",
   "Description": "Hint shown when uncommitted mode is on and no changes are pending.",
   "CreatedAt": "2026-07-16T12:48:41.5600611Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7108174Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2459974Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7108153Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "01bfb91221d8c8b6ebacdf8bbe7f0549039523c692388dd2272540dfb24f6010",
+      "Text": "Úpravy zůstávají připravené, dokud je nepoužijete.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2459374Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "01bfb91221d8c8b6ebacdf8bbe7f0549039523c692388dd2272540dfb24f6010",
+      "Text": "Bearbeitungen werden vorgehalten, bis du sie anwendest.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2459422Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "01bfb91221d8c8b6ebacdf8bbe7f0549039523c692388dd2272540dfb24f6010",
+      "Text": "Las ediciones se mantienen en espera hasta que las apliques.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2459511Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "01bfb91221d8c8b6ebacdf8bbe7f0549039523c692388dd2272540dfb24f6010",
+      "Text": "Les modifications sont en attente jusqu'à ce que vous les appliquiez.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2459552Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "01bfb91221d8c8b6ebacdf8bbe7f0549039523c692388dd2272540dfb24f6010",
+      "Text": "Le modifiche restano in sospeso finché non le applichi.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2459592Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "01bfb91221d8c8b6ebacdf8bbe7f0549039523c692388dd2272540dfb24f6010",
+      "Text": "編集は適用するまで保留されます。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2459631Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "01bfb91221d8c8b6ebacdf8bbe7f0549039523c692388dd2272540dfb24f6010",
+      "Text": "편집은 적용할 때까지 보류됩니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.24597Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "01bfb91221d8c8b6ebacdf8bbe7f0549039523c692388dd2272540dfb24f6010",
+      "Text": "As edições ficam pendentes até você aplicá-las.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2459777Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "01bfb91221d8c8b6ebacdf8bbe7f0549039523c692388dd2272540dfb24f6010",
+      "Text": "Правки удерживаются, пока вы их не примените.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2459815Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "01bfb91221d8c8b6ebacdf8bbe7f0549039523c692388dd2272540dfb24f6010",
+      "Text": "编辑会保持挂起，直到你应用它们。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2459901Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "01bfb91221d8c8b6ebacdf8bbe7f0549039523c692388dd2272540dfb24f6010",
+      "Text": "編輯會保持擱置，直到你套用它們。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2459948Z",
       "Suggestions": [],
       "Comments": []
     }

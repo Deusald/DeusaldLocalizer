@@ -4,7 +4,7 @@
   "KeyName": "category",
   "Description": "Label for the category picker.",
   "CreatedAt": "2026-07-16T12:48:41.557592Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7092403Z",
+  "UpdatedAt": "2026-07-16T20:46:27.230678Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7092377Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "292c06f0045a45d044be282b132b7055ae224e18e02b523a451d8ea96fadfd24",
+      "Text": "Kategorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2306057Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "292c06f0045a45d044be282b132b7055ae224e18e02b523a451d8ea96fadfd24",
+      "Text": "Kategorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2306362Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "292c06f0045a45d044be282b132b7055ae224e18e02b523a451d8ea96fadfd24",
+      "Text": "Categoría",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2306407Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "292c06f0045a45d044be282b132b7055ae224e18e02b523a451d8ea96fadfd24",
+      "Text": "Catégorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2306443Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "292c06f0045a45d044be282b132b7055ae224e18e02b523a451d8ea96fadfd24",
+      "Text": "Categoria",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.230648Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "292c06f0045a45d044be282b132b7055ae224e18e02b523a451d8ea96fadfd24",
+      "Text": "カテゴリ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2306523Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "292c06f0045a45d044be282b132b7055ae224e18e02b523a451d8ea96fadfd24",
+      "Text": "카테고리",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2306564Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "292c06f0045a45d044be282b132b7055ae224e18e02b523a451d8ea96fadfd24",
+      "Text": "Categoria",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2306637Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "292c06f0045a45d044be282b132b7055ae224e18e02b523a451d8ea96fadfd24",
+      "Text": "Категория",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2306678Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "292c06f0045a45d044be282b132b7055ae224e18e02b523a451d8ea96fadfd24",
+      "Text": "类别",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2306718Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "292c06f0045a45d044be282b132b7055ae224e18e02b523a451d8ea96fadfd24",
+      "Text": "分類",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2306755Z",
       "Suggestions": [],
       "Comments": []
     }

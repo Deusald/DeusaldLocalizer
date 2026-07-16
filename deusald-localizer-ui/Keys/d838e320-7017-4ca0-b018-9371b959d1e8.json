@@ -4,7 +4,7 @@
   "KeyName": "conflictSuffix",
   "Description": "Suffix appended to a sync status message reporting the number of conflicts.",
   "CreatedAt": "2026-07-16T12:48:41.5592Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7096676Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2344253Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7096656Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "a1427a9c20cc54d644be5bc004c170c0841378bb8f45addaf2106cb7f9176e84",
+      "Text": " · {count} konfliktů",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2343881Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a1427a9c20cc54d644be5bc004c170c0841378bb8f45addaf2106cb7f9176e84",
+      "Text": " · {count} Konflikt(e)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2343981Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "a1427a9c20cc54d644be5bc004c170c0841378bb8f45addaf2106cb7f9176e84",
+      "Text": " · {count} conflicto(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344017Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a1427a9c20cc54d644be5bc004c170c0841378bb8f45addaf2106cb7f9176e84",
+      "Text": " · {count} conflit(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.234404Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "a1427a9c20cc54d644be5bc004c170c0841378bb8f45addaf2106cb7f9176e84",
+      "Text": " · {count} conflitto/i",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344063Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "a1427a9c20cc54d644be5bc004c170c0841378bb8f45addaf2106cb7f9176e84",
+      "Text": " · {count}件の競合",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344091Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "a1427a9c20cc54d644be5bc004c170c0841378bb8f45addaf2106cb7f9176e84",
+      "Text": " · 충돌 {count}개",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344118Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "a1427a9c20cc54d644be5bc004c170c0841378bb8f45addaf2106cb7f9176e84",
+      "Text": " · {count} conflito(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344168Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "a1427a9c20cc54d644be5bc004c170c0841378bb8f45addaf2106cb7f9176e84",
+      "Text": " · {count} конфликтов",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344191Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "a1427a9c20cc54d644be5bc004c170c0841378bb8f45addaf2106cb7f9176e84",
+      "Text": " · {count} 个冲突",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344217Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "a1427a9c20cc54d644be5bc004c170c0841378bb8f45addaf2106cb7f9176e84",
+      "Text": " · {count} 個衝突",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344239Z",
       "Suggestions": [],
       "Comments": []
     }

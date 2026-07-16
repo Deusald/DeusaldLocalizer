@@ -4,7 +4,7 @@
   "KeyName": "deselectAll",
   "Description": "Link button that deselects all languages.",
   "CreatedAt": "2026-07-16T12:48:41.5608795Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7103492Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2407327Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7103468Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "967549497036d51303efbdc904bb5e5654551058d0854be757b36280abd3ec8b",
+      "Text": "Zrušit výběr všech",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2406765Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "967549497036d51303efbdc904bb5e5654551058d0854be757b36280abd3ec8b",
+      "Text": "Alle abwählen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2406805Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "967549497036d51303efbdc904bb5e5654551058d0854be757b36280abd3ec8b",
+      "Text": "Deseleccionar todo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2406828Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "967549497036d51303efbdc904bb5e5654551058d0854be757b36280abd3ec8b",
+      "Text": "Tout désélectionner",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.240685Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "967549497036d51303efbdc904bb5e5654551058d0854be757b36280abd3ec8b",
+      "Text": "Deseleziona tutto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2406872Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "967549497036d51303efbdc904bb5e5654551058d0854be757b36280abd3ec8b",
+      "Text": "すべての選択を解除",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.240694Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "967549497036d51303efbdc904bb5e5654551058d0854be757b36280abd3ec8b",
+      "Text": "모두 선택 해제",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2406962Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "967549497036d51303efbdc904bb5e5654551058d0854be757b36280abd3ec8b",
+      "Text": "Desmarcar tudo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2407009Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "967549497036d51303efbdc904bb5e5654551058d0854be757b36280abd3ec8b",
+      "Text": "Снять выделение со всех",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2407268Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "967549497036d51303efbdc904bb5e5654551058d0854be757b36280abd3ec8b",
+      "Text": "取消全选",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2407291Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "967549497036d51303efbdc904bb5e5654551058d0854be757b36280abd3ec8b",
+      "Text": "取消全選",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2407313Z",
       "Suggestions": [],
       "Comments": []
     }

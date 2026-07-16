@@ -4,7 +4,7 @@
   "KeyName": "clearedComments",
   "Description": "Result message reporting how many comments were cleared.",
   "CreatedAt": "2026-07-16T12:48:41.5595465Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7109676Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2472906Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7109657Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "5547e2717e865513ba0e3f0f799d6f347847e48abe1cd887ecfd86bfc8234a55",
+      "Text": "Vymazáno {count} komentářů.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2472514Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "5547e2717e865513ba0e3f0f799d6f347847e48abe1cd887ecfd86bfc8234a55",
+      "Text": "{count} Kommentar(e) geleert.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2472586Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "5547e2717e865513ba0e3f0f799d6f347847e48abe1cd887ecfd86bfc8234a55",
+      "Text": "Se borraron {count} comentario(s).",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2472611Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "5547e2717e865513ba0e3f0f799d6f347847e48abe1cd887ecfd86bfc8234a55",
+      "Text": "{count} commentaire(s) effacé(s).",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2472634Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "5547e2717e865513ba0e3f0f799d6f347847e48abe1cd887ecfd86bfc8234a55",
+      "Text": "{count} commento/i cancellato/i.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2472683Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "5547e2717e865513ba0e3f0f799d6f347847e48abe1cd887ecfd86bfc8234a55",
+      "Text": "{count}件のコメントをクリアしました。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2472706Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "5547e2717e865513ba0e3f0f799d6f347847e48abe1cd887ecfd86bfc8234a55",
+      "Text": "댓글 {count}개를 지웠습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2472728Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "5547e2717e865513ba0e3f0f799d6f347847e48abe1cd887ecfd86bfc8234a55",
+      "Text": "{count} comentário(s) limpo(s).",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.24728Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "5547e2717e865513ba0e3f0f799d6f347847e48abe1cd887ecfd86bfc8234a55",
+      "Text": "Очищено {count} комментариев.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2472823Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "5547e2717e865513ba0e3f0f799d6f347847e48abe1cd887ecfd86bfc8234a55",
+      "Text": "已清除 {count} 条评论。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2472846Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "5547e2717e865513ba0e3f0f799d6f347847e48abe1cd887ecfd86bfc8234a55",
+      "Text": "已清除 {count} 則註解。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2472869Z",
       "Suggestions": [],
       "Comments": []
     }

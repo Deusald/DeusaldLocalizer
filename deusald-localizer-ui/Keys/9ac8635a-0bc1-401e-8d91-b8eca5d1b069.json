@@ -4,7 +4,7 @@
   "KeyName": "downloadTooltip",
   "Description": "Tooltip on a project card's download button (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793255Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7078064Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2190949Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7078048Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "714deeb190897c7153460b042f63ca1555075e31a17a81528223b2ca251e98ea",
+      "Text": "Stáhnout kopii (.zip)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2190394Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "714deeb190897c7153460b042f63ca1555075e31a17a81528223b2ca251e98ea",
+      "Text": "Kopie herunterladen (.zip)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2190465Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "714deeb190897c7153460b042f63ca1555075e31a17a81528223b2ca251e98ea",
+      "Text": "Descargar una copia (.zip)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2190495Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "714deeb190897c7153460b042f63ca1555075e31a17a81528223b2ca251e98ea",
+      "Text": "Télécharger une copie (.zip)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2190523Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "714deeb190897c7153460b042f63ca1555075e31a17a81528223b2ca251e98ea",
+      "Text": "Scarica una copia (.zip)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2190545Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "714deeb190897c7153460b042f63ca1555075e31a17a81528223b2ca251e98ea",
+      "Text": "コピーをダウンロード（.zip）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2190567Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "714deeb190897c7153460b042f63ca1555075e31a17a81528223b2ca251e98ea",
+      "Text": "사본 다운로드 (.zip)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2190595Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "714deeb190897c7153460b042f63ca1555075e31a17a81528223b2ca251e98ea",
+      "Text": "Baixar uma cópia (.zip)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2190641Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "714deeb190897c7153460b042f63ca1555075e31a17a81528223b2ca251e98ea",
+      "Text": "Скачать копию (.zip)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2190664Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "714deeb190897c7153460b042f63ca1555075e31a17a81528223b2ca251e98ea",
+      "Text": "下载副本（.zip）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2190904Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "714deeb190897c7153460b042f63ca1555075e31a17a81528223b2ca251e98ea",
+      "Text": "下載副本（.zip）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2190934Z",
       "Suggestions": [],
       "Comments": []
     }

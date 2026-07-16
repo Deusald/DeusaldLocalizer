@@ -4,7 +4,7 @@
   "KeyName": "saveTranslation",
   "Description": "Button that saves the translation text",
   "CreatedAt": "2026-07-16T12:48:41.558192Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7087326Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2252719Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7087304Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "1d9eb7b9db2ca33008f14310fc552f82c3ac32527cf9b212eb474b3b3bb5b685",
+      "Text": "Uložit překlad",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2252189Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "1d9eb7b9db2ca33008f14310fc552f82c3ac32527cf9b212eb474b3b3bb5b685",
+      "Text": "Übersetzung speichern",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2252296Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "1d9eb7b9db2ca33008f14310fc552f82c3ac32527cf9b212eb474b3b3bb5b685",
+      "Text": "Guardar traducción",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.225234Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "1d9eb7b9db2ca33008f14310fc552f82c3ac32527cf9b212eb474b3b3bb5b685",
+      "Text": "Enregistrer la traduction",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2252375Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "1d9eb7b9db2ca33008f14310fc552f82c3ac32527cf9b212eb474b3b3bb5b685",
+      "Text": "Salva traduzione",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2252423Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "1d9eb7b9db2ca33008f14310fc552f82c3ac32527cf9b212eb474b3b3bb5b685",
+      "Text": "翻訳を保存",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.225246Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "1d9eb7b9db2ca33008f14310fc552f82c3ac32527cf9b212eb474b3b3bb5b685",
+      "Text": "번역 저장",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2252495Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "1d9eb7b9db2ca33008f14310fc552f82c3ac32527cf9b212eb474b3b3bb5b685",
+      "Text": "Salvar tradução",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2252577Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "1d9eb7b9db2ca33008f14310fc552f82c3ac32527cf9b212eb474b3b3bb5b685",
+      "Text": "Сохранить перевод",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2252612Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "1d9eb7b9db2ca33008f14310fc552f82c3ac32527cf9b212eb474b3b3bb5b685",
+      "Text": "保存翻译",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2252651Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "1d9eb7b9db2ca33008f14310fc552f82c3ac32527cf9b212eb474b3b3bb5b685",
+      "Text": "儲存翻譯",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2252687Z",
       "Suggestions": [],
       "Comments": []
     }

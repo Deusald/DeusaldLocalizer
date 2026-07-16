@@ -4,7 +4,7 @@
   "KeyName": "projectIdLabel",
   "Description": "Field label for the project id input",
   "CreatedAt": "2026-07-16T12:48:41.5611901Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7072999Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2152478Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7072982Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "e511470b21a90cea819fb959f91e38fb462a40fa9745a4dda437d8f48f3de8da",
+      "Text": "ID projektu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152022Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "e511470b21a90cea819fb959f91e38fb462a40fa9745a4dda437d8f48f3de8da",
+      "Text": "Projekt-ID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152137Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "e511470b21a90cea819fb959f91e38fb462a40fa9745a4dda437d8f48f3de8da",
+      "Text": "ID del proyecto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152183Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "e511470b21a90cea819fb959f91e38fb462a40fa9745a4dda437d8f48f3de8da",
+      "Text": "ID du projet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152229Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "e511470b21a90cea819fb959f91e38fb462a40fa9745a4dda437d8f48f3de8da",
+      "Text": "ID progetto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152275Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "e511470b21a90cea819fb959f91e38fb462a40fa9745a4dda437d8f48f3de8da",
+      "Text": "プロジェクトID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152315Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "e511470b21a90cea819fb959f91e38fb462a40fa9745a4dda437d8f48f3de8da",
+      "Text": "프로젝트 ID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152339Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "e511470b21a90cea819fb959f91e38fb462a40fa9745a4dda437d8f48f3de8da",
+      "Text": "ID do projeto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.215239Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "e511470b21a90cea819fb959f91e38fb462a40fa9745a4dda437d8f48f3de8da",
+      "Text": "Идентификатор проекта",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152413Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "e511470b21a90cea819fb959f91e38fb462a40fa9745a4dda437d8f48f3de8da",
+      "Text": "项目 ID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152436Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "e511470b21a90cea819fb959f91e38fb462a40fa9745a4dda437d8f48f3de8da",
+      "Text": "專案 ID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152464Z",
       "Suggestions": [],
       "Comments": []
     }

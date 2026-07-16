@@ -4,7 +4,7 @@
   "KeyName": "title",
   "Description": "Header title of the recent changes modal.",
   "CreatedAt": "2026-07-16T12:48:41.5602344Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7107043Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2444669Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7107023Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "f66a12ef4fd99fa604a5229012d70e40f68a73c531b583e5e9b6a77ed5a5c6fc",
+      "Text": "Nedávné změny",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2444055Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "f66a12ef4fd99fa604a5229012d70e40f68a73c531b583e5e9b6a77ed5a5c6fc",
+      "Text": "Kürzliche Änderungen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2444173Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "f66a12ef4fd99fa604a5229012d70e40f68a73c531b583e5e9b6a77ed5a5c6fc",
+      "Text": "Cambios recientes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2444258Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "f66a12ef4fd99fa604a5229012d70e40f68a73c531b583e5e9b6a77ed5a5c6fc",
+      "Text": "Modifications récentes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2444294Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "f66a12ef4fd99fa604a5229012d70e40f68a73c531b583e5e9b6a77ed5a5c6fc",
+      "Text": "Modifiche recenti",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.244433Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "f66a12ef4fd99fa604a5229012d70e40f68a73c531b583e5e9b6a77ed5a5c6fc",
+      "Text": "最近の変更",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2444367Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "f66a12ef4fd99fa604a5229012d70e40f68a73c531b583e5e9b6a77ed5a5c6fc",
+      "Text": "최근 변경 사항",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2444438Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "f66a12ef4fd99fa604a5229012d70e40f68a73c531b583e5e9b6a77ed5a5c6fc",
+      "Text": "Alterações recentes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2444512Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "f66a12ef4fd99fa604a5229012d70e40f68a73c531b583e5e9b6a77ed5a5c6fc",
+      "Text": "Недавние изменения",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2444549Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "f66a12ef4fd99fa604a5229012d70e40f68a73c531b583e5e9b6a77ed5a5c6fc",
+      "Text": "最近的更改",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.244461Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "f66a12ef4fd99fa604a5229012d70e40f68a73c531b583e5e9b6a77ed5a5c6fc",
+      "Text": "最近的變更",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2444646Z",
       "Suggestions": [],
       "Comments": []
     }

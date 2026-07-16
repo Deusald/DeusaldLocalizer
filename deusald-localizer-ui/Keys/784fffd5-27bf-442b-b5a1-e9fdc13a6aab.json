@@ -4,7 +4,7 @@
   "KeyName": "uncommittedMode",
   "Description": "Label of the offline uncommitted-mode switch.",
   "CreatedAt": "2026-07-16T12:48:41.5600281Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7108805Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2465607Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7108785Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c203efeeb6b3215e51212226640eb5326b379705b617cc781253c1db302cbfda",
+      "Text": "Necommittnutý režim",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465161Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c203efeeb6b3215e51212226640eb5326b379705b617cc781253c1db302cbfda",
+      "Text": "Nicht-committet-Modus",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465188Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c203efeeb6b3215e51212226640eb5326b379705b617cc781253c1db302cbfda",
+      "Text": "Modo sin confirmar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465236Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c203efeeb6b3215e51212226640eb5326b379705b617cc781253c1db302cbfda",
+      "Text": "Mode non validé",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465259Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c203efeeb6b3215e51212226640eb5326b379705b617cc781253c1db302cbfda",
+      "Text": "Modalità non committato",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465281Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c203efeeb6b3215e51212226640eb5326b379705b617cc781253c1db302cbfda",
+      "Text": "未コミットモード",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465302Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c203efeeb6b3215e51212226640eb5326b379705b617cc781253c1db302cbfda",
+      "Text": "커밋되지 않음 모드",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465363Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c203efeeb6b3215e51212226640eb5326b379705b617cc781253c1db302cbfda",
+      "Text": "Modo não confirmado",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465439Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c203efeeb6b3215e51212226640eb5326b379705b617cc781253c1db302cbfda",
+      "Text": "Режим без коммитов",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465474Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c203efeeb6b3215e51212226640eb5326b379705b617cc781253c1db302cbfda",
+      "Text": "未提交模式",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465548Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c203efeeb6b3215e51212226640eb5326b379705b617cc781253c1db302cbfda",
+      "Text": "未提交模式",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2465584Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "changesNotPushed",
   "Description": "Tooltip on the uncommitted status pill for an online project.",
   "CreatedAt": "2026-07-16T12:48:41.5589502Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7096258Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2341066Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7096234Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "6bbbb1d58e82beae3f187ba2519b9f9034075b41034cb4fbc0bbd8217c7c2f76",
+      "Text": "{count} změn zatím neodesláno na server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340768Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "6bbbb1d58e82beae3f187ba2519b9f9034075b41034cb4fbc0bbd8217c7c2f76",
+      "Text": "{count} Änderung(en) noch nicht auf den Server gepusht",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340797Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "6bbbb1d58e82beae3f187ba2519b9f9034075b41034cb4fbc0bbd8217c7c2f76",
+      "Text": "{count} cambio(s) sin enviar al servidor todavía",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340827Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "6bbbb1d58e82beae3f187ba2519b9f9034075b41034cb4fbc0bbd8217c7c2f76",
+      "Text": "{count} modification(s) non encore envoyée(s) au serveur",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340849Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "6bbbb1d58e82beae3f187ba2519b9f9034075b41034cb4fbc0bbd8217c7c2f76",
+      "Text": "{count} modifica/che non ancora inviata/e al server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340875Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "6bbbb1d58e82beae3f187ba2519b9f9034075b41034cb4fbc0bbd8217c7c2f76",
+      "Text": "{count}件の変更がまだサーバーにプッシュされていません",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340896Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "6bbbb1d58e82beae3f187ba2519b9f9034075b41034cb4fbc0bbd8217c7c2f76",
+      "Text": "변경 사항 {count}개가 아직 서버에 푸시되지 않음",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340923Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "6bbbb1d58e82beae3f187ba2519b9f9034075b41034cb4fbc0bbd8217c7c2f76",
+      "Text": "{count} alteração(ões) ainda não enviada(s) ao servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340973Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "6bbbb1d58e82beae3f187ba2519b9f9034075b41034cb4fbc0bbd8217c7c2f76",
+      "Text": "{count} изменений ещё не отправлено на сервер",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2340996Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "6bbbb1d58e82beae3f187ba2519b9f9034075b41034cb4fbc0bbd8217c7c2f76",
+      "Text": "{count} 项更改尚未推送到服务器",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2341024Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "6bbbb1d58e82beae3f187ba2519b9f9034075b41034cb4fbc0bbd8217c7c2f76",
+      "Text": "{count} 項變更尚未推送到伺服器",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2341051Z",
       "Suggestions": [],
       "Comments": []
     }

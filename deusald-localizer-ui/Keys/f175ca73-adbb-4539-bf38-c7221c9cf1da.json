@@ -4,7 +4,7 @@
   "KeyName": "resolveConflictsBeforePushing",
   "Description": "Push button tooltip shown when there are unresolved conflicts.",
   "CreatedAt": "2026-07-16T12:48:41.5588331Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7098046Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2352546Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7098026Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "ce642c38ec55b8a935b6d15dc26f054a81771966c898b556cee9264b1ba3e629",
+      "Text": "Před odesláním vyřešte konflikty",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352198Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "ce642c38ec55b8a935b6d15dc26f054a81771966c898b556cee9264b1ba3e629",
+      "Text": "Löse Konflikte vor dem Pushen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352277Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "ce642c38ec55b8a935b6d15dc26f054a81771966c898b556cee9264b1ba3e629",
+      "Text": "Resuelve los conflictos antes de enviar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352303Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "ce642c38ec55b8a935b6d15dc26f054a81771966c898b556cee9264b1ba3e629",
+      "Text": "Résolvez les conflits avant l'envoi",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352332Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "ce642c38ec55b8a935b6d15dc26f054a81771966c898b556cee9264b1ba3e629",
+      "Text": "Risolvi i conflitti prima di inviare",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352355Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "ce642c38ec55b8a935b6d15dc26f054a81771966c898b556cee9264b1ba3e629",
+      "Text": "プッシュ前に競合を解決してください",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352377Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "ce642c38ec55b8a935b6d15dc26f054a81771966c898b556cee9264b1ba3e629",
+      "Text": "푸시하기 전에 충돌을 해결하세요",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.235241Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "ce642c38ec55b8a935b6d15dc26f054a81771966c898b556cee9264b1ba3e629",
+      "Text": "Resolva os conflitos antes de enviar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.235246Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "ce642c38ec55b8a935b6d15dc26f054a81771966c898b556cee9264b1ba3e629",
+      "Text": "Разрешите конфликты перед отправкой",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352483Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "ce642c38ec55b8a935b6d15dc26f054a81771966c898b556cee9264b1ba3e629",
+      "Text": "推送前解决冲突",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.235251Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "ce642c38ec55b8a935b6d15dc26f054a81771966c898b556cee9264b1ba3e629",
+      "Text": "推送前解決衝突",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352532Z",
       "Suggestions": [],
       "Comments": []
     }

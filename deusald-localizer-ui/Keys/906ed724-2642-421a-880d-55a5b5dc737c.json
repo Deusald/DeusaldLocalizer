@@ -4,7 +4,7 @@
   "KeyName": "updateSub",
   "Description": "Update banner sub-line naming the new version (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.079409Z",
-  "UpdatedAt": "2026-07-16T13:07:17.707755Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2186826Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7077534Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "9b632d16e11beab2ccf9173b93edbc5298bbedb52571ecadf7c69a20cb9c0d69",
+      "Text": "Verze {version} je k dispozici.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2186544Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "9b632d16e11beab2ccf9173b93edbc5298bbedb52571ecadf7c69a20cb9c0d69",
+      "Text": "Version {version} ist verfügbar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2186574Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "9b632d16e11beab2ccf9173b93edbc5298bbedb52571ecadf7c69a20cb9c0d69",
+      "Text": "La versión {version} está disponible.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2186597Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "9b632d16e11beab2ccf9173b93edbc5298bbedb52571ecadf7c69a20cb9c0d69",
+      "Text": "La version {version} est disponible.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2186625Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "9b632d16e11beab2ccf9173b93edbc5298bbedb52571ecadf7c69a20cb9c0d69",
+      "Text": "La versione {version} è disponibile.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2186646Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "9b632d16e11beab2ccf9173b93edbc5298bbedb52571ecadf7c69a20cb9c0d69",
+      "Text": "バージョン{version}が利用可能です。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2186673Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "9b632d16e11beab2ccf9173b93edbc5298bbedb52571ecadf7c69a20cb9c0d69",
+      "Text": "버전 {version}을(를) 사용할 수 있습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2186695Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "9b632d16e11beab2ccf9173b93edbc5298bbedb52571ecadf7c69a20cb9c0d69",
+      "Text": "A versão {version} está disponível.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2186742Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "9b632d16e11beab2ccf9173b93edbc5298bbedb52571ecadf7c69a20cb9c0d69",
+      "Text": "Доступна версия {version}.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2186769Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "9b632d16e11beab2ccf9173b93edbc5298bbedb52571ecadf7c69a20cb9c0d69",
+      "Text": "版本 {version} 已可用。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2186791Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "9b632d16e11beab2ccf9173b93edbc5298bbedb52571ecadf7c69a20cb9c0d69",
+      "Text": "版本 {version} 已可用。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2186812Z",
       "Suggestions": [],
       "Comments": []
     }

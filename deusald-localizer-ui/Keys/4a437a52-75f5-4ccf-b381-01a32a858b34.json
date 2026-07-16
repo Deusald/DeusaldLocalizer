@@ -4,7 +4,7 @@
   "KeyName": "classNamePlaceholder",
   "Description": "Placeholder example for the class name field.",
   "CreatedAt": "2026-07-16T12:48:41.5607251Z",
-  "UpdatedAt": "2026-07-16T13:08:47.5450253Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2402833Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:08:47.5449393Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "031c2d79d71a06afcb07712e2125db23368a1f14dd96ce0140027b36bdfb5d30",
+      "Text": "Localization",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.240244Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "031c2d79d71a06afcb07712e2125db23368a1f14dd96ce0140027b36bdfb5d30",
+      "Text": "Localization",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402463Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "031c2d79d71a06afcb07712e2125db23368a1f14dd96ce0140027b36bdfb5d30",
+      "Text": "Localization",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402485Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "031c2d79d71a06afcb07712e2125db23368a1f14dd96ce0140027b36bdfb5d30",
+      "Text": "Localization",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402507Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "031c2d79d71a06afcb07712e2125db23368a1f14dd96ce0140027b36bdfb5d30",
+      "Text": "Localization",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402545Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "031c2d79d71a06afcb07712e2125db23368a1f14dd96ce0140027b36bdfb5d30",
+      "Text": "Localization",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402566Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "031c2d79d71a06afcb07712e2125db23368a1f14dd96ce0140027b36bdfb5d30",
+      "Text": "Localization",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402587Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "031c2d79d71a06afcb07712e2125db23368a1f14dd96ce0140027b36bdfb5d30",
+      "Text": "Localization",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402685Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "031c2d79d71a06afcb07712e2125db23368a1f14dd96ce0140027b36bdfb5d30",
+      "Text": "Localization",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402722Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "031c2d79d71a06afcb07712e2125db23368a1f14dd96ce0140027b36bdfb5d30",
+      "Text": "Localization",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402759Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "031c2d79d71a06afcb07712e2125db23368a1f14dd96ce0140027b36bdfb5d30",
+      "Text": "Localization",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2402783Z",
       "Suggestions": [],
       "Comments": []
     }

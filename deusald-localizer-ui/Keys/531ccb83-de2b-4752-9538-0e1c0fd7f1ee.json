@@ -4,7 +4,7 @@
   "KeyName": "noMembersYet",
   "Description": "Empty state shown when the project has no members.",
   "CreatedAt": "2026-07-16T12:48:41.5593387Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7111331Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2628341Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7111308Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "12dc83c54e6c9f8459db4f0d90ae28c848067ad02af4686b7c2177a8d09d8e96",
+      "Text": "Zatím žádní členové.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2627722Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "12dc83c54e6c9f8459db4f0d90ae28c848067ad02af4686b7c2177a8d09d8e96",
+      "Text": "Noch keine Mitglieder.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2628001Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "12dc83c54e6c9f8459db4f0d90ae28c848067ad02af4686b7c2177a8d09d8e96",
+      "Text": "Aún no hay miembros.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2628037Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "12dc83c54e6c9f8459db4f0d90ae28c848067ad02af4686b7c2177a8d09d8e96",
+      "Text": "Pas encore de membres.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.262806Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "12dc83c54e6c9f8459db4f0d90ae28c848067ad02af4686b7c2177a8d09d8e96",
+      "Text": "Ancora nessun membro.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.262809Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "12dc83c54e6c9f8459db4f0d90ae28c848067ad02af4686b7c2177a8d09d8e96",
+      "Text": "まだメンバーがいません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2628113Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "12dc83c54e6c9f8459db4f0d90ae28c848067ad02af4686b7c2177a8d09d8e96",
+      "Text": "아직 멤버가 없습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2628135Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "12dc83c54e6c9f8459db4f0d90ae28c848067ad02af4686b7c2177a8d09d8e96",
+      "Text": "Ainda sem membros.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2628196Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "12dc83c54e6c9f8459db4f0d90ae28c848067ad02af4686b7c2177a8d09d8e96",
+      "Text": "Пока нет участников.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2628237Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "12dc83c54e6c9f8459db4f0d90ae28c848067ad02af4686b7c2177a8d09d8e96",
+      "Text": "尚无成员。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2628278Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "12dc83c54e6c9f8459db4f0d90ae28c848067ad02af4686b7c2177a8d09d8e96",
+      "Text": "尚無成員。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2628316Z",
       "Suggestions": [],
       "Comments": []
     }

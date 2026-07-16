@@ -4,7 +4,7 @@
   "KeyName": "cantPush",
   "Description": "Conflicts modal title when a push is blocked but there are no listed conflicts.",
   "CreatedAt": "2026-07-16T12:48:41.5597146Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7100012Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2373929Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7099992Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c9b843533e8a4082fd82fd6aab6cc60a2077d89c6e716624dfe07804a11c7f64",
+      "Text": "Nelze odeslat",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2373501Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c9b843533e8a4082fd82fd6aab6cc60a2077d89c6e716624dfe07804a11c7f64",
+      "Text": "Push nicht möglich",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2373566Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c9b843533e8a4082fd82fd6aab6cc60a2077d89c6e716624dfe07804a11c7f64",
+      "Text": "No se puede enviar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2373591Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c9b843533e8a4082fd82fd6aab6cc60a2077d89c6e716624dfe07804a11c7f64",
+      "Text": "Envoi impossible",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2373613Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c9b843533e8a4082fd82fd6aab6cc60a2077d89c6e716624dfe07804a11c7f64",
+      "Text": "Impossibile inviare",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2373637Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c9b843533e8a4082fd82fd6aab6cc60a2077d89c6e716624dfe07804a11c7f64",
+      "Text": "プッシュできません",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2373664Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c9b843533e8a4082fd82fd6aab6cc60a2077d89c6e716624dfe07804a11c7f64",
+      "Text": "푸시할 수 없음",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2373693Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c9b843533e8a4082fd82fd6aab6cc60a2077d89c6e716624dfe07804a11c7f64",
+      "Text": "Não é possível enviar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2373777Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c9b843533e8a4082fd82fd6aab6cc60a2077d89c6e716624dfe07804a11c7f64",
+      "Text": "Не удаётся отправить",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2373821Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c9b843533e8a4082fd82fd6aab6cc60a2077d89c6e716624dfe07804a11c7f64",
+      "Text": "无法推送",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2373861Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c9b843533e8a4082fd82fd6aab6cc60a2077d89c6e716624dfe07804a11c7f64",
+      "Text": "無法推送",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2373901Z",
       "Suggestions": [],
       "Comments": []
     }

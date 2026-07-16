@@ -4,7 +4,7 @@
   "KeyName": "expandAll",
   "Description": "Tooltip for the expand-all-categories button.",
   "CreatedAt": "2026-07-16T12:48:41.557147Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7090879Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2292524Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7090858Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "a3e586be3eff5fb9f768c0846035db47ccf0f0e10727b0f14d829ff3a5913324",
+      "Text": "Rozbalit vše",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.229205Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a3e586be3eff5fb9f768c0846035db47ccf0f0e10727b0f14d829ff3a5913324",
+      "Text": "Alle ausklappen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2292112Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "a3e586be3eff5fb9f768c0846035db47ccf0f0e10727b0f14d829ff3a5913324",
+      "Text": "Expandir todo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2292153Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a3e586be3eff5fb9f768c0846035db47ccf0f0e10727b0f14d829ff3a5913324",
+      "Text": "Tout développer",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2292189Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "a3e586be3eff5fb9f768c0846035db47ccf0f0e10727b0f14d829ff3a5913324",
+      "Text": "Espandi tutto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2292227Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "a3e586be3eff5fb9f768c0846035db47ccf0f0e10727b0f14d829ff3a5913324",
+      "Text": "すべて展開",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2292269Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "a3e586be3eff5fb9f768c0846035db47ccf0f0e10727b0f14d829ff3a5913324",
+      "Text": "모두 펼치기",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2292307Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "a3e586be3eff5fb9f768c0846035db47ccf0f0e10727b0f14d829ff3a5913324",
+      "Text": "Expandir tudo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2292382Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "a3e586be3eff5fb9f768c0846035db47ccf0f0e10727b0f14d829ff3a5913324",
+      "Text": "Развернуть всё",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2292424Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "a3e586be3eff5fb9f768c0846035db47ccf0f0e10727b0f14d829ff3a5913324",
+      "Text": "全部展开",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2292462Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "a3e586be3eff5fb9f768c0846035db47ccf0f0e10727b0f14d829ff3a5913324",
+      "Text": "全部展開",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2292499Z",
       "Suggestions": [],
       "Comments": []
     }

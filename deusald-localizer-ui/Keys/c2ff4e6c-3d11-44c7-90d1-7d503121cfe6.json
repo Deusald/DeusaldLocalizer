@@ -4,7 +4,7 @@
   "KeyName": "pushRejectedByServer",
   "Description": "Fallback error shown when a push failed without a specific server message.",
   "CreatedAt": "2026-07-16T12:48:41.559182Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7097636Z",
+  "UpdatedAt": "2026-07-16T20:46:27.234943Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7097617Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "0e3564c9df729f048064b50b89a235c15fec0c47b576f4e8bc6acc292a076f7f",
+      "Text": "Odeslání bylo serverem odmítnuto. Synchronizujte a zkuste to znovu.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2349139Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "0e3564c9df729f048064b50b89a235c15fec0c47b576f4e8bc6acc292a076f7f",
+      "Text": "Der Push wurde vom Server abgelehnt. Synchronisiere und versuche es erneut.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2349175Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "0e3564c9df729f048064b50b89a235c15fec0c47b576f4e8bc6acc292a076f7f",
+      "Text": "El servidor rechazó el envío. Sincroniza e inténtalo de nuevo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2349198Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "0e3564c9df729f048064b50b89a235c15fec0c47b576f4e8bc6acc292a076f7f",
+      "Text": "L'envoi a été rejeté par le serveur. Synchronisez et réessayez.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.234922Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "0e3564c9df729f048064b50b89a235c15fec0c47b576f4e8bc6acc292a076f7f",
+      "Text": "L'invio è stato rifiutato dal server. Sincronizza e riprova.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2349242Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "0e3564c9df729f048064b50b89a235c15fec0c47b576f4e8bc6acc292a076f7f",
+      "Text": "プッシュがサーバーに拒否されました。同期してもう一度お試しください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.234927Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "0e3564c9df729f048064b50b89a235c15fec0c47b576f4e8bc6acc292a076f7f",
+      "Text": "서버가 푸시를 거부했습니다. 동기화 후 다시 시도하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2349295Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "0e3564c9df729f048064b50b89a235c15fec0c47b576f4e8bc6acc292a076f7f",
+      "Text": "O envio foi rejeitado pelo servidor. Sincronize e tente novamente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2349341Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "0e3564c9df729f048064b50b89a235c15fec0c47b576f4e8bc6acc292a076f7f",
+      "Text": "Отправка отклонена сервером. Синхронизируйте и попробуйте снова.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2349371Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "0e3564c9df729f048064b50b89a235c15fec0c47b576f4e8bc6acc292a076f7f",
+      "Text": "服务器拒绝了推送。请同步后重试。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2349393Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "0e3564c9df729f048064b50b89a235c15fec0c47b576f4e8bc6acc292a076f7f",
+      "Text": "伺服器拒絕了推送。請同步後重試。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2349415Z",
       "Suggestions": [],
       "Comments": []
     }

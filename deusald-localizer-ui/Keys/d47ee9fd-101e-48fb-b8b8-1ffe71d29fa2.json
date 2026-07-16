@@ -4,7 +4,7 @@
   "KeyName": "memberSignInTokenBody",
   "Description": "Body of the modal showing a new member's one-time sign-in token.",
   "CreatedAt": "2026-07-16T12:48:41.5596033Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7110597Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2480647Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7110572Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "80172b04454351564bbde71eeccf56c836febb7a9b63d75cf80faaa3c461845e",
+      "Text": "Sdílejte tento jednorázový token s {name} zabezpečeným kanálem. Jednou se s ním přihlásí a poté si nastaví vlastní token.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480123Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "80172b04454351564bbde71eeccf56c836febb7a9b63d75cf80faaa3c461845e",
+      "Text": "Teile dieses Einmal-Token über einen sicheren Kanal mit {name}. Sie melden sich einmal damit an und legen dann ihr eigenes Token fest.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480189Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "80172b04454351564bbde71eeccf56c836febb7a9b63d75cf80faaa3c461845e",
+      "Text": "Comparte este token de un solo uso con {name} por un canal seguro. Iniciará sesión con él una vez y luego establecerá su propio token.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480245Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "80172b04454351564bbde71eeccf56c836febb7a9b63d75cf80faaa3c461845e",
+      "Text": "Partagez ce jeton à usage unique avec {name} via un canal sécurisé. Cette personne se connectera une fois avec, puis définira son propre jeton.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480269Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "80172b04454351564bbde71eeccf56c836febb7a9b63d75cf80faaa3c461845e",
+      "Text": "Condividi questo token monouso con {name} tramite un canale sicuro. Accederà una volta con esso e poi imposterà il proprio token.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480291Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "80172b04454351564bbde71eeccf56c836febb7a9b63d75cf80faaa3c461845e",
+      "Text": "この使い捨てトークンを安全なチャネルで{name}と共有してください。本人は一度これでログインし、その後自分のトークンを設定します。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480315Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "80172b04454351564bbde71eeccf56c836febb7a9b63d75cf80faaa3c461845e",
+      "Text": "이 일회용 토큰을 안전한 채널로 {name}님과 공유하세요. 한 번 로그인한 후 자신의 토큰을 설정합니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480372Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "80172b04454351564bbde71eeccf56c836febb7a9b63d75cf80faaa3c461845e",
+      "Text": "Compartilhe este token de uso único com {name} por um canal seguro. Essa pessoa entrará com ele uma vez e depois definirá o próprio token.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480461Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "80172b04454351564bbde71eeccf56c836febb7a9b63d75cf80faaa3c461845e",
+      "Text": "Поделитесь этим одноразовым токеном с {name} по защищённому каналу. Он войдёт с ним один раз, а затем задаст свой собственный токен.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480499Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "80172b04454351564bbde71eeccf56c836febb7a9b63d75cf80faaa3c461845e",
+      "Text": "请通过安全渠道与 {name} 分享此一次性令牌。他们用它登录一次，然后设置自己的令牌。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480579Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "80172b04454351564bbde71eeccf56c836febb7a9b63d75cf80faaa3c461845e",
+      "Text": "請透過安全管道與 {name} 分享此一次性權杖。他們用它登入一次，然後設定自己的權杖。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480618Z",
       "Suggestions": [],
       "Comments": []
     }

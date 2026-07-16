@@ -4,7 +4,7 @@
   "KeyName": "parentCategory",
   "Description": "Label for the parent category picker.",
   "CreatedAt": "2026-07-16T12:48:41.5574497Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7092168Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2304446Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7092147Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "68cc64147838206bec3c0f8a3c04539e4af17e44d7efa6931a215f8e1413642c",
+      "Text": "Nadřazená kategorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2303991Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "68cc64147838206bec3c0f8a3c04539e4af17e44d7efa6931a215f8e1413642c",
+      "Text": "Übergeordnete Kategorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2304032Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "68cc64147838206bec3c0f8a3c04539e4af17e44d7efa6931a215f8e1413642c",
+      "Text": "Categoría principal",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2304068Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "68cc64147838206bec3c0f8a3c04539e4af17e44d7efa6931a215f8e1413642c",
+      "Text": "Catégorie parente",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2304111Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "68cc64147838206bec3c0f8a3c04539e4af17e44d7efa6931a215f8e1413642c",
+      "Text": "Categoria principale",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.230415Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "68cc64147838206bec3c0f8a3c04539e4af17e44d7efa6931a215f8e1413642c",
+      "Text": "親カテゴリ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2304187Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "68cc64147838206bec3c0f8a3c04539e4af17e44d7efa6931a215f8e1413642c",
+      "Text": "상위 카테고리",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2304228Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "68cc64147838206bec3c0f8a3c04539e4af17e44d7efa6931a215f8e1413642c",
+      "Text": "Categoria pai",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2304302Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "68cc64147838206bec3c0f8a3c04539e4af17e44d7efa6931a215f8e1413642c",
+      "Text": "Родительская категория",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2304342Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "68cc64147838206bec3c0f8a3c04539e4af17e44d7efa6931a215f8e1413642c",
+      "Text": "父类别",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2304385Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "68cc64147838206bec3c0f8a3c04539e4af17e44d7efa6931a215f8e1413642c",
+      "Text": "父分類",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.230442Z",
       "Suggestions": [],
       "Comments": []
     }

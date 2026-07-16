@@ -4,7 +4,7 @@
   "KeyName": "createKey",
   "Description": "Confirm button when creating a key.",
   "CreatedAt": "2026-07-16T12:48:41.5576365Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7092492Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2307335Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7092473Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "b6cde9030cefae03fe8f91a48e088ec2c131746127875b4a35b387b9850dc319",
+      "Text": "Vytvořit klíč",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2306884Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "b6cde9030cefae03fe8f91a48e088ec2c131746127875b4a35b387b9850dc319",
+      "Text": "Schlüssel erstellen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2306925Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "b6cde9030cefae03fe8f91a48e088ec2c131746127875b4a35b387b9850dc319",
+      "Text": "Crear clave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2306963Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "b6cde9030cefae03fe8f91a48e088ec2c131746127875b4a35b387b9850dc319",
+      "Text": "Créer la clé",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2306999Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "b6cde9030cefae03fe8f91a48e088ec2c131746127875b4a35b387b9850dc319",
+      "Text": "Crea chiave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2307041Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "b6cde9030cefae03fe8f91a48e088ec2c131746127875b4a35b387b9850dc319",
+      "Text": "キーを作成",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2307077Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "b6cde9030cefae03fe8f91a48e088ec2c131746127875b4a35b387b9850dc319",
+      "Text": "키 만들기",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2307115Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "b6cde9030cefae03fe8f91a48e088ec2c131746127875b4a35b387b9850dc319",
+      "Text": "Criar chave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2307194Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "b6cde9030cefae03fe8f91a48e088ec2c131746127875b4a35b387b9850dc319",
+      "Text": "Создать ключ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.230723Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "b6cde9030cefae03fe8f91a48e088ec2c131746127875b4a35b387b9850dc319",
+      "Text": "创建键",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2307268Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "b6cde9030cefae03fe8f91a48e088ec2c131746127875b4a35b387b9850dc319",
+      "Text": "建立索引鍵",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2307305Z",
       "Suggestions": [],
       "Comments": []
     }

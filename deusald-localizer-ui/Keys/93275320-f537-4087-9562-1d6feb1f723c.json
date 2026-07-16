@@ -4,7 +4,7 @@
   "KeyName": "noFolderSelected",
   "Description": "Placeholder text when no storage folder has been picked",
   "CreatedAt": "2026-07-16T12:48:41.5612813Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7072866Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2150668Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7072848Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "d987e033568e0872f83a002eee163fe324d00b61cf462e31b5da182f538da8c6",
+      "Text": "Není vybrána žádná složka",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.215027Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "d987e033568e0872f83a002eee163fe324d00b61cf462e31b5da182f538da8c6",
+      "Text": "Kein Ordner ausgewählt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2150294Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "d987e033568e0872f83a002eee163fe324d00b61cf462e31b5da182f538da8c6",
+      "Text": "Ninguna carpeta seleccionada",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2150317Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "d987e033568e0872f83a002eee163fe324d00b61cf462e31b5da182f538da8c6",
+      "Text": "Aucun dossier sélectionné",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2150346Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "d987e033568e0872f83a002eee163fe324d00b61cf462e31b5da182f538da8c6",
+      "Text": "Nessuna cartella selezionata",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.215037Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "d987e033568e0872f83a002eee163fe324d00b61cf462e31b5da182f538da8c6",
+      "Text": "フォルダーが選択されていません",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2150396Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "d987e033568e0872f83a002eee163fe324d00b61cf462e31b5da182f538da8c6",
+      "Text": "선택된 폴더 없음",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2150437Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "d987e033568e0872f83a002eee163fe324d00b61cf462e31b5da182f538da8c6",
+      "Text": "Nenhuma pasta selecionada",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2150522Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "d987e033568e0872f83a002eee163fe324d00b61cf462e31b5da182f538da8c6",
+      "Text": "Папка не выбрана",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2150558Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "d987e033568e0872f83a002eee163fe324d00b61cf462e31b5da182f538da8c6",
+      "Text": "未选择文件夹",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2150598Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "d987e033568e0872f83a002eee163fe324d00b61cf462e31b5da182f538da8c6",
+      "Text": "未選擇資料夾",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2150643Z",
       "Suggestions": [],
       "Comments": []
     }

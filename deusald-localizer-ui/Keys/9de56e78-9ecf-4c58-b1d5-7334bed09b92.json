@@ -4,7 +4,7 @@
   "KeyName": "commaSeparated",
   "Description": "Hint that an array preview value is comma-separated",
   "CreatedAt": "2026-07-16T12:48:41.5583508Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7088281Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2261226Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7088259Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "ec9a30de321bde9b81164a5a5455d5e9f73411e70d1ef73311bf94168afd3793",
+      "Text": "oddělené čárkami",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2260751Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "ec9a30de321bde9b81164a5a5455d5e9f73411e70d1ef73311bf94168afd3793",
+      "Text": "kommagetrennt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2260798Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "ec9a30de321bde9b81164a5a5455d5e9f73411e70d1ef73311bf94168afd3793",
+      "Text": "separados por comas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2260843Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "ec9a30de321bde9b81164a5a5455d5e9f73411e70d1ef73311bf94168afd3793",
+      "Text": "séparés par des virgules",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2260869Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "ec9a30de321bde9b81164a5a5455d5e9f73411e70d1ef73311bf94168afd3793",
+      "Text": "separati da virgole",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2260891Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "ec9a30de321bde9b81164a5a5455d5e9f73411e70d1ef73311bf94168afd3793",
+      "Text": "カンマ区切り",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2260945Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "ec9a30de321bde9b81164a5a5455d5e9f73411e70d1ef73311bf94168afd3793",
+      "Text": "쉼표로 구분",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2260996Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "ec9a30de321bde9b81164a5a5455d5e9f73411e70d1ef73311bf94168afd3793",
+      "Text": "separados por vírgulas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261072Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "ec9a30de321bde9b81164a5a5455d5e9f73411e70d1ef73311bf94168afd3793",
+      "Text": "через запятую",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261114Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "ec9a30de321bde9b81164a5a5455d5e9f73411e70d1ef73311bf94168afd3793",
+      "Text": "以逗号分隔",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261161Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "ec9a30de321bde9b81164a5a5455d5e9f73411e70d1ef73311bf94168afd3793",
+      "Text": "以逗號分隔",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2261199Z",
       "Suggestions": [],
       "Comments": []
     }

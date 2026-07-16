@@ -4,7 +4,7 @@
   "KeyName": "clearOldComments",
   "Description": "Button that triggers clearing comments older than the chosen age.",
   "CreatedAt": "2026-07-16T12:48:41.5595258Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7109754Z",
+  "UpdatedAt": "2026-07-16T20:46:27.247329Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7109735Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "2fc4449ac9d860578eb9a0cd74251e07d9cc1dd87b0d04deb6a3d98d0ee913e3",
+      "Text": "Vymazat staré komentáře",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2472955Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "2fc4449ac9d860578eb9a0cd74251e07d9cc1dd87b0d04deb6a3d98d0ee913e3",
+      "Text": "Alte Kommentare löschen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.247298Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "2fc4449ac9d860578eb9a0cd74251e07d9cc1dd87b0d04deb6a3d98d0ee913e3",
+      "Text": "Borrar comentarios antiguos",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473003Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "2fc4449ac9d860578eb9a0cd74251e07d9cc1dd87b0d04deb6a3d98d0ee913e3",
+      "Text": "Effacer les anciens commentaires",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473024Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "2fc4449ac9d860578eb9a0cd74251e07d9cc1dd87b0d04deb6a3d98d0ee913e3",
+      "Text": "Cancella vecchi commenti",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.247307Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "2fc4449ac9d860578eb9a0cd74251e07d9cc1dd87b0d04deb6a3d98d0ee913e3",
+      "Text": "古いコメントをクリア",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473092Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "2fc4449ac9d860578eb9a0cd74251e07d9cc1dd87b0d04deb6a3d98d0ee913e3",
+      "Text": "오래된 댓글 지우기",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473115Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "2fc4449ac9d860578eb9a0cd74251e07d9cc1dd87b0d04deb6a3d98d0ee913e3",
+      "Text": "Limpar comentários antigos",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473192Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "2fc4449ac9d860578eb9a0cd74251e07d9cc1dd87b0d04deb6a3d98d0ee913e3",
+      "Text": "Очистить старые комментарии",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473215Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "2fc4449ac9d860578eb9a0cd74251e07d9cc1dd87b0d04deb6a3d98d0ee913e3",
+      "Text": "清除旧评论",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473238Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "2fc4449ac9d860578eb9a0cd74251e07d9cc1dd87b0d04deb6a3d98d0ee913e3",
+      "Text": "清除舊註解",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473275Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "noCategoriesFound",
   "Description": "Empty state when no parent categories match the search.",
   "CreatedAt": "2026-07-16T12:48:41.5574745Z",
-  "UpdatedAt": "2026-07-16T13:07:17.709195Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2302238Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.709193Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "8b22abcaae1f727a790a9b64379531af83ecf6a4742311ccf34b731f9b140f7f",
+      "Text": "Nebyly nalezeny žádné kategorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2301436Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "8b22abcaae1f727a790a9b64379531af83ecf6a4742311ccf34b731f9b140f7f",
+      "Text": "Keine Kategorien gefunden",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2301477Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "8b22abcaae1f727a790a9b64379531af83ecf6a4742311ccf34b731f9b140f7f",
+      "Text": "No se encontraron categorías",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.230152Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "8b22abcaae1f727a790a9b64379531af83ecf6a4742311ccf34b731f9b140f7f",
+      "Text": "Aucune catégorie trouvée",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2301563Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "8b22abcaae1f727a790a9b64379531af83ecf6a4742311ccf34b731f9b140f7f",
+      "Text": "Nessuna categoria trovata",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2301599Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "8b22abcaae1f727a790a9b64379531af83ecf6a4742311ccf34b731f9b140f7f",
+      "Text": "カテゴリが見つかりません",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2301914Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "8b22abcaae1f727a790a9b64379531af83ecf6a4742311ccf34b731f9b140f7f",
+      "Text": "카테고리를 찾을 수 없음",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2302021Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "8b22abcaae1f727a790a9b64379531af83ecf6a4742311ccf34b731f9b140f7f",
+      "Text": "Nenhuma categoria encontrada",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2302094Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "8b22abcaae1f727a790a9b64379531af83ecf6a4742311ccf34b731f9b140f7f",
+      "Text": "Категории не найдены",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2302131Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "8b22abcaae1f727a790a9b64379531af83ecf6a4742311ccf34b731f9b140f7f",
+      "Text": "未找到类别",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2302175Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "8b22abcaae1f727a790a9b64379531af83ecf6a4742311ccf34b731f9b140f7f",
+      "Text": "找不到分類",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2302213Z",
       "Suggestions": [],
       "Comments": []
     }

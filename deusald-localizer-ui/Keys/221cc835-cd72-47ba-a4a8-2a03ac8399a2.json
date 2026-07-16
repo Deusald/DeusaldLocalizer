@@ -4,7 +4,7 @@
   "KeyName": "adminFullAccess",
   "Description": "Permissions summary for an admin member.",
   "CreatedAt": "2026-07-16T12:48:41.5593823Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7109211Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2469137Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7109191Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c2de60c11e23605896f9dd745625d0565138b2d4b3af165075eb0201106f466b",
+      "Text": "Admin — plný přístup",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468813Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c2de60c11e23605896f9dd745625d0565138b2d4b3af165075eb0201106f466b",
+      "Text": "Admin — voller Zugriff",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468839Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c2de60c11e23605896f9dd745625d0565138b2d4b3af165075eb0201106f466b",
+      "Text": "Admin — acceso completo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468861Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c2de60c11e23605896f9dd745625d0565138b2d4b3af165075eb0201106f466b",
+      "Text": "Admin — accès complet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468905Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c2de60c11e23605896f9dd745625d0565138b2d4b3af165075eb0201106f466b",
+      "Text": "Admin — accesso completo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468927Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c2de60c11e23605896f9dd745625d0565138b2d4b3af165075eb0201106f466b",
+      "Text": "管理者 — フルアクセス",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468948Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c2de60c11e23605896f9dd745625d0565138b2d4b3af165075eb0201106f466b",
+      "Text": "관리자 — 전체 액세스",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.246897Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c2de60c11e23605896f9dd745625d0565138b2d4b3af165075eb0201106f466b",
+      "Text": "Admin — acesso total",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2469038Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c2de60c11e23605896f9dd745625d0565138b2d4b3af165075eb0201106f466b",
+      "Text": "Админ — полный доступ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.246906Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c2de60c11e23605896f9dd745625d0565138b2d4b3af165075eb0201106f466b",
+      "Text": "管理员——完全访问权限",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2469083Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c2de60c11e23605896f9dd745625d0565138b2d4b3af165075eb0201106f466b",
+      "Text": "管理員——完整存取權限",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2469122Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "importAnother",
   "Description": "Footer button to import another file.",
   "CreatedAt": "2026-07-16T12:48:41.5606061Z",
-  "UpdatedAt": "2026-07-16T13:07:17.710148Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2386745Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7101459Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "ea4fe81089cc633697b01d8035a3eb3cf8a401c35ab087e2e1897e42a57d8c05",
+      "Text": "Importovat další",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2386306Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "ea4fe81089cc633697b01d8035a3eb3cf8a401c35ab087e2e1897e42a57d8c05",
+      "Text": "Weitere importieren",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.238635Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "ea4fe81089cc633697b01d8035a3eb3cf8a401c35ab087e2e1897e42a57d8c05",
+      "Text": "Importar otro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2386389Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "ea4fe81089cc633697b01d8035a3eb3cf8a401c35ab087e2e1897e42a57d8c05",
+      "Text": "Importer un autre",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2386427Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "ea4fe81089cc633697b01d8035a3eb3cf8a401c35ab087e2e1897e42a57d8c05",
+      "Text": "Importa un altro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2386476Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "ea4fe81089cc633697b01d8035a3eb3cf8a401c35ab087e2e1897e42a57d8c05",
+      "Text": "別のをインポート",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2386518Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "ea4fe81089cc633697b01d8035a3eb3cf8a401c35ab087e2e1897e42a57d8c05",
+      "Text": "다른 항목 가져오기",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2386557Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "ea4fe81089cc633697b01d8035a3eb3cf8a401c35ab087e2e1897e42a57d8c05",
+      "Text": "Importar outro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.238665Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "ea4fe81089cc633697b01d8035a3eb3cf8a401c35ab087e2e1897e42a57d8c05",
+      "Text": "Импортировать ещё",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2386675Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "ea4fe81089cc633697b01d8035a3eb3cf8a401c35ab087e2e1897e42a57d8c05",
+      "Text": "导入另一个",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2386698Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "ea4fe81089cc633697b01d8035a3eb3cf8a401c35ab087e2e1897e42a57d8c05",
+      "Text": "匯入另一個",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2386726Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "keyName",
   "Description": "Label for the key name input.",
   "CreatedAt": "2026-07-16T12:48:41.5575512Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7092994Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2314927Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7092967Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "6f245e973f7ecc2b13cdf040e432f4ea5f5f8b234680d20294cc2c6c9dd16ca8",
+      "Text": "Název klíče",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314472Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "6f245e973f7ecc2b13cdf040e432f4ea5f5f8b234680d20294cc2c6c9dd16ca8",
+      "Text": "Schlüsselname",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314517Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "6f245e973f7ecc2b13cdf040e432f4ea5f5f8b234680d20294cc2c6c9dd16ca8",
+      "Text": "Nombre de la clave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314557Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "6f245e973f7ecc2b13cdf040e432f4ea5f5f8b234680d20294cc2c6c9dd16ca8",
+      "Text": "Nom de la clé",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314594Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "6f245e973f7ecc2b13cdf040e432f4ea5f5f8b234680d20294cc2c6c9dd16ca8",
+      "Text": "Nome della chiave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314635Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "6f245e973f7ecc2b13cdf040e432f4ea5f5f8b234680d20294cc2c6c9dd16ca8",
+      "Text": "キー名",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314677Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "6f245e973f7ecc2b13cdf040e432f4ea5f5f8b234680d20294cc2c6c9dd16ca8",
+      "Text": "키 이름",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314714Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "6f245e973f7ecc2b13cdf040e432f4ea5f5f8b234680d20294cc2c6c9dd16ca8",
+      "Text": "Nome da chave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314788Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "6f245e973f7ecc2b13cdf040e432f4ea5f5f8b234680d20294cc2c6c9dd16ca8",
+      "Text": "Имя ключа",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.231483Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "6f245e973f7ecc2b13cdf040e432f4ea5f5f8b234680d20294cc2c6c9dd16ca8",
+      "Text": "键名称",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314865Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "6f245e973f7ecc2b13cdf040e432f4ea5f5f8b234680d20294cc2c6c9dd16ca8",
+      "Text": "索引鍵名稱",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314903Z",
       "Suggestions": [],
       "Comments": []
     }

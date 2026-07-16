@@ -4,7 +4,7 @@
   "KeyName": "resolveConflictsFirst",
   "Description": "Push result message when blocked by client-side conflicts.",
   "CreatedAt": "2026-07-16T12:48:41.5591437Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7098119Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2352897Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7098098Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "f99ba67e23614619db7fdb88a87d3b33ba79ed5df5164fc3435d44cac872303c",
+      "Text": "Nejprve vyřešte {count} konfliktů",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352583Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "f99ba67e23614619db7fdb88a87d3b33ba79ed5df5164fc3435d44cac872303c",
+      "Text": "Löse zuerst {count} Konflikt(e)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352607Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "f99ba67e23614619db7fdb88a87d3b33ba79ed5df5164fc3435d44cac872303c",
+      "Text": "Resuelve primero {count} conflicto(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352634Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "f99ba67e23614619db7fdb88a87d3b33ba79ed5df5164fc3435d44cac872303c",
+      "Text": "Résolvez d'abord {count} conflit(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352657Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "f99ba67e23614619db7fdb88a87d3b33ba79ed5df5164fc3435d44cac872303c",
+      "Text": "Risolvi prima {count} conflitto/i",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352679Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "f99ba67e23614619db7fdb88a87d3b33ba79ed5df5164fc3435d44cac872303c",
+      "Text": "まず{count}件の競合を解決してください",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352701Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "f99ba67e23614619db7fdb88a87d3b33ba79ed5df5164fc3435d44cac872303c",
+      "Text": "먼저 충돌 {count}개를 해결하세요",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352729Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "f99ba67e23614619db7fdb88a87d3b33ba79ed5df5164fc3435d44cac872303c",
+      "Text": "Resolva primeiro {count} conflito(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352775Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "f99ba67e23614619db7fdb88a87d3b33ba79ed5df5164fc3435d44cac872303c",
+      "Text": "Сначала разрешите {count} конфликтов",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352796Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "f99ba67e23614619db7fdb88a87d3b33ba79ed5df5164fc3435d44cac872303c",
+      "Text": "请先解决 {count} 个冲突",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352832Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "f99ba67e23614619db7fdb88a87d3b33ba79ed5df5164fc3435d44cac872303c",
+      "Text": "請先解決 {count} 個衝突",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352871Z",
       "Suggestions": [],
       "Comments": []
     }

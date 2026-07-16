@@ -4,7 +4,7 @@
   "KeyName": "projectEnums",
   "Description": "Title of the project enums modal",
   "CreatedAt": "2026-07-16T12:48:41.5584644Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7086137Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2239834Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7086103Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "1ce87d37f402f77cca3ef116d0551d0f8a886409974acab9700ccb9915f04286",
+      "Text": "Výčty projektu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239555Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "1ce87d37f402f77cca3ef116d0551d0f8a886409974acab9700ccb9915f04286",
+      "Text": "Projekt-Enums",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239586Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "1ce87d37f402f77cca3ef116d0551d0f8a886409974acab9700ccb9915f04286",
+      "Text": "Enums del proyecto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.223961Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "1ce87d37f402f77cca3ef116d0551d0f8a886409974acab9700ccb9915f04286",
+      "Text": "Énumérations du projet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239631Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "1ce87d37f402f77cca3ef116d0551d0f8a886409974acab9700ccb9915f04286",
+      "Text": "Enum del progetto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239653Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "1ce87d37f402f77cca3ef116d0551d0f8a886409974acab9700ccb9915f04286",
+      "Text": "プロジェクトの列挙型",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.223968Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "1ce87d37f402f77cca3ef116d0551d0f8a886409974acab9700ccb9915f04286",
+      "Text": "프로젝트 열거형",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239703Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "1ce87d37f402f77cca3ef116d0551d0f8a886409974acab9700ccb9915f04286",
+      "Text": "Enums do projeto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239747Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "1ce87d37f402f77cca3ef116d0551d0f8a886409974acab9700ccb9915f04286",
+      "Text": "Перечисления проекта",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239775Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "1ce87d37f402f77cca3ef116d0551d0f8a886409974acab9700ccb9915f04286",
+      "Text": "项目枚举",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239797Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "1ce87d37f402f77cca3ef116d0551d0f8a886409974acab9700ccb9915f04286",
+      "Text": "專案列舉",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.223982Z",
       "Suggestions": [],
       "Comments": []
     }

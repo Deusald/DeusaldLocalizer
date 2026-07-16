@@ -4,7 +4,7 @@
   "KeyName": "signInBeforePush",
   "Description": "Error shown when the user must sign in before pushing.",
   "CreatedAt": "2026-07-16T12:48:41.559192Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7098419Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2357908Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7098399Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "670ab1ad66a16ac1daf0bed9e70cb09b45c884fc452fc665f5be6454542a8219",
+      "Text": "Než budete moci odeslat, musíte se na tomto zařízení přihlásit.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2357098Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "670ab1ad66a16ac1daf0bed9e70cb09b45c884fc452fc665f5be6454542a8219",
+      "Text": "Du musst dich auf diesem Gerät anmelden, bevor du pushen kannst.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2357143Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "670ab1ad66a16ac1daf0bed9e70cb09b45c884fc452fc665f5be6454542a8219",
+      "Text": "Necesitas iniciar sesión en este dispositivo antes de poder enviar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.235718Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "670ab1ad66a16ac1daf0bed9e70cb09b45c884fc452fc665f5be6454542a8219",
+      "Text": "Vous devez vous connecter sur cet appareil avant de pouvoir envoyer.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2357219Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "670ab1ad66a16ac1daf0bed9e70cb09b45c884fc452fc665f5be6454542a8219",
+      "Text": "Devi accedere su questo dispositivo prima di poter inviare.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2357265Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "670ab1ad66a16ac1daf0bed9e70cb09b45c884fc452fc665f5be6454542a8219",
+      "Text": "プッシュするには、このデバイスでログインする必要があります。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2357301Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "670ab1ad66a16ac1daf0bed9e70cb09b45c884fc452fc665f5be6454542a8219",
+      "Text": "푸시하려면 먼저 이 기기에서 로그인해야 합니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2357341Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "670ab1ad66a16ac1daf0bed9e70cb09b45c884fc452fc665f5be6454542a8219",
+      "Text": "Você precisa entrar neste dispositivo antes de poder enviar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2357432Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "670ab1ad66a16ac1daf0bed9e70cb09b45c884fc452fc665f5be6454542a8219",
+      "Text": "Прежде чем отправлять, вам нужно войти на этом устройстве.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2357472Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "670ab1ad66a16ac1daf0bed9e70cb09b45c884fc452fc665f5be6454542a8219",
+      "Text": "你需要先在此设备上登录才能推送。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.235751Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "670ab1ad66a16ac1daf0bed9e70cb09b45c884fc452fc665f5be6454542a8219",
+      "Text": "你需要先在此裝置上登入才能推送。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2357848Z",
       "Suggestions": [],
       "Comments": []
     }

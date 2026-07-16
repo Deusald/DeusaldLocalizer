@@ -4,7 +4,7 @@
   "KeyName": "addMember",
   "Description": "Button and form title for adding a new member.",
   "CreatedAt": "2026-07-16T12:48:41.5592368Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7109078Z",
+  "UpdatedAt": "2026-07-16T20:46:27.246843Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7109058Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "171084156de6aca4e24f6c05c5ec6dd7e19c8fbb1d5ca090809c65de638f68fd",
+      "Text": "Přidat člena",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2467752Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "171084156de6aca4e24f6c05c5ec6dd7e19c8fbb1d5ca090809c65de638f68fd",
+      "Text": "Mitglied hinzufügen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468083Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "171084156de6aca4e24f6c05c5ec6dd7e19c8fbb1d5ca090809c65de638f68fd",
+      "Text": "Añadir miembro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468113Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "171084156de6aca4e24f6c05c5ec6dd7e19c8fbb1d5ca090809c65de638f68fd",
+      "Text": "Ajouter un membre",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468136Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "171084156de6aca4e24f6c05c5ec6dd7e19c8fbb1d5ca090809c65de638f68fd",
+      "Text": "Aggiungi membro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468159Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "171084156de6aca4e24f6c05c5ec6dd7e19c8fbb1d5ca090809c65de638f68fd",
+      "Text": "メンバーを追加",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468199Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "171084156de6aca4e24f6c05c5ec6dd7e19c8fbb1d5ca090809c65de638f68fd",
+      "Text": "멤버 추가",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468221Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "171084156de6aca4e24f6c05c5ec6dd7e19c8fbb1d5ca090809c65de638f68fd",
+      "Text": "Adicionar membro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468315Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "171084156de6aca4e24f6c05c5ec6dd7e19c8fbb1d5ca090809c65de638f68fd",
+      "Text": "Добавить участника",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468338Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "171084156de6aca4e24f6c05c5ec6dd7e19c8fbb1d5ca090809c65de638f68fd",
+      "Text": "添加成员",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.246836Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "171084156de6aca4e24f6c05c5ec6dd7e19c8fbb1d5ca090809c65de638f68fd",
+      "Text": "新增成員",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2468384Z",
       "Suggestions": [],
       "Comments": []
     }

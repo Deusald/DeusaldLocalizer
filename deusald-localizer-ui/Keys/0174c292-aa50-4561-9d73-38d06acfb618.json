@@ -4,7 +4,7 @@
   "KeyName": "onServerNowLabel",
   "Description": "Label for the server-version comparison panel",
   "CreatedAt": "2026-07-16T12:48:41.5587019Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7082592Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2221923Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.708257Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "7327a69d8e2e2b5b058e3ecb606f75824b307a642090ec7f589b876322182820",
+      "Text": "Nyní na serveru",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2221569Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "7327a69d8e2e2b5b058e3ecb606f75824b307a642090ec7f589b876322182820",
+      "Text": "Jetzt auf dem Server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2221598Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "7327a69d8e2e2b5b058e3ecb606f75824b307a642090ec7f589b876322182820",
+      "Text": "Ahora en el servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2221622Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "7327a69d8e2e2b5b058e3ecb606f75824b307a642090ec7f589b876322182820",
+      "Text": "Actuellement sur le serveur",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2221643Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "7327a69d8e2e2b5b058e3ecb606f75824b307a642090ec7f589b876322182820",
+      "Text": "Ora sul server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2221664Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "7327a69d8e2e2b5b058e3ecb606f75824b307a642090ec7f589b876322182820",
+      "Text": "現在サーバー上",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2221691Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "7327a69d8e2e2b5b058e3ecb606f75824b307a642090ec7f589b876322182820",
+      "Text": "현재 서버에 있음",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2221713Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "7327a69d8e2e2b5b058e3ecb606f75824b307a642090ec7f589b876322182820",
+      "Text": "Agora no servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2221761Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "7327a69d8e2e2b5b058e3ecb606f75824b307a642090ec7f589b876322182820",
+      "Text": "Сейчас на сервере",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2221783Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "7327a69d8e2e2b5b058e3ecb606f75824b307a642090ec7f589b876322182820",
+      "Text": "服务器上的当前内容",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2221805Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "7327a69d8e2e2b5b058e3ecb606f75824b307a642090ec7f589b876322182820",
+      "Text": "伺服器上的目前內容",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2221901Z",
       "Suggestions": [],
       "Comments": []
     }

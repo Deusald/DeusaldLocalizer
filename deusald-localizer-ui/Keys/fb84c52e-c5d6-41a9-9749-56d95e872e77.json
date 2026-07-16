@@ -4,7 +4,7 @@
   "KeyName": "noMatches",
   "Description": "Shown when no existing tags match the query and none can be created.",
   "CreatedAt": "2026-07-16T12:48:41.5579545Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7081407Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2213913Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7081382Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "cd336f52d4a0fa8e3230635b1feb9b95e97bc9d1d21095af93b3a83ce32c48c1",
+      "Text": "Žádné odpovídající štítky.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213634Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "cd336f52d4a0fa8e3230635b1feb9b95e97bc9d1d21095af93b3a83ce32c48c1",
+      "Text": "Keine passenden Tags.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213658Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "cd336f52d4a0fa8e3230635b1feb9b95e97bc9d1d21095af93b3a83ce32c48c1",
+      "Text": "No hay etiquetas coincidentes.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213685Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "cd336f52d4a0fa8e3230635b1feb9b95e97bc9d1d21095af93b3a83ce32c48c1",
+      "Text": "Aucune étiquette correspondante.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213706Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "cd336f52d4a0fa8e3230635b1feb9b95e97bc9d1d21095af93b3a83ce32c48c1",
+      "Text": "Nessun tag corrispondente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213728Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "cd336f52d4a0fa8e3230635b1feb9b95e97bc9d1d21095af93b3a83ce32c48c1",
+      "Text": "一致するタグがありません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.221375Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "cd336f52d4a0fa8e3230635b1feb9b95e97bc9d1d21095af93b3a83ce32c48c1",
+      "Text": "일치하는 태그가 없습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213777Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "cd336f52d4a0fa8e3230635b1feb9b95e97bc9d1d21095af93b3a83ce32c48c1",
+      "Text": "Nenhuma tag correspondente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213828Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "cd336f52d4a0fa8e3230635b1feb9b95e97bc9d1d21095af93b3a83ce32c48c1",
+      "Text": "Нет подходящих тегов.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213851Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "cd336f52d4a0fa8e3230635b1feb9b95e97bc9d1d21095af93b3a83ce32c48c1",
+      "Text": "没有匹配的标签。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213876Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "cd336f52d4a0fa8e3230635b1feb9b95e97bc9d1d21095af93b3a83ce32c48c1",
+      "Text": "沒有相符的標籤。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213899Z",
       "Suggestions": [],
       "Comments": []
     }

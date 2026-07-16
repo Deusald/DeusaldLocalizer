@@ -4,7 +4,7 @@
   "KeyName": "emptySub",
   "Description": "Empty-state description (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.079494Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7076032Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2177615Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7076014Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "f2d9860f08959f16b2f471067de0873e47ebfa5c2da6d32a792202d02de39639",
+      "Text": "Projekty, které otevřete, se zde zobrazí, abyste se k nim mohli rychle vrátit.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2177123Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "f2d9860f08959f16b2f471067de0873e47ebfa5c2da6d32a792202d02de39639",
+      "Text": "Projekte, die du öffnest, erscheinen hier, damit du schnell darauf zugreifen kannst.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.217717Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "f2d9860f08959f16b2f471067de0873e47ebfa5c2da6d32a792202d02de39639",
+      "Text": "Los proyectos que abras aparecerán aquí para que puedas volver a ellos rápidamente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2177217Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "f2d9860f08959f16b2f471067de0873e47ebfa5c2da6d32a792202d02de39639",
+      "Text": "Les projets que vous ouvrez apparaîtront ici pour y revenir rapidement.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2177255Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "f2d9860f08959f16b2f471067de0873e47ebfa5c2da6d32a792202d02de39639",
+      "Text": "I progetti che apri appariranno qui così potrai tornarci rapidamente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2177293Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "f2d9860f08959f16b2f471067de0873e47ebfa5c2da6d32a792202d02de39639",
+      "Text": "開いたプロジェクトはここに表示され、すぐに戻れます。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2177328Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "f2d9860f08959f16b2f471067de0873e47ebfa5c2da6d32a792202d02de39639",
+      "Text": "연 프로젝트가 여기에 표시되어 빠르게 다시 접근할 수 있습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2177374Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "f2d9860f08959f16b2f471067de0873e47ebfa5c2da6d32a792202d02de39639",
+      "Text": "Os projetos que você abrir aparecerão aqui para que você possa voltar a eles rapidamente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2177458Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "f2d9860f08959f16b2f471067de0873e47ebfa5c2da6d32a792202d02de39639",
+      "Text": "Проекты, которые вы открываете, будут отображаться здесь, чтобы вы могли быстро к ним вернуться.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2177499Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "f2d9860f08959f16b2f471067de0873e47ebfa5c2da6d32a792202d02de39639",
+      "Text": "你打开的项目会显示在这里，方便快速返回。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2177547Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "f2d9860f08959f16b2f471067de0873e47ebfa5c2da6d32a792202d02de39639",
+      "Text": "你開啟的專案會顯示在這裡，方便快速返回。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2177588Z",
       "Suggestions": [],
       "Comments": []
     }

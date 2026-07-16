@@ -4,7 +4,7 @@
   "KeyName": "removeTooltip",
   "Description": "Tooltip on a recent-project card's remove button (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794987Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7077053Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2183572Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7077037Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "9720cab17eed1ba051d70a16696de70e8d9bc480918e66c43c60f7b4b097de2b",
+      "Text": "Odebrat z nedávných",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183296Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "9720cab17eed1ba051d70a16696de70e8d9bc480918e66c43c60f7b4b097de2b",
+      "Text": "Aus Verlauf entfernen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183324Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "9720cab17eed1ba051d70a16696de70e8d9bc480918e66c43c60f7b4b097de2b",
+      "Text": "Quitar de recientes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183351Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "9720cab17eed1ba051d70a16696de70e8d9bc480918e66c43c60f7b4b097de2b",
+      "Text": "Retirer des récents",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183373Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "9720cab17eed1ba051d70a16696de70e8d9bc480918e66c43c60f7b4b097de2b",
+      "Text": "Rimuovi dai recenti",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183395Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "9720cab17eed1ba051d70a16696de70e8d9bc480918e66c43c60f7b4b097de2b",
+      "Text": "最近から削除",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183421Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "9720cab17eed1ba051d70a16696de70e8d9bc480918e66c43c60f7b4b097de2b",
+      "Text": "최근에서 제거",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183444Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "9720cab17eed1ba051d70a16696de70e8d9bc480918e66c43c60f7b4b097de2b",
+      "Text": "Remover dos recentes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183488Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "9720cab17eed1ba051d70a16696de70e8d9bc480918e66c43c60f7b4b097de2b",
+      "Text": "Убрать из недавних",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183516Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "9720cab17eed1ba051d70a16696de70e8d9bc480918e66c43c60f7b4b097de2b",
+      "Text": "从最近中移除",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183538Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "9720cab17eed1ba051d70a16696de70e8d9bc480918e66c43c60f7b4b097de2b",
+      "Text": "從最近中移除",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183558Z",
       "Suggestions": [],
       "Comments": []
     }

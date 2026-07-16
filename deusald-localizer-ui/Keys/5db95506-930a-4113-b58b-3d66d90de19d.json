@@ -4,7 +4,7 @@
   "KeyName": "translationsSet",
   "Description": "Result stat label for translations set.",
   "CreatedAt": "2026-07-16T12:48:41.5605569Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7102464Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2394328Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7102444Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "4ca4ca99140b22d80ee0669ddea18d6ba730501136be950d2794b40d615c31d4",
+      "Text": "nastavených překladů",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2393496Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "4ca4ca99140b22d80ee0669ddea18d6ba730501136be950d2794b40d615c31d4",
+      "Text": "Übersetzungen gesetzt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.239357Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "4ca4ca99140b22d80ee0669ddea18d6ba730501136be950d2794b40d615c31d4",
+      "Text": "traducciones establecidas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2393594Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "4ca4ca99140b22d80ee0669ddea18d6ba730501136be950d2794b40d615c31d4",
+      "Text": "traductions définies",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2393617Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "4ca4ca99140b22d80ee0669ddea18d6ba730501136be950d2794b40d615c31d4",
+      "Text": "traduzioni impostate",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2393959Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "4ca4ca99140b22d80ee0669ddea18d6ba730501136be950d2794b40d615c31d4",
+      "Text": "翻訳設定",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394013Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "4ca4ca99140b22d80ee0669ddea18d6ba730501136be950d2794b40d615c31d4",
+      "Text": "설정된 번역",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394038Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "4ca4ca99140b22d80ee0669ddea18d6ba730501136be950d2794b40d615c31d4",
+      "Text": "traduções definidas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.239415Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "4ca4ca99140b22d80ee0669ddea18d6ba730501136be950d2794b40d615c31d4",
+      "Text": "переводов задано",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394189Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "4ca4ca99140b22d80ee0669ddea18d6ba730501136be950d2794b40d615c31d4",
+      "Text": "个已设置翻译",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394223Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "4ca4ca99140b22d80ee0669ddea18d6ba730501136be950d2794b40d615c31d4",
+      "Text": "個已設定翻譯",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394262Z",
       "Suggestions": [],
       "Comments": []
     }

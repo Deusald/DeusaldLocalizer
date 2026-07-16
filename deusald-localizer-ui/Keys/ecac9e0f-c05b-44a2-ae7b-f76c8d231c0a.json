@@ -4,7 +4,7 @@
   "KeyName": "selectAll",
   "Description": "Link button that selects all update options.",
   "CreatedAt": "2026-07-16T12:48:41.5603543Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7102084Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2390296Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.710206Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "1fc9a387654d410febd202b81bddbe62d38368260b69b9f73ee6630164536bdf",
+      "Text": "Vybrat vše",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.238994Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "1fc9a387654d410febd202b81bddbe62d38368260b69b9f73ee6630164536bdf",
+      "Text": "Alle auswählen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2389963Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "1fc9a387654d410febd202b81bddbe62d38368260b69b9f73ee6630164536bdf",
+      "Text": "Seleccionar todo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2389985Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "1fc9a387654d410febd202b81bddbe62d38368260b69b9f73ee6630164536bdf",
+      "Text": "Tout sélectionner",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2390024Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "1fc9a387654d410febd202b81bddbe62d38368260b69b9f73ee6630164536bdf",
+      "Text": "Seleziona tutto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2390047Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "1fc9a387654d410febd202b81bddbe62d38368260b69b9f73ee6630164536bdf",
+      "Text": "すべて選択",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2390069Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "1fc9a387654d410febd202b81bddbe62d38368260b69b9f73ee6630164536bdf",
+      "Text": "모두 선택",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2390135Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "1fc9a387654d410febd202b81bddbe62d38368260b69b9f73ee6630164536bdf",
+      "Text": "Selecionar tudo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2390182Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "1fc9a387654d410febd202b81bddbe62d38368260b69b9f73ee6630164536bdf",
+      "Text": "Выбрать всё",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2390203Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "1fc9a387654d410febd202b81bddbe62d38368260b69b9f73ee6630164536bdf",
+      "Text": "全选",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2390258Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "1fc9a387654d410febd202b81bddbe62d38368260b69b9f73ee6630164536bdf",
+      "Text": "全選",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2390281Z",
       "Suggestions": [],
       "Comments": []
     }

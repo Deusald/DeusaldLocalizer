@@ -4,7 +4,7 @@
   "KeyName": "syncedFiles",
   "Description": "Sync result message reporting how many files changed.",
   "CreatedAt": "2026-07-16T12:48:41.5590474Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7098648Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2359859Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7098629Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "9c31c3fdd3a658d09d12576f5d7c40d48ff60d600f39c8af7563b2263ae492ac",
+      "Text": "Synchronizováno {count} souborů",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2359372Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "9c31c3fdd3a658d09d12576f5d7c40d48ff60d600f39c8af7563b2263ae492ac",
+      "Text": "{count} Datei(en) synchronisiert",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2359472Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "9c31c3fdd3a658d09d12576f5d7c40d48ff60d600f39c8af7563b2263ae492ac",
+      "Text": "{count} archivo(s) sincronizado(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2359516Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "9c31c3fdd3a658d09d12576f5d7c40d48ff60d600f39c8af7563b2263ae492ac",
+      "Text": "{count} fichier(s) synchronisé(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2359564Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "9c31c3fdd3a658d09d12576f5d7c40d48ff60d600f39c8af7563b2263ae492ac",
+      "Text": "{count} file sincronizzato/i",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.23596Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "9c31c3fdd3a658d09d12576f5d7c40d48ff60d600f39c8af7563b2263ae492ac",
+      "Text": "{count}件のファイルを同期しました",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.235964Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "9c31c3fdd3a658d09d12576f5d7c40d48ff60d600f39c8af7563b2263ae492ac",
+      "Text": "파일 {count}개 동기화됨",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2359684Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "9c31c3fdd3a658d09d12576f5d7c40d48ff60d600f39c8af7563b2263ae492ac",
+      "Text": "{count} arquivo(s) sincronizado(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2359764Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "9c31c3fdd3a658d09d12576f5d7c40d48ff60d600f39c8af7563b2263ae492ac",
+      "Text": "Синхронизировано {count} файлов",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2359788Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "9c31c3fdd3a658d09d12576f5d7c40d48ff60d600f39c8af7563b2263ae492ac",
+      "Text": "已同步 {count} 个文件",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2359816Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "9c31c3fdd3a658d09d12576f5d7c40d48ff60d600f39c8af7563b2263ae492ac",
+      "Text": "已同步 {count} 個檔案",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2359844Z",
       "Suggestions": [],
       "Comments": []
     }

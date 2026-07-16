@@ -4,7 +4,7 @@
   "KeyName": "include",
   "Description": "Segment button to include a flag or tag.",
   "CreatedAt": "2026-07-16T12:48:41.5609525Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7104569Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2417465Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7104549Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "7285576bdacf86fe37274d3d0d399c29b4be2959005f60ac0729615d8fca9186",
+      "Text": "Zahrnout",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2417003Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "7285576bdacf86fe37274d3d0d399c29b4be2959005f60ac0729615d8fca9186",
+      "Text": "Einschließen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2417026Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "7285576bdacf86fe37274d3d0d399c29b4be2959005f60ac0729615d8fca9186",
+      "Text": "Incluir",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2417048Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "7285576bdacf86fe37274d3d0d399c29b4be2959005f60ac0729615d8fca9186",
+      "Text": "Inclure",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2417092Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "7285576bdacf86fe37274d3d0d399c29b4be2959005f60ac0729615d8fca9186",
+      "Text": "Includi",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2417129Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "7285576bdacf86fe37274d3d0d399c29b4be2959005f60ac0729615d8fca9186",
+      "Text": "含める",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2417166Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "7285576bdacf86fe37274d3d0d399c29b4be2959005f60ac0729615d8fca9186",
+      "Text": "포함",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2417208Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "7285576bdacf86fe37274d3d0d399c29b4be2959005f60ac0729615d8fca9186",
+      "Text": "Incluir",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.241732Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "7285576bdacf86fe37274d3d0d399c29b4be2959005f60ac0729615d8fca9186",
+      "Text": "Включить",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2417361Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "7285576bdacf86fe37274d3d0d399c29b4be2959005f60ac0729615d8fca9186",
+      "Text": "包含",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2417398Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "7285576bdacf86fe37274d3d0d399c29b4be2959005f60ac0729615d8fca9186",
+      "Text": "包含",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2417449Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "addDescription",
   "Description": "Clickable prompt shown to admins when a key has no description.",
   "CreatedAt": "2026-07-16T12:48:41.5577658Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7083291Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2225577Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7083265Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c7200c2863966d7fb00d06f90adc1ae81f529851a72a49f6f2d611f78e8f5d20",
+      "Text": "Přidat popis…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225212Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c7200c2863966d7fb00d06f90adc1ae81f529851a72a49f6f2d611f78e8f5d20",
+      "Text": "Beschreibung hinzufügen…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225255Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c7200c2863966d7fb00d06f90adc1ae81f529851a72a49f6f2d611f78e8f5d20",
+      "Text": "Añadir una descripción…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225302Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c7200c2863966d7fb00d06f90adc1ae81f529851a72a49f6f2d611f78e8f5d20",
+      "Text": "Ajouter une description…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225341Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c7200c2863966d7fb00d06f90adc1ae81f529851a72a49f6f2d611f78e8f5d20",
+      "Text": "Aggiungi una descrizione…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.222538Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c7200c2863966d7fb00d06f90adc1ae81f529851a72a49f6f2d611f78e8f5d20",
+      "Text": "説明を追加…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.222542Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c7200c2863966d7fb00d06f90adc1ae81f529851a72a49f6f2d611f78e8f5d20",
+      "Text": "설명 추가…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225446Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c7200c2863966d7fb00d06f90adc1ae81f529851a72a49f6f2d611f78e8f5d20",
+      "Text": "Adicionar uma descrição…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225492Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c7200c2863966d7fb00d06f90adc1ae81f529851a72a49f6f2d611f78e8f5d20",
+      "Text": "Добавить описание…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225518Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c7200c2863966d7fb00d06f90adc1ae81f529851a72a49f6f2d611f78e8f5d20",
+      "Text": "添加描述…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225541Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c7200c2863966d7fb00d06f90adc1ae81f529851a72a49f6f2d611f78e8f5d20",
+      "Text": "新增描述…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2225563Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "deleteTooltip",
   "Description": "Tooltip on a project card's delete button (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793298Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7077913Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2189077Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7077897Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "674ddf7658e8a606000658807f4354920efd184fa9154ef3c1f820577724e925",
+      "Text": "Smazat z tohoto prohlížeče",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188596Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "674ddf7658e8a606000658807f4354920efd184fa9154ef3c1f820577724e925",
+      "Text": "Aus diesem Browser löschen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188639Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "674ddf7658e8a606000658807f4354920efd184fa9154ef3c1f820577724e925",
+      "Text": "Eliminar de este navegador",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188681Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "674ddf7658e8a606000658807f4354920efd184fa9154ef3c1f820577724e925",
+      "Text": "Supprimer de ce navigateur",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188719Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "674ddf7658e8a606000658807f4354920efd184fa9154ef3c1f820577724e925",
+      "Text": "Elimina da questo browser",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188767Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "674ddf7658e8a606000658807f4354920efd184fa9154ef3c1f820577724e925",
+      "Text": "このブラウザーから削除",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188806Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "674ddf7658e8a606000658807f4354920efd184fa9154ef3c1f820577724e925",
+      "Text": "이 브라우저에서 삭제",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188841Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "674ddf7658e8a606000658807f4354920efd184fa9154ef3c1f820577724e925",
+      "Text": "Excluir deste navegador",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188927Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "674ddf7658e8a606000658807f4354920efd184fa9154ef3c1f820577724e925",
+      "Text": "Удалить из этого браузера",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2188967Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "674ddf7658e8a606000658807f4354920efd184fa9154ef3c1f820577724e925",
+      "Text": "从此浏览器删除",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2189008Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "674ddf7658e8a606000658807f4354920efd184fa9154ef3c1f820577724e925",
+      "Text": "從此瀏覽器刪除",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.218905Z",
       "Suggestions": [],
       "Comments": []
     }

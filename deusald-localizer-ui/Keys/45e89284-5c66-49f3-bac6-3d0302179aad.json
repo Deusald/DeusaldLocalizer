@@ -4,7 +4,7 @@
   "KeyName": "noCategoriesFound",
   "Description": "Empty state when no categories match the search.",
   "CreatedAt": "2026-07-16T12:48:41.5576074Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7093526Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2319747Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7093505Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "f66ce16e7e23aeff03b12a999d84af8b8ffc430a8743e04b2ce1697de957fc12",
+      "Text": "Nebyly nalezeny žádné kategorie. Nejprve jednu vytvořte ve sloupci Klíče.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319389Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "f66ce16e7e23aeff03b12a999d84af8b8ffc430a8743e04b2ce1697de957fc12",
+      "Text": "Keine Kategorien gefunden. Erstelle zuerst eine in der Spalte Schlüssel.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319433Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "f66ce16e7e23aeff03b12a999d84af8b8ffc430a8743e04b2ce1697de957fc12",
+      "Text": "No se encontraron categorías. Crea una desde la columna Claves primero.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319474Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "f66ce16e7e23aeff03b12a999d84af8b8ffc430a8743e04b2ce1697de957fc12",
+      "Text": "Aucune catégorie trouvée. Créez-en une dans la colonne Clés d'abord.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319522Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "f66ce16e7e23aeff03b12a999d84af8b8ffc430a8743e04b2ce1697de957fc12",
+      "Text": "Nessuna categoria trovata. Creane prima una dalla colonna Chiavi.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319558Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "f66ce16e7e23aeff03b12a999d84af8b8ffc430a8743e04b2ce1697de957fc12",
+      "Text": "カテゴリが見つかりません。まず「キー」列で作成してください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319582Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "f66ce16e7e23aeff03b12a999d84af8b8ffc430a8743e04b2ce1697de957fc12",
+      "Text": "카테고리를 찾을 수 없습니다. 먼저 키 열에서 하나를 만드세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319613Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "f66ce16e7e23aeff03b12a999d84af8b8ffc430a8743e04b2ce1697de957fc12",
+      "Text": "Nenhuma categoria encontrada. Crie uma na coluna Chaves primeiro.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319661Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "f66ce16e7e23aeff03b12a999d84af8b8ffc430a8743e04b2ce1697de957fc12",
+      "Text": "Категории не найдены. Сначала создайте одну в столбце Ключи.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319684Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "f66ce16e7e23aeff03b12a999d84af8b8ffc430a8743e04b2ce1697de957fc12",
+      "Text": "未找到类别。请先在“键”列中创建一个。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.231971Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "f66ce16e7e23aeff03b12a999d84af8b8ffc430a8743e04b2ce1697de957fc12",
+      "Text": "找不到分類。請先在「索引鍵」欄中建立一個。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319733Z",
       "Suggestions": [],
       "Comments": []
     }

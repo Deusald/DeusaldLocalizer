@@ -4,7 +4,7 @@
   "KeyName": "addCategory",
   "Description": "Button that opens the new category modal.",
   "CreatedAt": "2026-07-16T12:48:41.5572314Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7090097Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2285241Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7090076Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "aafdf428fd0256ea3cfadda7cdd0d520470fb7eb3ef17a61ecad8c27c2a9e402",
+      "Text": "Přidat kategorii",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2284314Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "aafdf428fd0256ea3cfadda7cdd0d520470fb7eb3ef17a61ecad8c27c2a9e402",
+      "Text": "Kategorie hinzufügen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2284354Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "aafdf428fd0256ea3cfadda7cdd0d520470fb7eb3ef17a61ecad8c27c2a9e402",
+      "Text": "Añadir categoría",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2284394Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "aafdf428fd0256ea3cfadda7cdd0d520470fb7eb3ef17a61ecad8c27c2a9e402",
+      "Text": "Ajouter une catégorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2284438Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "aafdf428fd0256ea3cfadda7cdd0d520470fb7eb3ef17a61ecad8c27c2a9e402",
+      "Text": "Aggiungi categoria",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2284475Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "aafdf428fd0256ea3cfadda7cdd0d520470fb7eb3ef17a61ecad8c27c2a9e402",
+      "Text": "カテゴリを追加",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2284512Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "aafdf428fd0256ea3cfadda7cdd0d520470fb7eb3ef17a61ecad8c27c2a9e402",
+      "Text": "카테고리 추가",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2284556Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "aafdf428fd0256ea3cfadda7cdd0d520470fb7eb3ef17a61ecad8c27c2a9e402",
+      "Text": "Adicionar categoria",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2284632Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "aafdf428fd0256ea3cfadda7cdd0d520470fb7eb3ef17a61ecad8c27c2a9e402",
+      "Text": "Добавить категорию",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2284669Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "aafdf428fd0256ea3cfadda7cdd0d520470fb7eb3ef17a61ecad8c27c2a9e402",
+      "Text": "添加类别",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2284713Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "aafdf428fd0256ea3cfadda7cdd0d520470fb7eb3ef17a61ecad8c27c2a9e402",
+      "Text": "新增分類",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2284752Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "subBadge",
   "Description": "Badge marking a sub-language (variant).",
   "CreatedAt": "2026-07-16T12:48:41.5568557Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7095776Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2337271Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7095756Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "ea1fae60815a913d2eb3749738be870370ce51b8ae845b9d0209a446a2e90082",
+      "Text": "POD",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "ea1fae60815a913d2eb3749738be870370ce51b8ae845b9d0209a446a2e90082",
+      "Text": "SUB",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.233703Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "ea1fae60815a913d2eb3749738be870370ce51b8ae845b9d0209a446a2e90082",
+      "Text": "SUB",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337052Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "ea1fae60815a913d2eb3749738be870370ce51b8ae845b9d0209a446a2e90082",
+      "Text": "SUB",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337072Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "ea1fae60815a913d2eb3749738be870370ce51b8ae845b9d0209a446a2e90082",
+      "Text": "SUB",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337093Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "ea1fae60815a913d2eb3749738be870370ce51b8ae845b9d0209a446a2e90082",
+      "Text": "サブ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337118Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "ea1fae60815a913d2eb3749738be870370ce51b8ae845b9d0209a446a2e90082",
+      "Text": "하위",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337142Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "ea1fae60815a913d2eb3749738be870370ce51b8ae845b9d0209a446a2e90082",
+      "Text": "SUB",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337185Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "ea1fae60815a913d2eb3749738be870370ce51b8ae845b9d0209a446a2e90082",
+      "Text": "ПОД",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337213Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "ea1fae60815a913d2eb3749738be870370ce51b8ae845b9d0209a446a2e90082",
+      "Text": "子",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337236Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "ea1fae60815a913d2eb3749738be870370ce51b8ae845b9d0209a446a2e90082",
+      "Text": "子",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337257Z",
       "Suggestions": [],
       "Comments": []
     }

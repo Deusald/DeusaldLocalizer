@@ -4,7 +4,7 @@
   "KeyName": "mustBelongToCategory",
   "Description": "Warning body explaining that a category is required before adding a key.",
   "CreatedAt": "2026-07-16T12:48:41.5575423Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7093369Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2318426Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7093347Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "b5a8c4e17fa8313a55f2497ff493157dc5bb05ebdb767fbb01ca25c540aa8c3d",
+      "Text": "Klíč musí patřit do kategorie. Před přidáním klíče vytvořte alespoň jednu kategorii ve sloupci Klíče.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2317948Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "b5a8c4e17fa8313a55f2497ff493157dc5bb05ebdb767fbb01ca25c540aa8c3d",
+      "Text": "Ein Schlüssel muss zu einer Kategorie gehören. Erstelle zuerst mindestens eine Kategorie in der Spalte Schlüssel, bevor du einen Schlüssel hinzufügst.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2317979Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "b5a8c4e17fa8313a55f2497ff493157dc5bb05ebdb767fbb01ca25c540aa8c3d",
+      "Text": "Una clave debe pertenecer a una categoría. Crea al menos una categoría desde la columna Claves antes de añadir una clave.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2318002Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "b5a8c4e17fa8313a55f2497ff493157dc5bb05ebdb767fbb01ca25c540aa8c3d",
+      "Text": "Une clé doit appartenir à une catégorie. Créez au moins une catégorie dans la colonne Clés avant d'ajouter une clé.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2318031Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "b5a8c4e17fa8313a55f2497ff493157dc5bb05ebdb767fbb01ca25c540aa8c3d",
+      "Text": "Una chiave deve appartenere a una categoria. Crea almeno una categoria dalla colonna Chiavi prima di aggiungere una chiave.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2318057Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "b5a8c4e17fa8313a55f2497ff493157dc5bb05ebdb767fbb01ca25c540aa8c3d",
+      "Text": "キーはカテゴリに属している必要があります。キーを追加する前に、「キー」列で少なくとも1つのカテゴリを作成してください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.231808Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "b5a8c4e17fa8313a55f2497ff493157dc5bb05ebdb767fbb01ca25c540aa8c3d",
+      "Text": "키는 카테고리에 속해야 합니다. 키를 추가하기 전에 키 열에서 카테고리를 하나 이상 만드세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2318107Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "b5a8c4e17fa8313a55f2497ff493157dc5bb05ebdb767fbb01ca25c540aa8c3d",
+      "Text": "Uma chave deve pertencer a uma categoria. Crie pelo menos uma categoria na coluna Chaves antes de adicionar uma chave.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2318153Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "b5a8c4e17fa8313a55f2497ff493157dc5bb05ebdb767fbb01ca25c540aa8c3d",
+      "Text": "Ключ должен принадлежать категории. Прежде чем добавить ключ, создайте хотя бы одну категорию в столбце Ключи.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2318175Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "b5a8c4e17fa8313a55f2497ff493157dc5bb05ebdb767fbb01ca25c540aa8c3d",
+      "Text": "键必须属于某个类别。在添加键之前，请先在“键”列中创建至少一个类别。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2318382Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "b5a8c4e17fa8313a55f2497ff493157dc5bb05ebdb767fbb01ca25c540aa8c3d",
+      "Text": "索引鍵必須屬於某個分類。在新增索引鍵之前，請先在「索引鍵」欄中建立至少一個分類。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2318411Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "noMentions",
   "Description": "Empty state in the notifications panel.",
   "CreatedAt": "2026-07-16T12:48:41.5598509Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7106214Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2433753Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7106194Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "7cba971e2f8f36a3969425f30ce94645c118b7b9e6b74b6fa3551e7c257037ef",
+      "Text": "Zatím vás nikdo nezmínil.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2433376Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "7cba971e2f8f36a3969425f30ce94645c118b7b9e6b74b6fa3551e7c257037ef",
+      "Text": "Dich hat noch niemand erwähnt.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2433403Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "7cba971e2f8f36a3969425f30ce94645c118b7b9e6b74b6fa3551e7c257037ef",
+      "Text": "Nadie te ha mencionado todavía.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2433451Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "7cba971e2f8f36a3969425f30ce94645c118b7b9e6b74b6fa3551e7c257037ef",
+      "Text": "Personne ne vous a encore mentionné.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2433474Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "7cba971e2f8f36a3969425f30ce94645c118b7b9e6b74b6fa3551e7c257037ef",
+      "Text": "Nessuno ti ha ancora menzionato.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2433497Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "7cba971e2f8f36a3969425f30ce94645c118b7b9e6b74b6fa3551e7c257037ef",
+      "Text": "まだ誰もあなたをメンションしていません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2433519Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "7cba971e2f8f36a3969425f30ce94645c118b7b9e6b74b6fa3551e7c257037ef",
+      "Text": "아직 아무도 회원님을 멘션하지 않았습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.243357Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "7cba971e2f8f36a3969425f30ce94645c118b7b9e6b74b6fa3551e7c257037ef",
+      "Text": "Ninguém mencionou você ainda.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2433615Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "7cba971e2f8f36a3969425f30ce94645c118b7b9e6b74b6fa3551e7c257037ef",
+      "Text": "Вас пока никто не упоминал.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2433637Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "7cba971e2f8f36a3969425f30ce94645c118b7b9e6b74b6fa3551e7c257037ef",
+      "Text": "还没有人提及你。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2433688Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "7cba971e2f8f36a3969425f30ce94645c118b7b9e6b74b6fa3551e7c257037ef",
+      "Text": "還沒有人提及你。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2433725Z",
       "Suggestions": [],
       "Comments": []
     }

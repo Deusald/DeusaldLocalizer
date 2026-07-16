@@ -4,7 +4,7 @@
   "KeyName": "export",
   "Description": "Tooltip on the export button.",
   "CreatedAt": "2026-07-16T12:48:41.5589211Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7096739Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2344549Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7096714Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "0583ea8d0233a88c1382f9f2314b9186e52d24a714ca23427a353a4d8e18fbbc",
+      "Text": "Exportovat (Excel nebo C#)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344273Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "0583ea8d0233a88c1382f9f2314b9186e52d24a714ca23427a353a4d8e18fbbc",
+      "Text": "Exportieren (Excel oder C#)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344305Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "0583ea8d0233a88c1382f9f2314b9186e52d24a714ca23427a353a4d8e18fbbc",
+      "Text": "Exportar (Excel o C#)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344328Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "0583ea8d0233a88c1382f9f2314b9186e52d24a714ca23427a353a4d8e18fbbc",
+      "Text": "Exporter (Excel ou C#)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.234435Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "0583ea8d0233a88c1382f9f2314b9186e52d24a714ca23427a353a4d8e18fbbc",
+      "Text": "Esporta (Excel o C#)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344371Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "0583ea8d0233a88c1382f9f2314b9186e52d24a714ca23427a353a4d8e18fbbc",
+      "Text": "エクスポート（ExcelまたはC#）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344397Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "0583ea8d0233a88c1382f9f2314b9186e52d24a714ca23427a353a4d8e18fbbc",
+      "Text": "내보내기 (Excel 또는 C#)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.234442Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "0583ea8d0233a88c1382f9f2314b9186e52d24a714ca23427a353a4d8e18fbbc",
+      "Text": "Exportar (Excel ou C#)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344462Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "0583ea8d0233a88c1382f9f2314b9186e52d24a714ca23427a353a4d8e18fbbc",
+      "Text": "Экспорт (Excel или C#)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.234449Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "0583ea8d0233a88c1382f9f2314b9186e52d24a714ca23427a353a4d8e18fbbc",
+      "Text": "导出（Excel 或 C#）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344513Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "0583ea8d0233a88c1382f9f2314b9186e52d24a714ca23427a353a4d8e18fbbc",
+      "Text": "匯出（Excel 或 C#）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2344535Z",
       "Suggestions": [],
       "Comments": []
     }

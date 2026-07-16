@@ -4,7 +4,7 @@
   "KeyName": "sourceReadonlyHint",
   "Description": "Hint that the source is read-only unless the source language is selected",
   "CreatedAt": "2026-07-16T12:48:41.5581327Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7087566Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2254624Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7087544Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "405902bdb86a053bb2f8a3cd414d32a20c308a8bea316846a6828b2769a77d63",
+      "Text": "jen ke čtení — pro úpravu přepněte na {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2254133Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "405902bdb86a053bb2f8a3cd414d32a20c308a8bea316846a6828b2769a77d63",
+      "Text": "schreibgeschützt — wechsle zu {lang}, um zu bearbeiten",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2254186Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "405902bdb86a053bb2f8a3cd414d32a20c308a8bea316846a6828b2769a77d63",
+      "Text": "solo lectura: cambia a {lang} para editar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2254235Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "405902bdb86a053bb2f8a3cd414d32a20c308a8bea316846a6828b2769a77d63",
+      "Text": "lecture seule — passez à {lang} pour modifier",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2254272Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "405902bdb86a053bb2f8a3cd414d32a20c308a8bea316846a6828b2769a77d63",
+      "Text": "sola lettura — passa a {lang} per modificare",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2254311Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "405902bdb86a053bb2f8a3cd414d32a20c308a8bea316846a6828b2769a77d63",
+      "Text": "読み取り専用 — 編集するには{lang}に切り替えてください",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2254347Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "405902bdb86a053bb2f8a3cd414d32a20c308a8bea316846a6828b2769a77d63",
+      "Text": "읽기 전용 — 편집하려면 {lang}(으)로 전환하세요",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2254396Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "405902bdb86a053bb2f8a3cd414d32a20c308a8bea316846a6828b2769a77d63",
+      "Text": "somente leitura — mude para {lang} para editar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2254475Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "405902bdb86a053bb2f8a3cd414d32a20c308a8bea316846a6828b2769a77d63",
+      "Text": "только чтение — переключитесь на {lang} для редактирования",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2254514Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "405902bdb86a053bb2f8a3cd414d32a20c308a8bea316846a6828b2769a77d63",
+      "Text": "只读——切换到 {lang} 以编辑",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2254558Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "405902bdb86a053bb2f8a3cd414d32a20c308a8bea316846a6828b2769a77d63",
+      "Text": "唯讀——切換至 {lang} 以編輯",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2254596Z",
       "Suggestions": [],
       "Comments": []
     }

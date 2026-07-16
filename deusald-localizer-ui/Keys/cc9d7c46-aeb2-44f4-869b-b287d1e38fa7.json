@@ -4,7 +4,7 @@
   "KeyName": "editMember",
   "Description": "Form title and button tooltip for editing an existing member.",
   "CreatedAt": "2026-07-16T12:48:41.5592453Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7110422Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2479093Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7110398Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "a07deaf5beb8e62b77c15f3dd1f576aa206a77c554bdd0abfbeffd6004ac74b5",
+      "Text": "Upravit člena",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478756Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a07deaf5beb8e62b77c15f3dd1f576aa206a77c554bdd0abfbeffd6004ac74b5",
+      "Text": "Mitglied bearbeiten",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.247878Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "a07deaf5beb8e62b77c15f3dd1f576aa206a77c554bdd0abfbeffd6004ac74b5",
+      "Text": "Editar miembro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478803Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a07deaf5beb8e62b77c15f3dd1f576aa206a77c554bdd0abfbeffd6004ac74b5",
+      "Text": "Modifier le membre",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478849Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "a07deaf5beb8e62b77c15f3dd1f576aa206a77c554bdd0abfbeffd6004ac74b5",
+      "Text": "Modifica membro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478871Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "a07deaf5beb8e62b77c15f3dd1f576aa206a77c554bdd0abfbeffd6004ac74b5",
+      "Text": "メンバーを編集",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478892Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "a07deaf5beb8e62b77c15f3dd1f576aa206a77c554bdd0abfbeffd6004ac74b5",
+      "Text": "멤버 편집",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478914Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "a07deaf5beb8e62b77c15f3dd1f576aa206a77c554bdd0abfbeffd6004ac74b5",
+      "Text": "Editar membro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2478985Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "a07deaf5beb8e62b77c15f3dd1f576aa206a77c554bdd0abfbeffd6004ac74b5",
+      "Text": "Редактировать участника",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2479011Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "a07deaf5beb8e62b77c15f3dd1f576aa206a77c554bdd0abfbeffd6004ac74b5",
+      "Text": "编辑成员",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2479033Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "a07deaf5beb8e62b77c15f3dd1f576aa206a77c554bdd0abfbeffd6004ac74b5",
+      "Text": "編輯成員",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2479079Z",
       "Suggestions": [],
       "Comments": []
     }

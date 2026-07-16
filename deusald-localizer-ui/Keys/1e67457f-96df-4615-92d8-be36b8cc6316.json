@@ -4,7 +4,7 @@
   "KeyName": "projectIdHint",
   "Description": "Hint next to the Project ID label",
   "CreatedAt": "2026-07-16T12:48:41.5612001Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7072924Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2151167Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7072907Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "0da4575d8d75c4fa03cd2bbfcf384196d0b409871a373303038c5d3074b3d428",
+      "Text": "jedinečné ID projektu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2150703Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "0da4575d8d75c4fa03cd2bbfcf384196d0b409871a373303038c5d3074b3d428",
+      "Text": "die eindeutige ID des Projekts",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2150746Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "0da4575d8d75c4fa03cd2bbfcf384196d0b409871a373303038c5d3074b3d428",
+      "Text": "el id único del proyecto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2150792Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "0da4575d8d75c4fa03cd2bbfcf384196d0b409871a373303038c5d3074b3d428",
+      "Text": "l'identifiant unique du projet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2150832Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "0da4575d8d75c4fa03cd2bbfcf384196d0b409871a373303038c5d3074b3d428",
+      "Text": "l'id univoco del progetto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2150875Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "0da4575d8d75c4fa03cd2bbfcf384196d0b409871a373303038c5d3074b3d428",
+      "Text": "プロジェクトの一意のID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.215091Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "0da4575d8d75c4fa03cd2bbfcf384196d0b409871a373303038c5d3074b3d428",
+      "Text": "프로젝트의 고유 ID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.215095Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "0da4575d8d75c4fa03cd2bbfcf384196d0b409871a373303038c5d3074b3d428",
+      "Text": "o id exclusivo do projeto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2151028Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "0da4575d8d75c4fa03cd2bbfcf384196d0b409871a373303038c5d3074b3d428",
+      "Text": "уникальный идентификатор проекта",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2151062Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "0da4575d8d75c4fa03cd2bbfcf384196d0b409871a373303038c5d3074b3d428",
+      "Text": "项目的唯一 ID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2151104Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "0da4575d8d75c4fa03cd2bbfcf384196d0b409871a373303038c5d3074b3d428",
+      "Text": "專案的唯一 ID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2151141Z",
       "Suggestions": [],
       "Comments": []
     }

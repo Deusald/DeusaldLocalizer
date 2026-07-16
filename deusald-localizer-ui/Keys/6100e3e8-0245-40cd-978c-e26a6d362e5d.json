@@ -4,7 +4,7 @@
   "KeyName": "suggestMineHint",
   "Description": "Hint explaining the Suggest mine option",
   "CreatedAt": "2026-07-16T12:48:41.5586298Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7083038Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2223736Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7083015Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "89366d5bb47cc149c822a42f8a7d555f4efa903654ffc48abbaa0b20521e7fe9",
+      "Text": "— ponechá verzi serveru a přidá vaši jako návrh k hlasování.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.222345Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "89366d5bb47cc149c822a42f8a7d555f4efa903654ffc48abbaa0b20521e7fe9",
+      "Text": "— behalte die Serverversion und füge deine als Vorschlag zur Abstimmung hinzu.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223477Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "89366d5bb47cc149c822a42f8a7d555f4efa903654ffc48abbaa0b20521e7fe9",
+      "Text": "— conserva la versión del servidor y añade la tuya como sugerencia para votar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223499Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "89366d5bb47cc149c822a42f8a7d555f4efa903654ffc48abbaa0b20521e7fe9",
+      "Text": "— garde la version du serveur et ajoute la vôtre comme suggestion à voter.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223526Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "89366d5bb47cc149c822a42f8a7d555f4efa903654ffc48abbaa0b20521e7fe9",
+      "Text": "— mantiene la versione del server e aggiunge la tua come suggerimento su cui votare.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.222355Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "89366d5bb47cc149c822a42f8a7d555f4efa903654ffc48abbaa0b20521e7fe9",
+      "Text": "— サーバーのバージョンを保持し、あなたのを投票用の提案として追加します。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223572Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "89366d5bb47cc149c822a42f8a7d555f4efa903654ffc48abbaa0b20521e7fe9",
+      "Text": "— 서버 버전을 유지하고 내 것을 투표용 제안으로 추가합니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223596Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "89366d5bb47cc149c822a42f8a7d555f4efa903654ffc48abbaa0b20521e7fe9",
+      "Text": "— mantém a versão do servidor e adiciona a sua como sugestão para votação.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223651Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "89366d5bb47cc149c822a42f8a7d555f4efa903654ffc48abbaa0b20521e7fe9",
+      "Text": "— сохраняет версию сервера и добавляет вашу как предложение для голосования.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223673Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "89366d5bb47cc149c822a42f8a7d555f4efa903654ffc48abbaa0b20521e7fe9",
+      "Text": "——保留服务器版本，并将你的添加为供投票的建议。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223695Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "89366d5bb47cc149c822a42f8a7d555f4efa903654ffc48abbaa0b20521e7fe9",
+      "Text": "——保留伺服器版本，並將你的新增為供投票的建議。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2223722Z",
       "Suggestions": [],
       "Comments": []
     }

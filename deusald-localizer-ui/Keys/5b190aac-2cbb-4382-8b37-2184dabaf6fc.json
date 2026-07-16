@@ -4,7 +4,7 @@
   "KeyName": "deleteEnum",
   "Description": "Button deleting the selected enum",
   "CreatedAt": "2026-07-16T12:48:41.5585771Z",
-  "UpdatedAt": "2026-07-16T13:07:17.708499Z",
+  "UpdatedAt": "2026-07-16T20:46:27.223447Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7084965Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "b524bacda0844ad74dcceb2bbd624dd880cb2f94569ce7f5a617882fdc3d54f5",
+      "Text": "Smazat výčet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234191Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "b524bacda0844ad74dcceb2bbd624dd880cb2f94569ce7f5a617882fdc3d54f5",
+      "Text": "Enum löschen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234214Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "b524bacda0844ad74dcceb2bbd624dd880cb2f94569ce7f5a617882fdc3d54f5",
+      "Text": "Eliminar enum",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234241Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "b524bacda0844ad74dcceb2bbd624dd880cb2f94569ce7f5a617882fdc3d54f5",
+      "Text": "Supprimer l'énumération",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234267Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "b524bacda0844ad74dcceb2bbd624dd880cb2f94569ce7f5a617882fdc3d54f5",
+      "Text": "Elimina enum",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234288Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "b524bacda0844ad74dcceb2bbd624dd880cb2f94569ce7f5a617882fdc3d54f5",
+      "Text": "列挙型を削除",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234309Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "b524bacda0844ad74dcceb2bbd624dd880cb2f94569ce7f5a617882fdc3d54f5",
+      "Text": "열거형 삭제",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234336Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "b524bacda0844ad74dcceb2bbd624dd880cb2f94569ce7f5a617882fdc3d54f5",
+      "Text": "Excluir enum",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.223438Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "b524bacda0844ad74dcceb2bbd624dd880cb2f94569ce7f5a617882fdc3d54f5",
+      "Text": "Удалить перечисление",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234402Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "b524bacda0844ad74dcceb2bbd624dd880cb2f94569ce7f5a617882fdc3d54f5",
+      "Text": "删除枚举",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234433Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "b524bacda0844ad74dcceb2bbd624dd880cb2f94569ce7f5a617882fdc3d54f5",
+      "Text": "刪除列舉",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234456Z",
       "Suggestions": [],
       "Comments": []
     }

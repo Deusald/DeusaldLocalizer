@@ -4,7 +4,7 @@
   "KeyName": "filterByFlagTag",
   "Description": "Title of the flag and tag filter panel.",
   "CreatedAt": "2026-07-16T12:48:41.5573465Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7093887Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2322411Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7093862Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "9737a4813b73c4f7f4ac374d9565471cecfe1eb23532b62e0b27876fe3163080",
+      "Text": "Filtrovat podle příznaku a štítku",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2322125Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "9737a4813b73c4f7f4ac374d9565471cecfe1eb23532b62e0b27876fe3163080",
+      "Text": "Nach Markierung & Tag filtern",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2322154Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "9737a4813b73c4f7f4ac374d9565471cecfe1eb23532b62e0b27876fe3163080",
+      "Text": "Filtrar por marca y etiqueta",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2322177Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "9737a4813b73c4f7f4ac374d9565471cecfe1eb23532b62e0b27876fe3163080",
+      "Text": "Filtrer par indicateur et étiquette",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2322198Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "9737a4813b73c4f7f4ac374d9565471cecfe1eb23532b62e0b27876fe3163080",
+      "Text": "Filtra per contrassegno e tag",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.232222Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "9737a4813b73c4f7f4ac374d9565471cecfe1eb23532b62e0b27876fe3163080",
+      "Text": "フラグとタグで絞り込み",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2322247Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "9737a4813b73c4f7f4ac374d9565471cecfe1eb23532b62e0b27876fe3163080",
+      "Text": "플래그 및 태그로 필터링",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2322269Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "9737a4813b73c4f7f4ac374d9565471cecfe1eb23532b62e0b27876fe3163080",
+      "Text": "Filtrar por sinalização e tag",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2322325Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "9737a4813b73c4f7f4ac374d9565471cecfe1eb23532b62e0b27876fe3163080",
+      "Text": "Фильтровать по флагу и тегу",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2322348Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "9737a4813b73c4f7f4ac374d9565471cecfe1eb23532b62e0b27876fe3163080",
+      "Text": "按标记和标签筛选",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.232237Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "9737a4813b73c4f7f4ac374d9565471cecfe1eb23532b62e0b27876fe3163080",
+      "Text": "依標記和標籤篩選",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2322393Z",
       "Suggestions": [],
       "Comments": []
     }

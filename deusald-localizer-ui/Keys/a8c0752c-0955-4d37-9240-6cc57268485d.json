@@ -4,7 +4,7 @@
   "KeyName": "storeInLabel",
   "Description": "Field label for the storage location picker",
   "CreatedAt": "2026-07-16T12:48:41.5612579Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7073242Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2154521Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7073227Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "ed5d6111aff737518035da8c9adf64a2742bfd43c2f75752d6d0ee033940d6cf",
+      "Text": "Uložit do",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2154068Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "ed5d6111aff737518035da8c9adf64a2742bfd43c2f75752d6d0ee033940d6cf",
+      "Text": "Speichern in",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2154167Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "ed5d6111aff737518035da8c9adf64a2742bfd43c2f75752d6d0ee033940d6cf",
+      "Text": "Guardar en",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2154214Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "ed5d6111aff737518035da8c9adf64a2742bfd43c2f75752d6d0ee033940d6cf",
+      "Text": "Enregistrer dans",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2154254Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "ed5d6111aff737518035da8c9adf64a2742bfd43c2f75752d6d0ee033940d6cf",
+      "Text": "Salva in",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2154305Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "ed5d6111aff737518035da8c9adf64a2742bfd43c2f75752d6d0ee033940d6cf",
+      "Text": "保存先",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2154346Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "ed5d6111aff737518035da8c9adf64a2742bfd43c2f75752d6d0ee033940d6cf",
+      "Text": "저장 위치",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2154382Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "ed5d6111aff737518035da8c9adf64a2742bfd43c2f75752d6d0ee033940d6cf",
+      "Text": "Salvar em",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2154433Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "ed5d6111aff737518035da8c9adf64a2742bfd43c2f75752d6d0ee033940d6cf",
+      "Text": "Сохранить в",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2154455Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "ed5d6111aff737518035da8c9adf64a2742bfd43c2f75752d6d0ee033940d6cf",
+      "Text": "保存到",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2154479Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "ed5d6111aff737518035da8c9adf64a2742bfd43c2f75752d6d0ee033940d6cf",
+      "Text": "儲存至",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2154501Z",
       "Suggestions": [],
       "Comments": []
     }

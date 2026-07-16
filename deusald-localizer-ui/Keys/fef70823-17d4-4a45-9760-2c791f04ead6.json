@@ -4,7 +4,7 @@
   "KeyName": "bannedHint",
   "Description": "Hint next to the ban toggle.",
   "CreatedAt": "2026-07-16T12:48:41.5593185Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7109466Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2471011Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7109445Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c8f04969960b71328f65d75fbe1a1b0978a161328d4fe455a53c0876590852a3",
+      "Text": "brání tomuto členovi v přispívání",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.247064Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c8f04969960b71328f65d75fbe1a1b0978a161328d4fe455a53c0876590852a3",
+      "Text": "hindert dieses Mitglied am Mitwirken",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470675Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c8f04969960b71328f65d75fbe1a1b0978a161328d4fe455a53c0876590852a3",
+      "Text": "impide que este miembro contribuya",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470714Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c8f04969960b71328f65d75fbe1a1b0978a161328d4fe455a53c0876590852a3",
+      "Text": "empêche ce membre de contribuer",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470738Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c8f04969960b71328f65d75fbe1a1b0978a161328d4fe455a53c0876590852a3",
+      "Text": "impedisce a questo membro di contribuire",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470759Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c8f04969960b71328f65d75fbe1a1b0978a161328d4fe455a53c0876590852a3",
+      "Text": "このメンバーの貢献を防ぎます",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470781Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c8f04969960b71328f65d75fbe1a1b0978a161328d4fe455a53c0876590852a3",
+      "Text": "이 멤버의 기여를 막습니다",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470844Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c8f04969960b71328f65d75fbe1a1b0978a161328d4fe455a53c0876590852a3",
+      "Text": "impede este membro de contribuir",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470893Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c8f04969960b71328f65d75fbe1a1b0978a161328d4fe455a53c0876590852a3",
+      "Text": "блокирует участие этого участника",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470915Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c8f04969960b71328f65d75fbe1a1b0978a161328d4fe455a53c0876590852a3",
+      "Text": "阻止此成员参与贡献",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.247097Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c8f04969960b71328f65d75fbe1a1b0978a161328d4fe455a53c0876590852a3",
+      "Text": "阻止此成員參與貢獻",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2470997Z",
       "Suggestions": [],
       "Comments": []
     }

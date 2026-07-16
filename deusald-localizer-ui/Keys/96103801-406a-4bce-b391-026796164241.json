@@ -4,7 +4,7 @@
   "KeyName": "newKey",
   "Description": "Modal title when creating a key.",
   "CreatedAt": "2026-07-16T12:48:41.5575185Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7093454Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2319344Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7093433Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "eda5496b306f05bcb316f3be409b4564497374702e46d8bbf1cca45bfa38fef1",
+      "Text": "Nový klíč",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2318873Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "eda5496b306f05bcb316f3be409b4564497374702e46d8bbf1cca45bfa38fef1",
+      "Text": "Neuer Schlüssel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2318932Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "eda5496b306f05bcb316f3be409b4564497374702e46d8bbf1cca45bfa38fef1",
+      "Text": "Nueva clave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2318956Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "eda5496b306f05bcb316f3be409b4564497374702e46d8bbf1cca45bfa38fef1",
+      "Text": "Nouvelle clé",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2318982Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "eda5496b306f05bcb316f3be409b4564497374702e46d8bbf1cca45bfa38fef1",
+      "Text": "Nuova chiave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319021Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "eda5496b306f05bcb316f3be409b4564497374702e46d8bbf1cca45bfa38fef1",
+      "Text": "新規キー",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319061Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "eda5496b306f05bcb316f3be409b4564497374702e46d8bbf1cca45bfa38fef1",
+      "Text": "새 키",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319101Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "eda5496b306f05bcb316f3be409b4564497374702e46d8bbf1cca45bfa38fef1",
+      "Text": "Nova chave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319194Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "eda5496b306f05bcb316f3be409b4564497374702e46d8bbf1cca45bfa38fef1",
+      "Text": "Новый ключ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319235Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "eda5496b306f05bcb316f3be409b4564497374702e46d8bbf1cca45bfa38fef1",
+      "Text": "新建键",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319276Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "eda5496b306f05bcb316f3be409b4564497374702e46d8bbf1cca45bfa38fef1",
+      "Text": "新增索引鍵",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319319Z",
       "Suggestions": [],
       "Comments": []
     }

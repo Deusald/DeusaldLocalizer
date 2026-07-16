@@ -4,7 +4,7 @@
   "KeyName": "syncFailed",
   "Description": "Sync result message when the sync failed; error details may follow.",
   "CreatedAt": "2026-07-16T12:48:41.559116Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7098731Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2360602Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7098711Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "abf3e80b5b4ceb363785b0064bb1747b459c5fdddaa090f49ea7b9ce41d83b16",
+      "Text": "Synchronizace selhala",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2359922Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "abf3e80b5b4ceb363785b0064bb1747b459c5fdddaa090f49ea7b9ce41d83b16",
+      "Text": "Synchronisierung fehlgeschlagen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2359949Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "abf3e80b5b4ceb363785b0064bb1747b459c5fdddaa090f49ea7b9ce41d83b16",
+      "Text": "Error de sincronización",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2359977Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "abf3e80b5b4ceb363785b0064bb1747b459c5fdddaa090f49ea7b9ce41d83b16",
+      "Text": "Échec de la synchronisation",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360011Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "abf3e80b5b4ceb363785b0064bb1747b459c5fdddaa090f49ea7b9ce41d83b16",
+      "Text": "Sincronizzazione non riuscita",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.236005Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "abf3e80b5b4ceb363785b0064bb1747b459c5fdddaa090f49ea7b9ce41d83b16",
+      "Text": "同期に失敗",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360088Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "abf3e80b5b4ceb363785b0064bb1747b459c5fdddaa090f49ea7b9ce41d83b16",
+      "Text": "동기화 실패",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.236013Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "abf3e80b5b4ceb363785b0064bb1747b459c5fdddaa090f49ea7b9ce41d83b16",
+      "Text": "Falha na sincronização",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360204Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "abf3e80b5b4ceb363785b0064bb1747b459c5fdddaa090f49ea7b9ce41d83b16",
+      "Text": "Ошибка синхронизации",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360241Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "abf3e80b5b4ceb363785b0064bb1747b459c5fdddaa090f49ea7b9ce41d83b16",
+      "Text": "同步失败",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360519Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "abf3e80b5b4ceb363785b0064bb1747b459c5fdddaa090f49ea7b9ce41d83b16",
+      "Text": "同步失敗",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2360577Z",
       "Suggestions": [],
       "Comments": []
     }

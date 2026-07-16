@@ -4,7 +4,7 @@
   "KeyName": "subId",
   "Description": "Detail row label for a change's sub id.",
   "CreatedAt": "2026-07-16T12:48:41.5601909Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7108489Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2463317Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.710847Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "a6706e03219f63651fe0d8f9d6f4b6d9873d18bdfb56fb43537f62890a104dd6",
+      "Text": "ID podřaz.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462986Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a6706e03219f63651fe0d8f9d6f4b6d9873d18bdfb56fb43537f62890a104dd6",
+      "Text": "Sub-ID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.246301Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "a6706e03219f63651fe0d8f9d6f4b6d9873d18bdfb56fb43537f62890a104dd6",
+      "Text": "ID sub",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463033Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a6706e03219f63651fe0d8f9d6f4b6d9873d18bdfb56fb43537f62890a104dd6",
+      "Text": "ID sous",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463055Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "a6706e03219f63651fe0d8f9d6f4b6d9873d18bdfb56fb43537f62890a104dd6",
+      "Text": "ID sub",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463101Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "a6706e03219f63651fe0d8f9d6f4b6d9873d18bdfb56fb43537f62890a104dd6",
+      "Text": "サブID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463122Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "a6706e03219f63651fe0d8f9d6f4b6d9873d18bdfb56fb43537f62890a104dd6",
+      "Text": "하위 ID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463145Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "a6706e03219f63651fe0d8f9d6f4b6d9873d18bdfb56fb43537f62890a104dd6",
+      "Text": "ID sub",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463216Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "a6706e03219f63651fe0d8f9d6f4b6d9873d18bdfb56fb43537f62890a104dd6",
+      "Text": "Доп. ID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463237Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "a6706e03219f63651fe0d8f9d6f4b6d9873d18bdfb56fb43537f62890a104dd6",
+      "Text": "子 ID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.246326Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "a6706e03219f63651fe0d8f9d6f4b6d9873d18bdfb56fb43537f62890a104dd6",
+      "Text": "子 ID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463303Z",
       "Suggestions": [],
       "Comments": []
     }

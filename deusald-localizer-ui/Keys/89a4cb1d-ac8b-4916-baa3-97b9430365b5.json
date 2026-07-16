@@ -4,7 +4,7 @@
   "KeyName": "deleteComment",
   "Description": "Tooltip on the delete-comment button",
   "CreatedAt": "2026-07-16T12:48:41.5587278Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7081658Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2216045Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7081636Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "e43811a170283c8ebe08b698097e8064f2cd53355ade98b43633378c695bbbad",
+      "Text": "Smazat komentář",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215769Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "e43811a170283c8ebe08b698097e8064f2cd53355ade98b43633378c695bbbad",
+      "Text": "Kommentar löschen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215794Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "e43811a170283c8ebe08b698097e8064f2cd53355ade98b43633378c695bbbad",
+      "Text": "Eliminar comentario",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215821Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "e43811a170283c8ebe08b698097e8064f2cd53355ade98b43633378c695bbbad",
+      "Text": "Supprimer le commentaire",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215843Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "e43811a170283c8ebe08b698097e8064f2cd53355ade98b43633378c695bbbad",
+      "Text": "Elimina commento",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215865Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "e43811a170283c8ebe08b698097e8064f2cd53355ade98b43633378c695bbbad",
+      "Text": "コメントを削除",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215887Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "e43811a170283c8ebe08b698097e8064f2cd53355ade98b43633378c695bbbad",
+      "Text": "댓글 삭제",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215914Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "e43811a170283c8ebe08b698097e8064f2cd53355ade98b43633378c695bbbad",
+      "Text": "Excluir comentário",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2215959Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "e43811a170283c8ebe08b698097e8064f2cd53355ade98b43633378c695bbbad",
+      "Text": "Удалить комментарий",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.221598Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "e43811a170283c8ebe08b698097e8064f2cd53355ade98b43633378c695bbbad",
+      "Text": "删除评论",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2216008Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "e43811a170283c8ebe08b698097e8064f2cd53355ade98b43633378c695bbbad",
+      "Text": "刪除註解",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.221603Z",
       "Suggestions": [],
       "Comments": []
     }

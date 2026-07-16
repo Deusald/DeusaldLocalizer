@@ -4,7 +4,7 @@
   "KeyName": "createNewKeys",
   "Description": "Checkbox label to create missing keys.",
   "CreatedAt": "2026-07-16T12:48:41.5603644Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7100796Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2381576Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7100775Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c973890a6e4060a261c5584ff1b7909b4f57540835e4488a0591214c922f3e82",
+      "Text": "Vytvořit klíče chybějící v projektu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2380276Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c973890a6e4060a261c5584ff1b7909b4f57540835e4488a0591214c922f3e82",
+      "Text": "Im Projekt fehlende Schlüssel erstellen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2380708Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c973890a6e4060a261c5584ff1b7909b4f57540835e4488a0591214c922f3e82",
+      "Text": "Crear claves que falten en el proyecto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2380733Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c973890a6e4060a261c5584ff1b7909b4f57540835e4488a0591214c922f3e82",
+      "Text": "Créer les clés absentes du projet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2380763Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c973890a6e4060a261c5584ff1b7909b4f57540835e4488a0591214c922f3e82",
+      "Text": "Crea le chiavi mancanti nel progetto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2380786Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c973890a6e4060a261c5584ff1b7909b4f57540835e4488a0591214c922f3e82",
+      "Text": "プロジェクトにないキーを作成",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2380809Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c973890a6e4060a261c5584ff1b7909b4f57540835e4488a0591214c922f3e82",
+      "Text": "프로젝트에 없는 키 만들기",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2381409Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c973890a6e4060a261c5584ff1b7909b4f57540835e4488a0591214c922f3e82",
+      "Text": "Criar chaves ausentes no projeto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2381483Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c973890a6e4060a261c5584ff1b7909b4f57540835e4488a0591214c922f3e82",
+      "Text": "Создать ключи, отсутствующие в проекте",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2381505Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c973890a6e4060a261c5584ff1b7909b4f57540835e4488a0591214c922f3e82",
+      "Text": "创建项目中缺失的键",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2381529Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c973890a6e4060a261c5584ff1b7909b4f57540835e4488a0591214c922f3e82",
+      "Text": "建立專案中缺少的索引鍵",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2381561Z",
       "Suggestions": [],
       "Comments": []
     }

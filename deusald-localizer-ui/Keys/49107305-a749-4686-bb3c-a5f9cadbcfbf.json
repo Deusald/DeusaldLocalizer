@@ -4,7 +4,7 @@
   "KeyName": "emptyTitle",
   "Description": "Empty-state title when no projects are stored (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793133Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7078184Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2191579Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7078168Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "f83c8065228656054f4646db9f4d257839aa4c47712f0a54e93fd5d8b6eb2302",
+      "Text": "Zatím žádné projekty",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191299Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "f83c8065228656054f4646db9f4d257839aa4c47712f0a54e93fd5d8b6eb2302",
+      "Text": "Noch keine Projekte",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191328Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "f83c8065228656054f4646db9f4d257839aa4c47712f0a54e93fd5d8b6eb2302",
+      "Text": "Aún no hay proyectos",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191351Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "f83c8065228656054f4646db9f4d257839aa4c47712f0a54e93fd5d8b6eb2302",
+      "Text": "Aucun projet pour l'instant",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191373Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "f83c8065228656054f4646db9f4d257839aa4c47712f0a54e93fd5d8b6eb2302",
+      "Text": "Ancora nessun progetto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191401Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "f83c8065228656054f4646db9f4d257839aa4c47712f0a54e93fd5d8b6eb2302",
+      "Text": "まだプロジェクトがありません",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191423Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "f83c8065228656054f4646db9f4d257839aa4c47712f0a54e93fd5d8b6eb2302",
+      "Text": "아직 프로젝트가 없습니다",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191447Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "f83c8065228656054f4646db9f4d257839aa4c47712f0a54e93fd5d8b6eb2302",
+      "Text": "Ainda não há projetos",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191493Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "f83c8065228656054f4646db9f4d257839aa4c47712f0a54e93fd5d8b6eb2302",
+      "Text": "Пока нет проектов",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191516Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "f83c8065228656054f4646db9f4d257839aa4c47712f0a54e93fd5d8b6eb2302",
+      "Text": "还没有项目",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191538Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "f83c8065228656054f4646db9f4d257839aa4c47712f0a54e93fd5d8b6eb2302",
+      "Text": "還沒有專案",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.219156Z",
       "Suggestions": [],
       "Comments": []
     }

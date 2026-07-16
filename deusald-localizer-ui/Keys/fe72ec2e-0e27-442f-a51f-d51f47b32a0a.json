@@ -4,7 +4,7 @@
   "KeyName": "csharpScript",
   "Description": "Format toggle button for C# script export.",
   "CreatedAt": "2026-07-16T12:48:41.5606774Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7103417Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2406723Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7103398Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "1885c7e8974cf44619cdc4aabe4a80e37744b99109f12c23fee07c0d9ddda95b",
+      "Text": "Skript C#",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.240537Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "1885c7e8974cf44619cdc4aabe4a80e37744b99109f12c23fee07c0d9ddda95b",
+      "Text": "C#-Skript",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2405422Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "1885c7e8974cf44619cdc4aabe4a80e37744b99109f12c23fee07c0d9ddda95b",
+      "Text": "Script C#",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2405445Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "1885c7e8974cf44619cdc4aabe4a80e37744b99109f12c23fee07c0d9ddda95b",
+      "Text": "Script C#",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2405466Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "1885c7e8974cf44619cdc4aabe4a80e37744b99109f12c23fee07c0d9ddda95b",
+      "Text": "Script C#",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2405491Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "1885c7e8974cf44619cdc4aabe4a80e37744b99109f12c23fee07c0d9ddda95b",
+      "Text": "C#スクリプト",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2405536Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "1885c7e8974cf44619cdc4aabe4a80e37744b99109f12c23fee07c0d9ddda95b",
+      "Text": "C# 스크립트",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2406543Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "1885c7e8974cf44619cdc4aabe4a80e37744b99109f12c23fee07c0d9ddda95b",
+      "Text": "Script C#",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2406608Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "1885c7e8974cf44619cdc4aabe4a80e37744b99109f12c23fee07c0d9ddda95b",
+      "Text": "Скрипт C#",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2406662Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "1885c7e8974cf44619cdc4aabe4a80e37744b99109f12c23fee07c0d9ddda95b",
+      "Text": "C# 脚本",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2406685Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "1885c7e8974cf44619cdc4aabe4a80e37744b99109f12c23fee07c0d9ddda95b",
+      "Text": "C# 指令碼",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2406708Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "seeWhatLastSyncChanged",
   "Description": "Tooltip on the recent-changes pill.",
   "CreatedAt": "2026-07-16T12:48:41.5588684Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7098346Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2357063Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7098326Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "a749c93abc302a3519acacabe25dc0e5ae344f20ddf5949cb210e57a2eddb9a3",
+      "Text": "Zobrazit, co změnila poslední synchronizace",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2356612Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a749c93abc302a3519acacabe25dc0e5ae344f20ddf5949cb210e57a2eddb9a3",
+      "Text": "Sieh, was die letzte Synchronisierung geändert hat",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2356727Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "a749c93abc302a3519acacabe25dc0e5ae344f20ddf5949cb210e57a2eddb9a3",
+      "Text": "Ver qué cambió la última sincronización",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2356771Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a749c93abc302a3519acacabe25dc0e5ae344f20ddf5949cb210e57a2eddb9a3",
+      "Text": "Voir ce que la dernière synchronisation a changé",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2356809Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "a749c93abc302a3519acacabe25dc0e5ae344f20ddf5949cb210e57a2eddb9a3",
+      "Text": "Vedi cosa ha cambiato l'ultima sincronizzazione",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2356849Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "a749c93abc302a3519acacabe25dc0e5ae344f20ddf5949cb210e57a2eddb9a3",
+      "Text": "前回の同期で変更された内容を確認",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2356894Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "a749c93abc302a3519acacabe25dc0e5ae344f20ddf5949cb210e57a2eddb9a3",
+      "Text": "마지막 동기화에서 변경된 내용 보기",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2356919Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "a749c93abc302a3519acacabe25dc0e5ae344f20ddf5949cb210e57a2eddb9a3",
+      "Text": "Veja o que a última sincronização alterou",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2356977Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "a749c93abc302a3519acacabe25dc0e5ae344f20ddf5949cb210e57a2eddb9a3",
+      "Text": "Посмотреть, что изменила последняя синхронизация",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2357Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "a749c93abc302a3519acacabe25dc0e5ae344f20ddf5949cb210e57a2eddb9a3",
+      "Text": "查看上次同步更改了什么",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2357023Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "a749c93abc302a3519acacabe25dc0e5ae344f20ddf5949cb210e57a2eddb9a3",
+      "Text": "檢視上次同步變更了什麼",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2357045Z",
       "Suggestions": [],
       "Comments": []
     }

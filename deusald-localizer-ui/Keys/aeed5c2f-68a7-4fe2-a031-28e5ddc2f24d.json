@@ -4,7 +4,7 @@
   "KeyName": "noKeysMatch",
   "Description": "Empty state when no keys match the filters.",
   "CreatedAt": "2026-07-16T12:48:41.5570211Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7089589Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2278498Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7089568Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "80216d14c9f4588c06ffc5cc55b0cdc998c20b64b6041804a294c841ab0e96a7",
+      "Text": "Žádné odpovídající klíče.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2278036Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "80216d14c9f4588c06ffc5cc55b0cdc998c20b64b6041804a294c841ab0e96a7",
+      "Text": "Keine passenden Schlüssel.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2278077Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "80216d14c9f4588c06ffc5cc55b0cdc998c20b64b6041804a294c841ab0e96a7",
+      "Text": "No hay claves coincidentes.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2278115Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "80216d14c9f4588c06ffc5cc55b0cdc998c20b64b6041804a294c841ab0e96a7",
+      "Text": "Aucune clé correspondante.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2278153Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "80216d14c9f4588c06ffc5cc55b0cdc998c20b64b6041804a294c841ab0e96a7",
+      "Text": "Nessuna chiave corrispondente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2278196Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "80216d14c9f4588c06ffc5cc55b0cdc998c20b64b6041804a294c841ab0e96a7",
+      "Text": "一致するキーがありません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2278234Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "80216d14c9f4588c06ffc5cc55b0cdc998c20b64b6041804a294c841ab0e96a7",
+      "Text": "일치하는 키가 없습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.227827Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "80216d14c9f4588c06ffc5cc55b0cdc998c20b64b6041804a294c841ab0e96a7",
+      "Text": "Nenhuma chave correspondente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2278349Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "80216d14c9f4588c06ffc5cc55b0cdc998c20b64b6041804a294c841ab0e96a7",
+      "Text": "Нет подходящих ключей.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2278389Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "80216d14c9f4588c06ffc5cc55b0cdc998c20b64b6041804a294c841ab0e96a7",
+      "Text": "没有匹配的键。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2278426Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "80216d14c9f4588c06ffc5cc55b0cdc998c20b64b6041804a294c841ab0e96a7",
+      "Text": "沒有相符的索引鍵。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2278465Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "usernamePlaceholder",
   "Description": "Placeholder example shown in the username input.",
   "CreatedAt": "2026-07-16T12:48:41.5592693Z",
-  "UpdatedAt": "2026-07-16T13:09:01.1233886Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2634367Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:09:01.1231748Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "d48722fc2e5ea8d2f4b54f8509312bb657f3396633ef60dc43370b5306b81ba9",
+      "Text": "jane.doe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2633519Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "d48722fc2e5ea8d2f4b54f8509312bb657f3396633ef60dc43370b5306b81ba9",
+      "Text": "jane.doe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2633608Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "d48722fc2e5ea8d2f4b54f8509312bb657f3396633ef60dc43370b5306b81ba9",
+      "Text": "jane.doe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2633647Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "d48722fc2e5ea8d2f4b54f8509312bb657f3396633ef60dc43370b5306b81ba9",
+      "Text": "jane.doe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2633988Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "d48722fc2e5ea8d2f4b54f8509312bb657f3396633ef60dc43370b5306b81ba9",
+      "Text": "jane.doe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2634058Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "d48722fc2e5ea8d2f4b54f8509312bb657f3396633ef60dc43370b5306b81ba9",
+      "Text": "jane.doe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2634104Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "d48722fc2e5ea8d2f4b54f8509312bb657f3396633ef60dc43370b5306b81ba9",
+      "Text": "jane.doe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2634145Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "d48722fc2e5ea8d2f4b54f8509312bb657f3396633ef60dc43370b5306b81ba9",
+      "Text": "jane.doe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2634224Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "d48722fc2e5ea8d2f4b54f8509312bb657f3396633ef60dc43370b5306b81ba9",
+      "Text": "jane.doe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2634259Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "d48722fc2e5ea8d2f4b54f8509312bb657f3396633ef60dc43370b5306b81ba9",
+      "Text": "jane.doe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2634298Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "d48722fc2e5ea8d2f4b54f8509312bb657f3396633ef60dc43370b5306b81ba9",
+      "Text": "jane.doe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2634333Z",
       "Suggestions": [],
       "Comments": []
     }

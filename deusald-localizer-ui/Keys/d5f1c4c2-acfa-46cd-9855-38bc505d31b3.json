@@ -4,7 +4,7 @@
   "KeyName": "placeholderSearch",
   "Description": "Placeholder in the add-tag search input.",
   "CreatedAt": "2026-07-16T12:48:41.5579393Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7081502Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2215022Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7081478Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "2d7c50c28de1d2b903e4f6d2689d32590049c683fccbd5d1c96aab255d79cae9",
+      "Text": "Hledat nebo vytvořit štítek…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2214513Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "2d7c50c28de1d2b903e4f6d2689d32590049c683fccbd5d1c96aab255d79cae9",
+      "Text": "Tag suchen oder erstellen…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2214609Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "2d7c50c28de1d2b903e4f6d2689d32590049c683fccbd5d1c96aab255d79cae9",
+      "Text": "Buscar o crear una etiqueta…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2214644Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "2d7c50c28de1d2b903e4f6d2689d32590049c683fccbd5d1c96aab255d79cae9",
+      "Text": "Rechercher ou créer une étiquette…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2214687Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "2d7c50c28de1d2b903e4f6d2689d32590049c683fccbd5d1c96aab255d79cae9",
+      "Text": "Cerca o crea un tag…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2214724Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "2d7c50c28de1d2b903e4f6d2689d32590049c683fccbd5d1c96aab255d79cae9",
+      "Text": "タグを検索または作成…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2214763Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "2d7c50c28de1d2b903e4f6d2689d32590049c683fccbd5d1c96aab255d79cae9",
+      "Text": "태그 검색 또는 만들기…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2214796Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "2d7c50c28de1d2b903e4f6d2689d32590049c683fccbd5d1c96aab255d79cae9",
+      "Text": "Buscar ou criar uma tag…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.221488Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "2d7c50c28de1d2b903e4f6d2689d32590049c683fccbd5d1c96aab255d79cae9",
+      "Text": "Найти или создать тег…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.221492Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "2d7c50c28de1d2b903e4f6d2689d32590049c683fccbd5d1c96aab255d79cae9",
+      "Text": "搜索或创建标签…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2214954Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "2d7c50c28de1d2b903e4f6d2689d32590049c683fccbd5d1c96aab255d79cae9",
+      "Text": "搜尋或建立標籤…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2214998Z",
       "Suggestions": [],
       "Comments": []
     }

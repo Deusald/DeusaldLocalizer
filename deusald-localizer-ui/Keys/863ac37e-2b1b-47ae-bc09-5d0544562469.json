@@ -4,7 +4,7 @@
   "KeyName": "addLanguage",
   "Description": "Button and header for adding a language.",
   "CreatedAt": "2026-07-16T12:48:41.5569154Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7094651Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2332756Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.709463Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "7ef7c4415c8ea5dee02a700e54f32a353dde5aec3e2feeaf555111fc3f02272e",
+      "Text": "Přidat jazyk",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2332431Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "7ef7c4415c8ea5dee02a700e54f32a353dde5aec3e2feeaf555111fc3f02272e",
+      "Text": "Sprache hinzufügen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2332503Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "7ef7c4415c8ea5dee02a700e54f32a353dde5aec3e2feeaf555111fc3f02272e",
+      "Text": "Añadir idioma",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2332527Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "7ef7c4415c8ea5dee02a700e54f32a353dde5aec3e2feeaf555111fc3f02272e",
+      "Text": "Ajouter une langue",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2332555Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "7ef7c4415c8ea5dee02a700e54f32a353dde5aec3e2feeaf555111fc3f02272e",
+      "Text": "Aggiungi lingua",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2332577Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "7ef7c4415c8ea5dee02a700e54f32a353dde5aec3e2feeaf555111fc3f02272e",
+      "Text": "言語を追加",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2332602Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "7ef7c4415c8ea5dee02a700e54f32a353dde5aec3e2feeaf555111fc3f02272e",
+      "Text": "언어 추가",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2332624Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "7ef7c4415c8ea5dee02a700e54f32a353dde5aec3e2feeaf555111fc3f02272e",
+      "Text": "Adicionar idioma",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2332668Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "7ef7c4415c8ea5dee02a700e54f32a353dde5aec3e2feeaf555111fc3f02272e",
+      "Text": "Добавить язык",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2332698Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "7ef7c4415c8ea5dee02a700e54f32a353dde5aec3e2feeaf555111fc3f02272e",
+      "Text": "添加语言",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2332721Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "7ef7c4415c8ea5dee02a700e54f32a353dde5aec3e2feeaf555111fc3f02272e",
+      "Text": "新增語言",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2332742Z",
       "Suggestions": [],
       "Comments": []
     }

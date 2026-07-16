@@ -4,7 +4,7 @@
   "KeyName": "title",
   "Description": "Header title of the uncommitted changes modal.",
   "CreatedAt": "2026-07-16T12:48:41.5599618Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7108657Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2463715Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7108532Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "a388bd2d373c39832003ef3699f39ff89d2c1ebb5c936f1ab8ed4e49f478daef",
+      "Text": "Necommittnuté změny",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463348Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a388bd2d373c39832003ef3699f39ff89d2c1ebb5c936f1ab8ed4e49f478daef",
+      "Text": "Nicht committete Änderungen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463371Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "a388bd2d373c39832003ef3699f39ff89d2c1ebb5c936f1ab8ed4e49f478daef",
+      "Text": "Cambios sin confirmar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463393Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a388bd2d373c39832003ef3699f39ff89d2c1ebb5c936f1ab8ed4e49f478daef",
+      "Text": "Modifications non validées",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463437Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "a388bd2d373c39832003ef3699f39ff89d2c1ebb5c936f1ab8ed4e49f478daef",
+      "Text": "Modifiche non committate",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.246346Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "a388bd2d373c39832003ef3699f39ff89d2c1ebb5c936f1ab8ed4e49f478daef",
+      "Text": "未コミットの変更",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463482Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "a388bd2d373c39832003ef3699f39ff89d2c1ebb5c936f1ab8ed4e49f478daef",
+      "Text": "커밋되지 않은 변경 사항",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463504Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "a388bd2d373c39832003ef3699f39ff89d2c1ebb5c936f1ab8ed4e49f478daef",
+      "Text": "Alterações não confirmadas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463575Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "a388bd2d373c39832003ef3699f39ff89d2c1ebb5c936f1ab8ed4e49f478daef",
+      "Text": "Незакоммиченные изменения",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463599Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "a388bd2d373c39832003ef3699f39ff89d2c1ebb5c936f1ab8ed4e49f478daef",
+      "Text": "未提交的更改",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463624Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "a388bd2d373c39832003ef3699f39ff89d2c1ebb5c936f1ab8ed4e49f478daef",
+      "Text": "未提交的變更",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2463687Z",
       "Suggestions": [],
       "Comments": []
     }

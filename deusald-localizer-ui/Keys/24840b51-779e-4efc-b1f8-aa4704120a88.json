@@ -4,7 +4,7 @@
   "KeyName": "intro",
   "Description": "Intro paragraph above the recent changes list.",
   "CreatedAt": "2026-07-16T12:48:41.5602669Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7106819Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2441513Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7106798Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "ef78faa78b3ec8a86861a0756e52447e2bb488a009c06f63ab061a13cc4e7a2c",
+      "Text": "Toto jsou změny, které poslední synchronizace načetla ze serveru. Kliknutím na klíč jej otevřete.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2440659Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "ef78faa78b3ec8a86861a0756e52447e2bb488a009c06f63ab061a13cc4e7a2c",
+      "Text": "Dies sind die Änderungen, die die letzte Synchronisierung vom Server übernommen hat. Klicke auf einen Schlüssel, um ihn zu öffnen.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.24407Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "ef78faa78b3ec8a86861a0756e52447e2bb488a009c06f63ab061a13cc4e7a2c",
+      "Text": "Estos son los cambios que la última sincronización trajo del servidor. Haz clic en una clave para abrirla.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2440736Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "ef78faa78b3ec8a86861a0756e52447e2bb488a009c06f63ab061a13cc4e7a2c",
+      "Text": "Voici les modifications que la dernière synchronisation a récupérées du serveur. Cliquez sur une clé pour l'ouvrir.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2440773Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "ef78faa78b3ec8a86861a0756e52447e2bb488a009c06f63ab061a13cc4e7a2c",
+      "Text": "Queste sono le modifiche che l'ultima sincronizzazione ha recuperato dal server. Clicca su una chiave per aprirla.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2441119Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "ef78faa78b3ec8a86861a0756e52447e2bb488a009c06f63ab061a13cc4e7a2c",
+      "Text": "これらは前回の同期がサーバーから取得した変更です。キーをクリックすると開きます。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.244117Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "ef78faa78b3ec8a86861a0756e52447e2bb488a009c06f63ab061a13cc4e7a2c",
+      "Text": "마지막 동기화가 서버에서 가져온 변경 사항입니다. 키를 클릭하면 열립니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2441214Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "ef78faa78b3ec8a86861a0756e52447e2bb488a009c06f63ab061a13cc4e7a2c",
+      "Text": "Estas são as alterações que a última sincronização trouxe do servidor. Clique em uma chave para abri-la.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2441341Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "ef78faa78b3ec8a86861a0756e52447e2bb488a009c06f63ab061a13cc4e7a2c",
+      "Text": "Это изменения, которые последняя синхронизация загрузила с сервера. Щёлкните ключ, чтобы открыть его.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2441376Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "ef78faa78b3ec8a86861a0756e52447e2bb488a009c06f63ab061a13cc4e7a2c",
+      "Text": "这些是上次同步从服务器获取的更改。单击某个键将其打开。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2441411Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "ef78faa78b3ec8a86861a0756e52447e2bb488a009c06f63ab061a13cc4e7a2c",
+      "Text": "這些是上次同步從伺服器取得的變更。點按某個索引鍵將其開啟。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2441486Z",
       "Suggestions": [],
       "Comments": []
     }

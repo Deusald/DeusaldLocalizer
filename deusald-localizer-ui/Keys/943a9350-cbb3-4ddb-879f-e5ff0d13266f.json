@@ -4,7 +4,7 @@
   "KeyName": "prevDestHash",
   "Description": "Detail row label for previous destination hash.",
   "CreatedAt": "2026-07-16T12:48:41.5602228Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7108261Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2460566Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7108236Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "7c8141153296a9e1229cfb59be786b6a3c479423e8f58ee9a2006b242aab38a2",
+      "Text": "Předch. hash cíle",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2460051Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "7c8141153296a9e1229cfb59be786b6a3c479423e8f58ee9a2006b242aab38a2",
+      "Text": "Vorh. Ziel-Hash",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2460131Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "7c8141153296a9e1229cfb59be786b6a3c479423e8f58ee9a2006b242aab38a2",
+      "Text": "Hash dest. ant.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.246018Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "7c8141153296a9e1229cfb59be786b6a3c479423e8f58ee9a2006b242aab38a2",
+      "Text": "Hash dest. préc.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2460217Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "7c8141153296a9e1229cfb59be786b6a3c479423e8f58ee9a2006b242aab38a2",
+      "Text": "Hash dest. prec.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2460253Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "7c8141153296a9e1229cfb59be786b6a3c479423e8f58ee9a2006b242aab38a2",
+      "Text": "前のターゲットハッシュ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2460355Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "7c8141153296a9e1229cfb59be786b6a3c479423e8f58ee9a2006b242aab38a2",
+      "Text": "이전 대상 해시",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2460398Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "7c8141153296a9e1229cfb59be786b6a3c479423e8f58ee9a2006b242aab38a2",
+      "Text": "Hash dest. ant.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.246045Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "7c8141153296a9e1229cfb59be786b6a3c479423e8f58ee9a2006b242aab38a2",
+      "Text": "Пред. хеш цели",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2460506Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "7c8141153296a9e1229cfb59be786b6a3c479423e8f58ee9a2006b242aab38a2",
+      "Text": "上一个目标哈希",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2460529Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "7c8141153296a9e1229cfb59be786b6a3c479423e8f58ee9a2006b242aab38a2",
+      "Text": "上一個目標雜湊",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2460551Z",
       "Suggestions": [],
       "Comments": []
     }

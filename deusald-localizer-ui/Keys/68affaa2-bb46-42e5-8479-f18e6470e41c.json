@@ -4,7 +4,7 @@
   "KeyName": "timeMinutes",
   "Description": "Relative time in minutes.",
   "CreatedAt": "2026-07-16T12:19:57.5420111Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7075883Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2176682Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7075867Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "7e5eb4f5807907dc86259352177a3e2b8df738e4f05d052c63ea90733a4e7199",
+      "Text": "před {m} min",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.217619Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "7e5eb4f5807907dc86259352177a3e2b8df738e4f05d052c63ea90733a4e7199",
+      "Text": "vor {m} Min",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2176254Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "7e5eb4f5807907dc86259352177a3e2b8df738e4f05d052c63ea90733a4e7199",
+      "Text": "hace {m} min",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2176279Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "7e5eb4f5807907dc86259352177a3e2b8df738e4f05d052c63ea90733a4e7199",
+      "Text": "il y a {m} min",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2176475Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "7e5eb4f5807907dc86259352177a3e2b8df738e4f05d052c63ea90733a4e7199",
+      "Text": "{m} min fa",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2176502Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "7e5eb4f5807907dc86259352177a3e2b8df738e4f05d052c63ea90733a4e7199",
+      "Text": "{m}分前",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2176524Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "7e5eb4f5807907dc86259352177a3e2b8df738e4f05d052c63ea90733a4e7199",
+      "Text": "{m}분 전",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2176545Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "7e5eb4f5807907dc86259352177a3e2b8df738e4f05d052c63ea90733a4e7199",
+      "Text": "há {m} min",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2176595Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "7e5eb4f5807907dc86259352177a3e2b8df738e4f05d052c63ea90733a4e7199",
+      "Text": "{m} мин назад",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2176618Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "7e5eb4f5807907dc86259352177a3e2b8df738e4f05d052c63ea90733a4e7199",
+      "Text": "{m} 分钟前",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.217664Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "7e5eb4f5807907dc86259352177a3e2b8df738e4f05d052c63ea90733a4e7199",
+      "Text": "{m} 分鐘前",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2176667Z",
       "Suggestions": [],
       "Comments": []
     }

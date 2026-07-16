@@ -4,7 +4,7 @@
   "KeyName": "editCategory",
   "Description": "Tooltip for the edit-category button.",
   "CreatedAt": "2026-07-16T12:48:41.5572031Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7090703Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2290282Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7090682Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "21610dd6f1db38ba1d55be436d5531e79df529e673e072d90481e5bab89bb7b6",
+      "Text": "Upravit kategorii",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2289821Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "21610dd6f1db38ba1d55be436d5531e79df529e673e072d90481e5bab89bb7b6",
+      "Text": "Kategorie bearbeiten",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2289861Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "21610dd6f1db38ba1d55be436d5531e79df529e673e072d90481e5bab89bb7b6",
+      "Text": "Editar categoría",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2289903Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "21610dd6f1db38ba1d55be436d5531e79df529e673e072d90481e5bab89bb7b6",
+      "Text": "Modifier la catégorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2289942Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "21610dd6f1db38ba1d55be436d5531e79df529e673e072d90481e5bab89bb7b6",
+      "Text": "Modifica categoria",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2289984Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "21610dd6f1db38ba1d55be436d5531e79df529e673e072d90481e5bab89bb7b6",
+      "Text": "カテゴリを編集",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2290023Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "21610dd6f1db38ba1d55be436d5531e79df529e673e072d90481e5bab89bb7b6",
+      "Text": "카테고리 편집",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.229006Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "21610dd6f1db38ba1d55be436d5531e79df529e673e072d90481e5bab89bb7b6",
+      "Text": "Editar categoria",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2290137Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "21610dd6f1db38ba1d55be436d5531e79df529e673e072d90481e5bab89bb7b6",
+      "Text": "Редактировать категорию",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2290175Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "21610dd6f1db38ba1d55be436d5531e79df529e673e072d90481e5bab89bb7b6",
+      "Text": "编辑类别",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2290212Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "21610dd6f1db38ba1d55be436d5531e79df529e673e072d90481e5bab89bb7b6",
+      "Text": "編輯分類",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2290251Z",
       "Suggestions": [],
       "Comments": []
     }

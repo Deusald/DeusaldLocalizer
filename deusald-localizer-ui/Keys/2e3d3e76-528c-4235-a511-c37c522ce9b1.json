@@ -4,7 +4,7 @@
   "KeyName": "noFlags",
   "Description": "Row label for keys that carry no flags.",
   "CreatedAt": "2026-07-16T12:48:41.5607935Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7105097Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2422068Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7105076Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "50aa828f5be541b85b2e7a563365a8222035ccee0d473ef9a5921e8eac829265",
+      "Text": "Žádné příznaky",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2421145Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "50aa828f5be541b85b2e7a563365a8222035ccee0d473ef9a5921e8eac829265",
+      "Text": "Keine Markierungen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2421214Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "50aa828f5be541b85b2e7a563365a8222035ccee0d473ef9a5921e8eac829265",
+      "Text": "Sin marcas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2421306Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "50aa828f5be541b85b2e7a563365a8222035ccee0d473ef9a5921e8eac829265",
+      "Text": "Aucun indicateur",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2421346Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "50aa828f5be541b85b2e7a563365a8222035ccee0d473ef9a5921e8eac829265",
+      "Text": "Nessun contrassegno",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2421385Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "50aa828f5be541b85b2e7a563365a8222035ccee0d473ef9a5921e8eac829265",
+      "Text": "フラグなし",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2421425Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "50aa828f5be541b85b2e7a563365a8222035ccee0d473ef9a5921e8eac829265",
+      "Text": "플래그 없음",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2421517Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "50aa828f5be541b85b2e7a563365a8222035ccee0d473ef9a5921e8eac829265",
+      "Text": "Sem sinalizações",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2421601Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "50aa828f5be541b85b2e7a563365a8222035ccee0d473ef9a5921e8eac829265",
+      "Text": "Нет флагов",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2421638Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "50aa828f5be541b85b2e7a563365a8222035ccee0d473ef9a5921e8eac829265",
+      "Text": "无标记",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2422024Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "50aa828f5be541b85b2e7a563365a8222035ccee0d473ef9a5921e8eac829265",
+      "Text": "無標記",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2422054Z",
       "Suggestions": [],
       "Comments": []
     }

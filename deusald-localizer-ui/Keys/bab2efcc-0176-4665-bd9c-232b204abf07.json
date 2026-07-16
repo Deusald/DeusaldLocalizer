@@ -4,7 +4,7 @@
   "KeyName": "importZip",
   "Description": "Button that imports a project from a .zip archive (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793017Z",
-  "UpdatedAt": "2026-07-16T13:07:17.707876Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2195411Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7078741Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "ebbfc7943ccdf7e62ecde126e18919ee7db1ac79ff1de05783703c49b8262b35",
+      "Text": "Importovat .zip…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2194895Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "ebbfc7943ccdf7e62ecde126e18919ee7db1ac79ff1de05783703c49b8262b35",
+      "Text": ".zip importieren…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2194965Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "ebbfc7943ccdf7e62ecde126e18919ee7db1ac79ff1de05783703c49b8262b35",
+      "Text": "Importar .zip…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2195023Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "ebbfc7943ccdf7e62ecde126e18919ee7db1ac79ff1de05783703c49b8262b35",
+      "Text": "Importer un .zip…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2195066Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "ebbfc7943ccdf7e62ecde126e18919ee7db1ac79ff1de05783703c49b8262b35",
+      "Text": "Importa .zip…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2195106Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "ebbfc7943ccdf7e62ecde126e18919ee7db1ac79ff1de05783703c49b8262b35",
+      "Text": ".zipをインポート…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2195141Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "ebbfc7943ccdf7e62ecde126e18919ee7db1ac79ff1de05783703c49b8262b35",
+      "Text": ".zip 가져오기…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2195183Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "ebbfc7943ccdf7e62ecde126e18919ee7db1ac79ff1de05783703c49b8262b35",
+      "Text": "Importar .zip…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.219526Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "ebbfc7943ccdf7e62ecde126e18919ee7db1ac79ff1de05783703c49b8262b35",
+      "Text": "Импортировать .zip…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2195303Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "ebbfc7943ccdf7e62ecde126e18919ee7db1ac79ff1de05783703c49b8262b35",
+      "Text": "导入 .zip…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2195343Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "ebbfc7943ccdf7e62ecde126e18919ee7db1ac79ff1de05783703c49b8262b35",
+      "Text": "匯入 .zip…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2195386Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "errDelete",
   "Description": "Error when deleting a project fails (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793876Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7078261Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2192098Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7078246Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "e12f809509ad988914c1df20764879799f7aac58908953929eed48121ad7e2b6",
+      "Text": "Smazání selhalo: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191639Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "e12f809509ad988914c1df20764879799f7aac58908953929eed48121ad7e2b6",
+      "Text": "Löschen fehlgeschlagen: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191662Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "e12f809509ad988914c1df20764879799f7aac58908953929eed48121ad7e2b6",
+      "Text": "Error al eliminar: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191684Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "e12f809509ad988914c1df20764879799f7aac58908953929eed48121ad7e2b6",
+      "Text": "Échec de la suppression : {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191711Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "e12f809509ad988914c1df20764879799f7aac58908953929eed48121ad7e2b6",
+      "Text": "Eliminazione non riuscita: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191899Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "e12f809509ad988914c1df20764879799f7aac58908953929eed48121ad7e2b6",
+      "Text": "削除に失敗しました：{msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191929Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "e12f809509ad988914c1df20764879799f7aac58908953929eed48121ad7e2b6",
+      "Text": "삭제 실패: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2191952Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "e12f809509ad988914c1df20764879799f7aac58908953929eed48121ad7e2b6",
+      "Text": "Falha ao excluir: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2192008Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "e12f809509ad988914c1df20764879799f7aac58908953929eed48121ad7e2b6",
+      "Text": "Не удалось удалить: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2192032Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "e12f809509ad988914c1df20764879799f7aac58908953929eed48121ad7e2b6",
+      "Text": "删除失败：{msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2192054Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "e12f809509ad988914c1df20764879799f7aac58908953929eed48121ad7e2b6",
+      "Text": "刪除失敗：{msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2192077Z",
       "Suggestions": [],
       "Comments": []
     }

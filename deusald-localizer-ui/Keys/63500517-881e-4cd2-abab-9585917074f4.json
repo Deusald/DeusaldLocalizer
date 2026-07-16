@@ -4,7 +4,7 @@
   "KeyName": "allFlagsTags",
   "Description": "Filter trigger label when no flag or tag is selected.",
   "CreatedAt": "2026-07-16T12:48:41.5573735Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7093821Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2322098Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7093802Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "4184237763890177c6549d57447c4666143119129743f223e889331858da9ebe",
+      "Text": "Všechny příznaky a štítky",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2321494Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "4184237763890177c6549d57447c4666143119129743f223e889331858da9ebe",
+      "Text": "Alle Markierungen & Tags",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2321521Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "4184237763890177c6549d57447c4666143119129743f223e889331858da9ebe",
+      "Text": "Todas las marcas y etiquetas",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2321546Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "4184237763890177c6549d57447c4666143119129743f223e889331858da9ebe",
+      "Text": "Tous les indicateurs et étiquettes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2321569Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "4184237763890177c6549d57447c4666143119129743f223e889331858da9ebe",
+      "Text": "Tutti i contrassegni e tag",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.232159Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "4184237763890177c6549d57447c4666143119129743f223e889331858da9ebe",
+      "Text": "すべてのフラグとタグ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2321619Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "4184237763890177c6549d57447c4666143119129743f223e889331858da9ebe",
+      "Text": "모든 플래그 및 태그",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2321645Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "4184237763890177c6549d57447c4666143119129743f223e889331858da9ebe",
+      "Text": "Todas as sinalizações e tags",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2321952Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "4184237763890177c6549d57447c4666143119129743f223e889331858da9ebe",
+      "Text": "Все флаги и теги",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2322037Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "4184237763890177c6549d57447c4666143119129743f223e889331858da9ebe",
+      "Text": "所有标记和标签",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2322061Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "4184237763890177c6549d57447c4666143119129743f223e889331858da9ebe",
+      "Text": "所有標記和標籤",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2322084Z",
       "Suggestions": [],
       "Comments": []
     }

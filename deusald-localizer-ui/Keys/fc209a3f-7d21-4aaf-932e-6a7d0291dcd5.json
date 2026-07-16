@@ -4,7 +4,7 @@
   "KeyName": "noEntries",
   "Description": "Empty state when the enum has no entries",
   "CreatedAt": "2026-07-16T12:48:41.5585695Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7085739Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2238259Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7085717Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "6d6ff433b1be72606369ae3c2fb5484a934943fc554b5bd9ba3f1241ec23e252",
+      "Text": "Žádné položky. Přidejte alespoň jednu.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237825Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "6d6ff433b1be72606369ae3c2fb5484a934943fc554b5bd9ba3f1241ec23e252",
+      "Text": "Keine Einträge. Füge mindestens einen hinzu.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.223785Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "6d6ff433b1be72606369ae3c2fb5484a934943fc554b5bd9ba3f1241ec23e252",
+      "Text": "Sin entradas. Añade al menos una.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237872Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "6d6ff433b1be72606369ae3c2fb5484a934943fc554b5bd9ba3f1241ec23e252",
+      "Text": "Aucune entrée. Ajoutez-en au moins une.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237899Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "6d6ff433b1be72606369ae3c2fb5484a934943fc554b5bd9ba3f1241ec23e252",
+      "Text": "Nessuna voce. Aggiungine almeno una.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237921Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "6d6ff433b1be72606369ae3c2fb5484a934943fc554b5bd9ba3f1241ec23e252",
+      "Text": "項目がありません。少なくとも1つ追加してください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237944Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "6d6ff433b1be72606369ae3c2fb5484a934943fc554b5bd9ba3f1241ec23e252",
+      "Text": "항목이 없습니다. 최소 하나를 추가하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237971Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "6d6ff433b1be72606369ae3c2fb5484a934943fc554b5bd9ba3f1241ec23e252",
+      "Text": "Sem entradas. Adicione pelo menos uma.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2238022Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "6d6ff433b1be72606369ae3c2fb5484a934943fc554b5bd9ba3f1241ec23e252",
+      "Text": "Нет записей. Добавьте хотя бы одну.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2238044Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "6d6ff433b1be72606369ae3c2fb5484a934943fc554b5bd9ba3f1241ec23e252",
+      "Text": "没有条目。请至少添加一个。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2238218Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "6d6ff433b1be72606369ae3c2fb5484a934943fc554b5bd9ba3f1241ec23e252",
+      "Text": "沒有項目。請至少新增一個。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2238245Z",
       "Suggestions": [],
       "Comments": []
     }

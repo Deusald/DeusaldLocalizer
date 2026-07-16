@@ -4,7 +4,7 @@
   "KeyName": "descriptionPlaceholder",
   "Description": "Placeholder for the description textarea",
   "CreatedAt": "2026-07-16T12:48:41.5615788Z",
-  "UpdatedAt": "2026-07-16T13:07:17.707416Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2166198Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7074138Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "cde2e3621245bfa72487696af7bc15508b0e176b2550b83ce4f1861b1bd7d673",
+      "Text": "Stručný popis projektu…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.216549Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "cde2e3621245bfa72487696af7bc15508b0e176b2550b83ce4f1861b1bd7d673",
+      "Text": "Eine kurze Beschreibung des Projekts…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2165712Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "cde2e3621245bfa72487696af7bc15508b0e176b2550b83ce4f1861b1bd7d673",
+      "Text": "Una breve descripción del proyecto…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2165771Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "cde2e3621245bfa72487696af7bc15508b0e176b2550b83ce4f1861b1bd7d673",
+      "Text": "Une brève description du projet…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2165824Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "cde2e3621245bfa72487696af7bc15508b0e176b2550b83ce4f1861b1bd7d673",
+      "Text": "Una breve descrizione del progetto…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2165867Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "cde2e3621245bfa72487696af7bc15508b0e176b2550b83ce4f1861b1bd7d673",
+      "Text": "プロジェクトの簡単な説明…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2165905Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "cde2e3621245bfa72487696af7bc15508b0e176b2550b83ce4f1861b1bd7d673",
+      "Text": "프로젝트에 대한 간단한 설명…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2165944Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "cde2e3621245bfa72487696af7bc15508b0e176b2550b83ce4f1861b1bd7d673",
+      "Text": "Uma breve descrição do projeto…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166039Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "cde2e3621245bfa72487696af7bc15508b0e176b2550b83ce4f1861b1bd7d673",
+      "Text": "Краткое описание проекта…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166079Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "cde2e3621245bfa72487696af7bc15508b0e176b2550b83ce4f1861b1bd7d673",
+      "Text": "项目的简短描述…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166118Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "cde2e3621245bfa72487696af7bc15508b0e176b2550b83ce4f1861b1bd7d673",
+      "Text": "專案的簡短描述…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166168Z",
       "Suggestions": [],
       "Comments": []
     }

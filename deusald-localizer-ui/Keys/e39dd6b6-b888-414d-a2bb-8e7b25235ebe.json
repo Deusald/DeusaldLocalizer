@@ -4,7 +4,7 @@
   "KeyName": "discardAndLeave",
   "Description": "Button that discards unsaved changes and leaves.",
   "CreatedAt": "2026-07-16T12:48:41.5598192Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7099682Z",
+  "UpdatedAt": "2026-07-16T20:46:27.237135Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7099658Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "fce94f3f28c04d9c23e247f3231b9e3b166d2684382660d2fc88c4c5daba71f5",
+      "Text": "Zahodit a odejít",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2370788Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "fce94f3f28c04d9c23e247f3231b9e3b166d2684382660d2fc88c4c5daba71f5",
+      "Text": "Verwerfen & verlassen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2370908Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "fce94f3f28c04d9c23e247f3231b9e3b166d2684382660d2fc88c4c5daba71f5",
+      "Text": "Descartar y salir",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2370958Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "fce94f3f28c04d9c23e247f3231b9e3b166d2684382660d2fc88c4c5daba71f5",
+      "Text": "Abandonner et quitter",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2370996Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "fce94f3f28c04d9c23e247f3231b9e3b166d2684382660d2fc88c4c5daba71f5",
+      "Text": "Scarta ed esci",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2371036Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "fce94f3f28c04d9c23e247f3231b9e3b166d2684382660d2fc88c4c5daba71f5",
+      "Text": "破棄して退出",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2371073Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "fce94f3f28c04d9c23e247f3231b9e3b166d2684382660d2fc88c4c5daba71f5",
+      "Text": "취소하고 나가기",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2371121Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "fce94f3f28c04d9c23e247f3231b9e3b166d2684382660d2fc88c4c5daba71f5",
+      "Text": "Descartar e sair",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2371204Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "fce94f3f28c04d9c23e247f3231b9e3b166d2684382660d2fc88c4c5daba71f5",
+      "Text": "Отклонить и выйти",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2371241Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "fce94f3f28c04d9c23e247f3231b9e3b166d2684382660d2fc88c4c5daba71f5",
+      "Text": "放弃并退出",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2371284Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "fce94f3f28c04d9c23e247f3231b9e3b166d2684382660d2fc88c4c5daba71f5",
+      "Text": "捨棄並離開",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2371322Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "cannotDeleteHasKeys",
   "Description": "Tooltip on a disabled delete button when the category still contains keys.",
   "CreatedAt": "2026-07-16T12:48:41.5572141Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7090386Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2286372Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7090362Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "411db6025e7b928310a8c1903d6a6ff590eb2ad3c1845a51fdc8cf7c2d3c9c69",
+      "Text": "Nelze smazat: kategorie stále obsahuje klíče",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2285892Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "411db6025e7b928310a8c1903d6a6ff590eb2ad3c1845a51fdc8cf7c2d3c9c69",
+      "Text": "Löschen nicht möglich: Kategorie enthält noch Schlüssel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2285938Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "411db6025e7b928310a8c1903d6a6ff590eb2ad3c1845a51fdc8cf7c2d3c9c69",
+      "Text": "No se puede eliminar: la categoría aún tiene claves",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.228598Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "411db6025e7b928310a8c1903d6a6ff590eb2ad3c1845a51fdc8cf7c2d3c9c69",
+      "Text": "Suppression impossible : la catégorie contient encore des clés",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2286019Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "411db6025e7b928310a8c1903d6a6ff590eb2ad3c1845a51fdc8cf7c2d3c9c69",
+      "Text": "Impossibile eliminare: la categoria contiene ancora chiavi",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2286057Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "411db6025e7b928310a8c1903d6a6ff590eb2ad3c1845a51fdc8cf7c2d3c9c69",
+      "Text": "削除できません：カテゴリにまだキーがあります",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2286101Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "411db6025e7b928310a8c1903d6a6ff590eb2ad3c1845a51fdc8cf7c2d3c9c69",
+      "Text": "삭제할 수 없음: 카테고리에 아직 키가 있습니다",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2286139Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "411db6025e7b928310a8c1903d6a6ff590eb2ad3c1845a51fdc8cf7c2d3c9c69",
+      "Text": "Não é possível excluir: a categoria ainda tem chaves",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2286221Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "411db6025e7b928310a8c1903d6a6ff590eb2ad3c1845a51fdc8cf7c2d3c9c69",
+      "Text": "Невозможно удалить: в категории ещё есть ключи",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2286269Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "411db6025e7b928310a8c1903d6a6ff590eb2ad3c1845a51fdc8cf7c2d3c9c69",
+      "Text": "无法删除：类别中仍有键",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2286307Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "411db6025e7b928310a8c1903d6a6ff590eb2ad3c1845a51fdc8cf7c2d3c9c69",
+      "Text": "無法刪除：分類中仍有索引鍵",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2286347Z",
       "Suggestions": [],
       "Comments": []
     }

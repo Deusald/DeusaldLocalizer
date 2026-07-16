@@ -4,7 +4,7 @@
   "KeyName": "selectEnumToEdit",
   "Description": "Empty state prompting to select an enum",
   "CreatedAt": "2026-07-16T12:48:41.5584967Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7086241Z",
+  "UpdatedAt": "2026-07-16T20:46:27.224037Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.708622Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "1d3fec79f898b8bac57ca80d09ac081e5b85359c3513822ba2e9f827ef90e5bb",
+      "Text": "Vyberte výčet k úpravě.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.223987Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "1d3fec79f898b8bac57ca80d09ac081e5b85359c3513822ba2e9f827ef90e5bb",
+      "Text": "Wähle ein Enum zum Bearbeiten aus.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239899Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "1d3fec79f898b8bac57ca80d09ac081e5b85359c3513822ba2e9f827ef90e5bb",
+      "Text": "Selecciona un enum para editarlo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239922Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "1d3fec79f898b8bac57ca80d09ac081e5b85359c3513822ba2e9f827ef90e5bb",
+      "Text": "Sélectionnez une énumération pour la modifier.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239944Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "1d3fec79f898b8bac57ca80d09ac081e5b85359c3513822ba2e9f827ef90e5bb",
+      "Text": "Seleziona un enum per modificarlo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239966Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "1d3fec79f898b8bac57ca80d09ac081e5b85359c3513822ba2e9f827ef90e5bb",
+      "Text": "編集する列挙型を選択してください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2239992Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "1d3fec79f898b8bac57ca80d09ac081e5b85359c3513822ba2e9f827ef90e5bb",
+      "Text": "편집할 열거형을 선택하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2240017Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "1d3fec79f898b8bac57ca80d09ac081e5b85359c3513822ba2e9f827ef90e5bb",
+      "Text": "Selecione um enum para editá-lo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2240272Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "1d3fec79f898b8bac57ca80d09ac081e5b85359c3513822ba2e9f827ef90e5bb",
+      "Text": "Выберите перечисление для редактирования.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2240302Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "1d3fec79f898b8bac57ca80d09ac081e5b85359c3513822ba2e9f827ef90e5bb",
+      "Text": "选择要编辑的枚举。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2240327Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "1d3fec79f898b8bac57ca80d09ac081e5b85359c3513822ba2e9f827ef90e5bb",
+      "Text": "選擇要編輯的列舉。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.224035Z",
       "Suggestions": [],
       "Comments": []
     }

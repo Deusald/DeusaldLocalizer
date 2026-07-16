@@ -4,7 +4,7 @@
   "KeyName": "switchToLive",
   "Description": "Tooltip on the preview-mode toggle when in current mode",
   "CreatedAt": "2026-07-16T12:48:41.558217Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7084734Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2234162Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7084712Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "92f0e982cb84763f10d084c24c4d92002c993489ed4415bd062fefedd4df525b",
+      "Text": "Přepnout na Naživo (koncept)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.223389Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "92f0e982cb84763f10d084c24c4d92002c993489ed4415bd062fefedd4df525b",
+      "Text": "Zu Live wechseln (Entwurf)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233913Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "92f0e982cb84763f10d084c24c4d92002c993489ed4415bd062fefedd4df525b",
+      "Text": "Cambiar a En vivo (borrador)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233936Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "92f0e982cb84763f10d084c24c4d92002c993489ed4415bd062fefedd4df525b",
+      "Text": "Passer à En direct (brouillon)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233964Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "92f0e982cb84763f10d084c24c4d92002c993489ed4415bd062fefedd4df525b",
+      "Text": "Passa a Live (bozza)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2233986Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "92f0e982cb84763f10d084c24c4d92002c993489ed4415bd062fefedd4df525b",
+      "Text": "「ライブ」に切り替え（下書き）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234008Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "92f0e982cb84763f10d084c24c4d92002c993489ed4415bd062fefedd4df525b",
+      "Text": "실시간으로 전환 (초안)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234034Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "92f0e982cb84763f10d084c24c4d92002c993489ed4415bd062fefedd4df525b",
+      "Text": "Alternar para Ao vivo (rascunho)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234079Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "92f0e982cb84763f10d084c24c4d92002c993489ed4415bd062fefedd4df525b",
+      "Text": "Переключить на В реальном времени (черновик)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234101Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "92f0e982cb84763f10d084c24c4d92002c993489ed4415bd062fefedd4df525b",
+      "Text": "切换到实时（草稿）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234127Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "92f0e982cb84763f10d084c24c4d92002c993489ed4415bd062fefedd4df525b",
+      "Text": "切換至即時（草稿）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2234148Z",
       "Suggestions": [],
       "Comments": []
     }

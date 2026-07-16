@@ -4,7 +4,7 @@
   "KeyName": "members",
   "Description": "Section label for the member list; a count follows in parentheses.",
   "CreatedAt": "2026-07-16T12:48:41.5592279Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7110507Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2479657Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7110487Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "1044a4c056d0d685bf4f09174d2bc136137765d62916779fadcacf006a99ffac",
+      "Text": "Členové",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2479148Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "1044a4c056d0d685bf4f09174d2bc136137765d62916779fadcacf006a99ffac",
+      "Text": "Mitglieder",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2479173Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "1044a4c056d0d685bf4f09174d2bc136137765d62916779fadcacf006a99ffac",
+      "Text": "Miembros",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2479194Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "1044a4c056d0d685bf4f09174d2bc136137765d62916779fadcacf006a99ffac",
+      "Text": "Membres",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2479246Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "1044a4c056d0d685bf4f09174d2bc136137765d62916779fadcacf006a99ffac",
+      "Text": "Membri",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2479268Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "1044a4c056d0d685bf4f09174d2bc136137765d62916779fadcacf006a99ffac",
+      "Text": "メンバー",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2479291Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "1044a4c056d0d685bf4f09174d2bc136137765d62916779fadcacf006a99ffac",
+      "Text": "멤버",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2479312Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "1044a4c056d0d685bf4f09174d2bc136137765d62916779fadcacf006a99ffac",
+      "Text": "Membros",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2479533Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "1044a4c056d0d685bf4f09174d2bc136137765d62916779fadcacf006a99ffac",
+      "Text": "Участники",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2479559Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "1044a4c056d0d685bf4f09174d2bc136137765d62916779fadcacf006a99ffac",
+      "Text": "成员",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2479618Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "1044a4c056d0d685bf4f09174d2bc136137765d62916779fadcacf006a99ffac",
+      "Text": "成員",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2479642Z",
       "Suggestions": [],
       "Comments": []
     }

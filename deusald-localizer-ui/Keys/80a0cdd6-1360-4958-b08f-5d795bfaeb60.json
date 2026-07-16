@@ -4,7 +4,7 @@
   "KeyName": "dragToResize",
   "Description": "Tooltip on the column resizer handle",
   "CreatedAt": "2026-07-16T12:48:41.5616148Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7095934Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2338111Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7095914Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "31b2f1cdb2e93ebb29fc58ab6565f5f4eb5412110ac402ffd1a9114fdd097e00",
+      "Text": "Přetažením změníte velikost",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337825Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "31b2f1cdb2e93ebb29fc58ab6565f5f4eb5412110ac402ffd1a9114fdd097e00",
+      "Text": "Zum Ändern der Größe ziehen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337856Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "31b2f1cdb2e93ebb29fc58ab6565f5f4eb5412110ac402ffd1a9114fdd097e00",
+      "Text": "Arrastra para redimensionar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.233788Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "31b2f1cdb2e93ebb29fc58ab6565f5f4eb5412110ac402ffd1a9114fdd097e00",
+      "Text": "Glisser pour redimensionner",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337902Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "31b2f1cdb2e93ebb29fc58ab6565f5f4eb5412110ac402ffd1a9114fdd097e00",
+      "Text": "Trascina per ridimensionare",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337928Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "31b2f1cdb2e93ebb29fc58ab6565f5f4eb5412110ac402ffd1a9114fdd097e00",
+      "Text": "ドラッグしてサイズ変更",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.233795Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "31b2f1cdb2e93ebb29fc58ab6565f5f4eb5412110ac402ffd1a9114fdd097e00",
+      "Text": "드래그하여 크기 조정",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2337972Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "31b2f1cdb2e93ebb29fc58ab6565f5f4eb5412110ac402ffd1a9114fdd097e00",
+      "Text": "Arraste para redimensionar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338024Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "31b2f1cdb2e93ebb29fc58ab6565f5f4eb5412110ac402ffd1a9114fdd097e00",
+      "Text": "Потяните, чтобы изменить размер",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338046Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "31b2f1cdb2e93ebb29fc58ab6565f5f4eb5412110ac402ffd1a9114fdd097e00",
+      "Text": "拖动以调整大小",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338069Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "31b2f1cdb2e93ebb29fc58ab6565f5f4eb5412110ac402ffd1a9114fdd097e00",
+      "Text": "拖曳以調整大小",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2338092Z",
       "Suggestions": [],
       "Comments": []
     }

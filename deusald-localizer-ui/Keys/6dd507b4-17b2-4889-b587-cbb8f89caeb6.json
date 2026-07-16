@@ -4,7 +4,7 @@
   "KeyName": "noResults",
   "Description": "Empty state when no languages match the search.",
   "CreatedAt": "2026-07-16T12:48:41.5569469Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7095356Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2334868Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7095337Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c9a4ff4843dbab2bcd5477b72f59872bfcad51dd85d558b4bc1d95a8a0897374",
+      "Text": "Žádné výsledky.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2334451Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c9a4ff4843dbab2bcd5477b72f59872bfcad51dd85d558b4bc1d95a8a0897374",
+      "Text": "Keine Ergebnisse.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2334527Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c9a4ff4843dbab2bcd5477b72f59872bfcad51dd85d558b4bc1d95a8a0897374",
+      "Text": "Sin resultados.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2334551Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c9a4ff4843dbab2bcd5477b72f59872bfcad51dd85d558b4bc1d95a8a0897374",
+      "Text": "Aucun résultat.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.233458Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c9a4ff4843dbab2bcd5477b72f59872bfcad51dd85d558b4bc1d95a8a0897374",
+      "Text": "Nessun risultato.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2334603Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c9a4ff4843dbab2bcd5477b72f59872bfcad51dd85d558b4bc1d95a8a0897374",
+      "Text": "結果がありません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2334627Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c9a4ff4843dbab2bcd5477b72f59872bfcad51dd85d558b4bc1d95a8a0897374",
+      "Text": "결과 없음.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2334649Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c9a4ff4843dbab2bcd5477b72f59872bfcad51dd85d558b4bc1d95a8a0897374",
+      "Text": "Sem resultados.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2334712Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c9a4ff4843dbab2bcd5477b72f59872bfcad51dd85d558b4bc1d95a8a0897374",
+      "Text": "Нет результатов.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2334756Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c9a4ff4843dbab2bcd5477b72f59872bfcad51dd85d558b4bc1d95a8a0897374",
+      "Text": "无结果。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2334797Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c9a4ff4843dbab2bcd5477b72f59872bfcad51dd85d558b4bc1d95a8a0897374",
+      "Text": "無結果。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2334842Z",
       "Suggestions": [],
       "Comments": []
     }

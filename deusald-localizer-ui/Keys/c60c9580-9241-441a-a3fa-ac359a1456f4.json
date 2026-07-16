@@ -4,7 +4,7 @@
   "KeyName": "conflicts",
   "Description": "Plural noun for multiple sync conflicts, used in a count pill.",
   "CreatedAt": "2026-07-16T12:48:41.5588582Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7096584Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2343355Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7096558Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "47ef59b14bb6809086f8885f2f136d0642d49a52c8cb84bfcdba62cf3bab41aa",
+      "Text": "konflikty",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2343075Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "47ef59b14bb6809086f8885f2f136d0642d49a52c8cb84bfcdba62cf3bab41aa",
+      "Text": "Konflikte",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2343107Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "47ef59b14bb6809086f8885f2f136d0642d49a52c8cb84bfcdba62cf3bab41aa",
+      "Text": "conflictos",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2343128Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "47ef59b14bb6809086f8885f2f136d0642d49a52c8cb84bfcdba62cf3bab41aa",
+      "Text": "conflits",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2343155Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "47ef59b14bb6809086f8885f2f136d0642d49a52c8cb84bfcdba62cf3bab41aa",
+      "Text": "conflitti",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2343177Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "47ef59b14bb6809086f8885f2f136d0642d49a52c8cb84bfcdba62cf3bab41aa",
+      "Text": "競合",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2343203Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "47ef59b14bb6809086f8885f2f136d0642d49a52c8cb84bfcdba62cf3bab41aa",
+      "Text": "충돌",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2343225Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "47ef59b14bb6809086f8885f2f136d0642d49a52c8cb84bfcdba62cf3bab41aa",
+      "Text": "conflitos",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2343267Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "47ef59b14bb6809086f8885f2f136d0642d49a52c8cb84bfcdba62cf3bab41aa",
+      "Text": "конфликты",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2343298Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "47ef59b14bb6809086f8885f2f136d0642d49a52c8cb84bfcdba62cf3bab41aa",
+      "Text": "冲突",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.234332Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "47ef59b14bb6809086f8885f2f136d0642d49a52c8cb84bfcdba62cf3bab41aa",
+      "Text": "衝突",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2343341Z",
       "Suggestions": [],
       "Comments": []
     }

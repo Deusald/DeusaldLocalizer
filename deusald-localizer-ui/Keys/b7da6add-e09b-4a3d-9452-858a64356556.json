@@ -4,7 +4,7 @@
   "KeyName": "errSignIn",
   "Description": "Fallback error when server sign-in fails.",
   "CreatedAt": "2026-07-16T12:19:57.5421046Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7075278Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2171978Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.707526Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "f764b902534db6ff57581f7f3f65feb467964cb6c8ba394c1dc03d8b90ef049e",
+      "Text": "Nepodařilo se dokončit přihlášení. Zkuste to znovu.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171691Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "f764b902534db6ff57581f7f3f65feb467964cb6c8ba394c1dc03d8b90ef049e",
+      "Text": "Anmeldung konnte nicht abgeschlossen werden. Bitte versuche es erneut.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171716Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "f764b902534db6ff57581f7f3f65feb467964cb6c8ba394c1dc03d8b90ef049e",
+      "Text": "No se pudo completar el inicio de sesión. Inténtalo de nuevo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171747Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "f764b902534db6ff57581f7f3f65feb467964cb6c8ba394c1dc03d8b90ef049e",
+      "Text": "Impossible de terminer la connexion. Veuillez réessayer.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171769Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "f764b902534db6ff57581f7f3f65feb467964cb6c8ba394c1dc03d8b90ef049e",
+      "Text": "Impossibile completare l'accesso. Riprova.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171791Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "f764b902534db6ff57581f7f3f65feb467964cb6c8ba394c1dc03d8b90ef049e",
+      "Text": "ログインを完了できませんでした。もう一度お試しください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171814Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "f764b902534db6ff57581f7f3f65feb467964cb6c8ba394c1dc03d8b90ef049e",
+      "Text": "로그인을 완료할 수 없습니다. 다시 시도하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171846Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "f764b902534db6ff57581f7f3f65feb467964cb6c8ba394c1dc03d8b90ef049e",
+      "Text": "Não foi possível concluir a entrada. Tente novamente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171892Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "f764b902534db6ff57581f7f3f65feb467964cb6c8ba394c1dc03d8b90ef049e",
+      "Text": "Не удалось завершить вход. Попробуйте ещё раз.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171913Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "f764b902534db6ff57581f7f3f65feb467964cb6c8ba394c1dc03d8b90ef049e",
+      "Text": "无法完成登录。请重试。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171941Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "f764b902534db6ff57581f7f3f65feb467964cb6c8ba394c1dc03d8b90ef049e",
+      "Text": "無法完成登入。請重試。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2171964Z",
       "Suggestions": [],
       "Comments": []
     }

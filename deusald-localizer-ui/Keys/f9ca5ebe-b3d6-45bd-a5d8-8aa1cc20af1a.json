@@ -4,7 +4,7 @@
   "KeyName": "invalidKeyName",
   "Description": "Validation error for an invalid key name.",
   "CreatedAt": "2026-07-16T12:48:41.5575726Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7092922Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2314429Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7092903Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "46a397170246df664c5c02158ae0f9aa30e910bd762a31dec53fef3725532219",
+      "Text": "Povoleny jsou pouze písmena, číslice a „_“",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2311569Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "46a397170246df664c5c02158ae0f9aa30e910bd762a31dec53fef3725532219",
+      "Text": "Nur Buchstaben, Zahlen und „_“ sind erlaubt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2311616Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "46a397170246df664c5c02158ae0f9aa30e910bd762a31dec53fef3725532219",
+      "Text": "Solo se permiten letras, números y «_»",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2311663Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "46a397170246df664c5c02158ae0f9aa30e910bd762a31dec53fef3725532219",
+      "Text": "Seuls les lettres, chiffres et « _ » sont autorisés",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2313993Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "46a397170246df664c5c02158ae0f9aa30e910bd762a31dec53fef3725532219",
+      "Text": "Sono consentiti solo lettere, numeri e «_»",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314115Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "46a397170246df664c5c02158ae0f9aa30e910bd762a31dec53fef3725532219",
+      "Text": "使用できるのは文字、数字、「_」のみです",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314155Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "46a397170246df664c5c02158ae0f9aa30e910bd762a31dec53fef3725532219",
+      "Text": "문자, 숫자, '_'만 허용됩니다",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314204Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "46a397170246df664c5c02158ae0f9aa30e910bd762a31dec53fef3725532219",
+      "Text": "Apenas letras, números e \"_\" são permitidos",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314286Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "46a397170246df664c5c02158ae0f9aa30e910bd762a31dec53fef3725532219",
+      "Text": "Разрешены только буквы, цифры и «_»",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314323Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "46a397170246df664c5c02158ae0f9aa30e910bd762a31dec53fef3725532219",
+      "Text": "仅允许字母、数字和“_”",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314366Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "46a397170246df664c5c02158ae0f9aa30e910bd762a31dec53fef3725532219",
+      "Text": "僅允許字母、數字和「_」",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314404Z",
       "Suggestions": [],
       "Comments": []
     }

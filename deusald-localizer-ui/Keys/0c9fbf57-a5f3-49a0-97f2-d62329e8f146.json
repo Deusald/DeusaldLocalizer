@@ -4,7 +4,7 @@
   "KeyName": "offlineProject",
   "Description": "Sync/push result message for an offline (non-online) project.",
   "CreatedAt": "2026-07-16T12:48:41.5591031Z",
-  "UpdatedAt": "2026-07-16T13:07:17.709703Z",
+  "UpdatedAt": "2026-07-16T20:46:27.234654Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7097011Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "ce14ecefd0031a79f0ce8773d2a067086f0b974503ffc2d0b64c5bb8840e560b",
+      "Text": "Offline projekt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346271Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "ce14ecefd0031a79f0ce8773d2a067086f0b974503ffc2d0b64c5bb8840e560b",
+      "Text": "Offline-Projekt",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346295Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "ce14ecefd0031a79f0ce8773d2a067086f0b974503ffc2d0b64c5bb8840e560b",
+      "Text": "Proyecto sin conexión",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346317Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "ce14ecefd0031a79f0ce8773d2a067086f0b974503ffc2d0b64c5bb8840e560b",
+      "Text": "Projet hors ligne",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346343Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "ce14ecefd0031a79f0ce8773d2a067086f0b974503ffc2d0b64c5bb8840e560b",
+      "Text": "Progetto offline",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346364Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "ce14ecefd0031a79f0ce8773d2a067086f0b974503ffc2d0b64c5bb8840e560b",
+      "Text": "オフラインプロジェクト",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346386Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "ce14ecefd0031a79f0ce8773d2a067086f0b974503ffc2d0b64c5bb8840e560b",
+      "Text": "오프라인 프로젝트",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346409Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "ce14ecefd0031a79f0ce8773d2a067086f0b974503ffc2d0b64c5bb8840e560b",
+      "Text": "Projeto off-line",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346456Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "ce14ecefd0031a79f0ce8773d2a067086f0b974503ffc2d0b64c5bb8840e560b",
+      "Text": "Офлайн-проект",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346476Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "ce14ecefd0031a79f0ce8773d2a067086f0b974503ffc2d0b64c5bb8840e560b",
+      "Text": "离线项目",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346498Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "ce14ecefd0031a79f0ce8773d2a067086f0b974503ffc2d0b64c5bb8840e560b",
+      "Text": "離線專案",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2346523Z",
       "Suggestions": [],
       "Comments": []
     }

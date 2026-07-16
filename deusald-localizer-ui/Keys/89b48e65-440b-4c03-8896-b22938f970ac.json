@@ -4,7 +4,7 @@
   "KeyName": "recentProjects",
   "Description": "Heading above the recent-projects list (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0794769Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7076986Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2183263Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7076967Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "1c564b3ce9f0c80174a406cdfeffcc7b24a28c96ee1f6481383ff77654144fe2",
+      "Text": "Nedávné projekty",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2182993Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "1c564b3ce9f0c80174a406cdfeffcc7b24a28c96ee1f6481383ff77654144fe2",
+      "Text": "Kürzliche Projekte",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183018Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "1c564b3ce9f0c80174a406cdfeffcc7b24a28c96ee1f6481383ff77654144fe2",
+      "Text": "Proyectos recientes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183044Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "1c564b3ce9f0c80174a406cdfeffcc7b24a28c96ee1f6481383ff77654144fe2",
+      "Text": "Projets récents",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183064Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "1c564b3ce9f0c80174a406cdfeffcc7b24a28c96ee1f6481383ff77654144fe2",
+      "Text": "Progetti recenti",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183084Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "1c564b3ce9f0c80174a406cdfeffcc7b24a28c96ee1f6481383ff77654144fe2",
+      "Text": "最近のプロジェクト",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.218311Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "1c564b3ce9f0c80174a406cdfeffcc7b24a28c96ee1f6481383ff77654144fe2",
+      "Text": "최근 프로젝트",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183136Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "1c564b3ce9f0c80174a406cdfeffcc7b24a28c96ee1f6481383ff77654144fe2",
+      "Text": "Projetos recentes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.218318Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "1c564b3ce9f0c80174a406cdfeffcc7b24a28c96ee1f6481383ff77654144fe2",
+      "Text": "Недавние проекты",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183206Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "1c564b3ce9f0c80174a406cdfeffcc7b24a28c96ee1f6481383ff77654144fe2",
+      "Text": "最近的项目",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183227Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "1c564b3ce9f0c80174a406cdfeffcc7b24a28c96ee1f6481383ff77654144fe2",
+      "Text": "最近的專案",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183249Z",
       "Suggestions": [],
       "Comments": []
     }

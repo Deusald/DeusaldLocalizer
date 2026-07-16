@@ -4,7 +4,7 @@
   "KeyName": "intValueHint",
   "Description": "Hint that an enum preview value is an int",
   "CreatedAt": "2026-07-16T12:48:41.5583645Z",
-  "UpdatedAt": "2026-07-16T13:07:17.708873Z",
+  "UpdatedAt": "2026-07-16T20:46:27.226758Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7088705Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "a0e6a53cc1b4c5f0ba29c92c662aeb4fd5480347ddfe7044c19563a68774890b",
+      "Text": "celočíselná hodnota",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2267051Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a0e6a53cc1b4c5f0ba29c92c662aeb4fd5480347ddfe7044c19563a68774890b",
+      "Text": "Ganzzahlwert",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2267143Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "a0e6a53cc1b4c5f0ba29c92c662aeb4fd5480347ddfe7044c19563a68774890b",
+      "Text": "valor entero",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2267188Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a0e6a53cc1b4c5f0ba29c92c662aeb4fd5480347ddfe7044c19563a68774890b",
+      "Text": "valeur entière",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2267226Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "a0e6a53cc1b4c5f0ba29c92c662aeb4fd5480347ddfe7044c19563a68774890b",
+      "Text": "valore intero",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2267264Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "a0e6a53cc1b4c5f0ba29c92c662aeb4fd5480347ddfe7044c19563a68774890b",
+      "Text": "整数値",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2267301Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "a0e6a53cc1b4c5f0ba29c92c662aeb4fd5480347ddfe7044c19563a68774890b",
+      "Text": "정수 값",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2267346Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "a0e6a53cc1b4c5f0ba29c92c662aeb4fd5480347ddfe7044c19563a68774890b",
+      "Text": "valor inteiro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2267429Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "a0e6a53cc1b4c5f0ba29c92c662aeb4fd5480347ddfe7044c19563a68774890b",
+      "Text": "целочисленное значение",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2267466Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "a0e6a53cc1b4c5f0ba29c92c662aeb4fd5480347ddfe7044c19563a68774890b",
+      "Text": "整数值",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2267509Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "a0e6a53cc1b4c5f0ba29c92c662aeb4fd5480347ddfe7044c19563a68774890b",
+      "Text": "整數值",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2267552Z",
       "Suggestions": [],
       "Comments": []
     }

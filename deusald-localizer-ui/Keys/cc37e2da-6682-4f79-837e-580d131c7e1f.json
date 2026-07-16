@@ -4,7 +4,7 @@
   "KeyName": "title",
   "Description": "Title of the connect-to-server modal",
   "CreatedAt": "2026-07-16T12:48:41.5611543Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7073403Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2156425Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.707338Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "de6cce08571e37e126b17dacfd1d340ac3785279ad9c5da51e2443015d611838",
+      "Text": "Připojit k serveru",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155803Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "de6cce08571e37e126b17dacfd1d340ac3785279ad9c5da51e2443015d611838",
+      "Text": "Mit Server verbinden",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155831Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "de6cce08571e37e126b17dacfd1d340ac3785279ad9c5da51e2443015d611838",
+      "Text": "Conectar al servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155858Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "de6cce08571e37e126b17dacfd1d340ac3785279ad9c5da51e2443015d611838",
+      "Text": "Se connecter au serveur",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155887Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "de6cce08571e37e126b17dacfd1d340ac3785279ad9c5da51e2443015d611838",
+      "Text": "Connetti al server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155925Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "de6cce08571e37e126b17dacfd1d340ac3785279ad9c5da51e2443015d611838",
+      "Text": "サーバーに接続",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2155963Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "de6cce08571e37e126b17dacfd1d340ac3785279ad9c5da51e2443015d611838",
+      "Text": "서버에 연결",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2156002Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "de6cce08571e37e126b17dacfd1d340ac3785279ad9c5da51e2443015d611838",
+      "Text": "Conectar ao servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2156335Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "de6cce08571e37e126b17dacfd1d340ac3785279ad9c5da51e2443015d611838",
+      "Text": "Подключиться к серверу",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2156359Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "de6cce08571e37e126b17dacfd1d340ac3785279ad9c5da51e2443015d611838",
+      "Text": "连接到服务器",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2156382Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "de6cce08571e37e126b17dacfd1d340ac3785279ad9c5da51e2443015d611838",
+      "Text": "連線到伺服器",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2156411Z",
       "Suggestions": [],
       "Comments": []
     }

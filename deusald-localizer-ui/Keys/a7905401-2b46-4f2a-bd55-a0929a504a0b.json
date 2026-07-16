@@ -4,7 +4,7 @@
   "KeyName": "collaborators",
   "Description": "Title of the collaborators (members) modal.",
   "CreatedAt": "2026-07-16T12:48:41.5592109Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7109835Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2473696Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7109815Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "439c0bddcded12eb3e032981d56416fced96dea5b4a08247e7099f44ebd112f6",
+      "Text": "Spolupracovníci",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473334Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "439c0bddcded12eb3e032981d56416fced96dea5b4a08247e7099f44ebd112f6",
+      "Text": "Mitwirkende",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473357Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "439c0bddcded12eb3e032981d56416fced96dea5b4a08247e7099f44ebd112f6",
+      "Text": "Colaboradores",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.247338Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "439c0bddcded12eb3e032981d56416fced96dea5b4a08247e7099f44ebd112f6",
+      "Text": "Collaborateurs",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473442Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "439c0bddcded12eb3e032981d56416fced96dea5b4a08247e7099f44ebd112f6",
+      "Text": "Collaboratori",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473464Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "439c0bddcded12eb3e032981d56416fced96dea5b4a08247e7099f44ebd112f6",
+      "Text": "貢献者",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473492Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "439c0bddcded12eb3e032981d56416fced96dea5b4a08247e7099f44ebd112f6",
+      "Text": "기여자",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473514Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "439c0bddcded12eb3e032981d56416fced96dea5b4a08247e7099f44ebd112f6",
+      "Text": "Colaboradores",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473591Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "439c0bddcded12eb3e032981d56416fced96dea5b4a08247e7099f44ebd112f6",
+      "Text": "Соавторы",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473613Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "439c0bddcded12eb3e032981d56416fced96dea5b4a08247e7099f44ebd112f6",
+      "Text": "贡献者",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473635Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "439c0bddcded12eb3e032981d56416fced96dea5b4a08247e7099f44ebd112f6",
+      "Text": "貢獻者",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473682Z",
       "Suggestions": [],
       "Comments": []
     }

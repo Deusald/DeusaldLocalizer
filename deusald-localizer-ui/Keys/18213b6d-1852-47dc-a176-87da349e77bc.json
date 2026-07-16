@@ -4,7 +4,7 @@
   "KeyName": "translationsImportAs",
   "Description": "Section title for how translations are imported.",
   "CreatedAt": "2026-07-16T12:48:41.5604405Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7102392Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2392956Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7102369Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "57b214b4f51d5ac2cb4462402a02be27079c386c2d73d0d77166c2d762ece6ca",
+      "Text": "Překlady se importují jako",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2392569Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "57b214b4f51d5ac2cb4462402a02be27079c386c2d73d0d77166c2d762ece6ca",
+      "Text": "Übersetzungen importieren als",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.239264Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "57b214b4f51d5ac2cb4462402a02be27079c386c2d73d0d77166c2d762ece6ca",
+      "Text": "Las traducciones se importan como",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2392678Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "57b214b4f51d5ac2cb4462402a02be27079c386c2d73d0d77166c2d762ece6ca",
+      "Text": "Les traductions sont importées comme",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2392702Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "57b214b4f51d5ac2cb4462402a02be27079c386c2d73d0d77166c2d762ece6ca",
+      "Text": "Le traduzioni vengono importate come",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2392746Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "57b214b4f51d5ac2cb4462402a02be27079c386c2d73d0d77166c2d762ece6ca",
+      "Text": "翻訳のインポート形式",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2392769Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "57b214b4f51d5ac2cb4462402a02be27079c386c2d73d0d77166c2d762ece6ca",
+      "Text": "번역 가져오기 형식",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2392791Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "57b214b4f51d5ac2cb4462402a02be27079c386c2d73d0d77166c2d762ece6ca",
+      "Text": "Traduções importadas como",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2392859Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "57b214b4f51d5ac2cb4462402a02be27079c386c2d73d0d77166c2d762ece6ca",
+      "Text": "Переводы импортируются как",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2392883Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "57b214b4f51d5ac2cb4462402a02be27079c386c2d73d0d77166c2d762ece6ca",
+      "Text": "翻译导入为",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2392905Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "57b214b4f51d5ac2cb4462402a02be27079c386c2d73d0d77166c2d762ece6ca",
+      "Text": "翻譯匯入為",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2392927Z",
       "Suggestions": [],
       "Comments": []
     }

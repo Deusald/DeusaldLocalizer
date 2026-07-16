@@ -4,7 +4,7 @@
   "KeyName": "signInRequired",
   "Description": "Sync/push result message when the user is not signed in.",
   "CreatedAt": "2026-07-16T12:48:41.5590692Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7098502Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2358356Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7098483Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "255346f25669fce12875a9610ec696967138d102614a832c6a27468e5ad754a6",
+      "Text": "Vyžadováno přihlášení",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358019Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "255346f25669fce12875a9610ec696967138d102614a832c6a27468e5ad754a6",
+      "Text": "Anmeldung erforderlich",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358059Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "255346f25669fce12875a9610ec696967138d102614a832c6a27468e5ad754a6",
+      "Text": "Inicio de sesión requerido",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358083Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "255346f25669fce12875a9610ec696967138d102614a832c6a27468e5ad754a6",
+      "Text": "Connexion requise",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358112Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "255346f25669fce12875a9610ec696967138d102614a832c6a27468e5ad754a6",
+      "Text": "Accesso richiesto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358135Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "255346f25669fce12875a9610ec696967138d102614a832c6a27468e5ad754a6",
+      "Text": "ログインが必要です",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358157Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "255346f25669fce12875a9610ec696967138d102614a832c6a27468e5ad754a6",
+      "Text": "로그인 필요",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.235818Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "255346f25669fce12875a9610ec696967138d102614a832c6a27468e5ad754a6",
+      "Text": "Entrada necessária",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.235823Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "255346f25669fce12875a9610ec696967138d102614a832c6a27468e5ad754a6",
+      "Text": "Требуется вход",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358252Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "255346f25669fce12875a9610ec696967138d102614a832c6a27468e5ad754a6",
+      "Text": "需要登录",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358282Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "255346f25669fce12875a9610ec696967138d102614a832c6a27468e5ad754a6",
+      "Text": "需要登入",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358327Z",
       "Suggestions": [],
       "Comments": []
     }

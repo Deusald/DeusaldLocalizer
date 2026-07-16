@@ -4,7 +4,7 @@
   "KeyName": "pushRejectedNewerChanges",
   "Description": "Error shown in the conflicts modal when a push was rejected because the server moved ahead.",
   "CreatedAt": "2026-07-16T12:48:41.5591739Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7097726Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2350341Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7097702Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "bec53e88115d0e9e3fcfeb594e5de56222b61451da5c8c75cb328dbcb5db4d79",
+      "Text": "Odeslání bylo odmítnuto, protože server má novější změny. Nejnovější verze serveru byla načtena — vyřešte níže každý konflikt a poté odešlete znovu.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.234995Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "bec53e88115d0e9e3fcfeb594e5de56222b61451da5c8c75cb328dbcb5db4d79",
+      "Text": "Der Push wurde abgelehnt, weil der Server neuere Änderungen hat. Die neueste Serverversion wurde übernommen — löse jeden Konflikt unten und pushe dann erneut.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350049Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "bec53e88115d0e9e3fcfeb594e5de56222b61451da5c8c75cb328dbcb5db4d79",
+      "Text": "El envío se rechazó porque el servidor tiene cambios más recientes. Se ha incorporado la última versión del servidor: resuelve cada conflicto a continuación y vuelve a enviar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350088Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "bec53e88115d0e9e3fcfeb594e5de56222b61451da5c8c75cb328dbcb5db4d79",
+      "Text": "L'envoi a été rejeté car le serveur a des modifications plus récentes. La dernière version du serveur a été récupérée — résolvez chaque conflit ci-dessous, puis renvoyez.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350112Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "bec53e88115d0e9e3fcfeb594e5de56222b61451da5c8c75cb328dbcb5db4d79",
+      "Text": "L'invio è stato rifiutato perché il server ha modifiche più recenti. È stata recuperata l'ultima versione del server: risolvi ogni conflitto qui sotto, poi invia di nuovo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350138Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "bec53e88115d0e9e3fcfeb594e5de56222b61451da5c8c75cb328dbcb5db4d79",
+      "Text": "サーバーに新しい変更があるため、プッシュが拒否されました。サーバーの最新バージョンを取得しました。以下の各競合を解決してから、もう一度プッシュしてください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350169Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "bec53e88115d0e9e3fcfeb594e5de56222b61451da5c8c75cb328dbcb5db4d79",
+      "Text": "서버에 최신 변경 사항이 있어 푸시가 거부되었습니다. 서버의 최신 버전을 가져왔습니다. 아래 각 충돌을 해결한 후 다시 푸시하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350193Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "bec53e88115d0e9e3fcfeb594e5de56222b61451da5c8c75cb328dbcb5db4d79",
+      "Text": "O envio foi rejeitado porque o servidor tem alterações mais recentes. A versão mais recente do servidor foi incorporada — resolva cada conflito abaixo e envie novamente.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350244Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "bec53e88115d0e9e3fcfeb594e5de56222b61451da5c8c75cb328dbcb5db4d79",
+      "Text": "Отправка отклонена, так как на сервере есть более новые изменения. Последняя версия сервера была загружена — разрешите каждый конфликт ниже, затем отправьте снова.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350271Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "bec53e88115d0e9e3fcfeb594e5de56222b61451da5c8c75cb328dbcb5db4d79",
+      "Text": "由于服务器有更新的更改，推送被拒绝。已获取服务器的最新版本——请解决下面的每个冲突，然后再次推送。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350295Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "bec53e88115d0e9e3fcfeb594e5de56222b61451da5c8c75cb328dbcb5db4d79",
+      "Text": "由於伺服器有較新的變更，推送遭拒。已取得伺服器的最新版本——請解決下面的每個衝突，然後再次推送。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2350326Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "maxLengthHint",
   "Description": "Hint explaining that zero means no length limit.",
   "CreatedAt": "2026-07-16T12:48:41.5576229Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7093285Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2317903Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7093265Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "314b24ad2c0186fc4fb7f7be63598597a66720837a5f2109dc1db1d5444c4ae8",
+      "Text": "0 = bez limitu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2317552Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "314b24ad2c0186fc4fb7f7be63598597a66720837a5f2109dc1db1d5444c4ae8",
+      "Text": "0 = keine Begrenzung",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2317597Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "314b24ad2c0186fc4fb7f7be63598597a66720837a5f2109dc1db1d5444c4ae8",
+      "Text": "0 = sin límite",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2317635Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "314b24ad2c0186fc4fb7f7be63598597a66720837a5f2109dc1db1d5444c4ae8",
+      "Text": "0 = aucune limite",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2317677Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "314b24ad2c0186fc4fb7f7be63598597a66720837a5f2109dc1db1d5444c4ae8",
+      "Text": "0 = nessun limite",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2317715Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "314b24ad2c0186fc4fb7f7be63598597a66720837a5f2109dc1db1d5444c4ae8",
+      "Text": "0 = 制限なし",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2317749Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "314b24ad2c0186fc4fb7f7be63598597a66720837a5f2109dc1db1d5444c4ae8",
+      "Text": "0 = 제한 없음",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2317771Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "314b24ad2c0186fc4fb7f7be63598597a66720837a5f2109dc1db1d5444c4ae8",
+      "Text": "0 = sem limite",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2317818Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "314b24ad2c0186fc4fb7f7be63598597a66720837a5f2109dc1db1d5444c4ae8",
+      "Text": "0 = без ограничения",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2317839Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "314b24ad2c0186fc4fb7f7be63598597a66720837a5f2109dc1db1d5444c4ae8",
+      "Text": "0 = 无限制",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2317863Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "314b24ad2c0186fc4fb7f7be63598597a66720837a5f2109dc1db1d5444c4ae8",
+      "Text": "0 = 無限制",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2317889Z",
       "Suggestions": [],
       "Comments": []
     }

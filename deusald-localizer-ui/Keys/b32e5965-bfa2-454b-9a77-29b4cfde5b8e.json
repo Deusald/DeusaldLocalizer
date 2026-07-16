@@ -4,7 +4,7 @@
   "KeyName": "allCategories",
   "Description": "Filter trigger label when no category is selected.",
   "CreatedAt": "2026-07-16T12:48:41.557309Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7090178Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2285803Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7090158Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "9d5097a837102a179a2d08a921a260c5058495e78469c3f1bad37a1b4bf59053",
+      "Text": "Všechny kategorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2285333Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "9d5097a837102a179a2d08a921a260c5058495e78469c3f1bad37a1b4bf59053",
+      "Text": "Alle Kategorien",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2285385Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "9d5097a837102a179a2d08a921a260c5058495e78469c3f1bad37a1b4bf59053",
+      "Text": "Todas las categorías",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2285431Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "9d5097a837102a179a2d08a921a260c5058495e78469c3f1bad37a1b4bf59053",
+      "Text": "Toutes les catégories",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.228547Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "9d5097a837102a179a2d08a921a260c5058495e78469c3f1bad37a1b4bf59053",
+      "Text": "Tutte le categorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2285509Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "9d5097a837102a179a2d08a921a260c5058495e78469c3f1bad37a1b4bf59053",
+      "Text": "すべてのカテゴリ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2285546Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "9d5097a837102a179a2d08a921a260c5058495e78469c3f1bad37a1b4bf59053",
+      "Text": "모든 카테고리",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2285587Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "9d5097a837102a179a2d08a921a260c5058495e78469c3f1bad37a1b4bf59053",
+      "Text": "Todas as categorias",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.228566Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "9d5097a837102a179a2d08a921a260c5058495e78469c3f1bad37a1b4bf59053",
+      "Text": "Все категории",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2285696Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "9d5097a837102a179a2d08a921a260c5058495e78469c3f1bad37a1b4bf59053",
+      "Text": "所有类别",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2285738Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "9d5097a837102a179a2d08a921a260c5058495e78469c3f1bad37a1b4bf59053",
+      "Text": "所有分類",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2285778Z",
       "Suggestions": [],
       "Comments": []
     }

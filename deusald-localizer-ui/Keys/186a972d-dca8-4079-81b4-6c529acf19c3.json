@@ -4,7 +4,7 @@
   "KeyName": "keyNamePlaceholder",
   "Description": "Example placeholder for the key name input.",
   "CreatedAt": "2026-07-16T12:48:41.5575636Z",
-  "UpdatedAt": "2026-07-16T13:08:43.3022373Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2316938Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:08:43.3021253Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "a45d3a309def7d85538814021b9d0d12232883deac97d9c6a9d385e2a78b7efe",
+      "Text": "button_save",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2316414Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "a45d3a309def7d85538814021b9d0d12232883deac97d9c6a9d385e2a78b7efe",
+      "Text": "button_save",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2316541Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "a45d3a309def7d85538814021b9d0d12232883deac97d9c6a9d385e2a78b7efe",
+      "Text": "button_save",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2316581Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "a45d3a309def7d85538814021b9d0d12232883deac97d9c6a9d385e2a78b7efe",
+      "Text": "button_save",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2316616Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "a45d3a309def7d85538814021b9d0d12232883deac97d9c6a9d385e2a78b7efe",
+      "Text": "button_save",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.231666Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "a45d3a309def7d85538814021b9d0d12232883deac97d9c6a9d385e2a78b7efe",
+      "Text": "button_save",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2316696Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "a45d3a309def7d85538814021b9d0d12232883deac97d9c6a9d385e2a78b7efe",
+      "Text": "button_save",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2316729Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "a45d3a309def7d85538814021b9d0d12232883deac97d9c6a9d385e2a78b7efe",
+      "Text": "button_save",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2316798Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "a45d3a309def7d85538814021b9d0d12232883deac97d9c6a9d385e2a78b7efe",
+      "Text": "button_save",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2316834Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "a45d3a309def7d85538814021b9d0d12232883deac97d9c6a9d385e2a78b7efe",
+      "Text": "button_save",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2316872Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "a45d3a309def7d85538814021b9d0d12232883deac97d9c6a9d385e2a78b7efe",
+      "Text": "button_save",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2316907Z",
       "Suggestions": [],
       "Comments": []
     }

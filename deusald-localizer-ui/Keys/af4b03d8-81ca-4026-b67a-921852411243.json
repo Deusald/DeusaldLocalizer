@@ -4,7 +4,7 @@
   "KeyName": "unsavedChangesBody",
   "Description": "Body warning of the confirm-leave modal.",
   "CreatedAt": "2026-07-16T12:48:41.5598096Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7099934Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2373047Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7099913Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "6d955b91b79bdc5ec376f7f9c4cd9004406fa0cf740a264cfff7ed064dca08b7",
+      "Text": "Máte neuložené změny. Pokud nyní odejdete, tyto změny se ztratí.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2372756Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "6d955b91b79bdc5ec376f7f9c4cd9004406fa0cf740a264cfff7ed064dca08b7",
+      "Text": "Du hast nicht gespeicherte Änderungen. Wenn du jetzt gehst, gehen diese Änderungen verloren.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2372786Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "6d955b91b79bdc5ec376f7f9c4cd9004406fa0cf740a264cfff7ed064dca08b7",
+      "Text": "Tienes cambios sin guardar. Si sales ahora, se perderán.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2372811Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "6d955b91b79bdc5ec376f7f9c4cd9004406fa0cf740a264cfff7ed064dca08b7",
+      "Text": "Vous avez des modifications non enregistrées. Si vous quittez maintenant, elles seront perdues.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2372836Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "6d955b91b79bdc5ec376f7f9c4cd9004406fa0cf740a264cfff7ed064dca08b7",
+      "Text": "Hai modifiche non salvate. Se esci ora, andranno perse.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2372862Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "6d955b91b79bdc5ec376f7f9c4cd9004406fa0cf740a264cfff7ed064dca08b7",
+      "Text": "未保存の変更があります。今退出すると、これらの変更は失われます。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2372884Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "6d955b91b79bdc5ec376f7f9c4cd9004406fa0cf740a264cfff7ed064dca08b7",
+      "Text": "저장되지 않은 변경 사항이 있습니다. 지금 나가면 이 변경 사항이 손실됩니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.237291Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "6d955b91b79bdc5ec376f7f9c4cd9004406fa0cf740a264cfff7ed064dca08b7",
+      "Text": "Você tem alterações não salvas. Se sair agora, essas alterações serão perdidas.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2372961Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "6d955b91b79bdc5ec376f7f9c4cd9004406fa0cf740a264cfff7ed064dca08b7",
+      "Text": "У вас есть несохранённые изменения. Если выйти сейчас, они будут потеряны.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2372985Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "6d955b91b79bdc5ec376f7f9c4cd9004406fa0cf740a264cfff7ed064dca08b7",
+      "Text": "你有未保存的更改。如果现在退出，这些更改将丢失。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2373006Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "6d955b91b79bdc5ec376f7f9c4cd9004406fa0cf740a264cfff7ed064dca08b7",
+      "Text": "你有未儲存的變更。如果現在離開，這些變更將遺失。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2373028Z",
       "Suggestions": [],
       "Comments": []
     }

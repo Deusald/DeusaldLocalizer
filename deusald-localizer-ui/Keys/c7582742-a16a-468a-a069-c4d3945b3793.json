@@ -4,7 +4,7 @@
   "KeyName": "createCategory",
   "Description": "Confirm button when creating a category.",
   "CreatedAt": "2026-07-16T12:48:41.5575011Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7091475Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2297905Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7091454Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "12748aa5d6b5634c8a5981e08fb3cb8e42f72cd82767551652a2be0a5b82c437",
+      "Text": "Vytvořit kategorii",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2297169Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "12748aa5d6b5634c8a5981e08fb3cb8e42f72cd82767551652a2be0a5b82c437",
+      "Text": "Kategorie erstellen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2297252Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "12748aa5d6b5634c8a5981e08fb3cb8e42f72cd82767551652a2be0a5b82c437",
+      "Text": "Crear categoría",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.22973Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "12748aa5d6b5634c8a5981e08fb3cb8e42f72cd82767551652a2be0a5b82c437",
+      "Text": "Créer une catégorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2297338Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "12748aa5d6b5634c8a5981e08fb3cb8e42f72cd82767551652a2be0a5b82c437",
+      "Text": "Crea categoria",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2297377Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "12748aa5d6b5634c8a5981e08fb3cb8e42f72cd82767551652a2be0a5b82c437",
+      "Text": "カテゴリを作成",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2297414Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "12748aa5d6b5634c8a5981e08fb3cb8e42f72cd82767551652a2be0a5b82c437",
+      "Text": "카테고리 만들기",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2297677Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "12748aa5d6b5634c8a5981e08fb3cb8e42f72cd82767551652a2be0a5b82c437",
+      "Text": "Criar categoria",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.229776Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "12748aa5d6b5634c8a5981e08fb3cb8e42f72cd82767551652a2be0a5b82c437",
+      "Text": "Создать категорию",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2297798Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "12748aa5d6b5634c8a5981e08fb3cb8e42f72cd82767551652a2be0a5b82c437",
+      "Text": "创建类别",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2297842Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "12748aa5d6b5634c8a5981e08fb3cb8e42f72cd82767551652a2be0a5b82c437",
+      "Text": "建立分類",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2297879Z",
       "Suggestions": [],
       "Comments": []
     }

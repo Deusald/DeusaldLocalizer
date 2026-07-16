@@ -4,7 +4,7 @@
   "KeyName": "csharpHint",
   "Description": "Hint describing the generated C# class.",
   "CreatedAt": "2026-07-16T12:48:41.5607011Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7103324Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2405288Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.71033Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "35f9d1f7e3c8c048fbc0af836fdfd2d46e26aa7f88d53140455c3581f8a3061a",
+      "Text": "Vygeneruje jednu statickou třídu ID klíčů (seskupených podle kategorie) plus tabulku překladů a vyhledávání Get(language, keyId, values).",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.240468Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "35f9d1f7e3c8c048fbc0af836fdfd2d46e26aa7f88d53140455c3581f8a3061a",
+      "Text": "Erzeugt eine statische Klasse mit Schlüssel-IDs (nach Kategorie gruppiert) sowie eine Übersetzungstabelle und eine Get(language, keyId, values)-Suche.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.240479Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "35f9d1f7e3c8c048fbc0af836fdfd2d46e26aa7f88d53140455c3581f8a3061a",
+      "Text": "Genera una clase estática de ids de clave (agrupadas por categoría) más una tabla de traducciones y una búsqueda Get(language, keyId, values).",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2404836Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "35f9d1f7e3c8c048fbc0af836fdfd2d46e26aa7f88d53140455c3581f8a3061a",
+      "Text": "Génère une classe statique d'ID de clés (regroupées par catégorie) plus une table de traductions et une recherche Get(language, keyId, values).",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2404949Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "35f9d1f7e3c8c048fbc0af836fdfd2d46e26aa7f88d53140455c3581f8a3061a",
+      "Text": "Genera una classe statica di id di chiavi (raggruppate per categoria) più una tabella di traduzioni e una ricerca Get(language, keyId, values).",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2404988Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "35f9d1f7e3c8c048fbc0af836fdfd2d46e26aa7f88d53140455c3581f8a3061a",
+      "Text": "キーID（カテゴリ別にグループ化）の静的クラスと、翻訳テーブルおよびGet(language, keyId, values)ルックアップを生成します。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2405022Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "35f9d1f7e3c8c048fbc0af836fdfd2d46e26aa7f88d53140455c3581f8a3061a",
+      "Text": "키 ID(카테고리별로 그룹화)의 정적 클래스와 번역 테이블, Get(language, keyId, values) 조회를 생성합니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2405104Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "35f9d1f7e3c8c048fbc0af836fdfd2d46e26aa7f88d53140455c3581f8a3061a",
+      "Text": "Gera uma classe estática de ids de chave (agrupadas por categoria) mais uma tabela de traduções e uma busca Get(language, keyId, values).",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2405179Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "35f9d1f7e3c8c048fbc0af836fdfd2d46e26aa7f88d53140455c3581f8a3061a",
+      "Text": "Создаёт один статический класс идентификаторов ключей (сгруппированных по категориям), а также таблицу переводов и функцию поиска Get(language, keyId, values).",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2405201Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "35f9d1f7e3c8c048fbc0af836fdfd2d46e26aa7f88d53140455c3581f8a3061a",
+      "Text": "生成一个包含键 ID（按类别分组）的静态类，以及一个翻译表和 Get(language, keyId, values) 查找。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2405249Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "35f9d1f7e3c8c048fbc0af836fdfd2d46e26aa7f88d53140455c3581f8a3061a",
+      "Text": "產生一個包含索引鍵 ID（依分類分組）的靜態類別，以及一個翻譯表和 Get(language, keyId, values) 查詢。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2405273Z",
       "Suggestions": [],
       "Comments": []
     }

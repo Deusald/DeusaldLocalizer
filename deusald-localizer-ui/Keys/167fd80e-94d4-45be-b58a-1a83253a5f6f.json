@@ -4,7 +4,7 @@
   "KeyName": "addKey",
   "Description": "Button that opens the new key modal.",
   "CreatedAt": "2026-07-16T12:48:41.557064Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7089238Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2274841Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7089217Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "12626d65b219dd74ede3ad8e834b1ed810320ca311e3086ce9801666bcb2b7cc",
+      "Text": "Přidat klíč",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2274373Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "12626d65b219dd74ede3ad8e834b1ed810320ca311e3086ce9801666bcb2b7cc",
+      "Text": "Schlüssel hinzufügen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2274414Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "12626d65b219dd74ede3ad8e834b1ed810320ca311e3086ce9801666bcb2b7cc",
+      "Text": "Añadir clave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.227446Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "12626d65b219dd74ede3ad8e834b1ed810320ca311e3086ce9801666bcb2b7cc",
+      "Text": "Ajouter une clé",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2274503Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "12626d65b219dd74ede3ad8e834b1ed810320ca311e3086ce9801666bcb2b7cc",
+      "Text": "Aggiungi chiave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.227454Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "12626d65b219dd74ede3ad8e834b1ed810320ca311e3086ce9801666bcb2b7cc",
+      "Text": "キーを追加",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2274578Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "12626d65b219dd74ede3ad8e834b1ed810320ca311e3086ce9801666bcb2b7cc",
+      "Text": "키 추가",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2274621Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "12626d65b219dd74ede3ad8e834b1ed810320ca311e3086ce9801666bcb2b7cc",
+      "Text": "Adicionar chave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2274696Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "12626d65b219dd74ede3ad8e834b1ed810320ca311e3086ce9801666bcb2b7cc",
+      "Text": "Добавить ключ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2274733Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "12626d65b219dd74ede3ad8e834b1ed810320ca311e3086ce9801666bcb2b7cc",
+      "Text": "添加键",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2274777Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "12626d65b219dd74ede3ad8e834b1ed810320ca311e3086ce9801666bcb2b7cc",
+      "Text": "新增索引鍵",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2274816Z",
       "Suggestions": [],
       "Comments": []
     }

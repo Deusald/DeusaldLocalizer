@@ -4,7 +4,7 @@
   "KeyName": "editVariable",
   "Description": "Tooltip on the edit-variable button",
   "CreatedAt": "2026-07-16T12:48:41.5583891Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7088573Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2265834Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7088551Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "93def328dca358c0184bf759f6936425190b5089fc367f2bc165ff995ebbcc4b",
+      "Text": "Upravit proměnnou",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.226414Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "93def328dca358c0184bf759f6936425190b5089fc367f2bc165ff995ebbcc4b",
+      "Text": "Variable bearbeiten",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2265387Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "93def328dca358c0184bf759f6936425190b5089fc367f2bc165ff995ebbcc4b",
+      "Text": "Editar variable",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.226545Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "93def328dca358c0184bf759f6936425190b5089fc367f2bc165ff995ebbcc4b",
+      "Text": "Modifier la variable",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2265489Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "93def328dca358c0184bf759f6936425190b5089fc367f2bc165ff995ebbcc4b",
+      "Text": "Modifica variabile",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2265527Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "93def328dca358c0184bf759f6936425190b5089fc367f2bc165ff995ebbcc4b",
+      "Text": "変数を編集",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2265566Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "93def328dca358c0184bf759f6936425190b5089fc367f2bc165ff995ebbcc4b",
+      "Text": "변수 편집",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2265608Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "93def328dca358c0184bf759f6936425190b5089fc367f2bc165ff995ebbcc4b",
+      "Text": "Editar variável",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2265687Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "93def328dca358c0184bf759f6936425190b5089fc367f2bc165ff995ebbcc4b",
+      "Text": "Редактировать переменную",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2265725Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "93def328dca358c0184bf759f6936425190b5089fc367f2bc165ff995ebbcc4b",
+      "Text": "编辑变量",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2265767Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "93def328dca358c0184bf759f6936425190b5089fc367f2bc165ff995ebbcc4b",
+      "Text": "編輯變數",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2265808Z",
       "Suggestions": [],
       "Comments": []
     }

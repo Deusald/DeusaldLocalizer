@@ -4,7 +4,7 @@
   "KeyName": "invalidSlug",
   "Description": "Validation error for an invalid slug",
   "CreatedAt": "2026-07-16T12:48:41.5615088Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7074236Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2166788Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7074219Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "cab9d57b26717e7678aff9f31e47d20c7abd47ead0342ca7704c9c184fce3c45",
+      "Text": "Pouze malá písmena, číslice a pomlčky",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166289Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "cab9d57b26717e7678aff9f31e47d20c7abd47ead0342ca7704c9c184fce3c45",
+      "Text": "Nur Kleinbuchstaben, Zahlen und Bindestriche",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166319Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "cab9d57b26717e7678aff9f31e47d20c7abd47ead0342ca7704c9c184fce3c45",
+      "Text": "Solo minúsculas, números y guiones",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166344Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "cab9d57b26717e7678aff9f31e47d20c7abd47ead0342ca7704c9c184fce3c45",
+      "Text": "Uniquement des minuscules, des chiffres et des traits d'union",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166577Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "cab9d57b26717e7678aff9f31e47d20c7abd47ead0342ca7704c9c184fce3c45",
+      "Text": "Solo lettere minuscole, numeri e trattini",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166601Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "cab9d57b26717e7678aff9f31e47d20c7abd47ead0342ca7704c9c184fce3c45",
+      "Text": "小文字、数字、ハイフンのみ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166623Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "cab9d57b26717e7678aff9f31e47d20c7abd47ead0342ca7704c9c184fce3c45",
+      "Text": "소문자, 숫자, 하이픈만 가능",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166651Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "cab9d57b26717e7678aff9f31e47d20c7abd47ead0342ca7704c9c184fce3c45",
+      "Text": "Apenas letras minúsculas, números e hifens",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166699Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "cab9d57b26717e7678aff9f31e47d20c7abd47ead0342ca7704c9c184fce3c45",
+      "Text": "Только строчные буквы, цифры и дефисы",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166722Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "cab9d57b26717e7678aff9f31e47d20c7abd47ead0342ca7704c9c184fce3c45",
+      "Text": "仅限小写字母、数字和连字符",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.216675Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "cab9d57b26717e7678aff9f31e47d20c7abd47ead0342ca7704c9c184fce3c45",
+      "Text": "僅限小寫字母、數字和連字號",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2166773Z",
       "Suggestions": [],
       "Comments": []
     }

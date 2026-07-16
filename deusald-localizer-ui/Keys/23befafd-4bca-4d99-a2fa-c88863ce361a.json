@@ -4,7 +4,7 @@
   "KeyName": "updateCategories",
   "Description": "Checkbox label to update categories.",
   "CreatedAt": "2026-07-16T12:48:41.5603743Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7102527Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2394707Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7102504Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "e93e9ab15167ffcb4f5c0f6b5bcc3081546687243f9679084fffcd2ba46c1d33",
+      "Text": "Aktualizovat kategorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394368Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "e93e9ab15167ffcb4f5c0f6b5bcc3081546687243f9679084fffcd2ba46c1d33",
+      "Text": "Kategorien aktualisieren",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394395Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "e93e9ab15167ffcb4f5c0f6b5bcc3081546687243f9679084fffcd2ba46c1d33",
+      "Text": "Actualizar categorías",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394419Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "e93e9ab15167ffcb4f5c0f6b5bcc3081546687243f9679084fffcd2ba46c1d33",
+      "Text": "Mettre à jour les catégories",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394464Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "e93e9ab15167ffcb4f5c0f6b5bcc3081546687243f9679084fffcd2ba46c1d33",
+      "Text": "Aggiorna categorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394487Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "e93e9ab15167ffcb4f5c0f6b5bcc3081546687243f9679084fffcd2ba46c1d33",
+      "Text": "カテゴリを更新",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394509Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "e93e9ab15167ffcb4f5c0f6b5bcc3081546687243f9679084fffcd2ba46c1d33",
+      "Text": "카테고리 업데이트",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394532Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "e93e9ab15167ffcb4f5c0f6b5bcc3081546687243f9679084fffcd2ba46c1d33",
+      "Text": "Atualizar categorias",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394604Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "e93e9ab15167ffcb4f5c0f6b5bcc3081546687243f9679084fffcd2ba46c1d33",
+      "Text": "Обновить категории",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394626Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "e93e9ab15167ffcb4f5c0f6b5bcc3081546687243f9679084fffcd2ba46c1d33",
+      "Text": "更新类别",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394648Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "e93e9ab15167ffcb4f5c0f6b5bcc3081546687243f9679084fffcd2ba46c1d33",
+      "Text": "更新分類",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2394693Z",
       "Suggestions": [],
       "Comments": []
     }

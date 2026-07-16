@@ -4,7 +4,7 @@
   "KeyName": "serverUrlLabel",
   "Description": "Field label for the server URL input",
   "CreatedAt": "2026-07-16T12:48:41.56118Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7073063Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2152986Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7073047Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "22f5ebc3ad3ff7638885810bfd9485a3d1b536966124cae45727d4181760f9ba",
+      "Text": "URL serveru",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152516Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "22f5ebc3ad3ff7638885810bfd9485a3d1b536966124cae45727d4181760f9ba",
+      "Text": "Server-URL",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152539Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "22f5ebc3ad3ff7638885810bfd9485a3d1b536966124cae45727d4181760f9ba",
+      "Text": "URL del servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152564Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "22f5ebc3ad3ff7638885810bfd9485a3d1b536966124cae45727d4181760f9ba",
+      "Text": "URL du serveur",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152595Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "22f5ebc3ad3ff7638885810bfd9485a3d1b536966124cae45727d4181760f9ba",
+      "Text": "URL del server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152616Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "22f5ebc3ad3ff7638885810bfd9485a3d1b536966124cae45727d4181760f9ba",
+      "Text": "サーバーURL",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152643Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "22f5ebc3ad3ff7638885810bfd9485a3d1b536966124cae45727d4181760f9ba",
+      "Text": "서버 URL",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152666Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "22f5ebc3ad3ff7638885810bfd9485a3d1b536966124cae45727d4181760f9ba",
+      "Text": "URL do servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152721Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "22f5ebc3ad3ff7638885810bfd9485a3d1b536966124cae45727d4181760f9ba",
+      "Text": "URL сервера",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152743Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "22f5ebc3ad3ff7638885810bfd9485a3d1b536966124cae45727d4181760f9ba",
+      "Text": "服务器 URL",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152766Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "22f5ebc3ad3ff7638885810bfd9485a3d1b536966124cae45727d4181760f9ba",
+      "Text": "伺服器 URL",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2152969Z",
       "Suggestions": [],
       "Comments": []
     }

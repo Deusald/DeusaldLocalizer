@@ -4,7 +4,7 @@
   "KeyName": "namePlaceholder",
   "Description": "Placeholder example for the enum name field",
   "CreatedAt": "2026-07-16T12:48:41.5585132Z",
-  "UpdatedAt": "2026-07-16T13:08:30.4263043Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2237762Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:08:30.4262174Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c3c7a78b4894ce8eff10de98a77f360934e5720d3b6dd34e8f981886b7e272a6",
+      "Text": "WeekDay",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237496Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c3c7a78b4894ce8eff10de98a77f360934e5720d3b6dd34e8f981886b7e272a6",
+      "Text": "WeekDay",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237519Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c3c7a78b4894ce8eff10de98a77f360934e5720d3b6dd34e8f981886b7e272a6",
+      "Text": "WeekDay",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237541Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c3c7a78b4894ce8eff10de98a77f360934e5720d3b6dd34e8f981886b7e272a6",
+      "Text": "WeekDay",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237567Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c3c7a78b4894ce8eff10de98a77f360934e5720d3b6dd34e8f981886b7e272a6",
+      "Text": "WeekDay",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237589Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c3c7a78b4894ce8eff10de98a77f360934e5720d3b6dd34e8f981886b7e272a6",
+      "Text": "WeekDay",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.223761Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c3c7a78b4894ce8eff10de98a77f360934e5720d3b6dd34e8f981886b7e272a6",
+      "Text": "WeekDay",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237631Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c3c7a78b4894ce8eff10de98a77f360934e5720d3b6dd34e8f981886b7e272a6",
+      "Text": "WeekDay",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237678Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c3c7a78b4894ce8eff10de98a77f360934e5720d3b6dd34e8f981886b7e272a6",
+      "Text": "WeekDay",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237699Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c3c7a78b4894ce8eff10de98a77f360934e5720d3b6dd34e8f981886b7e272a6",
+      "Text": "WeekDay",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237721Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c3c7a78b4894ce8eff10de98a77f360934e5720d3b6dd34e8f981886b7e272a6",
+      "Text": "WeekDay",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2237748Z",
       "Suggestions": [],
       "Comments": []
     }

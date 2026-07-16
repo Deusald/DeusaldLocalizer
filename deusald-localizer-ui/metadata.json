@@ -6,12 +6,23 @@
   "ApiUrl": "",
   "UncommittedMode": false,
   "MainLanguageId": "en-US",
-  "SyncId": "f310450c-d1be-4a84-8fe8-e221c5ebc74d",
-  "UpdatedAt": "2026-07-16T13:09:02.6593929Z",
+  "SyncId": "57ce6fb1-ce26-4517-a5db-8ebd99f2b694",
+  "UpdatedAt": "2026-07-16T20:47:11.3186536Z",
   "FormatVersion": 1,
   "Languages": [
     "en-US",
-    "pl-PL"
+    "pl-PL",
+    "cs-CZ",
+    "de-DE",
+    "es-ES",
+    "fr-FR",
+    "it-IT",
+    "ja-JP",
+    "ko-KR",
+    "pt-BR",
+    "ru-RU",
+    "zh-Hans",
+    "zh-Hant"
   ],
   "IsOnline": false,
   "UsesUncommittedChanges": false

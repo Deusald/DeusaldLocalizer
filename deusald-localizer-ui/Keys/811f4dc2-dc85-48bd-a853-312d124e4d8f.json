@@ -4,7 +4,7 @@
   "KeyName": "keyNameHint",
   "Description": "Hint describing allowed key name characters.",
   "CreatedAt": "2026-07-16T12:48:41.5575571Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7093077Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2315476Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7093048Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "ba8049b42fa45e9e444d28885d4c0dd910ed5c2f55c0979d8296f85f672a96e6",
+      "Text": "pouze písmena, číslice a podtržítko",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2314989Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "ba8049b42fa45e9e444d28885d4c0dd910ed5c2f55c0979d8296f85f672a96e6",
+      "Text": "nur Buchstaben, Zahlen und Unterstrich",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2315045Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "ba8049b42fa45e9e444d28885d4c0dd910ed5c2f55c0979d8296f85f672a96e6",
+      "Text": "solo letras, números y guion bajo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2315088Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "ba8049b42fa45e9e444d28885d4c0dd910ed5c2f55c0979d8296f85f672a96e6",
+      "Text": "lettres, chiffres et tiret bas uniquement",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2315125Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "ba8049b42fa45e9e444d28885d4c0dd910ed5c2f55c0979d8296f85f672a96e6",
+      "Text": "solo lettere, numeri e trattino basso",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2315165Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "ba8049b42fa45e9e444d28885d4c0dd910ed5c2f55c0979d8296f85f672a96e6",
+      "Text": "文字、数字、アンダースコアのみ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2315208Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "ba8049b42fa45e9e444d28885d4c0dd910ed5c2f55c0979d8296f85f672a96e6",
+      "Text": "문자, 숫자, 밑줄만",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2315247Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "ba8049b42fa45e9e444d28885d4c0dd910ed5c2f55c0979d8296f85f672a96e6",
+      "Text": "apenas letras, números e sublinhado",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2315326Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "ba8049b42fa45e9e444d28885d4c0dd910ed5c2f55c0979d8296f85f672a96e6",
+      "Text": "только буквы, цифры и подчёркивание",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2315374Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "ba8049b42fa45e9e444d28885d4c0dd910ed5c2f55c0979d8296f85f672a96e6",
+      "Text": "仅限字母、数字和下划线",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2315413Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "ba8049b42fa45e9e444d28885d4c0dd910ed5c2f55c0979d8296f85f672a96e6",
+      "Text": "僅限字母、數字和底線",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2315448Z",
       "Suggestions": [],
       "Comments": []
     }

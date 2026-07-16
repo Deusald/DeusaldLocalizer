@@ -4,7 +4,7 @@
   "KeyName": "applyAllTitle",
   "Description": "Tooltip for the apply-all button.",
   "CreatedAt": "2026-07-16T12:48:41.5599923Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7107132Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2445591Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7107111Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "ac39722ca91603adcf2083360c9270086b38df7d06b11590e032c7167023f834",
+      "Text": "Použít každou změnu na soubory projektu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2444752Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "ac39722ca91603adcf2083360c9270086b38df7d06b11590e032c7167023f834",
+      "Text": "Jede Änderung auf die Projektdateien anwenden",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445085Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "ac39722ca91603adcf2083360c9270086b38df7d06b11590e032c7167023f834",
+      "Text": "Aplicar cada cambio a los archivos del proyecto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445134Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "ac39722ca91603adcf2083360c9270086b38df7d06b11590e032c7167023f834",
+      "Text": "Appliquer chaque modification aux fichiers du projet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445173Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "ac39722ca91603adcf2083360c9270086b38df7d06b11590e032c7167023f834",
+      "Text": "Applica ogni modifica ai file del progetto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.244521Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "ac39722ca91603adcf2083360c9270086b38df7d06b11590e032c7167023f834",
+      "Text": "各変更をプロジェクトファイルに適用",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445294Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "ac39722ca91603adcf2083360c9270086b38df7d06b11590e032c7167023f834",
+      "Text": "각 변경 사항을 프로젝트 파일에 적용",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445334Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "ac39722ca91603adcf2083360c9270086b38df7d06b11590e032c7167023f834",
+      "Text": "Aplicar cada alteração aos arquivos do projeto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445415Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "ac39722ca91603adcf2083360c9270086b38df7d06b11590e032c7167023f834",
+      "Text": "Применить каждое изменение к файлам проекта",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445491Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "ac39722ca91603adcf2083360c9270086b38df7d06b11590e032c7167023f834",
+      "Text": "将每项更改应用到项目文件",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445529Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "ac39722ca91603adcf2083360c9270086b38df7d06b11590e032c7167023f834",
+      "Text": "將每項變更套用到專案檔案",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2445565Z",
       "Suggestions": [],
       "Comments": []
     }

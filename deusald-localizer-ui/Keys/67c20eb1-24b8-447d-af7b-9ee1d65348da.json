@@ -4,7 +4,7 @@
   "KeyName": "tagline",
   "Description": "Tagline under the app logo (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0793941Z",
-  "UpdatedAt": "2026-07-16T13:07:17.707712Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2184037Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.70771Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "370c2d703d4c3052e049ce64dde450effbc7fc59b6a903af1580cf8d5f338cfa",
+      "Text": "KOMUNITNÍ LOKALIZACE",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183612Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "370c2d703d4c3052e049ce64dde450effbc7fc59b6a903af1580cf8d5f338cfa",
+      "Text": "COMMUNITY-LOKALISIERUNG",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183636Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "370c2d703d4c3052e049ce64dde450effbc7fc59b6a903af1580cf8d5f338cfa",
+      "Text": "LOCALIZACIÓN COMUNITARIA",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183658Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "370c2d703d4c3052e049ce64dde450effbc7fc59b6a903af1580cf8d5f338cfa",
+      "Text": "LOCALISATION COMMUNAUTAIRE",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183682Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "370c2d703d4c3052e049ce64dde450effbc7fc59b6a903af1580cf8d5f338cfa",
+      "Text": "LOCALIZZAZIONE DELLA COMMUNITY",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183708Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "370c2d703d4c3052e049ce64dde450effbc7fc59b6a903af1580cf8d5f338cfa",
+      "Text": "コミュニティローカライズ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.218373Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "370c2d703d4c3052e049ce64dde450effbc7fc59b6a903af1580cf8d5f338cfa",
+      "Text": "커뮤니티 현지화",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183753Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "370c2d703d4c3052e049ce64dde450effbc7fc59b6a903af1580cf8d5f338cfa",
+      "Text": "LOCALIZAÇÃO COMUNITÁRIA",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183801Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "370c2d703d4c3052e049ce64dde450effbc7fc59b6a903af1580cf8d5f338cfa",
+      "Text": "ЛОКАЛИЗАЦИЯ СООБЩЕСТВОМ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183823Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "370c2d703d4c3052e049ce64dde450effbc7fc59b6a903af1580cf8d5f338cfa",
+      "Text": "社区本地化",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183845Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "370c2d703d4c3052e049ce64dde450effbc7fc59b6a903af1580cf8d5f338cfa",
+      "Text": "社群在地化",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2183867Z",
       "Suggestions": [],
       "Comments": []
     }

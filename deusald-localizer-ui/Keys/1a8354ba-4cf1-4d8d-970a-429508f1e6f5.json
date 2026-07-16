@@ -4,7 +4,7 @@
   "KeyName": "noTranslation",
   "Description": "Empty state when the translation text is blank",
   "CreatedAt": "2026-07-16T12:48:41.5582637Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7084397Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2231804Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7084377Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "4a4cd514fe4b6a16dac61b7cd2902362fb5ca5dbfd5f427487ffad6e5621cbca",
+      "Text": "Zatím žádný překlad",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231526Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "4a4cd514fe4b6a16dac61b7cd2902362fb5ca5dbfd5f427487ffad6e5621cbca",
+      "Text": "Noch keine Übersetzung",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231556Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "4a4cd514fe4b6a16dac61b7cd2902362fb5ca5dbfd5f427487ffad6e5621cbca",
+      "Text": "Aún no hay traducción",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.223158Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "4a4cd514fe4b6a16dac61b7cd2902362fb5ca5dbfd5f427487ffad6e5621cbca",
+      "Text": "Pas encore de traduction",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231603Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "4a4cd514fe4b6a16dac61b7cd2902362fb5ca5dbfd5f427487ffad6e5621cbca",
+      "Text": "Ancora nessuna traduzione",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231625Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "4a4cd514fe4b6a16dac61b7cd2902362fb5ca5dbfd5f427487ffad6e5621cbca",
+      "Text": "まだ翻訳がありません",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.223165Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "4a4cd514fe4b6a16dac61b7cd2902362fb5ca5dbfd5f427487ffad6e5621cbca",
+      "Text": "아직 번역 없음",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231677Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "4a4cd514fe4b6a16dac61b7cd2902362fb5ca5dbfd5f427487ffad6e5621cbca",
+      "Text": "Ainda sem tradução",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231719Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "4a4cd514fe4b6a16dac61b7cd2902362fb5ca5dbfd5f427487ffad6e5621cbca",
+      "Text": "Пока нет перевода",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231746Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "4a4cd514fe4b6a16dac61b7cd2902362fb5ca5dbfd5f427487ffad6e5621cbca",
+      "Text": "尚无翻译",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2231768Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "4a4cd514fe4b6a16dac61b7cd2902362fb5ca5dbfd5f427487ffad6e5621cbca",
+      "Text": "尚無翻譯",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.223179Z",
       "Suggestions": [],
       "Comments": []
     }

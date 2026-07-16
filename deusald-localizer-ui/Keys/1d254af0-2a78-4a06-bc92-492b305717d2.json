@@ -4,7 +4,7 @@
   "KeyName": "projectMeta",
   "Description": "Sub-line of a project card summarising counts and last edit.",
   "CreatedAt": "2026-07-16T12:19:57.5408044Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7075473Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2173674Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -49,6 +49,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7075455Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "b9e6f786aa35b1ec7c9d401c3f5489b39ba3dcb89913fbcd39a55f4389f96181",
+      "Text": "{keys} klíčů · {langs} jaz. · {edited}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173303Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "b9e6f786aa35b1ec7c9d401c3f5489b39ba3dcb89913fbcd39a55f4389f96181",
+      "Text": "{keys} Schlüssel · {langs} Sprachen · {edited}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173353Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "b9e6f786aa35b1ec7c9d401c3f5489b39ba3dcb89913fbcd39a55f4389f96181",
+      "Text": "{keys} claves · {langs} idiomas · {edited}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173398Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "b9e6f786aa35b1ec7c9d401c3f5489b39ba3dcb89913fbcd39a55f4389f96181",
+      "Text": "{keys} clés · {langs} langues · {edited}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173439Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "b9e6f786aa35b1ec7c9d401c3f5489b39ba3dcb89913fbcd39a55f4389f96181",
+      "Text": "{keys} chiavi · {langs} lingue · {edited}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173481Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "b9e6f786aa35b1ec7c9d401c3f5489b39ba3dcb89913fbcd39a55f4389f96181",
+      "Text": "{keys}キー · {langs}言語 · {edited}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173517Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "b9e6f786aa35b1ec7c9d401c3f5489b39ba3dcb89913fbcd39a55f4389f96181",
+      "Text": "키 {keys}개 · 언어 {langs}개 · {edited}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.217354Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "b9e6f786aa35b1ec7c9d401c3f5489b39ba3dcb89913fbcd39a55f4389f96181",
+      "Text": "{keys} chaves · {langs} idiomas · {edited}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173588Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "b9e6f786aa35b1ec7c9d401c3f5489b39ba3dcb89913fbcd39a55f4389f96181",
+      "Text": "{keys} ключей · {langs} яз. · {edited}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173611Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "b9e6f786aa35b1ec7c9d401c3f5489b39ba3dcb89913fbcd39a55f4389f96181",
+      "Text": "{keys} 个键 · {langs} 种语言 · {edited}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173634Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "b9e6f786aa35b1ec7c9d401c3f5489b39ba3dcb89913fbcd39a55f4389f96181",
+      "Text": "{keys} 個索引鍵 · {langs} 種語言 · {edited}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2173656Z",
       "Suggestions": [],
       "Comments": []
     }

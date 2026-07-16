@@ -4,7 +4,7 @@
   "KeyName": "discardAll",
   "Description": "Button that starts discarding all pending changes.",
   "CreatedAt": "2026-07-16T12:48:41.5600018Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7107764Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2455373Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7107734Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "5f30ee8710823ab9b37766ed0714ea763c26270509027c1013b802b192644c52",
+      "Text": "Zahodit vše",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2454818Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "5f30ee8710823ab9b37766ed0714ea763c26270509027c1013b802b192644c52",
+      "Text": "Alle verwerfen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2454898Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "5f30ee8710823ab9b37766ed0714ea763c26270509027c1013b802b192644c52",
+      "Text": "Descartar todo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2454938Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "5f30ee8710823ab9b37766ed0714ea763c26270509027c1013b802b192644c52",
+      "Text": "Tout abandonner",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2454977Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "5f30ee8710823ab9b37766ed0714ea763c26270509027c1013b802b192644c52",
+      "Text": "Scarta tutto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2455009Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "5f30ee8710823ab9b37766ed0714ea763c26270509027c1013b802b192644c52",
+      "Text": "すべて破棄",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2455079Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "5f30ee8710823ab9b37766ed0714ea763c26270509027c1013b802b192644c52",
+      "Text": "모두 취소",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2455118Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "5f30ee8710823ab9b37766ed0714ea763c26270509027c1013b802b192644c52",
+      "Text": "Descartar tudo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2455195Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "5f30ee8710823ab9b37766ed0714ea763c26270509027c1013b802b192644c52",
+      "Text": "Отклонить всё",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2455267Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "5f30ee8710823ab9b37766ed0714ea763c26270509027c1013b802b192644c52",
+      "Text": "全部放弃",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2455306Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "5f30ee8710823ab9b37766ed0714ea763c26270509027c1013b802b192644c52",
+      "Text": "全部捨棄",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2455343Z",
       "Suggestions": [],
       "Comments": []
     }

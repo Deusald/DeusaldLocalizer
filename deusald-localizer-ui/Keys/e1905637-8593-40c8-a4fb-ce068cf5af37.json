@@ -4,7 +4,7 @@
   "KeyName": "staleWarning",
   "Description": "Warning shown when the source text no longer matches the translation's base hash",
   "CreatedAt": "2026-07-16T12:48:41.5581734Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7087742Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2257446Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.708772Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "d5bfd7e3632f85bcf2a8b761328f6dc5d7f7482a7da55c424421f37c9c6a9b04",
+      "Text": "Zdroj se změnil od posledního uložení tohoto překladu.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2256071Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "d5bfd7e3632f85bcf2a8b761328f6dc5d7f7482a7da55c424421f37c9c6a9b04",
+      "Text": "Die Quelle hat sich geändert, seit diese Übersetzung zuletzt gespeichert wurde.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2256129Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "d5bfd7e3632f85bcf2a8b761328f6dc5d7f7482a7da55c424421f37c9c6a9b04",
+      "Text": "La fuente ha cambiado desde que se guardó esta traducción por última vez.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.225617Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "d5bfd7e3632f85bcf2a8b761328f6dc5d7f7482a7da55c424421f37c9c6a9b04",
+      "Text": "La source a changé depuis le dernier enregistrement de cette traduction.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2256209Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "d5bfd7e3632f85bcf2a8b761328f6dc5d7f7482a7da55c424421f37c9c6a9b04",
+      "Text": "L'origine è cambiata dall'ultimo salvataggio di questa traduzione.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2256268Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "d5bfd7e3632f85bcf2a8b761328f6dc5d7f7482a7da55c424421f37c9c6a9b04",
+      "Text": "この翻訳が最後に保存されてからソースが変更されました。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2256315Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "d5bfd7e3632f85bcf2a8b761328f6dc5d7f7482a7da55c424421f37c9c6a9b04",
+      "Text": "이 번역이 마지막으로 저장된 이후 원본이 변경되었습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2256355Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "d5bfd7e3632f85bcf2a8b761328f6dc5d7f7482a7da55c424421f37c9c6a9b04",
+      "Text": "A origem mudou desde que esta tradução foi salva pela última vez.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.225643Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "d5bfd7e3632f85bcf2a8b761328f6dc5d7f7482a7da55c424421f37c9c6a9b04",
+      "Text": "Источник изменился с момента последнего сохранения этого перевода.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2257226Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "d5bfd7e3632f85bcf2a8b761328f6dc5d7f7482a7da55c424421f37c9c6a9b04",
+      "Text": "自上次保存此翻译以来，源已更改。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.225737Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "d5bfd7e3632f85bcf2a8b761328f6dc5d7f7482a7da55c424421f37c9c6a9b04",
+      "Text": "自上次儲存此翻譯以來，來源已變更。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2257414Z",
       "Suggestions": [],
       "Comments": []
     }

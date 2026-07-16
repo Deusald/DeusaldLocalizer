@@ -4,7 +4,7 @@
   "KeyName": "kindEdited",
   "Description": "Tag shown on a conflict caused by a concurrent edit of the destination.",
   "CreatedAt": "2026-07-16T12:48:41.5597519Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7100249Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2375682Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7100228Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "1fb9f4097256db2d7b1e13aff79cee44339891a31c556b9cf6093885773b3618",
+      "Text": "upraveno",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.237537Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "1fb9f4097256db2d7b1e13aff79cee44339891a31c556b9cf6093885773b3618",
+      "Text": "bearbeitet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2375417Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "1fb9f4097256db2d7b1e13aff79cee44339891a31c556b9cf6093885773b3618",
+      "Text": "editado",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2375452Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "1fb9f4097256db2d7b1e13aff79cee44339891a31c556b9cf6093885773b3618",
+      "Text": "modifié",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2375481Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "1fb9f4097256db2d7b1e13aff79cee44339891a31c556b9cf6093885773b3618",
+      "Text": "modificato",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2375504Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "1fb9f4097256db2d7b1e13aff79cee44339891a31c556b9cf6093885773b3618",
+      "Text": "編集済み",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2375527Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "1fb9f4097256db2d7b1e13aff79cee44339891a31c556b9cf6093885773b3618",
+      "Text": "편집됨",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2375554Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "1fb9f4097256db2d7b1e13aff79cee44339891a31c556b9cf6093885773b3618",
+      "Text": "editado",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2375598Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "1fb9f4097256db2d7b1e13aff79cee44339891a31c556b9cf6093885773b3618",
+      "Text": "отредактировано",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2375619Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "1fb9f4097256db2d7b1e13aff79cee44339891a31c556b9cf6093885773b3618",
+      "Text": "已编辑",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2375646Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "1fb9f4097256db2d7b1e13aff79cee44339891a31c556b9cf6093885773b3618",
+      "Text": "已編輯",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2375667Z",
       "Suggestions": [],
       "Comments": []
     }

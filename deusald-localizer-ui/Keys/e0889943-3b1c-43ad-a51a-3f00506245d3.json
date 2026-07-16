@@ -4,7 +4,7 @@
   "KeyName": "searchLanguages",
   "Description": "Placeholder for the language search box.",
   "CreatedAt": "2026-07-16T12:48:41.556838Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7095613Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2336171Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7095592Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "abdef0ec71f61cddde34c001e44189c85bec6d8bb687c8075991cf1e18f5ef85",
+      "Text": "Hledat jazyky…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335718Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "abdef0ec71f61cddde34c001e44189c85bec6d8bb687c8075991cf1e18f5ef85",
+      "Text": "Sprachen suchen…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335743Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "abdef0ec71f61cddde34c001e44189c85bec6d8bb687c8075991cf1e18f5ef85",
+      "Text": "Buscar idiomas…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335931Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "abdef0ec71f61cddde34c001e44189c85bec6d8bb687c8075991cf1e18f5ef85",
+      "Text": "Rechercher des langues…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335957Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "abdef0ec71f61cddde34c001e44189c85bec6d8bb687c8075991cf1e18f5ef85",
+      "Text": "Cerca lingue…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2335984Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "abdef0ec71f61cddde34c001e44189c85bec6d8bb687c8075991cf1e18f5ef85",
+      "Text": "言語を検索…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2336008Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "abdef0ec71f61cddde34c001e44189c85bec6d8bb687c8075991cf1e18f5ef85",
+      "Text": "언어 검색…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2336036Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "abdef0ec71f61cddde34c001e44189c85bec6d8bb687c8075991cf1e18f5ef85",
+      "Text": "Buscar idiomas…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2336084Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "abdef0ec71f61cddde34c001e44189c85bec6d8bb687c8075991cf1e18f5ef85",
+      "Text": "Поиск языков…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2336111Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "abdef0ec71f61cddde34c001e44189c85bec6d8bb687c8075991cf1e18f5ef85",
+      "Text": "搜索语言…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2336134Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "abdef0ec71f61cddde34c001e44189c85bec6d8bb687c8075991cf1e18f5ef85",
+      "Text": "搜尋語言…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2336157Z",
       "Suggestions": [],
       "Comments": []
     }

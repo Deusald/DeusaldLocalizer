@@ -4,7 +4,7 @@
   "KeyName": "resynced",
   "Description": "Sync result message after a full resync.",
   "CreatedAt": "2026-07-16T12:48:41.5590609Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7098189Z",
+  "UpdatedAt": "2026-07-16T20:46:27.235338Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7098168Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "3a349df1921ddfa5a052cc583ad1bf5f8c4a37353a3c7a0c8e4cd114d7033369",
+      "Text": "Znovu synchronizováno",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352925Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "3a349df1921ddfa5a052cc583ad1bf5f8c4a37353a3c7a0c8e4cd114d7033369",
+      "Text": "Neu synchronisiert",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2352965Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "3a349df1921ddfa5a052cc583ad1bf5f8c4a37353a3c7a0c8e4cd114d7033369",
+      "Text": "Resincronizado",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2353156Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "3a349df1921ddfa5a052cc583ad1bf5f8c4a37353a3c7a0c8e4cd114d7033369",
+      "Text": "Resynchronisé",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2353179Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "3a349df1921ddfa5a052cc583ad1bf5f8c4a37353a3c7a0c8e4cd114d7033369",
+      "Text": "Risincronizzato",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2353201Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "3a349df1921ddfa5a052cc583ad1bf5f8c4a37353a3c7a0c8e4cd114d7033369",
+      "Text": "再同期しました",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2353228Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "3a349df1921ddfa5a052cc583ad1bf5f8c4a37353a3c7a0c8e4cd114d7033369",
+      "Text": "다시 동기화됨",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2353251Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "3a349df1921ddfa5a052cc583ad1bf5f8c4a37353a3c7a0c8e4cd114d7033369",
+      "Text": "Ressincronizado",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2353296Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "3a349df1921ddfa5a052cc583ad1bf5f8c4a37353a3c7a0c8e4cd114d7033369",
+      "Text": "Повторно синхронизировано",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2353322Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "3a349df1921ddfa5a052cc583ad1bf5f8c4a37353a3c7a0c8e4cd114d7033369",
+      "Text": "已重新同步",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2353346Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "3a349df1921ddfa5a052cc583ad1bf5f8c4a37353a3c7a0c8e4cd114d7033369",
+      "Text": "已重新同步",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2353367Z",
       "Suggestions": [],
       "Comments": []
     }

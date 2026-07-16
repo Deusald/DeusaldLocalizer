@@ -4,7 +4,7 @@
   "KeyName": "sourceLabel",
   "Description": "Label above the source-language text editor",
   "CreatedAt": "2026-07-16T12:48:41.5579651Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7087402Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2253536Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.708738Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "755c4f9d60a114beb6a022e1ce9e4602fbd3fb1425703e7425079851df614a58",
+      "Text": "Zdroj · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2252785Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "755c4f9d60a114beb6a022e1ce9e4602fbd3fb1425703e7425079851df614a58",
+      "Text": "Quelle · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2252826Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "755c4f9d60a114beb6a022e1ce9e4602fbd3fb1425703e7425079851df614a58",
+      "Text": "Fuente · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2252862Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "755c4f9d60a114beb6a022e1ce9e4602fbd3fb1425703e7425079851df614a58",
+      "Text": "Source · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2252907Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "755c4f9d60a114beb6a022e1ce9e4602fbd3fb1425703e7425079851df614a58",
+      "Text": "Origine · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2252946Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "755c4f9d60a114beb6a022e1ce9e4602fbd3fb1425703e7425079851df614a58",
+      "Text": "ソース · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.225298Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "755c4f9d60a114beb6a022e1ce9e4602fbd3fb1425703e7425079851df614a58",
+      "Text": "원본 · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253015Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "755c4f9d60a114beb6a022e1ce9e4602fbd3fb1425703e7425079851df614a58",
+      "Text": "Origem · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253095Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "755c4f9d60a114beb6a022e1ce9e4602fbd3fb1425703e7425079851df614a58",
+      "Text": "Источник · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253135Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "755c4f9d60a114beb6a022e1ce9e4602fbd3fb1425703e7425079851df614a58",
+      "Text": "源 · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253174Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "755c4f9d60a114beb6a022e1ce9e4602fbd3fb1425703e7425079851df614a58",
+      "Text": "來源 · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2253495Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "tagline",
   "Description": "Tagline under the app logo (web).",
   "CreatedAt": "2026-07-16T12:29:28.0792739Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7078933Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2196654Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7078912Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "da29b65c5f97dbab453b0e12df53372ef3b0414f3cb461251ccd957ca376ff07",
+      "Text": "KOMUNITNÍ LOKALIZACE · WEB",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2196158Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "da29b65c5f97dbab453b0e12df53372ef3b0414f3cb461251ccd957ca376ff07",
+      "Text": "COMMUNITY-LOKALISIERUNG · WEB",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2196214Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "da29b65c5f97dbab453b0e12df53372ef3b0414f3cb461251ccd957ca376ff07",
+      "Text": "LOCALIZACIÓN COMUNITARIA · WEB",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2196239Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "da29b65c5f97dbab453b0e12df53372ef3b0414f3cb461251ccd957ca376ff07",
+      "Text": "LOCALISATION COMMUNAUTAIRE · WEB",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2196262Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "da29b65c5f97dbab453b0e12df53372ef3b0414f3cb461251ccd957ca376ff07",
+      "Text": "LOCALIZZAZIONE DELLA COMMUNITY · WEB",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2196466Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "da29b65c5f97dbab453b0e12df53372ef3b0414f3cb461251ccd957ca376ff07",
+      "Text": "コミュニティローカライズ · ウェブ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2196492Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "da29b65c5f97dbab453b0e12df53372ef3b0414f3cb461251ccd957ca376ff07",
+      "Text": "커뮤니티 현지화 · 웹",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2196516Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "da29b65c5f97dbab453b0e12df53372ef3b0414f3cb461251ccd957ca376ff07",
+      "Text": "LOCALIZAÇÃO COMUNITÁRIA · WEB",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2196568Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "da29b65c5f97dbab453b0e12df53372ef3b0414f3cb461251ccd957ca376ff07",
+      "Text": "ЛОКАЛИЗАЦИЯ СООБЩЕСТВОМ · ВЕБ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.219659Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "da29b65c5f97dbab453b0e12df53372ef3b0414f3cb461251ccd957ca376ff07",
+      "Text": "社区本地化 · 网页",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2196613Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "da29b65c5f97dbab453b0e12df53372ef3b0414f3cb461251ccd957ca376ff07",
+      "Text": "社群在地化 · 網頁",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2196635Z",
       "Suggestions": [],
       "Comments": []
     }

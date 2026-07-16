@@ -4,7 +4,7 @@
   "KeyName": "addTag",
   "Description": "Title of the add-tag modal.",
   "CreatedAt": "2026-07-16T12:48:41.5579298Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7081249Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2213238Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7081223Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "3e10b08cc874514175b51ba372ff955b27e2817963bc53ab489344968d5a472d",
+      "Text": "Přidat štítek",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2212685Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "3e10b08cc874514175b51ba372ff955b27e2817963bc53ab489344968d5a472d",
+      "Text": "Tag hinzufügen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2212727Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "3e10b08cc874514175b51ba372ff955b27e2817963bc53ab489344968d5a472d",
+      "Text": "Añadir etiqueta",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2212769Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "3e10b08cc874514175b51ba372ff955b27e2817963bc53ab489344968d5a472d",
+      "Text": "Ajouter une étiquette",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213019Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "3e10b08cc874514175b51ba372ff955b27e2817963bc53ab489344968d5a472d",
+      "Text": "Aggiungi tag",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213048Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "3e10b08cc874514175b51ba372ff955b27e2817963bc53ab489344968d5a472d",
+      "Text": "タグを追加",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213071Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "3e10b08cc874514175b51ba372ff955b27e2817963bc53ab489344968d5a472d",
+      "Text": "태그 추가",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213094Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "3e10b08cc874514175b51ba372ff955b27e2817963bc53ab489344968d5a472d",
+      "Text": "Adicionar tag",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213149Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "3e10b08cc874514175b51ba372ff955b27e2817963bc53ab489344968d5a472d",
+      "Text": "Добавить тег",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213172Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "3e10b08cc874514175b51ba372ff955b27e2817963bc53ab489344968d5a472d",
+      "Text": "添加标签",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213194Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "3e10b08cc874514175b51ba372ff955b27e2817963bc53ab489344968d5a472d",
+      "Text": "新增標籤",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2213223Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "uncommittedCount",
   "Description": "Uncommitted-mode status pill label with a pending-change count.",
   "CreatedAt": "2026-07-16T12:48:41.5589965Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7099168Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2366811Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7099149Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "58d42fde96d27052210e44f92eaff991f8cd01fabfaaf51ca84c8a2232507127",
+      "Text": "Necommittnuto ({count})",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2365402Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "58d42fde96d27052210e44f92eaff991f8cd01fabfaaf51ca84c8a2232507127",
+      "Text": "Nicht committet ({count})",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.236544Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "58d42fde96d27052210e44f92eaff991f8cd01fabfaaf51ca84c8a2232507127",
+      "Text": "Sin confirmar ({count})",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2365477Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "58d42fde96d27052210e44f92eaff991f8cd01fabfaaf51ca84c8a2232507127",
+      "Text": "Non validé ({count})",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2365511Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "58d42fde96d27052210e44f92eaff991f8cd01fabfaaf51ca84c8a2232507127",
+      "Text": "Non committato ({count})",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2366462Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "58d42fde96d27052210e44f92eaff991f8cd01fabfaaf51ca84c8a2232507127",
+      "Text": "未コミット（{count}）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2366535Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "58d42fde96d27052210e44f92eaff991f8cd01fabfaaf51ca84c8a2232507127",
+      "Text": "커밋되지 않음 ({count})",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2366575Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "58d42fde96d27052210e44f92eaff991f8cd01fabfaaf51ca84c8a2232507127",
+      "Text": "Não confirmado ({count})",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2366665Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "58d42fde96d27052210e44f92eaff991f8cd01fabfaaf51ca84c8a2232507127",
+      "Text": "Не закоммичено ({count})",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2366703Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "58d42fde96d27052210e44f92eaff991f8cd01fabfaaf51ca84c8a2232507127",
+      "Text": "未提交（{count}）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.236674Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "58d42fde96d27052210e44f92eaff991f8cd01fabfaaf51ca84c8a2232507127",
+      "Text": "未提交（{count}）",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2366778Z",
       "Suggestions": [],
       "Comments": []
     }

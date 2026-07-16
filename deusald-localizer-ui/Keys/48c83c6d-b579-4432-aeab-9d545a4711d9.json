@@ -4,7 +4,7 @@
   "KeyName": "commentMaintenance",
   "Description": "Section label for the comment cleanup tools.",
   "CreatedAt": "2026-07-16T12:48:41.5594412Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7109905Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2474459Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7109886Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "e1d35b1361c32c6f60237724b9961f0e7c1bb92f8950a30ea47a0cf83460bc8d",
+      "Text": "Údržba komentářů",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473729Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "e1d35b1361c32c6f60237724b9961f0e7c1bb92f8950a30ea47a0cf83460bc8d",
+      "Text": "Kommentarpflege",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473754Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "e1d35b1361c32c6f60237724b9961f0e7c1bb92f8950a30ea47a0cf83460bc8d",
+      "Text": "Mantenimiento de comentarios",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473802Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "e1d35b1361c32c6f60237724b9961f0e7c1bb92f8950a30ea47a0cf83460bc8d",
+      "Text": "Maintenance des commentaires",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473824Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "e1d35b1361c32c6f60237724b9961f0e7c1bb92f8950a30ea47a0cf83460bc8d",
+      "Text": "Manutenzione dei commenti",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473846Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "e1d35b1361c32c6f60237724b9961f0e7c1bb92f8950a30ea47a0cf83460bc8d",
+      "Text": "コメントのメンテナンス",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473868Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "e1d35b1361c32c6f60237724b9961f0e7c1bb92f8950a30ea47a0cf83460bc8d",
+      "Text": "댓글 유지 관리",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2473946Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "e1d35b1361c32c6f60237724b9961f0e7c1bb92f8950a30ea47a0cf83460bc8d",
+      "Text": "Manutenção de comentários",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2474025Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "e1d35b1361c32c6f60237724b9961f0e7c1bb92f8950a30ea47a0cf83460bc8d",
+      "Text": "Обслуживание комментариев",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.247406Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "e1d35b1361c32c6f60237724b9961f0e7c1bb92f8950a30ea47a0cf83460bc8d",
+      "Text": "评论维护",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2474375Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "e1d35b1361c32c6f60237724b9961f0e7c1bb92f8950a30ea47a0cf83460bc8d",
+      "Text": "註解維護",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2474436Z",
       "Suggestions": [],
       "Comments": []
     }

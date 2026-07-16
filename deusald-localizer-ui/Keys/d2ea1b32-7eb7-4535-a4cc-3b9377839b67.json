@@ -4,7 +4,7 @@
   "KeyName": "placeholderNote",
   "Description": "Placeholder in the flag note textarea.",
   "CreatedAt": "2026-07-16T12:48:41.5578801Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7081183Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2212644Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7081166Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "2c2b7aa1015d7d2851eecce2eeb6dc42bed152dc9094c93be7f377e53ccc25b4",
+      "Text": "Proč je toto označeno…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2212105Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "2c2b7aa1015d7d2851eecce2eeb6dc42bed152dc9094c93be7f377e53ccc25b4",
+      "Text": "Warum ist dies markiert…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2212211Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "2c2b7aa1015d7d2851eecce2eeb6dc42bed152dc9094c93be7f377e53ccc25b4",
+      "Text": "Por qué está marcada…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2212256Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "2c2b7aa1015d7d2851eecce2eeb6dc42bed152dc9094c93be7f377e53ccc25b4",
+      "Text": "Pourquoi ceci est-il signalé…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2212297Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "2c2b7aa1015d7d2851eecce2eeb6dc42bed152dc9094c93be7f377e53ccc25b4",
+      "Text": "Perché è contrassegnato…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2212342Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "2c2b7aa1015d7d2851eecce2eeb6dc42bed152dc9094c93be7f377e53ccc25b4",
+      "Text": "フラグを立てる理由…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.221238Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "2c2b7aa1015d7d2851eecce2eeb6dc42bed152dc9094c93be7f377e53ccc25b4",
+      "Text": "이 플래그를 지정한 이유…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2212416Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "2c2b7aa1015d7d2851eecce2eeb6dc42bed152dc9094c93be7f377e53ccc25b4",
+      "Text": "Por que isto está sinalizado…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2212496Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "2c2b7aa1015d7d2851eecce2eeb6dc42bed152dc9094c93be7f377e53ccc25b4",
+      "Text": "Почему это отмечено…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2212531Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "2c2b7aa1015d7d2851eecce2eeb6dc42bed152dc9094c93be7f377e53ccc25b4",
+      "Text": "为何标记此项…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2212568Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "2c2b7aa1015d7d2851eecce2eeb6dc42bed152dc9094c93be7f377e53ccc25b4",
+      "Text": "為何標記此項…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2212616Z",
       "Suggestions": [],
       "Comments": []
     }

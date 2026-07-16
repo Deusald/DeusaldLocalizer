@@ -4,7 +4,7 @@
   "KeyName": "commented",
   "Description": "Notification source label for a key or translation comment.",
   "CreatedAt": "2026-07-16T12:48:41.5598722Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7105745Z",
+  "UpdatedAt": "2026-07-16T20:46:27.242881Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7105718Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "42674d19d5e05bad9d550c6453799ac6d73f0f853922610e88c6ca99cf937510",
+      "Text": "okomentoval(a)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2428308Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "42674d19d5e05bad9d550c6453799ac6d73f0f853922610e88c6ca99cf937510",
+      "Text": "kommentierte",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2428401Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "42674d19d5e05bad9d550c6453799ac6d73f0f853922610e88c6ca99cf937510",
+      "Text": "comentó",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2428482Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "42674d19d5e05bad9d550c6453799ac6d73f0f853922610e88c6ca99cf937510",
+      "Text": "a commenté",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2428523Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "42674d19d5e05bad9d550c6453799ac6d73f0f853922610e88c6ca99cf937510",
+      "Text": "ha commentato",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2428556Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "42674d19d5e05bad9d550c6453799ac6d73f0f853922610e88c6ca99cf937510",
+      "Text": "がコメントしました",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2428623Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "42674d19d5e05bad9d550c6453799ac6d73f0f853922610e88c6ca99cf937510",
+      "Text": "님이 댓글을 남김",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2428649Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "42674d19d5e05bad9d550c6453799ac6d73f0f853922610e88c6ca99cf937510",
+      "Text": "comentou",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2428694Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "42674d19d5e05bad9d550c6453799ac6d73f0f853922610e88c6ca99cf937510",
+      "Text": "прокомментировал(а)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2428748Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "42674d19d5e05bad9d550c6453799ac6d73f0f853922610e88c6ca99cf937510",
+      "Text": "发表了评论",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.242877Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "42674d19d5e05bad9d550c6453799ac6d73f0f853922610e88c6ca99cf937510",
+      "Text": "發表了註解",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2428795Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "sourceChangedDesc",
   "Description": "Conflict description for a source-changed conflict",
   "CreatedAt": "2026-07-16T12:48:41.5586756Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7082676Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2222261Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7082649Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c79f54ab65e0decdc98bf1aaf9e08cdcbf712cbf67cf8714c406b34fb0506d64",
+      "Text": "Zdrojový text se na serveru změnil od doby, kdy jste tento překlad napsali, takže už nemusí odpovídat. Vyberte, jak pokračovat.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2221961Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c79f54ab65e0decdc98bf1aaf9e08cdcbf712cbf67cf8714c406b34fb0506d64",
+      "Text": "Der Quelltext wurde auf dem Server geändert, seit du diese Übersetzung geschrieben hast, daher passt sie möglicherweise nicht mehr. Wähle, wie du fortfahren möchtest.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2221991Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c79f54ab65e0decdc98bf1aaf9e08cdcbf712cbf67cf8714c406b34fb0506d64",
+      "Text": "El texto fuente cambió en el servidor desde que escribiste esta traducción, por lo que puede que ya no coincida. Elige cómo continuar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2222014Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c79f54ab65e0decdc98bf1aaf9e08cdcbf712cbf67cf8714c406b34fb0506d64",
+      "Text": "Le texte source a changé sur le serveur depuis que vous avez écrit cette traduction, elle peut donc ne plus correspondre. Choisissez comment procéder.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2222037Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c79f54ab65e0decdc98bf1aaf9e08cdcbf712cbf67cf8714c406b34fb0506d64",
+      "Text": "Il testo di origine è cambiato sul server da quando hai scritto questa traduzione, quindi potrebbe non corrispondere più. Scegli come procedere.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2222064Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c79f54ab65e0decdc98bf1aaf9e08cdcbf712cbf67cf8714c406b34fb0506d64",
+      "Text": "あなたがこの翻訳を書いた後にソーステキストがサーバー上で変更されたため、もう一致しない可能性があります。進め方を選択してください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.222209Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c79f54ab65e0decdc98bf1aaf9e08cdcbf712cbf67cf8714c406b34fb0506d64",
+      "Text": "이 번역을 작성한 후 서버에서 원본 텍스트가 변경되어 더 이상 일치하지 않을 수 있습니다. 진행 방법을 선택하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2222113Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c79f54ab65e0decdc98bf1aaf9e08cdcbf712cbf67cf8714c406b34fb0506d64",
+      "Text": "O texto de origem mudou no servidor desde que você escreveu esta tradução, então ela pode não corresponder mais. Escolha como proceder.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2222169Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c79f54ab65e0decdc98bf1aaf9e08cdcbf712cbf67cf8714c406b34fb0506d64",
+      "Text": "Исходный текст изменился на сервере после того, как вы написали этот перевод, поэтому он может больше не совпадать. Выберите, как поступить.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2222192Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c79f54ab65e0decdc98bf1aaf9e08cdcbf712cbf67cf8714c406b34fb0506d64",
+      "Text": "自你编写此翻译以来，源文本已在服务器上更改，因此可能不再匹配。请选择如何继续。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2222215Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c79f54ab65e0decdc98bf1aaf9e08cdcbf712cbf67cf8714c406b34fb0506d64",
+      "Text": "自你撰寫此翻譯以來，來源文字已在伺服器上變更，因此可能不再相符。請選擇如何繼續。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2222245Z",
       "Suggestions": [],
       "Comments": []
     }

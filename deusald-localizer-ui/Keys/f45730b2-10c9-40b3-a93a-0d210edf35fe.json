@@ -4,7 +4,7 @@
   "KeyName": "prevSourceHash",
   "Description": "Detail row label for previous source hash.",
   "CreatedAt": "2026-07-16T12:48:41.5602103Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7108348Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2462526Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7108328Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "e4df7502d1df11dc280b2cd2f72dba3584d3faa91abc57ef5c7362d47d3f111a",
+      "Text": "Předch. hash zdroje",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2461207Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "e4df7502d1df11dc280b2cd2f72dba3584d3faa91abc57ef5c7362d47d3f111a",
+      "Text": "Vorh. Quell-Hash",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2461303Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "e4df7502d1df11dc280b2cd2f72dba3584d3faa91abc57ef5c7362d47d3f111a",
+      "Text": "Hash fuente ant.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2461395Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "e4df7502d1df11dc280b2cd2f72dba3584d3faa91abc57ef5c7362d47d3f111a",
+      "Text": "Hash source préc.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2461433Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "e4df7502d1df11dc280b2cd2f72dba3584d3faa91abc57ef5c7362d47d3f111a",
+      "Text": "Hash origine prec.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2461469Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "e4df7502d1df11dc280b2cd2f72dba3584d3faa91abc57ef5c7362d47d3f111a",
+      "Text": "前のソースハッシュ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2461506Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "e4df7502d1df11dc280b2cd2f72dba3584d3faa91abc57ef5c7362d47d3f111a",
+      "Text": "이전 원본 해시",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462198Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "e4df7502d1df11dc280b2cd2f72dba3584d3faa91abc57ef5c7362d47d3f111a",
+      "Text": "Hash origem ant.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462371Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "e4df7502d1df11dc280b2cd2f72dba3584d3faa91abc57ef5c7362d47d3f111a",
+      "Text": "Пред. хеш источника",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462412Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "e4df7502d1df11dc280b2cd2f72dba3584d3faa91abc57ef5c7362d47d3f111a",
+      "Text": "上一个源哈希",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462489Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "e4df7502d1df11dc280b2cd2f72dba3584d3faa91abc57ef5c7362d47d3f111a",
+      "Text": "上一個來源雜湊",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2462512Z",
       "Suggestions": [],
       "Comments": []
     }

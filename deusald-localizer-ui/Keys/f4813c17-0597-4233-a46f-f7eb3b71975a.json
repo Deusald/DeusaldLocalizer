@@ -4,7 +4,7 @@
   "KeyName": "slugLabel",
   "Description": "Field label for the slug input",
   "CreatedAt": "2026-07-16T12:48:41.5614733Z",
-  "UpdatedAt": "2026-07-16T13:08:24.2238576Z",
+  "UpdatedAt": "2026-07-16T20:46:27.216982Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:08:24.2234726Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "d15387ecc6c5e22dee4fb57610138e155c1c84cc8c1a187ff7fa2f1edb3beff6",
+      "Text": "Slug",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169539Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "d15387ecc6c5e22dee4fb57610138e155c1c84cc8c1a187ff7fa2f1edb3beff6",
+      "Text": "Slug",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169566Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "d15387ecc6c5e22dee4fb57610138e155c1c84cc8c1a187ff7fa2f1edb3beff6",
+      "Text": "Slug",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169589Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "d15387ecc6c5e22dee4fb57610138e155c1c84cc8c1a187ff7fa2f1edb3beff6",
+      "Text": "Slug",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.216961Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "d15387ecc6c5e22dee4fb57610138e155c1c84cc8c1a187ff7fa2f1edb3beff6",
+      "Text": "Slug",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169637Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "d15387ecc6c5e22dee4fb57610138e155c1c84cc8c1a187ff7fa2f1edb3beff6",
+      "Text": "スラッグ",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169658Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "d15387ecc6c5e22dee4fb57610138e155c1c84cc8c1a187ff7fa2f1edb3beff6",
+      "Text": "슬러그",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.216968Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "d15387ecc6c5e22dee4fb57610138e155c1c84cc8c1a187ff7fa2f1edb3beff6",
+      "Text": "Slug",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169733Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "d15387ecc6c5e22dee4fb57610138e155c1c84cc8c1a187ff7fa2f1edb3beff6",
+      "Text": "Slug",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169755Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "d15387ecc6c5e22dee4fb57610138e155c1c84cc8c1a187ff7fa2f1edb3beff6",
+      "Text": "Slug",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2169778Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "d15387ecc6c5e22dee4fb57610138e155c1c84cc8c1a187ff7fa2f1edb3beff6",
+      "Text": "Slug",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.21698Z",
       "Suggestions": [],
       "Comments": []
     }

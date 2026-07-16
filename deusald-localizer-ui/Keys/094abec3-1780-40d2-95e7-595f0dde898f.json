@@ -4,7 +4,7 @@
   "KeyName": "replied",
   "Description": "Notification source label for a reply to a suggestion.",
   "CreatedAt": "2026-07-16T12:48:41.5598817Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7106352Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2435574Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7106332Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "4e686cee486fc30c03bf0dbb9273323d3f32f564df645a0e4c9825366194f156",
+      "Text": "odpověděl(a)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2434926Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "4e686cee486fc30c03bf0dbb9273323d3f32f564df645a0e4c9825366194f156",
+      "Text": "antwortete",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2435023Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "4e686cee486fc30c03bf0dbb9273323d3f32f564df645a0e4c9825366194f156",
+      "Text": "respondió",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2435065Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "4e686cee486fc30c03bf0dbb9273323d3f32f564df645a0e4c9825366194f156",
+      "Text": "a répondu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2435153Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "4e686cee486fc30c03bf0dbb9273323d3f32f564df645a0e4c9825366194f156",
+      "Text": "ha risposto",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2435192Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "4e686cee486fc30c03bf0dbb9273323d3f32f564df645a0e4c9825366194f156",
+      "Text": "が返信しました",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2435226Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "4e686cee486fc30c03bf0dbb9273323d3f32f564df645a0e4c9825366194f156",
+      "Text": "님이 답장함",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2435268Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "4e686cee486fc30c03bf0dbb9273323d3f32f564df645a0e4c9825366194f156",
+      "Text": "respondeu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.243539Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "4e686cee486fc30c03bf0dbb9273323d3f32f564df645a0e4c9825366194f156",
+      "Text": "ответил(а)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.243543Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "4e686cee486fc30c03bf0dbb9273323d3f32f564df645a0e4c9825366194f156",
+      "Text": "回复了",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2435468Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "4e686cee486fc30c03bf0dbb9273323d3f32f564df645a0e4c9825366194f156",
+      "Text": "回覆了",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2435545Z",
       "Suggestions": [],
       "Comments": []
     }

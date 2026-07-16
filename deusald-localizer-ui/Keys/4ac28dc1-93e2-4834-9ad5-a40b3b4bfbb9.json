@@ -4,7 +4,7 @@
   "KeyName": "otherChanges",
   "Description": "Section label for changes not tied to a key.",
   "CreatedAt": "2026-07-16T12:48:41.5602785Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7106888Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2442539Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7106868Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "49286a792fd970f0a08c8e52a7520b53cf30f22d265f71a6d6b13538d93b7a1c",
+      "Text": "Další změny",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2441573Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "49286a792fd970f0a08c8e52a7520b53cf30f22d265f71a6d6b13538d93b7a1c",
+      "Text": "Andere Änderungen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2441612Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "49286a792fd970f0a08c8e52a7520b53cf30f22d265f71a6d6b13538d93b7a1c",
+      "Text": "Otros cambios",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2441943Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "49286a792fd970f0a08c8e52a7520b53cf30f22d265f71a6d6b13538d93b7a1c",
+      "Text": "Autres modifications",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.244204Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "49286a792fd970f0a08c8e52a7520b53cf30f22d265f71a6d6b13538d93b7a1c",
+      "Text": "Altre modifiche",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2442077Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "49286a792fd970f0a08c8e52a7520b53cf30f22d265f71a6d6b13538d93b7a1c",
+      "Text": "その他の変更",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2442115Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "49286a792fd970f0a08c8e52a7520b53cf30f22d265f71a6d6b13538d93b7a1c",
+      "Text": "기타 변경 사항",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2442157Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "49286a792fd970f0a08c8e52a7520b53cf30f22d265f71a6d6b13538d93b7a1c",
+      "Text": "Outras alterações",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2442336Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "49286a792fd970f0a08c8e52a7520b53cf30f22d265f71a6d6b13538d93b7a1c",
+      "Text": "Другие изменения",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.244237Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "49286a792fd970f0a08c8e52a7520b53cf30f22d265f71a6d6b13538d93b7a1c",
+      "Text": "其他更改",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2442476Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "49286a792fd970f0a08c8e52a7520b53cf30f22d265f71a6d6b13538d93b7a1c",
+      "Text": "其他變更",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2442518Z",
       "Suggestions": [],
       "Comments": []
     }

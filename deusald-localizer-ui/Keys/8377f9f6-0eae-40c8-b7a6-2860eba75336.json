@@ -4,7 +4,7 @@
   "KeyName": "suggested",
   "Description": "Notification source label for a new suggestion.",
   "CreatedAt": "2026-07-16T12:48:41.5598912Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7106536Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2436206Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7106514Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "8ad7037556d079419d067ab67761390f62a7db8ed3f4696554b320f13b18da97",
+      "Text": "navrhl(a)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2435639Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "8ad7037556d079419d067ab67761390f62a7db8ed3f4696554b320f13b18da97",
+      "Text": "schlug vor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2435683Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "8ad7037556d079419d067ab67761390f62a7db8ed3f4696554b320f13b18da97",
+      "Text": "sugirió",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2435724Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "8ad7037556d079419d067ab67761390f62a7db8ed3f4696554b320f13b18da97",
+      "Text": "a suggéré",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2435789Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "8ad7037556d079419d067ab67761390f62a7db8ed3f4696554b320f13b18da97",
+      "Text": "ha suggerito",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2435813Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "8ad7037556d079419d067ab67761390f62a7db8ed3f4696554b320f13b18da97",
+      "Text": "が提案しました",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2435835Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "8ad7037556d079419d067ab67761390f62a7db8ed3f4696554b320f13b18da97",
+      "Text": "님이 제안함",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2436056Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "8ad7037556d079419d067ab67761390f62a7db8ed3f4696554b320f13b18da97",
+      "Text": "sugeriu",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2436107Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "8ad7037556d079419d067ab67761390f62a7db8ed3f4696554b320f13b18da97",
+      "Text": "предложил(а)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2436129Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "8ad7037556d079419d067ab67761390f62a7db8ed3f4696554b320f13b18da97",
+      "Text": "建议了",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2436169Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "8ad7037556d079419d067ab67761390f62a7db8ed3f4696554b320f13b18da97",
+      "Text": "建議了",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2436192Z",
       "Suggestions": [],
       "Comments": []
     }

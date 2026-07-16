@@ -4,7 +4,7 @@
   "KeyName": "tagsColumnLabel",
   "Description": "Checkbox label to add a tags column to the Excel export.",
   "CreatedAt": "2026-07-16T12:48:41.560858Z",
-  "UpdatedAt": "2026-07-16T13:07:17.710559Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2427228Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7105566Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "68abd83afa2e9b99424adaa90e164c4377266d002d075aa502bce04c4f49c31a",
+      "Text": "Přidat sloupec Štítky se seznamem štítků každého klíče",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2426633Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "68abd83afa2e9b99424adaa90e164c4377266d002d075aa502bce04c4f49c31a",
+      "Text": "Eine Tags-Spalte hinzufügen, die die Tags jedes Schlüssels auflistet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2426677Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "68abd83afa2e9b99424adaa90e164c4377266d002d075aa502bce04c4f49c31a",
+      "Text": "Añadir una columna Etiquetas que liste las etiquetas de cada clave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2426779Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "68abd83afa2e9b99424adaa90e164c4377266d002d075aa502bce04c4f49c31a",
+      "Text": "Ajouter une colonne Étiquettes listant les étiquettes de chaque clé",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.242682Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "68abd83afa2e9b99424adaa90e164c4377266d002d075aa502bce04c4f49c31a",
+      "Text": "Aggiungi una colonna Tag che elenca i tag di ogni chiave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2426856Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "68abd83afa2e9b99424adaa90e164c4377266d002d075aa502bce04c4f49c31a",
+      "Text": "各キーのタグを一覧表示する「タグ」列を追加",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2426892Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "68abd83afa2e9b99424adaa90e164c4377266d002d075aa502bce04c4f49c31a",
+      "Text": "각 키의 태그를 나열하는 태그 열 추가",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2426974Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "68abd83afa2e9b99424adaa90e164c4377266d002d075aa502bce04c4f49c31a",
+      "Text": "Adicionar uma coluna Tags listando as tags de cada chave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2427055Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "68abd83afa2e9b99424adaa90e164c4377266d002d075aa502bce04c4f49c31a",
+      "Text": "Добавить столбец Теги со списком тегов каждого ключа",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2427093Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "68abd83afa2e9b99424adaa90e164c4377266d002d075aa502bce04c4f49c31a",
+      "Text": "添加一个“标签”列，列出每个键的标签",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2427166Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "68abd83afa2e9b99424adaa90e164c4377266d002d075aa502bce04c4f49c31a",
+      "Text": "新增一個「標籤」欄，列出每個索引鍵的標籤",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2427203Z",
       "Suggestions": [],
       "Comments": []
     }

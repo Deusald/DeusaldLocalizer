@@ -4,7 +4,7 @@
   "KeyName": "labelFlagType",
   "Description": "Field label for choosing the flag type in the add-flag modal.",
   "CreatedAt": "2026-07-16T12:48:41.5578559Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7081023Z",
+  "UpdatedAt": "2026-07-16T20:46:27.221106Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7081007Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "154ed4a20d9b42e5430e6bb1072a9cd099d035f70b5982b984cf739eaf01c9d7",
+      "Text": "Typ příznaku",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2210364Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "154ed4a20d9b42e5430e6bb1072a9cd099d035f70b5982b984cf739eaf01c9d7",
+      "Text": "Markierungstyp",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2210397Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "154ed4a20d9b42e5430e6bb1072a9cd099d035f70b5982b984cf739eaf01c9d7",
+      "Text": "Tipo de marca",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2210426Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "154ed4a20d9b42e5430e6bb1072a9cd099d035f70b5982b984cf739eaf01c9d7",
+      "Text": "Type d'indicateur",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2210465Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "154ed4a20d9b42e5430e6bb1072a9cd099d035f70b5982b984cf739eaf01c9d7",
+      "Text": "Tipo di contrassegno",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2210503Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "154ed4a20d9b42e5430e6bb1072a9cd099d035f70b5982b984cf739eaf01c9d7",
+      "Text": "フラグの種類",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.221055Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "154ed4a20d9b42e5430e6bb1072a9cd099d035f70b5982b984cf739eaf01c9d7",
+      "Text": "플래그 유형",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2210588Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "154ed4a20d9b42e5430e6bb1072a9cd099d035f70b5982b984cf739eaf01c9d7",
+      "Text": "Tipo de sinalização",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2210654Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "154ed4a20d9b42e5430e6bb1072a9cd099d035f70b5982b984cf739eaf01c9d7",
+      "Text": "Тип флага",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.22107Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "154ed4a20d9b42e5430e6bb1072a9cd099d035f70b5982b984cf739eaf01c9d7",
+      "Text": "标记类型",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2210741Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "154ed4a20d9b42e5430e6bb1072a9cd099d035f70b5982b984cf739eaf01c9d7",
+      "Text": "標記類型",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2211021Z",
       "Suggestions": [],
       "Comments": []
     }

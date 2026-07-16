@@ -4,7 +4,7 @@
   "KeyName": "deleteWarn",
   "Description": "Delete-confirmation warning (web).",
   "CreatedAt": "2026-07-16T12:29:28.0793481Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7077988Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2189883Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7077969Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "1b14ecdf77a8456351bdf31fb8b24e836f56966ed745d5f12274234fa5e04b7c",
+      "Text": "Tento projekt existuje pouze v tomto prohlížeči — jeho smazání je trvalé a nelze je vrátit zpět. Pokud si jej chcete ponechat, nejprve si stáhněte kopii (.zip).",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2189149Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "1b14ecdf77a8456351bdf31fb8b24e836f56966ed745d5f12274234fa5e04b7c",
+      "Text": "Dieses Projekt existiert nur in diesem Browser — das Löschen ist endgültig und kann nicht rückgängig gemacht werden. Lade zuerst eine Kopie (.zip) herunter, wenn du es behalten möchtest.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2189197Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "1b14ecdf77a8456351bdf31fb8b24e836f56966ed745d5f12274234fa5e04b7c",
+      "Text": "Este proyecto existe solo en este navegador: eliminarlo es permanente y no se puede deshacer. Descarga primero una copia (.zip) si quieres conservarlo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2189241Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "1b14ecdf77a8456351bdf31fb8b24e836f56966ed745d5f12274234fa5e04b7c",
+      "Text": "Ce projet n'existe que dans ce navigateur — sa suppression est définitive et irréversible. Téléchargez d'abord une copie (.zip) si vous souhaitez le conserver.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2189296Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "1b14ecdf77a8456351bdf31fb8b24e836f56966ed745d5f12274234fa5e04b7c",
+      "Text": "Questo progetto esiste solo in questo browser: eliminarlo è definitivo e non può essere annullato. Scarica prima una copia (.zip) se vuoi conservarlo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2189337Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "1b14ecdf77a8456351bdf31fb8b24e836f56966ed745d5f12274234fa5e04b7c",
+      "Text": "このプロジェクトはこのブラウザーにのみ存在します。削除は元に戻せません。残しておきたい場合は、まずコピー（.zip）をダウンロードしてください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2189378Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "1b14ecdf77a8456351bdf31fb8b24e836f56966ed745d5f12274234fa5e04b7c",
+      "Text": "이 프로젝트는 이 브라우저에만 존재합니다. 삭제하면 영구적이며 되돌릴 수 없습니다. 보관하려면 먼저 사본(.zip)을 다운로드하세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2189646Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "1b14ecdf77a8456351bdf31fb8b24e836f56966ed745d5f12274234fa5e04b7c",
+      "Text": "Este projeto existe apenas neste navegador — excluí-lo é permanente e não pode ser desfeito. Baixe uma cópia (.zip) primeiro se quiser mantê-lo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2189719Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "1b14ecdf77a8456351bdf31fb8b24e836f56966ed745d5f12274234fa5e04b7c",
+      "Text": "Этот проект существует только в этом браузере — его удаление необратимо. Сначала скачайте копию (.zip), если хотите его сохранить.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2189766Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "1b14ecdf77a8456351bdf31fb8b24e836f56966ed745d5f12274234fa5e04b7c",
+      "Text": "此项目仅存在于此浏览器中——删除是永久性的，无法撤销。如果想保留，请先下载副本（.zip）。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2189813Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "1b14ecdf77a8456351bdf31fb8b24e836f56966ed745d5f12274234fa5e04b7c",
+      "Text": "此專案僅存在於此瀏覽器中——刪除是永久性的，無法復原。如果想保留，請先下載副本（.zip）。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2189852Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "hintSuggestions",
   "Description": "Hint shown when importing as suggestions.",
   "CreatedAt": "2026-07-16T12:48:41.5604849Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7101391Z",
+  "UpdatedAt": "2026-07-16T20:46:27.238627Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7101356Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "b0be11579efd8c2d694758c5f8e944546ffad3586b27f721a6c3ece6096c4aa6",
+      "Text": "Změněné buňky se stanou návrhy ke kontrole a schválení.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.238557Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "b0be11579efd8c2d694758c5f8e944546ffad3586b27f721a6c3ece6096c4aa6",
+      "Text": "Geänderte Zellen werden zu Vorschlägen zur Prüfung und Genehmigung.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2385672Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "b0be11579efd8c2d694758c5f8e944546ffad3586b27f721a6c3ece6096c4aa6",
+      "Text": "Las celdas cambiadas se convierten en sugerencias para revisar y aprobar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2385722Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "b0be11579efd8c2d694758c5f8e944546ffad3586b27f721a6c3ece6096c4aa6",
+      "Text": "Les cellules modifiées deviennent des suggestions à réviser et approuver.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2385765Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "b0be11579efd8c2d694758c5f8e944546ffad3586b27f721a6c3ece6096c4aa6",
+      "Text": "Le celle modificate diventano suggerimenti da revisionare e approvare.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2385807Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "b0be11579efd8c2d694758c5f8e944546ffad3586b27f721a6c3ece6096c4aa6",
+      "Text": "変更されたセルはレビューと承認のための提案になります。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2385852Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "b0be11579efd8c2d694758c5f8e944546ffad3586b27f721a6c3ece6096c4aa6",
+      "Text": "변경된 셀은 검토 및 승인을 위한 제안이 됩니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2385879Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "b0be11579efd8c2d694758c5f8e944546ffad3586b27f721a6c3ece6096c4aa6",
+      "Text": "Células alteradas se tornam sugestões para revisar e aprovar.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2385927Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "b0be11579efd8c2d694758c5f8e944546ffad3586b27f721a6c3ece6096c4aa6",
+      "Text": "Изменённые ячейки становятся предложениями для проверки и утверждения.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2386163Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "b0be11579efd8c2d694758c5f8e944546ffad3586b27f721a6c3ece6096c4aa6",
+      "Text": "更改的单元格会成为供审核和批准的建议。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2386203Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "b0be11579efd8c2d694758c5f8e944546ffad3586b27f721a6c3ece6096c4aa6",
+      "Text": "變更的儲存格會成為供審閱和核准的建議。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2386239Z",
       "Suggestions": [],
       "Comments": []
     }

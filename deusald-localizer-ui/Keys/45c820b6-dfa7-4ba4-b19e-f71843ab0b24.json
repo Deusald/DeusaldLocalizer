@@ -4,7 +4,7 @@
   "KeyName": "noCategoriesYet",
   "Description": "Warning title shown when there are no categories to add a key to.",
   "CreatedAt": "2026-07-16T12:48:41.5575364Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7093604Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2320056Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.709358Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "7465b45646c600fd127321591be805a04e9f1f284a3d9630c68ede4b9c53dc31",
+      "Text": "Zatím žádné kategorie",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319778Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "7465b45646c600fd127321591be805a04e9f1f284a3d9630c68ede4b9c53dc31",
+      "Text": "Noch keine Kategorien",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319803Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "7465b45646c600fd127321591be805a04e9f1f284a3d9630c68ede4b9c53dc31",
+      "Text": "Aún no hay categorías",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.231983Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "7465b45646c600fd127321591be805a04e9f1f284a3d9630c68ede4b9c53dc31",
+      "Text": "Pas encore de catégories",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319853Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "7465b45646c600fd127321591be805a04e9f1f284a3d9630c68ede4b9c53dc31",
+      "Text": "Ancora nessuna categoria",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319875Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "7465b45646c600fd127321591be805a04e9f1f284a3d9630c68ede4b9c53dc31",
+      "Text": "まだカテゴリがありません",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319897Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "7465b45646c600fd127321591be805a04e9f1f284a3d9630c68ede4b9c53dc31",
+      "Text": "아직 카테고리가 없습니다",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319928Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "7465b45646c600fd127321591be805a04e9f1f284a3d9630c68ede4b9c53dc31",
+      "Text": "Ainda sem categorias",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319971Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "7465b45646c600fd127321591be805a04e9f1f284a3d9630c68ede4b9c53dc31",
+      "Text": "Пока нет категорий",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2319993Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "7465b45646c600fd127321591be805a04e9f1f284a3d9630c68ede4b9c53dc31",
+      "Text": "尚无类别",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.232002Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "7465b45646c600fd127321591be805a04e9f1f284a3d9630c68ede4b9c53dc31",
+      "Text": "尚無分類",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2320042Z",
       "Suggestions": [],
       "Comments": []
     }

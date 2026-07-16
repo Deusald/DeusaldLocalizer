@@ -4,7 +4,7 @@
   "KeyName": "conflictTagTitle",
   "Description": "Tooltip on a per-row conflict tag.",
   "CreatedAt": "2026-07-16T12:48:41.5601463Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7107589Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2452714Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7107568Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "b873c2a676a650d798c7c584be1cc58fd76ab9fdb8efbc1220c88a31552967d1",
+      "Text": "Koliduje s novější serverovou úpravou",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2451388Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "b873c2a676a650d798c7c584be1cc58fd76ab9fdb8efbc1220c88a31552967d1",
+      "Text": "Kollidiert mit einer neueren Serverbearbeitung",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2451468Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "b873c2a676a650d798c7c584be1cc58fd76ab9fdb8efbc1220c88a31552967d1",
+      "Text": "Choca con una edición más reciente del servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2451506Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "b873c2a676a650d798c7c584be1cc58fd76ab9fdb8efbc1220c88a31552967d1",
+      "Text": "Entre en conflit avec une modification serveur plus récente",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2451546Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "b873c2a676a650d798c7c584be1cc58fd76ab9fdb8efbc1220c88a31552967d1",
+      "Text": "Entra in conflitto con una modifica del server più recente",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2451584Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "b873c2a676a650d798c7c584be1cc58fd76ab9fdb8efbc1220c88a31552967d1",
+      "Text": "新しいサーバー編集と競合しています",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2451654Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "b873c2a676a650d798c7c584be1cc58fd76ab9fdb8efbc1220c88a31552967d1",
+      "Text": "최신 서버 편집과 충돌합니다",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2452419Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "b873c2a676a650d798c7c584be1cc58fd76ab9fdb8efbc1220c88a31552967d1",
+      "Text": "Conflita com uma edição mais recente do servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2452532Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "b873c2a676a650d798c7c584be1cc58fd76ab9fdb8efbc1220c88a31552967d1",
+      "Text": "Конфликтует с более новой серверной правкой",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2452612Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "b873c2a676a650d798c7c584be1cc58fd76ab9fdb8efbc1220c88a31552967d1",
+      "Text": "与更新的服务器编辑冲突",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2452652Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "b873c2a676a650d798c7c584be1cc58fd76ab9fdb8efbc1220c88a31552967d1",
+      "Text": "與較新的伺服器編輯衝突",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2452689Z",
       "Suggestions": [],
       "Comments": []
     }

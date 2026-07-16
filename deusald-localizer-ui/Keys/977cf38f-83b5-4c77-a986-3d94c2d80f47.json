@@ -4,7 +4,7 @@
   "KeyName": "suggestions",
   "Description": "Segment button: import translations as suggestions.",
   "CreatedAt": "2026-07-16T12:48:41.560462Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7102161Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2391475Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7102141Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "16c1d601fc66950402ca8d54257acea0f5d21be1e00b9eb99224e436da66c950",
+      "Text": "Návrhy",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2390864Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "16c1d601fc66950402ca8d54257acea0f5d21be1e00b9eb99224e436da66c950",
+      "Text": "Vorschläge",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2390935Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "16c1d601fc66950402ca8d54257acea0f5d21be1e00b9eb99224e436da66c950",
+      "Text": "Sugerencias",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2390993Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "16c1d601fc66950402ca8d54257acea0f5d21be1e00b9eb99224e436da66c950",
+      "Text": "Suggestions",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2391017Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "16c1d601fc66950402ca8d54257acea0f5d21be1e00b9eb99224e436da66c950",
+      "Text": "Suggerimenti",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2391039Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "16c1d601fc66950402ca8d54257acea0f5d21be1e00b9eb99224e436da66c950",
+      "Text": "提案",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2391062Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "16c1d601fc66950402ca8d54257acea0f5d21be1e00b9eb99224e436da66c950",
+      "Text": "제안",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2391307Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "16c1d601fc66950402ca8d54257acea0f5d21be1e00b9eb99224e436da66c950",
+      "Text": "Sugestões",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2391361Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "16c1d601fc66950402ca8d54257acea0f5d21be1e00b9eb99224e436da66c950",
+      "Text": "Предложения",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2391383Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "16c1d601fc66950402ca8d54257acea0f5d21be1e00b9eb99224e436da66c950",
+      "Text": "建议",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2391434Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "16c1d601fc66950402ca8d54257acea0f5d21be1e00b9eb99224e436da66c950",
+      "Text": "建議",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2391461Z",
       "Suggestions": [],
       "Comments": []
     }

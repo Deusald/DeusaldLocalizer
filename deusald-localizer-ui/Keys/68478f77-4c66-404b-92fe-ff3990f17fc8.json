@@ -4,7 +4,7 @@
   "KeyName": "confirmRemoveTitle",
   "Description": "Tooltip on the confirm-remove button for a single change.",
   "CreatedAt": "2026-07-16T12:48:41.560169Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7107278Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2446786Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7107258Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "10764ef5d00450ba1cedcd2b77a9d4c84dc595dac2cb687b900a3885514b92fb",
+      "Text": "Potvrdit odebrání",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2446246Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "10764ef5d00450ba1cedcd2b77a9d4c84dc595dac2cb687b900a3885514b92fb",
+      "Text": "Entfernen bestätigen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2446286Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "10764ef5d00450ba1cedcd2b77a9d4c84dc595dac2cb687b900a3885514b92fb",
+      "Text": "Confirmar eliminación",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2446323Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "10764ef5d00450ba1cedcd2b77a9d4c84dc595dac2cb687b900a3885514b92fb",
+      "Text": "Confirmer la suppression",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2446357Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "10764ef5d00450ba1cedcd2b77a9d4c84dc595dac2cb687b900a3885514b92fb",
+      "Text": "Conferma rimozione",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2446414Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "10764ef5d00450ba1cedcd2b77a9d4c84dc595dac2cb687b900a3885514b92fb",
+      "Text": "削除を確認",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.244645Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "10764ef5d00450ba1cedcd2b77a9d4c84dc595dac2cb687b900a3885514b92fb",
+      "Text": "제거 확인",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2446489Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "10764ef5d00450ba1cedcd2b77a9d4c84dc595dac2cb687b900a3885514b92fb",
+      "Text": "Confirmar remoção",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2446611Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "10764ef5d00450ba1cedcd2b77a9d4c84dc595dac2cb687b900a3885514b92fb",
+      "Text": "Подтвердить удаление",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2446648Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "10764ef5d00450ba1cedcd2b77a9d4c84dc595dac2cb687b900a3885514b92fb",
+      "Text": "确认移除",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2446685Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "10764ef5d00450ba1cedcd2b77a9d4c84dc595dac2cb687b900a3885514b92fb",
+      "Text": "確認移除",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.244676Z",
       "Suggestions": [],
       "Comments": []
     }

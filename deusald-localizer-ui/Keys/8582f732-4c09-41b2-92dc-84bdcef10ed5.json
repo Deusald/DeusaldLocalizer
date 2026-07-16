@@ -4,7 +4,7 @@
   "KeyName": "destChangedTitle",
   "Description": "Conflict header when the translation was edited concurrently",
   "CreatedAt": "2026-07-16T12:48:41.5586571Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7082138Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2219169Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7082116Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "7b40240d068ed0912f69b4dc459554cd1311bbe017efc46cbb2b8120c9e484e1",
+      "Text": "Tento překlad byl upraven na serveru",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218707Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "7b40240d068ed0912f69b4dc459554cd1311bbe017efc46cbb2b8120c9e484e1",
+      "Text": "Diese Übersetzung wurde auf dem Server bearbeitet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.221877Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "7b40240d068ed0912f69b4dc459554cd1311bbe017efc46cbb2b8120c9e484e1",
+      "Text": "Esta traducción se editó en el servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218796Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "7b40240d068ed0912f69b4dc459554cd1311bbe017efc46cbb2b8120c9e484e1",
+      "Text": "Cette traduction a été modifiée sur le serveur",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218825Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "7b40240d068ed0912f69b4dc459554cd1311bbe017efc46cbb2b8120c9e484e1",
+      "Text": "Questa traduzione è stata modificata sul server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218847Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "7b40240d068ed0912f69b4dc459554cd1311bbe017efc46cbb2b8120c9e484e1",
+      "Text": "この翻訳はサーバー上で編集されました",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218869Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "7b40240d068ed0912f69b4dc459554cd1311bbe017efc46cbb2b8120c9e484e1",
+      "Text": "이 번역은 서버에서 편집되었습니다",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218894Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "7b40240d068ed0912f69b4dc459554cd1311bbe017efc46cbb2b8120c9e484e1",
+      "Text": "Esta tradução foi editada no servidor",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218945Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "7b40240d068ed0912f69b4dc459554cd1311bbe017efc46cbb2b8120c9e484e1",
+      "Text": "Этот перевод был отредактирован на сервере",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218969Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "7b40240d068ed0912f69b4dc459554cd1311bbe017efc46cbb2b8120c9e484e1",
+      "Text": "此翻译已在服务器上被编辑",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2218992Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "7b40240d068ed0912f69b4dc459554cd1311bbe017efc46cbb2b8120c9e484e1",
+      "Text": "此翻譯已在伺服器上被編輯",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2219152Z",
       "Suggestions": [],
       "Comments": []
     }

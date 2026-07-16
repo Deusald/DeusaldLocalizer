@@ -4,7 +4,7 @@
   "KeyName": "nothingToRedo",
   "Description": "Redo button tooltip when there is nothing to redo.",
   "CreatedAt": "2026-07-16T12:48:41.5589119Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7096881Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2345408Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7096857Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "4aaf2710a06093447959ebe89e9476d48ad0a7d243fbbe9977ce51c595876b55",
+      "Text": "Není co znovu provést",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345136Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "4aaf2710a06093447959ebe89e9476d48ad0a7d243fbbe9977ce51c595876b55",
+      "Text": "Nichts zum Wiederholen",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345163Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "4aaf2710a06093447959ebe89e9476d48ad0a7d243fbbe9977ce51c595876b55",
+      "Text": "Nada que rehacer",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345185Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "4aaf2710a06093447959ebe89e9476d48ad0a7d243fbbe9977ce51c595876b55",
+      "Text": "Rien à rétablir",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345207Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "4aaf2710a06093447959ebe89e9476d48ad0a7d243fbbe9977ce51c595876b55",
+      "Text": "Niente da ripristinare",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345233Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "4aaf2710a06093447959ebe89e9476d48ad0a7d243fbbe9977ce51c595876b55",
+      "Text": "やり直す操作がありません",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345255Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "4aaf2710a06093447959ebe89e9476d48ad0a7d243fbbe9977ce51c595876b55",
+      "Text": "다시 실행할 항목 없음",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345278Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "4aaf2710a06093447959ebe89e9476d48ad0a7d243fbbe9977ce51c595876b55",
+      "Text": "Nada para refazer",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345325Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "4aaf2710a06093447959ebe89e9476d48ad0a7d243fbbe9977ce51c595876b55",
+      "Text": "Нечего повторить",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345346Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "4aaf2710a06093447959ebe89e9476d48ad0a7d243fbbe9977ce51c595876b55",
+      "Text": "没有可重做的内容",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2345368Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "4aaf2710a06093447959ebe89e9476d48ad0a7d243fbbe9977ce51c595876b55",
+      "Text": "沒有可重做的內容",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.234539Z",
       "Suggestions": [],
       "Comments": []
     }

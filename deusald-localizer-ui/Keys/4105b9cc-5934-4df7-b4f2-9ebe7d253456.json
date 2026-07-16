@@ -4,7 +4,7 @@
   "KeyName": "updateSourceText",
   "Description": "Checkbox label to update source text.",
   "CreatedAt": "2026-07-16T12:48:41.5604304Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7102895Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2399913Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7102875Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "ffea661b71134255a2c8096eac61f01e5843218609cfe4b2bc5bade38b1bd380",
+      "Text": "Aktualizovat zdrojový text",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399494Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "ffea661b71134255a2c8096eac61f01e5843218609cfe4b2bc5bade38b1bd380",
+      "Text": "Quelltext aktualisieren",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399519Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "ffea661b71134255a2c8096eac61f01e5843218609cfe4b2bc5bade38b1bd380",
+      "Text": "Actualizar texto fuente",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399567Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "ffea661b71134255a2c8096eac61f01e5843218609cfe4b2bc5bade38b1bd380",
+      "Text": "Mettre à jour le texte source",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399589Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "ffea661b71134255a2c8096eac61f01e5843218609cfe4b2bc5bade38b1bd380",
+      "Text": "Aggiorna testo di origine",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399611Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "ffea661b71134255a2c8096eac61f01e5843218609cfe4b2bc5bade38b1bd380",
+      "Text": "ソーステキストを更新",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399633Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "ffea661b71134255a2c8096eac61f01e5843218609cfe4b2bc5bade38b1bd380",
+      "Text": "원본 텍스트 업데이트",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399682Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "ffea661b71134255a2c8096eac61f01e5843218609cfe4b2bc5bade38b1bd380",
+      "Text": "Atualizar texto de origem",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399733Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "ffea661b71134255a2c8096eac61f01e5843218609cfe4b2bc5bade38b1bd380",
+      "Text": "Обновить исходный текст",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399808Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "ffea661b71134255a2c8096eac61f01e5843218609cfe4b2bc5bade38b1bd380",
+      "Text": "更新源文本",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399849Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "ffea661b71134255a2c8096eac61f01e5843218609cfe4b2bc5bade38b1bd380",
+      "Text": "更新來源文字",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2399887Z",
       "Suggestions": [],
       "Comments": []
     }

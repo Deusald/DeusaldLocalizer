@@ -4,7 +4,7 @@
   "KeyName": "errFolderPicker",
   "Description": "Error when the folder picker fails to open (desktop).",
   "CreatedAt": "2026-07-16T12:29:28.0795031Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7076261Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2179412Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -35,6 +35,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7076241Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "fe2a62465acd36e0cb14b2a66d0396e4d1d3b92eb17db2d1680c0551041bd607",
+      "Text": "Nepodařilo se otevřít výběr složky: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179126Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "fe2a62465acd36e0cb14b2a66d0396e4d1d3b92eb17db2d1680c0551041bd607",
+      "Text": "Ordnerauswahl konnte nicht geöffnet werden: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179161Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "fe2a62465acd36e0cb14b2a66d0396e4d1d3b92eb17db2d1680c0551041bd607",
+      "Text": "No se pudo abrir el selector de carpetas: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179184Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "fe2a62465acd36e0cb14b2a66d0396e4d1d3b92eb17db2d1680c0551041bd607",
+      "Text": "Impossible d'ouvrir le sélecteur de dossier : {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179207Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "fe2a62465acd36e0cb14b2a66d0396e4d1d3b92eb17db2d1680c0551041bd607",
+      "Text": "Impossibile aprire il selettore di cartelle: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179228Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "fe2a62465acd36e0cb14b2a66d0396e4d1d3b92eb17db2d1680c0551041bd607",
+      "Text": "フォルダー選択を開けませんでした：{msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179258Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "fe2a62465acd36e0cb14b2a66d0396e4d1d3b92eb17db2d1680c0551041bd607",
+      "Text": "폴더 선택기를 열 수 없습니다: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.217928Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "fe2a62465acd36e0cb14b2a66d0396e4d1d3b92eb17db2d1680c0551041bd607",
+      "Text": "Não foi possível abrir o seletor de pastas: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179326Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "fe2a62465acd36e0cb14b2a66d0396e4d1d3b92eb17db2d1680c0551041bd607",
+      "Text": "Не удалось открыть выбор папки: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179352Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "fe2a62465acd36e0cb14b2a66d0396e4d1d3b92eb17db2d1680c0551041bd607",
+      "Text": "无法打开文件夹选择器：{msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179376Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "fe2a62465acd36e0cb14b2a66d0396e4d1d3b92eb17db2d1680c0551041bd607",
+      "Text": "無法開啟資料夾選擇器：{msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2179398Z",
       "Suggestions": [],
       "Comments": []
     }

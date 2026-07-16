@@ -4,7 +4,7 @@
   "KeyName": "communitySuggestions",
   "Description": "Header of the suggestions list",
   "CreatedAt": "2026-07-16T12:48:41.5583974Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7086669Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2245013Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7086648Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "c7882e28b145eb70e7849656712c05ed8e98be6f432bd71d1863e16c4885c7d0",
+      "Text": "Návrhy komunity",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2244445Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "c7882e28b145eb70e7849656712c05ed8e98be6f432bd71d1863e16c4885c7d0",
+      "Text": "Community-Vorschläge",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2244566Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "c7882e28b145eb70e7849656712c05ed8e98be6f432bd71d1863e16c4885c7d0",
+      "Text": "Sugerencias de la comunidad",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2244621Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "c7882e28b145eb70e7849656712c05ed8e98be6f432bd71d1863e16c4885c7d0",
+      "Text": "Suggestions de la communauté",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2244659Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "c7882e28b145eb70e7849656712c05ed8e98be6f432bd71d1863e16c4885c7d0",
+      "Text": "Suggerimenti della community",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.224469Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "c7882e28b145eb70e7849656712c05ed8e98be6f432bd71d1863e16c4885c7d0",
+      "Text": "コミュニティの提案",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2244737Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "c7882e28b145eb70e7849656712c05ed8e98be6f432bd71d1863e16c4885c7d0",
+      "Text": "커뮤니티 제안",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2244786Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "c7882e28b145eb70e7849656712c05ed8e98be6f432bd71d1863e16c4885c7d0",
+      "Text": "Sugestões da comunidade",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2244869Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "c7882e28b145eb70e7849656712c05ed8e98be6f432bd71d1863e16c4885c7d0",
+      "Text": "Предложения сообщества",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2244903Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "c7882e28b145eb70e7849656712c05ed8e98be6f432bd71d1863e16c4885c7d0",
+      "Text": "社区建议",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2244945Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "c7882e28b145eb70e7849656712c05ed8e98be6f432bd71d1863e16c4885c7d0",
+      "Text": "社群建議",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2244987Z",
       "Suggestions": [],
       "Comments": []
     }

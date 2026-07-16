@@ -4,7 +4,7 @@
   "KeyName": "errLogin",
   "Description": "Login error on the desktop sign-in modal.",
   "CreatedAt": "2026-07-16T12:29:28.079524Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7076467Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2181058Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7076448Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "551ced940b39dd5beaf4d2da05fcf0ec6288983a4c42b84fb3c90fd7b1ee6584",
+      "Text": "Uživatelské jméno nebo přístupový token je nesprávný.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2180378Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "551ced940b39dd5beaf4d2da05fcf0ec6288983a4c42b84fb3c90fd7b1ee6584",
+      "Text": "Benutzername oder Zugriffstoken ist falsch.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2180575Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "551ced940b39dd5beaf4d2da05fcf0ec6288983a4c42b84fb3c90fd7b1ee6584",
+      "Text": "El nombre de usuario o el token de acceso es incorrecto.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2180605Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "551ced940b39dd5beaf4d2da05fcf0ec6288983a4c42b84fb3c90fd7b1ee6584",
+      "Text": "Le nom d'utilisateur ou le jeton d'accès est incorrect.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2180627Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "551ced940b39dd5beaf4d2da05fcf0ec6288983a4c42b84fb3c90fd7b1ee6584",
+      "Text": "Nome utente o token di accesso errato.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2180868Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "551ced940b39dd5beaf4d2da05fcf0ec6288983a4c42b84fb3c90fd7b1ee6584",
+      "Text": "ユーザー名またはアクセストークンが正しくありません。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2180898Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "551ced940b39dd5beaf4d2da05fcf0ec6288983a4c42b84fb3c90fd7b1ee6584",
+      "Text": "사용자 이름 또는 액세스 토큰이 올바르지 않습니다.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2180922Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "551ced940b39dd5beaf4d2da05fcf0ec6288983a4c42b84fb3c90fd7b1ee6584",
+      "Text": "Nome de usuário ou token de acesso incorreto.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2180973Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "551ced940b39dd5beaf4d2da05fcf0ec6288983a4c42b84fb3c90fd7b1ee6584",
+      "Text": "Неверное имя пользователя или токен доступа.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2180995Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "551ced940b39dd5beaf4d2da05fcf0ec6288983a4c42b84fb3c90fd7b1ee6584",
+      "Text": "用户名或访问令牌不正确。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2181018Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "551ced940b39dd5beaf4d2da05fcf0ec6288983a4c42b84fb3c90fd7b1ee6584",
+      "Text": "使用者名稱或存取權杖不正確。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.218104Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "memberSignInTokenTitle",
   "Description": "Title of the modal showing a new member's one-time sign-in token.",
   "CreatedAt": "2026-07-16T12:48:41.5595802Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7110663Z",
+  "UpdatedAt": "2026-07-16T20:46:27.248122Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7110643Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "58eb39ccb5558cc4a74b5c97a8ecf8d109c207a40cfe3907b2255d8f30bb971b",
+      "Text": "Přihlašovací token člena",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480677Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "58eb39ccb5558cc4a74b5c97a8ecf8d109c207a40cfe3907b2255d8f30bb971b",
+      "Text": "Anmelde-Token für Mitglied",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480756Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "58eb39ccb5558cc4a74b5c97a8ecf8d109c207a40cfe3907b2255d8f30bb971b",
+      "Text": "Token de inicio de sesión del miembro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480792Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "58eb39ccb5558cc4a74b5c97a8ecf8d109c207a40cfe3907b2255d8f30bb971b",
+      "Text": "Jeton de connexion du membre",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480826Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "58eb39ccb5558cc4a74b5c97a8ecf8d109c207a40cfe3907b2255d8f30bb971b",
+      "Text": "Token di accesso del membro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480867Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "58eb39ccb5558cc4a74b5c97a8ecf8d109c207a40cfe3907b2255d8f30bb971b",
+      "Text": "メンバーのログイントークン",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2480939Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "58eb39ccb5558cc4a74b5c97a8ecf8d109c207a40cfe3907b2255d8f30bb971b",
+      "Text": "멤버 로그인 토큰",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.248098Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "58eb39ccb5558cc4a74b5c97a8ecf8d109c207a40cfe3907b2255d8f30bb971b",
+      "Text": "Token de acesso do membro",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2481055Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "58eb39ccb5558cc4a74b5c97a8ecf8d109c207a40cfe3907b2255d8f30bb971b",
+      "Text": "Токен для входа участника",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.248112Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "58eb39ccb5558cc4a74b5c97a8ecf8d109c207a40cfe3907b2255d8f30bb971b",
+      "Text": "成员登录令牌",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2481161Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "58eb39ccb5558cc4a74b5c97a8ecf8d109c207a40cfe3907b2255d8f30bb971b",
+      "Text": "成員登入權杖",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2481196Z",
       "Suggestions": [],
       "Comments": []
     }

@@ -4,7 +4,7 @@
   "KeyName": "sync",
   "Description": "Label of the button that syncs from the server.",
   "CreatedAt": "2026-07-16T12:48:41.5588078Z",
-  "UpdatedAt": "2026-07-16T13:07:17.7098573Z",
+  "UpdatedAt": "2026-07-16T20:46:27.2358793Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T13:07:17.7098554Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "8d261a372fde1461cc4a5f53e938b337cfe335e2bd6d4e58d866ab97c5556052",
+      "Text": "Synchronizovat",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358407Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "8d261a372fde1461cc4a5f53e938b337cfe335e2bd6d4e58d866ab97c5556052",
+      "Text": "Synchronisieren",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358465Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "8d261a372fde1461cc4a5f53e938b337cfe335e2bd6d4e58d866ab97c5556052",
+      "Text": "Sincronizar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358491Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "8d261a372fde1461cc4a5f53e938b337cfe335e2bd6d4e58d866ab97c5556052",
+      "Text": "Synchroniser",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358518Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "8d261a372fde1461cc4a5f53e938b337cfe335e2bd6d4e58d866ab97c5556052",
+      "Text": "Sincronizza",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.235854Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "8d261a372fde1461cc4a5f53e938b337cfe335e2bd6d4e58d866ab97c5556052",
+      "Text": "同期",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358568Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "8d261a372fde1461cc4a5f53e938b337cfe335e2bd6d4e58d866ab97c5556052",
+      "Text": "동기화",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.235859Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "8d261a372fde1461cc4a5f53e938b337cfe335e2bd6d4e58d866ab97c5556052",
+      "Text": "Sincronizar",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358654Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "8d261a372fde1461cc4a5f53e938b337cfe335e2bd6d4e58d866ab97c5556052",
+      "Text": "Синхронизировать",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358699Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "8d261a372fde1461cc4a5f53e938b337cfe335e2bd6d4e58d866ab97c5556052",
+      "Text": "同步",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358736Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "8d261a372fde1461cc4a5f53e938b337cfe335e2bd6d4e58d866ab97c5556052",
+      "Text": "同步",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:46:27.2358771Z",
       "Suggestions": [],
       "Comments": []
     }
