@@ -106,8 +106,10 @@
     gap: 8px;
 }
 
-.ct-input {
-    flex: 1;
+/* The compose textarea is rendered by the MentionTextArea child component, so these rules use ::deep to
+   cross the CSS-isolation boundary and reach that textarea. */
+.ct-compose ::deep .ct-input {
+    width: 100%;
     min-width: 0;
     resize: vertical;
     min-height: 34px;
@@ -120,11 +122,11 @@
     line-height: 1.4;
     padding: 8px 10px;
 }
-.ct-input:focus {
+.ct-compose ::deep .ct-input:focus {
     outline: none;
     border-color: #5b6cff;
 }
-.ct-input::placeholder { color: #4a4b54; }
+.ct-compose ::deep .ct-input::placeholder { color: #4a4b54; }
 
 .ct-post {
     padding: 8px 15px;

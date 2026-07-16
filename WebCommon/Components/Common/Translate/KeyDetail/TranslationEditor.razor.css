@@ -36,7 +36,10 @@
     margin-left: 8px;
 }
 
-.te-textarea {
+/* The editable source/translation textareas are rendered by the MentionTextArea child component, so
+   these rules use ::deep to cross the CSS-isolation boundary and still reach that textarea (the readonly
+   source textarea is plain markup in this component and is matched by the same descendant selectors). */
+.te-block ::deep .te-textarea {
     width: 100%;
     background: #12131a;
     border: 1px solid #20212a;
@@ -50,16 +53,16 @@
     font-family: inherit;
     transition: border-color .15s, box-shadow .15s;
 }
-.te-textarea:focus { border-color: #5b6cff; outline: none; box-shadow: 0 0 0 3px rgba(91,108,255,.15); }
-.te-textarea::placeholder { color: #44454e; }
+.te-block ::deep .te-textarea:focus { border-color: #5b6cff; outline: none; box-shadow: 0 0 0 3px rgba(91,108,255,.15); }
+.te-block ::deep .te-textarea::placeholder { color: #44454e; }
 
-.te-readonly {
+.te-block ::deep .te-readonly {
     background: #0f1015;
     color: #9a9ba3;
     cursor: default;
 }
 
-.te-over-limit {
+.te-block ::deep .te-over-limit {
     border-color: #ff453a !important;
     box-shadow: 0 0 0 3px rgba(255,69,58,.15) !important;
 }
