@@ -1,0 +1,7 @@
+.mt-mention {
+    color: #b9c0ff;
+    background: rgba(91, 108, 255, .16);
+    border-radius: 4px;
+    padding: 0 3px;
+    font-weight: 600;
+}

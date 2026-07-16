@@ -1,0 +1,142 @@
+@namespace DeusaldLocalizerWeb.Components.Common
+@inject ProjectStateService _ProjectState
+
+@if (_Visible)
+{
+    <div class="rcm-backdrop" @onclick="Close"></div>
+
+    <div class="rcm-box" @onclick:stopPropagation="true">
+
+        <div class="rcm-header">
+            <div class="rcm-header-left">
+                <i class="bi bi-arrow-repeat rcm-header-icon"></i>
+                <span class="rcm-title">Recent changes</span>
+                <span class="rcm-count">@_Changes.Count</span>
+            </div>
+            <button class="rcm-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="rcm-body">
+
+            @if (_Changes.Count == 0)
+            {
+                <div class="rcm-empty">
+                    <i class="bi bi-check-circle rcm-empty-icon"></i>
+                    <span>Nothing new from the last sync.</span>
+                </div>
+            }
+            else
+            {
+                <p class="rcm-intro">These are the changes the last sync pulled in from the server. Click a key to open it.</p>
+
+                @foreach (KeyGroup group in _KeyGroups)
+                {
+                    KeyGroup g = group;
+                    <button class="rcm-item" @onclick="() => OpenKey(g)">
+                        <span class="rcm-item-main">
+                            <span class="rcm-item-key">@g.KeyName</span>
+                            <span class="rcm-item-tags">
+                                @foreach (PullChange change in g.Changes)
+                                {
+                                    <span class="rcm-tag @ScopeClass(change.Scope)">
+                                        @change.Description@(string.IsNullOrEmpty(change.LanguageId) ? "" : $" · {change.LanguageId}")
+                                    </span>
+                                }
+                            </span>
+                        </span>
+                        <i class="bi bi-chevron-right rcm-item-chevron"></i>
+                    </button>
+                }
+
+                @if (_OtherChanges.Count > 0)
+                {
+                    <div class="rcm-other-label">Other changes</div>
+                    @foreach (PullChange change in _OtherChanges)
+                    {
+                        <div class="rcm-other-item">
+                            <i class="bi bi-dot"></i>
+                            <span>@change.Description</span>
+                        </div>
+                    }
+                }
+            }
+
+        </div>
+
+    </div>
+}
+
+@code {
+    private bool _Visible;
+
+    private sealed class KeyGroup
+    {
+        public Guid             KeyId    { get; init; }
+        public string          KeyName  { get; init; } = "";
+        public string          Language { get; init; } = "";
+        public List<PullChange> Changes  { get; init; } = [];
+    }
+
+    private IReadOnlyList<PullChange> _Changes => _ProjectState.LastPullChanges;
+
+    private List<PullChange> _OtherChanges =>
+        _Changes.Where(c => c.KeyId is null).ToList();
+
+    private List<KeyGroup> _KeyGroups =>
+        _Changes.Where(c => c.KeyId is not null)
+                .GroupBy(c => c.KeyId!.Value)
+                .Select(grp => new KeyGroup
+                {
+                    KeyId    = grp.Key,
+                    KeyName  = FullKeyName(grp.Key),
+                    Language = grp.Select(c => c.LanguageId).FirstOrDefault(l => !string.IsNullOrEmpty(l)) ?? "",
+                    Changes  = grp.ToList(),
+                })
+                .OrderBy(g => g.KeyName, StringComparer.OrdinalIgnoreCase)
+                .ToList();
+
+    /// <summary>Opens the modal to browse the changes brought in by the last sync.</summary>
+    public void Show()
+    {
+        _Visible = true;
+        StateHasChanged();
+    }
+
+    private void Close() => _Visible = false;
+
+    private void OpenKey(KeyGroup group)
+    {
+        _Visible = false;
+        _ProjectState.RequestOpenKey(group.KeyId, group.Language);
+    }
+
+    private static string ScopeClass(PullChangeScope scope) => scope switch
+    {
+        PullChangeScope.Translation => "rcm-tag-translation",
+        PullChangeScope.Suggestion  => "rcm-tag-suggestion",
+        PullChangeScope.Comment     => "rcm-tag-comment",
+        PullChangeScope.Key         => "rcm-tag-key",
+        _                           => "rcm-tag-other",
+    };
+
+    private string FullKeyName(Guid keyId)
+    {
+        LocProject          project = _ProjectState.CurrentProject!;
+        LocLocalizationKey? key     = project.Keys.Find(k => k.Id == keyId);
+        if (key == null) return "(removed key)";
+
+        LocCategory? cat = project.Categories.Find(c => c.Id == key.CategoryId);
+        if (cat == null) return key.KeyName;
+
+        List<string> parts   = [cat.Name];
+        LocCategory  current = cat;
+        while (current.ParentCategoryId != null)
+        {
+            LocCategory? parent = project.Categories.Find(c => c.Id == current.ParentCategoryId);
+            if (parent == null) break;
+            parts.Insert(0, parent.Name);
+            current = parent;
+        }
+        return $"{string.Join("/", parts)}.{key.KeyName}";
+    }
+}

@@ -1,0 +1,54 @@
+.mta-root {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.mta-popup {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 50;
+    min-width: 180px;
+    max-width: 100%;
+    margin-top: 3px;
+    background: #1a1b23;
+    border: 1px solid #2a2b35;
+    border-radius: 8px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .5);
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.mta-option {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    color: #d6d6db;
+    font-size: 12.5px;
+    font-family: inherit;
+    padding: 6px 9px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mta-option:hover,
+.mta-option.mta-active {
+    background: rgba(91, 108, 255, .16);
+    color: #eceffe;
+}
+
+.mta-at {
+    color: #7a86ff;
+    font-weight: 600;
+}

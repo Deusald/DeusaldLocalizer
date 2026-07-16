@@ -57,6 +57,14 @@
                     @_ProjectState.SyncConflicts.Count @(_ProjectState.SyncConflicts.Count == 1 ? "conflict" : "conflicts")
                 </button>
             }
+            @if (_ProjectState.LastPullChanges.Count > 0)
+            {
+                <button class="ttb-status-pill ttb-status-pill-btn ttb-status-info" title="See what the last sync changed"
+                        @onclick="() => _RecentChangesModal?.Show()">
+                    <i class="bi bi-clock-history"></i>
+                    Recent changes (@_ProjectState.LastPullChanges.Count)
+                </button>
+            }
             @if (!string.IsNullOrEmpty(_StatusMessage))
             {
                 <span class="ttb-sync-msg">@_StatusMessage</span>
@@ -102,6 +110,11 @@
             <i class="bi bi-clock-history"></i>
         </button>
 
+        @if (_IsOnline)
+        {
+            <NotificationBell/>
+        }
+
         <div class="ttb-avatars" @onclick="OpenUsersModal">
             @foreach (LocProjectMember member in _VisibleMembers)
             {
@@ -123,6 +136,7 @@
 <ConfirmLeaveModal @ref="_ConfirmLeaveModal" OnSaveAndLeave="SaveAndLeave" OnDiscardAndLeave="DiscardAndLeave"/>
 <ProjectUncommittedChangesModal @ref="_ProjectUncommittedChangesModal"/>
 <ConflictsModal @ref="_ConflictsModal"/>
+<RecentChangesModal @ref="_RecentChangesModal"/>
 <ExcelImportModal @ref="_ImportModal"/>
 <ExcelExportModal @ref="_ExportModal"/>
 
@@ -133,6 +147,7 @@
     private ConfirmLeaveModal?              _ConfirmLeaveModal;
     private ProjectUncommittedChangesModal? _ProjectUncommittedChangesModal;
     private ConflictsModal?                 _ConflictsModal;
+    private RecentChangesModal?             _RecentChangesModal;
     private ExcelImportModal?               _ImportModal;
     private ExcelExportModal?               _ExportModal;
 

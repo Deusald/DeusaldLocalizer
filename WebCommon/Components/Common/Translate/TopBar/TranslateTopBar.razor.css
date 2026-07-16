@@ -209,6 +209,11 @@
     background: #f5a623;
 }
 
+.ttb-status-info {
+    background: rgba(91, 108, 255, .14);
+    color: #b9c0ff;
+}
+
 /* ── Avatars ──────────────────────────────────────────────────────────────── */
 
 .ttb-avatars {

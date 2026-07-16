@@ -46,6 +46,13 @@ public partial class ProjectStateService(
     /// </summary>
     private LocProject? _SyncBaseline;
 
+    /// <summary>
+    /// Human-readable list of what the most recent server pull changed, derived by diffing the pre- and
+    /// post-pull baselines. Empty until a sync brings in changes; reset when a project is opened/closed.
+    /// Surfaced by the "Recent changes" button in the top bar.
+    /// </summary>
+    public IReadOnlyList<PullChange> LastPullChanges { get; private set; } = [];
+
     public bool HasSyncConflicts => _SyncConflicts.Count > 0;
 
     /// <summary>True when a project is open and ready to use.</summary>
@@ -98,8 +105,9 @@ public partial class ProjectStateService(
         IsDirty            = true;
         ChangedLocKeys.Clear();
         _SyncConflicts.Clear();
-        _SyncBaseline = null;
-        CurrentUser   = LocProjectMember.OfflineMember;
+        _SyncBaseline   = null;
+        LastPullChanges = [];
+        CurrentUser     = LocProjectMember.OfflineMember;
         ResetUndoHistory();
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
@@ -112,9 +120,10 @@ public partial class ProjectStateService(
         IsDirty            = false;
         ChangedLocKeys.Clear();
         _SyncConflicts.Clear();
-        _SyncBaseline = null;
-        CurrentUser   = userId == LocProjectMember.OfflineMember.UserId ? LocProjectMember.OfflineMember : project.ProjectMembers.Find(m => m.UserId == userId)!;
-        AccessToken   = accessToken;
+        _SyncBaseline   = null;
+        LastPullChanges = [];
+        CurrentUser     = userId == LocProjectMember.OfflineMember.UserId ? LocProjectMember.OfflineMember : project.ProjectMembers.Find(m => m.UserId == userId)!;
+        AccessToken     = accessToken;
 
         // When changes are staged (online, or offline uncommitted mode) the key files hold the last-committed
         // state, so any unapplied edits live only in the pending queue. Replay them onto the freshly-loaded
@@ -134,8 +143,9 @@ public partial class ProjectStateService(
         IsDirty            = false;
         ChangedLocKeys.Clear();
         _SyncConflicts.Clear();
-        _SyncBaseline = null;
-        CurrentUser   = LocProjectMember.OfflineMember;
+        _SyncBaseline   = null;
+        LastPullChanges = [];
+        CurrentUser     = LocProjectMember.OfflineMember;
         ResetUndoHistory();
         ProjectChanged?.Invoke();
         DirtyStateChanged?.Invoke();
@@ -232,9 +242,16 @@ public partial class ProjectStateService(
         // Preserve the pending queue across the reload (server files never touch UncommittedChanges/).
         List<LocEntryChange> pending = CurrentProject.UncommitedChanges;
 
+        // Snapshot the pre-pull committed base so we can tell the user what the pull changed. _SyncBaseline
+        // is a clean, pending-free state and RebuildWorkingCopyAsync reassigns it to a fresh object, so this
+        // reference stays valid; it can be null on the first sync after load, in which case read from disk.
+        LocProject oldBase = _SyncBaseline ?? await ProjectFileService.OpenAsync(_CurrentStore);
+
         await ApplyServerFilesAsync(_CurrentStore, response);
 
         await RebuildWorkingCopyAsync(pending);
+
+        LastPullChanges = PullChangeSummaryService.Diff(oldBase, _SyncBaseline!);
 
         ProjectChanged?.Invoke();
         ProjectDataChanged?.Invoke();

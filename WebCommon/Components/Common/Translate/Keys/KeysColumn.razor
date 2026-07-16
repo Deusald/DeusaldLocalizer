@@ -170,7 +170,9 @@
                 KeyTab.NeedsReview  => keys.Where(NeedsReview),
                 _                   => keys,
             };
-            return keys.ToList();
+            return keys.OrderBy(FullKeyName, StringComparer.OrdinalIgnoreCase)
+                       .ThenBy(k => k.KeyName, StringComparer.OrdinalIgnoreCase)
+                       .ToList();
         }
     }
 

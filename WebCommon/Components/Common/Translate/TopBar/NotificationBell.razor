@@ -1,0 +1,188 @@
+@namespace DeusaldLocalizerWeb.Components.Common
+@inject ProjectStateService _ProjectState
+@inject IPreferencesStore   _Prefs
+@implements IDisposable
+
+<div class="nb-root">
+    <button class="nb-btn" @onclick="ToggleOpen" title="Mentions">
+        <i class="bi bi-bell"></i>
+        @if (_UnreadCount > 0)
+        {
+            <span class="nb-badge">@(_UnreadCount > 9 ? "9+" : _UnreadCount.ToString())</span>
+        }
+    </button>
+
+    @if (_Open)
+    {
+        <div class="nb-backdrop" @onclick="Close"></div>
+        <div class="nb-panel" @onclick:stopPropagation="true">
+            <div class="nb-panel-header">
+                <span>Mentions</span>
+                @if (_Notifications.Count > 0)
+                {
+                    <span class="nb-panel-count">@_Notifications.Count</span>
+                }
+            </div>
+
+            @if (_Notifications.Count == 0)
+            {
+                <div class="nb-empty">
+                    <i class="bi bi-bell-slash"></i>
+                    <span>No one has mentioned you yet.</span>
+                </div>
+            }
+            else
+            {
+                <div class="nb-list">
+                    @foreach (MentionNotification notification in _Notifications)
+                    {
+                        MentionNotification n      = notification;
+                        bool                unread = n.CreatedAt > _PanelSince;
+                        <button class="nb-item @(unread ? "nb-unread" : "")" @onclick="() => Open(n)">
+                            <span class="nb-avatar" style="background:@AvatarColor(n.AuthorId)">@Initial(AuthorName(n.AuthorId))</span>
+                            <span class="nb-body">
+                                <span class="nb-meta">
+                                    <span class="nb-author">@AuthorName(n.AuthorId)</span>
+                                    <span class="nb-source">@SourceLabel(n.Source)</span>
+                                    <span class="nb-time">@RelativeTime(n.CreatedAt)</span>
+                                </span>
+                                <span class="nb-text">@n.Text</span>
+                                <span class="nb-key">@KeyName(n.KeyId)</span>
+                            </span>
+                        </button>
+                    }
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    private bool                      _Open;
+    private List<MentionNotification> _Notifications = new();
+    private DateTime                  _LastSeen;    // persisted "read up to" marker
+    private DateTime                  _PanelSince;  // marker captured when the panel was opened (for highlight)
+
+    private int _UnreadCount => _Notifications.Count(n => n.CreatedAt > _LastSeen);
+
+    protected override void OnInitialized()
+    {
+        _ProjectState.ProjectChanged     += OnProjectChanged;
+        _ProjectState.ProjectDataChanged += Refresh;
+        LoadLastSeen();
+        Rebuild();
+    }
+
+    private void OnProjectChanged()
+    {
+        LoadLastSeen();
+        Refresh();
+    }
+
+    private void Refresh()
+    {
+        Rebuild();
+        InvokeAsync(StateHasChanged);
+    }
+
+    private void Rebuild()
+    {
+        if (_ProjectState.CurrentProject is null)
+        {
+            _Notifications = new List<MentionNotification>();
+            return;
+        }
+        _Notifications = MentionNotifications.Build(_ProjectState.CurrentProject, _ProjectState.CurrentUser);
+    }
+
+    private void ToggleOpen()
+    {
+        _Open = !_Open;
+        if (_Open)
+        {
+            _PanelSince = _LastSeen; // remember what was unread so the panel can still highlight it
+            MarkSeen();              // clear the badge and persist immediately
+        }
+    }
+
+    private void Close() => _Open = false;
+
+    private void Open(MentionNotification n)
+    {
+        _Open = false;
+        string lang = string.IsNullOrEmpty(n.LanguageId)
+                          ? _ProjectState.CurrentProject!.Metadata.MainLanguageId
+                          : n.LanguageId;
+        _ProjectState.RequestOpenKey(n.KeyId, lang);
+    }
+
+    // ── Last-seen (local, per project + user) ──────────────────────────────────
+
+    private string _SeenKey =>
+        $"notif-seen:{_ProjectState.CurrentProject!.Metadata.Id}:{_ProjectState.CurrentUser.UserId}";
+
+    private void LoadLastSeen()
+    {
+        if (_ProjectState.CurrentProject is null) { _LastSeen = DateTime.MinValue; return; }
+        string raw = _Prefs.Get(_SeenKey, "");
+        _LastSeen = DateTime.TryParse(raw, null, System.Globalization.DateTimeStyles.AdjustToUniversal | System.Globalization.DateTimeStyles.AssumeUniversal, out DateTime parsed)
+                        ? parsed
+                        : DateTime.MinValue;
+    }
+
+    private void MarkSeen()
+    {
+        if (_ProjectState.CurrentProject is null) return;
+        _LastSeen = DateTime.UtcNow;
+        _Prefs.Set(_SeenKey, _LastSeen.ToString("o"));
+    }
+
+    // ── Display helpers ────────────────────────────────────────────────────────
+
+    private string AuthorName(Guid authorId)
+    {
+        LocProjectMember? member = _ProjectState.CurrentProject!.ProjectMembers.Find(m => m.UserId == authorId);
+        return member?.Username ?? "Unknown";
+    }
+
+    private string KeyName(Guid keyId)
+    {
+        LocLocalizationKey? key = _ProjectState.CurrentProject!.Keys.Find(k => k.Id == keyId);
+        return key?.KeyName ?? "(removed key)";
+    }
+
+    private static string SourceLabel(MentionSource source) => source switch
+    {
+        MentionSource.KeyComment         => "commented",
+        MentionSource.TranslationComment => "commented",
+        MentionSource.SuggestionComment  => "replied",
+        MentionSource.Suggestion         => "suggested",
+        _                                => "",
+    };
+
+    private static string Initial(string name) => string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();
+
+    private static readonly string[] _AvatarPalette = ["#5b6cff", "#3ad98a", "#ff6b6b", "#f5a623", "#a78bfa", "#36c5f0"];
+
+    private static string AvatarColor(Guid userId)
+    {
+        int idx = Math.Abs(userId.GetHashCode()) % _AvatarPalette.Length;
+        return _AvatarPalette[idx];
+    }
+
+    private static string RelativeTime(DateTime time)
+    {
+        TimeSpan diff = DateTime.UtcNow - time;
+        if (diff.TotalMinutes < 1) return "just now";
+        if (diff.TotalHours < 1) return $"{(int)diff.TotalMinutes}m";
+        if (diff.TotalDays < 1) return $"{(int)diff.TotalHours}h";
+        if (diff.TotalDays < 30) return $"{(int)diff.TotalDays}d";
+        return time.ToString("MMM d");
+    }
+
+    public void Dispose()
+    {
+        _ProjectState.ProjectChanged     -= OnProjectChanged;
+        _ProjectState.ProjectDataChanged -= Refresh;
+    }
+}

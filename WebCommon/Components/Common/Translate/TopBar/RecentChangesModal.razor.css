@@ -1,0 +1,81 @@
+.rcm-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.6); backdrop-filter: blur(2px); z-index: 120; }
+
+.rcm-box {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    z-index: 121; width: 560px; max-height: min(660px, calc(100vh - 48px));
+    background: #1a1b23; border: 1px solid #2a2b35; border-radius: 13px;
+    box-shadow: 0 24px 64px rgba(0,0,0,.6); display: flex; flex-direction: column; overflow: hidden;
+}
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+
+.rcm-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 20px; border-bottom: 1px solid #20212a; flex-shrink: 0;
+}
+
+.rcm-header-left { display: flex; align-items: center; gap: 10px; }
+.rcm-header-icon { color: #5b6cff; font-size: 15px; }
+.rcm-title { font-size: 15px; font-weight: 600; color: #e8e8ea; }
+.rcm-count {
+    font-size: 11px; font-weight: 600; color: #b9c0ff;
+    background: rgba(91,108,255,.16); padding: 1px 8px; border-radius: 9px;
+}
+
+.rcm-close { background: none; border: none; color: #6a6b73; font-size: 14px; cursor: pointer; padding: 4px; border-radius: 5px; }
+.rcm-close:hover { color: #c8c8cf; background: #23242e; }
+
+/* ── Body ─────────────────────────────────────────────────────────────────── */
+
+.rcm-body {
+    flex: 1; min-height: 0; overflow-y: auto;
+    padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px;
+}
+
+.rcm-intro { font-size: 12.5px; color: #8a8b93; line-height: 1.55; margin: 0 0 2px; }
+
+/* ── Key item ─────────────────────────────────────────────────────────────── */
+
+.rcm-item {
+    display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
+    background: #13141a; border: 1px solid #20212a; border-left: 3px solid #5b6cff;
+    border-radius: 9px; padding: 10px 12px; cursor: pointer;
+    transition: border-color .12s, background .12s;
+}
+.rcm-item:hover { background: #171922; border-color: #2a2b35; }
+
+.rcm-item-main { display: flex; flex-direction: column; gap: 5px; min-width: 0; flex: 1; }
+.rcm-item-key  { font-size: 12.5px; font-weight: 600; color: #d6d6db; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rcm-item-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+.rcm-tag {
+    font-size: 10.5px; font-weight: 600; letter-spacing: .02em;
+    padding: 2px 7px; border-radius: 5px; white-space: nowrap;
+}
+.rcm-tag-translation { background: rgba(58,217,138,.14); color: #3ad98a; }
+.rcm-tag-suggestion  { background: rgba(245,166,35,.14); color: #f5a623; }
+.rcm-tag-comment     { background: rgba(54,197,240,.14); color: #36c5f0; }
+.rcm-tag-key         { background: rgba(167,122,255,.14); color: #a77aff; }
+.rcm-tag-other       { background: rgba(138,139,147,.14); color: #a2a3ab; }
+
+.rcm-item-chevron { color: #44454e; font-size: 12px; flex-shrink: 0; }
+
+/* ── Other changes ────────────────────────────────────────────────────────── */
+
+.rcm-other-label {
+    font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+    color: #6a6b73; margin: 8px 2px 2px;
+}
+.rcm-other-item {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 12px; color: #a2a3ab; padding: 3px 4px;
+}
+.rcm-other-item i { color: #5b6cff; }
+
+/* ── Empty ────────────────────────────────────────────────────────────────── */
+
+.rcm-empty {
+    flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 10px; color: #44454e; font-size: 13px; padding: 24px 0;
+}
+.rcm-empty-icon { font-size: 28px; color: #3ad98a; opacity: .5; }

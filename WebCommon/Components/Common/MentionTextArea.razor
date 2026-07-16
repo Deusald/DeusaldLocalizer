@@ -1,0 +1,205 @@
+@namespace DeusaldLocalizerWeb.Components.Common
+@inject IJSRuntime _Js
+@implements IAsyncDisposable
+
+<div class="mta-root">
+    <textarea @ref="_TextArea"
+              class="@CssClass"
+              value="@Value"
+              @oninput="OnInput"
+              @onblur="OnBlur"
+              readonly="@Readonly"
+              rows="@Rows"
+              placeholder="@Placeholder"></textarea>
+
+    @if (_ShowPopup)
+    {
+        <div class="mta-popup">
+            @for (int i = 0; i < _Matches.Count; ++i)
+            {
+                int idx = i;
+                <button type="button"
+                        class="mta-option @(idx == _ActiveIndex ? "mta-active" : "")"
+                        @onmousedown:preventDefault="true"
+                        @onmousedown="() => ChooseAsync(idx)">
+                    <span class="mta-at">@("@")</span>@_Matches[idx]
+                </button>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public string                      Value        { get; set; } = "";
+    [Parameter] public EventCallback<string>       ValueChanged { get; set; }
+    [Parameter] public EventCallback               AfterInput   { get; set; }
+    [Parameter] public IReadOnlyCollection<string> Members      { get; set; } = [];
+    [Parameter] public string                      CssClass     { get; set; } = "";
+    [Parameter] public int                         Rows         { get; set; } = 3;
+    [Parameter] public bool                        Readonly     { get; set; }
+    [Parameter] public string                      Placeholder  { get; set; } = "";
+
+    private ElementReference                        _TextArea;
+    private IJSObjectReference?                     _Module;
+    private DotNetObjectReference<MentionTextArea>? _SelfRef;
+
+    private bool         _ShowPopup;
+    private List<string> _Matches     = new();
+    private int          _ActiveIndex;
+    private int          _AnchorAt;      // index of the leading '@'
+    private int          _AnchorCaret;   // caret index at detection (end of the typed token)
+    private int?         _PendingCaret;  // caret to restore after a mention insertion re-render
+
+    private const int _MAX_MATCHES = 8;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _SelfRef = DotNetObjectReference.Create(this);
+            _Module  = await _Js.InvokeAsync<IJSObjectReference>("import", "./_content/DeusaldLocalizerWebCommon/js/mentions.js");
+            await _Module.InvokeVoidAsync("attach", _TextArea, _SelfRef);
+        }
+
+        if (_PendingCaret is int caret && _Module is not null)
+        {
+            _PendingCaret = null;
+            await _Module.InvokeVoidAsync("setCaret", _TextArea, caret);
+        }
+    }
+
+    private async Task OnInput(ChangeEventArgs e)
+    {
+        Value = e.Value?.ToString() ?? "";
+        await ValueChanged.InvokeAsync(Value);
+        await AfterInput.InvokeAsync();
+        await UpdatePopupAsync();
+    }
+
+    private async Task UpdatePopupAsync()
+    {
+        if (_Module is null || Members.Count == 0)
+        {
+            await HidePopupAsync();
+            return;
+        }
+
+        int    caret = await _Module.InvokeAsync<int>("caret", _TextArea);
+        string value = Value ?? "";
+        if (caret > value.Length) caret = value.Length;
+
+        int start = caret;
+        while (start > 0 && MentionParser.IsUsernameChar(value[start - 1])) --start;
+
+        // Require an '@' immediately before the token, and a word boundary before that '@'.
+        if (start == 0 || value[start - 1] != '@')
+        {
+            await HidePopupAsync();
+            return;
+        }
+        int atPos = start - 1;
+        if (atPos > 0 && MentionParser.IsUsernameChar(value[atPos - 1]))
+        {
+            await HidePopupAsync();
+            return;
+        }
+
+        string token = value.Substring(start, caret - start);
+        List<string> matches = Members
+            .Where(u => !string.IsNullOrEmpty(u) && u.StartsWith(token, StringComparison.OrdinalIgnoreCase))
+            .Take(_MAX_MATCHES)
+            .ToList();
+
+        if (matches.Count == 0)
+        {
+            await HidePopupAsync();
+            return;
+        }
+
+        _Matches     = matches;
+        _AnchorAt    = atPos;
+        _AnchorCaret = caret;
+        _ActiveIndex = 0;
+        _ShowPopup   = true;
+        await _Module.InvokeVoidAsync("setOpen", _TextArea, true);
+        StateHasChanged();
+    }
+
+    private async Task HidePopupAsync()
+    {
+        if (!_ShowPopup) return;
+        _ShowPopup = false;
+        if (_Module is not null) await _Module.InvokeVoidAsync("setOpen", _TextArea, false);
+        StateHasChanged();
+    }
+
+    [JSInvokable]
+    public async Task OnNavKey(string key)
+    {
+        if (!_ShowPopup || _Matches.Count == 0) return;
+
+        switch (key)
+        {
+            case "ArrowDown":
+                _ActiveIndex = (_ActiveIndex + 1) % _Matches.Count;
+                StateHasChanged();
+                break;
+            case "ArrowUp":
+                _ActiveIndex = (_ActiveIndex - 1 + _Matches.Count) % _Matches.Count;
+                StateHasChanged();
+                break;
+            case "Enter":
+            case "Tab":
+                await ChooseAsync(_ActiveIndex);
+                break;
+            case "Escape":
+                await HidePopupAsync();
+                break;
+        }
+    }
+
+    private async Task ChooseAsync(int index)
+    {
+        if (index < 0 || index >= _Matches.Count) return;
+
+        string value     = Value ?? "";
+        int    anchorEnd = Math.Min(_AnchorCaret, value.Length);
+        int    anchorAt  = Math.Min(_AnchorAt, value.Length);
+        string before    = value.Substring(0, anchorAt);
+        string after     = value.Substring(anchorEnd);
+        string insert    = "@" + _Matches[index] + " ";
+        string newValue  = before + insert + after;
+
+        Value = newValue;
+        await ValueChanged.InvokeAsync(Value);
+        await AfterInput.InvokeAsync();
+        await HidePopupAsync();
+
+        _PendingCaret = before.Length + insert.Length;
+        StateHasChanged();
+    }
+
+    private async Task OnBlur()
+    {
+        // Clicking a popup option keeps focus (mousedown preventDefault), so blur only fires when the user
+        // moves away — safe to dismiss.
+        await HidePopupAsync();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (_Module is not null)
+        {
+            try
+            {
+                await _Module.InvokeVoidAsync("detach", _TextArea);
+                await _Module.DisposeAsync();
+            }
+            catch (JSDisconnectedException)
+            {
+                // Circuit / WebView already gone — nothing to clean up.
+            }
+        }
+        _SelfRef?.Dispose();
+    }
+}

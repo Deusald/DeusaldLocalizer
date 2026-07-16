@@ -1,0 +1,51 @@
+@namespace DeusaldLocalizerWeb.Components.Common
+@inject ProjectStateService _ProjectState
+
+@foreach (Segment segment in _Segments)
+{
+    if (segment.IsMention)
+    {
+        <span class="mt-mention">@segment.Text</span>
+    }
+    else
+    {
+        @segment.Text
+    }
+}
+
+@code {
+    [Parameter] public string Text { get; set; } = "";
+
+    private sealed class Segment
+    {
+        public string Text      { get; init; } = "";
+        public bool   IsMention { get; init; }
+    }
+
+    private IReadOnlyCollection<string> _Usernames =>
+        _ProjectState.CurrentProject?.ProjectMembers.Select(m => m.Username).ToList() ?? [];
+
+    private List<Segment> _Segments
+    {
+        get
+        {
+            List<Segment> segments = [];
+            string        text     = Text ?? "";
+            int           cursor   = 0;
+
+            foreach ((int Start, int Length, string Username) mention in MentionParser.FindMentions(text, _Usernames))
+            {
+                if (mention.Start > cursor)
+                    segments.Add(new Segment { Text = text.Substring(cursor, mention.Start - cursor) });
+
+                segments.Add(new Segment { Text = text.Substring(mention.Start, mention.Length), IsMention = true });
+                cursor = mention.Start + mention.Length;
+            }
+
+            if (cursor < text.Length)
+                segments.Add(new Segment { Text = text.Substring(cursor) });
+
+            return segments;
+        }
+    }
+}
