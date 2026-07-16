@@ -22,6 +22,7 @@ builder.Services.AddScoped<IPreferencesStore, LocalStoragePreferencesStore>();
 builder.Services.AddScoped<IProjectStoreFactory, IndexedDbProjectStoreFactory>();
 builder.Services.AddScoped<IProjectLocationService, WebProjectLocationService>();
 builder.Services.AddScoped<IExcelInterop, WebExcelInterop>();
+builder.Services.AddScoped<ITextFileExporter, WebTextFileExporter>();
 builder.Services.AddScoped<RecentProjectsStore>();
 
 // Session state (one per app in WASM)

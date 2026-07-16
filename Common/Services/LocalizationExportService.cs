@@ -26,21 +26,7 @@ namespace DeusaldLocalizerCommon
             IXLWorksheet     sheet = wb.AddWorksheet("Translations");
 
             // ── Build ordered language list: source first, rest alphabetical ──
-            // When options select a language subset, keep only those (empty = all).
-            bool hasLangFilter = options is { Languages: { Count: > 0 } };
-            HashSet<string> selectedLangs = hasLangFilter
-                                                ? new HashSet<string>(options!.Languages)
-                                                : new HashSet<string>();
-
-            List<string> languages = new List<string>();
-            if (!hasLangFilter || selectedLangs.Contains(project.Metadata.MainLanguageId))
-                languages.Add(project.Metadata.MainLanguageId);
-            foreach (string lang in project.Metadata.Languages.OrderBy(l => l))
-            {
-                if (lang == project.Metadata.MainLanguageId) continue;
-                if (!hasLangFilter || selectedLangs.Contains(lang))
-                    languages.Add(lang);
-            }
+            List<string> languages = BuildLanguageList(project, options);
 
             bool includeTagsCol = options is { IncludeTagsColumn: true };
 
@@ -176,7 +162,32 @@ namespace DeusaldLocalizerCommon
             return stream;
         }
 
-        private static bool PassesFilter(LocLocalizationKey key, LocExportOptions options)
+        /// <summary>
+        /// Builds the ordered export language list: source language first, remaining project
+        /// languages alphabetical. When <paramref name="options"/> selects a subset (non-empty
+        /// <see cref="LocExportOptions.Languages"/>) only those languages are kept.
+        /// Shared by the Excel and C# exporters so both honour the same ordering and filter.
+        /// </summary>
+        internal static List<string> BuildLanguageList(LocProject project, LocExportOptions? options)
+        {
+            bool hasLangFilter = options is { Languages: { Count: > 0 } };
+            HashSet<string> selectedLangs = hasLangFilter
+                                                ? new HashSet<string>(options!.Languages)
+                                                : new HashSet<string>();
+
+            List<string> languages = new List<string>();
+            if (!hasLangFilter || selectedLangs.Contains(project.Metadata.MainLanguageId))
+                languages.Add(project.Metadata.MainLanguageId);
+            foreach (string lang in project.Metadata.Languages.OrderBy(l => l))
+            {
+                if (lang == project.Metadata.MainLanguageId) continue;
+                if (!hasLangFilter || selectedLangs.Contains(lang))
+                    languages.Add(lang);
+            }
+            return languages;
+        }
+
+        internal static bool PassesFilter(LocLocalizationKey key, LocExportOptions options)
         {
             // Flags: no-flag keys ride on IncludeNoFlags; otherwise any excluded flag drops the key.
             if (key.Flags.Count == 0)
@@ -197,7 +208,7 @@ namespace DeusaldLocalizerCommon
             return true;
         }
 
-        private static string FullKeyName(LocLocalizationKey key, LocProject project)
+        internal static string FullKeyName(LocLocalizationKey key, LocProject project)
         {
             LocCategory? cat = project.Categories.Find(c => c.Id == key.CategoryId);
             if (cat == null) return key.KeyName;

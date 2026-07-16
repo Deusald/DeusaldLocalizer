@@ -43,6 +43,25 @@
 .ex-seg-btn.ex-seg-inc.active { background: #1f5c3a; color: #6ee7a3; }
 .ex-seg-btn.ex-seg-exc.active { background: #5c1a17; color: #ff9492; }
 
+/* Full-width format toggle (Excel / C#). */
+.ex-seg-wide { display: flex; width: 100%; }
+.ex-seg-wide .ex-seg-btn { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 8px 11px; }
+.ex-seg-wide .ex-seg-btn.active { background: #3a3b46; color: #fff; }
+
+/* ── C# fields ────────────────────────────────────────────────────────────── */
+
+.ex-field-label { font-size: 12px; color: #9a9ba3; margin-top: 4px; }
+.ex-optional    { color: #5a5b63; font-weight: 400; }
+.ex-input {
+    background: #13141a; border: 1px solid #20212a; border-radius: 8px;
+    color: #e8e8ea; font-size: 13px; padding: 8px 11px; width: 100%;
+    outline: none; transition: border-color .12s;
+}
+.ex-input::placeholder { color: #4d4e57; }
+.ex-input:focus { border-color: #5b6cff; }
+.ex-input-invalid, .ex-input-invalid:focus { border-color: #c0463f; }
+.ex-section-hint code { background: #13141a; border-radius: 4px; padding: 1px 5px; font-size: 11px; color: #b3bcff; }
+
 /* ── Checkbox option ──────────────────────────────────────────────────────── */
 
 .ex-check { display: flex; align-items: center; gap: 9px; font-size: 13px; color: #d6d6db; cursor: pointer; padding: 2px 0; }

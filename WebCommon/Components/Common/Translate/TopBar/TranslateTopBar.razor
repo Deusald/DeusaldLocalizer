@@ -80,7 +80,7 @@
             <i class="bi bi-arrow-clockwise"></i>
         </button>
 
-        <button class="ttb-history-btn" @onclick="() => _ExportModal?.Show()" title="Export to Excel">
+        <button class="ttb-history-btn" @onclick="() => _ExportModal?.Show()" title="Export (Excel or C#)">
             <i class="bi bi-file-earmark-arrow-down"></i>
         </button>
 
@@ -138,7 +138,7 @@
 <ConflictsModal @ref="_ConflictsModal"/>
 <RecentChangesModal @ref="_RecentChangesModal"/>
 <ExcelImportModal @ref="_ImportModal"/>
-<ExcelExportModal @ref="_ExportModal"/>
+<ExportModal @ref="_ExportModal"/>
 
 @code {
     [Parameter] public string SelectedLanguage { get; set; } = "";
@@ -149,7 +149,7 @@
     private ConflictsModal?                 _ConflictsModal;
     private RecentChangesModal?             _RecentChangesModal;
     private ExcelImportModal?               _ImportModal;
-    private ExcelExportModal?               _ExportModal;
+    private ExportModal?                    _ExportModal;
 
     private const int _MAX_VISIBLE_AVATARS = 3;
 

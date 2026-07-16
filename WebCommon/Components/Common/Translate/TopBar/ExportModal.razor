@@ -1,6 +1,7 @@
 @namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
 @inject IExcelInterop       _Excel
+@inject ITextFileExporter   _TextFile
 
 @if (_Visible)
 {
@@ -9,11 +10,43 @@
     <div class="ex-box" @onclick:stopPropagation="true">
 
         <div class="ex-header">
-            <span class="ex-title">Export to Excel</span>
+            <span class="ex-title">Export</span>
             <button class="ex-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
         </div>
 
         <div class="ex-body">
+
+            @* ── Format ─────────────────────────────────────────────── *@
+            <div class="ex-section">
+                <div class="ex-section-title">Format</div>
+                <div class="ex-seg ex-seg-wide">
+                    <button class="ex-seg-btn @(_Format == ExportFormat.Excel ? "active" : "")"
+                            @onclick="() => _Format = ExportFormat.Excel">
+                        <i class="bi bi-file-earmark-spreadsheet"></i> Excel
+                    </button>
+                    <button class="ex-seg-btn @(_Format == ExportFormat.CSharp ? "active" : "")"
+                            @onclick="() => _Format = ExportFormat.CSharp">
+                        <i class="bi bi-filetype-cs"></i> C# script
+                    </button>
+                </div>
+            </div>
+
+            @* ── C# options ─────────────────────────────────────────── *@
+            @if (_Format == ExportFormat.CSharp)
+            {
+                <div class="ex-section">
+                    <div class="ex-section-title">C# class</div>
+                    <div class="ex-section-hint">
+                        Generates one static class of key ids (grouped by category) plus a translations
+                        table and a <code>Get(language, keyId, values)</code> lookup.
+                    </div>
+                    <label class="ex-field-label">Class name</label>
+                    <input class="ex-input @(IsClassNameValid ? "" : "ex-input-invalid")"
+                           @bind="_ClassName" @bind:event="oninput" placeholder="Localization"/>
+                    <label class="ex-field-label">Namespace <span class="ex-optional">(optional)</span></label>
+                    <input class="ex-input" @bind="_Namespace" @bind:event="oninput" placeholder="e.g. MyGame.Loc"/>
+                </div>
+            }
 
             @* ── Flags ──────────────────────────────────────────────── *@
             <div class="ex-section">
@@ -58,15 +91,18 @@
                 }
             </div>
 
-            @* ── Columns ────────────────────────────────────────────── *@
-            <div class="ex-section">
-                <div class="ex-section-title">Columns</div>
-                <label class="ex-check">
-                    <input type="checkbox" checked="@_IncludeTagsColumn"
-                           @onchange="e => _IncludeTagsColumn = (bool)e.Value!"/>
-                    <span>Add a Tags column listing each key's tags</span>
-                </label>
-            </div>
+            @* ── Columns (Excel only) ───────────────────────────────── *@
+            @if (_Format == ExportFormat.Excel)
+            {
+                <div class="ex-section">
+                    <div class="ex-section-title">Columns</div>
+                    <label class="ex-check">
+                        <input type="checkbox" checked="@_IncludeTagsColumn"
+                               @onchange="e => _IncludeTagsColumn = (bool)e.Value!"/>
+                        <span>Add a Tags column listing each key's tags</span>
+                    </label>
+                </div>
+            }
 
             @* ── Languages ──────────────────────────────────────────── *@
             <div class="ex-section">
@@ -98,7 +134,7 @@
             <div class="ex-footer-actions">
                 <button class="ex-btn ex-btn-ghost" @onclick="Close">Cancel</button>
                 <button class="ex-btn ex-btn-primary" @onclick="ExportAsync"
-                        disabled="@(_IsExporting || _MatchingKeyCount == 0 || _SelectedLangs.Count == 0)">
+                        disabled="@(_IsExporting || _MatchingKeyCount == 0 || _SelectedLangs.Count == 0 || !CanExport)">
                     @if (_IsExporting)
                     {
                         <span class="ex-spinner"></span>
@@ -118,8 +154,14 @@
 
 @* ReSharper disable once UnusedParameter.Local *@
 @code {
+    private enum ExportFormat { Excel, CSharp }
+
     private bool _Visible;
     private bool _IsExporting;
+
+    private ExportFormat _Format    = ExportFormat.Excel;
+    private string       _ClassName = "Localization";
+    private string       _Namespace = "";
 
     // true = Exclude, false = Include. Every flag/tag is included by default.
     private Dictionary<FlagType, bool> _FlagExcluded = new();
@@ -133,6 +175,10 @@
 
     // Flags translators should skip by default; everything else defaults to Include.
     private static readonly HashSet<FlagType> _DefaultExcludedFlags = [FlagType.Outdated, FlagType.DoNotTranslate, FlagType.InProgress];
+
+    private bool IsClassNameValid => !string.IsNullOrWhiteSpace(_ClassName);
+
+    private bool CanExport => _Format != ExportFormat.CSharp || IsClassNameValid;
 
     private List<string> _AllTags =>
         _ProjectState.CurrentProject!.Keys
@@ -161,6 +207,9 @@
 
     public void Show()
     {
+        _Format            = ExportFormat.Excel;
+        _ClassName         = DefaultClassName();
+        _Namespace         = "";
         _FlagExcluded      = _AllFlagTypes.ToDictionary(t => t, t => _DefaultExcludedFlags.Contains(t));
         _TagExcluded       = _AllTags.ToDictionary(t => t, _ => false, StringComparer.OrdinalIgnoreCase);
         _NoFlagsExcluded   = false;
@@ -242,16 +291,26 @@
 
     private async Task ExportAsync()
     {
-        if (_IsExporting) return;
+        if (_IsExporting || !CanExport) return;
         _IsExporting = true;
         StateHasChanged();
         try
         {
-            LocProject         project  = _ProjectState.CurrentProject!;
-            LocExportOptions   options  = BuildOptions();
-            using MemoryStream stream   = LocalizationExportService.ExportToStream(project, options);
-            string             fileName = $"{(string.IsNullOrEmpty(project.Metadata.Slug) ? "export" : project.Metadata.Slug)}-translations.xlsx";
-            await _Excel.SaveXlsxAsync(fileName, stream);
+            LocProject       project = _ProjectState.CurrentProject!;
+            LocExportOptions options = BuildOptions();
+
+            if (_Format == ExportFormat.CSharp)
+            {
+                string source   = CSharpExportService.ExportToString(project, _ClassName, _Namespace, options);
+                string fileName = $"{CSharpExportService.ClassFileName(_ClassName)}.cs";
+                await _TextFile.SaveTextAsync(fileName, source);
+            }
+            else
+            {
+                using MemoryStream stream = LocalizationExportService.ExportToStream(project, options);
+                string fileName = $"{(string.IsNullOrEmpty(project.Metadata.Slug) ? "export" : project.Metadata.Slug)}-translations.xlsx";
+                await _Excel.SaveXlsxAsync(fileName, stream);
+            }
             Close();
         }
         catch
@@ -263,6 +322,12 @@
             _IsExporting = false;
             StateHasChanged();
         }
+    }
+
+    private string DefaultClassName()
+    {
+        string slug = _ProjectState.CurrentProject!.Metadata.Slug;
+        return string.IsNullOrWhiteSpace(slug) ? "Localization" : slug;
     }
 
     private string LangLabel(string code)
