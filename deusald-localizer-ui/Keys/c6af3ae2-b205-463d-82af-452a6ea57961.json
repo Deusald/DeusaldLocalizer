@@ -1,0 +1,25 @@
+{
+  "Id": "c6af3ae2-b205-463d-82af-452a6ea57961",
+  "CategoryId": "264f533d-3094-433d-9429-c82dd532173e",
+  "KeyName": "applyAllTitle",
+  "Description": "Tooltip for the apply-all button.",
+  "CreatedAt": "2026-07-16T12:48:41.5599923Z",
+  "UpdatedAt": "2026-07-16T12:48:41.559993Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ac39722ca91603adcf2083360c9270086b38df7d06b11590e032c7167023f834",
+      "Text": "Apply every change to the project files",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.559995Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

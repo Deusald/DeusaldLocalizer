@@ -1,0 +1,33 @@
+{
+  "Id": "5e80ce32-f4f8-460d-bdd1-e7003ee878bb",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "changesWaitingToApply",
+  "Description": "Tooltip on the uncommitted-mode pill listing pending changes.",
+  "CreatedAt": "2026-07-16T12:48:41.5589874Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5589881Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "09c90ce3-7687-4caf-a2b3-c960997da8fb",
+      "Name": "count",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "3"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "841cbc6a5e9a648a887fa7af3ca9b5f4353f3ac3d0fa74ff7f2ba01b2dc4ab0b",
+      "Text": "{count} change(s) waiting to be applied",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5589913Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

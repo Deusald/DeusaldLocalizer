@@ -1,0 +1,25 @@
+{
+  "Id": "15cb3a7b-0b95-4fe7-beb8-fb8d763b1b85",
+  "CategoryId": "30585d1a-f1da-488a-ab89-97f090f732f4",
+  "KeyName": "working",
+  "Description": "Busy label on the import button while an action runs (web).",
+  "CreatedAt": "2026-07-16T12:29:28.0792972Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5563556Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "5474eef8d0f179c707cf418e2bbb468c77cc24edc5e9f5f4e137e85e06a8eea0",
+      "Text": "Working…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.556359Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

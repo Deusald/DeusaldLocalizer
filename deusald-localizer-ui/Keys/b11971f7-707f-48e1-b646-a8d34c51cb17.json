@@ -1,0 +1,25 @@
+{
+  "Id": "b11971f7-707f-48e1-b646-a8d34c51cb17",
+  "CategoryId": "f49bf397-0eaa-4bcf-8fe7-0022c70b016e",
+  "KeyName": "connecting",
+  "Description": "Busy state label on the connect button",
+  "CreatedAt": "2026-07-16T12:48:41.5613341Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5613367Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "72021eb70e91b4d58254586a8519393a281eb830c165bf1ec42a5057d425bcaf",
+      "Text": "Connecting…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5613565Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

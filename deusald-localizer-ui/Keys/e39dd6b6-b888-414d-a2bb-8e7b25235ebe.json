@@ -1,0 +1,25 @@
+{
+  "Id": "e39dd6b6-b888-414d-a2bb-8e7b25235ebe",
+  "CategoryId": "043c0165-7441-4196-9428-f9bd096893c9",
+  "KeyName": "discardAndLeave",
+  "Description": "Button that discards unsaved changes and leaves.",
+  "CreatedAt": "2026-07-16T12:48:41.5598192Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5598199Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "fce94f3f28c04d9c23e247f3231b9e3b166d2684382660d2fc88c4c5daba71f5",
+      "Text": "Discard & leave",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5598217Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

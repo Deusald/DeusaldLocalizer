@@ -1,0 +1,25 @@
+{
+  "Id": "e5551c63-06b4-4ea0-9b67-14e5a76fb254",
+  "CategoryId": "36be6be4-7cc0-460c-bb6c-42351c6571e1",
+  "KeyName": "collapseAll",
+  "Description": "Tooltip for the collapse-all-categories button.",
+  "CreatedAt": "2026-07-16T12:48:41.5571326Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5571335Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "25f7b3721119f1ec7fdf7c8c66e779ee9999e2049e569afc3b00a9fbdeece7db",
+      "Text": "Collapse all",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5571432Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

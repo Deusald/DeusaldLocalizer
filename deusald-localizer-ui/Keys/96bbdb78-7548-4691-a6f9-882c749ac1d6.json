@@ -1,0 +1,25 @@
+{
+  "Id": "96bbdb78-7548-4691-a6f9-882c749ac1d6",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "flagOutdated",
+  "Description": "Flag label: outdated.",
+  "CreatedAt": "2026-07-16T12:48:41.5609872Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5609878Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c759f42e45685095736f036355f5687cb4bd6d35015bea57718eb3480d4b8a6c",
+      "Text": "Outdated",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5609914Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "375b64ad-8a41-4cc6-9f8e-67efd18b0f11",
+  "CategoryId": "2e826da4-29a0-4ff1-a798-975f5401d6ab",
+  "KeyName": "warningText",
+  "Description": "Security warning shown under a newly generated access token",
+  "CreatedAt": "2026-07-16T12:48:41.5611236Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5611243Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "3cc5d0fd4604a6d99c69ac25368cebe515276096dd98692293cb3a86f87aadc8",
+      "Text": "Store this token somewhere safe — for security it won't be shown again.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5611362Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

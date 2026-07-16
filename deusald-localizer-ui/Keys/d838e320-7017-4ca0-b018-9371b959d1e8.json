@@ -1,0 +1,33 @@
+{
+  "Id": "d838e320-7017-4ca0-b018-9371b959d1e8",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "conflictSuffix",
+  "Description": "Suffix appended to a sync status message reporting the number of conflicts.",
+  "CreatedAt": "2026-07-16T12:48:41.5592Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5592006Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "d84d4b4e-6f49-4fd4-8331-0fa109391154",
+      "Name": "count",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "2"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a1427a9c20cc54d644be5bc004c170c0841378bb8f45addaf2106cb7f9176e84",
+      "Text": " · {count} conflict(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5592038Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

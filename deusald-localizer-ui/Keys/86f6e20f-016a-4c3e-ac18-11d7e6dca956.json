@@ -1,0 +1,25 @@
+{
+  "Id": "86f6e20f-016a-4c3e-ac18-11d7e6dca956",
+  "CategoryId": "9b12f931-a241-469d-983d-8dbcf3378439",
+  "KeyName": "searchByNameOrCode",
+  "Description": "Placeholder for the add-language search box.",
+  "CreatedAt": "2026-07-16T12:48:41.5569379Z",
+  "UpdatedAt": "2026-07-16T12:48:41.556939Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "7396787a1606b1b6a6552c48eabef290bf823e7c448a5a48856c1dd86087d9af",
+      "Text": "Search by name or code…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5569433Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "e2c24f60-294e-408a-bfb4-6ca188280c29",
+  "CategoryId": "fd8aa94b-0386-4858-b6a5-47b035bcc6a4",
+  "KeyName": "cancel",
+  "Description": "Generic Cancel button, reused across dialogs.",
+  "CreatedAt": "2026-07-16T12:19:57.5421312Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5567025Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27",
+      "Text": "Cancel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5567132Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

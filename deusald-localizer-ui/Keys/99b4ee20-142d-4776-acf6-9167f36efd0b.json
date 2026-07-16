@@ -1,0 +1,25 @@
+{
+  "Id": "99b4ee20-142d-4776-acf6-9167f36efd0b",
+  "CategoryId": "2c815bf8-7ba9-4641-a921-c0b38f3e5e84",
+  "KeyName": "searchCategory",
+  "Description": "Placeholder for the parent category search input.",
+  "CreatedAt": "2026-07-16T12:48:41.5574629Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5574636Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ba7cc31a5194d93dc77e8848e9374f669971610d43fef93bb20aa475351db869",
+      "Text": "Search category…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5574656Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

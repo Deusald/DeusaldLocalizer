@@ -1,0 +1,25 @@
+{
+  "Id": "f8804229-510d-4352-877e-f3a27056da2d",
+  "CategoryId": "f4418ae5-cb67-4794-b968-ed395d6b3148",
+  "KeyName": "unnamed",
+  "Description": "Fallback name for an enum with no name",
+  "CreatedAt": "2026-07-16T12:48:41.5584791Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5584797Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e504e61521948e34f657dd693f242682055ba6ed4d8cfccbd826ef229c7825ff",
+      "Text": "Unnamed",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5584844Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

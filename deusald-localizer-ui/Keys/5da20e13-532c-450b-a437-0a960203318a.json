@@ -1,0 +1,25 @@
+{
+  "Id": "5da20e13-532c-450b-a437-0a960203318a",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "sync",
+  "Description": "Label of the button that syncs from the server.",
+  "CreatedAt": "2026-07-16T12:48:41.5588078Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5588085Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "8d261a372fde1461cc4a5f53e938b337cfe335e2bd6d4e58d866ab97c5556052",
+      "Text": "Sync",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5588133Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

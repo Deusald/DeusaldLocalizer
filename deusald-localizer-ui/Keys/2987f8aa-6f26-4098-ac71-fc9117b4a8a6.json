@@ -1,0 +1,25 @@
+{
+  "Id": "2987f8aa-6f26-4098-ac71-fc9117b4a8a6",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "chooseFile",
+  "Description": "Button to pick the xlsx file and start importing.",
+  "CreatedAt": "2026-07-16T12:48:41.5605051Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5605058Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "5c6623857cc7b764cdf1eecad5b2f0f54184bebca4aa2d7f3bbdcedf6a8929d1",
+      "Text": "Choose file…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5605077Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "d08ed8ef-ed9f-44fd-b2a2-ed52ed3ca4f8",
+  "CategoryId": "37037b9b-7934-487b-9401-8cca236150a6",
+  "KeyName": "slugHint",
+  "Description": "Hint next to the Slug label",
+  "CreatedAt": "2026-07-16T12:48:41.5614974Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5614982Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c1ebdfc240e26552e773efdc9a3a02ff2866fa2e37f9ee0697003694cc2ffcd6",
+      "Text": "used in file names and APIs",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5615011Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

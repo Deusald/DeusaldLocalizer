@@ -1,0 +1,25 @@
+{
+  "Id": "e77dd3ab-abea-450c-b258-2d16d50e31fd",
+  "CategoryId": "6473eabd-696a-4b05-b6e8-b76a62ed6aab",
+  "KeyName": "tabUntranslated",
+  "Description": "Tab showing untranslated keys.",
+  "CreatedAt": "2026-07-16T12:48:41.5569948Z",
+  "UpdatedAt": "2026-07-16T12:48:41.556996Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "d41ef2ce8711fb1fba7cbd79ff969449ced0562061c5d97243a34b5331a19fb8",
+      "Text": "Untranslated",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5570085Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

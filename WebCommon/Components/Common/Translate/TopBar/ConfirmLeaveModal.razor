@@ -1,4 +1,5 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -6,17 +7,17 @@
 
     <div class="clm-box" @onclick:stopPropagation="true">
         <div class="clm-header">
-            <span class="clm-title">Unsaved changes</span>
+            <span class="clm-title">@Loc.T(Localization.Translate.TopBar.ConfirmLeave.unsavedChanges)</span>
         </div>
 
         <div class="clm-body">
-            <p>You have unsaved changes. If you leave now, those changes will be lost.</p>
+            <p>@Loc.T(Localization.Translate.TopBar.ConfirmLeave.unsavedChangesBody)</p>
         </div>
 
         <div class="clm-footer">
-            <button class="clm-btn clm-btn-ghost" @onclick="Cancel">Cancel</button>
-            <button class="clm-btn clm-btn-danger" @onclick="DiscardAndLeave">Discard &amp; leave</button>
-            <button class="clm-btn clm-btn-primary" @onclick="SaveAndLeave">Save &amp; leave</button>
+            <button class="clm-btn clm-btn-ghost" @onclick="Cancel">@Loc.T(Localization.Common.Buttons.cancel)</button>
+            <button class="clm-btn clm-btn-danger" @onclick="DiscardAndLeave">@Loc.T(Localization.Translate.TopBar.ConfirmLeave.discardAndLeave)</button>
+            <button class="clm-btn clm-btn-primary" @onclick="SaveAndLeave">@Loc.T(Localization.Translate.TopBar.ConfirmLeave.saveAndLeave)</button>
         </div>
     </div>
 }

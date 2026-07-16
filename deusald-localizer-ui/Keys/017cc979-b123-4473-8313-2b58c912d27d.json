@@ -1,0 +1,25 @@
+{
+  "Id": "017cc979-b123-4473-8313-2b58c912d27d",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "flagsHint",
+  "Description": "Hint explaining flag include/exclude behavior.",
+  "CreatedAt": "2026-07-16T12:48:41.5607801Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5607808Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "96ca81b38aad5069b58ca3798dc9b56b7ef0ac632e39f1c22e18e1fc9d13dd03",
+      "Text": "Exclude drops keys that carry the flag; Include keeps them.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5607857Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

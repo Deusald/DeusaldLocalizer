@@ -1,5 +1,6 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -8,20 +9,20 @@
     <div class="ncm-box" @onclick:stopPropagation="true">
 
         <div class="ncm-header">
-            <span class="ncm-title">@(_EditingCategory == null ? "New category" : "Edit category")</span>
+            <span class="ncm-title">@(_EditingCategory == null ? Loc.T(Localization.Translate.Keys.NewCategory.newCategory) : Loc.T(Localization.Translate.Keys.NewCategory.editCategory))</span>
             <button class="ncm-close" @onclick="Cancel"><i class="bi bi-x-lg"></i></button>
         </div>
 
         <div class="ncm-body">
 
             <div class="ncm-field">
-                <label class="ncm-label">Category name</label>
-                <input class="ncm-input" type="text" placeholder="Menu"
+                <label class="ncm-label">@Loc.T(Localization.Translate.Keys.NewCategory.categoryName)</label>
+                <input class="ncm-input" type="text" placeholder="@Loc.T(Localization.Translate.Keys.NewCategory.menuPlaceholder)"
                        @bind="_Name" @bind:event="oninput" maxlength="80"/>
             </div>
 
             <div class="ncm-field">
-                <label class="ncm-label">Parent category <span class="ncm-label-hint">optional</span></label>
+                <label class="ncm-label">@Loc.T(Localization.Translate.Keys.NewCategory.parentCategory) <span class="ncm-label-hint">@Loc.T(Localization.Translate.Keys.NewCategory.optional)</span></label>
                 <div class="ncm-parent-picker">
                     <div class="ncm-parent-search-wrap">
                         @if (_SelectedParent != null && !_ParentOpen)
@@ -40,7 +41,7 @@
                         {
                             <i class="bi bi-search ncm-parent-search-icon"></i>
                             <input class="ncm-input ncm-parent-search" type="text"
-                                   placeholder="Search category…"
+                                   placeholder="@Loc.T(Localization.Translate.Keys.NewCategory.searchCategory)"
                                    @bind="_ParentQuery" @bind:event="oninput"
                                    @onfocus="() => _ParentOpen = true"
                                    @onblur="OnParentBlur"/>
@@ -53,7 +54,7 @@
                             <button class="ncm-parent-item @(_SelectedParent == null ? "active" : "")"
                                     @onclick="() => SelectParent(null)"
                                     @onclick:preventDefault="true">
-                                <span class="ncm-parent-item-name ncm-parent-item-none">None</span>
+                                <span class="ncm-parent-item-name ncm-parent-item-none">@Loc.T(Localization.Translate.Keys.NewCategory.none)</span>
                                 @if (_SelectedParent == null)
                                 {
                                     <i class="bi bi-check2"></i>
@@ -64,7 +65,7 @@
                             @{ List<LocCategory> results = _FilteredParents; }
                             @if (results.Count == 0)
                             {
-                                <div class="ncm-parent-empty">No categories found</div>
+                                <div class="ncm-parent-empty">@Loc.T(Localization.Translate.Keys.NewCategory.noCategoriesFound)</div>
                             }
                             else
                             {
@@ -93,9 +94,9 @@
             {
                 <div class="ncm-field">
                     <label class="ncm-label">
-                        Description <span class="ncm-label-hint">optional</span>
+                        @Loc.T(Localization.Translate.Keys.NewCategory.description) <span class="ncm-label-hint">@Loc.T(Localization.Translate.Keys.NewCategory.optional)</span>
                     </label>
-                    <textarea class="ncm-input ncm-textarea" placeholder="What kind of keys live here…"
+                    <textarea class="ncm-input ncm-textarea" placeholder="@Loc.T(Localization.Translate.Keys.NewCategory.descriptionPlaceholder)"
                               @bind="_Description" @bind:event="oninput" rows="3" maxlength="300"></textarea>
                 </div>
             }
@@ -103,9 +104,9 @@
         </div>
 
         <div class="ncm-footer">
-            <button class="ncm-btn ncm-btn-ghost" @onclick="Cancel">Cancel</button>
+            <button class="ncm-btn ncm-btn-ghost" @onclick="Cancel">@Loc.T(Localization.Common.Buttons.cancel)</button>
             <button class="ncm-btn ncm-btn-primary" @onclick="Confirm" disabled="@(string.IsNullOrWhiteSpace(_Name))">
-                @(_EditingCategory == null ? "Create category" : "Save changes")
+                @(_EditingCategory == null ? Loc.T(Localization.Translate.Keys.NewCategory.createCategory) : Loc.T(Localization.Translate.Keys.NewCategory.saveChanges))
             </button>
         </div>
 

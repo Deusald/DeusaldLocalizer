@@ -1,0 +1,25 @@
+{
+  "Id": "68b3edef-0a63-4f89-8658-f3651ddc6785",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "className",
+  "Description": "Field label for the generated class name.",
+  "CreatedAt": "2026-07-16T12:48:41.5607116Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5607122Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "5774209573ced7ef59f350ae855f6753311b9fc1daf97cb8194662325378f228",
+      "Text": "Class name",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5607141Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

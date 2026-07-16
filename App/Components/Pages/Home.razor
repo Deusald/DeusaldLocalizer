@@ -5,6 +5,7 @@
 @inject NavigationManager   _Nav
 @inject RecentProjectsStore _Recents
 @inject IAuthTokenStore     _AuthTokens
+@inject UiLocalizationService Loc
 @implements IDisposable
 
 <div class="home-root">
@@ -17,14 +18,14 @@
                 <div class="home-update">
                     <i class="bi bi-arrow-up-circle home-update-icon"></i>
                     <div class="home-update-text">
-                        <span class="home-update-title">Update available</span>
-                        <span class="home-update-sub">Version @_UpdateInfo.LatestVersion is available.</span>
+                        <span class="home-update-title">@Loc.T(Localization.Home.App.updateTitle)</span>
+                        <span class="home-update-sub">@Loc.T(Localization.Home.App.updateSub, new Dictionary<string, object> { ["version"] = _UpdateInfo.LatestVersion })</span>
                     </div>
                     @if (_UpdateInfo.DownloadPageUrl is not null)
                     {
                         @* macOS: no in-place update — open the releases page to download manually. *@
-                        <button class="home-update-download" @onclick="OpenReleasePage">Download</button>
-                        <button class="home-update-dismiss" @onclick="() => _UpdateInfo = null" title="Dismiss">
+                        <button class="home-update-download" @onclick="OpenReleasePage">@Loc.T(Localization.Home.App.updateDownload)</button>
+                        <button class="home-update-dismiss" @onclick="() => _UpdateInfo = null" title="@Loc.T(Localization.Home.App.updateDismiss)">
                             <i class="bi bi-x"></i>
                         </button>
                     }
@@ -32,13 +33,13 @@
                     {
                         <button class="home-update-download" disabled>
                             <span class="dl-spinner" style="width:14px;height:14px;flex-shrink:0;"></span>
-                            <span>Installing… @_UpdateProgress%</span>
+                            <span>@Loc.T(Localization.Home.App.updateInstalling, new Dictionary<string, object> { ["pct"] = _UpdateProgress })</span>
                         </button>
                     }
                     else
                     {
-                        <button class="home-update-download" @onclick="DownloadUpdate">Update</button>
-                        <button class="home-update-dismiss" @onclick="() => _UpdateInfo = null" title="Dismiss">
+                        <button class="home-update-download" @onclick="DownloadUpdate">@Loc.T(Localization.Home.App.updateApply)</button>
+                        <button class="home-update-dismiss" @onclick="() => _UpdateInfo = null" title="@Loc.T(Localization.Home.App.updateDismiss)">
                             <i class="bi bi-x"></i>
                         </button>
                     }
@@ -53,12 +54,12 @@
                 </div>
                 <div>
                     <div class="home-logo-text-name">Deusald Localizer</div>
-                    <div class="home-logo-text-sub">COMMUNITY LOCALIZATION</div>
+                    <div class="home-logo-text-sub">@Loc.T(Localization.Home.App.tagline)</div>
                 </div>
             </div>
 
-            <h1 class="home-headline">Translate your game,<br/>together.</h1>
-            <p class="home-sub">Edit strings, propose alternatives, and let the community vote on the best translation for every key.</p>
+            <h1 class="home-headline">@Loc.T(Localization.Home.subtitle)</h1>
+            <p class="home-sub">@Loc.T(Localization.Home.App.intro)</p>
         </div>
 
         <div>
@@ -74,7 +75,7 @@
                 <button class="home-btn home-btn-primary"
                         @onclick="OpenNewProjectModal" disabled="@_IsLoading">
                     <span class="home-btn-icon">+</span>
-                    <span>New project</span>
+                    <span>@Loc.T(Localization.Home.newProject)</span>
                 </button>
 
                 <button class="home-btn home-btn-secondary"
@@ -82,19 +83,19 @@
                     @if (_IsLoading)
                     {
                         <span class="dl-spinner" style="width:14px;height:14px;flex-shrink:0;"></span>
-                        <span>Opening…</span>
+                        <span>@Loc.T(Localization.Home.App.opening)</span>
                     }
                     else
                     {
                         <span class="home-btn-icon"><i class="bi bi-folder2-open"></i></span>
-                        <span>Open project…</span>
+                        <span>@Loc.T(Localization.Home.App.openProject)</span>
                     }
                 </button>
 
                 <button class="home-btn home-btn-secondary"
                         @onclick="OpenConnectModal" disabled="@_IsLoading">
                     <span class="home-btn-dot"></span>
-                    <span>Connect to server…</span>
+                    <span>@Loc.T(Localization.Home.connectServer)</span>
                 </button>
             </div>
 
@@ -106,9 +107,11 @@
                     <span class="home-version-hash">@BuildInfo.CommitHash</span>
                 }
                 <button class="home-logs-btn" @onclick="OpenLogsFolder"
-                        title="Open logs folder">
+                        title="@Loc.T(Localization.Home.App.openLogsTooltip)">
                     <i class="bi bi-bug"></i>
                 </button>
+                <span class="home-version-sep">·</span>
+                <LanguagePicker/>
             </div>
         </div>
     </div>
@@ -116,18 +119,18 @@
     @* ── Right panel ──────────────────────────────────────────────────── *@
     <div class="home-right">
         <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;">
-            <div class="home-recents-label" style="margin-bottom:0;">Recent projects</div>
+            <div class="home-recents-label" style="margin-bottom:0;">@Loc.T(Localization.Home.App.recentProjects)</div>
             @if (_RecentProjects.Count > 0)
             {
-                <button class="home-clear-btn" @onclick="ClearRecentProjects">Clear</button>
+                <button class="home-clear-btn" @onclick="ClearRecentProjects">@Loc.T(Localization.Home.App.clearRecent)</button>
             }
         </div>
 
         @if (_RecentProjects.Count == 0)
         {
             <div class="home-empty">
-                <div class="home-empty-title">No recent projects</div>
-                <div class="home-empty-sub">Projects you open will appear here<br/>so you can get back to them quickly.</div>
+                <div class="home-empty-title">@Loc.T(Localization.Home.App.emptyTitle)</div>
+                <div class="home-empty-sub">@Loc.T(Localization.Home.App.emptySub)</div>
             </div>
         }
         else
@@ -141,7 +144,12 @@
                     string             swatch  = swatches[x % swatches.Length];
                     int                pct     = recent.TranslationPct;
                     string meta = recent.KeyCount > 0
-                                      ? $"{recent.KeyCount} keys · {recent.LangCount} langs · {recent.LastEditedLabel}"
+                                      ? Loc.T(Localization.Home.projectMeta, new Dictionary<string, object>
+                                        {
+                                            ["keys"]   = recent.KeyCount,
+                                            ["langs"]  = recent.LangCount,
+                                            ["edited"] = recent.LastEditedLabel,
+                                        })
                                       : recent.LastEditedLabel;
 
                     <div class="home-recent-item-wrap">
@@ -155,7 +163,7 @@
                                     <span class="home-recent-name">@recent.ProjectName</span>
                                     @if (recent.IsRemote)
                                     {
-                                        <span class="home-recent-tag-remote">REMOTE</span>
+                                        <span class="home-recent-tag-remote">@Loc.T(Localization.Home.remoteTag)</span>
                                     }
                                 </div>
                                 <div class="home-recent-sub">@meta</div>
@@ -164,7 +172,7 @@
                             {
                                 <div class="home-recent-progress">
                                     <div class="home-recent-progress-top">
-                                        <span>@recent.LangCount langs</span>
+                                        <span>@Loc.T(Localization.Home.langCount, new Dictionary<string, object> { ["count"] = recent.LangCount })</span>
                                         <span class="home-recent-progress-pct">@pct%</span>
                                     </div>
                                     <div class="home-recent-progress-bar">
@@ -177,7 +185,7 @@
                         <button class="home-recent-remove"
                                 @onclick="() => RemoveRecent(recent)"
                                 disabled="@_IsLoading"
-                                title="Remove from recent">
+                                title="@Loc.T(Localization.Home.App.removeTooltip)">
                             <i class="bi bi-x"></i>
                         </button>
                     </div>
@@ -268,7 +276,7 @@
         if (!ok)
         {
             _IsUpdating   = false;
-            _ErrorMessage = "The update could not be installed. Please try again later.";
+            _ErrorMessage = Loc.T(Localization.Home.App.updateFailed);
             StateHasChanged();
         }
     }
@@ -289,7 +297,7 @@
         }
         catch (Exception ex)
         {
-            _ErrorMessage = $"Could not open folder picker: {ex.Message}";
+            _ErrorMessage = Loc.T(Localization.Home.App.errFolderPicker, new Dictionary<string, object> { ["msg"] = ex.Message });
         }
     }
 
@@ -322,12 +330,12 @@
         }
         catch (ProjectFolderException ex)
         {
-            _ErrorMessage = $"Invalid project: {ex.Message}";
+            _ErrorMessage = Loc.T(Localization.Home.App.errInvalidProject, new Dictionary<string, object> { ["msg"] = ex.Message });
             _IsLoading    = false;
         }
         catch (Exception ex)
         {
-            _ErrorMessage = $"Failed to load project: {ex.Message}";
+            _ErrorMessage = Loc.T(Localization.Home.App.errLoad, new Dictionary<string, object> { ["msg"] = ex.Message });
             _IsLoading    = false;
         }
     }
@@ -374,7 +382,7 @@
                 out LocProjectMember? member))
         {
             _IsLoading = false;
-            _LoginModal?.ShowError("Username or access token is incorrect.");
+            _LoginModal?.ShowError(Loc.T(Localization.Home.App.errLogin));
             return;
         }
 
@@ -393,7 +401,7 @@
             if (result.RawToken == null)
             {
                 _IsLoading = false;
-                _LoginModal?.ShowError(result.Error ?? "Could not complete first sign-in. Please try again.");
+                _LoginModal?.ShowError(result.Error ?? Loc.T(Localization.Home.App.errFirstSignIn));
                 return;
             }
 
@@ -402,8 +410,8 @@
             _PendingUserId  = member.UserId;
             StateHasChanged();
 
-            _AccessTokenModal?.Show(result.RawToken, "Your access token",
-                "This is your new sign-in token. Copy it now and keep it safe — you'll use it to sign in from now on.");
+            _AccessTokenModal?.Show(result.RawToken, Loc.T(Localization.Common.AccessToken.newTokenTitle),
+                Loc.T(Localization.Common.AccessToken.newTokenBody));
             return; // FinalizeLoad runs once the user closes the token modal
         }
 
@@ -500,7 +508,7 @@
 
         if (result.Error != null || result.Project is null || result.Location is null || result.Member is null)
         {
-            _ConnectModal?.ShowError(result.Error ?? "Could not connect to the project. Please try again.");
+            _ConnectModal?.ShowError(result.Error ?? Loc.T(Localization.Home.errConnect));
             return;
         }
 
@@ -516,7 +524,7 @@
 
             if (rotation.RawToken == null)
             {
-                _ConnectModal?.ShowError(rotation.Error ?? "Could not complete sign-in. Please try again.");
+                _ConnectModal?.ShowError(rotation.Error ?? Loc.T(Localization.Home.errSignIn));
                 return;
             }
 
@@ -526,8 +534,8 @@
             _ConnectModal?.Hide();
             StateHasChanged();
 
-            _AccessTokenModal?.Show(rotation.RawToken, "Your access token",
-                "This is your new sign-in token. Copy it now and keep it safe — you'll use it to sign in from now on.");
+            _AccessTokenModal?.Show(rotation.RawToken, Loc.T(Localization.Common.AccessToken.newTokenTitle),
+                Loc.T(Localization.Common.AccessToken.newTokenBody));
             return; // FinalizeLoad runs once the user closes the token modal
         }
 

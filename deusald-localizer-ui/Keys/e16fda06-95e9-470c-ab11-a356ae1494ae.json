@@ -1,0 +1,25 @@
+{
+  "Id": "e16fda06-95e9-470c-ab11-a356ae1494ae",
+  "CategoryId": "8e09b7d9-6f39-43ce-9e26-89f6748618eb",
+  "KeyName": "keyComments",
+  "Description": "Header label for the key-level comments thread.",
+  "CreatedAt": "2026-07-16T12:48:41.5577161Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5577167Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "27be43c58810bb24d25c0d8598f5969dfe12a26daa297e72da58f682377cab9f",
+      "Text": "Key comments",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5577186Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

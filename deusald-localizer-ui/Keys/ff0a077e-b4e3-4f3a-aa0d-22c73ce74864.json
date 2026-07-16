@@ -1,0 +1,25 @@
+{
+  "Id": "ff0a077e-b4e3-4f3a-aa0d-22c73ce74864",
+  "CategoryId": "6473eabd-696a-4b05-b6e8-b76a62ed6aab",
+  "KeyName": "editKeys",
+  "Description": "Tooltip for the button that enters key edit mode.",
+  "CreatedAt": "2026-07-16T12:48:41.5571086Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5571099Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "cc804470cdbb6828e282a6df7d6a231d0b3d93aa890c8a65b1e13f63833bcb1f",
+      "Text": "Edit keys",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5571178Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

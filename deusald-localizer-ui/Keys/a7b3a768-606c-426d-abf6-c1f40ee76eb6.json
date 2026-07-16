@@ -1,0 +1,25 @@
+{
+  "Id": "a7b3a768-606c-426d-abf6-c1f40ee76eb6",
+  "CategoryId": "c5c73cc7-4494-470a-bcfc-ef45e25e0957",
+  "KeyName": "yourEditLabel",
+  "Description": "Label for the user's edit comparison panel",
+  "CreatedAt": "2026-07-16T12:48:41.5587191Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5587197Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ee63402f04116c0e91ba50b732f542c0eb49d60b1412fb94fc2782f52fbe79d4",
+      "Text": "Your edit",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5587216Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "d1ad35e8-93d0-484f-92e1-db8db68ce4b6",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "createNewKeys",
+  "Description": "Checkbox label to create missing keys.",
+  "CreatedAt": "2026-07-16T12:48:41.5603644Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5603651Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c973890a6e4060a261c5584ff1b7909b4f57540835e4488a0591214c922f3e82",
+      "Text": "Create keys missing from the project",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5603669Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

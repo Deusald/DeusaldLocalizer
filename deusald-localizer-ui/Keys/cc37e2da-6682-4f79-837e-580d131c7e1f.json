@@ -1,0 +1,25 @@
+{
+  "Id": "cc37e2da-6682-4f79-837e-580d131c7e1f",
+  "CategoryId": "f49bf397-0eaa-4bcf-8fe7-0022c70b016e",
+  "KeyName": "title",
+  "Description": "Title of the connect-to-server modal",
+  "CreatedAt": "2026-07-16T12:48:41.5611543Z",
+  "UpdatedAt": "2026-07-16T12:48:41.561155Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "de6cce08571e37e126b17dacfd1d340ac3785279ad9c5da51e2443015d611838",
+      "Text": "Connect to server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5611569Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

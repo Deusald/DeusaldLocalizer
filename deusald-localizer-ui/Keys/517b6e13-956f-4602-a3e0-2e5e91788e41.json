@@ -1,0 +1,25 @@
+{
+  "Id": "517b6e13-956f-4602-a3e0-2e5e91788e41",
+  "CategoryId": "9ca886bc-c432-4416-b763-a8787c88c05a",
+  "KeyName": "tagsTitle",
+  "Description": "Section title for the tags list.",
+  "CreatedAt": "2026-07-16T12:48:41.5573589Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5573596Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "1331275bc537b4c2bf1e46f7275677967515342e30b572e6852fa6f51b831fe8",
+      "Text": "Tags",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5573647Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

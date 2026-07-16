@@ -1,0 +1,25 @@
+{
+  "Id": "756c258f-9d7f-476b-9fb8-ec59866f3f20",
+  "CategoryId": "f49bf397-0eaa-4bcf-8fe7-0022c70b016e",
+  "KeyName": "browseButton",
+  "Description": "Button that opens the folder picker",
+  "CreatedAt": "2026-07-16T12:48:41.5612917Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5612924Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "93c6b664dce6c207b803d69d853264a42d5aee081ccd1f6651820d794a2064b2",
+      "Text": "Browse…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5612943Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

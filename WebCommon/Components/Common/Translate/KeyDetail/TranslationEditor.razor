@@ -1,5 +1,6 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 <div class="te-root">
 
@@ -7,14 +8,14 @@
     {
         <div class="te-block">
             <div class="te-label-row">
-                <label class="te-label">Source · @_SourceLangCode</label>
-                <span class="te-hint">{placeholders} supported</span>
+                <label class="te-label">@Loc.T(Localization.Translate.KeyDetail.TranslationEditor.sourceLabel, new Dictionary<string, object> { ["lang"] = _SourceLangCode })</label>
+                <span class="te-hint">@Loc.T(Localization.Translate.KeyDetail.TranslationEditor.placeholdersHint)</span>
             </div>
             <MentionTextArea Value="@_SourceDraft" ValueChanged="@(v => _SourceDraft = v)" AfterInput="NotifyDraftChanged"
                              Members="_MemberNames"
                              CssClass="@_SourceCssClass"
                              Readonly="@(!_CanEditSource && !_CanEditTranslation)"
-                             Rows="4" Placeholder="Source text…"/>
+                             Rows="4" Placeholder="@Loc.T(Localization.Translate.KeyDetail.TranslationEditor.sourceTextPlaceholder)"/>
             @if (Key.MaxLength > 0)
             {
                 <div class="te-char-count @(_SourceOverLimit ? "te-char-count-over" : "")">
@@ -27,13 +28,13 @@
         {
             <div class="te-actions">
                 <button class="te-btn te-btn-primary" @onclick="SaveSourceText" disabled="@(!_HasSourceChanges || _SourceOverLimit)">
-                    Save source
+                    @Loc.T(Localization.Translate.KeyDetail.TranslationEditor.saveSource)
                 </button>
                 <button class="te-btn te-btn-ghost" @onclick="SuggestSourceText" disabled="@(!_HasSourceChanges || _SourceOverLimit)">
-                    Suggest
+                    @Loc.T(Localization.Translate.KeyDetail.TranslationEditor.suggest)
                 </button>
                 <button class="te-btn te-btn-ghost" @onclick="ResetSourceDraft" disabled="@(!_HasSourceChanges)">
-                    Reset
+                    @Loc.T(Localization.Translate.KeyDetail.TranslationEditor.reset)
                 </button>
             </div>
         }
@@ -42,10 +43,10 @@
             @* Contributor on the source language: can only propose, never save directly *@
             <div class="te-actions">
                 <button class="te-btn te-btn-ghost" @onclick="SuggestSourceText" disabled="@(!_HasSourceChanges || _SourceOverLimit)">
-                    Suggest
+                    @Loc.T(Localization.Translate.KeyDetail.TranslationEditor.suggest)
                 </button>
                 <button class="te-btn te-btn-ghost" @onclick="ResetSourceDraft" disabled="@(!_HasSourceChanges)">
-                    Reset
+                    @Loc.T(Localization.Translate.KeyDetail.TranslationEditor.reset)
                 </button>
             </div>
         }
@@ -54,26 +55,26 @@
     {
         <div class="te-block">
             <label class="te-label">
-                Source · @_SourceLangCode
-                <span class="te-hint te-source-readonly-hint">read-only — switch to @_SourceLangCode to edit</span>
+                @Loc.T(Localization.Translate.KeyDetail.TranslationEditor.sourceLabel, new Dictionary<string, object> { ["lang"] = _SourceLangCode })
+                <span class="te-hint te-source-readonly-hint">@Loc.T(Localization.Translate.KeyDetail.TranslationEditor.sourceReadonlyHint, new Dictionary<string, object> { ["lang"] = _SourceLangCode })</span>
             </label>
             <textarea class="te-textarea te-readonly"
                       value="@_SourceDraft"
                       readonly
                       rows="3"
-                      placeholder="Source text…"></textarea>
+                      placeholder="@Loc.T(Localization.Translate.KeyDetail.TranslationEditor.sourceTextPlaceholder)"></textarea>
         </div>
 
         <div class="te-block">
             <div class="te-label-row">
-                <label class="te-label">Translation · @SelectedLanguage</label>
-                <span class="te-hint">{placeholders} supported</span>
+                <label class="te-label">@Loc.T(Localization.Translate.KeyDetail.TranslationEditor.translationLabel, new Dictionary<string, object> { ["lang"] = SelectedLanguage })</label>
+                <span class="te-hint">@Loc.T(Localization.Translate.KeyDetail.TranslationEditor.placeholdersHint)</span>
             </div>
             <MentionTextArea Value="@_TranslationDraft" ValueChanged="@(v => _TranslationDraft = v)" AfterInput="NotifyDraftChanged"
                              Members="_MemberNames"
                              CssClass="@_TranslationCssClass"
                              Readonly="@(!_CanEditTranslation)"
-                             Rows="4" Placeholder="Type your translation…"/>
+                             Rows="4" Placeholder="@Loc.T(Localization.Translate.KeyDetail.TranslationEditor.translationPlaceholder)"/>
             @if (Key.MaxLength > 0)
             {
                 <div class="te-char-count @(_TranslationOverLimit ? "te-char-count-over" : "")">
@@ -86,11 +87,11 @@
         {
             <div class="te-stale-warning">
                 <i class="bi bi-exclamation-triangle"></i>
-                Source has changed since this translation was last saved.
+                @Loc.T(Localization.Translate.KeyDetail.TranslationEditor.staleWarning)
                 @if (_CanConfirmMatch)
                 {
                     <button class="te-source-matched-btn" @onclick="MarkSourceMatched">
-                        Source matched
+                        @Loc.T(Localization.Translate.KeyDetail.TranslationEditor.sourceMatched)
                     </button>
                 }
             </div>
@@ -102,14 +103,14 @@
                 @if (_IsAdmin || _IsReviewer)
                 {
                     <button class="te-btn te-btn-primary" @onclick="SaveTranslation" disabled="@(!_HasTranslationChanges || _TranslationOverLimit)">
-                        Save translation
+                        @Loc.T(Localization.Translate.KeyDetail.TranslationEditor.saveTranslation)
                     </button>
                 }
                 <button class="te-btn te-btn-ghost" @onclick="SuggestTranslation" disabled="@(!_HasTranslationChanges || _TranslationOverLimit)">
-                    Suggest
+                    @Loc.T(Localization.Translate.KeyDetail.TranslationEditor.suggest)
                 </button>
                 <button class="te-btn te-btn-ghost" @onclick="ResetTranslationDraft" disabled="@(!_HasTranslationChanges)">
-                    Reset
+                    @Loc.T(Localization.Translate.KeyDetail.TranslationEditor.reset)
                 </button>
             </div>
         }

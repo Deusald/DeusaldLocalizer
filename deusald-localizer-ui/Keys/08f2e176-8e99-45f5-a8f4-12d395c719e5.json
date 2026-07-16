@@ -1,0 +1,33 @@
+{
+  "Id": "08f2e176-8e99-45f5-a8f4-12d395c719e5",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "errInvalidProject",
+  "Description": "Error when the chosen folder isn't a valid project (desktop).",
+  "CreatedAt": "2026-07-16T12:29:28.0795123Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5566597Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "d37685bb-4ebc-48eb-9874-a071846d3359",
+      "Name": "msg",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "missing metadata"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c47f6c6ba5ab213e9351b1e75cc7024da1e8a51e477a6c10646e29859c5dc749",
+      "Text": "Invalid project: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5566654Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

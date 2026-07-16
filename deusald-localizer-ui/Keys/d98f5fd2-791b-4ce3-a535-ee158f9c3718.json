@@ -1,0 +1,25 @@
+{
+  "Id": "d98f5fd2-791b-4ce3-a535-ee158f9c3718",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "updateDescriptions",
+  "Description": "Checkbox label to update descriptions.",
+  "CreatedAt": "2026-07-16T12:48:41.5603976Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5603983Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "2682bcc7a4f771031c3850176cecf49b5c2c14f803700d1ff0e779c9a941f0f9",
+      "Text": "Update descriptions",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5604002Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

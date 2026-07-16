@@ -1,0 +1,25 @@
+{
+  "Id": "97c5b538-57f8-4494-b0d3-5259aaa7a270",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "updateTitle",
+  "Description": "Title of the update banner (desktop).",
+  "CreatedAt": "2026-07-16T12:29:28.0794047Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5565435Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ff8b555d818f0b25bbdd1bec8b479660bac7fc276acbe993e759bf67fed32c34",
+      "Text": "Update available",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5565477Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

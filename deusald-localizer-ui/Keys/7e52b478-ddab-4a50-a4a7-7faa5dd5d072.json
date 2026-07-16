@@ -1,0 +1,25 @@
+{
+  "Id": "7e52b478-ddab-4a50-a4a7-7faa5dd5d072",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "updateFromSheet",
+  "Description": "Section title for what to update from the sheet.",
+  "CreatedAt": "2026-07-16T12:48:41.5603304Z",
+  "UpdatedAt": "2026-07-16T12:48:41.560331Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "55c5d30c520e88ea7ed509079ebc79d5c2f052d0e00d1a8a3550e43ae68002f8",
+      "Text": "Update from sheet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5603329Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

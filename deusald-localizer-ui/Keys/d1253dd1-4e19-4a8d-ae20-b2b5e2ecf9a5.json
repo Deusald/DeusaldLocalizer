@@ -1,0 +1,25 @@
+{
+  "Id": "d1253dd1-4e19-4a8d-ae20-b2b5e2ecf9a5",
+  "CategoryId": "36be6be4-7cc0-460c-bb6c-42351c6571e1",
+  "KeyName": "oneCategory",
+  "Description": "Filter trigger label fallback when one unknown category is selected.",
+  "CreatedAt": "2026-07-16T12:48:41.5573216Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5573223Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "92b3d7f0debc1e04735fa46948a3202ca2c724d21816f80ca5a922ceef0a3c71",
+      "Text": "1 category",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5573244Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

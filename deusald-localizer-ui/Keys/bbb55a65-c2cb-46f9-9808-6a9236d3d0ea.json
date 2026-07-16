@@ -1,0 +1,33 @@
+{
+  "Id": "bbb55a65-c2cb-46f9-9808-6a9236d3d0ea",
+  "CategoryId": "03687f98-0a54-4914-a0e2-992f681adff4",
+  "KeyName": "timeHours",
+  "Description": "Relative time in hours.",
+  "CreatedAt": "2026-07-16T12:19:57.5420189Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5562203Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "fb33c7f7-2170-4b9c-b5da-8c6300c5a420",
+      "Name": "h",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "3"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c037caa52a752ae69df3c531d64a1c3109e93f91e692a450ebe71177dcad4d8c",
+      "Text": "{h}h ago",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5562258Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

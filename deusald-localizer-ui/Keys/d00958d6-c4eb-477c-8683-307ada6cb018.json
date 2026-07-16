@@ -1,0 +1,25 @@
+{
+  "Id": "d00958d6-c4eb-477c-8683-307ada6cb018",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "clearRecent",
+  "Description": "Button that clears the recent-projects list (desktop).",
+  "CreatedAt": "2026-07-16T12:29:28.0794815Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5566263Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "83b12c2216efb4fdc924e1deb5182e905e4926ed0c1c324d467107f46d5a26a9",
+      "Text": "Clear",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.55663Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "6f3ea200-8650-4e6a-b8eb-22749176be18",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "saved",
+  "Description": "Status pill shown when all changes are saved.",
+  "CreatedAt": "2026-07-16T12:48:41.5588003Z",
+  "UpdatedAt": "2026-07-16T12:48:41.558801Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "b5c120b316c237a0deab3140267aebedba61947d3ae268d708a53d5be119e9fb",
+      "Text": "Saved",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5588029Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

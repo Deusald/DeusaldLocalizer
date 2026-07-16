@@ -1,5 +1,6 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 @implements IDisposable
 
 <div class="kc-root">
@@ -16,19 +17,19 @@
 
         <div class="kc-search-wrap">
             <i class="bi bi-search kc-search-icon"></i>
-            <input class="kc-search" type="text" placeholder="Search keys…"
+            <input class="kc-search" type="text" placeholder="@Loc.T(Localization.Translate.Keys.searchKeys)"
                    @bind="_Filter" @bind:event="oninput"/>
         </div>
 
         <div class="kc-tabs">
             <button class="kc-tab @(_Tab == KeyTab.All ? "active" : "")" @onclick="() => _Tab = KeyTab.All">
-                All <span class="kc-tab-count">@_AllCount</span>
+                @Loc.T(Localization.Translate.Keys.tabAll) <span class="kc-tab-count">@_AllCount</span>
             </button>
             <button class="kc-tab @(_Tab == KeyTab.Untranslated ? "active" : "")" @onclick="() => _Tab = KeyTab.Untranslated">
-                Untranslated <span class="kc-tab-count">@_UntranslatedCount</span>
+                @Loc.T(Localization.Translate.Keys.tabUntranslated) <span class="kc-tab-count">@_UntranslatedCount</span>
             </button>
             <button class="kc-tab @(_Tab == KeyTab.NeedsReview ? "active" : "")" @onclick="() => _Tab = KeyTab.NeedsReview">
-                Needs review <span class="kc-tab-count">@_NeedsReviewCount</span>
+                @Loc.T(Localization.Translate.Keys.tabNeedsReview) <span class="kc-tab-count">@_NeedsReviewCount</span>
             </button>
         </div>
     </div>
@@ -36,7 +37,7 @@
     <div class="kc-list">
         @if (_FilteredKeys.Count == 0)
         {
-            <div class="kc-empty">No keys match.</div>
+            <div class="kc-empty">@Loc.T(Localization.Translate.Keys.noKeysMatch)</div>
         }
         else
         {
@@ -57,7 +58,7 @@
                                 <div class="kc-item-source">@SourceTextFor(k)</div>
                             </div>
                         </div>
-                        <button class="kc-item-edit-btn" title="Edit key" @onclick="() => _NewKeyModal?.EditKey(k)">
+                        <button class="kc-item-edit-btn" title="@Loc.T(Localization.Translate.Keys.editKey)" @onclick="() => _NewKeyModal?.EditKey(k)">
                             <i class="bi bi-pencil"></i>
                         </button>
                     </div>
@@ -73,7 +74,7 @@
                         </div>
                         @if (suggestionCount > 0)
                         {
-                            <div class="kc-item-suggestions" title="@suggestionCount pending suggestion(s)">
+                            <div class="kc-item-suggestions" title="@Loc.T(Localization.Translate.Keys.pendingSuggestions, new Dictionary<string, object> { ["count"] = suggestionCount })">
                                 <i class="bi bi-chat-left-text"></i>
                                 <span>@suggestionCount</span>
                             </div>
@@ -88,15 +89,15 @@
     {
         @if (_EditMode)
         {
-            <button class="kc-done-btn" @onclick="() => _EditMode = false">Done</button>
+            <button class="kc-done-btn" @onclick="() => _EditMode = false">@Loc.T(Localization.Translate.Keys.done)</button>
         }
         else
         {
             <div class="kc-bottom-actions">
                 <button class="kc-add-btn" @onclick="() => _NewKeyModal?.Show(_ActiveCategoryId)">
-                    <i class="bi bi-plus-lg"></i> Add key
+                    <i class="bi bi-plus-lg"></i> @Loc.T(Localization.Translate.Keys.addKey)
                 </button>
-                <button class="kc-edit-btn" @onclick="() => _EditMode = true" title="Edit keys">
+                <button class="kc-edit-btn" @onclick="() => _EditMode = true" title="@Loc.T(Localization.Translate.Keys.editKeys)">
                     <i class="bi bi-pencil"></i>
                 </button>
             </div>

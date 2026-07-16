@@ -1,0 +1,25 @@
+{
+  "Id": "784fffd5-27bf-442b-b5a1-e9fdc13a6aab",
+  "CategoryId": "264f533d-3094-433d-9429-c82dd532173e",
+  "KeyName": "uncommittedMode",
+  "Description": "Label of the offline uncommitted-mode switch.",
+  "CreatedAt": "2026-07-16T12:48:41.5600281Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5600288Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c203efeeb6b3215e51212226640eb5326b379705b617cc781253c1db302cbfda",
+      "Text": "Uncommitted mode",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.560031Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

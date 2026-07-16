@@ -1,0 +1,25 @@
+{
+  "Id": "4bdb5afa-def8-44af-9d1d-626727927fc8",
+  "CategoryId": "f49bf397-0eaa-4bcf-8fe7-0022c70b016e",
+  "KeyName": "subtitle",
+  "Description": "Subtitle of the connect-to-server modal",
+  "CreatedAt": "2026-07-16T12:48:41.5611649Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5611655Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "b295a8923772301470045e51c7e2321a475a17c48186b08f7100c1bb683012da",
+      "Text": "Download an online project from the bot",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.561172Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

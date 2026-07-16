@@ -1,0 +1,25 @@
+{
+  "Id": "468f1c1a-07a7-4161-bbff-657b5113e9a1",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "removeTooltip",
+  "Description": "Tooltip on a recent-project card's remove button (desktop).",
+  "CreatedAt": "2026-07-16T12:29:28.0794987Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5566453Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "9720cab17eed1ba051d70a16696de70e8d9bc480918e66c43c60f7b4b097de2b",
+      "Text": "Remove from recent",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.556649Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

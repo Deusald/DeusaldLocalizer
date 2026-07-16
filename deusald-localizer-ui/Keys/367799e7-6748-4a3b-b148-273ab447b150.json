@@ -1,0 +1,25 @@
+{
+  "Id": "367799e7-6748-4a3b-b148-273ab447b150",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "resetAccessToken",
+  "Description": "Tooltip on the admin button that resets a member's token.",
+  "CreatedAt": "2026-07-16T12:48:41.5594218Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5594225Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "cfbbf8338fe9030813b37b05767b1f80a293dc056d54ebf32568a0fa40877cc2",
+      "Text": "Reset access token",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5594261Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

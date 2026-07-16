@@ -1,0 +1,25 @@
+{
+  "Id": "ca73b55f-ae9a-43e1-a6e2-dcbdfe823e44",
+  "CategoryId": "9b12f931-a241-469d-983d-8dbcf3378439",
+  "KeyName": "subBadge",
+  "Description": "Badge marking a sub-language (variant).",
+  "CreatedAt": "2026-07-16T12:48:41.5568557Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5568568Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ea1fae60815a913d2eb3749738be870370ce51b8ae845b9d0209a446a2e90082",
+      "Text": "SUB",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.556862Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "c441e3a8-d808-4a22-98a7-ad04c7ee9993",
+  "CategoryId": "8e09b7d9-6f39-43ce-9e26-89f6748618eb",
+  "KeyName": "statusUntranslated",
+  "Description": "Key status tag: not yet translated.",
+  "CreatedAt": "2026-07-16T12:48:41.5577306Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5577313Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "d41ef2ce8711fb1fba7cbd79ff969449ced0562061c5d97243a34b5331a19fb8",
+      "Text": "Untranslated",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5577333Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

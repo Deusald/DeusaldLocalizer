@@ -1,0 +1,25 @@
+{
+  "Id": "9564fcf9-1a00-4a57-9f02-54a1394d8e36",
+  "CategoryId": "f4418ae5-cb67-4794-b968-ed395d6b3148",
+  "KeyName": "enums",
+  "Description": "Header of the enum list column",
+  "CreatedAt": "2026-07-16T12:48:41.5584718Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5584725Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "2ee7ca9fcbc38a7536d6ce70e51536a89b9ae32071d4f0518a94f2a37ee1d439",
+      "Text": "Enums",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5584743Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

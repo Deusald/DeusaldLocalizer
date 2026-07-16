@@ -1,0 +1,25 @@
+{
+  "Id": "f1f230e8-abbc-431e-9936-08d0071b871a",
+  "CategoryId": "dfd57dc6-94be-4540-b323-8ee6ac2cf59d",
+  "KeyName": "sourceTag",
+  "Description": "Tag marking the source row in the preview",
+  "CreatedAt": "2026-07-16T12:48:41.5582416Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5582423Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "58836253710262a14e993598f2c2812fe1df64a30dca6fbeaa04d49d624a6fd1",
+      "Text": "SRC",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5582442Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

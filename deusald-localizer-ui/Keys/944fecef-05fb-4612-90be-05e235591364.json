@@ -1,0 +1,25 @@
+{
+  "Id": "944fecef-05fb-4612-90be-05e235591364",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "recentChanges",
+  "Description": "Label of the recent-changes pill; a count follows in parentheses.",
+  "CreatedAt": "2026-07-16T12:48:41.558876Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5588767Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "f66a12ef4fd99fa604a5229012d70e40f68a73c531b583e5e9b6a77ed5a5c6fc",
+      "Text": "Recent changes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5588786Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

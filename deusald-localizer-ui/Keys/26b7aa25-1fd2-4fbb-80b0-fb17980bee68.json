@@ -1,0 +1,25 @@
+{
+  "Id": "26b7aa25-1fd2-4fbb-80b0-fb17980bee68",
+  "CategoryId": "2bae53f6-dd89-4848-9852-03b36cde096b",
+  "KeyName": "removedKey",
+  "Description": "Fallback name shown for a key that no longer exists.",
+  "CreatedAt": "2026-07-16T12:48:41.5602885Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5602891Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "5f6f8a4cdb5e5718c944cf81fd858753282f8c4c7cafbcf27690f28acb514c5f",
+      "Text": "(removed key)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.560291Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "96103801-406a-4bce-b391-026796164241",
+  "CategoryId": "9dc99630-09e1-4188-8d05-b279fbb54584",
+  "KeyName": "newKey",
+  "Description": "Modal title when creating a key.",
+  "CreatedAt": "2026-07-16T12:48:41.5575185Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5575192Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "eda5496b306f05bcb316f3be409b4564497374702e46d8bbf1cca45bfa38fef1",
+      "Text": "New key",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5575211Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

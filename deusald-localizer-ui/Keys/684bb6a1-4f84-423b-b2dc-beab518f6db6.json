@@ -1,0 +1,25 @@
+{
+  "Id": "684bb6a1-4f84-423b-b2dc-beab518f6db6",
+  "CategoryId": "f49bf397-0eaa-4bcf-8fe7-0022c70b016e",
+  "KeyName": "serverUrlLabel",
+  "Description": "Field label for the server URL input",
+  "CreatedAt": "2026-07-16T12:48:41.56118Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5611807Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "22f5ebc3ad3ff7638885810bfd9485a3d1b536966124cae45727d4181760f9ba",
+      "Text": "Server URL",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5611826Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

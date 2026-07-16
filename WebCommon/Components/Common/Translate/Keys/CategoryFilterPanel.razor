@@ -1,5 +1,6 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 <div class="cfp-root">
 
@@ -15,20 +16,20 @@
     {
         <div class="cfp-panel">
             <div class="cfp-panel-header">
-                <span class="cfp-panel-title">Filter by category</span>
+                <span class="cfp-panel-title">@Loc.T(Localization.Translate.Keys.CategoryFilter.filterByCategory)</span>
                 <div class="cfp-panel-actions">
                     @if (_HasNested)
                     {
-                        <button class="cfp-collapse-btn" title="Collapse all" @onclick="CollapseAll">
+                        <button class="cfp-collapse-btn" title="@Loc.T(Localization.Translate.Keys.CategoryFilter.collapseAll)" @onclick="CollapseAll">
                             <i class="bi bi-arrows-collapse"></i>
                         </button>
-                        <button class="cfp-collapse-btn" title="Expand all" @onclick="ExpandAll">
+                        <button class="cfp-collapse-btn" title="@Loc.T(Localization.Translate.Keys.CategoryFilter.expandAll)" @onclick="ExpandAll">
                             <i class="bi bi-arrows-expand"></i>
                         </button>
                     }
                     @if (SelectedCategoryIds.Count > 0)
                     {
-                        <button class="cfp-clear-btn" @onclick="ClearAll">Clear</button>
+                        <button class="cfp-clear-btn" @onclick="ClearAll">@Loc.T(Localization.Common.Buttons.clear)</button>
                     }
                     <button class="cfp-collapse-btn" @onclick="() => _Expanded = false">
                         <i class="bi bi-chevron-up"></i>
@@ -39,7 +40,7 @@
             <div class="cfp-list">
                 @if (_ProjectState.CurrentProject!.Categories.Count == 0)
                 {
-                    <div class="cfp-empty">No categories yet.</div>
+                    <div class="cfp-empty">@Loc.T(Localization.Translate.Keys.CategoryFilter.noCategoriesYet)</div>
                 }
                 else
                 {
@@ -59,7 +60,7 @@
                             @if (hasChildren)
                             {
                                 <button class="cfp-caret" @onclick="() => ToggleCollapse(cat.Id)"
-                                        title="@(collapsed ? "Expand" : "Collapse")">
+                                        title="@(collapsed ? Loc.T(Localization.Translate.Keys.CategoryFilter.expand) : Loc.T(Localization.Translate.Keys.CategoryFilter.collapse))">
                                     <i class="bi @(collapsed ? "bi-chevron-right" : "bi-chevron-down")"></i>
                                 </button>
                             }
@@ -68,7 +69,7 @@
                                 <span class="cfp-caret-spacer"></span>
                             }
                             <button class="cfp-item @(active ? "active" : "")"
-                                    title="Right-click to select only this category"
+                                    title="@Loc.T(Localization.Translate.Keys.CategoryFilter.rightClickSelectOnly)"
                                     @onclick="() => Toggle(cat.Id)"
                                     @oncontextmenu="() => ToggleSingle(cat.Id)"
                                     @oncontextmenu:preventDefault="true">
@@ -79,12 +80,12 @@
                             @if (_IsAdmin && _HoveredId == cat.Id)
                             {
                                 <div class="cfp-row-actions">
-                                    <button class="cfp-row-action-btn" title="Edit category"
+                                    <button class="cfp-row-action-btn" title="@Loc.T(Localization.Translate.Keys.CategoryFilter.editCategory)"
                                             @onclick="() => _NewCategoryModal?.EditCategory(cat)">
                                         <i class="bi bi-pencil"></i>
                                     </button>
                                     <button class="cfp-row-action-btn cfp-row-action-btn-danger"
-                                            title="@(hasKeys ? "Cannot delete: category still has keys" : "Delete category")"
+                                            title="@(hasKeys ? Loc.T(Localization.Translate.Keys.CategoryFilter.cannotDeleteHasKeys) : Loc.T(Localization.Translate.Keys.CategoryFilter.deleteCategory))"
                                             disabled="@hasKeys"
                                             @onclick="() => DeleteCategory(cat)">
                                         <i class="bi bi-trash3"></i>
@@ -99,7 +100,7 @@
             @if (_IsAdmin)
             {
                 <button class="cfp-add-btn" @onclick="() => _NewCategoryModal?.Show()">
-                    <i class="bi bi-plus-lg"></i> Add category
+                    <i class="bi bi-plus-lg"></i> @Loc.T(Localization.Translate.Keys.CategoryFilter.addCategory)
                 </button>
             }
         </div>
@@ -215,14 +216,14 @@
     {
         get
         {
-            if (SelectedCategoryIds.Count == 0) return "All categories";
+            if (SelectedCategoryIds.Count == 0) return Loc.T(Localization.Translate.Keys.CategoryFilter.allCategories);
             if (SelectedCategoryIds.Count == 1)
             {
                 Guid         id  = SelectedCategoryIds.First();
                 LocCategory? cat = _ProjectState.CurrentProject!.Categories.Find(c => c.Id == id);
-                return cat == null ? "1 category" : CategoryPath(cat);
+                return cat == null ? Loc.T(Localization.Translate.Keys.CategoryFilter.oneCategory) : CategoryPath(cat);
             }
-            return $"{SelectedCategoryIds.Count} categories";
+            return Loc.T(Localization.Translate.Keys.CategoryFilter.manyCategories, new Dictionary<string, object> { ["count"] = SelectedCategoryIds.Count });
         }
     }
 

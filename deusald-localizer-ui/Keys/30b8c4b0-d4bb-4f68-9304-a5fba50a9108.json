@@ -1,0 +1,25 @@
+{
+  "Id": "30b8c4b0-d4bb-4f68-9304-a5fba50a9108",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "importFromExcel",
+  "Description": "Tooltip on the import button.",
+  "CreatedAt": "2026-07-16T12:48:41.5589287Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5589294Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a08120408397e0656f989341487855a68af1220425611a1022c2b758d20ddc3f",
+      "Text": "Import from Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5589312Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

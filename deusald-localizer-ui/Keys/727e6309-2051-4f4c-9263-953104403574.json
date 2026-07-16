@@ -1,0 +1,25 @@
+{
+  "Id": "727e6309-2051-4f4c-9263-953104403574",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "source",
+  "Description": "Badge marking the source (main) language.",
+  "CreatedAt": "2026-07-16T12:48:41.5609036Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5609042Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "41cf6794ba4200b839c53531555f0f3998df4cbb01a4d5cb0b94e3ca5e23947d",
+      "Text": "source",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5609061Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

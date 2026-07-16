@@ -1,0 +1,33 @@
+{
+  "Id": "d9d01119-f016-4a61-8f54-b7294b7079e6",
+  "CategoryId": "9ca886bc-c432-4416-b763-a8787c88c05a",
+  "KeyName": "manyFilters",
+  "Description": "Filter trigger label when multiple flags/tags are selected.",
+  "CreatedAt": "2026-07-16T12:48:41.557379Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5573797Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "3fc16d53-dab2-47c5-9973-90d5cbb77dc0",
+      "Name": "count",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "3"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "fd3c513925ff7e31ce452faeae81ebaa026441c65634dd2f47a7e86c79807bdc",
+      "Text": "{count} filters",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.557386Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

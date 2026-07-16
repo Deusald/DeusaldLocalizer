@@ -1,0 +1,25 @@
+{
+  "Id": "464d0e29-1e9a-4168-aeea-bcbe470e7bd3",
+  "CategoryId": "26653698-73d8-4889-ada4-a47247015d15",
+  "KeyName": "flagNeedsReview",
+  "Description": "Display label for the Needs review flag type.",
+  "CreatedAt": "2026-07-16T12:48:41.5577988Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5577995Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "07297fa94a997d0f807bd37c61993a8821ca406b5e4498e4f0759e50ab154dd4",
+      "Text": "Needs review",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5578014Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

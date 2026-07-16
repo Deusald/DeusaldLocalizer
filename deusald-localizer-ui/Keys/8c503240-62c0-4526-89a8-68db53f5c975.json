@@ -1,0 +1,25 @@
+{
+  "Id": "8c503240-62c0-4526-89a8-68db53f5c975",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "pushChangesToServer",
+  "Description": "Push button tooltip when the push is available.",
+  "CreatedAt": "2026-07-16T12:48:41.5588433Z",
+  "UpdatedAt": "2026-07-16T12:48:41.558844Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a105f1f8fcfe6020d3722208f9012d2b4f9d3573c560842ce6808d4ec1ff13af",
+      "Text": "Push changes to server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5588459Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

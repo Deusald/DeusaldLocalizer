@@ -1,0 +1,25 @@
+{
+  "Id": "655e2975-02fa-4ed4-b125-4689b7c3921f",
+  "CategoryId": "264f533d-3094-433d-9429-c82dd532173e",
+  "KeyName": "emptyState",
+  "Description": "Empty-state text when there are no pending changes.",
+  "CreatedAt": "2026-07-16T12:48:41.5601362Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5601369Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "5df85eacea82c6583bf2571f79f25e3546c0a80d50ab83317035c62f4cd4c922",
+      "Text": "No uncommitted changes.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.560139Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

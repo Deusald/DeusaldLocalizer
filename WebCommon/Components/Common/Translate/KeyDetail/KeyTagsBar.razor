@@ -1,10 +1,11 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 <div class="ktb-root">
     @if (Key.Tags.Count == 0 && !_IsAdmin)
     {
-        <span class="ktb-empty">No tags</span>
+        <span class="ktb-empty">@Loc.T(Localization.Translate.KeyDetail.Tags.noTags)</span>
     }
     else
     {

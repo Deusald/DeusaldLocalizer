@@ -1,0 +1,25 @@
+{
+  "Id": "aeeab8f1-0cd0-41ae-b49d-e72034c016a7",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "syncFromServer",
+  "Description": "Tooltip on the sync button.",
+  "CreatedAt": "2026-07-16T12:48:41.5588183Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5588189Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e3a1c7f66f48051056ba67f56ceea11dbc80a233f4d4157d6a51fab53bc933a1",
+      "Text": "Sync from server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5588208Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

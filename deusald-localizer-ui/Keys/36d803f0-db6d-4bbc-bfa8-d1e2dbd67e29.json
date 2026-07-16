@@ -1,0 +1,25 @@
+{
+  "Id": "36d803f0-db6d-4bbc-bfa8-d1e2dbd67e29",
+  "CategoryId": "264f533d-3094-433d-9429-c82dd532173e",
+  "KeyName": "subId",
+  "Description": "Detail row label for a change's sub id.",
+  "CreatedAt": "2026-07-16T12:48:41.5601909Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5601916Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a6706e03219f63651fe0d8f9d6f4b6d9873d18bdfb56fb43537f62890a104dd6",
+      "Text": "Sub ID",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5601935Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

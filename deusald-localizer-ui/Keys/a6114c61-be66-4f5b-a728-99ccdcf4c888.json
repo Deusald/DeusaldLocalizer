@@ -1,0 +1,25 @@
+{
+  "Id": "a6114c61-be66-4f5b-a728-99ccdcf4c888",
+  "CategoryId": "8e09b7d9-6f39-43ce-9e26-89f6748618eb",
+  "KeyName": "emptyState",
+  "Description": "Empty-state hint shown when no key is selected in the key detail column.",
+  "CreatedAt": "2026-07-16T12:48:41.5576494Z",
+  "UpdatedAt": "2026-07-16T12:48:41.55765Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a246987d191cf9e7d49be5cbc609996073528f3a4a6503fd77a34f15cec94c29",
+      "Text": "Select a key to start translating",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5576595Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

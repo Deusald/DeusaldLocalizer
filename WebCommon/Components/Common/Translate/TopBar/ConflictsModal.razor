@@ -1,5 +1,6 @@
 @namespace DeusaldLocalizerWeb.Components.Common
-@inject ProjectStateService _ProjectState
+@inject ProjectStateService  _ProjectState
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -28,8 +29,7 @@
             @if (_ProjectState.HasSyncConflicts)
             {
                 <p class="cfm-intro">
-                    These changes clash with newer edits already on the server. Open each one to choose
-                    how to resolve it, then push again.
+                    @Loc.T(Localization.Translate.TopBar.Conflicts.conflictsIntro)
                 </p>
 
                 @foreach (EntryChangeConflict conflict in _ProjectState.SyncConflicts)
@@ -50,7 +50,7 @@
             {
                 <div class="cfm-empty">
                     <i class="bi bi-check-circle cfm-empty-icon"></i>
-                    <span>No conflicts — you're good to push.</span>
+                    <span>@Loc.T(Localization.Translate.TopBar.Conflicts.noConflicts)</span>
                 </div>
             }
 
@@ -64,8 +64,10 @@
     private string? _ErrorMessage;
 
     private string _Title => _ProjectState.HasSyncConflicts
-                                 ? $"{_ProjectState.SyncConflicts.Count} {(_ProjectState.SyncConflicts.Count == 1 ? "conflict" : "conflicts")} to resolve"
-                                 : "Can't push";
+                                 ? (_ProjectState.SyncConflicts.Count == 1
+                                        ? Loc.T(Localization.Translate.TopBar.Conflicts.titleOneConflict, new Dictionary<string, object> { ["count"] = _ProjectState.SyncConflicts.Count })
+                                        : Loc.T(Localization.Translate.TopBar.Conflicts.titleManyConflicts, new Dictionary<string, object> { ["count"] = _ProjectState.SyncConflicts.Count }))
+                                 : Loc.T(Localization.Translate.TopBar.Conflicts.cantPush);
 
     /// <summary>Opens the modal to browse the current sync conflicts.</summary>
     public void Show()
@@ -91,11 +93,11 @@
         _ProjectState.RequestOpenKey(conflict.KeyId, conflict.LanguageId);
     }
 
-    private static string KindLabel(EntryConflictType type) => type switch
+    private string KindLabel(EntryConflictType type) => type switch
     {
-        EntryConflictType.SourceChanged => "source",
-        EntryConflictType.DestChanged   => "edited",
-        _                               => "conflict",
+        EntryConflictType.SourceChanged => Loc.T(Localization.Translate.TopBar.Conflicts.kindSource),
+        EntryConflictType.DestChanged   => Loc.T(Localization.Translate.TopBar.Conflicts.kindEdited),
+        _                               => Loc.T(Localization.Translate.TopBar.Conflicts.kindConflict),
     };
 
     private static string KindClass(EntryConflictType type) => type switch

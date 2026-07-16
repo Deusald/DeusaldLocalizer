@@ -1,0 +1,25 @@
+{
+  "Id": "cacc71f6-82bc-450e-b94d-5ab8b3b7d1a1",
+  "CategoryId": "9b12f931-a241-469d-983d-8dbcf3378439",
+  "KeyName": "variantTagPlaceholder",
+  "Description": "Placeholder for the sub-language tag input.",
+  "CreatedAt": "2026-07-16T12:48:41.5568984Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5568993Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "f0dce7563b38acf3b42f1cac0e599cf1a816ebbf125a0129e58e74561dbf8d10",
+      "Text": "tag e.g. simple",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5569035Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

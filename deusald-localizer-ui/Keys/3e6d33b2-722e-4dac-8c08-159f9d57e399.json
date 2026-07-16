@@ -1,0 +1,25 @@
+{
+  "Id": "3e6d33b2-722e-4dac-8c08-159f9d57e399",
+  "CategoryId": "30585d1a-f1da-488a-ab89-97f090f732f4",
+  "KeyName": "deleteTitle",
+  "Description": "Title of the delete-confirmation dialog (web).",
+  "CreatedAt": "2026-07-16T12:29:28.079334Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5564112Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "493a274349f6ee7006d680a48a8c15fe9a0e0c9e618f50318152ad287c51abcc",
+      "Text": "Delete project?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5564172Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

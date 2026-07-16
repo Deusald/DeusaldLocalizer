@@ -1,0 +1,25 @@
+{
+  "Id": "a3d3f465-735c-4053-b1ba-288ca0934e2a",
+  "CategoryId": "5b3ad005-8ece-4230-9f44-a060455ce216",
+  "KeyName": "type",
+  "Description": "Label for the variable type field",
+  "CreatedAt": "2026-07-16T12:48:41.5583121Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5583128Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "baaddf70fb5d432b8bd948ef91d6f910124a6d138edae4d5f000c4610ddc8eae",
+      "Text": "Type",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5583148Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

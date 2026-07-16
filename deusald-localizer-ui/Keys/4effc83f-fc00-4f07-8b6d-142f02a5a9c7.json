@@ -1,0 +1,25 @@
+{
+  "Id": "4effc83f-fc00-4f07-8b6d-142f02a5a9c7",
+  "CategoryId": "26653698-73d8-4889-ada4-a47247015d15",
+  "KeyName": "noteNone",
+  "Description": "Placeholder shown in a flag tooltip when the flag has no note.",
+  "CreatedAt": "2026-07-16T12:48:41.5577832Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5577838Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "90e6391f5cb97cc70095a186fbfbe13886a54ea6a4874c399ce9398a47cf96f9",
+      "Text": "No note",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5577857Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

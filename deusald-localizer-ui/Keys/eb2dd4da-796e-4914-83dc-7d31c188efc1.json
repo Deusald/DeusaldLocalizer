@@ -1,0 +1,25 @@
+{
+  "Id": "eb2dd4da-796e-4914-83dc-7d31c188efc1",
+  "CategoryId": "30c64139-dcb5-4421-b6b0-72b5ab393ccd",
+  "KeyName": "flagOutdated",
+  "Description": "Selectable flag type label: Outdated.",
+  "CreatedAt": "2026-07-16T12:48:41.5578994Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5579001Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c759f42e45685095736f036355f5687cb4bd6d35015bea57718eb3480d4b8a6c",
+      "Text": "Outdated",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5579019Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

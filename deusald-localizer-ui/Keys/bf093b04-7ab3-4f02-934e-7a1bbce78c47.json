@@ -1,0 +1,25 @@
+{
+  "Id": "bf093b04-7ab3-4f02-934e-7a1bbce78c47",
+  "CategoryId": "03bb89a1-af8c-447d-a2f0-201c17dca044",
+  "KeyName": "title",
+  "Description": "Title of the login modal",
+  "CreatedAt": "2026-07-16T12:48:41.5613819Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5613826Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e899d59beb8c0ff15722c53d3903472220b1e9330986f29a130e40bb8d7a2e95",
+      "Text": "Sign in to project",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5613846Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

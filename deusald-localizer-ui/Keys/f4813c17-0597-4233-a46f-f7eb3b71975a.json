@@ -1,0 +1,25 @@
+{
+  "Id": "f4813c17-0597-4233-a46f-f7eb3b71975a",
+  "CategoryId": "37037b9b-7934-487b-9401-8cca236150a6",
+  "KeyName": "slugLabel",
+  "Description": "Field label for the slug input",
+  "CreatedAt": "2026-07-16T12:48:41.5614733Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5614739Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "d15387ecc6c5e22dee4fb57610138e155c1c84cc8c1a187ff7fa2f1edb3beff6",
+      "Text": "Slug",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5614887Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,3 +1,14 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
+@implements IDisposable
+@inject UiLocalizationService Loc
 
 @Body
+
+@code {
+    // Re-render the whole layout subtree when the UI language changes.
+    protected override void OnInitialized() => Loc.CultureChanged += OnCultureChanged;
+
+    private void OnCultureChanged() => InvokeAsync(StateHasChanged);
+
+    public void Dispose() => Loc.CultureChanged -= OnCultureChanged;
+}

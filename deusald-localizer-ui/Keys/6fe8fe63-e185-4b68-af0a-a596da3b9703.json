@@ -1,0 +1,25 @@
+{
+  "Id": "6fe8fe63-e185-4b68-af0a-a596da3b9703",
+  "CategoryId": "4462b26f-cf56-48cb-a50a-33a2f49aa7c6",
+  "KeyName": "communitySuggestions",
+  "Description": "Header of the suggestions list",
+  "CreatedAt": "2026-07-16T12:48:41.5583974Z",
+  "UpdatedAt": "2026-07-16T12:48:41.558398Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c7882e28b145eb70e7849656712c05ed8e98be6f432bd71d1863e16c4885c7d0",
+      "Text": "Community suggestions",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5583999Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

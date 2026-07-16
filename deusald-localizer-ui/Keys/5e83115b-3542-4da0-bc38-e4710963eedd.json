@@ -1,0 +1,33 @@
+{
+  "Id": "5e83115b-3542-4da0-bc38-e4710963eedd",
+  "CategoryId": "30585d1a-f1da-488a-ab89-97f090f732f4",
+  "KeyName": "errReadProjects",
+  "Description": "Error when the stored project list can't be read (web).",
+  "CreatedAt": "2026-07-16T12:29:28.0793607Z",
+  "UpdatedAt": "2026-07-16T12:48:41.556448Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "845fa9d4-9122-4691-836d-3965207650be",
+      "Name": "msg",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "quota exceeded"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "f06f8cb0e3260b4307b9fc1f0eddafa153ce341c878cdb894ba9a24a9a81fefe",
+      "Text": "Could not read stored projects: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5564563Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

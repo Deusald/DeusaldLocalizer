@@ -1,0 +1,25 @@
+{
+  "Id": "a5cef90d-445c-48da-afa8-fbec86981ffe",
+  "CategoryId": "c5c73cc7-4494-470a-bcfc-ef45e25e0957",
+  "KeyName": "yourTranslationLabel",
+  "Description": "Label for the user's translation comparison panel",
+  "CreatedAt": "2026-07-16T12:48:41.5587113Z",
+  "UpdatedAt": "2026-07-16T12:48:41.558712Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "9f4ffbc37f046ce5d92e30e4d167eaae9b2e0bb258e09c8eee3aa0de5c3e5e1f",
+      "Text": "Your translation",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.558714Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "7c5df515-ef18-471e-a5da-c9033d42b319",
+  "CategoryId": "2c815bf8-7ba9-4641-a921-c0b38f3e5e84",
+  "KeyName": "saveChanges",
+  "Description": "Confirm button when editing a category.",
+  "CreatedAt": "2026-07-16T12:48:41.5575116Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5575123Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "dd0ae7a5cbcf233968657563dce34639e681861e2df6d3f845c08d49981c0999",
+      "Text": "Save changes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5575143Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

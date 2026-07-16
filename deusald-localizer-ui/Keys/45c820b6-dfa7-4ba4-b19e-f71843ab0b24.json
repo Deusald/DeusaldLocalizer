@@ -1,0 +1,25 @@
+{
+  "Id": "45c820b6-dfa7-4ba4-b19e-f71843ab0b24",
+  "CategoryId": "9dc99630-09e1-4188-8d05-b279fbb54584",
+  "KeyName": "noCategoriesYet",
+  "Description": "Warning title shown when there are no categories to add a key to.",
+  "CreatedAt": "2026-07-16T12:48:41.5575364Z",
+  "UpdatedAt": "2026-07-16T12:48:41.557537Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "7465b45646c600fd127321591be805a04e9f1f284a3d9630c68ede4b9c53dc31",
+      "Text": "No categories yet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5575389Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

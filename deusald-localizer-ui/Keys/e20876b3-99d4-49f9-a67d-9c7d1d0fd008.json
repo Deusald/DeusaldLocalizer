@@ -1,0 +1,25 @@
+{
+  "Id": "e20876b3-99d4-49f9-a67d-9c7d1d0fd008",
+  "CategoryId": "26653698-73d8-4889-ada4-a47247015d15",
+  "KeyName": "flagInProgress",
+  "Description": "Display label for the In progress flag type.",
+  "CreatedAt": "2026-07-16T12:48:41.5578197Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5578204Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c1f88e9d6c4145cf0530ae020155384d5688d70ed82a07a35d783bbc4b32238c",
+      "Text": "In progress",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5578223Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

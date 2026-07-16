@@ -1,0 +1,25 @@
+{
+  "Id": "18213b6d-1852-47dc-a176-87da349e77bc",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "translationsImportAs",
+  "Description": "Section title for how translations are imported.",
+  "CreatedAt": "2026-07-16T12:48:41.5604405Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5604411Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "57b214b4f51d5ac2cb4462402a02be27079c386c2d73d0d77166c2d762ece6ca",
+      "Text": "Translations import as",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5604546Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

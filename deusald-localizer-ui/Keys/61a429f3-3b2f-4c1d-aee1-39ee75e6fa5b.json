@@ -1,0 +1,25 @@
+{
+  "Id": "61a429f3-3b2f-4c1d-aee1-39ee75e6fa5b",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "clearConfirmPrefix",
+  "Description": "Leading word of the confirmation to clear old comments, followed by an amount and unit.",
+  "CreatedAt": "2026-07-16T12:48:41.5594832Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5594839Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "83b12c2216efb4fdc924e1deb5182e905e4926ed0c1c324d467107f46d5a26a9",
+      "Text": "Clear",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5594898Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

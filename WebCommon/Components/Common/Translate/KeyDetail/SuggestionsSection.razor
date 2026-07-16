@@ -1,12 +1,13 @@
 @namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 @{ List<LocTranslationSuggestion> suggestions = _SuggestionsForLanguage; }
 
 @if (suggestions.Count > 0)
 {
     <div class="ss-root">
-        <div class="ss-label">Community suggestions</div>
+        <div class="ss-label">@Loc.T(Localization.Translate.KeyDetail.Suggestions.communitySuggestions)</div>
 
         <div class="ss-list">
             @foreach (LocTranslationSuggestion suggestion in suggestions)
@@ -45,8 +46,8 @@
                     @if (_CanAccept)
                     {
                         <div class="ss-review-actions">
-                            <button class="ss-accept-btn" @onclick="() => Accept(s)">Accept</button>
-                            <button class="ss-reject-btn" @onclick="() => Reject(s)">Reject</button>
+                            <button class="ss-accept-btn" @onclick="() => Accept(s)">@Loc.T(Localization.Translate.KeyDetail.Suggestions.accept)</button>
+                            <button class="ss-reject-btn" @onclick="() => Reject(s)">@Loc.T(Localization.Translate.KeyDetail.Suggestions.reject)</button>
                         </div>
                     }
                 </div>
@@ -56,12 +57,12 @@
                         <i class="bi @(_ExpandedComments.Contains(s.Id) ? "bi-chevron-down" : "bi-chevron-right")"></i>
                         <i class="bi bi-chat-left-text"></i>
                         @{ int commentCount = s.Comments.Count; }
-                        <span>@(commentCount > 0 ? $"{commentCount} comment{(commentCount == 1 ? "" : "s")}" : "Comment")</span>
+                        <span>@(commentCount > 0 ? Loc.T(Localization.Translate.KeyDetail.Suggestions.commentsCount, new Dictionary<string, object> { ["count"] = commentCount }) : Loc.T(Localization.Translate.KeyDetail.Suggestions.comment))</span>
                     </button>
                     @if (_ExpandedComments.Contains(s.Id))
                     {
                         <CommentThread Key="Key" Scope="CommentScope.Suggestion" LanguageId="@SelectedLanguage"
-                                       SuggestionId="s.Id" Label="Discussion" Compact="true" OnChanged="OnCommentsChanged"/>
+                                       SuggestionId="s.Id" Label="@Loc.T(Localization.Translate.KeyDetail.Suggestions.discussion)" Compact="true" OnChanged="OnCommentsChanged"/>
                     }
                 </div>
             }
@@ -178,7 +179,7 @@
     {
         LocProjectMember? member = _ProjectState.CurrentProject!.ProjectMembers.Find(m => m.UserId == authorId);
         if (member != null) return member.Username;
-        return authorId == _ProjectState.CurrentUser.UserId ? _ProjectState.CurrentUser.Username : "Unknown";
+        return authorId == _ProjectState.CurrentUser.UserId ? _ProjectState.CurrentUser.Username : Loc.T(Localization.Translate.KeyDetail.Suggestions.unknownAuthor);
     }
 
     private static string Initial(string name) => string.IsNullOrEmpty(name) ? "?" : name.Substring(0, 1).ToUpper();

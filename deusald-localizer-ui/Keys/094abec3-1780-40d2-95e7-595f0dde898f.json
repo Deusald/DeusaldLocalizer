@@ -1,0 +1,25 @@
+{
+  "Id": "094abec3-1780-40d2-95e7-595f0dde898f",
+  "CategoryId": "acf8559f-68d0-4fad-8a1f-17ebe5c6afc8",
+  "KeyName": "replied",
+  "Description": "Notification source label for a reply to a suggestion.",
+  "CreatedAt": "2026-07-16T12:48:41.5598817Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5598824Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "4e686cee486fc30c03bf0dbb9273323d3f32f564df645a0e4c9825366194f156",
+      "Text": "replied",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5598842Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

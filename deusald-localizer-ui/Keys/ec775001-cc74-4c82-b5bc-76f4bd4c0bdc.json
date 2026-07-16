@@ -1,0 +1,25 @@
+{
+  "Id": "ec775001-cc74-4c82-b5bc-76f4bd4c0bdc",
+  "CategoryId": "36be6be4-7cc0-460c-bb6c-42351c6571e1",
+  "KeyName": "rightClickSelectOnly",
+  "Description": "Tooltip explaining the right-click select-only behavior.",
+  "CreatedAt": "2026-07-16T12:48:41.5571942Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5571952Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "f89aa56ae37bf4b54d0957ed61805301fe9707e4e37b770a38a67e7585e05bec",
+      "Text": "Right-click to select only this category",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5571993Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

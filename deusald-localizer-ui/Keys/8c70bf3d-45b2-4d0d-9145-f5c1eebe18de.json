@@ -1,0 +1,25 @@
+{
+  "Id": "8c70bf3d-45b2-4d0d-9145-f5c1eebe18de",
+  "CategoryId": "acf8559f-68d0-4fad-8a1f-17ebe5c6afc8",
+  "KeyName": "removedKey",
+  "Description": "Fallback label for a notification whose key no longer exists.",
+  "CreatedAt": "2026-07-16T12:48:41.5599479Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5599486Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "5f6f8a4cdb5e5718c944cf81fd858753282f8c4c7cafbcf27690f28acb514c5f",
+      "Text": "(removed key)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5599505Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

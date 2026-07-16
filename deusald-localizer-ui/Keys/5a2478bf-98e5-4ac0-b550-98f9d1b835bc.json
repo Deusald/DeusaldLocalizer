@@ -1,0 +1,25 @@
+{
+  "Id": "5a2478bf-98e5-4ac0-b550-98f9d1b835bc",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "backToProjects",
+  "Description": "Tooltip on the back button that returns to the project picker.",
+  "CreatedAt": "2026-07-16T12:48:41.5587741Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5587748Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "d9088c8aee0118cbc5f36d530001d9c73b9ac7187e02edebb05f322b61ec0ca0",
+      "Text": "Back to projects",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5587768Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "ac54979f-fe8e-4d0a-b434-7bf6f243e77d",
+  "CategoryId": "30c64139-dcb5-4421-b6b0-72b5ab393ccd",
+  "KeyName": "labelNote",
+  "Description": "Field label for the optional flag note.",
+  "CreatedAt": "2026-07-16T12:48:41.557867Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5578676Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "d8da2c49df39d91df7ecd199b92da7bf264f026242ccc69b08daeadfe587c45b",
+      "Text": "Note",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5578696Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

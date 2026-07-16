@@ -1,5 +1,6 @@
 @namespace DeusaldLocalizerWeb.Components.Common
 @inject IJSRuntime _Js
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -17,19 +18,19 @@
         <div class="atm-body">
             <div class="atm-token">
                 <code class="atm-token-text">@_Token</code>
-                <button class="atm-copy @(_Copied ? "copied" : "")" @onclick="Copy" title="Copy">
+                <button class="atm-copy @(_Copied ? "copied" : "")" @onclick="Copy" title="@Loc.T(Localization.Common.Buttons.copy)">
                     <i class="bi @(_Copied ? "bi-check-lg" : "bi-clipboard")"></i>
                 </button>
             </div>
 
             <div class="atm-warning">
                 <i class="bi bi-exclamation-triangle"></i>
-                <span>Store this token somewhere safe — for security it won't be shown again.</span>
+                <span>@Loc.T(Localization.Common.AccessToken.warningText)</span>
             </div>
         </div>
 
         <div class="atm-footer">
-            <button class="atm-btn atm-btn-primary" @onclick="Close">Done</button>
+            <button class="atm-btn atm-btn-primary" @onclick="Close">@Loc.T(Localization.Common.AccessToken.done)</button>
         </div>
     </div>
 }

@@ -1,0 +1,25 @@
+{
+  "Id": "02bbf48f-adfc-4b9d-a7ef-d83a0dc853c3",
+  "CategoryId": "03bb89a1-af8c-447d-a2f0-201c17dca044",
+  "KeyName": "usernameLabel",
+  "Description": "Field label for the username input",
+  "CreatedAt": "2026-07-16T12:48:41.5613927Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5613933Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e3b89e9d33f88e523083d8b4436adcc3726c89e97fd3179a2e102d765d1b16ed",
+      "Text": "Username",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5614102Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

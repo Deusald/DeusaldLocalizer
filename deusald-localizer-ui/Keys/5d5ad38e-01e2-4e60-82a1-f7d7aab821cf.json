@@ -1,0 +1,25 @@
+{
+  "Id": "5d5ad38e-01e2-4e60-82a1-f7d7aab821cf",
+  "CategoryId": "5b3ad005-8ece-4230-9f44-a060455ce216",
+  "KeyName": "addVariable",
+  "Description": "Button adding a new variable to the key",
+  "CreatedAt": "2026-07-16T12:48:41.558289Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5582897Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e10f539e38e1a1059e3848c5cfe7a53e9df104a685bdebd67768b0fbc72a0913",
+      "Text": "Add variable",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5582917Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

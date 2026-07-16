@@ -1,17 +1,18 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 <div class="vs-root">
     <div class="vs-header">
-        <span class="vs-label">Variables</span>
+        <span class="vs-label">@Loc.T(Localization.Translate.KeyDetail.Variables.variables)</span>
         @if (_IsAdmin)
         {
             <div class="vs-header-actions">
                 <button class="vs-text-btn" @onclick="() => _EnumsModal?.Show()">
-                    Edit enums
+                    @Loc.T(Localization.Translate.KeyDetail.Variables.editEnums)
                 </button>
                 <button class="vs-text-btn vs-text-btn-accent" @onclick="AddVariable">
-                    <i class="bi bi-plus"></i> Add variable
+                    <i class="bi bi-plus"></i> @Loc.T(Localization.Translate.KeyDetail.Variables.addVariable)
                 </button>
             </div>
         }
@@ -19,7 +20,7 @@
 
     @if (Key.Variables.Count == 0)
     {
-        <div class="vs-empty">No variables declared for this key.</div>
+        <div class="vs-empty">@Loc.T(Localization.Translate.KeyDetail.Variables.noVariables)</div>
     }
     else
     {
@@ -37,12 +38,12 @@
                         <div class="vs-edit-block">
                             <div class="vs-edit-row">
                                 <div class="vs-edit-field">
-                                    <label class="vs-edit-label">Name</label>
+                                    <label class="vs-edit-label">@Loc.T(Localization.Translate.KeyDetail.Variables.name)</label>
                                     <input class="vs-input vs-input-mono" @bind="v.Name" @bind:event="oninput"
                                            placeholder="variableName" @bind:after="MarkDirty"/>
                                 </div>
                                 <div class="vs-edit-field">
-                                    <label class="vs-edit-label">Type</label>
+                                    <label class="vs-edit-label">@Loc.T(Localization.Translate.KeyDetail.Variables.type)</label>
                                     <select class="vs-input" @bind="v.Type">
                                         @foreach (KeyVariableType t in Enum.GetValues(typeof(KeyVariableType)))
                                         {
@@ -55,9 +56,9 @@
                             @if (v.Type == KeyVariableType.EnumInt || v.Type == KeyVariableType.EnumString)
                             {
                                 <div class="vs-edit-field">
-                                    <label class="vs-edit-label">Enum</label>
+                                    <label class="vs-edit-label">@Loc.T(Localization.Translate.KeyDetail.Variables.enumLabel)</label>
                                     <select class="vs-input" @bind="v.EnumId">
-                                        <option value="">— select enum —</option>
+                                        <option value="">@Loc.T(Localization.Translate.KeyDetail.Variables.selectEnum)</option>
                                         @foreach (var e in _ProjectState.CurrentProject!.Enums)
                                         {
                                             <option value="@e.Id">@e.Name</option>
@@ -68,15 +69,15 @@
 
                             <div class="vs-edit-field">
                                 <label class="vs-edit-label">
-                                    Default preview value
+                                    @Loc.T(Localization.Translate.KeyDetail.Variables.defaultPreviewValue)
                                     @if (v.Type is KeyVariableType.StringArray or KeyVariableType.IntArray
                                          or KeyVariableType.FloatArray or KeyVariableType.BoolArray)
                                     {
-                                        <span class="vs-edit-label-hint">comma-separated</span>
+                                        <span class="vs-edit-label-hint">@Loc.T(Localization.Translate.KeyDetail.Variables.commaSeparated)</span>
                                     }
                                     @if (v.Type is KeyVariableType.EnumInt or KeyVariableType.EnumString)
                                     {
-                                        <span class="vs-edit-label-hint">int value</span>
+                                        <span class="vs-edit-label-hint">@Loc.T(Localization.Translate.KeyDetail.Variables.intValueHint)</span>
                                     }
                                 </label>
                                 @if (v.Type is KeyVariableType.EnumInt or KeyVariableType.EnumString)
@@ -99,9 +100,9 @@
                             </div>
 
                             <div class="vs-edit-actions">
-                                <button class="vs-done-btn" @onclick="StopEditing">Done</button>
+                                <button class="vs-done-btn" @onclick="StopEditing">@Loc.T(Localization.Translate.KeyDetail.Variables.done)</button>
                                 <button class="vs-remove-btn" @onclick="() => RemoveVariable(v)">
-                                    <i class="bi bi-trash3"></i> Remove
+                                    <i class="bi bi-trash3"></i> @Loc.T(Localization.Common.Buttons.remove)
                                 </button>
                             </div>
                         </div>
@@ -133,7 +134,7 @@
                             }
                         </div>
 
-                        <button class="vs-reset-btn" title="Reset to default preview value"
+                        <button class="vs-reset-btn" title="@Loc.T(Localization.Translate.KeyDetail.Variables.resetToDefault)"
                                 @onclick="() => ResetPreview(v)"
                                 disabled="@(!HasOverride(v))">
                             <i class="bi bi-arrow-counterclockwise"></i>
@@ -141,7 +142,7 @@
 
                         @if (_IsAdmin)
                         {
-                            <button class="vs-icon-btn" title="Edit variable"
+                            <button class="vs-icon-btn" title="@Loc.T(Localization.Translate.KeyDetail.Variables.editVariable)"
                                     @onclick="() => StartEditing(v.Id)">
                                 <i class="bi bi-pencil"></i>
                             </button>

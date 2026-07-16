@@ -1,0 +1,33 @@
+{
+  "Id": "8b202286-6b83-49f8-9910-2373bcbbbfa6",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "redoLabel",
+  "Description": "Redo button tooltip naming the action to be redone.",
+  "CreatedAt": "2026-07-16T12:48:41.558903Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5589037Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "4b18612d-d60e-46eb-ad09-b3bab2927e27",
+      "Name": "label",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "Rename key"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c38a5f16f3ebb4219b9409d20ea8ab3dcae16ae2036fb96839563a268c6cd7a7",
+      "Text": "Redo {label} (Ctrl+Y)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5589068Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

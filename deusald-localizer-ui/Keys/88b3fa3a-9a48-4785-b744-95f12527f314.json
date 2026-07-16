@@ -1,0 +1,33 @@
+{
+  "Id": "88b3fa3a-9a48-4785-b744-95f12527f314",
+  "CategoryId": "ee7edd8f-42cd-4345-806e-6e23f1fb5526",
+  "KeyName": "createOption",
+  "Description": "Option to create a new tag from the typed query.",
+  "CreatedAt": "2026-07-16T12:48:41.5579463Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5579469Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "d4dce717-4c58-4fc5-ac7e-ece8c0312853",
+      "Name": "query",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "combat"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "1132f342d2db53a0ed8d35ee863677dc591b659bed2026f2d650c46a5f2ddebf",
+      "Text": "Create \"{query}\"",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5579503Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

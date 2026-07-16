@@ -1,0 +1,25 @@
+{
+  "Id": "d2f08e1d-62e5-475f-b060-d32ab54b4149",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "openLogsTooltip",
+  "Description": "Tooltip on the logs-folder button (desktop).",
+  "CreatedAt": "2026-07-16T12:29:28.0794694Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5566117Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "9d19ac7b20394489ece37952abffced2a57895041bb9cb211ea68356751c6a5d",
+      "Text": "Open logs folder",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5566195Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

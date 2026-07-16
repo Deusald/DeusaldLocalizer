@@ -1,0 +1,25 @@
+{
+  "Id": "5c656748-2c1b-4a18-afa9-f552034d7dc5",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "reviewLanguagesHint",
+  "Description": "Hint next to the review-languages field label.",
+  "CreatedAt": "2026-07-16T12:48:41.5592894Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5592901Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "5bb29ce9a117dc3da9594841b4b161f7f47b690cecd5e9975dc38c48f38efed6",
+      "Text": "languages this member can review",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5592919Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

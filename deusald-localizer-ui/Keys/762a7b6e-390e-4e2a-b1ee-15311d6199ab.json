@@ -1,0 +1,25 @@
+{
+  "Id": "762a7b6e-390e-4e2a-b1ee-15311d6199ab",
+  "CategoryId": "5b3ad005-8ece-4230-9f44-a060455ce216",
+  "KeyName": "variables",
+  "Description": "Header of the variables section",
+  "CreatedAt": "2026-07-16T12:48:41.5582721Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5582727Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "02db55bac5e3f7ceb98fdea15d7dfcfd40efcc41b777d10c2a8483b571f332bd",
+      "Text": "Variables",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5582746Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

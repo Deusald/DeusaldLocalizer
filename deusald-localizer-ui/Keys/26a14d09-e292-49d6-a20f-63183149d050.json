@@ -1,0 +1,25 @@
+{
+  "Id": "26a14d09-e292-49d6-a20f-63183149d050",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "keysCreated",
+  "Description": "Result stat label for keys created.",
+  "CreatedAt": "2026-07-16T12:48:41.5605282Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5605289Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "86c49914df0fe24122a297f41da6a4ea33091eda124cb3633f2b3ed465fbd3b0",
+      "Text": "keys created",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5605307Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "527530d2-e7b7-4d1a-87a2-e9ea70919cad",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "allLocalChangesOnServer",
+  "Description": "Tooltip on the committed status pill when nothing is pending.",
+  "CreatedAt": "2026-07-16T12:48:41.5589361Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5589368Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "587b943b40c583694e3fcb37a468f42cb8bb3cee9965a12d30942fc6486dd033",
+      "Text": "All local changes are on the server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.558945Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

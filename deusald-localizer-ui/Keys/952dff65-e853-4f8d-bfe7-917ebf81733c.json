@@ -1,0 +1,25 @@
+{
+  "Id": "952dff65-e853-4f8d-bfe7-917ebf81733c",
+  "CategoryId": "30585d1a-f1da-488a-ab89-97f090f732f4",
+  "KeyName": "deleteWarn",
+  "Description": "Delete-confirmation warning (web).",
+  "CreatedAt": "2026-07-16T12:29:28.0793481Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5564288Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "1b14ecdf77a8456351bdf31fb8b24e836f56966ed745d5f12274234fa5e04b7c",
+      "Text": "This project lives only in this browser — deleting it is permanent and cannot be undone. Download a copy (.zip) first if you want to keep it.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.556433Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

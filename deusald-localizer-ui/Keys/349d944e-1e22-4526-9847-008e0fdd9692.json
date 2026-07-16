@@ -1,0 +1,25 @@
+{
+  "Id": "349d944e-1e22-4526-9847-008e0fdd9692",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "csharpClass",
+  "Description": "Section title for C# class options.",
+  "CreatedAt": "2026-07-16T12:48:41.5606874Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5606914Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "0f556ea705eec299f111589ba3cf1cc54551cf8e8238e8a9b146f70373958a14",
+      "Text": "C# class",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5606934Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

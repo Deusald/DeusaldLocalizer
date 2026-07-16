@@ -1,0 +1,25 @@
+{
+  "Id": "c5b90b2c-dbca-4bb3-a884-505668570418",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "signInRequired",
+  "Description": "Sync/push result message when the user is not signed in.",
+  "CreatedAt": "2026-07-16T12:48:41.5590692Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5590699Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "255346f25669fce12875a9610ec696967138d102614a832c6a27468e5ad754a6",
+      "Text": "Sign in required",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5590961Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,33 @@
+{
+  "Id": "ec9ff8a5-c109-4e37-943b-e212f21b91e3",
+  "CategoryId": "30585d1a-f1da-488a-ab89-97f090f732f4",
+  "KeyName": "errExport",
+  "Description": "Error when a .zip export fails (web).",
+  "CreatedAt": "2026-07-16T12:29:28.0793819Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5564803Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "7ccc1a37-89b0-495f-8878-af1bfb1e56d9",
+      "Name": "msg",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "disk full"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "b047cc8c16bbe8c3a1681de6bc2ecfd28d0cce885eb24d970d4ccf027182e721",
+      "Text": "Export failed: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5564872Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "0d0d600b-2f2c-4159-b3a1-e4863dd33f6c",
+  "CategoryId": "fd8aa94b-0386-4858-b6a5-47b035bcc6a4",
+  "KeyName": "copy",
+  "Description": "Generic Copy button, reused across dialogs.",
+  "CreatedAt": "2026-07-16T12:48:41.556789Z",
+  "UpdatedAt": "2026-07-16T12:48:41.55679Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e21f935f11d7e966dbbae78da9daa378fe8142a14e7c0cd7434183005faa6c5c",
+      "Text": "Copy",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5567942Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

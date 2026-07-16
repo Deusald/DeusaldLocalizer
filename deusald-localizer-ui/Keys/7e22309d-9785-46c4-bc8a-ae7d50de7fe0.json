@@ -1,0 +1,25 @@
+{
+  "Id": "7e22309d-9785-46c4-bc8a-ae7d50de7fe0",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "namespaceLabel",
+  "Description": "Field label for the generated namespace.",
+  "CreatedAt": "2026-07-16T12:48:41.5607359Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5607365Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c4e4e7abda206b07f8f017e706795f5fe305d5df2d99923d92a8ed0ab1d40cf8",
+      "Text": "Namespace",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5607383Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

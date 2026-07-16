@@ -1,0 +1,25 @@
+{
+  "Id": "49e38f6d-93df-4f11-8e69-3e4f2a46c8b2",
+  "CategoryId": "9ca886bc-c432-4416-b763-a8787c88c05a",
+  "KeyName": "noTagsYet",
+  "Description": "Empty state when there are no tags.",
+  "CreatedAt": "2026-07-16T12:48:41.5573677Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5573684Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "431f9060023576b9a7228539c314e5a86457d4629a26cdcb372b1508c7217612",
+      "Text": "No tags yet.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5573706Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

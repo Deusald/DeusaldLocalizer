@@ -1,0 +1,25 @@
+{
+  "Id": "cec0eaae-97b5-4cc3-81b5-1add18b86323",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "syncFailed",
+  "Description": "Sync result message when the sync failed; error details may follow.",
+  "CreatedAt": "2026-07-16T12:48:41.559116Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5591166Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "abf3e80b5b4ceb363785b0064bb1747b459c5fdddaa090f49ea7b9ce41d83b16",
+      "Text": "Sync failed",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5591186Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

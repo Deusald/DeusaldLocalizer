@@ -1,0 +1,25 @@
+{
+  "Id": "503299d7-a2b3-4853-b5ba-86ace87b9204",
+  "CategoryId": "542c1600-d949-40da-9150-7b512732ef77",
+  "KeyName": "body",
+  "Description": "Body text of the web client not-found page",
+  "CreatedAt": "2026-07-16T12:48:41.561642Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5616427Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "aa34ee5b966c1e9c10b4f985a2b41607010665a7c91cf34fc604b4ac8d5f2772",
+      "Text": "Sorry, the content you are looking for does not exist.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5616448Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

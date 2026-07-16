@@ -1,0 +1,25 @@
+{
+  "Id": "a899cdc9-1703-49f5-b8a8-6f0d7b79663e",
+  "CategoryId": "37037b9b-7934-487b-9401-8cca236150a6",
+  "KeyName": "noLanguagesFound",
+  "Description": "Empty state when a language search returns nothing",
+  "CreatedAt": "2026-07-16T12:48:41.5615448Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5615455Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "58d29fba00468c13baaa08c9cd3cdc1d6b7ef648a4097b84e71afb4ac594371d",
+      "Text": "No languages found",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5615474Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

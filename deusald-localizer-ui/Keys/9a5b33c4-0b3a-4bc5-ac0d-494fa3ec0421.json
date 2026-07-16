@@ -1,0 +1,25 @@
+{
+  "Id": "9a5b33c4-0b3a-4bc5-ac0d-494fa3ec0421",
+  "CategoryId": "4462b26f-cf56-48cb-a50a-33a2f49aa7c6",
+  "KeyName": "reject",
+  "Description": "Button rejecting a suggestion",
+  "CreatedAt": "2026-07-16T12:48:41.5584147Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5584154Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ab604a360777735fe2993aec7d4ffae415f1515b0a4c989269603fd3d5c07b61",
+      "Text": "Reject",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5584172Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

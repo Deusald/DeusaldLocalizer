@@ -1,0 +1,25 @@
+{
+  "Id": "8377f9f6-0eae-40c8-b7a6-2860eba75336",
+  "CategoryId": "acf8559f-68d0-4fad-8a1f-17ebe5c6afc8",
+  "KeyName": "suggested",
+  "Description": "Notification source label for a new suggestion.",
+  "CreatedAt": "2026-07-16T12:48:41.5598912Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5598918Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "8ad7037556d079419d067ab67761390f62a7db8ed3f4696554b320f13b18da97",
+      "Text": "suggested",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5598965Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "9de56e78-9ecf-4c58-b1d5-7334bed09b92",
+  "CategoryId": "5b3ad005-8ece-4230-9f44-a060455ce216",
+  "KeyName": "commaSeparated",
+  "Description": "Hint that an array preview value is comma-separated",
+  "CreatedAt": "2026-07-16T12:48:41.5583508Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5583515Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ec9a30de321bde9b81164a5a5455d5e9f73411e70d1ef73311bf94168afd3793",
+      "Text": "comma-separated",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5583598Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

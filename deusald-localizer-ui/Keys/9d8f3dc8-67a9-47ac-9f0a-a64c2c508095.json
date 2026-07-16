@@ -1,0 +1,25 @@
+{
+  "Id": "9d8f3dc8-67a9-47ac-9f0a-a64c2c508095",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "columns",
+  "Description": "Section title for Excel column options.",
+  "CreatedAt": "2026-07-16T12:48:41.5608289Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5608296Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "53aade77cd69a77bbb51bf8ca4e7ea8b282db75edce8883775e47042478d35b5",
+      "Text": "Columns",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5608316Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

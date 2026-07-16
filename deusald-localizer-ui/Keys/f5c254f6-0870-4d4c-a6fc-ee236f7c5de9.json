@@ -1,0 +1,25 @@
+{
+  "Id": "f5c254f6-0870-4d4c-a6fc-ee236f7c5de9",
+  "CategoryId": "9b12f931-a241-469d-983d-8dbcf3378439",
+  "KeyName": "done",
+  "Description": "Button that exits language edit mode.",
+  "CreatedAt": "2026-07-16T12:48:41.5569069Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5569078Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516",
+      "Text": "Done",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5569122Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

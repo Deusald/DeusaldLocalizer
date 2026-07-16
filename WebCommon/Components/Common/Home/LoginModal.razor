@@ -1,11 +1,12 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
+@inject UiLocalizationService Loc
 
 <div class="lm-backdrop" @onclick="Cancel"></div>
 
 <div class="lm-box" @onclick:stopPropagation="true">
     <div class="lm-header">
         <div>
-            <div class="lm-title">Sign in to project</div>
+            <div class="lm-title">@Loc.T(Localization.Common.Login.title)</div>
             <div class="lm-subtitle">@_ProjectName</div>
         </div>
         <button class="lm-close" @onclick="Cancel"><i class="bi bi-x-lg"></i></button>
@@ -13,15 +14,15 @@
 
     <div class="lm-body">
         <div class="lm-field">
-            <label class="lm-label">Username</label>
+            <label class="lm-label">@Loc.T(Localization.Common.Login.usernameLabel)</label>
             <input class="lm-input" type="text" placeholder="your.username"
                    @bind="_Username" @bind:event="oninput"
                    @onkeydown="OnKeyDown" />
         </div>
 
         <div class="lm-field">
-            <label class="lm-label">Access token</label>
-            <input class="lm-input" type="password" placeholder="Paste your access token…"
+            <label class="lm-label">@Loc.T(Localization.Common.Login.accessTokenLabel)</label>
+            <input class="lm-input" type="password" placeholder="@Loc.T(Localization.Common.Login.tokenPlaceholder)"
                    @bind="_AccessToken" @bind:event="oninput"
                    @onkeydown="OnKeyDown" />
         </div>
@@ -35,10 +36,10 @@
     </div>
 
     <div class="lm-footer">
-        <button class="lm-btn lm-btn-ghost" @onclick="Cancel">Cancel</button>
+        <button class="lm-btn lm-btn-ghost" @onclick="Cancel">@Loc.T(Localization.Common.Buttons.cancel)</button>
         <button class="lm-btn lm-btn-primary" @onclick="Confirm"
                 disabled="@(!_CanConfirm)">
-            Sign in
+            @Loc.T(Localization.Common.Login.signInButton)
         </button>
     </div>
 </div>

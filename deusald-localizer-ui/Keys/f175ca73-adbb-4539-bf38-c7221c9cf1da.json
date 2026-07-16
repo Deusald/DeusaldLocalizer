@@ -1,0 +1,25 @@
+{
+  "Id": "f175ca73-adbb-4539-bf38-c7221c9cf1da",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "resolveConflictsBeforePushing",
+  "Description": "Push button tooltip shown when there are unresolved conflicts.",
+  "CreatedAt": "2026-07-16T12:48:41.5588331Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5588337Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ce642c38ec55b8a935b6d15dc26f054a81771966c898b556cee9264b1ba3e629",
+      "Text": "Resolve conflicts before pushing",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5588384Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

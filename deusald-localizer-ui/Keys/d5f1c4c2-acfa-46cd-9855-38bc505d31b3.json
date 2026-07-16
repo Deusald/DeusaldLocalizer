@@ -1,0 +1,25 @@
+{
+  "Id": "d5f1c4c2-acfa-46cd-9855-38bc505d31b3",
+  "CategoryId": "ee7edd8f-42cd-4345-806e-6e23f1fb5526",
+  "KeyName": "placeholderSearch",
+  "Description": "Placeholder in the add-tag search input.",
+  "CreatedAt": "2026-07-16T12:48:41.5579393Z",
+  "UpdatedAt": "2026-07-16T12:48:41.55794Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "2d7c50c28de1d2b903e4f6d2689d32590049c683fccbd5d1c96aab255d79cae9",
+      "Text": "Search or create a tag…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.557942Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

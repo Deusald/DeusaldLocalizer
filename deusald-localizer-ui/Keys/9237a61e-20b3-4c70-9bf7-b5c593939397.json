@@ -1,0 +1,25 @@
+{
+  "Id": "9237a61e-20b3-4c70-9bf7-b5c593939397",
+  "CategoryId": "f4418ae5-cb67-4794-b968-ed395d6b3148",
+  "KeyName": "projectEnums",
+  "Description": "Title of the project enums modal",
+  "CreatedAt": "2026-07-16T12:48:41.5584644Z",
+  "UpdatedAt": "2026-07-16T12:48:41.558465Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "1ce87d37f402f77cca3ef116d0551d0f8a886409974acab9700ccb9915f04286",
+      "Text": "Project enums",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.558467Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

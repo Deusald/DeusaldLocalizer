@@ -1,0 +1,25 @@
+{
+  "Id": "9ebc9094-61f4-4336-a7bf-f02812a69afd",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "pushing",
+  "Description": "Status message shown while a push is in progress.",
+  "CreatedAt": "2026-07-16T12:48:41.5591239Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5591246Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "54ef55cff2ef9b2d7aae0a231c5eb40dc980481594880bdef7f0654756f7e32e",
+      "Text": "Pushing…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5591299Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

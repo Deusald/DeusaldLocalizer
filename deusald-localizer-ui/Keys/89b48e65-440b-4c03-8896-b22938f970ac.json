@@ -1,0 +1,25 @@
+{
+  "Id": "89b48e65-440b-4c03-8896-b22938f970ac",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "recentProjects",
+  "Description": "Heading above the recent-projects list (desktop).",
+  "CreatedAt": "2026-07-16T12:29:28.0794769Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5566208Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "1c564b3ce9f0c80174a406cdfeffcc7b24a28c96ee1f6481383ff77654144fe2",
+      "Text": "Recent projects",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5566246Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

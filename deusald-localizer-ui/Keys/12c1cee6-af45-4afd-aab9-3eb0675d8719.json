@@ -1,0 +1,25 @@
+{
+  "Id": "12c1cee6-af45-4afd-aab9-3eb0675d8719",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "importAnother",
+  "Description": "Footer button to import another file.",
+  "CreatedAt": "2026-07-16T12:48:41.5606061Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5606067Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ea4fe81089cc633697b01d8035a3eb3cf8a401c35ab087e2e1897e42a57d8c05",
+      "Text": "Import another",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5606086Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

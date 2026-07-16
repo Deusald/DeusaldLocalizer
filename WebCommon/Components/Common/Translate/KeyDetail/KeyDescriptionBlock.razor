@@ -1,22 +1,23 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 <div class="kdb-root">
     @if (_Editing)
     {
         <textarea class="kdb-textarea" @bind="_Draft" @bind:event="oninput"
-                  @onblur="Save" rows="2" placeholder="Add a description for translators…"></textarea>
+                  @onblur="Save" rows="2" placeholder="@Loc.T(Localization.Translate.KeyDetail.Description.placeholderAdd)"></textarea>
     }
     else if (_IsAdmin)
     {
         <button class="kdb-display kdb-editable" @onclick="StartEdit">
-            @(string.IsNullOrWhiteSpace(Key.Description) ? "Add a description…" : Key.Description)
+            @(string.IsNullOrWhiteSpace(Key.Description) ? Loc.T(Localization.Translate.KeyDetail.Description.addDescription) : Key.Description)
         </button>
     }
     else
     {
         <div class="kdb-display">
-            @(string.IsNullOrWhiteSpace(Key.Description) ? "No description." : Key.Description)
+            @(string.IsNullOrWhiteSpace(Key.Description) ? Loc.T(Localization.Translate.KeyDetail.Description.noDescription) : Key.Description)
         </div>
     }
 </div>

@@ -1,0 +1,25 @@
+{
+  "Id": "d51ea656-3af3-4347-b7a0-eb7b699c1b4f",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "directText",
+  "Description": "Segment button: import translations as direct text.",
+  "CreatedAt": "2026-07-16T12:48:41.5604721Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5604728Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "d08c5b1b0d46c380bff7a675aaa583837812f9ddc962c3ead85bca0c67b3095f",
+      "Text": "Direct text",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5604746Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

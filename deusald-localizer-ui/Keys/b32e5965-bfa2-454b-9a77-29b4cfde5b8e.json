@@ -1,0 +1,25 @@
+{
+  "Id": "b32e5965-bfa2-454b-9a77-29b4cfde5b8e",
+  "CategoryId": "36be6be4-7cc0-460c-bb6c-42351c6571e1",
+  "KeyName": "allCategories",
+  "Description": "Filter trigger label when no category is selected.",
+  "CreatedAt": "2026-07-16T12:48:41.557309Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5573101Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "9d5097a837102a179a2d08a921a260c5058495e78469c3f1bad37a1b4bf59053",
+      "Text": "All categories",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5573184Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

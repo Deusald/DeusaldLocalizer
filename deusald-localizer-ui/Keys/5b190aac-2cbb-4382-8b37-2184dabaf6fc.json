@@ -1,0 +1,25 @@
+{
+  "Id": "5b190aac-2cbb-4382-8b37-2184dabaf6fc",
+  "CategoryId": "f4418ae5-cb67-4794-b968-ed395d6b3148",
+  "KeyName": "deleteEnum",
+  "Description": "Button deleting the selected enum",
+  "CreatedAt": "2026-07-16T12:48:41.5585771Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5585778Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "b524bacda0844ad74dcceb2bbd624dd880cb2f94569ce7f5a617882fdc3d54f5",
+      "Text": "Delete enum",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5585797Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,33 @@
+{
+  "Id": "cf561e0f-14a5-47f0-b6ac-f25548f13c9e",
+  "CategoryId": "a2cb7dcb-e988-4f12-8c8d-77b9a4c7af84",
+  "KeyName": "titleManyConflicts",
+  "Description": "Conflicts modal title when there is more than one conflict.",
+  "CreatedAt": "2026-07-16T12:48:41.5597008Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5597017Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "24105a73-b16c-4936-9d0a-d065faea8eee",
+      "Name": "count",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "3"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "8d1b6713b09759b67fe7c2169c8b5a164687a3d221c7219b6b552576e1255750",
+      "Text": "{count} conflicts to resolve",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5597067Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

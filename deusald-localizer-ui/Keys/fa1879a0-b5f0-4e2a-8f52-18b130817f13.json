@@ -1,0 +1,25 @@
+{
+  "Id": "fa1879a0-b5f0-4e2a-8f52-18b130817f13",
+  "CategoryId": "f49bf397-0eaa-4bcf-8fe7-0022c70b016e",
+  "KeyName": "storeInHint",
+  "Description": "Hint next to the Store in label",
+  "CreatedAt": "2026-07-16T12:48:41.5612679Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5612685Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "bac571473f9990c2d9f02a3224dd0a538de5f72c63cba11aeb48b040588d7dce",
+      "Text": "a folder named after the project is created here",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5612733Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

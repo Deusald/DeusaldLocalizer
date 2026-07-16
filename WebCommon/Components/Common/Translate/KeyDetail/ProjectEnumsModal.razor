@@ -1,5 +1,6 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -8,7 +9,7 @@
     <div class="pem-box" @onclick:stopPropagation="true">
 
         <div class="pem-header">
-            <span class="pem-title">Project enums</span>
+            <span class="pem-title">@Loc.T(Localization.Translate.KeyDetail.ProjectEnums.projectEnums)</span>
             <button class="pem-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
         </div>
 
@@ -17,7 +18,7 @@
             @* ── Enum list ──────────────────────────────────────────────── *@
             <div class="pem-list-col">
                 <div class="pem-col-header">
-                    <span class="pem-col-label">Enums</span>
+                    <span class="pem-col-label">@Loc.T(Localization.Translate.KeyDetail.ProjectEnums.enums)</span>
                     <button class="pem-add-btn" @onclick="AddEnum">
                         <i class="bi bi-plus"></i>
                     </button>
@@ -30,14 +31,14 @@
                         bool active  = _SelectedEnum?.Id == locEnum.Id;
                         <button class="pem-enum-item @(active ? "active" : "")"
                                 @onclick="() => SelectEnum(locEnum)">
-                            <span class="pem-enum-item-name">@(string.IsNullOrEmpty(locEnum.Name) ? "Unnamed" : locEnum.Name)</span>
+                            <span class="pem-enum-item-name">@(string.IsNullOrEmpty(locEnum.Name) ? Loc.T(Localization.Translate.KeyDetail.ProjectEnums.unnamed) : locEnum.Name)</span>
                             <span class="pem-enum-item-count">@locEnum.Entries.Count</span>
                         </button>
                     }
 
                     @if (_ProjectState.CurrentProject.Enums.Count == 0)
                     {
-                        <div class="pem-empty">No enums yet.</div>
+                        <div class="pem-empty">@Loc.T(Localization.Translate.KeyDetail.ProjectEnums.noEnums)</div>
                     }
                 </div>
             </div>
@@ -46,27 +47,27 @@
             <div class="pem-editor-col">
                 @if (_SelectedEnum == null)
                 {
-                    <div class="pem-editor-empty">Select an enum to edit it.</div>
+                    <div class="pem-editor-empty">@Loc.T(Localization.Translate.KeyDetail.ProjectEnums.selectEnumToEdit)</div>
                 }
                 else
                 {
                     <div class="pem-editor-fields">
                         <div class="pem-field">
-                            <label class="pem-label">Name</label>
-                            <input class="pem-input" type="text" placeholder="WeekDay"
+                            <label class="pem-label">@Loc.T(Localization.Translate.KeyDetail.ProjectEnums.name)</label>
+                            <input class="pem-input" type="text" placeholder="@Loc.T(Localization.Translate.KeyDetail.ProjectEnums.namePlaceholder)"
                                    @bind="_SelectedEnum.Name" @bind:event="oninput"
                                    @bind:after="MarkDirty"/>
                         </div>
                         <div class="pem-field">
-                            <label class="pem-label">Description <span class="pem-label-hint">optional</span></label>
-                            <input class="pem-input" type="text" placeholder="Days of the week"
+                            <label class="pem-label">@Loc.T(Localization.Translate.KeyDetail.ProjectEnums.description) <span class="pem-label-hint">@Loc.T(Localization.Translate.KeyDetail.ProjectEnums.optional)</span></label>
+                            <input class="pem-input" type="text" placeholder="@Loc.T(Localization.Translate.KeyDetail.ProjectEnums.descriptionPlaceholder)"
                                    @bind="_SelectedEnum.Description" @bind:event="oninput"
                                    @bind:after="MarkDirty"/>
                         </div>
                     </div>
 
                     <div class="pem-entries-header">
-                        <span class="pem-col-label">Entries</span>
+                        <span class="pem-col-label">@Loc.T(Localization.Translate.KeyDetail.ProjectEnums.entries)</span>
                         <button class="pem-add-btn" @onclick="AddEntry">
                             <i class="bi bi-plus"></i>
                         </button>
@@ -82,7 +83,7 @@
                                        value="@ent.IntValue"
                                        @onchange="e => { ent.IntValue = int.TryParse(e.Value?.ToString(), out int v) ? v : 0; MarkDirty(); }"/>
                                 <input class="pem-input pem-entry-str" type="text"
-                                       placeholder="Monday"
+                                       placeholder="@Loc.T(Localization.Translate.KeyDetail.ProjectEnums.entryStringPlaceholder)"
                                        @bind="ent.StringValue" @bind:event="oninput"
                                        @bind:after="MarkDirty"/>
                                 <button class="pem-entry-remove" @onclick="() => RemoveEntry(ent)">
@@ -93,12 +94,12 @@
 
                         @if (_SelectedEnum.Entries.Count == 0)
                         {
-                            <div class="pem-empty">No entries. Add at least one.</div>
+                            <div class="pem-empty">@Loc.T(Localization.Translate.KeyDetail.ProjectEnums.noEntries)</div>
                         }
                     </div>
 
                     <button class="pem-delete-enum-btn" @onclick="DeleteEnum">
-                        <i class="bi bi-trash3"></i> Delete enum
+                        <i class="bi bi-trash3"></i> @Loc.T(Localization.Translate.KeyDetail.ProjectEnums.deleteEnum)
                     </button>
                 }
             </div>

@@ -1,0 +1,25 @@
+{
+  "Id": "d260c1ed-ef01-4a94-85bc-8bb499ec7fa7",
+  "CategoryId": "30c64139-dcb5-4421-b6b0-72b5ab393ccd",
+  "KeyName": "hintOptional",
+  "Description": "Hint marking the flag note field as optional.",
+  "CreatedAt": "2026-07-16T12:48:41.5578736Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5578743Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ec91fdd9256cb75ae611249b50cb7eb16533f0fa91b86239ec1d439a1ea033b8",
+      "Text": "optional",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5578761Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

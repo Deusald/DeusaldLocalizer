@@ -1,0 +1,25 @@
+{
+  "Id": "38a8f91b-f97c-443a-8383-8444ae859fe7",
+  "CategoryId": "37037b9b-7934-487b-9401-8cca236150a6",
+  "KeyName": "projectNameLabel",
+  "Description": "Field label for the project name input",
+  "CreatedAt": "2026-07-16T12:48:41.5614629Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5614635Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "25498193b898195dca035317a941c506276da563d690c4cccf94af50643dbb44",
+      "Text": "Project name",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5614654Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

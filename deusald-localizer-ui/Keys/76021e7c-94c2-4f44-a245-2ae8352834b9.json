@@ -1,0 +1,33 @@
+{
+  "Id": "76021e7c-94c2-4f44-a245-2ae8352834b9",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "errLoad",
+  "Description": "Error when loading a project from disk fails (desktop).",
+  "CreatedAt": "2026-07-16T12:29:28.0795182Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5566666Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "f8abb9cc-8017-41dc-8252-63e7ee6dda73",
+      "Name": "msg",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "io error"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "1914b0062830e2ff31bc0bd9ed12432362c296d7c6c88412570b87612235163e",
+      "Text": "Failed to load project: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5566889Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

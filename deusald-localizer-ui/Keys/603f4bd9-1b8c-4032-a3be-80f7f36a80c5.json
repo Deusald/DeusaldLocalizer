@@ -1,0 +1,25 @@
+{
+  "Id": "603f4bd9-1b8c-4032-a3be-80f7f36a80c5",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "clearConfirmSuffix",
+  "Description": "Trailing part of the clear-old-comments confirmation, after the amount and unit.",
+  "CreatedAt": "2026-07-16T12:48:41.5595169Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5595175Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "5124f232855889ba001c6f90d1f37747e2a76394d791bcf8ec257564452cd8cf",
+      "Text": "+ old comments?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5595194Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

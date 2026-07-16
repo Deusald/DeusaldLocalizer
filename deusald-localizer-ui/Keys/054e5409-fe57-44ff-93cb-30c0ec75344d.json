@@ -1,0 +1,25 @@
+{
+  "Id": "054e5409-fe57-44ff-93cb-30c0ec75344d",
+  "CategoryId": "5b3ad005-8ece-4230-9f44-a060455ce216",
+  "KeyName": "noVariables",
+  "Description": "Empty state when the key has no variables",
+  "CreatedAt": "2026-07-16T12:48:41.5582962Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5582969Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "f2ede92a58787e04bcda17656990f01fd0628a3dd13f02266112d1197123d4c7",
+      "Text": "No variables declared for this key.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5582987Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

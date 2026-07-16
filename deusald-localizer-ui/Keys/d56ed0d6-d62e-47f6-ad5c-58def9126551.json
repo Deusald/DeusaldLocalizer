@@ -1,0 +1,25 @@
+{
+  "Id": "d56ed0d6-d62e-47f6-ad5c-58def9126551",
+  "CategoryId": "acf8559f-68d0-4fad-8a1f-17ebe5c6afc8",
+  "KeyName": "noMentions",
+  "Description": "Empty state in the notifications panel.",
+  "CreatedAt": "2026-07-16T12:48:41.5598509Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5598515Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "7cba971e2f8f36a3969425f30ce94645c118b7b9e6b74b6fa3551e7c257037ef",
+      "Text": "No one has mentioned you yet.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5598534Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

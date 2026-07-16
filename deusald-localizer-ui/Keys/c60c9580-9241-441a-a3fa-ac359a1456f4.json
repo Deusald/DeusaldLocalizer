@@ -1,0 +1,25 @@
+{
+  "Id": "c60c9580-9241-441a-a3fa-ac359a1456f4",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "conflicts",
+  "Description": "Plural noun for multiple sync conflicts, used in a count pill.",
+  "CreatedAt": "2026-07-16T12:48:41.5588582Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5588588Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "47ef59b14bb6809086f8885f2f136d0642d49a52c8cb84bfcdba62cf3bab41aa",
+      "Text": "conflicts",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5588634Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

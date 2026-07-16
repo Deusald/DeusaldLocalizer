@@ -1,0 +1,33 @@
+{
+  "Id": "ae4add2d-7d16-4c8a-b14b-d6b78e9e7210",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "importFailed",
+  "Description": "Error message shown when import fails.",
+  "CreatedAt": "2026-07-16T12:48:41.5606306Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5606313Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "5cb4e7b4-ef0c-4c90-b3ca-79e55f982ce4",
+      "Name": "msg",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "Invalid file format"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "49822a69e47058c3d4f80f9b5d1f1723e961753912c602566ca16701b62927b7",
+      "Text": "Import failed: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.560635Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

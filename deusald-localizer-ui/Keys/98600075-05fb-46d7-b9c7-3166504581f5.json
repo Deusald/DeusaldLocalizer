@@ -1,0 +1,25 @@
+{
+  "Id": "98600075-05fb-46d7-b9c7-3166504581f5",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "push",
+  "Description": "Label of the button that pushes changes to the server.",
+  "CreatedAt": "2026-07-16T12:48:41.5588257Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5588264Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "731ce7ed808913b2fb4a3db764cad1d9be4433f3fe232818d7e66c7d3fd2a9c0",
+      "Text": "Push",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5588282Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

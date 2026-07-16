@@ -1,0 +1,33 @@
+{
+  "Id": "8d9f585c-9fbd-497d-a037-ef990c2e7350",
+  "CategoryId": "264f533d-3094-433d-9429-c82dd532173e",
+  "KeyName": "conflictBannerSingular",
+  "Description": "Conflict banner, singular form.",
+  "CreatedAt": "2026-07-16T12:48:41.5600708Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5600715Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "3e8b6343-957f-46fb-a6bb-31852aa9dec1",
+      "Name": "count",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "1"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "774a38de084a45f1d607d9e925dccac484252ba22e7a1506172627540a66319b",
+      "Text": "{count} change conflicts with newer server edits — sync and resolve before pushing.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5601063Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

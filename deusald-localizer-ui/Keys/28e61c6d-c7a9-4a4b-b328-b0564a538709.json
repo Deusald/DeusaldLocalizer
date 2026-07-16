@@ -1,0 +1,25 @@
+{
+  "Id": "28e61c6d-c7a9-4a4b-b328-b0564a538709",
+  "CategoryId": "264f533d-3094-433d-9429-c82dd532173e",
+  "KeyName": "changeData",
+  "Description": "Detail row label for a change's data.",
+  "CreatedAt": "2026-07-16T12:48:41.5602007Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5602013Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c3a73a975912065a02db251cc330e500ac5877914c383129e5b40bd8f89aeef4",
+      "Text": "Change data",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5602031Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

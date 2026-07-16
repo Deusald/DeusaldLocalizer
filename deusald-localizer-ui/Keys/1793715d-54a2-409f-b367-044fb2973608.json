@@ -1,0 +1,25 @@
+{
+  "Id": "1793715d-54a2-409f-b367-044fb2973608",
+  "CategoryId": "9dc99630-09e1-4188-8d05-b279fbb54584",
+  "KeyName": "fullKey",
+  "Description": "Label for the previewed full key path.",
+  "CreatedAt": "2026-07-16T12:48:41.5576288Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5576295Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "07c683cbe42f45ca5e06f7ef1ac47b5c1ebc539bdbfc1a68bd499ecbcaf54959",
+      "Text": "Full key",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5576314Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

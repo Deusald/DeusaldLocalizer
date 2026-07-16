@@ -1,0 +1,25 @@
+{
+  "Id": "b7da6add-e09b-4a3d-9452-858a64356556",
+  "CategoryId": "03687f98-0a54-4914-a0e2-992f681adff4",
+  "KeyName": "errSignIn",
+  "Description": "Fallback error when server sign-in fails.",
+  "CreatedAt": "2026-07-16T12:19:57.5421046Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5562457Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "f764b902534db6ff57581f7f3f65feb467964cb6c8ba394c1dc03d8b90ef049e",
+      "Text": "Could not complete sign-in. Please try again.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5562495Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

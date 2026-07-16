@@ -1,0 +1,25 @@
+{
+  "Id": "b158893e-af9f-4f54-b9a8-2261bf842a93",
+  "CategoryId": "264f533d-3094-433d-9429-c82dd532173e",
+  "KeyName": "conflictTagTitle",
+  "Description": "Tooltip on a per-row conflict tag.",
+  "CreatedAt": "2026-07-16T12:48:41.5601463Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5601469Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "b873c2a676a650d798c7c584be1cc58fd76ab9fdb8efbc1220c88a31552967d1",
+      "Text": "Conflicts with a newer server edit",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5601489Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

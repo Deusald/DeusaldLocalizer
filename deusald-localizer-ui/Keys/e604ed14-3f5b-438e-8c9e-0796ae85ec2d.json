@@ -1,0 +1,25 @@
+{
+  "Id": "e604ed14-3f5b-438e-8c9e-0796ae85ec2d",
+  "CategoryId": "dfd57dc6-94be-4540-b323-8ee6ac2cf59d",
+  "KeyName": "current",
+  "Description": "Preview-mode toggle label for saved-text preview",
+  "CreatedAt": "2026-07-16T12:48:41.5582317Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5582323Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a",
+      "Text": "Current",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5582371Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

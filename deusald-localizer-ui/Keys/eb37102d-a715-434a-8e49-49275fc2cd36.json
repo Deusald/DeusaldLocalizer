@@ -1,0 +1,25 @@
+{
+  "Id": "eb37102d-a715-434a-8e49-49275fc2cd36",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "nothingToUndo",
+  "Description": "Undo button tooltip when there is nothing to undo.",
+  "CreatedAt": "2026-07-16T12:48:41.5588954Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5588961Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "8329007820d54938fe5dbf93c1d1ca8d76cd0657ad4c882689605f572e4ae6f0",
+      "Text": "Nothing to undo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.558898Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

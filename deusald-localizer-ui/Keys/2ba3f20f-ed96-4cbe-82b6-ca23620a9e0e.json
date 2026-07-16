@@ -1,0 +1,25 @@
+{
+  "Id": "2ba3f20f-ed96-4cbe-82b6-ca23620a9e0e",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "upToDate",
+  "Description": "Sync result message when nothing changed.",
+  "CreatedAt": "2026-07-16T12:48:41.5590239Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5590245Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ce29b7f85b9eaf7dac52e625accb4b0cb56a856ebe9a9de9a09b613b6d978dca",
+      "Text": "Up to date",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5590408Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "74624a55-4701-4be0-8035-43e0301b6db2",
+  "CategoryId": "acf8559f-68d0-4fad-8a1f-17ebe5c6afc8",
+  "KeyName": "commented",
+  "Description": "Notification source label for a key or translation comment.",
+  "CreatedAt": "2026-07-16T12:48:41.5598722Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5598729Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "42674d19d5e05bad9d550c6453799ac6d73f0f853922610e88c6ca99cf937510",
+      "Text": "commented",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5598749Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

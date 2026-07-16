@@ -2,6 +2,7 @@
 @inject ProjectStateService _ProjectState
 @inject IExcelInterop       _Excel
 @inject ITextFileExporter   _TextFile
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -10,7 +11,7 @@
     <div class="ex-box" @onclick:stopPropagation="true">
 
         <div class="ex-header">
-            <span class="ex-title">Export</span>
+            <span class="ex-title">@Loc.T(Localization.Translate.TopBar.Export.title)</span>
             <button class="ex-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
         </div>
 
@@ -18,15 +19,15 @@
 
             @* ── Format ─────────────────────────────────────────────── *@
             <div class="ex-section">
-                <div class="ex-section-title">Format</div>
+                <div class="ex-section-title">@Loc.T(Localization.Translate.TopBar.Export.format)</div>
                 <div class="ex-seg ex-seg-wide">
                     <button class="ex-seg-btn @(_Format == ExportFormat.Excel ? "active" : "")"
                             @onclick="() => _Format = ExportFormat.Excel">
-                        <i class="bi bi-file-earmark-spreadsheet"></i> Excel
+                        <i class="bi bi-file-earmark-spreadsheet"></i> @Loc.T(Localization.Translate.TopBar.Export.excel)
                     </button>
                     <button class="ex-seg-btn @(_Format == ExportFormat.CSharp ? "active" : "")"
                             @onclick="() => _Format = ExportFormat.CSharp">
-                        <i class="bi bi-filetype-cs"></i> C# script
+                        <i class="bi bi-filetype-cs"></i> @Loc.T(Localization.Translate.TopBar.Export.csharpScript)
                     </button>
                 </div>
             </div>
@@ -35,26 +36,25 @@
             @if (_Format == ExportFormat.CSharp)
             {
                 <div class="ex-section">
-                    <div class="ex-section-title">C# class</div>
+                    <div class="ex-section-title">@Loc.T(Localization.Translate.TopBar.Export.csharpClass)</div>
                     <div class="ex-section-hint">
-                        Generates one static class of key ids (grouped by category) plus a translations
-                        table and a <code>Get(language, keyId, values)</code> lookup.
+                        @Loc.T(Localization.Translate.TopBar.Export.csharpHint)
                     </div>
-                    <label class="ex-field-label">Class name</label>
+                    <label class="ex-field-label">@Loc.T(Localization.Translate.TopBar.Export.className)</label>
                     <input class="ex-input @(IsClassNameValid ? "" : "ex-input-invalid")"
-                           @bind="_ClassName" @bind:event="oninput" placeholder="Localization"/>
-                    <label class="ex-field-label">Namespace <span class="ex-optional">(optional)</span></label>
-                    <input class="ex-input" @bind="_Namespace" @bind:event="oninput" placeholder="e.g. MyGame.Loc"/>
+                           @bind="_ClassName" @bind:event="oninput" placeholder="@Loc.T(Localization.Translate.TopBar.Export.classNamePlaceholder)"/>
+                    <label class="ex-field-label">@Loc.T(Localization.Translate.TopBar.Export.namespaceLabel) <span class="ex-optional">@Loc.T(Localization.Translate.TopBar.Export.optional)</span></label>
+                    <input class="ex-input" @bind="_Namespace" @bind:event="oninput" placeholder="@Loc.T(Localization.Translate.TopBar.Export.namespacePlaceholder)"/>
                 </div>
             }
 
             @* ── Flags ──────────────────────────────────────────────── *@
             <div class="ex-section">
-                <div class="ex-section-title">Flags</div>
-                <div class="ex-section-hint">Exclude drops keys that carry the flag; Include keeps them.</div>
+                <div class="ex-section-title">@Loc.T(Localization.Translate.TopBar.Export.flags)</div>
+                <div class="ex-section-hint">@Loc.T(Localization.Translate.TopBar.Export.flagsHint)</div>
                 <div class="ex-row">
                     <div class="ex-row-label">
-                        <i class="bi bi-flag ex-row-icon"></i>No flags
+                        <i class="bi bi-flag ex-row-icon"></i>@Loc.T(Localization.Translate.TopBar.Export.noFlags)
                     </div>
                     @RenderSeg(_NoFlagsExcluded, s => _NoFlagsExcluded = s)
                 </div>
@@ -72,10 +72,10 @@
 
             @* ── Tags ───────────────────────────────────────────────── *@
             <div class="ex-section">
-                <div class="ex-section-title">Tags</div>
+                <div class="ex-section-title">@Loc.T(Localization.Translate.TopBar.Export.tags)</div>
                 <div class="ex-row">
                     <div class="ex-row-label">
-                        <i class="bi bi-tag ex-row-icon"></i>No tags
+                        <i class="bi bi-tag ex-row-icon"></i>@Loc.T(Localization.Translate.TopBar.Export.noTags)
                     </div>
                     @RenderSeg(_NoTagsExcluded, s => _NoTagsExcluded = s)
                 </div>
@@ -95,11 +95,11 @@
             @if (_Format == ExportFormat.Excel)
             {
                 <div class="ex-section">
-                    <div class="ex-section-title">Columns</div>
+                    <div class="ex-section-title">@Loc.T(Localization.Translate.TopBar.Export.columns)</div>
                     <label class="ex-check">
                         <input type="checkbox" checked="@_IncludeTagsColumn"
                                @onchange="e => _IncludeTagsColumn = (bool)e.Value!"/>
-                        <span>Add a Tags column listing each key's tags</span>
+                        <span>@Loc.T(Localization.Translate.TopBar.Export.tagsColumnLabel)</span>
                     </label>
                 </div>
             }
@@ -107,9 +107,9 @@
             @* ── Languages ──────────────────────────────────────────── *@
             <div class="ex-section">
                 <div class="ex-section-header">
-                    <span class="ex-section-title">Languages</span>
+                    <span class="ex-section-title">@Loc.T(Localization.Translate.TopBar.Export.languages)</span>
                     <button class="ex-linkbtn" @onclick="ToggleAllLangs">
-                        @(_AllLangsSelected ? "Deselect all" : "Select all")
+                        @(_AllLangsSelected ? Loc.T(Localization.Translate.TopBar.Export.deselectAll) : Loc.T(Localization.Translate.TopBar.Export.selectAll))
                     </button>
                 </div>
                 @foreach (string lang in _AllLanguages)
@@ -121,7 +121,7 @@
                         <span class="ex-lang-name">@LangLabel(lg)</span>
                         @if (lg == _ProjectState.CurrentProject!.Metadata.MainLanguageId)
                         {
-                            <span class="ex-lang-badge">source</span>
+                            <span class="ex-lang-badge">@Loc.T(Localization.Translate.TopBar.Export.source)</span>
                         }
                     </button>
                 }
@@ -130,20 +130,20 @@
         </div>
 
         <div class="ex-footer">
-            <span class="ex-count">@_MatchingKeyCount of @_TotalKeyCount keys</span>
+            <span class="ex-count">@Loc.T(Localization.Translate.TopBar.Export.keyCount, new Dictionary<string, object> { ["matching"] = _MatchingKeyCount, ["total"] = _TotalKeyCount })</span>
             <div class="ex-footer-actions">
-                <button class="ex-btn ex-btn-ghost" @onclick="Close">Cancel</button>
+                <button class="ex-btn ex-btn-ghost" @onclick="Close">@Loc.T(Localization.Common.Buttons.cancel)</button>
                 <button class="ex-btn ex-btn-primary" @onclick="ExportAsync"
                         disabled="@(_IsExporting || _MatchingKeyCount == 0 || _SelectedLangs.Count == 0 || !CanExport)">
                     @if (_IsExporting)
                     {
                         <span class="ex-spinner"></span>
-                        <span>Exporting…</span>
+                        <span>@Loc.T(Localization.Translate.TopBar.Export.exporting)</span>
                     }
                     else
                     {
                         <i class="bi bi-file-earmark-arrow-down"></i>
-                        <span>Export</span>
+                        <span>@Loc.T(Localization.Translate.TopBar.Export.exportButton)</span>
                     }
                 </button>
             </div>
@@ -227,10 +227,10 @@
     {
         <div class="ex-seg">
             <button class="ex-seg-btn ex-seg-inc @(!excluded ? "active" : "")"
-                    @onclick="() => set(false)">Include
+                    @onclick="() => set(false)">@Loc.T(Localization.Translate.TopBar.Export.include)
             </button>
             <button class="ex-seg-btn ex-seg-exc @(excluded ? "active" : "")"
-                    @onclick="() => set(true)">Exclude
+                    @onclick="() => set(true)">@Loc.T(Localization.Translate.TopBar.Export.exclude)
             </button>
         </div>
     };
@@ -339,13 +339,13 @@
         return $"{name} ({code})";
     }
 
-    private static string FlagLabel(FlagType type) => type switch
+    private string FlagLabel(FlagType type) => type switch
     {
-        FlagType.NeedsReview    => "Needs review",
-        FlagType.Outdated       => "Outdated",
-        FlagType.DoNotTranslate => "Do not translate",
-        FlagType.InProgress     => "In progress",
-        FlagType.Disputed       => "Disputed",
+        FlagType.NeedsReview    => Loc.T(Localization.Translate.TopBar.Export.flagNeedsReview),
+        FlagType.Outdated       => Loc.T(Localization.Translate.TopBar.Export.flagOutdated),
+        FlagType.DoNotTranslate => Loc.T(Localization.Translate.TopBar.Export.flagDoNotTranslate),
+        FlagType.InProgress     => Loc.T(Localization.Translate.TopBar.Export.flagInProgress),
+        FlagType.Disputed       => Loc.T(Localization.Translate.TopBar.Export.flagDisputed),
         _                       => type.ToString(),
     };
 

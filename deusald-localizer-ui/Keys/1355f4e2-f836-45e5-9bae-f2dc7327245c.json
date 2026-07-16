@@ -1,0 +1,25 @@
+{
+  "Id": "1355f4e2-f836-45e5-9bae-f2dc7327245c",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "exclude",
+  "Description": "Segment button to exclude a flag or tag.",
+  "CreatedAt": "2026-07-16T12:48:41.560966Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5609667Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "5b76f62e1ba0401f8f18752e4bfd03c076de0a21eefcf26422725ffa28f6b4cd",
+      "Text": "Exclude",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5609686Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

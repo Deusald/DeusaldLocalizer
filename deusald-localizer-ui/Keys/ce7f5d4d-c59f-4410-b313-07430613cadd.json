@@ -1,0 +1,25 @@
+{
+  "Id": "ce7f5d4d-c59f-4410-b313-07430613cadd",
+  "CategoryId": "9dc99630-09e1-4188-8d05-b279fbb54584",
+  "KeyName": "duplicateKey",
+  "Description": "Validation error for a duplicate key name in the category.",
+  "CreatedAt": "2026-07-16T12:48:41.5575785Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5575791Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "d30af5f955e974dddfb2b343dfad028b9b6dc15ffc7d4a25ca6d3ef07df5d716",
+      "Text": "A key with this name already exists in this category",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5575811Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

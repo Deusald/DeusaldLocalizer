@@ -1,0 +1,25 @@
+{
+  "Id": "7abe65ba-b325-4b11-8090-d1057d2a3b02",
+  "CategoryId": "542c1600-d949-40da-9150-7b512732ef77",
+  "KeyName": "heading",
+  "Description": "Heading of the web client not-found page",
+  "CreatedAt": "2026-07-16T12:48:41.5616278Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5616285Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+      "Text": "Not Found",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5616337Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

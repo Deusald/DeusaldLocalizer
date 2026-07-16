@@ -1,0 +1,25 @@
+{
+  "Id": "5621e245-4945-4ee5-acc4-9222c8982448",
+  "CategoryId": "2bae53f6-dd89-4848-9852-03b36cde096b",
+  "KeyName": "clearTitle",
+  "Description": "Tooltip on the clear button.",
+  "CreatedAt": "2026-07-16T12:48:41.5602443Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5602449Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "50da1a01b20cdde8fc110c8da463319eeb862e3cb803115ae74ca2c4ab08a3da",
+      "Text": "Clear the list",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5602499Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "4fdbc56e-1467-4479-b875-0c68b3544c8d",
+  "CategoryId": "c5c73cc7-4494-470a-bcfc-ef45e25e0957",
+  "KeyName": "conflictTitle",
+  "Description": "Generic conflict header",
+  "CreatedAt": "2026-07-16T12:48:41.5586678Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5586685Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "014659ab9d98c8fea5fed2a5a3bc3c41d6478904a9184c65a57769c439940d14",
+      "Text": "Conflict",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5586705Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

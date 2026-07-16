@@ -1,0 +1,25 @@
+{
+  "Id": "3011241e-3316-4953-9567-626f08ea96f9",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "keysUpdated",
+  "Description": "Result stat label for keys updated.",
+  "CreatedAt": "2026-07-16T12:48:41.5605395Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5605404Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "6db0fd060a1eed819f1bdbf75496f9aa2cbd0cd2194439928db1882c2d0a9780",
+      "Text": "keys updated",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5605476Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "ecac9e0f-c05b-44a2-ae7b-f76c8d231c0a",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "selectAll",
+  "Description": "Link button that selects all update options.",
+  "CreatedAt": "2026-07-16T12:48:41.5603543Z",
+  "UpdatedAt": "2026-07-16T12:48:41.560355Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "1fc9a387654d410febd202b81bddbe62d38368260b69b9f73ee6630164536bdf",
+      "Text": "Select all",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5603569Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

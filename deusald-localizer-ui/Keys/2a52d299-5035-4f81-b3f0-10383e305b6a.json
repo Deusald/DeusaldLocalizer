@@ -1,0 +1,25 @@
+{
+  "Id": "2a52d299-5035-4f81-b3f0-10383e305b6a",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "signInBeforePush",
+  "Description": "Error shown when the user must sign in before pushing.",
+  "CreatedAt": "2026-07-16T12:48:41.559192Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5591926Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "670ab1ad66a16ac1daf0bed9e70cb09b45c884fc452fc665f5be6454542a8219",
+      "Text": "You need to sign in on this device before you can push.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5591946Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "34288984-12b5-48b9-928d-8da939dd77ae",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "format",
+  "Description": "Section title for the export format toggle.",
+  "CreatedAt": "2026-07-16T12:48:41.5606541Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5606548Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "2f343666aaa88c44430b12e6ab8a29591a069de76541125e83ff1b5acc367bf2",
+      "Text": "Format",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5606595Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

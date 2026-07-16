@@ -1,0 +1,33 @@
+{
+  "Id": "5515f6aa-058f-4f32-ad02-35f885be7da3",
+  "CategoryId": "30585d1a-f1da-488a-ab89-97f090f732f4",
+  "KeyName": "deleteBody",
+  "Description": "Delete-confirmation body naming the project (web).",
+  "CreatedAt": "2026-07-16T12:29:28.0793418Z",
+  "UpdatedAt": "2026-07-16T12:48:41.556419Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "9ceab635-b469-4d2b-a7ec-fac93902c92f",
+      "Name": "name",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "My Game"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "df4ee618bb5991be393dd05e08490bea64f3063ecebf7d14fa586097f975d73a",
+      "Text": "{name} will be removed from this browser.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5564274Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "5c1b84ab-8754-4fea-a918-983616d34821",
+  "CategoryId": "f4418ae5-cb67-4794-b968-ed395d6b3148",
+  "KeyName": "descriptionPlaceholder",
+  "Description": "Placeholder example for the enum description field",
+  "CreatedAt": "2026-07-16T12:48:41.5585424Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5585431Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "f1f5ac605348ba796d47603c53d3c96195ec50c91bd240cd021ee09b299bf0a5",
+      "Text": "Days of the week",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5585451Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

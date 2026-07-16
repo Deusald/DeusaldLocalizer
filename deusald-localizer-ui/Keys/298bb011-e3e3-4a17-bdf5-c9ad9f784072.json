@@ -1,0 +1,25 @@
+{
+  "Id": "298bb011-e3e3-4a17-bdf5-c9ad9f784072",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "day",
+  "Description": "Singular unit word inside the clear-old-comments confirmation.",
+  "CreatedAt": "2026-07-16T12:48:41.5595051Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5595058Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "944c27e5b97ab7793e4b6e9ff29384890ece0c7c04d2e2bf81c5f763469cc66b",
+      "Text": "day",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5595076Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

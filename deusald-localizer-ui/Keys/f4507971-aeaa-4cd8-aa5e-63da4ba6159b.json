@@ -1,0 +1,25 @@
+{
+  "Id": "f4507971-aeaa-4cd8-aa5e-63da4ba6159b",
+  "CategoryId": "9dc99630-09e1-4188-8d05-b279fbb54584",
+  "KeyName": "createKey",
+  "Description": "Confirm button when creating a key.",
+  "CreatedAt": "2026-07-16T12:48:41.5576365Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5576371Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "b6cde9030cefae03fe8f91a48e088ec2c131746127875b4a35b387b9850dc319",
+      "Text": "Create key",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5576391Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

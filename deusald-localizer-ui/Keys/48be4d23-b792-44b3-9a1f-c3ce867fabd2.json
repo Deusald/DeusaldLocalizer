@@ -1,0 +1,25 @@
+{
+  "Id": "48be4d23-b792-44b3-9a1f-c3ce867fabd2",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "nothingToRedo",
+  "Description": "Redo button tooltip when there is nothing to redo.",
+  "CreatedAt": "2026-07-16T12:48:41.5589119Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5589125Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "4aaf2710a06093447959ebe89e9476d48ad0a7d243fbbe9977ce51c595876b55",
+      "Text": "Nothing to redo",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5589161Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

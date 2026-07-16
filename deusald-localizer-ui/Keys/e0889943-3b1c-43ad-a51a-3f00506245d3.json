@@ -1,0 +1,25 @@
+{
+  "Id": "e0889943-3b1c-43ad-a51a-3f00506245d3",
+  "CategoryId": "9b12f931-a241-469d-983d-8dbcf3378439",
+  "KeyName": "searchLanguages",
+  "Description": "Placeholder for the language search box.",
+  "CreatedAt": "2026-07-16T12:48:41.556838Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5568409Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "abdef0ec71f61cddde34c001e44189c85bec6d8bb687c8075991cf1e18f5ef85",
+      "Text": "Search languages…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5568461Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

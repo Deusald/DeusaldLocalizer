@@ -1,0 +1,25 @@
+{
+  "Id": "77e71efc-ad9d-4839-971d-fe50d625b981",
+  "CategoryId": "8e09b7d9-6f39-43ce-9e26-89f6748618eb",
+  "KeyName": "statusApproved",
+  "Description": "Key status tag: translation approved.",
+  "CreatedAt": "2026-07-16T12:48:41.5577367Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5577374Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "87b42e40c2a290e01d87b721bf381c3c5e259d1eb0a4660e41fdbf8bc73f7ddd",
+      "Text": "Approved",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5577392Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "05b95e1c-fab8-46a5-bb18-893f5158cabe",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "memberSignInTokenTitle",
+  "Description": "Title of the modal showing a new member's one-time sign-in token.",
+  "CreatedAt": "2026-07-16T12:48:41.5595802Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5595828Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "58eb39ccb5558cc4a74b5c97a8ecf8d109c207a40cfe3907b2255d8f30bb971b",
+      "Text": "Member sign-in token",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5595937Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

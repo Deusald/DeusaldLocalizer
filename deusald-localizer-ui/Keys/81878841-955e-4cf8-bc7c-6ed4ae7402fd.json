@@ -1,0 +1,25 @@
+{
+  "Id": "81878841-955e-4cf8-bc7c-6ed4ae7402fd",
+  "CategoryId": "2c815bf8-7ba9-4641-a921-c0b38f3e5e84",
+  "KeyName": "parentCategory",
+  "Description": "Label for the parent category picker.",
+  "CreatedAt": "2026-07-16T12:48:41.5574497Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5574504Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "68cc64147838206bec3c0f8a3c04539e4af17e44d7efa6931a215f8e1413642c",
+      "Text": "Parent category",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5574522Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

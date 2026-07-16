@@ -1,0 +1,25 @@
+{
+  "Id": "7f71331a-12ab-4f0e-a6c5-ca2eb738415c",
+  "CategoryId": "9b12f931-a241-469d-983d-8dbcf3378439",
+  "KeyName": "srcBadge",
+  "Description": "Badge marking the main/source language.",
+  "CreatedAt": "2026-07-16T12:48:41.5568656Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5568666Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "58836253710262a14e993598f2c2812fe1df64a30dca6fbeaa04d49d624a6fd1",
+      "Text": "SRC",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.556871Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

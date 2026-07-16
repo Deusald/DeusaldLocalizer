@@ -1,0 +1,33 @@
+{
+  "Id": "84dbbf68-c08c-4a04-bdfe-f868b29b1072",
+  "CategoryId": "03687f98-0a54-4914-a0e2-992f681adff4",
+  "KeyName": "timeDays",
+  "Description": "Relative time in days.",
+  "CreatedAt": "2026-07-16T12:19:57.5420265Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5562267Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "eee00f38-631f-4cfa-a287-14636c9669ab",
+      "Name": "d",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "2"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "18bb766fcc18ee05561610c102177f848fc469d5f353dd8843f329d2b9acb78d",
+      "Text": "{d}d ago",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5562319Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

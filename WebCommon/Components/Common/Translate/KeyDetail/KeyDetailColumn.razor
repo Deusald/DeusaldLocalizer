@@ -1,5 +1,6 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 @implements IDisposable
 
 <div class="kd-root">
@@ -8,7 +9,7 @@
     {
         <div class="kd-empty">
             <i class="bi bi-key kd-empty-icon"></i>
-            <span>Select a key to start translating</span>
+            <span>@Loc.T(Localization.Translate.KeyDetail.emptyState)</span>
         </div>
     }
     else
@@ -20,27 +21,27 @@
                 <div class="kd-header-top">
                     <div class="kd-header-title-row">
                         <span class="kd-key-name">@FullKeyName(_SelectedKey)</span>
-                        <span class="kd-status-tag @_StatusTagClass">@_StatusTagLabel</span>
+                        <span class="kd-status-tag @_StatusTagClass">@LocalizedStatus(_StatusTagLabel)</span>
                     </div>
                     <div class="kd-header-right">
                         <div class="kd-header-dates">
-                            <span title="Created">Created @_SelectedKey.CreatedAt.ToString("MMM d, yyyy")</span>
+                            <span title="@Loc.T(Localization.Translate.KeyDetail.titleCreated)">@Loc.T(Localization.Translate.KeyDetail.createdOn, new Dictionary<string, object> { ["date"] = _SelectedKey.CreatedAt.ToString("MMM d, yyyy") })</span>
                             <span class="kd-dates-sep">·</span>
-                            <span title="Last updated">Updated @_SelectedKey.UpdatedAt.ToString("MMM d, yyyy")</span>
+                            <span title="@Loc.T(Localization.Translate.KeyDetail.titleLastUpdated)">@Loc.T(Localization.Translate.KeyDetail.updatedOn, new Dictionary<string, object> { ["date"] = _SelectedKey.UpdatedAt.ToString("MMM d, yyyy") })</span>
                         </div>
                         @if (_IsAdmin)
                         {
                             @if (_ConfirmDeleteKey)
                             {
                                 <span class="kd-delete-confirm">
-                                    <span>Delete key?</span>
-                                    <button class="kd-confirm-yes" @onclick="DeleteKey">Delete</button>
-                                    <button class="kd-confirm-no" @onclick="() => _ConfirmDeleteKey = false">Cancel</button>
+                                    <span>@Loc.T(Localization.Translate.KeyDetail.deleteKeyConfirm)</span>
+                                    <button class="kd-confirm-yes" @onclick="DeleteKey">@Loc.T(Localization.Common.Buttons.delete)</button>
+                                    <button class="kd-confirm-no" @onclick="() => _ConfirmDeleteKey = false">@Loc.T(Localization.Common.Buttons.cancel)</button>
                                 </span>
                             }
                             else
                             {
-                                <button class="kd-delete-btn" title="Delete key" @onclick="() => _ConfirmDeleteKey = true">
+                                <button class="kd-delete-btn" title="@Loc.T(Localization.Translate.KeyDetail.titleDeleteKey)" @onclick="() => _ConfirmDeleteKey = true">
                                     <i class="bi bi-trash"></i>
                                 </button>
                             }
@@ -78,13 +79,13 @@
 
             @* ── Translation comments ─────────────────────────────────────── *@
             <CommentThread Key="@_SelectedKey" Scope="CommentScope.Translation" LanguageId="@SelectedLanguage"
-                           Label="@($"Comments · {SelectedLanguage}")" OnChanged="StateHasChanged"/>
+                           Label="@Loc.T(Localization.Translate.KeyDetail.commentsLabel, new Dictionary<string, object> { ["language"] = SelectedLanguage })" OnChanged="StateHasChanged"/>
 
             @* ── Variables ────────────────────────────────────────────────── *@
             <VariablesSection @ref="_VariablesSection" Key="@_SelectedKey" OnChanged="StateHasChanged"/>
 
             @* ── Key comments ─────────────────────────────────────────────── *@
-            <CommentThread Key="@_SelectedKey" Scope="CommentScope.Key" Label="Key comments" OnChanged="StateHasChanged"/>
+            <CommentThread Key="@_SelectedKey" Scope="CommentScope.Key" Label="@Loc.T(Localization.Translate.KeyDetail.keyComments)" OnChanged="StateHasChanged"/>
 
         </div>
     }
@@ -183,6 +184,15 @@
         "Needs review" => "kd-status-warn",
         "Untranslated" => "kd-status-empty",
         _              => "kd-status-draft",
+    };
+
+    private string LocalizedStatus(string label) => label switch
+    {
+        "Needs review" => Loc.T(Localization.Translate.KeyDetail.statusNeedsReview),
+        "Untranslated" => Loc.T(Localization.Translate.KeyDetail.statusUntranslated),
+        "Approved"     => Loc.T(Localization.Translate.KeyDetail.statusApproved),
+        "Suggested"    => Loc.T(Localization.Translate.KeyDetail.statusSuggested),
+        _              => Loc.T(Localization.Translate.KeyDetail.statusDraft),
     };
 
 }

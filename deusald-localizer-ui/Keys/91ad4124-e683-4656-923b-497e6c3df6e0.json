@@ -1,0 +1,25 @@
+{
+  "Id": "91ad4124-e683-4656-923b-497e6c3df6e0",
+  "CategoryId": "37037b9b-7934-487b-9401-8cca236150a6",
+  "KeyName": "descriptionLabel",
+  "Description": "Field label for the description textarea",
+  "CreatedAt": "2026-07-16T12:48:41.5615551Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5615558Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "526e0087cc3f254d9f86f6c7d8e23d954c4dfda2b312efc29194ae8a860106ba",
+      "Text": "Description",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5615606Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

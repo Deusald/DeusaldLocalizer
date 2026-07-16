@@ -1,5 +1,6 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -7,12 +8,12 @@
 
     <div class="atm-box" @onclick:stopPropagation="true">
         <div class="atm-header">
-            <span class="atm-title">Add tag</span>
+            <span class="atm-title">@Loc.T(Localization.Translate.KeyDetail.AddTag.addTag)</span>
             <button class="atm-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
         </div>
 
         <div class="atm-body">
-            <input class="atm-input" type="text" placeholder="Search or create a tag…"
+            <input class="atm-input" type="text" placeholder="@Loc.T(Localization.Translate.KeyDetail.AddTag.placeholderSearch)"
                    @bind="_Query" @bind:event="oninput" @onkeydown="OnKeyDown" />
 
             <div class="atm-results">
@@ -20,7 +21,7 @@
                 {
                     <button class="atm-item atm-item-create" @onclick="() => AddTag(_Query.Trim())">
                         <i class="bi bi-plus-circle"></i>
-                        <span>Create "<strong>@_Query.Trim()</strong>"</span>
+                        <span>@Loc.T(Localization.Translate.KeyDetail.AddTag.createOption, new Dictionary<string, object> { ["query"] = _Query.Trim() })</span>
                     </button>
                 }
 
@@ -35,7 +36,7 @@
 
                 @if (_FilteredExisting.Count == 0 && !_ShowCreateOption)
                 {
-                    <div class="atm-empty">No matching tags.</div>
+                    <div class="atm-empty">@Loc.T(Localization.Translate.KeyDetail.AddTag.noMatches)</div>
                 }
             </div>
         </div>

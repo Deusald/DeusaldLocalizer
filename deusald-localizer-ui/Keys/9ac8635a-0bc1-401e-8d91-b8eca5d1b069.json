@@ -1,0 +1,25 @@
+{
+  "Id": "9ac8635a-0bc1-401e-8d91-b8eca5d1b069",
+  "CategoryId": "30585d1a-f1da-488a-ab89-97f090f732f4",
+  "KeyName": "downloadTooltip",
+  "Description": "Tooltip on a project card's download button (web).",
+  "CreatedAt": "2026-07-16T12:29:28.0793255Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5563845Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "714deeb190897c7153460b042f63ca1555075e31a17a81528223b2ca251e98ea",
+      "Text": "Download a copy (.zip)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5563884Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

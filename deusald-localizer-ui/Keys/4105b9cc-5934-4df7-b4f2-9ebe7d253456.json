@@ -1,0 +1,25 @@
+{
+  "Id": "4105b9cc-5934-4df7-b4f2-9ebe7d253456",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "updateSourceText",
+  "Description": "Checkbox label to update source text.",
+  "CreatedAt": "2026-07-16T12:48:41.5604304Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5604311Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ffea661b71134255a2c8096eac61f01e5843218609cfe4b2bc5bade38b1bd380",
+      "Text": "Update source text",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.560433Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

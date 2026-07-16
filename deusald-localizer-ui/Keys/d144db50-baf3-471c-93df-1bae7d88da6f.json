@@ -1,0 +1,25 @@
+{
+  "Id": "d144db50-baf3-471c-93df-1bae7d88da6f",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "uncommittedModeNoChanges",
+  "Description": "Tooltip on the uncommitted-mode pill when there is nothing to apply.",
+  "CreatedAt": "2026-07-16T12:48:41.5589791Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5589798Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "0837ced77c8c191591020ff38ec17aa8446a9630be156b61c224e7e72c4c8d5a",
+      "Text": "Uncommitted mode — no changes to apply",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5589819Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

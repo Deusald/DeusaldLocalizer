@@ -1,5 +1,6 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 <div class="kfb-root">
     @foreach (LocKeyFlag flag in Key.Flags)
@@ -18,7 +19,7 @@
                 <div class="kfb-tooltip">
                     <div class="kfb-tooltip-inner">
                         @{
-                            string noteText = string.IsNullOrWhiteSpace(f.Note) ? "No note" : f.Note;
+                            string noteText = string.IsNullOrWhiteSpace(f.Note) ? Loc.T(Localization.Translate.KeyDetail.Flags.noteNone) : f.Note;
                             noteText += $" ({f.CreatedAt:MMM d, yyyy})";
                         }
                         @if (!string.IsNullOrWhiteSpace(f.Note))
@@ -32,7 +33,7 @@
                         @if (_CanManage)
                         {
                             <button class="kfb-tooltip-remove" @onclick="() => RemoveFlag(f)" @onclick:stopPropagation="true">
-                                <i class="bi bi-x"></i> Remove
+                                <i class="bi bi-x"></i> @Loc.T(Localization.Common.Buttons.remove)
                             </button>
                         }
                     </div>
@@ -43,7 +44,7 @@
 
     @if (_CanManage)
     {
-        <button class="kfb-add-btn" @onclick="() => _AddFlagModal?.Show()" title="Add flag">
+        <button class="kfb-add-btn" @onclick="() => _AddFlagModal?.Show()" title="@Loc.T(Localization.Translate.KeyDetail.Flags.titleAddFlag)">
             <i class="bi bi-plus"></i>
         </button>
     }
@@ -75,13 +76,13 @@
         OnChanged.InvokeAsync();
     }
 
-    private static string FlagLabel(FlagType type) => type switch
+    private string FlagLabel(FlagType type) => type switch
     {
-        FlagType.NeedsReview    => "Needs review",
-        FlagType.Outdated       => "Outdated",
-        FlagType.DoNotTranslate => "Do not translate",
-        FlagType.InProgress     => "In progress",
-        FlagType.Disputed       => "Disputed",
+        FlagType.NeedsReview    => Loc.T(Localization.Translate.KeyDetail.Flags.flagNeedsReview),
+        FlagType.Outdated       => Loc.T(Localization.Translate.KeyDetail.Flags.flagOutdated),
+        FlagType.DoNotTranslate => Loc.T(Localization.Translate.KeyDetail.Flags.flagDoNotTranslate),
+        FlagType.InProgress     => Loc.T(Localization.Translate.KeyDetail.Flags.flagInProgress),
+        FlagType.Disputed       => Loc.T(Localization.Translate.KeyDetail.Flags.flagDisputed),
         _                       => type.ToString(),
     };
 

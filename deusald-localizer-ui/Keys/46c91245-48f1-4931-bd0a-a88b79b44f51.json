@@ -1,0 +1,25 @@
+{
+  "Id": "46c91245-48f1-4931-bd0a-a88b79b44f51",
+  "CategoryId": "55d39161-3461-4f3a-8e53-91f35c3f12ca",
+  "KeyName": "sourceMatched",
+  "Description": "Button confirming the translation still matches the current source",
+  "CreatedAt": "2026-07-16T12:48:41.5581807Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5581814Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "0942f5ccd4fa4eb2451dbfb8df7fd7901e01e56bb538b8130128b33646a83b90",
+      "Text": "Source matched",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5581877Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

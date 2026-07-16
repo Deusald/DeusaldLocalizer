@@ -1,0 +1,25 @@
+{
+  "Id": "def8290a-b1ca-4708-9d4e-9f7cf0e0980a",
+  "CategoryId": "4462b26f-cf56-48cb-a50a-33a2f49aa7c6",
+  "KeyName": "discussion",
+  "Description": "Label of the comment thread under a suggestion",
+  "CreatedAt": "2026-07-16T12:48:41.5584414Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5584421Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "5eb6cf647d2c5d14a044e2d103dcef4cf0cdc872434c374debc1043092bc4746",
+      "Text": "Discussion",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.558444Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "f7bf4236-9bb2-418b-8f3f-4c61258d1919",
+  "CategoryId": "264f533d-3094-433d-9429-c82dd532173e",
+  "KeyName": "discard",
+  "Description": "Button confirming discard of all pending changes.",
+  "CreatedAt": "2026-07-16T12:48:41.5599812Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5599818Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "eb1a70e39274bb762b5d7c1adb5debeea2b05e12af28207f21a375b596853273",
+      "Text": "Discard",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5599855Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

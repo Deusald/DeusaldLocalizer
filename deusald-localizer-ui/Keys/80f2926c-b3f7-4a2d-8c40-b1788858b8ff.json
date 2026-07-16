@@ -1,0 +1,25 @@
+{
+  "Id": "80f2926c-b3f7-4a2d-8c40-b1788858b8ff",
+  "CategoryId": "264f533d-3094-433d-9429-c82dd532173e",
+  "KeyName": "hintApplyOrDiscard",
+  "Description": "Hint shown when uncommitted mode is on and changes are pending.",
+  "CreatedAt": "2026-07-16T12:48:41.5600476Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5600483Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "7a087e3fcd70b96c194a585015fb93333cb81539391bb6d9502a239c50d00f7c",
+      "Text": "Apply or discard all changes to turn this off.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5600542Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

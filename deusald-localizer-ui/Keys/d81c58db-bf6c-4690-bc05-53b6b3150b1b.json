@@ -1,0 +1,25 @@
+{
+  "Id": "d81c58db-bf6c-4690-bc05-53b6b3150b1b",
+  "CategoryId": "c5c73cc7-4494-470a-bcfc-ef45e25e0957",
+  "KeyName": "keepMineHint",
+  "Description": "Hint explaining the Keep mine option",
+  "CreatedAt": "2026-07-16T12:48:41.558622Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5586227Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "0c019afa29f41c3fe386e5ed59dfdbb6274f1f2e848076c237387038f895af0e",
+      "Text": "— overwrite the server's version on your next push.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5586248Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

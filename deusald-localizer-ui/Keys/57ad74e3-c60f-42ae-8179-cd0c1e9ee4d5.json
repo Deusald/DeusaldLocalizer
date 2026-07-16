@@ -1,0 +1,25 @@
+{
+  "Id": "57ad74e3-c60f-42ae-8179-cd0c1e9ee4d5",
+  "CategoryId": "03687f98-0a54-4914-a0e2-992f681adff4",
+  "KeyName": "newProject",
+  "Description": "Button that opens the new-project dialog.",
+  "CreatedAt": "2026-07-16T12:19:57.5407653Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5545163Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a41eb2bf7245d3bcca0c66f7b9a2c8b30a6cf975fc4bed8297811b2777956280",
+      "Text": "New project",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5545858Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

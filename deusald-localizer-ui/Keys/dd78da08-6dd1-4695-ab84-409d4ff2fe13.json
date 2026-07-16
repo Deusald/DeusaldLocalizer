@@ -1,0 +1,25 @@
+{
+  "Id": "dd78da08-6dd1-4695-ab84-409d4ff2fe13",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "categoriesCreated",
+  "Description": "Result stat label for categories created.",
+  "CreatedAt": "2026-07-16T12:48:41.5605776Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5605783Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "5c42acd7b95a6db0fa90a904ee351a63489c07dec0c8ce94af96bdea2389c4df",
+      "Text": "categories created",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5605877Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

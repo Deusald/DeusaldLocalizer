@@ -1,0 +1,25 @@
+{
+  "Id": "af4b03d8-81ca-4026-b67a-921852411243",
+  "CategoryId": "043c0165-7441-4196-9428-f9bd096893c9",
+  "KeyName": "unsavedChangesBody",
+  "Description": "Body warning of the confirm-leave modal.",
+  "CreatedAt": "2026-07-16T12:48:41.5598096Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5598103Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "6d955b91b79bdc5ec376f7f9c4cd9004406fa0cf740a264cfff7ed064dca08b7",
+      "Text": "You have unsaved changes. If you leave now, those changes will be lost.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5598124Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

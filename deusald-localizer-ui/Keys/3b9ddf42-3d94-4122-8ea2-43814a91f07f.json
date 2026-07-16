@@ -1,0 +1,25 @@
+{
+  "Id": "3b9ddf42-3d94-4122-8ea2-43814a91f07f",
+  "CategoryId": "c5c73cc7-4494-470a-bcfc-ef45e25e0957",
+  "KeyName": "keepServer",
+  "Description": "Button/label for keeping the server version",
+  "CreatedAt": "2026-07-16T12:48:41.5586144Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5586151Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "4e1a80e4ea8269a69612cd5cd0c6b75e75b62607827e23e4c72f8dc596175009",
+      "Text": "Keep server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5586171Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

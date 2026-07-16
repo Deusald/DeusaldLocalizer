@@ -1,5 +1,6 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -9,7 +10,7 @@
 
         <div class="ucm-header">
             <div class="ucm-header-left">
-                <span class="ucm-title">Uncommitted changes</span>
+                <span class="ucm-title">@Loc.T(Localization.Translate.TopBar.UncommittedChanges.title)</span>
                 @if (_ProjectState.CurrentProject!.UncommitedChanges.Count > 0)
                 {
                     <span class="ucm-count">@_ProjectState.CurrentProject.UncommitedChanges.Count</span>
@@ -20,20 +21,20 @@
                 {
                     @if (_ConfirmClearAll)
                     {
-                        <span class="ucm-confirm-label">Discard all?</span>
-                        <button class="ucm-confirm-yes" @onclick="ClearAll">Discard</button>
-                        <button class="ucm-confirm-no" @onclick="() => _ConfirmClearAll = false">Cancel</button>
+                        <span class="ucm-confirm-label">@Loc.T(Localization.Translate.TopBar.UncommittedChanges.discardAllConfirm)</span>
+                        <button class="ucm-confirm-yes" @onclick="ClearAll">@Loc.T(Localization.Translate.TopBar.UncommittedChanges.discard)</button>
+                        <button class="ucm-confirm-no" @onclick="() => _ConfirmClearAll = false">@Loc.T(Localization.Common.Buttons.cancel)</button>
                     }
                     else
                     {
                         @if (_UncommittedMode)
                         {
-                            <button class="ucm-apply-all" title="Apply every change to the project files" @onclick="ApplyAll">
-                                <i class="bi bi-check2-all"></i> Apply
+                            <button class="ucm-apply-all" title="@Loc.T(Localization.Translate.TopBar.UncommittedChanges.applyAllTitle)" @onclick="ApplyAll">
+                                <i class="bi bi-check2-all"></i> @Loc.T(Localization.Common.Buttons.apply)
                             </button>
                         }
                         <button class="ucm-discard-all" @onclick="() => _ConfirmClearAll = true">
-                            <i class="bi bi-trash"></i> Discard all
+                            <i class="bi bi-trash"></i> @Loc.T(Localization.Translate.TopBar.UncommittedChanges.discardAll)
                         </button>
                     }
                 }
@@ -44,23 +45,23 @@
         @if (!_ProjectState.CurrentProject.Metadata.IsOnline)
         {
             <div class="ucm-mode-bar">
-                <label class="ucm-switch" title="@(_ToggleDisabled && _UncommittedMode ? "Apply or discard all changes before turning this off" : null)">
+                <label class="ucm-switch" title="@(_ToggleDisabled && _UncommittedMode ? Loc.T(Localization.Translate.TopBar.UncommittedChanges.toggleDisabledTitle) : null)">
                     <input type="checkbox" checked="@_UncommittedMode" disabled="@_ToggleDisabled" @onchange="OnToggleMode"/>
                     <span class="ucm-switch-track"><span class="ucm-switch-thumb"></span></span>
-                    <span class="ucm-switch-label">Uncommitted mode</span>
+                    <span class="ucm-switch-label">@Loc.T(Localization.Translate.TopBar.UncommittedChanges.uncommittedMode)</span>
                 </label>
                 <span class="ucm-mode-hint">
                     @if (!_UncommittedMode)
                     {
-                        <text>Stage edits as changes you apply in a batch.</text>
+                        <text>@Loc.T(Localization.Translate.TopBar.UncommittedChanges.hintStage)</text>
                     }
                     else if (_HasPending)
                     {
-                        <text>Apply or discard all changes to turn this off.</text>
+                        <text>@Loc.T(Localization.Translate.TopBar.UncommittedChanges.hintApplyOrDiscard)</text>
                     }
                     else
                     {
-                        <text>Edits are staged until you apply them.</text>
+                        <text>@Loc.T(Localization.Translate.TopBar.UncommittedChanges.hintStaged)</text>
                     }
                 </span>
             </div>
@@ -70,8 +71,9 @@
         {
             <div class="ucm-conflict-banner">
                 <i class="bi bi-exclamation-triangle"></i>
-                @_ProjectState.SyncConflicts.Count @(_ProjectState.SyncConflicts.Count == 1 ? "change conflicts" : "changes conflict")
-                with newer server edits — sync and resolve before pushing.
+                @(_ProjectState.SyncConflicts.Count == 1
+                    ? Loc.T(Localization.Translate.TopBar.UncommittedChanges.conflictBannerSingular, new Dictionary<string, object> { ["count"] = _ProjectState.SyncConflicts.Count })
+                    : Loc.T(Localization.Translate.TopBar.UncommittedChanges.conflictBannerPlural, new Dictionary<string, object> { ["count"] = _ProjectState.SyncConflicts.Count }))
             </div>
         }
 
@@ -80,7 +82,7 @@
             {
                 <div class="ucm-empty">
                     <i class="bi bi-check-circle ucm-empty-icon"></i>
-                    <span>No uncommitted changes.</span>
+                    <span>@Loc.T(Localization.Translate.TopBar.UncommittedChanges.emptyState)</span>
                 </div>
             }
             else
@@ -108,8 +110,8 @@
                                 </span>
                                 @if (conflicting)
                                 {
-                                    <span class="ucm-conflict-tag" title="Conflicts with a newer server edit">
-                                        <i class="bi bi-exclamation-triangle-fill"></i> conflict
+                                    <span class="ucm-conflict-tag" title="@Loc.T(Localization.Translate.TopBar.UncommittedChanges.conflictTagTitle)">
+                                        <i class="bi bi-exclamation-triangle-fill"></i> @Loc.T(Localization.Translate.TopBar.UncommittedChanges.conflictTag)
                                     </span>
                                 }
                             </div>
@@ -124,16 +126,16 @@
                                 {
                                     @if (_ConfirmRemoveIndex == index)
                                     {
-                                        <button class="ucm-row-confirm-yes" title="Confirm remove" @onclick="() => Remove(index)">
+                                        <button class="ucm-row-confirm-yes" title="@Loc.T(Localization.Translate.TopBar.UncommittedChanges.confirmRemoveTitle)" @onclick="() => Remove(index)">
                                             <i class="bi bi-check-lg"></i>
                                         </button>
-                                        <button class="ucm-row-confirm-no" title="Cancel" @onclick="() => _ConfirmRemoveIndex = null">
+                                        <button class="ucm-row-confirm-no" title="@Loc.T(Localization.Common.Buttons.cancel)" @onclick="() => _ConfirmRemoveIndex = null">
                                             <i class="bi bi-x-lg"></i>
                                         </button>
                                     }
                                     else
                                     {
-                                        <button class="ucm-row-remove" title="Remove this change" @onclick="() => _ConfirmRemoveIndex = index">
+                                        <button class="ucm-row-remove" title="@Loc.T(Localization.Translate.TopBar.UncommittedChanges.removeChangeTitle)" @onclick="() => _ConfirmRemoveIndex = index">
                                             <i class="bi bi-trash"></i>
                                         </button>
                                     }
@@ -147,28 +149,28 @@
                                 @if (!string.IsNullOrEmpty(change.EntrySubId))
                                 {
                                     <div class="ucm-detail-row">
-                                        <span class="ucm-detail-label">Sub ID</span>
+                                        <span class="ucm-detail-label">@Loc.T(Localization.Translate.TopBar.UncommittedChanges.subId)</span>
                                         <code class="ucm-detail-value">@change.EntrySubId</code>
                                     </div>
                                 }
                                 @if (!string.IsNullOrEmpty(change.ChangeData))
                                 {
                                     <div class="ucm-detail-row ucm-detail-row-block">
-                                        <span class="ucm-detail-label">Change data</span>
+                                        <span class="ucm-detail-label">@Loc.T(Localization.Translate.TopBar.UncommittedChanges.changeData)</span>
                                         <pre class="ucm-detail-pre ucm-detail-new">@change.ChangeData</pre>
                                     </div>
                                 }
                                 @if (!string.IsNullOrEmpty(change.PrevSourceHashData))
                                 {
                                     <div class="ucm-detail-row ucm-detail-row-block">
-                                        <span class="ucm-detail-label">Prev source hash</span>
+                                        <span class="ucm-detail-label">@Loc.T(Localization.Translate.TopBar.UncommittedChanges.prevSourceHash)</span>
                                         <code class="ucm-detail-pre ucm-detail-hash">@change.PrevSourceHashData</code>
                                     </div>
                                 }
                                 @if (!string.IsNullOrEmpty(change.PrevDestHashData))
                                 {
                                     <div class="ucm-detail-row ucm-detail-row-block">
-                                        <span class="ucm-detail-label">Prev dest hash</span>
+                                        <span class="ucm-detail-label">@Loc.T(Localization.Translate.TopBar.UncommittedChanges.prevDestHash)</span>
                                         <code class="ucm-detail-pre ucm-detail-hash">@change.PrevDestHashData</code>
                                     </div>
                                 }

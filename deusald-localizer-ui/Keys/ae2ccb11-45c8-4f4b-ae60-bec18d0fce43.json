@@ -1,0 +1,25 @@
+{
+  "Id": "ae2ccb11-45c8-4f4b-ae60-bec18d0fce43",
+  "CategoryId": "264f533d-3094-433d-9429-c82dd532173e",
+  "KeyName": "discardAll",
+  "Description": "Button that starts discarding all pending changes.",
+  "CreatedAt": "2026-07-16T12:48:41.5600018Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5600025Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "5f30ee8710823ab9b37766ed0714ea763c26270509027c1013b802b192644c52",
+      "Text": "Discard all",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5600043Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

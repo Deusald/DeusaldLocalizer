@@ -1,0 +1,25 @@
+{
+  "Id": "2c08894a-cd9a-49cc-b027-ac64420e1c6d",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "rowsSkipped",
+  "Description": "Result stat label for rows skipped.",
+  "CreatedAt": "2026-07-16T12:48:41.5605956Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5605963Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "8bcecb973c1e9abf303690c31e943c76ae340e944f17a0c6dcafe5edbb023bc9",
+      "Text": "rows skipped",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5605985Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

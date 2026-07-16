@@ -1,0 +1,25 @@
+{
+  "Id": "9db2caa1-b700-448d-b351-6ad0fa7d82df",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "noReviewLanguages",
+  "Description": "Permissions summary when a member has no review languages.",
+  "CreatedAt": "2026-07-16T12:48:41.5593912Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5593919Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ae28422fbafb1d5d9a5c4f87c7663a4d8677d933d7af833cac6203902643d5be",
+      "Text": "No review languages",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5593965Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

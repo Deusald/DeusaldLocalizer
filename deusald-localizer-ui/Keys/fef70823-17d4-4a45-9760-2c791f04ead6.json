@@ -1,0 +1,25 @@
+{
+  "Id": "fef70823-17d4-4a45-9760-2c791f04ead6",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "bannedHint",
+  "Description": "Hint next to the ban toggle.",
+  "CreatedAt": "2026-07-16T12:48:41.5593185Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5593191Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c8f04969960b71328f65d75fbe1a1b0978a161328d4fe455a53c0876590852a3",
+      "Text": "blocks this member from contributing",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.559321Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

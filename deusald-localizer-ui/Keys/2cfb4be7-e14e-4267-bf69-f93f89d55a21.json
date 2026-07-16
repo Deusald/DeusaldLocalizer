@@ -1,0 +1,25 @@
+{
+  "Id": "2cfb4be7-e14e-4267-bf69-f93f89d55a21",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "hintDirect",
+  "Description": "Hint shown when importing as direct text.",
+  "CreatedAt": "2026-07-16T12:48:41.560495Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5604957Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c8090b59fc22c20cea0b42231eb98c9a11e76f814a95e9fe3121f985d062275d",
+      "Text": "Changed cells overwrite the approved translation directly.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5604976Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

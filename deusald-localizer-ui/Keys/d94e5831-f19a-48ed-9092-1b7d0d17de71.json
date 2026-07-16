@@ -1,0 +1,25 @@
+{
+  "Id": "d94e5831-f19a-48ed-9092-1b7d0d17de71",
+  "CategoryId": "264f533d-3094-433d-9429-c82dd532173e",
+  "KeyName": "hintStage",
+  "Description": "Hint shown when uncommitted mode is off.",
+  "CreatedAt": "2026-07-16T12:48:41.560038Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5600387Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "797e350d60d08be6a02142f57068b3d61185f643da781dce470f205c93a64f16",
+      "Text": "Stage edits as changes you apply in a batch.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5600407Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

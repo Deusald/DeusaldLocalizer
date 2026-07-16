@@ -1,0 +1,25 @@
+{
+  "Id": "8be5358c-eaad-4daa-9557-82c4bf6a1438",
+  "CategoryId": "26653698-73d8-4889-ada4-a47247015d15",
+  "KeyName": "titleAddFlag",
+  "Description": "Tooltip on the add-flag button in the flags bar.",
+  "CreatedAt": "2026-07-16T12:48:41.5577894Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5577901Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "18a5a8787ea6a461be3b98f376286468bf482fddf2d9bc351d7717cedd9743bc",
+      "Text": "Add flag",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5577949Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

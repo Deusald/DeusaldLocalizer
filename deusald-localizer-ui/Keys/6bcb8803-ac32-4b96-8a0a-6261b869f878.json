@@ -1,0 +1,25 @@
+{
+  "Id": "6bcb8803-ac32-4b96-8a0a-6261b869f878",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "title",
+  "Description": "Header title of the export modal.",
+  "CreatedAt": "2026-07-16T12:48:41.5606438Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5606445Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "3664895579f0a7e68c4aa09c91316e20239bc74499010e6423ece40cad7c28f7",
+      "Text": "Export",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5606464Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

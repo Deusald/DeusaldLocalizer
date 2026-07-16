@@ -1,0 +1,25 @@
+{
+  "Id": "0917b810-5de4-4ba7-b2c7-6243f0d0ec73",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "export",
+  "Description": "Tooltip on the export button.",
+  "CreatedAt": "2026-07-16T12:48:41.5589211Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5589217Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "0583ea8d0233a88c1382f9f2314b9186e52d24a714ca23427a353a4d8e18fbbc",
+      "Text": "Export (Excel or C#)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5589237Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

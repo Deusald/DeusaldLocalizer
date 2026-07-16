@@ -1,0 +1,25 @@
+{
+  "Id": "5a9b22d6-9696-4bac-908d-0fdae5b74a69",
+  "CategoryId": "26653698-73d8-4889-ada4-a47247015d15",
+  "KeyName": "flagDisputed",
+  "Description": "Display label for the Disputed flag type.",
+  "CreatedAt": "2026-07-16T12:48:41.5578262Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5578269Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "b3b310ca1276b3bb29b580edbcb62728ddb7b6dc5e6dd4365aeb4882e0a07553",
+      "Text": "Disputed",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5578287Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "c377644f-2fc4-4fe7-88e0-8bb0cbfd8d79",
+  "CategoryId": "a2cb7dcb-e988-4f12-8c8d-77b9a4c7af84",
+  "KeyName": "kindEdited",
+  "Description": "Tag shown on a conflict caused by a concurrent edit of the destination.",
+  "CreatedAt": "2026-07-16T12:48:41.5597519Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5597526Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "1fb9f4097256db2d7b1e13aff79cee44339891a31c556b9cf6093885773b3618",
+      "Text": "edited",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5597545Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

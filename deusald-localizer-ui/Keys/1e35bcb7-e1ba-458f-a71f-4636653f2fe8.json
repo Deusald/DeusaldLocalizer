@@ -1,0 +1,25 @@
+{
+  "Id": "1e35bcb7-e1ba-458f-a71f-4636653f2fe8",
+  "CategoryId": "55d39161-3461-4f3a-8e53-91f35c3f12ca",
+  "KeyName": "saveTranslation",
+  "Description": "Button that saves the translation text",
+  "CreatedAt": "2026-07-16T12:48:41.558192Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5581927Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "1d9eb7b9db2ca33008f14310fc552f82c3ac32527cf9b212eb474b3b3bb5b685",
+      "Text": "Save translation",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5581946Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

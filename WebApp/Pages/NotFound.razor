@@ -1,5 +1,6 @@
 ﻿@page "/not-found"
 @layout MainLayout
+@inject UiLocalizationService Loc
 
-<h3>Not Found</h3>
-<p>Sorry, the content you are looking for does not exist.</p>
+<h3>@Loc.T(Localization.NotFound.Web.heading)</h3>
+<p>@Loc.T(Localization.NotFound.Web.body)</p>

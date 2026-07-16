@@ -1,0 +1,25 @@
+{
+  "Id": "33ee34b1-be89-486d-9df9-5564ce8efc93",
+  "CategoryId": "5b3ad005-8ece-4230-9f44-a060455ce216",
+  "KeyName": "defaultPreviewValue",
+  "Description": "Label for the variable's default preview value field",
+  "CreatedAt": "2026-07-16T12:48:41.5583434Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5583441Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "053563d421f49871951fcf5b3e15690ad3592670aa053cbf99471ee91249b2a3",
+      "Text": "Default preview value",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5583461Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "80a0cdd6-1360-4958-b08f-5d795bfaeb60",
+  "CategoryId": "c2ad17b5-de6f-43fe-bbc4-6052bdc6f47b",
+  "KeyName": "dragToResize",
+  "Description": "Tooltip on the column resizer handle",
+  "CreatedAt": "2026-07-16T12:48:41.5616148Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5616155Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "31b2f1cdb2e93ebb29fc58ab6565f5f4eb5412110ac402ffd1a9114fdd097e00",
+      "Text": "Drag to resize",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5616174Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

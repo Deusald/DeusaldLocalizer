@@ -1,0 +1,25 @@
+{
+  "Id": "be2b805b-a349-452e-95b0-264b29bade0b",
+  "CategoryId": "fd8aa94b-0386-4858-b6a5-47b035bcc6a4",
+  "KeyName": "save",
+  "Description": "Generic Save button, reused across dialogs.",
+  "CreatedAt": "2026-07-16T12:48:41.5567278Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5567288Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "1509f561f2416598629b886ad7d3c05a7e221e4e0675c84bbff4ee6d9e03913d",
+      "Text": "Save",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.556733Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

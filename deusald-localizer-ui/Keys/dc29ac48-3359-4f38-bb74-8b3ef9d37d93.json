@@ -1,0 +1,33 @@
+{
+  "Id": "dc29ac48-3359-4f38-bb74-8b3ef9d37d93",
+  "CategoryId": "55d39161-3461-4f3a-8e53-91f35c3f12ca",
+  "KeyName": "translationLabel",
+  "Description": "Label above the translation text editor",
+  "CreatedAt": "2026-07-16T12:48:41.5581425Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5581431Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "92f7069e-417d-42ea-8512-67a9fa3ef633",
+      "Name": "lang",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "de"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "cd1e7b84eae3736c527ace8129f9da388699ae9d700b6e87f5cc230bfa784487",
+      "Text": "Translation · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5581588Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

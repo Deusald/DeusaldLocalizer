@@ -1,0 +1,33 @@
+{
+  "Id": "6385c868-8dcf-46c6-a84b-a74563cc7493",
+  "CategoryId": "36be6be4-7cc0-460c-bb6c-42351c6571e1",
+  "KeyName": "manyCategories",
+  "Description": "Filter trigger label when multiple categories are selected.",
+  "CreatedAt": "2026-07-16T12:48:41.5573274Z",
+  "UpdatedAt": "2026-07-16T12:48:41.557328Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "28814973-90e9-4fbf-a5df-3f57d8f59a87",
+      "Name": "count",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "3"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "d2f9f78791aa305fbaef6f5dc71459b8192868172eb5d7473a979141a4644f13",
+      "Text": "{count} categories",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5573406Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

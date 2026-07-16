@@ -1,0 +1,25 @@
+{
+  "Id": "893f08a6-dd78-4546-a390-fb908ca749ef",
+  "CategoryId": "f49bf397-0eaa-4bcf-8fe7-0022c70b016e",
+  "KeyName": "invalidProjectId",
+  "Description": "Validation error when the entered project id is not a GUID",
+  "CreatedAt": "2026-07-16T12:48:41.5612134Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5612141Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "88707ad3f82a42075adc2318cd36ae14345e4aa6cdcd72d1a2a0ad0713fd6c37",
+      "Text": "Not a valid project id",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.561216Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

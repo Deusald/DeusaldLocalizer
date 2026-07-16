@@ -1,0 +1,33 @@
+{
+  "Id": "7ff2f14b-39ff-4eca-8ccc-8230b14e1676",
+  "CategoryId": "55d39161-3461-4f3a-8e53-91f35c3f12ca",
+  "KeyName": "sourceLabel",
+  "Description": "Label above the source-language text editor",
+  "CreatedAt": "2026-07-16T12:48:41.5579651Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5579658Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "480b677d-fede-439d-960b-01231115c42c",
+      "Name": "lang",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "en"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "755c4f9d60a114beb6a022e1ce9e4602fbd3fb1425703e7425079851df614a58",
+      "Text": "Source · {lang}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5579691Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

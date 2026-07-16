@@ -1,0 +1,25 @@
+{
+  "Id": "a032b28a-68e9-4c7e-bc82-3f4a9be99780",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "updateDownload",
+  "Description": "Button to open the release page for a manual download (desktop/macOS).",
+  "CreatedAt": "2026-07-16T12:29:28.0794237Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5565585Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "d6eafe82359100423c93c5ce53c352c1b51ca1e699215fcec3f5c5dd9bf12d24",
+      "Text": "Download",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5565623Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

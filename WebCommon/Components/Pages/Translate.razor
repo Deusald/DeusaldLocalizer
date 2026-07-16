@@ -3,10 +3,11 @@
 @implements IDisposable
 @inject ProjectStateService _ProjectState
 @inject IJSRuntime _Js
+@inject UiLocalizationService Loc
 
 @if (!_ProjectState.HasProject)
 {
-    <div class="tr-no-project">No project open.</div>
+    <div class="tr-no-project">@Loc.T(Localization.Translate.Page.noProjectOpen)</div>
     return;
 }
 
@@ -25,7 +26,7 @@
                     SelectedKeyId="_SelectedKeyId"
                     OnKeySelected="OnKeySelected"/>
 
-        <div class="tr-resizer" @onpointerdown="StartKeysResize" title="Drag to resize"></div>
+        <div class="tr-resizer" @onpointerdown="StartKeysResize" title="@Loc.T(Localization.Translate.Page.dragToResize)"></div>
 
         <KeyDetailColumn SelectedLanguage="@_SelectedLanguage"
                          SelectedKeyId="_SelectedKeyId"

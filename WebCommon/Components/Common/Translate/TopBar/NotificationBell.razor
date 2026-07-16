@@ -1,10 +1,11 @@
 @namespace DeusaldLocalizerWeb.Components.Common
-@inject ProjectStateService _ProjectState
-@inject IPreferencesStore   _Prefs
+@inject ProjectStateService  _ProjectState
+@inject IPreferencesStore    _Prefs
+@inject UiLocalizationService Loc
 @implements IDisposable
 
 <div class="nb-root">
-    <button class="nb-btn" @onclick="ToggleOpen" title="Mentions">
+    <button class="nb-btn" @onclick="ToggleOpen" title="@Loc.T(Localization.Translate.TopBar.Notifications.mentions)">
         <i class="bi bi-bell"></i>
         @if (_UnreadCount > 0)
         {
@@ -17,7 +18,7 @@
         <div class="nb-backdrop" @onclick="Close"></div>
         <div class="nb-panel" @onclick:stopPropagation="true">
             <div class="nb-panel-header">
-                <span>Mentions</span>
+                <span>@Loc.T(Localization.Translate.TopBar.Notifications.mentions)</span>
                 @if (_Notifications.Count > 0)
                 {
                     <span class="nb-panel-count">@_Notifications.Count</span>
@@ -28,7 +29,7 @@
             {
                 <div class="nb-empty">
                     <i class="bi bi-bell-slash"></i>
-                    <span>No one has mentioned you yet.</span>
+                    <span>@Loc.T(Localization.Translate.TopBar.Notifications.noMentions)</span>
                 </div>
             }
             else
@@ -147,21 +148,21 @@
     private string AuthorName(Guid authorId)
     {
         LocProjectMember? member = _ProjectState.CurrentProject!.ProjectMembers.Find(m => m.UserId == authorId);
-        return member?.Username ?? "Unknown";
+        return member?.Username ?? Loc.T(Localization.Translate.TopBar.Notifications.unknown);
     }
 
     private string KeyName(Guid keyId)
     {
         LocLocalizationKey? key = _ProjectState.CurrentProject!.Keys.Find(k => k.Id == keyId);
-        return key?.KeyName ?? "(removed key)";
+        return key?.KeyName ?? Loc.T(Localization.Translate.TopBar.Notifications.removedKey);
     }
 
-    private static string SourceLabel(MentionSource source) => source switch
+    private string SourceLabel(MentionSource source) => source switch
     {
-        MentionSource.KeyComment         => "commented",
-        MentionSource.TranslationComment => "commented",
-        MentionSource.SuggestionComment  => "replied",
-        MentionSource.Suggestion         => "suggested",
+        MentionSource.KeyComment         => Loc.T(Localization.Translate.TopBar.Notifications.commented),
+        MentionSource.TranslationComment => Loc.T(Localization.Translate.TopBar.Notifications.commented),
+        MentionSource.SuggestionComment  => Loc.T(Localization.Translate.TopBar.Notifications.replied),
+        MentionSource.Suggestion         => Loc.T(Localization.Translate.TopBar.Notifications.suggested),
         _                                => "",
     };
 
@@ -175,13 +176,13 @@
         return _AvatarPalette[idx];
     }
 
-    private static string RelativeTime(DateTime time)
+    private string RelativeTime(DateTime time)
     {
         TimeSpan diff = DateTime.UtcNow - time;
-        if (diff.TotalMinutes < 1) return "just now";
-        if (diff.TotalHours < 1) return $"{(int)diff.TotalMinutes}m";
-        if (diff.TotalDays < 1) return $"{(int)diff.TotalHours}h";
-        if (diff.TotalDays < 30) return $"{(int)diff.TotalDays}d";
+        if (diff.TotalMinutes < 1) return Loc.T(Localization.Translate.TopBar.Notifications.justNow);
+        if (diff.TotalHours < 1) return Loc.T(Localization.Translate.TopBar.Notifications.minutesAgo, new Dictionary<string, object> { ["count"] = (int)diff.TotalMinutes });
+        if (diff.TotalDays < 1) return Loc.T(Localization.Translate.TopBar.Notifications.hoursAgo, new Dictionary<string, object> { ["count"] = (int)diff.TotalHours });
+        if (diff.TotalDays < 30) return Loc.T(Localization.Translate.TopBar.Notifications.daysAgo, new Dictionary<string, object> { ["count"] = (int)diff.TotalDays });
         return time.ToString("MMM d");
     }
 

@@ -1,0 +1,25 @@
+{
+  "Id": "cfd65add-08f9-4697-a597-2c61c62c6cab",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "unsaved",
+  "Description": "Status pill shown when there are unsaved changes.",
+  "CreatedAt": "2026-07-16T12:48:41.5587893Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5587931Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "6250d5725dda6d9fa7aeab21eded4904a7dbbe66200b8035a03694217c7cb1b4",
+      "Text": "Unsaved",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5587952Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "6a4c1c83-c9a4-4357-96bf-ae92f07ca0eb",
+  "CategoryId": "1e3d2684-8ef9-4d86-8bab-569ea5856c31",
+  "KeyName": "addCommentPlaceholder",
+  "Description": "Placeholder for the comment compose box",
+  "CreatedAt": "2026-07-16T12:48:41.5587426Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5587433Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "aa160b93871418106c00de28c0aa6e1b1a41e225fc0cc9d9dadfc9c5257a81bd",
+      "Text": "Add a comment…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5587455Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

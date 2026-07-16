@@ -1,0 +1,25 @@
+{
+  "Id": "09730a33-4b51-462b-9643-679c03d02b23",
+  "CategoryId": "5b3ad005-8ece-4230-9f44-a060455ce216",
+  "KeyName": "resetToDefault",
+  "Description": "Tooltip on the reset-preview button",
+  "CreatedAt": "2026-07-16T12:48:41.5583818Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5583825Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "3b0b78432b9d615257bd1af1106b3a2e1ea032b622dfd1a2fe422511224ad45c",
+      "Text": "Reset to default preview value",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5583845Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

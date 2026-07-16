@@ -1,0 +1,25 @@
+{
+  "Id": "1c57a357-b0de-4b87-9f2c-f974eed5e926",
+  "CategoryId": "c5c73cc7-4494-470a-bcfc-ef45e25e0957",
+  "KeyName": "empty",
+  "Description": "Placeholder shown when a compared version has no text",
+  "CreatedAt": "2026-07-16T12:48:41.5585886Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5585894Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "d29a0939bcb51176dd565a5e2d33214ce5204806b384bd80a72cb40861cdc7b9",
+      "Text": "(empty)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5585913Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

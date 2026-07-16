@@ -1,0 +1,25 @@
+{
+  "Id": "f3cdd157-8f5e-45cb-8851-ef513862af3c",
+  "CategoryId": "c5c73cc7-4494-470a-bcfc-ef45e25e0957",
+  "KeyName": "keepMine",
+  "Description": "Button/label for keeping the local version",
+  "CreatedAt": "2026-07-16T12:48:41.5585964Z",
+  "UpdatedAt": "2026-07-16T12:48:41.558597Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "0335c833251799ba6c37ba1823af457b6232b46933570369cf38b4f2766f134c",
+      "Text": "Keep mine",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5585989Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

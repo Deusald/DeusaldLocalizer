@@ -1,0 +1,25 @@
+{
+  "Id": "23befafd-4bca-4d99-a2fa-c88863ce361a",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "updateCategories",
+  "Description": "Checkbox label to update categories.",
+  "CreatedAt": "2026-07-16T12:48:41.5603743Z",
+  "UpdatedAt": "2026-07-16T12:48:41.560375Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e93e9ab15167ffcb4f5c0f6b5bcc3081546687243f9679084fffcd2ba46c1d33",
+      "Text": "Update categories",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5603799Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

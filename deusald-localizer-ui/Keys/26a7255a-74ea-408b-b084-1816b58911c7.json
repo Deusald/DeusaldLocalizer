@@ -1,0 +1,25 @@
+{
+  "Id": "26a7255a-74ea-408b-b084-1816b58911c7",
+  "CategoryId": "4462b26f-cf56-48cb-a50a-33a2f49aa7c6",
+  "KeyName": "accept",
+  "Description": "Button accepting a suggestion",
+  "CreatedAt": "2026-07-16T12:48:41.5584074Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5584081Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "89713b9c9c1b8f659c9f49db25e4a47886dd673fee248c3f650391f09a759cef",
+      "Text": "Accept",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.55841Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "b1e8e09d-2336-4cc6-849f-377766b2a543",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "seeWhatLastSyncChanged",
+  "Description": "Tooltip on the recent-changes pill.",
+  "CreatedAt": "2026-07-16T12:48:41.5588684Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5588691Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a749c93abc302a3519acacabe25dc0e5ae344f20ddf5949cb210e57a2eddb9a3",
+      "Text": "See what the last sync changed",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.558871Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

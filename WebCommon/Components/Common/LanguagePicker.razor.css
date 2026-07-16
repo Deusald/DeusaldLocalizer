@@ -1,0 +1,30 @@
+.lp-root { position: relative; display: inline-flex; }
+
+.lp-btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: #13141a; border: 1px solid #20212a; border-radius: 8px;
+    color: #c8c8cf; font-size: 12px; cursor: pointer; padding: 6px 10px;
+    transition: border-color .12s, background .12s;
+}
+.lp-btn:hover { background: #1e1f28; border-color: #2f3040; }
+.lp-code  { text-transform: uppercase; letter-spacing: .03em; }
+.lp-caret { font-size: 10px; color: #6a6b73; }
+
+.lp-backdrop { position: fixed; inset: 0; z-index: 200; }
+
+.lp-menu {
+    position: absolute; top: calc(100% + 6px); right: 0; z-index: 201;
+    min-width: 200px; max-height: 320px; overflow-y: auto;
+    background: #1a1b23; border: 1px solid #2a2b35; border-radius: 10px;
+    box-shadow: 0 16px 40px rgba(0,0,0,.5); padding: 5px;
+}
+
+.lp-item {
+    display: flex; align-items: center; gap: 8px; width: 100%;
+    background: none; border: none; border-radius: 6px; cursor: pointer;
+    color: #d6d6db; font-size: 13px; text-align: left; padding: 7px 9px;
+}
+.lp-item:hover  { background: #23242e; }
+.lp-item.active { color: #fff; background: rgba(91,108,255,.12); }
+.lp-check { width: 12px; color: #5b6cff; font-size: 11px; flex-shrink: 0; }
+.lp-name  { flex: 1; }

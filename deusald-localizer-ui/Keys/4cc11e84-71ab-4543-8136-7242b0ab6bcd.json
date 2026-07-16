@@ -1,0 +1,33 @@
+{
+  "Id": "4cc11e84-71ab-4543-8136-7242b0ab6bcd",
+  "CategoryId": "55d39161-3461-4f3a-8e53-91f35c3f12ca",
+  "KeyName": "placeholdersHint",
+  "Description": "Hint that placeholder tokens are supported in the text",
+  "CreatedAt": "2026-07-16T12:48:41.5579734Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5579741Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "748cd6a4-d4a8-4d40-8277-6fa5126745ce",
+      "Name": "placeholders",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "{name}"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ef3f31cb7018dc53c1efb4f9694f4cad66cf0f7d998b13e35a37a083079147e7",
+      "Text": "{placeholders} supported",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5579772Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

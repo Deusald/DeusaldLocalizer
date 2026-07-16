@@ -1,0 +1,25 @@
+{
+  "Id": "862341bc-7494-437e-acaf-212eff5a3228",
+  "CategoryId": "8e09b7d9-6f39-43ce-9e26-89f6748618eb",
+  "KeyName": "titleLastUpdated",
+  "Description": "Tooltip on the key last-updated date.",
+  "CreatedAt": "2026-07-16T12:48:41.5576764Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5576771Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "382ac5f308f76c24b2c981e2041943bc2be2229cbd285ad362b9af1cfc386ef8",
+      "Text": "Last updated",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5576836Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

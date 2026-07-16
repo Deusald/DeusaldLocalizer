@@ -1,0 +1,25 @@
+{
+  "Id": "9a80d7d1-4d7e-4c0d-b0ad-7d022e40fb65",
+  "CategoryId": "30585d1a-f1da-488a-ab89-97f090f732f4",
+  "KeyName": "deleteConfirm",
+  "Description": "Confirm button in the delete-confirmation dialog (web).",
+  "CreatedAt": "2026-07-16T12:29:28.0793527Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5564349Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "280b10c89cc41d57a7524b447e4c510949a5b0b07d88670d602a0513e1e7ad61",
+      "Text": "Delete permanently",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5564466Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "94fcd0bd-7ff7-40d4-9632-b145ceef2aef",
+  "CategoryId": "55d39161-3461-4f3a-8e53-91f35c3f12ca",
+  "KeyName": "reset",
+  "Description": "Button that reverts the draft to the saved text",
+  "CreatedAt": "2026-07-16T12:48:41.5581183Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5581196Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "daee7606b339f3c339076fe2c9f372a3ff40c8ee896005d829c7481b64ca5303",
+      "Text": "Reset",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5581279Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

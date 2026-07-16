@@ -1,4 +1,5 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -7,8 +8,8 @@
     <div class="modal-box" @onclick:stopPropagation="true">
 
         <div class="modal-header">
-            <span class="modal-title">New project</span>
-            <button class="modal-close" @onclick="Cancel" title="Close">
+            <span class="modal-title">@Loc.T(Localization.Common.NewProject.title)</span>
+            <button class="modal-close" @onclick="Cancel" title="@Loc.T(Localization.Common.Buttons.close)">
                 <i class="bi bi-x-lg"></i>
             </button>
         </div>
@@ -17,7 +18,7 @@
 
             @* ── Project name ──────────────────────────────────────────── *@
             <div class="modal-field">
-                <label class="modal-label">Project name</label>
+                <label class="modal-label">@Loc.T(Localization.Common.NewProject.projectNameLabel)</label>
                 <input class="modal-input"
                        type="text"
                        placeholder="My Awesome Game"
@@ -29,8 +30,8 @@
             @* ── Slug ──────────────────────────────────────────────────── *@
             <div class="modal-field">
                 <label class="modal-label">
-                    Slug
-                    <span class="modal-label-hint">used in file names and APIs</span>
+                    @Loc.T(Localization.Common.NewProject.slugLabel)
+                    <span class="modal-label-hint">@Loc.T(Localization.Common.NewProject.slugHint)</span>
                 </label>
                 <input class="modal-input modal-input-mono"
                        type="text"
@@ -40,19 +41,19 @@
                        maxlength="80"/>
                 @if (!string.IsNullOrEmpty(_Slug) && !IsValidSlug(_Slug))
                 {
-                    <div class="modal-field-error">Only lowercase letters, numbers and hyphens</div>
+                    <div class="modal-field-error">@Loc.T(Localization.Common.NewProject.invalidSlug)</div>
                 }
             </div>
 
             @* ── Main language ─────────────────────────────────────────── *@
             <div class="modal-field @(_LangOpen ? "modal-field-grow" : "")">
-                <label class="modal-label">Main language</label>
+                <label class="modal-label">@Loc.T(Localization.Common.NewProject.mainLanguageLabel)</label>
                 <div class="modal-lang-picker">
                     <div class="modal-lang-search-wrap">
                         <i class="bi bi-search modal-lang-search-icon"></i>
                         <input class="modal-input modal-lang-search"
                                type="text"
-                               placeholder="Search language…"
+                               placeholder="@Loc.T(Localization.Common.NewProject.searchLanguagePlaceholder)"
                                @bind="_LangQuery"
                                @bind:event="oninput"
                                @onfocus="() => _LangOpen = true"
@@ -71,7 +72,7 @@
                             @{ var results = CultureService.Search(_LangQuery); }
                             @if (results.Count == 0)
                             {
-                                <div class="modal-lang-empty">No languages found</div>
+                                <div class="modal-lang-empty">@Loc.T(Localization.Common.NewProject.noLanguagesFound)</div>
                             }
                             else
                             {
@@ -102,11 +103,11 @@
             {
                 <div class="modal-field">
                     <label class="modal-label">
-                        Description
-                        <span class="modal-label-hint">optional</span>
+                        @Loc.T(Localization.Common.NewProject.descriptionLabel)
+                        <span class="modal-label-hint">@Loc.T(Localization.Common.NewProject.descriptionHint)</span>
                     </label>
                     <textarea class="modal-input modal-textarea"
-                              placeholder="A short description of the project…"
+                              placeholder="@Loc.T(Localization.Common.NewProject.descriptionPlaceholder)"
                               @bind="_Description"
                               @bind:event="oninput"
                               rows="2"
@@ -117,11 +118,11 @@
         </div>
 
         <div class="modal-footer">
-            <button class="modal-btn modal-btn-ghost" @onclick="Cancel">Cancel</button>
+            <button class="modal-btn modal-btn-ghost" @onclick="Cancel">@Loc.T(Localization.Common.Buttons.cancel)</button>
             <button class="modal-btn modal-btn-primary"
                     @onclick="Confirm"
                     disabled="@(!_CanConfirm)">
-                Create project
+                @Loc.T(Localization.Common.NewProject.createButton)
             </button>
         </div>
 

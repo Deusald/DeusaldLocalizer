@@ -1,0 +1,33 @@
+{
+  "Id": "75f5520d-caf9-4371-a58d-a3a1231aaf8d",
+  "CategoryId": "acf8559f-68d0-4fad-8a1f-17ebe5c6afc8",
+  "KeyName": "minutesAgo",
+  "Description": "Compact relative time in minutes.",
+  "CreatedAt": "2026-07-16T12:48:41.5599127Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5599134Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "d5185395-9e8d-4b5d-936d-c27a191f8261",
+      "Name": "count",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "5"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ecf2525a4f9581e3849e64fa0ac0d9a0ba108f61b43fd299353acd0676e20acb",
+      "Text": "{count}m",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5599168Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

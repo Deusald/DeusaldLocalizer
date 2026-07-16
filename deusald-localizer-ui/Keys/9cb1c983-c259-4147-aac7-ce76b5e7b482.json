@@ -1,0 +1,25 @@
+{
+  "Id": "9cb1c983-c259-4147-aac7-ce76b5e7b482",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "tagsColumnLabel",
+  "Description": "Checkbox label to add a tags column to the Excel export.",
+  "CreatedAt": "2026-07-16T12:48:41.560858Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5608587Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "68abd83afa2e9b99424adaa90e164c4377266d002d075aa502bce04c4f49c31a",
+      "Text": "Add a Tags column listing each key's tags",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5608611Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

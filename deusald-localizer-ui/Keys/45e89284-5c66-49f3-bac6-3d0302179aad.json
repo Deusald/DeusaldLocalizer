@@ -1,0 +1,25 @@
+{
+  "Id": "45e89284-5c66-49f3-bac6-3d0302179aad",
+  "CategoryId": "9dc99630-09e1-4188-8d05-b279fbb54584",
+  "KeyName": "noCategoriesFound",
+  "Description": "Empty state when no categories match the search.",
+  "CreatedAt": "2026-07-16T12:48:41.5576074Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5576081Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "f66ce16e7e23aeff03b12a999d84af8b8ffc430a8743e04b2ce1697de957fc12",
+      "Text": "No categories found. Create one from the Keys column first.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5576102Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

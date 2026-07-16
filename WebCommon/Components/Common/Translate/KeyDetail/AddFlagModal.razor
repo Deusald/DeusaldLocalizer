@@ -1,5 +1,6 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -7,13 +8,13 @@
 
     <div class="afm-box" @onclick:stopPropagation="true">
         <div class="afm-header">
-            <span class="afm-title">Add flag</span>
+            <span class="afm-title">@Loc.T(Localization.Translate.KeyDetail.AddFlag.addFlag)</span>
             <button class="afm-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
         </div>
 
         <div class="afm-body">
             <div class="afm-field">
-                <label class="afm-label">Flag type</label>
+                <label class="afm-label">@Loc.T(Localization.Translate.KeyDetail.AddFlag.labelFlagType)</label>
                 <div class="afm-types">
                     @foreach (FlagType type in EnumExtensions.IterateAllValues<FlagType>())
                     {
@@ -27,15 +28,15 @@
             </div>
 
             <div class="afm-field">
-                <label class="afm-label">Note <span class="afm-label-hint">optional</span></label>
-                <textarea class="afm-input" placeholder="Why is this flagged…"
+                <label class="afm-label">@Loc.T(Localization.Translate.KeyDetail.AddFlag.labelNote) <span class="afm-label-hint">@Loc.T(Localization.Translate.KeyDetail.AddFlag.hintOptional)</span></label>
+                <textarea class="afm-input" placeholder="@Loc.T(Localization.Translate.KeyDetail.AddFlag.placeholderNote)"
                           @bind="_Note" @bind:event="oninput" rows="3" maxlength="300"></textarea>
             </div>
         </div>
 
         <div class="afm-footer">
-            <button class="afm-btn afm-btn-ghost" @onclick="Close">Cancel</button>
-            <button class="afm-btn afm-btn-primary" @onclick="Confirm" disabled="@(_Selected == null)">Add flag</button>
+            <button class="afm-btn afm-btn-ghost" @onclick="Close">@Loc.T(Localization.Common.Buttons.cancel)</button>
+            <button class="afm-btn afm-btn-primary" @onclick="Confirm" disabled="@(_Selected == null)">@Loc.T(Localization.Translate.KeyDetail.AddFlag.addFlag)</button>
         </div>
     </div>
 }
@@ -76,13 +77,13 @@
         OnAdded.InvokeAsync();
     }
 
-    private static string FlagLabel(FlagType type) => type switch
+    private string FlagLabel(FlagType type) => type switch
     {
-        FlagType.NeedsReview    => "Needs review",
-        FlagType.Outdated       => "Outdated",
-        FlagType.DoNotTranslate => "Do not translate",
-        FlagType.InProgress     => "In progress",
-        FlagType.Disputed       => "Disputed",
+        FlagType.NeedsReview    => Loc.T(Localization.Translate.KeyDetail.AddFlag.flagNeedsReview),
+        FlagType.Outdated       => Loc.T(Localization.Translate.KeyDetail.AddFlag.flagOutdated),
+        FlagType.DoNotTranslate => Loc.T(Localization.Translate.KeyDetail.AddFlag.flagDoNotTranslate),
+        FlagType.InProgress     => Loc.T(Localization.Translate.KeyDetail.AddFlag.flagInProgress),
+        FlagType.Disputed       => Loc.T(Localization.Translate.KeyDetail.AddFlag.flagDisputed),
         _                       => type.ToString(),
     };
 

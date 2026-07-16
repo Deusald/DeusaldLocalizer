@@ -1,5 +1,6 @@
 @namespace DeusaldLocalizerWeb.Components.Common
-@inject ProjectStateService _ProjectState
+@inject ProjectStateService  _ProjectState
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -8,17 +9,17 @@
     <div class="um-box" @onclick:stopPropagation="true">
 
         <div class="um-header">
-            <span class="um-title">Collaborators</span>
+            <span class="um-title">@Loc.T(Localization.Translate.TopBar.Users.collaborators)</span>
             <button class="um-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
         </div>
 
         <div class="um-section">
             <div class="um-section-header">
-                <span class="um-section-label">Members (@_ProjectState.CurrentProject!.ProjectMembers.Count)</span>
+                <span class="um-section-label">@Loc.T(Localization.Translate.TopBar.Users.members) (@_ProjectState.CurrentProject!.ProjectMembers.Count)</span>
                 @if (_IsAdmin && !_FormOpen)
                 {
                     <button class="um-btn um-btn-primary um-btn-sm" @onclick="StartAdd">
-                        <i class="bi bi-plus-lg"></i> Add member
+                        <i class="bi bi-plus-lg"></i> @Loc.T(Localization.Translate.TopBar.Users.addMember)
                     </button>
                 }
             </div>
@@ -26,21 +27,21 @@
             @if (_FormOpen)
             {
                 <div class="um-form">
-                    <div class="um-form-title">@(_EditingMember == null ? "Add member" : "Edit member")</div>
+                    <div class="um-form-title">@(_EditingMember == null ? Loc.T(Localization.Translate.TopBar.Users.addMember) : Loc.T(Localization.Translate.TopBar.Users.editMember))</div>
 
                     <div class="um-field">
-                        <label class="um-label">Username</label>
-                        <input class="um-input" type="text" placeholder="jane.doe"
+                        <label class="um-label">@Loc.T(Localization.Translate.TopBar.Users.username)</label>
+                        <input class="um-input" type="text" placeholder="@Loc.T(Localization.Translate.TopBar.Users.usernamePlaceholder)"
                                @bind="_Username" @bind:event="oninput" maxlength="60"/>
                     </div>
 
                     <div class="um-field">
                         <label class="um-label">
-                            Review languages <span class="um-label-hint">languages this member can review</span>
+                            @Loc.T(Localization.Translate.TopBar.Users.reviewLanguages) <span class="um-label-hint">@Loc.T(Localization.Translate.TopBar.Users.reviewLanguagesHint)</span>
                         </label>
                         @if (_ProjectState.CurrentProject.Metadata.Languages.Count == 0)
                         {
-                            <div class="um-empty">This project has no languages yet.</div>
+                            <div class="um-empty">@Loc.T(Localization.Translate.TopBar.Users.noLanguagesYet)</div>
                         }
                         else
                         {
@@ -63,16 +64,16 @@
                         <div class="um-field">
                             <label class="um-ban-toggle">
                                 <input type="checkbox" @bind="_IsBanned"/>
-                                <span>Banned <span class="um-label-hint">blocks this member from contributing</span></span>
+                                <span>@Loc.T(Localization.Translate.TopBar.Users.banned) <span class="um-label-hint">@Loc.T(Localization.Translate.TopBar.Users.bannedHint)</span></span>
                             </label>
                         </div>
                     }
 
                     <div class="um-form-footer">
-                        <button class="um-btn um-btn-ghost" @onclick="CloseForm">Cancel</button>
+                        <button class="um-btn um-btn-ghost" @onclick="CloseForm">@Loc.T(Localization.Common.Buttons.cancel)</button>
                         <button class="um-btn um-btn-primary" @onclick="Confirm"
                                 disabled="@(string.IsNullOrWhiteSpace(_Username))">
-                            @(_EditingMember == null ? "Add member" : "Save changes")
+                            @(_EditingMember == null ? Loc.T(Localization.Translate.TopBar.Users.addMember) : Loc.T(Localization.Translate.TopBar.Users.saveChanges))
                         </button>
                     </div>
                 </div>
@@ -89,7 +90,7 @@
             <div class="um-member-list">
                 @if (_ProjectState.CurrentProject.ProjectMembers.Count == 0)
                 {
-                    <div class="um-empty">No members yet.</div>
+                    <div class="um-empty">@Loc.T(Localization.Translate.TopBar.Users.noMembersYet)</div>
                 }
                 @foreach (LocProjectMember member in _ProjectState.CurrentProject.ProjectMembers)
                 {
@@ -104,15 +105,15 @@
                                 @member.Username
                                 @if (isSelf)
                                 {
-                                    <span class="um-member-you">you</span>
+                                    <span class="um-member-you">@Loc.T(Localization.Translate.TopBar.Users.you)</span>
                                 }
                                 @if (member.IsAdmin)
                                 {
-                                    <span class="um-member-badge um-badge-admin">admin</span>
+                                    <span class="um-member-badge um-badge-admin">@Loc.T(Localization.Translate.TopBar.Users.admin)</span>
                                 }
                                 @if (member.IsBanned)
                                 {
-                                    <span class="um-member-badge um-badge-banned">banned</span>
+                                    <span class="um-member-badge um-badge-banned">@Loc.T(Localization.Translate.TopBar.Users.bannedBadge)</span>
                                 }
                             </div>
                             <div class="um-perm-readonly">@PermissionsSummary(member)</div>
@@ -122,32 +123,32 @@
                             @if (_PendingDeleteId == member.UserId)
                             {
                                 <span class="um-delete-confirm">
-                                    <span>Delete @member.Username?</span>
-                                    <button class="um-confirm-yes" @onclick="() => ConfirmDelete(member)">Delete</button>
-                                    <button class="um-confirm-no" @onclick="() => _PendingDeleteId = null">Cancel</button>
+                                    <span>@Loc.T(Localization.Translate.TopBar.Users.deleteMemberConfirm, new Dictionary<string, object> { ["name"] = member.Username })</span>
+                                    <button class="um-confirm-yes" @onclick="() => ConfirmDelete(member)">@Loc.T(Localization.Common.Buttons.delete)</button>
+                                    <button class="um-confirm-no" @onclick="() => _PendingDeleteId = null">@Loc.T(Localization.Common.Buttons.cancel)</button>
                                 </span>
                             }
                             else
                             {
                                 @if (isSelf && !member.IsOfflineUser)
                                 {
-                                    <button class="um-edit-btn" title="Regenerate my access token"
+                                    <button class="um-edit-btn" title="@Loc.T(Localization.Translate.TopBar.Users.regenerateMyToken)"
                                             @onclick="RegenerateToken">
                                         <i class="bi bi-arrow-repeat"></i>
                                     </button>
                                 }
                                 @if (_IsAdmin && !isSelf)
                                 {
-                                    <button class="um-edit-btn" title="Edit member" @onclick="() => StartEdit(member)">
+                                    <button class="um-edit-btn" title="@Loc.T(Localization.Translate.TopBar.Users.editMember)" @onclick="() => StartEdit(member)">
                                         <i class="bi bi-pencil"></i>
                                     </button>
                                     @if (!member.IsOfflineUser)
                                     {
-                                        <button class="um-edit-btn" title="Reset access token"
+                                        <button class="um-edit-btn" title="@Loc.T(Localization.Translate.TopBar.Users.resetAccessToken)"
                                                 @onclick="() => ResetToken(member)">
                                             <i class="bi bi-key"></i>
                                         </button>
-                                        <button class="um-edit-btn um-delete-btn" title="Delete member"
+                                        <button class="um-edit-btn um-delete-btn" title="@Loc.T(Localization.Translate.TopBar.Users.deleteMember)"
                                                 @onclick="() => _PendingDeleteId = member.UserId">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -164,32 +165,32 @@
         {
             <div class="um-section um-maint-section">
                 <div class="um-section-header">
-                    <span class="um-section-label">Comment maintenance</span>
+                    <span class="um-section-label">@Loc.T(Localization.Translate.TopBar.Users.commentMaintenance)</span>
                 </div>
 
-                <p class="um-maint-hint">Delete every comment (on keys, translations and suggestions) older than the chosen age.</p>
+                <p class="um-maint-hint">@Loc.T(Localization.Translate.TopBar.Users.commentMaintenanceHint)</p>
 
                 <div class="um-maint-row">
                     <input class="um-input um-maint-amount" type="number" min="1" max="999"
                            @bind="_ClearAmount" @bind:event="oninput"/>
                     <select class="um-input um-maint-unit" @bind="_ClearUnit">
-                        <option value="Days">days</option>
-                        <option value="Months">months</option>
+                        <option value="Days">@Loc.T(Localization.Translate.TopBar.Users.days)</option>
+                        <option value="Months">@Loc.T(Localization.Translate.TopBar.Users.months)</option>
                     </select>
 
                     @if (_ConfirmClear)
                     {
                         <span class="um-delete-confirm">
-                            <span>Clear @_ClearAmount @(_ClearUnit == "Months" ? "month" : "day")@(_ClearAmount == 1 ? "" : "s")+ old comments?</span>
-                            <button class="um-confirm-yes" @onclick="ClearOldComments">Clear</button>
-                            <button class="um-confirm-no" @onclick="() => _ConfirmClear = false">Cancel</button>
+                            <span>@Loc.T(Localization.Translate.TopBar.Users.clearConfirmPrefix) @_ClearAmount @(_ClearUnit == "Months" ? Loc.T(Localization.Translate.TopBar.Users.month) : Loc.T(Localization.Translate.TopBar.Users.day))@(_ClearAmount == 1 ? "" : "s")@Loc.T(Localization.Translate.TopBar.Users.clearConfirmSuffix)</span>
+                            <button class="um-confirm-yes" @onclick="ClearOldComments">@Loc.T(Localization.Common.Buttons.clear)</button>
+                            <button class="um-confirm-no" @onclick="() => _ConfirmClear = false">@Loc.T(Localization.Common.Buttons.cancel)</button>
                         </span>
                     }
                     else
                     {
                         <button class="um-btn um-btn-primary um-btn-sm" @onclick="() => { _ConfirmClear = true; _ClearResult = null; }"
                                 disabled="@(_ClearAmount < 1)">
-                            <i class="bi bi-trash"></i> Clear old comments
+                            <i class="bi bi-trash"></i> @Loc.T(Localization.Translate.TopBar.Users.clearOldComments)
                         </button>
                     }
                 </div>
@@ -238,8 +239,8 @@
 
         int cleared = _ProjectState.ClearCommentsOlderThan(cutoff);
         _ClearResult = cleared == 0
-                           ? "No comments were old enough to clear."
-                           : $"Cleared {cleared} comment{(cleared == 1 ? "" : "s")}.";
+                           ? Loc.T(Localization.Translate.TopBar.Users.noCommentsOldEnough)
+                           : Loc.T(Localization.Translate.TopBar.Users.clearedComments, new Dictionary<string, object> { ["count"] = cleared });
     }
 
     private void ConfirmDelete(LocProjectMember member)
@@ -324,9 +325,8 @@
             _ProjectState.RecordMemberAdded(member);
 
             CloseForm();
-            _AccessTokenModal?.Show(initialToken, "Member sign-in token",
-                $"Share this one-time token with {name} over a secure channel. " +
-                "They'll sign in with it once and then set their own token.");
+            _AccessTokenModal?.Show(initialToken, Loc.T(Localization.Translate.TopBar.Users.memberSignInTokenTitle),
+                Loc.T(Localization.Translate.TopBar.Users.memberSignInTokenBody, new Dictionary<string, object> { ["name"] = name }));
             return;
         }
 
@@ -361,13 +361,13 @@
 
         if (result.RawToken == null)
         {
-            _TokenError = result.Error ?? "Could not regenerate your token. Please try again.";
+            _TokenError = result.Error ?? Loc.T(Localization.Translate.TopBar.Users.couldNotRegenerateToken);
             StateHasChanged();
             return;
         }
 
-        _AccessTokenModal?.Show(result.RawToken, "New access token",
-            "Your previous token no longer works. Copy this one and keep it safe — you'll use it to sign in from now on.");
+        _AccessTokenModal?.Show(result.RawToken, Loc.T(Localization.Translate.TopBar.Users.newAccessTokenTitle),
+            Loc.T(Localization.Translate.TopBar.Users.newAccessTokenBody));
     }
 
     /// <summary>Admin resets a member to a fresh random one-time token they must rotate on next sign-in.</summary>
@@ -380,9 +380,8 @@
         _ProjectState.RecordMemberAccessTokenChanged(member);
         _ProjectState.RecordMemberMustResetChanged(member);
 
-        _AccessTokenModal?.Show(newToken, "Access token reset",
-            $"{member.Username}'s token was reset. Share this one-time token with them over a secure channel; " +
-            "they'll sign in with it once and then set their own.");
+        _AccessTokenModal?.Show(newToken, Loc.T(Localization.Translate.TopBar.Users.accessTokenResetTitle),
+            Loc.T(Localization.Translate.TopBar.Users.accessTokenResetBody, new Dictionary<string, object> { ["name"] = member.Username }));
     }
 
     // ── Display helpers ──────────────────────────────────────────────────────
@@ -405,10 +404,10 @@
         return $"{disp.Flag} {disp.Name}";
     }
 
-    private static string PermissionsSummary(LocProjectMember member)
+    private string PermissionsSummary(LocProjectMember member)
     {
-        if (member.IsAdmin) return "Admin — full access";
-        if (member.ReviewLanguagePermissions.Count == 0) return "No review languages";
+        if (member.IsAdmin) return Loc.T(Localization.Translate.TopBar.Users.adminFullAccess);
+        if (member.ReviewLanguagePermissions.Count == 0) return Loc.T(Localization.Translate.TopBar.Users.noReviewLanguages);
         return string.Join(", ", member.ReviewLanguagePermissions.Select(LangLabel));
     }
 

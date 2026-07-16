@@ -1,0 +1,25 @@
+{
+  "Id": "2ca1517c-3ba3-4dac-8f6a-21ca589b81e6",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "selectAll",
+  "Description": "Link button that selects all languages.",
+  "CreatedAt": "2026-07-16T12:48:41.5608929Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5608936Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "1fc9a387654d410febd202b81bddbe62d38368260b69b9f73ee6630164536bdf",
+      "Text": "Select all",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5608956Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

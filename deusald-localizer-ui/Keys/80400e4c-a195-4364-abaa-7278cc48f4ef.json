@@ -1,0 +1,25 @@
+{
+  "Id": "80400e4c-a195-4364-abaa-7278cc48f4ef",
+  "CategoryId": "dfd57dc6-94be-4540-b323-8ee6ac2cf59d",
+  "KeyName": "live",
+  "Description": "Preview-mode toggle label for live draft preview",
+  "CreatedAt": "2026-07-16T12:48:41.5582247Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5582253Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "b64ac05f17e64d037db81a98f51e2688216e292ae9748f979f04dfbac49fd7fc",
+      "Text": "Live",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5582272Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "ecf3b9f8-7308-4101-acef-1b8a096306fa",
+  "CategoryId": "e5dd6621-26f3-4232-95a7-2c6133936853",
+  "KeyName": "noTags",
+  "Description": "Empty-state shown when a key has no tags.",
+  "CreatedAt": "2026-07-16T12:48:41.557834Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5578415Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "147e6bba4382967505b88e720b211ff39956c100e6c9e0b25aa3dcea88332572",
+      "Text": "No tags",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5578437Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

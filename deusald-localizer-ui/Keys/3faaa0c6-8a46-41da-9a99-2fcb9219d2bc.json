@@ -1,0 +1,25 @@
+{
+  "Id": "3faaa0c6-8a46-41da-9a99-2fcb9219d2bc",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "done",
+  "Description": "Footer button to close the import modal.",
+  "CreatedAt": "2026-07-16T12:48:41.5606163Z",
+  "UpdatedAt": "2026-07-16T12:48:41.560617Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516",
+      "Text": "Done",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.560623Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

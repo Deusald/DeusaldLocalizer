@@ -1,0 +1,64 @@
+@namespace DeusaldLocalizerWeb.Components.Common
+@implements IDisposable
+@inject UiLocalizationService Loc
+
+@* Compact UI-language switcher. Hidden until the generated data carries more than one language,
+   so it only appears once the app itself has been translated into a second language. *@
+@if (_Languages.Count > 1)
+{
+    <div class="lp-root">
+        <button class="lp-btn" @onclick="Toggle" @onclick:stopPropagation="true" title="@_CurrentLabel">
+            <i class="bi bi-translate"></i>
+            <span class="lp-code">@Loc.CurrentLanguage</span>
+            <i class="bi bi-chevron-down lp-caret"></i>
+        </button>
+
+        @if (_Open)
+        {
+            <div class="lp-backdrop" @onclick="Close"></div>
+            <div class="lp-menu" @onclick:stopPropagation="true">
+                @foreach (string lang in _Languages)
+                {
+                    string lg = lang;
+                    <button class="lp-item @(lg == Loc.CurrentLanguage ? "active" : "")" @onclick="() => Pick(lg)">
+                        <span class="lp-check">@(lg == Loc.CurrentLanguage ? "✓" : "")</span>
+                        <span class="lp-name">@Label(lg)</span>
+                    </button>
+                }
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private bool _Open;
+
+    private IReadOnlyList<string> _Languages => Loc.AvailableLanguages;
+
+    private string _CurrentLabel => Label(Loc.CurrentLanguage);
+
+    protected override void OnInitialized() => Loc.CultureChanged += OnCultureChanged;
+
+    private void OnCultureChanged() => InvokeAsync(StateHasChanged);
+
+    private void Toggle() => _Open = !_Open;
+
+    private void Close() => _Open = false;
+
+    private void Pick(string lang)
+    {
+        _Open = false;
+        Loc.SetLanguage(lang);
+    }
+
+    private static string Label(string code)
+    {
+        CultureService.SplitVariant(code, out string baseCode, out string? variant);
+        CultureEntry? entry = CultureService.FindByCode(baseCode);
+        string        name  = entry?.EnglishName ?? baseCode;
+        if (variant != null) name = $"{name} · {variant}";
+        return $"{name} ({code})";
+    }
+
+    public void Dispose() => Loc.CultureChanged -= OnCultureChanged;
+}

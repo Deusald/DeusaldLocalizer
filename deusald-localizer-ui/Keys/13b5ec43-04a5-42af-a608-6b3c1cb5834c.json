@@ -1,0 +1,25 @@
+{
+  "Id": "13b5ec43-04a5-42af-a608-6b3c1cb5834c",
+  "CategoryId": "c5c73cc7-4494-470a-bcfc-ef45e25e0957",
+  "KeyName": "keepServerHint",
+  "Description": "Hint explaining the Keep server option",
+  "CreatedAt": "2026-07-16T12:48:41.5586407Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5586414Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "7f9e40347352b0f88c68e966267c3eb74718983ae14562482912cc3f63c82a3c",
+      "Text": "— discard your edit.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5586434Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

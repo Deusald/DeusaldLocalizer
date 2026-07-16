@@ -1,0 +1,25 @@
+{
+  "Id": "4ac28dc1-93e2-4834-9ad5-a40b3b4bfbb9",
+  "CategoryId": "2bae53f6-dd89-4848-9852-03b36cde096b",
+  "KeyName": "otherChanges",
+  "Description": "Section label for changes not tied to a key.",
+  "CreatedAt": "2026-07-16T12:48:41.5602785Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5602792Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "49286a792fd970f0a08c8e52a7520b53cf30f22d265f71a6d6b13538d93b7a1c",
+      "Text": "Other changes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5602811Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

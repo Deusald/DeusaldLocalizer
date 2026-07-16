@@ -1,0 +1,25 @@
+{
+  "Id": "24840b51-779e-4efc-b1f8-aa4704120a88",
+  "CategoryId": "2bae53f6-dd89-4848-9852-03b36cde096b",
+  "KeyName": "intro",
+  "Description": "Intro paragraph above the recent changes list.",
+  "CreatedAt": "2026-07-16T12:48:41.5602669Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5602675Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ef78faa78b3ec8a86861a0756e52447e2bb488a009c06f63ab061a13cc4e7a2c",
+      "Text": "These are the changes the last sync pulled in from the server. Click a key to open it.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5602695Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

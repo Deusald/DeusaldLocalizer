@@ -1,0 +1,25 @@
+{
+  "Id": "a5c2de6d-d563-4e73-bc11-99327dfe7373",
+  "CategoryId": "2c815bf8-7ba9-4641-a921-c0b38f3e5e84",
+  "KeyName": "newCategory",
+  "Description": "Modal title when creating a category.",
+  "CreatedAt": "2026-07-16T12:48:41.557424Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5574247Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "1ab1e121c0df65a86d7a6e14bc46983628befe01585b8cc25ee229315f906f98",
+      "Text": "New category",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5574266Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

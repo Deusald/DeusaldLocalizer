@@ -1,0 +1,25 @@
+{
+  "Id": "f45772dd-b1d6-4cf1-a539-582f42680f60",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "errLogin",
+  "Description": "Login error on the desktop sign-in modal.",
+  "CreatedAt": "2026-07-16T12:29:28.079524Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5566917Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "551ced940b39dd5beaf4d2da05fcf0ec6288983a4c42b84fb3c90fd7b1ee6584",
+      "Text": "Username or access token is incorrect.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5566956Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "c4ba5b89-bef3-440d-855f-4d8761019d4e",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "opening",
+  "Description": "Busy label on the open-project button (desktop).",
+  "CreatedAt": "2026-07-16T12:29:28.0794599Z",
+  "UpdatedAt": "2026-07-16T12:48:41.556601Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c926c2c50e65d5a5799f548604472ee8554b53c376e45be580b3a06a484d8fc0",
+      "Text": "Opening…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5566046Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

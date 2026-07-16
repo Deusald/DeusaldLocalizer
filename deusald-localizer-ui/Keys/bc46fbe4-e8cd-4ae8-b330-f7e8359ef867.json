@@ -1,0 +1,33 @@
+{
+  "Id": "bc46fbe4-e8cd-4ae8-b330-f7e8359ef867",
+  "CategoryId": "8e09b7d9-6f39-43ce-9e26-89f6748618eb",
+  "KeyName": "commentsLabel",
+  "Description": "Header label for the translation comments thread of the selected language.",
+  "CreatedAt": "2026-07-16T12:48:41.5577087Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5577094Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "c41944e3-e4c5-420d-b57d-670f75d01fd0",
+      "Name": "language",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "en"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a6723ba473a2ec5f2081f34598162c143768285088f9986b506090e27f88bd48",
+      "Text": "Comments · {language}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5577127Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

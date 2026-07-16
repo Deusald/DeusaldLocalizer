@@ -1,5 +1,6 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -8,7 +9,7 @@
     <div class="nkm-box" @onclick="CloseCatDropdownIfOpen" @onclick:stopPropagation="true">
 
         <div class="nkm-header">
-            <span class="nkm-title">@(_EditingKey == null ? "New key" : "Edit key")</span>
+            <span class="nkm-title">@(_EditingKey == null ? Loc.T(Localization.Translate.Keys.NewKey.newKey) : Loc.T(Localization.Translate.Keys.NewKey.editKey))</span>
             <button class="nkm-close" @onclick="Cancel"><i class="bi bi-x-lg"></i></button>
         </div>
 
@@ -19,8 +20,8 @@
                 <div class="nkm-warning">
                     <i class="bi bi-exclamation-triangle nkm-warning-icon"></i>
                     <div class="nkm-warning-text">
-                        <span class="nkm-warning-title">No categories yet</span>
-                        A key must belong to a category. Create at least one category from the Keys column before adding a key.
+                        <span class="nkm-warning-title">@Loc.T(Localization.Translate.Keys.NewKey.noCategoriesYet)</span>
+                        @Loc.T(Localization.Translate.Keys.NewKey.mustBelongToCategory)
                     </div>
                 </div>
             }
@@ -28,23 +29,23 @@
             {
                 <div class="nkm-field">
                     <label class="nkm-label">
-                        Key name
-                        <span class="nkm-label-hint">letters, numbers and underscore only</span>
+                        @Loc.T(Localization.Translate.Keys.NewKey.keyName)
+                        <span class="nkm-label-hint">@Loc.T(Localization.Translate.Keys.NewKey.keyNameHint)</span>
                     </label>
-                    <input class="nkm-input nkm-input-mono" type="text" placeholder="button_save"
+                    <input class="nkm-input nkm-input-mono" type="text" placeholder="@Loc.T(Localization.Translate.Keys.NewKey.keyNamePlaceholder)"
                            @bind="_KeyName" @bind:event="oninput" maxlength="120"/>
                     @if (!string.IsNullOrEmpty(_KeyName) && !IsValidKeyName(_KeyName))
                     {
-                        <div class="nkm-field-error">Only letters, numbers and "_" are allowed</div>
+                        <div class="nkm-field-error">@Loc.T(Localization.Translate.Keys.NewKey.invalidKeyName)</div>
                     }
                     else if (_IsDuplicateKey)
                     {
-                        <div class="nkm-field-error">A key with this name already exists in this category</div>
+                        <div class="nkm-field-error">@Loc.T(Localization.Translate.Keys.NewKey.duplicateKey)</div>
                     }
                 </div>
 
                 <div class="nkm-field nkm-field-grow">
-                    <label class="nkm-label">Category</label>
+                    <label class="nkm-label">@Loc.T(Localization.Translate.Keys.NewKey.category)</label>
                     <div class="nkm-cat-picker" @onclick:stopPropagation="true">
                         <div class="nkm-cat-search-wrap">
                             @if (_SelectedCategory != null && !_CatOpen)
@@ -63,7 +64,7 @@
                             {
                                 <i class="bi bi-search nkm-cat-search-icon"></i>
                                 <input class="nkm-input nkm-cat-search" type="text"
-                                       placeholder="Search category…"
+                                       placeholder="@Loc.T(Localization.Translate.Keys.NewKey.searchCategory)"
                                        @bind="_CatQuery" @bind:event="oninput"
                                        @onfocus="() => _CatOpen = true"
                                        @onblur="OnCatBlur"/>
@@ -76,7 +77,7 @@
                                 @{ List<LocCategory> results = _FilteredCategories; }
                                 @if (results.Count == 0)
                                 {
-                                    <div class="nkm-cat-empty">No categories found. Create one from the Keys column first.</div>
+                                    <div class="nkm-cat-empty">@Loc.T(Localization.Translate.Keys.NewKey.noCategoriesFound)</div>
                                 }
                                 else
                                 {
@@ -104,15 +105,15 @@
                 {
                     <div class="nkm-field">
                         <label class="nkm-label">
-                            Max length
-                            <span class="nkm-label-hint">0 = no limit</span>
+                            @Loc.T(Localization.Translate.Keys.NewKey.maxLength)
+                            <span class="nkm-label-hint">@Loc.T(Localization.Translate.Keys.NewKey.maxLengthHint)</span>
                         </label>
                         <input class="nkm-input" type="number" min="0" max="10000" placeholder="0"
                                @bind="_MaxLength" @bind:event="oninput"/>
                     </div>
 
                     <div class="nkm-preview">
-                        <span class="nkm-preview-label">Full key</span>
+                        <span class="nkm-preview-label">@Loc.T(Localization.Translate.Keys.NewKey.fullKey)</span>
                         <code class="nkm-preview-value">@_PreviewFullKey</code>
                     </div>
                 }
@@ -121,11 +122,11 @@
         </div>
 
         <div class="nkm-footer">
-            <button class="nkm-btn nkm-btn-ghost" @onclick="Cancel">@(_NoCategories ? "Close" : "Cancel")</button>
+            <button class="nkm-btn nkm-btn-ghost" @onclick="Cancel">@(_NoCategories ? Loc.T(Localization.Common.Buttons.close) : Loc.T(Localization.Common.Buttons.cancel))</button>
             @if (!_NoCategories)
             {
                 <button class="nkm-btn nkm-btn-primary" @onclick="Confirm" disabled="@(!_CanConfirm)">
-                    @(_EditingKey == null ? "Create key" : "Save changes")
+                    @(_EditingKey == null ? Loc.T(Localization.Translate.Keys.NewKey.createKey) : Loc.T(Localization.Translate.Keys.NewKey.saveChanges))
                 </button>
             }
         </div>

@@ -1,5 +1,6 @@
 @namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 <div class="tff-root">
 
@@ -15,11 +16,11 @@
     {
         <div class="tff-panel">
             <div class="tff-panel-header">
-                <span class="tff-panel-title">Filter by flag &amp; tag</span>
+                <span class="tff-panel-title">@Loc.T(Localization.Translate.Keys.TagFlagFilter.filterByFlagTag)</span>
                 <div class="tff-panel-actions">
                     @if (SelectedFlagTypes.Count > 0 || SelectedTags.Count > 0)
                     {
-                        <button class="tff-clear-btn" @onclick="ClearAll">Clear</button>
+                        <button class="tff-clear-btn" @onclick="ClearAll">@Loc.T(Localization.Common.Buttons.clear)</button>
                     }
                     <button class="tff-collapse-btn" @onclick="() => _Expanded = false">
                         <i class="bi bi-chevron-up"></i>
@@ -28,7 +29,7 @@
             </div>
 
             <div class="tff-body">
-                <div class="tff-section-title">Flags</div>
+                <div class="tff-section-title">@Loc.T(Localization.Translate.Keys.TagFlagFilter.flagsTitle)</div>
                 <div class="tff-list">
                     @foreach (FlagType type in _AllFlagTypes)
                     {
@@ -42,11 +43,11 @@
                     }
                 </div>
 
-                <div class="tff-section-title">Tags</div>
+                <div class="tff-section-title">@Loc.T(Localization.Translate.Keys.TagFlagFilter.tagsTitle)</div>
                 <div class="tff-list">
                     @if (_AllTags.Count == 0)
                     {
-                        <div class="tff-empty">No tags yet.</div>
+                        <div class="tff-empty">@Loc.T(Localization.Translate.Keys.TagFlagFilter.noTagsYet)</div>
                     }
                     else
                     {
@@ -90,13 +91,13 @@
         get
         {
             int count = SelectedFlagTypes.Count + SelectedTags.Count;
-            if (count == 0) return "All flags & tags";
+            if (count == 0) return Loc.T(Localization.Translate.Keys.TagFlagFilter.allFlagsTags);
             if (count == 1)
             {
                 if (SelectedFlagTypes.Count == 1) return FlagLabel(SelectedFlagTypes.First());
                 return SelectedTags.First();
             }
-            return $"{count} filters";
+            return Loc.T(Localization.Translate.Keys.TagFlagFilter.manyFilters, new Dictionary<string, object> { ["count"] = count });
         }
     }
 
@@ -120,13 +121,13 @@
         await OnTagsChanged.InvokeAsync(new HashSet<string>(StringComparer.OrdinalIgnoreCase));
     }
 
-    private static string FlagLabel(FlagType type) => type switch
+    private string FlagLabel(FlagType type) => type switch
     {
-        FlagType.NeedsReview    => "Needs review",
-        FlagType.Outdated       => "Outdated",
-        FlagType.DoNotTranslate => "Do not translate",
-        FlagType.InProgress     => "In progress",
-        FlagType.Disputed       => "Disputed",
+        FlagType.NeedsReview    => Loc.T(Localization.Translate.Keys.TagFlagFilter.flagNeedsReview),
+        FlagType.Outdated       => Loc.T(Localization.Translate.Keys.TagFlagFilter.flagOutdated),
+        FlagType.DoNotTranslate => Loc.T(Localization.Translate.Keys.TagFlagFilter.flagDoNotTranslate),
+        FlagType.InProgress     => Loc.T(Localization.Translate.Keys.TagFlagFilter.flagInProgress),
+        FlagType.Disputed       => Loc.T(Localization.Translate.Keys.TagFlagFilter.flagDisputed),
         _                       => type.ToString(),
     };
 

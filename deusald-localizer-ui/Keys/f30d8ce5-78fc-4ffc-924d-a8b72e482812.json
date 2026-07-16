@@ -1,0 +1,25 @@
+{
+  "Id": "f30d8ce5-78fc-4ffc-924d-a8b72e482812",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "deselectAll",
+  "Description": "Link button that deselects all update options.",
+  "CreatedAt": "2026-07-16T12:48:41.5603404Z",
+  "UpdatedAt": "2026-07-16T12:48:41.560341Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "967549497036d51303efbdc904bb5e5654551058d0854be757b36280abd3ec8b",
+      "Text": "Deselect all",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5603469Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

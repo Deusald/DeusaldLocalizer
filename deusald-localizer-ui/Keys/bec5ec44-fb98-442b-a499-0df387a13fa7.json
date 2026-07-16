@@ -1,0 +1,25 @@
+{
+  "Id": "bec5ec44-fb98-442b-a499-0df387a13fa7",
+  "CategoryId": "c5c73cc7-4494-470a-bcfc-ef45e25e0957",
+  "KeyName": "destChangedDesc",
+  "Description": "Conflict description for a concurrent-edit conflict",
+  "CreatedAt": "2026-07-16T12:48:41.5586834Z",
+  "UpdatedAt": "2026-07-16T12:48:41.558684Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "8cac076b7cce5b8adecfc483d5bce88e1d972e77066c758d3ded4631bdf06b5d",
+      "Text": "Someone else changed this translation on the server since your edit. Choose which version to keep.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5586889Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

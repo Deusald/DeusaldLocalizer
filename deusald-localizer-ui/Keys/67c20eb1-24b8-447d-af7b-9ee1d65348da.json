@@ -1,0 +1,25 @@
+{
+  "Id": "67c20eb1-24b8-447d-af7b-9ee1d65348da",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "tagline",
+  "Description": "Tagline under the app logo (desktop).",
+  "CreatedAt": "2026-07-16T12:29:28.0793941Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5565197Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "370c2d703d4c3052e049ce64dde450effbc7fc59b6a903af1580cf8d5f338cfa",
+      "Text": "COMMUNITY LOCALIZATION",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5565251Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

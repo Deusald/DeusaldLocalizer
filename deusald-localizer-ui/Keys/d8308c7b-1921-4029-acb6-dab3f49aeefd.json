@@ -1,0 +1,25 @@
+{
+  "Id": "d8308c7b-1921-4029-acb6-dab3f49aeefd",
+  "CategoryId": "37037b9b-7934-487b-9401-8cca236150a6",
+  "KeyName": "mainLanguageLabel",
+  "Description": "Field label for the main language picker",
+  "CreatedAt": "2026-07-16T12:48:41.5615195Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5615202Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "d8428119b571d9fcfaa87c6d82ce7157bbac404ad0f1760e9a99677cc808e5b3",
+      "Text": "Main language",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5615264Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "b16ecebf-aaec-40f5-83ba-c9332b0fd3f5",
+  "CategoryId": "03bb89a1-af8c-447d-a2f0-201c17dca044",
+  "KeyName": "accessTokenLabel",
+  "Description": "Field label for the access token input",
+  "CreatedAt": "2026-07-16T12:48:41.5614182Z",
+  "UpdatedAt": "2026-07-16T12:48:41.561419Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "9a911b08feb9d2928240dda42c6efa8794ab3457f8b59a7cfb5187e817f948e3",
+      "Text": "Access token",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5614212Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

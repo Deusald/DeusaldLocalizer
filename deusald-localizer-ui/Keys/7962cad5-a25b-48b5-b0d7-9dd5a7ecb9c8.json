@@ -1,0 +1,25 @@
+{
+  "Id": "7962cad5-a25b-48b5-b0d7-9dd5a7ecb9c8",
+  "CategoryId": "acf8559f-68d0-4fad-8a1f-17ebe5c6afc8",
+  "KeyName": "unknown",
+  "Description": "Fallback author name when a member cannot be found.",
+  "CreatedAt": "2026-07-16T12:48:41.5598602Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5598608Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14",
+      "Text": "Unknown",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5598656Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

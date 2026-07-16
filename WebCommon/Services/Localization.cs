@@ -18,9 +18,1143 @@ namespace DeusaldLocalizerWeb
 {
     public static class Localization
     {
+        public static class Common
+        {
+            public static class AccessToken
+            {
+                /// <summary>Button that closes the access token modal</summary>
+                public static readonly Guid done = new Guid("1b6bafb8-3429-4d29-8497-f6e2303c6cc1");
+                /// <summary>Body shown when a freshly rotated access token is displayed.</summary>
+                public static readonly Guid newTokenBody = new Guid("8da753e1-a1fb-4ff2-ab8d-06b311b9ac18");
+                /// <summary>Title shown when a freshly rotated access token is displayed.</summary>
+                public static readonly Guid newTokenTitle = new Guid("339cb6eb-14be-4c0a-9a49-023a8d95d3b9");
+                /// <summary>Security warning shown under a newly generated access token</summary>
+                public static readonly Guid warningText = new Guid("375b64ad-8a41-4cc6-9f8e-67efd18b0f11");
+            }
+
+            public static class Buttons
+            {
+                /// <summary>Generic Add button, reused across dialogs.</summary>
+                public static readonly Guid add = new Guid("5bce40c1-a14c-4b28-bccb-5908db3c707e");
+                /// <summary>Generic Apply button, reused across dialogs.</summary>
+                public static readonly Guid apply = new Guid("9a7124c3-59d4-4589-a953-6d9706271c85");
+                /// <summary>Generic Cancel button, reused across dialogs.</summary>
+                public static readonly Guid cancel = new Guid("e2c24f60-294e-408a-bfb4-6ca188280c29");
+                /// <summary>Generic Clear button, reused across dialogs.</summary>
+                public static readonly Guid clear = new Guid("152bddd0-8cd5-4822-a943-8ec104ea3d05");
+                /// <summary>Generic Close button, reused across dialogs.</summary>
+                public static readonly Guid close = new Guid("33924e2d-cc5f-483b-908f-96703a037b50");
+                /// <summary>Generic Copy button, reused across dialogs.</summary>
+                public static readonly Guid copy = new Guid("0d0d600b-2f2c-4159-b3a1-e4863dd33f6c");
+                /// <summary>Generic Create button, reused across dialogs.</summary>
+                public static readonly Guid create = new Guid("3bb7f4ca-2ddb-47bf-8cae-4e2ae5bc1897");
+                /// <summary>Generic Delete button, reused across dialogs.</summary>
+                public static readonly Guid delete = new Guid("e03b6216-eaaa-40ca-bfb1-3eb0a5a79612");
+                /// <summary>Generic Remove button, reused across dialogs.</summary>
+                public static readonly Guid remove = new Guid("816fa60a-1755-424b-ae1d-3b18f22e8ae0");
+                /// <summary>Generic Save button, reused across dialogs.</summary>
+                public static readonly Guid save = new Guid("be2b805b-a349-452e-95b0-264b29bade0b");
+            }
+
+            public static class ConnectServer
+            {
+                /// <summary>Field label for the access token input</summary>
+                public static readonly Guid accessTokenLabel = new Guid("87e8276c-68bd-4769-8c35-cb6bd19a0161");
+                /// <summary>Button that opens the folder picker</summary>
+                public static readonly Guid browseButton = new Guid("756c258f-9d7f-476b-9fb8-ec59866f3f20");
+                /// <summary>Primary button that starts the connection</summary>
+                public static readonly Guid connectButton = new Guid("875e12f0-a6e0-4ca7-afb9-95d2ce181e55");
+                /// <summary>Busy state label on the connect button</summary>
+                public static readonly Guid connecting = new Guid("b11971f7-707f-48e1-b646-a8d34c51cb17");
+                /// <summary>Validation error when the entered project id is not a GUID</summary>
+                public static readonly Guid invalidProjectId = new Guid("893f08a6-dd78-4546-a390-fb908ca749ef");
+                /// <summary>Placeholder text when no storage folder has been picked</summary>
+                public static readonly Guid noFolderSelected = new Guid("93275320-f537-4087-9562-1d6feb1f723c");
+                /// <summary>Hint next to the Project ID label</summary>
+                public static readonly Guid projectIdHint = new Guid("1e67457f-96df-4615-92d8-be36b8cc6316");
+                /// <summary>Field label for the project id input</summary>
+                public static readonly Guid projectIdLabel = new Guid("7c5a3db7-75cc-47ea-b440-6e51e8fb8b55");
+                /// <summary>Field label for the server URL input</summary>
+                public static readonly Guid serverUrlLabel = new Guid("684bb6a1-4f84-423b-b2dc-beab518f6db6");
+                /// <summary>Hint next to the Store in label</summary>
+                public static readonly Guid storeInHint = new Guid("fa1879a0-b5f0-4e2a-8f52-18b130817f13");
+                /// <summary>Field label for the storage location picker</summary>
+                public static readonly Guid storeInLabel = new Guid("a8c0752c-0955-4d37-9240-6cc57268485d");
+                /// <summary>Subtitle of the connect-to-server modal</summary>
+                public static readonly Guid subtitle = new Guid("4bdb5afa-def8-44af-9d1d-626727927fc8");
+                /// <summary>Title of the connect-to-server modal</summary>
+                public static readonly Guid title = new Guid("cc37e2da-6682-4f79-837e-580d131c7e1f");
+                /// <summary>Placeholder for the access token input</summary>
+                public static readonly Guid tokenPlaceholder = new Guid("1499b31c-5fc6-474d-879e-151b7e3c123a");
+                /// <summary>Field label for the username input</summary>
+                public static readonly Guid usernameLabel = new Guid("b1845d25-de95-4d53-a5b9-01df0c9ccc17");
+            }
+
+            public static class Login
+            {
+                /// <summary>Field label for the access token input</summary>
+                public static readonly Guid accessTokenLabel = new Guid("b16ecebf-aaec-40f5-83ba-c9332b0fd3f5");
+                /// <summary>Primary button that submits the login form</summary>
+                public static readonly Guid signInButton = new Guid("997eade4-5403-4082-a6f2-82e8b8eaea4c");
+                /// <summary>Title of the login modal</summary>
+                public static readonly Guid title = new Guid("bf093b04-7ab3-4f02-934e-7a1bbce78c47");
+                /// <summary>Placeholder for the access token input</summary>
+                public static readonly Guid tokenPlaceholder = new Guid("288fad56-6f48-4b40-9f2b-f5732e14cdb6");
+                /// <summary>Field label for the username input</summary>
+                public static readonly Guid usernameLabel = new Guid("02bbf48f-adfc-4b9d-a7ef-d83a0dc853c3");
+            }
+
+            public static class NewProject
+            {
+                /// <summary>Primary button that creates the new project</summary>
+                public static readonly Guid createButton = new Guid("0fbc5545-5465-44d6-96ff-45dc2bcd28b0");
+                /// <summary>Hint marking the description field as optional</summary>
+                public static readonly Guid descriptionHint = new Guid("7fcebbfb-2d8f-4f4b-836f-cad9386c8bb3");
+                /// <summary>Field label for the description textarea</summary>
+                public static readonly Guid descriptionLabel = new Guid("91ad4124-e683-4656-923b-497e6c3df6e0");
+                /// <summary>Placeholder for the description textarea</summary>
+                public static readonly Guid descriptionPlaceholder = new Guid("9af7ee9c-e57f-427c-8cf9-950766d31f61");
+                /// <summary>Validation error for an invalid slug</summary>
+                public static readonly Guid invalidSlug = new Guid("c5eae098-68e1-4104-9292-0bf0751f6902");
+                /// <summary>Field label for the main language picker</summary>
+                public static readonly Guid mainLanguageLabel = new Guid("d8308c7b-1921-4029-acb6-dab3f49aeefd");
+                /// <summary>Empty state when a language search returns nothing</summary>
+                public static readonly Guid noLanguagesFound = new Guid("a899cdc9-1703-49f5-b8a8-6f0d7b79663e");
+                /// <summary>Field label for the project name input</summary>
+                public static readonly Guid projectNameLabel = new Guid("38a8f91b-f97c-443a-8383-8444ae859fe7");
+                /// <summary>Placeholder for the language search input</summary>
+                public static readonly Guid searchLanguagePlaceholder = new Guid("67cf2b88-af58-449b-8454-aa7e98ad8195");
+                /// <summary>Hint next to the Slug label</summary>
+                public static readonly Guid slugHint = new Guid("d08ed8ef-ed9f-44fd-b2a2-ed52ed3ca4f8");
+                /// <summary>Field label for the slug input</summary>
+                public static readonly Guid slugLabel = new Guid("f4813c17-0597-4233-a46f-f7eb3b71975a");
+                /// <summary>Title of the new project modal</summary>
+                public static readonly Guid title = new Guid("077198a3-7c03-4094-81b6-e9d03ab30033");
+            }
+        }
+
         public static class Home
         {
+            /// <summary>Button that opens the connect-to-server dialog.</summary>
+            public static readonly Guid connectServer = new Guid("52c17803-c9c1-4d48-af5b-9e9172073e14");
+            /// <summary>Fallback error when connecting to a server project fails.</summary>
+            public static readonly Guid errConnect = new Guid("050ea471-9d17-47f2-864d-ffca581fb832");
+            /// <summary>Fallback error when server sign-in fails.</summary>
+            public static readonly Guid errSignIn = new Guid("b7da6add-e09b-4a3d-9452-858a64356556");
+            /// <summary>Language count shown on a project card&apos;s progress row.</summary>
+            public static readonly Guid langCount = new Guid("aa1c817c-4425-4fc3-824f-cf485a839e7f");
+            /// <summary>Button that opens the new-project dialog.</summary>
+            public static readonly Guid newProject = new Guid("57ad74e3-c60f-42ae-8179-cd0c1e9ee4d5");
+            /// <summary>Sub-line of a project card summarising counts and last edit.</summary>
+            public static readonly Guid projectMeta = new Guid("1d254af0-2a78-4a06-bc92-492b305717d2");
+            /// <summary>Badge marking an online/remote project in the list.</summary>
+            public static readonly Guid remoteTag = new Guid("27563d60-ba8c-42b5-ac87-ac4d446f3274");
+            /// <summary>Home page hero headline.</summary>
             public static readonly Guid subtitle = new Guid("1a3055ee-b21f-4469-8278-705f66941544");
+            /// <summary>Relative time in days.</summary>
+            public static readonly Guid timeDays = new Guid("84dbbf68-c08c-4a04-bdfe-f868b29b1072");
+            /// <summary>Relative time in hours.</summary>
+            public static readonly Guid timeHours = new Guid("bbb55a65-c2cb-46f9-9808-6a9236d3d0ea");
+            /// <summary>Relative time: less than two minutes ago.</summary>
+            public static readonly Guid timeJustNow = new Guid("f4437daa-7d14-4896-9546-f62bcac6eea8");
+            /// <summary>Relative time in minutes.</summary>
+            public static readonly Guid timeMinutes = new Guid("68affaa2-bb46-42e5-8479-f18e6470e41c");
+
+            public static class App
+            {
+                /// <summary>Button that clears the recent-projects list (desktop).</summary>
+                public static readonly Guid clearRecent = new Guid("d00958d6-c4eb-477c-8683-307ada6cb018");
+                /// <summary>Empty-state description (desktop).</summary>
+                public static readonly Guid emptySub = new Guid("7a094527-9f9d-43a7-938d-ff33ddc83009");
+                /// <summary>Empty-state title when there are no recent projects (desktop).</summary>
+                public static readonly Guid emptyTitle = new Guid("ab771190-3f51-4bb5-99c5-fb60dc689c34");
+                /// <summary>Error when the first-time token rotation fails (desktop).</summary>
+                public static readonly Guid errFirstSignIn = new Guid("9c6faf20-5168-4fca-bdc5-d627aca06b7d");
+                /// <summary>Error when the folder picker fails to open (desktop).</summary>
+                public static readonly Guid errFolderPicker = new Guid("f8d94a9a-80ca-408a-975d-5f12f86b1fcf");
+                /// <summary>Error when the chosen folder isn&apos;t a valid project (desktop).</summary>
+                public static readonly Guid errInvalidProject = new Guid("08f2e176-8e99-45f5-a8f4-12d395c719e5");
+                /// <summary>Error when loading a project from disk fails (desktop).</summary>
+                public static readonly Guid errLoad = new Guid("76021e7c-94c2-4f44-a245-2ae8352834b9");
+                /// <summary>Login error on the desktop sign-in modal.</summary>
+                public static readonly Guid errLogin = new Guid("f45772dd-b1d6-4cf1-a539-582f42680f60");
+                /// <summary>Home page intro paragraph (desktop).</summary>
+                public static readonly Guid intro = new Guid("11bd55e4-757b-4028-bfa2-21294b9615e4");
+                /// <summary>Tooltip on the logs-folder button (desktop).</summary>
+                public static readonly Guid openLogsTooltip = new Guid("d2f08e1d-62e5-475f-b060-d32ab54b4149");
+                /// <summary>Button that opens a project folder (desktop).</summary>
+                public static readonly Guid openProject = new Guid("903ec93c-0587-4848-b527-e3ca69dc4f19");
+                /// <summary>Busy label on the open-project button (desktop).</summary>
+                public static readonly Guid opening = new Guid("c4ba5b89-bef3-440d-855f-4d8761019d4e");
+                /// <summary>Heading above the recent-projects list (desktop).</summary>
+                public static readonly Guid recentProjects = new Guid("89b48e65-440b-4c03-8896-b22938f970ac");
+                /// <summary>Tooltip on a recent-project card&apos;s remove button (desktop).</summary>
+                public static readonly Guid removeTooltip = new Guid("468f1c1a-07a7-4161-bbff-657b5113e9a1");
+                /// <summary>Tagline under the app logo (desktop).</summary>
+                public static readonly Guid tagline = new Guid("67c20eb1-24b8-447d-af7b-9ee1d65348da");
+                /// <summary>Button to download and apply an in-place update (desktop).</summary>
+                public static readonly Guid updateApply = new Guid("dcf56384-6019-4b64-83b0-6a56b193a1fa");
+                /// <summary>Tooltip on the update-banner dismiss button (desktop).</summary>
+                public static readonly Guid updateDismiss = new Guid("7be256fc-d550-4b96-a514-30fb0f3bbbb2");
+                /// <summary>Button to open the release page for a manual download (desktop/macOS).</summary>
+                public static readonly Guid updateDownload = new Guid("a032b28a-68e9-4c7e-bc82-3f4a9be99780");
+                /// <summary>Error when an in-place update fails (desktop).</summary>
+                public static readonly Guid updateFailed = new Guid("89173a4a-2d19-4161-ade2-2718d7c60569");
+                /// <summary>Update button label while installing (desktop).</summary>
+                public static readonly Guid updateInstalling = new Guid("3722296b-e377-4f53-9398-462fb0f5b192");
+                /// <summary>Update banner sub-line naming the new version (desktop).</summary>
+                public static readonly Guid updateSub = new Guid("906ed724-2642-421a-880d-55a5b5dc737c");
+                /// <summary>Title of the update banner (desktop).</summary>
+                public static readonly Guid updateTitle = new Guid("97c5b538-57f8-4494-b0d3-5259aaa7a270");
+            }
+
+            public static class Web
+            {
+                /// <summary>Delete-confirmation body naming the project (web).</summary>
+                public static readonly Guid deleteBody = new Guid("5515f6aa-058f-4f32-ad02-35f885be7da3");
+                /// <summary>Confirm button in the delete-confirmation dialog (web).</summary>
+                public static readonly Guid deleteConfirm = new Guid("9a80d7d1-4d7e-4c0d-b0ad-7d022e40fb65");
+                /// <summary>Title of the delete-confirmation dialog (web).</summary>
+                public static readonly Guid deleteTitle = new Guid("3e6d33b2-722e-4dac-8c08-159f9d57e399");
+                /// <summary>Tooltip on a project card&apos;s delete button (web).</summary>
+                public static readonly Guid deleteTooltip = new Guid("f01e1ccc-a9bd-4268-9fc9-a859ca8a6660");
+                /// <summary>Delete-confirmation warning (web).</summary>
+                public static readonly Guid deleteWarn = new Guid("952dff65-e853-4f8d-bfe7-917ebf81733c");
+                /// <summary>Tooltip on a project card&apos;s download button (web).</summary>
+                public static readonly Guid downloadTooltip = new Guid("9ac8635a-0bc1-401e-8d91-b8eca5d1b069");
+                /// <summary>Empty-state description (web).</summary>
+                public static readonly Guid emptySub = new Guid("1d41c0ff-d423-4d24-a67b-692de569d781");
+                /// <summary>Empty-state title when no projects are stored (web).</summary>
+                public static readonly Guid emptyTitle = new Guid("49107305-a749-4686-bb3c-a5f9cadbcfbf");
+                /// <summary>Error when deleting a project fails (web).</summary>
+                public static readonly Guid errDelete = new Guid("e2ec9e62-4d01-4fa0-aee6-e292e40760e3");
+                /// <summary>Error when a .zip export fails (web).</summary>
+                public static readonly Guid errExport = new Guid("ec9ff8a5-c109-4e37-943b-e212f21b91e3");
+                /// <summary>Error when a .zip import fails (web).</summary>
+                public static readonly Guid errImport = new Guid("c423827e-3ef0-47b5-ae64-11f12d854d7f");
+                /// <summary>Error when opening a project fails (web).</summary>
+                public static readonly Guid errOpen = new Guid("0b8b534b-5a48-4282-b200-cbc1e3a4cf8b");
+                /// <summary>Error when the stored project list can&apos;t be read (web).</summary>
+                public static readonly Guid errReadProjects = new Guid("5e83115b-3542-4da0-bc38-e4710963eedd");
+                /// <summary>Button that imports a project from a .zip archive (web).</summary>
+                public static readonly Guid importZip = new Guid("bab2efcc-0176-4665-bd9c-232b204abf07");
+                /// <summary>Home page intro paragraph (web).</summary>
+                public static readonly Guid intro = new Guid("b1102c9c-af17-4459-b796-b4cdfa7980d7");
+                /// <summary>Tagline under the app logo (web).</summary>
+                public static readonly Guid tagline = new Guid("d2a22345-2378-4736-a255-b8ad50c0f870");
+                /// <summary>Busy label on the import button while an action runs (web).</summary>
+                public static readonly Guid working = new Guid("15cb3a7b-0b95-4fe7-beb8-fb8d763b1b85");
+                /// <summary>Heading above the stored-projects list (web).</summary>
+                public static readonly Guid yourProjects = new Guid("acc6b66f-0a1c-463e-a05d-b6bf22632463");
+            }
+        }
+
+        public static class NotFound
+        {
+            public static class App
+            {
+                /// <summary>Body text of the desktop client not-found page</summary>
+                public static readonly Guid body = new Guid("096c54fa-2c5c-4849-b1bb-75a80edc6179");
+                /// <summary>Heading of the desktop client not-found page</summary>
+                public static readonly Guid heading = new Guid("49cdd01f-c40e-45d9-b69f-841bd48c43e6");
+            }
+
+            public static class Web
+            {
+                /// <summary>Body text of the web client not-found page</summary>
+                public static readonly Guid body = new Guid("503299d7-a2b3-4853-b5ba-86ace87b9204");
+                /// <summary>Heading of the web client not-found page</summary>
+                public static readonly Guid heading = new Guid("7abe65ba-b325-4b11-8090-d1057d2a3b02");
+            }
+        }
+
+        public static class Translate
+        {
+            public static class KeyDetail
+            {
+                /// <summary>Header label for the translation comments thread of the selected language.</summary>
+                public static readonly Guid commentsLabel = new Guid("bc46fbe4-e8cd-4ae8-b330-f7e8359ef867");
+                /// <summary>Shows the date a key was created.</summary>
+                public static readonly Guid createdOn = new Guid("4b58c48c-be44-470f-a434-41ba070233de");
+                /// <summary>Confirmation prompt before deleting a key.</summary>
+                public static readonly Guid deleteKeyConfirm = new Guid("ad66d73b-7af4-4cbd-986b-b6be8b8ae62a");
+                /// <summary>Empty-state hint shown when no key is selected in the key detail column.</summary>
+                public static readonly Guid emptyState = new Guid("a6114c61-be66-4f5b-a728-99ccdcf4c888");
+                /// <summary>Header label for the key-level comments thread.</summary>
+                public static readonly Guid keyComments = new Guid("e16fda06-95e9-470c-ab11-a356ae1494ae");
+                /// <summary>Key status tag: translation approved.</summary>
+                public static readonly Guid statusApproved = new Guid("77e71efc-ad9d-4839-971d-fe50d625b981");
+                /// <summary>Key status tag: draft translation.</summary>
+                public static readonly Guid statusDraft = new Guid("f9c610b8-dddb-4ba9-b9bc-616e7dcdf786");
+                /// <summary>Key status tag: translation needs review.</summary>
+                public static readonly Guid statusNeedsReview = new Guid("c4d6d8ae-cda6-48b7-b909-479fd8c7bba3");
+                /// <summary>Key status tag: translation suggested.</summary>
+                public static readonly Guid statusSuggested = new Guid("f3fdf355-c644-4099-aa15-c4c824461503");
+                /// <summary>Key status tag: not yet translated.</summary>
+                public static readonly Guid statusUntranslated = new Guid("c441e3a8-d808-4a22-98a7-ad04c7ee9993");
+                /// <summary>Tooltip on the key creation date.</summary>
+                public static readonly Guid titleCreated = new Guid("b947f37e-c597-4729-a291-44646a86b164");
+                /// <summary>Tooltip on the delete-key button.</summary>
+                public static readonly Guid titleDeleteKey = new Guid("582404d3-e67b-4ad3-a878-68a2cae61355");
+                /// <summary>Tooltip on the key last-updated date.</summary>
+                public static readonly Guid titleLastUpdated = new Guid("862341bc-7494-437e-acaf-212eff5a3228");
+                /// <summary>Shows the date a key was last updated.</summary>
+                public static readonly Guid updatedOn = new Guid("1a5ed001-a2bd-4de2-86de-d7a72f7f2e72");
+
+                public static class AddFlag
+                {
+                    /// <summary>Add-flag modal title and confirm button label.</summary>
+                    public static readonly Guid addFlag = new Guid("e9643cc5-06af-448a-85ec-27050c7d3ffb");
+                    /// <summary>Selectable flag type label: Disputed.</summary>
+                    public static readonly Guid flagDisputed = new Guid("c0ddfdde-597b-47df-9406-2639721b0139");
+                    /// <summary>Selectable flag type label: Do not translate.</summary>
+                    public static readonly Guid flagDoNotTranslate = new Guid("7a408eda-181f-4654-9ff9-798456ca0f6a");
+                    /// <summary>Selectable flag type label: In progress.</summary>
+                    public static readonly Guid flagInProgress = new Guid("1dcfba12-919d-46d0-b431-a2639314b322");
+                    /// <summary>Selectable flag type label: Needs review.</summary>
+                    public static readonly Guid flagNeedsReview = new Guid("26a3e576-bd31-4e85-a9f2-91e372bcdb6b");
+                    /// <summary>Selectable flag type label: Outdated.</summary>
+                    public static readonly Guid flagOutdated = new Guid("eb2dd4da-796e-4914-83dc-7d31c188efc1");
+                    /// <summary>Hint marking the flag note field as optional.</summary>
+                    public static readonly Guid hintOptional = new Guid("d260c1ed-ef01-4a94-85bc-8bb499ec7fa7");
+                    /// <summary>Field label for choosing the flag type in the add-flag modal.</summary>
+                    public static readonly Guid labelFlagType = new Guid("ad446372-8111-4e80-bf24-ffb813665057");
+                    /// <summary>Field label for the optional flag note.</summary>
+                    public static readonly Guid labelNote = new Guid("ac54979f-fe8e-4d0a-b434-7bf6f243e77d");
+                    /// <summary>Placeholder in the flag note textarea.</summary>
+                    public static readonly Guid placeholderNote = new Guid("d2ea1b32-7eb7-4535-a4cc-3b9377839b67");
+                }
+
+                public static class AddTag
+                {
+                    /// <summary>Title of the add-tag modal.</summary>
+                    public static readonly Guid addTag = new Guid("19223423-1b22-423a-9964-8966f6bb10e7");
+                    /// <summary>Option to create a new tag from the typed query.</summary>
+                    public static readonly Guid createOption = new Guid("88b3fa3a-9a48-4785-b744-95f12527f314");
+                    /// <summary>Shown when no existing tags match the query and none can be created.</summary>
+                    public static readonly Guid noMatches = new Guid("fb84c52e-c5d6-41a9-9749-56d95e872e77");
+                    /// <summary>Placeholder in the add-tag search input.</summary>
+                    public static readonly Guid placeholderSearch = new Guid("d5f1c4c2-acfa-46cd-9855-38bc505d31b3");
+                }
+
+                public static class CommentThread
+                {
+                    /// <summary>Placeholder for the comment compose box</summary>
+                    public static readonly Guid addCommentPlaceholder = new Guid("6a4c1c83-c9a4-4357-96bf-ae92f07ca0eb");
+                    /// <summary>Tooltip on the delete-comment button</summary>
+                    public static readonly Guid deleteComment = new Guid("89a4cb1d-ac8b-4916-baa3-97b9430365b5");
+                    /// <summary>Button posting a new comment</summary>
+                    public static readonly Guid post = new Guid("4d1ebcf9-f0d3-4a3a-84d8-41cbd1cd6fb0");
+                    /// <summary>Fallback name for an unknown comment author</summary>
+                    public static readonly Guid unknownAuthor = new Guid("934506e3-d69e-4e12-866d-98bb8c150e37");
+                }
+
+                public static class ConflictResolution
+                {
+                    /// <summary>Generic conflict header</summary>
+                    public static readonly Guid conflictTitle = new Guid("4fdbc56e-1467-4479-b875-0c68b3544c8d");
+                    /// <summary>Label for the current-source comparison panel</summary>
+                    public static readonly Guid currentSourceLabel = new Guid("2f5bd0d5-1df1-46dd-9e8e-b26b3e4c3295");
+                    /// <summary>Conflict description for a concurrent-edit conflict</summary>
+                    public static readonly Guid destChangedDesc = new Guid("bec5ec44-fb98-442b-a499-0df387a13fa7");
+                    /// <summary>Conflict header when the translation was edited concurrently</summary>
+                    public static readonly Guid destChangedTitle = new Guid("8582f732-4c09-41b2-92dc-84bdcef10ed5");
+                    /// <summary>Placeholder shown when a compared version has no text</summary>
+                    public static readonly Guid empty = new Guid("1c57a357-b0de-4b87-9f2c-f974eed5e926");
+                    /// <summary>Button/label for keeping the local version</summary>
+                    public static readonly Guid keepMine = new Guid("f3cdd157-8f5e-45cb-8851-ef513862af3c");
+                    /// <summary>Hint explaining the Keep mine option</summary>
+                    public static readonly Guid keepMineHint = new Guid("d81c58db-bf6c-4690-bc05-53b6b3150b1b");
+                    /// <summary>Button/label for keeping the server version</summary>
+                    public static readonly Guid keepServer = new Guid("3b9ddf42-3d94-4122-8ea2-43814a91f07f");
+                    /// <summary>Hint explaining the Keep server option</summary>
+                    public static readonly Guid keepServerHint = new Guid("13b5ec43-04a5-42af-a608-6b3c1cb5834c");
+                    /// <summary>Label for the server-version comparison panel</summary>
+                    public static readonly Guid onServerNowLabel = new Guid("0174c292-aa50-4561-9d73-38d06acfb618");
+                    /// <summary>Conflict description for a source-changed conflict</summary>
+                    public static readonly Guid sourceChangedDesc = new Guid("735cf192-e853-4e3a-9b27-6ebb53f59e24");
+                    /// <summary>Conflict header when the source drifted</summary>
+                    public static readonly Guid sourceChangedTitle = new Guid("b9cc9035-680d-45d3-8a2a-ed981496cb1b");
+                    /// <summary>Button/label for adding the local version as a suggestion</summary>
+                    public static readonly Guid suggestMine = new Guid("daf5b1de-6282-44cf-b006-844776536f81");
+                    /// <summary>Hint explaining the Suggest mine option</summary>
+                    public static readonly Guid suggestMineHint = new Guid("6100e3e8-0245-40cd-978c-e26a6d362e5d");
+                    /// <summary>Label for the user&apos;s edit comparison panel</summary>
+                    public static readonly Guid yourEditLabel = new Guid("a7b3a768-606c-426d-abf6-c1f40ee76eb6");
+                    /// <summary>Label for the user&apos;s translation comparison panel</summary>
+                    public static readonly Guid yourTranslationLabel = new Guid("a5cef90d-445c-48da-afa8-fbec86981ffe");
+                }
+
+                public static class Description
+                {
+                    /// <summary>Clickable prompt shown to admins when a key has no description.</summary>
+                    public static readonly Guid addDescription = new Guid("7748d878-7a97-458a-a585-48fec2ea508d");
+                    /// <summary>Shown to non-admins when a key has no description.</summary>
+                    public static readonly Guid noDescription = new Guid("e896efd2-def6-4e5f-957f-9655ccb8815d");
+                    /// <summary>Placeholder in the key description edit textarea.</summary>
+                    public static readonly Guid placeholderAdd = new Guid("9dcbe992-206a-4e71-947a-54836c2589a4");
+                }
+
+                public static class Flags
+                {
+                    /// <summary>Display label for the Disputed flag type.</summary>
+                    public static readonly Guid flagDisputed = new Guid("5a9b22d6-9696-4bac-908d-0fdae5b74a69");
+                    /// <summary>Display label for the Do not translate flag type.</summary>
+                    public static readonly Guid flagDoNotTranslate = new Guid("61c18fe4-7999-4949-ac33-0a12e2524b65");
+                    /// <summary>Display label for the In progress flag type.</summary>
+                    public static readonly Guid flagInProgress = new Guid("e20876b3-99d4-49f9-a67d-9c7d1d0fd008");
+                    /// <summary>Display label for the Needs review flag type.</summary>
+                    public static readonly Guid flagNeedsReview = new Guid("464d0e29-1e9a-4168-aeea-bcbe470e7bd3");
+                    /// <summary>Display label for the Outdated flag type.</summary>
+                    public static readonly Guid flagOutdated = new Guid("e09146ee-8d4e-4d3c-927e-3c7eee18119a");
+                    /// <summary>Placeholder shown in a flag tooltip when the flag has no note.</summary>
+                    public static readonly Guid noteNone = new Guid("4effc83f-fc00-4f07-8b6d-142f02a5a9c7");
+                    /// <summary>Tooltip on the add-flag button in the flags bar.</summary>
+                    public static readonly Guid titleAddFlag = new Guid("8be5358c-eaad-4daa-9557-82c4bf6a1438");
+                }
+
+                public static class Preview
+                {
+                    /// <summary>Preview-mode toggle label for saved-text preview</summary>
+                    public static readonly Guid current = new Guid("e604ed14-3f5b-438e-8c9e-0796ae85ec2d");
+                    /// <summary>Preview-mode toggle label for live draft preview</summary>
+                    public static readonly Guid live = new Guid("80400e4c-a195-4364-abaa-7278cc48f4ef");
+                    /// <summary>Empty state when the source text is blank</summary>
+                    public static readonly Guid noSource = new Guid("3991d023-da4b-40cc-b188-3ff060e7fdae");
+                    /// <summary>Empty state when the translation text is blank</summary>
+                    public static readonly Guid noTranslation = new Guid("1a8354ba-4cf1-4d8d-970a-429508f1e6f5");
+                    /// <summary>Header of the preview panel</summary>
+                    public static readonly Guid preview = new Guid("e59d34d4-be54-43ab-8258-f1721d9b10c8");
+                    /// <summary>Tag marking the source row in the preview</summary>
+                    public static readonly Guid sourceTag = new Guid("f1f230e8-abbc-431e-9936-08d0071b871a");
+                    /// <summary>Tooltip on the preview-mode toggle when in live mode</summary>
+                    public static readonly Guid switchToCurrent = new Guid("664d5cf7-8d3d-4544-864b-2565387a127d");
+                    /// <summary>Tooltip on the preview-mode toggle when in current mode</summary>
+                    public static readonly Guid switchToLive = new Guid("1ac55d54-5315-4aa4-8ec6-3b90c11d5e71");
+                }
+
+                public static class ProjectEnums
+                {
+                    /// <summary>Button deleting the selected enum</summary>
+                    public static readonly Guid deleteEnum = new Guid("5b190aac-2cbb-4382-8b37-2184dabaf6fc");
+                    /// <summary>Label for the enum description field</summary>
+                    public static readonly Guid description = new Guid("926525c8-ab87-4fdd-8620-a45179129199");
+                    /// <summary>Placeholder example for the enum description field</summary>
+                    public static readonly Guid descriptionPlaceholder = new Guid("5c1b84ab-8754-4fea-a918-983616d34821");
+                    /// <summary>Header of the enum entries list</summary>
+                    public static readonly Guid entries = new Guid("2625fc9e-d0ad-4bf7-ad16-9bc4a5862ccd");
+                    /// <summary>Placeholder example for an enum entry&apos;s string value</summary>
+                    public static readonly Guid entryStringPlaceholder = new Guid("0a5c56fa-9f8b-4384-bc8b-df2cee32e274");
+                    /// <summary>Header of the enum list column</summary>
+                    public static readonly Guid enums = new Guid("9564fcf9-1a00-4a57-9f02-54a1394d8e36");
+                    /// <summary>Label for the enum name field</summary>
+                    public static readonly Guid name = new Guid("089e621b-985e-4ceb-a47d-3483013f3b0a");
+                    /// <summary>Placeholder example for the enum name field</summary>
+                    public static readonly Guid namePlaceholder = new Guid("18aa05a1-c4e2-4b07-9fa8-7f6f535e96f6");
+                    /// <summary>Empty state when the enum has no entries</summary>
+                    public static readonly Guid noEntries = new Guid("fc209a3f-7d21-4aaf-932e-6a7d0291dcd5");
+                    /// <summary>Empty state when the project has no enums</summary>
+                    public static readonly Guid noEnums = new Guid("2dfbbe85-69db-4c8c-9fea-4e68bb563353");
+                    /// <summary>Hint that the enum description is optional</summary>
+                    public static readonly Guid optional = new Guid("d798060a-19e3-44b6-84ff-a9a244dfba41");
+                    /// <summary>Title of the project enums modal</summary>
+                    public static readonly Guid projectEnums = new Guid("9237a61e-20b3-4c70-9bf7-b5c593939397");
+                    /// <summary>Empty state prompting to select an enum</summary>
+                    public static readonly Guid selectEnumToEdit = new Guid("943c1eb3-cb94-46e7-b050-b03ff34a674f");
+                    /// <summary>Fallback name for an enum with no name</summary>
+                    public static readonly Guid unnamed = new Guid("f8804229-510d-4352-877e-f3a27056da2d");
+                }
+
+                public static class Suggestions
+                {
+                    /// <summary>Button accepting a suggestion</summary>
+                    public static readonly Guid accept = new Guid("26a7255a-74ea-408b-b084-1816b58911c7");
+                    /// <summary>Toggle label when a suggestion has no comments</summary>
+                    public static readonly Guid comment = new Guid("d9b6522a-70af-4a1a-906d-c77bd95b2ed1");
+                    /// <summary>Count of comments on a suggestion</summary>
+                    public static readonly Guid commentsCount = new Guid("d2e68a9d-de82-41bc-8fff-39c6c8ed6b26");
+                    /// <summary>Header of the suggestions list</summary>
+                    public static readonly Guid communitySuggestions = new Guid("6fe8fe63-e185-4b68-af0a-a596da3b9703");
+                    /// <summary>Label of the comment thread under a suggestion</summary>
+                    public static readonly Guid discussion = new Guid("def8290a-b1ca-4708-9d4e-9f7cf0e0980a");
+                    /// <summary>Button rejecting a suggestion</summary>
+                    public static readonly Guid reject = new Guid("9a5b33c4-0b3a-4bc5-ac0d-494fa3ec0421");
+                    /// <summary>Fallback name for an unknown suggestion author</summary>
+                    public static readonly Guid unknownAuthor = new Guid("8aaae0a5-2196-4ac6-938e-d6450ee1e4e9");
+                }
+
+                public static class Tags
+                {
+                    /// <summary>Empty-state shown when a key has no tags.</summary>
+                    public static readonly Guid noTags = new Guid("ecf3b9f8-7308-4101-acef-1b8a096306fa");
+                }
+
+                public static class TranslationEditor
+                {
+                    /// <summary>Hint that placeholder tokens are supported in the text</summary>
+                    public static readonly Guid placeholdersHint = new Guid("4cc11e84-71ab-4543-8136-7242b0ab6bcd");
+                    /// <summary>Button that reverts the draft to the saved text</summary>
+                    public static readonly Guid reset = new Guid("94fcd0bd-7ff7-40d4-9632-b145ceef2aef");
+                    /// <summary>Button that saves the source text</summary>
+                    public static readonly Guid saveSource = new Guid("86c46198-0c06-4561-9dd3-0ac1294759d7");
+                    /// <summary>Button that saves the translation text</summary>
+                    public static readonly Guid saveTranslation = new Guid("1e35bcb7-e1ba-458f-a71f-4636653f2fe8");
+                    /// <summary>Label above the source-language text editor</summary>
+                    public static readonly Guid sourceLabel = new Guid("7ff2f14b-39ff-4eca-8ccc-8230b14e1676");
+                    /// <summary>Button confirming the translation still matches the current source</summary>
+                    public static readonly Guid sourceMatched = new Guid("46c91245-48f1-4931-bd0a-a88b79b44f51");
+                    /// <summary>Hint that the source is read-only unless the source language is selected</summary>
+                    public static readonly Guid sourceReadonlyHint = new Guid("af8706bf-fd48-4743-a37a-612eccd07682");
+                    /// <summary>Placeholder for the source text area</summary>
+                    public static readonly Guid sourceTextPlaceholder = new Guid("79160b68-c847-4659-994b-33c056d58236");
+                    /// <summary>Warning shown when the source text no longer matches the translation&apos;s base hash</summary>
+                    public static readonly Guid staleWarning = new Guid("e1905637-8593-40c8-a4fb-ce068cf5af37");
+                    /// <summary>Button that proposes the current draft as a suggestion</summary>
+                    public static readonly Guid suggest = new Guid("1f08f3f5-bc0f-4d6e-bdb8-f3e20d9bb62d");
+                    /// <summary>Label above the translation text editor</summary>
+                    public static readonly Guid translationLabel = new Guid("dc29ac48-3359-4f38-bb74-8b3ef9d37d93");
+                    /// <summary>Placeholder for the translation text area</summary>
+                    public static readonly Guid translationPlaceholder = new Guid("572a7a72-d866-408c-98ea-ff6134f4600a");
+                }
+
+                public static class Variables
+                {
+                    /// <summary>Button adding a new variable to the key</summary>
+                    public static readonly Guid addVariable = new Guid("5d5ad38e-01e2-4e60-82a1-f7d7aab821cf");
+                    /// <summary>Hint that an array preview value is comma-separated</summary>
+                    public static readonly Guid commaSeparated = new Guid("9de56e78-9ecf-4c58-b1d5-7334bed09b92");
+                    /// <summary>Label for the variable&apos;s default preview value field</summary>
+                    public static readonly Guid defaultPreviewValue = new Guid("33ee34b1-be89-486d-9df9-5564ce8efc93");
+                    /// <summary>Button finishing variable editing</summary>
+                    public static readonly Guid done = new Guid("6905123e-eae3-4be6-9081-e91c7357525d");
+                    /// <summary>Button opening the project enums editor</summary>
+                    public static readonly Guid editEnums = new Guid("77c716f0-d548-45c6-ba7b-a8260332b5b6");
+                    /// <summary>Tooltip on the edit-variable button</summary>
+                    public static readonly Guid editVariable = new Guid("39851e6b-6bcd-49d8-8274-f018f0ed63a5");
+                    /// <summary>Label for the enum selection field</summary>
+                    public static readonly Guid enumLabel = new Guid("189b2151-d030-4d7b-933f-7684bbd2b127");
+                    /// <summary>Hint that an enum preview value is an int</summary>
+                    public static readonly Guid intValueHint = new Guid("cc680b73-ece4-4a48-bf1c-58945962d025");
+                    /// <summary>Label for the variable name field</summary>
+                    public static readonly Guid name = new Guid("2a9cff81-30b4-469d-a660-56cf8f5ff013");
+                    /// <summary>Empty state when the key has no variables</summary>
+                    public static readonly Guid noVariables = new Guid("054e5409-fe57-44ff-93cb-30c0ec75344d");
+                    /// <summary>Tooltip on the reset-preview button</summary>
+                    public static readonly Guid resetToDefault = new Guid("09730a33-4b51-462b-9643-679c03d02b23");
+                    /// <summary>Placeholder option in the enum dropdown</summary>
+                    public static readonly Guid selectEnum = new Guid("2da51882-920e-432a-bfec-90a06f2cb138");
+                    /// <summary>Label for the variable type field</summary>
+                    public static readonly Guid type = new Guid("a3d3f465-735c-4053-b1ba-288ca0934e2a");
+                    /// <summary>Header of the variables section</summary>
+                    public static readonly Guid variables = new Guid("762a7b6e-390e-4e2a-b1ee-15311d6199ab");
+                }
+            }
+
+            public static class Keys
+            {
+                /// <summary>Button that opens the new key modal.</summary>
+                public static readonly Guid addKey = new Guid("167fd80e-94d4-45be-b58a-1a83253a5f6f");
+                /// <summary>Button that exits key edit mode.</summary>
+                public static readonly Guid done = new Guid("eb800faf-2008-4da4-ae3e-328278656283");
+                /// <summary>Tooltip for the edit-key button.</summary>
+                public static readonly Guid editKey = new Guid("5539ca78-a0f4-43fe-8600-4865caeadd76");
+                /// <summary>Tooltip for the button that enters key edit mode.</summary>
+                public static readonly Guid editKeys = new Guid("ff0a077e-b4e3-4f3a-aa0d-22c73ce74864");
+                /// <summary>Empty state when no keys match the filters.</summary>
+                public static readonly Guid noKeysMatch = new Guid("aeed5c2f-68a7-4fe2-a031-28e5ddc2f24d");
+                /// <summary>Tooltip showing the number of pending suggestions on a key.</summary>
+                public static readonly Guid pendingSuggestions = new Guid("e4f16d99-41a9-4ab9-a094-9fecfaf4da8e");
+                /// <summary>Placeholder for the key search box.</summary>
+                public static readonly Guid searchKeys = new Guid("9dbb892d-0d5c-4486-97ff-aeae6b6f4109");
+                /// <summary>Tab showing all keys.</summary>
+                public static readonly Guid tabAll = new Guid("8badb48a-cfd5-4927-8e49-fd4179e11095");
+                /// <summary>Tab showing keys that need review.</summary>
+                public static readonly Guid tabNeedsReview = new Guid("68d1c7f8-3454-4640-a3d6-b0df23f87e37");
+                /// <summary>Tab showing untranslated keys.</summary>
+                public static readonly Guid tabUntranslated = new Guid("e77dd3ab-abea-450c-b258-2d16d50e31fd");
+
+                public static class CategoryFilter
+                {
+                    /// <summary>Button that opens the new category modal.</summary>
+                    public static readonly Guid addCategory = new Guid("17536fcf-a0e6-4521-b06b-2e3cf33d720f");
+                    /// <summary>Filter trigger label when no category is selected.</summary>
+                    public static readonly Guid allCategories = new Guid("b32e5965-bfa2-454b-9a77-29b4cfde5b8e");
+                    /// <summary>Tooltip on a disabled delete button when the category still contains keys.</summary>
+                    public static readonly Guid cannotDeleteHasKeys = new Guid("f65a10fe-fb27-4e4b-81a2-94a1a9e48180");
+                    /// <summary>Tooltip for collapsing an expanded category node.</summary>
+                    public static readonly Guid collapse = new Guid("448f9221-5b49-49e4-8122-e41df5b9da08");
+                    /// <summary>Tooltip for the collapse-all-categories button.</summary>
+                    public static readonly Guid collapseAll = new Guid("e5551c63-06b4-4ea0-9b67-14e5a76fb254");
+                    /// <summary>Tooltip for the delete-category button.</summary>
+                    public static readonly Guid deleteCategory = new Guid("465c8445-4caf-40fe-9399-9c7639eca6b7");
+                    /// <summary>Tooltip for the edit-category button.</summary>
+                    public static readonly Guid editCategory = new Guid("6c617c54-a633-4a78-a5af-13842c13d95c");
+                    /// <summary>Tooltip for expanding a collapsed category node.</summary>
+                    public static readonly Guid expand = new Guid("88c01523-77aa-452a-b151-7cdb22061777");
+                    /// <summary>Tooltip for the expand-all-categories button.</summary>
+                    public static readonly Guid expandAll = new Guid("ec11b549-2b79-4b0d-af6e-437a5d11ad9e");
+                    /// <summary>Title of the category filter panel.</summary>
+                    public static readonly Guid filterByCategory = new Guid("73cf71f2-7b00-4534-8e0e-0ce662d9f698");
+                    /// <summary>Filter trigger label when multiple categories are selected.</summary>
+                    public static readonly Guid manyCategories = new Guid("6385c868-8dcf-46c6-a84b-a74563cc7493");
+                    /// <summary>Empty state when the project has no categories.</summary>
+                    public static readonly Guid noCategoriesYet = new Guid("5556b903-e8d1-4e47-9579-de67046d5653");
+                    /// <summary>Filter trigger label fallback when one unknown category is selected.</summary>
+                    public static readonly Guid oneCategory = new Guid("d1253dd1-4e19-4a8d-ae20-b2b5e2ecf9a5");
+                    /// <summary>Tooltip explaining the right-click select-only behavior.</summary>
+                    public static readonly Guid rightClickSelectOnly = new Guid("ec775001-cc74-4c82-b5bc-76f4bd4c0bdc");
+                }
+
+                public static class NewCategory
+                {
+                    /// <summary>Label for the category name input.</summary>
+                    public static readonly Guid categoryName = new Guid("c56ddf0d-122a-4e8d-a99f-22b5c2826802");
+                    /// <summary>Confirm button when creating a category.</summary>
+                    public static readonly Guid createCategory = new Guid("c7582742-a16a-468a-a069-c4d3945b3793");
+                    /// <summary>Label for the category description field.</summary>
+                    public static readonly Guid description = new Guid("26392e1f-931a-4b3c-a39b-169d4fa03874");
+                    /// <summary>Placeholder for the category description textarea.</summary>
+                    public static readonly Guid descriptionPlaceholder = new Guid("e6ba4566-14a6-4529-947f-342a3420cb6f");
+                    /// <summary>Modal title when editing a category.</summary>
+                    public static readonly Guid editCategory = new Guid("d4071eef-cac7-4db9-abe1-7b9de4793eb4");
+                    /// <summary>Example placeholder for the category name input.</summary>
+                    public static readonly Guid menuPlaceholder = new Guid("2243e6a5-534f-47a9-9a58-0ddfa2e53d10");
+                    /// <summary>Modal title when creating a category.</summary>
+                    public static readonly Guid newCategory = new Guid("a5c2de6d-d563-4e73-bc11-99327dfe7373");
+                    /// <summary>Empty state when no parent categories match the search.</summary>
+                    public static readonly Guid noCategoriesFound = new Guid("a3f65a68-8c20-42b9-8b2d-5abd4f5bc131");
+                    /// <summary>Option to select no parent category.</summary>
+                    public static readonly Guid none = new Guid("2e5c39e8-a9b4-414c-9a10-6496b41843a3");
+                    /// <summary>Hint indicating a field is optional.</summary>
+                    public static readonly Guid optional = new Guid("30b792c5-7f10-4bdc-a54d-e1d13ef5ac6b");
+                    /// <summary>Label for the parent category picker.</summary>
+                    public static readonly Guid parentCategory = new Guid("81878841-955e-4cf8-bc7c-6ed4ae7402fd");
+                    /// <summary>Confirm button when editing a category.</summary>
+                    public static readonly Guid saveChanges = new Guid("7c5df515-ef18-471e-a5da-c9033d42b319");
+                    /// <summary>Placeholder for the parent category search input.</summary>
+                    public static readonly Guid searchCategory = new Guid("99b4ee20-142d-4776-acf6-9167f36efd0b");
+                }
+
+                public static class NewKey
+                {
+                    /// <summary>Label for the category picker.</summary>
+                    public static readonly Guid category = new Guid("134b9092-0898-4326-8af6-8e8bfee6e622");
+                    /// <summary>Confirm button when creating a key.</summary>
+                    public static readonly Guid createKey = new Guid("f4507971-aeaa-4cd8-aa5e-63da4ba6159b");
+                    /// <summary>Validation error for a duplicate key name in the category.</summary>
+                    public static readonly Guid duplicateKey = new Guid("ce7f5d4d-c59f-4410-b313-07430613cadd");
+                    /// <summary>Modal title when editing a key.</summary>
+                    public static readonly Guid editKey = new Guid("0321fbe0-a18d-481b-8559-10fd7c186246");
+                    /// <summary>Label for the previewed full key path.</summary>
+                    public static readonly Guid fullKey = new Guid("1793715d-54a2-409f-b367-044fb2973608");
+                    /// <summary>Validation error for an invalid key name.</summary>
+                    public static readonly Guid invalidKeyName = new Guid("f9ca5ebe-b3d6-45bd-a5d8-8aa1cc20af1a");
+                    /// <summary>Label for the key name input.</summary>
+                    public static readonly Guid keyName = new Guid("0cc6f2b1-0c52-45fc-9457-0b3d7e52d61e");
+                    /// <summary>Hint describing allowed key name characters.</summary>
+                    public static readonly Guid keyNameHint = new Guid("811f4dc2-dc85-48bd-a853-312d124e4d8f");
+                    /// <summary>Example placeholder for the key name input.</summary>
+                    public static readonly Guid keyNamePlaceholder = new Guid("186a972d-dca8-4079-81b4-6c529acf19c3");
+                    /// <summary>Label for the max length input.</summary>
+                    public static readonly Guid maxLength = new Guid("6ce9b0e9-f901-4ca5-9d90-af3813941a86");
+                    /// <summary>Hint explaining that zero means no length limit.</summary>
+                    public static readonly Guid maxLengthHint = new Guid("eb8718b9-1889-4d48-ba25-6957817e5563");
+                    /// <summary>Warning body explaining that a category is required before adding a key.</summary>
+                    public static readonly Guid mustBelongToCategory = new Guid("9abeea1f-f51e-41b1-b800-2fef7b03f751");
+                    /// <summary>Modal title when creating a key.</summary>
+                    public static readonly Guid newKey = new Guid("96103801-406a-4bce-b391-026796164241");
+                    /// <summary>Empty state when no categories match the search.</summary>
+                    public static readonly Guid noCategoriesFound = new Guid("45e89284-5c66-49f3-bac6-3d0302179aad");
+                    /// <summary>Warning title shown when there are no categories to add a key to.</summary>
+                    public static readonly Guid noCategoriesYet = new Guid("45c820b6-dfa7-4ba4-b19e-f71843ab0b24");
+                    /// <summary>Confirm button when editing a key.</summary>
+                    public static readonly Guid saveChanges = new Guid("449d5b6e-6d9d-45d0-a0a0-76f0c30e1300");
+                    /// <summary>Placeholder for the category search input.</summary>
+                    public static readonly Guid searchCategory = new Guid("ad8b83d5-fc70-4a38-b23e-21c5bb098b9a");
+                }
+
+                public static class TagFlagFilter
+                {
+                    /// <summary>Filter trigger label when no flag or tag is selected.</summary>
+                    public static readonly Guid allFlagsTags = new Guid("63500517-881e-4cd2-abab-9585917074f4");
+                    /// <summary>Title of the flag and tag filter panel.</summary>
+                    public static readonly Guid filterByFlagTag = new Guid("0fc924f1-21f7-4fb5-81fb-c515485b7975");
+                    /// <summary>Label for the Disputed flag.</summary>
+                    public static readonly Guid flagDisputed = new Guid("12d6f2a0-20c9-4ed8-92bd-691cfa118100");
+                    /// <summary>Label for the Do not translate flag.</summary>
+                    public static readonly Guid flagDoNotTranslate = new Guid("3d701ef1-9cd9-442c-867e-88d327d61b14");
+                    /// <summary>Label for the In progress flag.</summary>
+                    public static readonly Guid flagInProgress = new Guid("b85d7315-ff5d-4c16-b876-542ca7901933");
+                    /// <summary>Label for the Needs review flag.</summary>
+                    public static readonly Guid flagNeedsReview = new Guid("b12aac87-7e41-45b6-9008-8c8db25e38d9");
+                    /// <summary>Label for the Outdated flag.</summary>
+                    public static readonly Guid flagOutdated = new Guid("a4ebb350-9ba8-4f7b-ab2d-69f84c491178");
+                    /// <summary>Section title for the flags list.</summary>
+                    public static readonly Guid flagsTitle = new Guid("da6af03b-a33a-41f2-843a-477df4895ce6");
+                    /// <summary>Filter trigger label when multiple flags/tags are selected.</summary>
+                    public static readonly Guid manyFilters = new Guid("d9d01119-f016-4a61-8f54-b7294b7079e6");
+                    /// <summary>Empty state when there are no tags.</summary>
+                    public static readonly Guid noTagsYet = new Guid("49e38f6d-93df-4f11-8e69-3e4f2a46c8b2");
+                    /// <summary>Section title for the tags list.</summary>
+                    public static readonly Guid tagsTitle = new Guid("517b6e13-956f-4602-a3e0-2e5e91788e41");
+                }
+            }
+
+            public static class Languages
+            {
+                /// <summary>Button and header for adding a language.</summary>
+                public static readonly Guid addLanguage = new Guid("863ac37e-2b1b-47ae-bc09-5d0544562469");
+                /// <summary>Tooltip for the button that adds a sub-language variant.</summary>
+                public static readonly Guid addSubLanguage = new Guid("89ca3bed-91cb-4d2d-b774-5eaef210ff75");
+                /// <summary>Button that exits language edit mode.</summary>
+                public static readonly Guid done = new Guid("f5c254f6-0870-4d4c-a6fc-ee236f7c5de9");
+                /// <summary>Tooltip for the button that enters language edit mode.</summary>
+                public static readonly Guid editLanguages = new Guid("a36eb222-dfa6-4ac1-9212-25ec14d8c945");
+                /// <summary>Empty state when no languages match the search.</summary>
+                public static readonly Guid noResults = new Guid("6dd507b4-17b2-4889-b587-cbb8f89caeb6");
+                /// <summary>Tooltip for the button that removes a language.</summary>
+                public static readonly Guid removeLanguage = new Guid("c3d6dcb2-4969-43e5-b711-24a3e9e23c49");
+                /// <summary>Placeholder for the add-language search box.</summary>
+                public static readonly Guid searchByNameOrCode = new Guid("86f6e20f-016a-4c3e-ac18-11d7e6dca956");
+                /// <summary>Placeholder for the language search box.</summary>
+                public static readonly Guid searchLanguages = new Guid("e0889943-3b1c-43ad-a51a-3f00506245d3");
+                /// <summary>Badge marking the main/source language.</summary>
+                public static readonly Guid srcBadge = new Guid("7f71331a-12ab-4f0e-a6c5-ca2eb738415c");
+                /// <summary>Badge marking a sub-language (variant).</summary>
+                public static readonly Guid subBadge = new Guid("ca73b55f-ae9a-43e1-a6e2-dcbdfe823e44");
+                /// <summary>Placeholder for the sub-language tag input.</summary>
+                public static readonly Guid variantTagPlaceholder = new Guid("cacc71f6-82bc-450e-b94d-5ab8b3b7d1a1");
+            }
+
+            public static class Page
+            {
+                /// <summary>Tooltip on the column resizer handle</summary>
+                public static readonly Guid dragToResize = new Guid("80a0cdd6-1360-4958-b08f-5d795bfaeb60");
+                /// <summary>Empty state shown on the translate page when no project is open</summary>
+                public static readonly Guid noProjectOpen = new Guid("a6e0256f-5d61-455b-83b8-14d74fe99d9d");
+            }
+
+            public static class TopBar
+            {
+                /// <summary>Tooltip on the committed status pill when nothing is pending.</summary>
+                public static readonly Guid allLocalChangesOnServer = new Guid("527530d2-e7b7-4d1a-87a2-e9ea70919cad");
+                /// <summary>Tooltip on the back button that returns to the project picker.</summary>
+                public static readonly Guid backToProjects = new Guid("5a2478bf-98e5-4ac0-b550-98f9d1b835bc");
+                /// <summary>Tooltip on the uncommitted status pill for an online project.</summary>
+                public static readonly Guid changesNotPushed = new Guid("fecb3b17-f9a6-4f5b-8216-8baa6ac264b4");
+                /// <summary>Tooltip on the uncommitted-mode pill listing pending changes.</summary>
+                public static readonly Guid changesWaitingToApply = new Guid("5e80ce32-f4f8-460d-bdd1-e7003ee878bb");
+                /// <summary>Status pill shown when there are no uncommitted changes.</summary>
+                public static readonly Guid committed = new Guid("e3f0efe1-624f-4924-b3a5-b69c45bedb8a");
+                /// <summary>Singular noun for one sync conflict, used in a count pill.</summary>
+                public static readonly Guid conflict = new Guid("0b02def1-44c0-44f2-ad2e-50bcd9c1dbb8");
+                /// <summary>Suffix appended to a sync status message reporting the number of conflicts.</summary>
+                public static readonly Guid conflictSuffix = new Guid("d838e320-7017-4ca0-b018-9371b959d1e8");
+                /// <summary>Plural noun for multiple sync conflicts, used in a count pill.</summary>
+                public static readonly Guid conflicts = new Guid("c60c9580-9241-441a-a3fa-ac359a1456f4");
+                /// <summary>Tooltip on the export button.</summary>
+                public static readonly Guid export = new Guid("0917b810-5de4-4ba7-b2c7-6243f0d0ec73");
+                /// <summary>Tooltip on the import button.</summary>
+                public static readonly Guid importFromExcel = new Guid("30b8c4b0-d4bb-4f68-9304-a5fba50a9108");
+                /// <summary>Redo button tooltip when there is nothing to redo.</summary>
+                public static readonly Guid nothingToRedo = new Guid("48be4d23-b792-44b3-9a1f-c3ce867fabd2");
+                /// <summary>Undo button tooltip when there is nothing to undo.</summary>
+                public static readonly Guid nothingToUndo = new Guid("eb37102d-a715-434a-8e49-49275fc2cd36");
+                /// <summary>Sync/push result message for an offline (non-online) project.</summary>
+                public static readonly Guid offlineProject = new Guid("0c9fbf57-a5f3-49a0-97f2-d62329e8f146");
+                /// <summary>Label of the button that pushes changes to the server.</summary>
+                public static readonly Guid push = new Guid("98600075-05fb-46d7-b9c7-3166504581f5");
+                /// <summary>Push button tooltip when the push is available.</summary>
+                public static readonly Guid pushChangesToServer = new Guid("8c503240-62c0-4526-89a8-68db53f5c975");
+                /// <summary>Push result message when the push failed; error details may follow.</summary>
+                public static readonly Guid pushFailed = new Guid("5e0876e0-11bd-45a9-bcbc-8a9f6e043eb4");
+                /// <summary>Fallback error shown when a push failed without a specific server message.</summary>
+                public static readonly Guid pushRejectedByServer = new Guid("c2ff4e6c-3d11-44c7-90d1-7d503121cfe6");
+                /// <summary>Error shown in the conflicts modal when a push was rejected because the server moved ahead.</summary>
+                public static readonly Guid pushRejectedNewerChanges = new Guid("a4658160-51e4-42e8-83cd-d2fa13c9d658");
+                /// <summary>Push result message when the server rejected the push due to conflicts.</summary>
+                public static readonly Guid pushRejectedResolve = new Guid("230248f5-1080-4f12-9085-d7b74527cd3f");
+                /// <summary>Push result message on success.</summary>
+                public static readonly Guid pushed = new Guid("0845fe05-77b8-4b39-b6eb-c88be59f2bf1");
+                /// <summary>Status message shown while a push is in progress.</summary>
+                public static readonly Guid pushing = new Guid("9ebc9094-61f4-4336-a7bf-f02812a69afd");
+                /// <summary>Label of the recent-changes pill; a count follows in parentheses.</summary>
+                public static readonly Guid recentChanges = new Guid("944fecef-05fb-4612-90be-05e235591364");
+                /// <summary>Redo button tooltip naming the action to be redone.</summary>
+                public static readonly Guid redoLabel = new Guid("8b202286-6b83-49f8-9910-2373bcbbbfa6");
+                /// <summary>Push button tooltip shown when there are unresolved conflicts.</summary>
+                public static readonly Guid resolveConflictsBeforePushing = new Guid("f175ca73-adbb-4539-bf38-c7221c9cf1da");
+                /// <summary>Push result message when blocked by client-side conflicts.</summary>
+                public static readonly Guid resolveConflictsFirst = new Guid("7716e324-4c32-4eb0-a3e3-b59402b0bf63");
+                /// <summary>Sync result message after a full resync.</summary>
+                public static readonly Guid resynced = new Guid("2bfd52ed-d836-49f9-ba61-3d503347aa8f");
+                /// <summary>Status pill shown when all changes are saved.</summary>
+                public static readonly Guid saved = new Guid("6f3ea200-8650-4e6a-b8eb-22749176be18");
+                /// <summary>Tooltip on the recent-changes pill.</summary>
+                public static readonly Guid seeWhatLastSyncChanged = new Guid("b1e8e09d-2336-4cc6-849f-377766b2a543");
+                /// <summary>Error shown when the user must sign in before pushing.</summary>
+                public static readonly Guid signInBeforePush = new Guid("2a52d299-5035-4f81-b3f0-10383e305b6a");
+                /// <summary>Sync/push result message when the user is not signed in.</summary>
+                public static readonly Guid signInRequired = new Guid("c5b90b2c-dbca-4bb3-a884-505668570418");
+                /// <summary>Label of the button that syncs from the server.</summary>
+                public static readonly Guid sync = new Guid("5da20e13-532c-450b-a437-0a960203318a");
+                /// <summary>Sync result message when the sync failed; error details may follow.</summary>
+                public static readonly Guid syncFailed = new Guid("cec0eaae-97b5-4cc3-81b5-1add18b86323");
+                /// <summary>Tooltip on the sync button.</summary>
+                public static readonly Guid syncFromServer = new Guid("aeeab8f1-0cd0-41ae-b49d-e72034c016a7");
+                /// <summary>Sync result message reporting how many files changed.</summary>
+                public static readonly Guid syncedFiles = new Guid("5aa4e327-a7e5-42e2-9b3c-28e454266f74");
+                /// <summary>Status message shown while a sync is in progress.</summary>
+                public static readonly Guid syncing = new Guid("647beb0b-fa74-4c56-b6e7-52640b13445c");
+                /// <summary>Prefix label shown before the target language name in the top bar.</summary>
+                public static readonly Guid translatingInto = new Guid("12238c1e-dd1a-4fe4-b8e1-625e0cb98bd7");
+                /// <summary>Status pill shown when there are uncommitted changes (online project).</summary>
+                public static readonly Guid uncommitted = new Guid("7f8e43b8-af99-402f-9b2a-ff613ee677d7");
+                /// <summary>Tooltip on the button that opens the uncommitted changes modal.</summary>
+                public static readonly Guid uncommittedChanges = new Guid("71f02591-9833-42dd-b076-55ebb8e69f76");
+                /// <summary>Uncommitted-mode status pill label with a pending-change count.</summary>
+                public static readonly Guid uncommittedCount = new Guid("5a8f18ab-1c5b-44b9-9f64-bf5d959bc8c6");
+                /// <summary>Tooltip on the uncommitted-mode pill when there is nothing to apply.</summary>
+                public static readonly Guid uncommittedModeNoChanges = new Guid("d144db50-baf3-471c-93df-1bae7d88da6f");
+                /// <summary>Undo button tooltip naming the action to be undone.</summary>
+                public static readonly Guid undoLabel = new Guid("37c40d7d-fd90-4032-b36c-b3587a92066a");
+                /// <summary>Status pill shown when there are unsaved changes.</summary>
+                public static readonly Guid unsaved = new Guid("cfd65add-08f9-4697-a597-2c61c62c6cab");
+                /// <summary>Sync result message when nothing changed.</summary>
+                public static readonly Guid upToDate = new Guid("2ba3f20f-ed96-4cbe-82b6-ca23620a9e0e");
+
+                public static class ConfirmLeave
+                {
+                    /// <summary>Button that discards unsaved changes and leaves.</summary>
+                    public static readonly Guid discardAndLeave = new Guid("e39dd6b6-b888-414d-a2bb-8e7b25235ebe");
+                    /// <summary>Button that saves changes and then leaves.</summary>
+                    public static readonly Guid saveAndLeave = new Guid("a02e0b40-0bca-4ad2-b048-e6f68b80b372");
+                    /// <summary>Title of the confirm-leave modal.</summary>
+                    public static readonly Guid unsavedChanges = new Guid("f7f5444d-7535-4ba7-b958-ec6002534659");
+                    /// <summary>Body warning of the confirm-leave modal.</summary>
+                    public static readonly Guid unsavedChangesBody = new Guid("af4b03d8-81ca-4026-b67a-921852411243");
+                }
+
+                public static class Conflicts
+                {
+                    /// <summary>Conflicts modal title when a push is blocked but there are no listed conflicts.</summary>
+                    public static readonly Guid cantPush = new Guid("73f823ec-8666-445c-80c6-9991c24e96cc");
+                    /// <summary>Intro paragraph explaining the conflict list.</summary>
+                    public static readonly Guid conflictsIntro = new Guid("a2608ee9-10e3-4dab-852d-1b69acccf22a");
+                    /// <summary>Generic tag shown on an otherwise-uncategorized conflict.</summary>
+                    public static readonly Guid kindConflict = new Guid("37f1a4fb-3cf9-4b31-8959-5cdd92435599");
+                    /// <summary>Tag shown on a conflict caused by a concurrent edit of the destination.</summary>
+                    public static readonly Guid kindEdited = new Guid("c377644f-2fc4-4fe7-88e0-8bb0cbfd8d79");
+                    /// <summary>Tag shown on a conflict whose source string drifted.</summary>
+                    public static readonly Guid kindSource = new Guid("83cdad18-4e76-40dc-8387-a74307b75cde");
+                    /// <summary>Empty state shown in the conflicts modal when there are no conflicts.</summary>
+                    public static readonly Guid noConflicts = new Guid("223a50cf-6f7e-45fb-a08d-5b9c19700c2a");
+                    /// <summary>Conflicts modal title when there is more than one conflict.</summary>
+                    public static readonly Guid titleManyConflicts = new Guid("cf561e0f-14a5-47f0-b6ac-f25548f13c9e");
+                    /// <summary>Conflicts modal title when there is exactly one conflict.</summary>
+                    public static readonly Guid titleOneConflict = new Guid("92eb062a-705a-42dc-a313-bc451a3dab99");
+                }
+
+                public static class ExcelImport
+                {
+                    /// <summary>Result stat label for categories created.</summary>
+                    public static readonly Guid categoriesCreated = new Guid("dd78da08-6dd1-4695-ab84-409d4ff2fe13");
+                    /// <summary>Button to pick the xlsx file and start importing.</summary>
+                    public static readonly Guid chooseFile = new Guid("2987f8aa-6f26-4098-ac71-fc9117b4a8a6");
+                    /// <summary>Checkbox label to create missing keys.</summary>
+                    public static readonly Guid createNewKeys = new Guid("d1ad35e8-93d0-484f-92e1-db8db68ce4b6");
+                    /// <summary>Description of how Excel import works.</summary>
+                    public static readonly Guid desc = new Guid("af29b774-5196-4640-92b0-20357ad66e4b");
+                    /// <summary>Link button that deselects all update options.</summary>
+                    public static readonly Guid deselectAll = new Guid("f30d8ce5-78fc-4ffc-924d-a8b72e482812");
+                    /// <summary>Segment button: import translations as direct text.</summary>
+                    public static readonly Guid directText = new Guid("d51ea656-3af3-4347-b7a0-eb7b699c1b4f");
+                    /// <summary>Footer button to close the import modal.</summary>
+                    public static readonly Guid done = new Guid("3faaa0c6-8a46-41da-9a99-2fcb9219d2bc");
+                    /// <summary>Hint shown when importing as direct text.</summary>
+                    public static readonly Guid hintDirect = new Guid("2cfb4be7-e14e-4267-bf69-f93f89d55a21");
+                    /// <summary>Hint shown when importing as suggestions.</summary>
+                    public static readonly Guid hintSuggestions = new Guid("06fb1917-5d4e-414a-9fdf-fc2191232b6e");
+                    /// <summary>Footer button to import another file.</summary>
+                    public static readonly Guid importAnother = new Guid("12c1cee6-af45-4afd-aab9-3eb0675d8719");
+                    /// <summary>Error message shown when import fails.</summary>
+                    public static readonly Guid importFailed = new Guid("ae4add2d-7d16-4c8a-b14b-d6b78e9e7210");
+                    /// <summary>Progress text while importing.</summary>
+                    public static readonly Guid importing = new Guid("0372ac81-5980-458a-b6a1-e718dbcc01ce");
+                    /// <summary>Result stat label for keys created.</summary>
+                    public static readonly Guid keysCreated = new Guid("26a14d09-e292-49d6-a20f-63183149d050");
+                    /// <summary>Result stat label for keys updated.</summary>
+                    public static readonly Guid keysUpdated = new Guid("3011241e-3316-4953-9567-626f08ea96f9");
+                    /// <summary>Result stat label for rows skipped.</summary>
+                    public static readonly Guid rowsSkipped = new Guid("2c08894a-cd9a-49cc-b027-ac64420e1c6d");
+                    /// <summary>Link button that selects all update options.</summary>
+                    public static readonly Guid selectAll = new Guid("ecac9e0f-c05b-44a2-ae7b-f76c8d231c0a");
+                    /// <summary>Segment button: import translations as suggestions.</summary>
+                    public static readonly Guid suggestions = new Guid("977cf38f-83b5-4c77-a986-3d94c2d80f47");
+                    /// <summary>Result stat label for suggestions added.</summary>
+                    public static readonly Guid suggestionsAdded = new Guid("bdba7e29-c268-4337-81bb-401fcd507ac0");
+                    /// <summary>Header title of the Excel import modal.</summary>
+                    public static readonly Guid title = new Guid("b4ae14bf-d612-4936-a135-cfabd59935b8");
+                    /// <summary>Section title for how translations are imported.</summary>
+                    public static readonly Guid translationsImportAs = new Guid("18213b6d-1852-47dc-a176-87da349e77bc");
+                    /// <summary>Result stat label for translations set.</summary>
+                    public static readonly Guid translationsSet = new Guid("5db95506-930a-4113-b58b-3d66d90de19d");
+                    /// <summary>Checkbox label to update categories.</summary>
+                    public static readonly Guid updateCategories = new Guid("23befafd-4bca-4d99-a2fa-c88863ce361a");
+                    /// <summary>Inline hint next to the update categories checkbox.</summary>
+                    public static readonly Guid updateCategoriesHint = new Guid("4c951756-b71c-46da-8e1e-2962a9cf8faf");
+                    /// <summary>Checkbox label to update descriptions.</summary>
+                    public static readonly Guid updateDescriptions = new Guid("d98f5fd2-791b-4ce3-a535-ee158f9c3718");
+                    /// <summary>Section title for what to update from the sheet.</summary>
+                    public static readonly Guid updateFromSheet = new Guid("7e52b478-ddab-4a50-a4a7-7faa5dd5d072");
+                    /// <summary>Checkbox label to update max length.</summary>
+                    public static readonly Guid updateMaxLength = new Guid("1a81cc3a-abae-4c71-8215-98ab51f19c32");
+                    /// <summary>Checkbox label to update source text.</summary>
+                    public static readonly Guid updateSourceText = new Guid("4105b9cc-5934-4df7-b4f2-9ebe7d253456");
+                    /// <summary>Checkbox label to update tags.</summary>
+                    public static readonly Guid updateTags = new Guid("24ef4aaa-5b15-4198-a05a-ca2fcec0aa15");
+                }
+
+                public static class Export
+                {
+                    /// <summary>Field label for the generated class name.</summary>
+                    public static readonly Guid className = new Guid("68b3edef-0a63-4f89-8658-f3651ddc6785");
+                    /// <summary>Placeholder example for the class name field.</summary>
+                    public static readonly Guid classNamePlaceholder = new Guid("4a437a52-75f5-4ccf-b381-01a32a858b34");
+                    /// <summary>Section title for Excel column options.</summary>
+                    public static readonly Guid columns = new Guid("9d8f3dc8-67a9-47ac-9f0a-a64c2c508095");
+                    /// <summary>Section title for C# class options.</summary>
+                    public static readonly Guid csharpClass = new Guid("349d944e-1e22-4526-9847-008e0fdd9692");
+                    /// <summary>Hint describing the generated C# class.</summary>
+                    public static readonly Guid csharpHint = new Guid("9f8d44ac-9837-42fc-b4de-58815b181369");
+                    /// <summary>Format toggle button for C# script export.</summary>
+                    public static readonly Guid csharpScript = new Guid("fe72ec2e-0e27-442f-a51f-d51f47b32a0a");
+                    /// <summary>Link button that deselects all languages.</summary>
+                    public static readonly Guid deselectAll = new Guid("5650a6bd-e289-49cd-93de-a5d4ad0aa249");
+                    /// <summary>Format toggle button for Excel export.</summary>
+                    public static readonly Guid excel = new Guid("df145087-d921-4079-8611-176ba1dc1e2b");
+                    /// <summary>Segment button to exclude a flag or tag.</summary>
+                    public static readonly Guid exclude = new Guid("1355f4e2-f836-45e5-9bae-f2dc7327245c");
+                    /// <summary>Primary button that starts the export.</summary>
+                    public static readonly Guid exportButton = new Guid("3f5212a5-19e0-48e8-bdff-5b0244c3e0e2");
+                    /// <summary>Text shown on the export button while exporting.</summary>
+                    public static readonly Guid exporting = new Guid("57f1f105-0517-4215-bc7b-c5cf180257e3");
+                    /// <summary>Flag label: disputed.</summary>
+                    public static readonly Guid flagDisputed = new Guid("7024be67-045c-49d1-a700-10af5e170dd5");
+                    /// <summary>Flag label: do not translate.</summary>
+                    public static readonly Guid flagDoNotTranslate = new Guid("194aaa0b-12ad-43fa-a3ff-4ce30305d195");
+                    /// <summary>Flag label: in progress.</summary>
+                    public static readonly Guid flagInProgress = new Guid("264ef196-e98a-49a6-8cca-f241120cca4b");
+                    /// <summary>Flag label: needs review.</summary>
+                    public static readonly Guid flagNeedsReview = new Guid("39b21bc1-e34d-4993-bc17-9373ece9b87a");
+                    /// <summary>Flag label: outdated.</summary>
+                    public static readonly Guid flagOutdated = new Guid("96bbdb78-7548-4691-a6f9-882c749ac1d6");
+                    /// <summary>Section title for flag include/exclude filters.</summary>
+                    public static readonly Guid flags = new Guid("87238420-ede5-4e20-a297-2b865c0dae0b");
+                    /// <summary>Hint explaining flag include/exclude behavior.</summary>
+                    public static readonly Guid flagsHint = new Guid("017cc979-b123-4473-8313-2b58c912d27d");
+                    /// <summary>Section title for the export format toggle.</summary>
+                    public static readonly Guid format = new Guid("34288984-12b5-48b9-928d-8da939dd77ae");
+                    /// <summary>Segment button to include a flag or tag.</summary>
+                    public static readonly Guid include = new Guid("17c45454-98c0-4ba7-966e-7e67bab52b79");
+                    /// <summary>Footer count of matching vs total keys.</summary>
+                    public static readonly Guid keyCount = new Guid("065c7ec1-3c65-4115-8552-9d6401be40e1");
+                    /// <summary>Section title for language selection.</summary>
+                    public static readonly Guid languages = new Guid("1c912d41-81b6-46d2-8591-483cb5ce7b1e");
+                    /// <summary>Field label for the generated namespace.</summary>
+                    public static readonly Guid namespaceLabel = new Guid("7e22309d-9785-46c4-bc8a-ae7d50de7fe0");
+                    /// <summary>Placeholder example for the namespace field.</summary>
+                    public static readonly Guid namespacePlaceholder = new Guid("641cbcbf-07ae-478a-b807-936c37d1bf94");
+                    /// <summary>Row label for keys that carry no flags.</summary>
+                    public static readonly Guid noFlags = new Guid("2e3d3e76-528c-4235-a511-c37c522ce9b1");
+                    /// <summary>Row label for keys that carry no tags.</summary>
+                    public static readonly Guid noTags = new Guid("b6c152ee-4ae8-49aa-81c4-2dd354717a59");
+                    /// <summary>Marker indicating the namespace field is optional.</summary>
+                    public static readonly Guid optional = new Guid("de909cf3-8ff4-433b-b74b-75d1a62a51f8");
+                    /// <summary>Link button that selects all languages.</summary>
+                    public static readonly Guid selectAll = new Guid("2ca1517c-3ba3-4dac-8f6a-21ca589b81e6");
+                    /// <summary>Badge marking the source (main) language.</summary>
+                    public static readonly Guid source = new Guid("727e6309-2051-4f4c-9263-953104403574");
+                    /// <summary>Section title for tag include/exclude filters.</summary>
+                    public static readonly Guid tags = new Guid("cc2e38d2-0399-4d98-8acb-22dc53168a12");
+                    /// <summary>Checkbox label to add a tags column to the Excel export.</summary>
+                    public static readonly Guid tagsColumnLabel = new Guid("9cb1c983-c259-4147-aac7-ce76b5e7b482");
+                    /// <summary>Header title of the export modal.</summary>
+                    public static readonly Guid title = new Guid("6bcb8803-ac32-4b96-8a0a-6261b869f878");
+                }
+
+                public static class Notifications
+                {
+                    /// <summary>Notification source label for a key or translation comment.</summary>
+                    public static readonly Guid commented = new Guid("74624a55-4701-4be0-8035-43e0301b6db2");
+                    /// <summary>Compact relative time in days.</summary>
+                    public static readonly Guid daysAgo = new Guid("93255c12-5cac-48f8-a33b-535c02858495");
+                    /// <summary>Compact relative time in hours.</summary>
+                    public static readonly Guid hoursAgo = new Guid("46eb829f-108a-4a8c-b844-3d1a077e7a70");
+                    /// <summary>Relative time for events less than a minute ago.</summary>
+                    public static readonly Guid justNow = new Guid("af5724ae-aa5c-4d01-b20c-dc052676fd3b");
+                    /// <summary>Bell button tooltip and notifications panel header.</summary>
+                    public static readonly Guid mentions = new Guid("b31fb788-97dc-42fe-b85d-06a3a4ba705d");
+                    /// <summary>Compact relative time in minutes.</summary>
+                    public static readonly Guid minutesAgo = new Guid("75f5520d-caf9-4371-a58d-a3a1231aaf8d");
+                    /// <summary>Empty state in the notifications panel.</summary>
+                    public static readonly Guid noMentions = new Guid("d56ed0d6-d62e-47f6-ad5c-58def9126551");
+                    /// <summary>Fallback label for a notification whose key no longer exists.</summary>
+                    public static readonly Guid removedKey = new Guid("8c70bf3d-45b2-4d0d-9145-f5c1eebe18de");
+                    /// <summary>Notification source label for a reply to a suggestion.</summary>
+                    public static readonly Guid replied = new Guid("094abec3-1780-40d2-95e7-595f0dde898f");
+                    /// <summary>Notification source label for a new suggestion.</summary>
+                    public static readonly Guid suggested = new Guid("8377f9f6-0eae-40c8-b7a6-2860eba75336");
+                    /// <summary>Fallback author name when a member cannot be found.</summary>
+                    public static readonly Guid unknown = new Guid("7962cad5-a25b-48b5-b0d7-9dd5a7ecb9c8");
+                }
+
+                public static class RecentChanges
+                {
+                    /// <summary>Tooltip on the clear button.</summary>
+                    public static readonly Guid clearTitle = new Guid("5621e245-4945-4ee5-acc4-9222c8982448");
+                    /// <summary>Empty-state text when the last sync pulled nothing.</summary>
+                    public static readonly Guid emptyState = new Guid("1bbf2ff7-dd3f-4538-b003-dca6bc5e1584");
+                    /// <summary>Intro paragraph above the recent changes list.</summary>
+                    public static readonly Guid intro = new Guid("24840b51-779e-4efc-b1f8-aa4704120a88");
+                    /// <summary>Section label for changes not tied to a key.</summary>
+                    public static readonly Guid otherChanges = new Guid("4ac28dc1-93e2-4834-9ad5-a40b3b4bfbb9");
+                    /// <summary>Fallback name shown for a key that no longer exists.</summary>
+                    public static readonly Guid removedKey = new Guid("26b7aa25-1fd2-4fbb-80b0-fb17980bee68");
+                    /// <summary>Header title of the recent changes modal.</summary>
+                    public static readonly Guid title = new Guid("d77e3ac1-45ba-491b-aed1-05195d57511d");
+                }
+
+                public static class UncommittedChanges
+                {
+                    /// <summary>Tooltip for the apply-all button.</summary>
+                    public static readonly Guid applyAllTitle = new Guid("c6af3ae2-b205-463d-82af-452a6ea57961");
+                    /// <summary>Detail row label for a change&apos;s data.</summary>
+                    public static readonly Guid changeData = new Guid("28e61c6d-c7a9-4a4b-b328-b0564a538709");
+                    /// <summary>Tooltip on the confirm-remove button for a single change.</summary>
+                    public static readonly Guid confirmRemoveTitle = new Guid("68478f77-4c66-404b-92fe-ff3990f17fc8");
+                    /// <summary>Conflict banner, plural form.</summary>
+                    public static readonly Guid conflictBannerPlural = new Guid("8fbf86b2-cadc-420b-b44b-8514ce45181b");
+                    /// <summary>Conflict banner, singular form.</summary>
+                    public static readonly Guid conflictBannerSingular = new Guid("8d9f585c-9fbd-497d-a037-ef990c2e7350");
+                    /// <summary>Per-row conflict tag label.</summary>
+                    public static readonly Guid conflictTag = new Guid("0dd7be2b-4a74-469d-9c4b-2793108aee04");
+                    /// <summary>Tooltip on a per-row conflict tag.</summary>
+                    public static readonly Guid conflictTagTitle = new Guid("b158893e-af9f-4f54-b9a8-2261bf842a93");
+                    /// <summary>Button confirming discard of all pending changes.</summary>
+                    public static readonly Guid discard = new Guid("f7bf4236-9bb2-418b-8f3f-4c61258d1919");
+                    /// <summary>Button that starts discarding all pending changes.</summary>
+                    public static readonly Guid discardAll = new Guid("ae2ccb11-45c8-4f4b-ae60-bec18d0fce43");
+                    /// <summary>Confirmation prompt label before discarding all pending changes.</summary>
+                    public static readonly Guid discardAllConfirm = new Guid("9d855fc9-3cec-4881-9068-1e1f127e9976");
+                    /// <summary>Empty-state text when there are no pending changes.</summary>
+                    public static readonly Guid emptyState = new Guid("655e2975-02fa-4ed4-b125-4689b7c3921f");
+                    /// <summary>Hint shown when uncommitted mode is on and changes are pending.</summary>
+                    public static readonly Guid hintApplyOrDiscard = new Guid("80f2926c-b3f7-4a2d-8c40-b1788858b8ff");
+                    /// <summary>Hint shown when uncommitted mode is off.</summary>
+                    public static readonly Guid hintStage = new Guid("d94e5831-f19a-48ed-9092-1b7d0d17de71");
+                    /// <summary>Hint shown when uncommitted mode is on and no changes are pending.</summary>
+                    public static readonly Guid hintStaged = new Guid("d96fdd5c-1636-4f44-ae2e-a03f81fc557e");
+                    /// <summary>Detail row label for previous destination hash.</summary>
+                    public static readonly Guid prevDestHash = new Guid("943a9350-cbb3-4ddb-879f-e5ff0d13266f");
+                    /// <summary>Detail row label for previous source hash.</summary>
+                    public static readonly Guid prevSourceHash = new Guid("f45730b2-10c9-40b3-a93a-0d210edf35fe");
+                    /// <summary>Tooltip on the remove button for a single change.</summary>
+                    public static readonly Guid removeChangeTitle = new Guid("2ae7e553-bb66-4133-9d89-5cfbb910185a");
+                    /// <summary>Detail row label for a change&apos;s sub id.</summary>
+                    public static readonly Guid subId = new Guid("36d803f0-db6d-4bbc-bfa8-d1e2dbd67e29");
+                    /// <summary>Header title of the uncommitted changes modal.</summary>
+                    public static readonly Guid title = new Guid("27028395-62ef-4bf6-8f6c-9ad741fb1267");
+                    /// <summary>Tooltip explaining why the uncommitted-mode toggle is disabled.</summary>
+                    public static readonly Guid toggleDisabledTitle = new Guid("5ca4c424-36b0-4204-bd8d-a3c06da3261e");
+                    /// <summary>Label of the offline uncommitted-mode switch.</summary>
+                    public static readonly Guid uncommittedMode = new Guid("784fffd5-27bf-442b-b5a1-e9fdc13a6aab");
+                }
+
+                public static class Users
+                {
+                    /// <summary>Body of the modal shown after an admin resets a member&apos;s token.</summary>
+                    public static readonly Guid accessTokenResetBody = new Guid("dbecfa19-b54b-4320-8d79-e308b750dd50");
+                    /// <summary>Title of the modal shown after an admin resets a member&apos;s token.</summary>
+                    public static readonly Guid accessTokenResetTitle = new Guid("9ec0f1a4-6ea5-4a75-98ff-f2ad70dddd16");
+                    /// <summary>Button and form title for adding a new member.</summary>
+                    public static readonly Guid addMember = new Guid("e085f173-3583-448c-a61f-ffb1059717ea");
+                    /// <summary>Badge marking an admin member.</summary>
+                    public static readonly Guid admin = new Guid("139dd36c-fe2c-46b5-b260-ce9b5e3cac12");
+                    /// <summary>Permissions summary for an admin member.</summary>
+                    public static readonly Guid adminFullAccess = new Guid("221cc835-cd72-47ba-a4a8-2a03ac8399a2");
+                    /// <summary>Label for the ban toggle in the member form.</summary>
+                    public static readonly Guid banned = new Guid("78d390f7-c3b2-496a-bd39-9776139529b6");
+                    /// <summary>Badge marking a banned member.</summary>
+                    public static readonly Guid bannedBadge = new Guid("fd402441-59d9-439e-8761-af83e116a25b");
+                    /// <summary>Hint next to the ban toggle.</summary>
+                    public static readonly Guid bannedHint = new Guid("fef70823-17d4-4a45-9760-2c791f04ead6");
+                    /// <summary>Leading word of the confirmation to clear old comments, followed by an amount and unit.</summary>
+                    public static readonly Guid clearConfirmPrefix = new Guid("61a429f3-3b2f-4c1d-aee1-39ee75e6fa5b");
+                    /// <summary>Trailing part of the clear-old-comments confirmation, after the amount and unit.</summary>
+                    public static readonly Guid clearConfirmSuffix = new Guid("603f4bd9-1b8c-4032-a3be-80f7f36a80c5");
+                    /// <summary>Button that triggers clearing comments older than the chosen age.</summary>
+                    public static readonly Guid clearOldComments = new Guid("abbd83b8-ebcb-4aed-b1b1-4e6f6c2c6871");
+                    /// <summary>Result message reporting how many comments were cleared.</summary>
+                    public static readonly Guid clearedComments = new Guid("0aba43fa-6cbd-42f4-ba57-01fd4a8e2f10");
+                    /// <summary>Title of the collaborators (members) modal.</summary>
+                    public static readonly Guid collaborators = new Guid("a7905401-2b46-4f2a-bd55-a0929a504a0b");
+                    /// <summary>Section label for the comment cleanup tools.</summary>
+                    public static readonly Guid commentMaintenance = new Guid("48c83c6d-b579-4432-aeab-9d545a4711d9");
+                    /// <summary>Explanatory hint for the comment maintenance section.</summary>
+                    public static readonly Guid commentMaintenanceHint = new Guid("9e8b7d7c-42a6-4748-88ac-81d30b921272");
+                    /// <summary>Error shown when regenerating the current user&apos;s token failed.</summary>
+                    public static readonly Guid couldNotRegenerateToken = new Guid("2025f22b-6fe8-486c-b56d-f20b0ef6e4f6");
+                    /// <summary>Singular unit word inside the clear-old-comments confirmation.</summary>
+                    public static readonly Guid day = new Guid("298bb011-e3e3-4a17-bdf5-c9ad9f784072");
+                    /// <summary>Unit option for the comment-age selector.</summary>
+                    public static readonly Guid days = new Guid("2ad4195d-ebec-430d-9c73-1c576b30f556");
+                    /// <summary>Tooltip on the button that deletes a member.</summary>
+                    public static readonly Guid deleteMember = new Guid("8f791802-cede-488e-abff-d968c7cc3030");
+                    /// <summary>Inline confirmation prompt before deleting a member.</summary>
+                    public static readonly Guid deleteMemberConfirm = new Guid("5c97b3b1-8575-45d6-a808-c27e75db141d");
+                    /// <summary>Form title and button tooltip for editing an existing member.</summary>
+                    public static readonly Guid editMember = new Guid("cc9d7c46-aeb2-44f4-869b-b287d1e38fa7");
+                    /// <summary>Body of the modal showing a new member&apos;s one-time sign-in token.</summary>
+                    public static readonly Guid memberSignInTokenBody = new Guid("d47ee9fd-101e-48fb-b8b8-1ffe71d29fa2");
+                    /// <summary>Title of the modal showing a new member&apos;s one-time sign-in token.</summary>
+                    public static readonly Guid memberSignInTokenTitle = new Guid("05b95e1c-fab8-46a5-bb18-893f5158cabe");
+                    /// <summary>Section label for the member list; a count follows in parentheses.</summary>
+                    public static readonly Guid members = new Guid("ea96b097-1e02-49cf-8f99-c85186cea498");
+                    /// <summary>Singular unit word inside the clear-old-comments confirmation.</summary>
+                    public static readonly Guid month = new Guid("b02f136e-76f5-4469-b880-0402f4cb0b6d");
+                    /// <summary>Unit option for the comment-age selector.</summary>
+                    public static readonly Guid months = new Guid("1bd34883-f832-4404-9ab6-58292b6731c5");
+                    /// <summary>Body of the modal showing the user&apos;s freshly regenerated token.</summary>
+                    public static readonly Guid newAccessTokenBody = new Guid("82060ddd-fc52-451a-a30d-09e263bb1b28");
+                    /// <summary>Title of the modal showing the user&apos;s freshly regenerated token.</summary>
+                    public static readonly Guid newAccessTokenTitle = new Guid("537c9a2d-64b4-4061-b252-ba0ec79f7271");
+                    /// <summary>Result message when no comments matched the age cutoff.</summary>
+                    public static readonly Guid noCommentsOldEnough = new Guid("a775cb8d-56a6-43f8-8a87-936dd48fa263");
+                    /// <summary>Empty state shown when the project has no languages to assign.</summary>
+                    public static readonly Guid noLanguagesYet = new Guid("fce83416-52a0-4673-8250-066ede23e2c2");
+                    /// <summary>Empty state shown when the project has no members.</summary>
+                    public static readonly Guid noMembersYet = new Guid("531ccb83-de2b-4752-9538-0e1c0fd7f1ee");
+                    /// <summary>Permissions summary when a member has no review languages.</summary>
+                    public static readonly Guid noReviewLanguages = new Guid("9db2caa1-b700-448d-b351-6ad0fa7d82df");
+                    /// <summary>Tooltip on the button that regenerates the current user&apos;s own token.</summary>
+                    public static readonly Guid regenerateMyToken = new Guid("c9079826-f955-4e7a-9b25-5e73fb6ad18a");
+                    /// <summary>Tooltip on the admin button that resets a member&apos;s token.</summary>
+                    public static readonly Guid resetAccessToken = new Guid("367799e7-6748-4a3b-b148-273ab447b150");
+                    /// <summary>Field label for the languages a member can review.</summary>
+                    public static readonly Guid reviewLanguages = new Guid("4adb2595-febb-4cdb-a4a0-4a3b8940bcff");
+                    /// <summary>Hint next to the review-languages field label.</summary>
+                    public static readonly Guid reviewLanguagesHint = new Guid("5c656748-2c1b-4a18-afa9-f552034d7dc5");
+                    /// <summary>Confirm button label when editing an existing member.</summary>
+                    public static readonly Guid saveChanges = new Guid("af54d19f-cb57-41c5-b237-b6ad7be2cf8e");
+                    /// <summary>Field label for a member&apos;s username.</summary>
+                    public static readonly Guid username = new Guid("dea5a715-68b7-4c25-b3b3-0119b9e8a4cc");
+                    /// <summary>Placeholder example shown in the username input.</summary>
+                    public static readonly Guid usernamePlaceholder = new Guid("9be3ef35-6e7d-4ed7-bcb9-22875868c4da");
+                    /// <summary>Badge marking the current user in the member list.</summary>
+                    public static readonly Guid you = new Guid("8f81caa2-0538-4388-b524-c06131e48248");
+                }
+            }
         }
 
         /// <summary>All exported translations, keyed by language then key id.</summary>
@@ -28,7 +1162,493 @@ namespace DeusaldLocalizerWeb
         {
             { "en-US", new Dictionary<Guid, string>
             {
+                { new Guid("1b6bafb8-3429-4d29-8497-f6e2303c6cc1"), "Done" },
+                { new Guid("8da753e1-a1fb-4ff2-ab8d-06b311b9ac18"), "This is your new sign-in token. Copy it now and keep it safe — you'll use it to sign in from now on." },
+                { new Guid("339cb6eb-14be-4c0a-9a49-023a8d95d3b9"), "Your access token" },
+                { new Guid("375b64ad-8a41-4cc6-9f8e-67efd18b0f11"), "Store this token somewhere safe — for security it won't be shown again." },
+                { new Guid("5bce40c1-a14c-4b28-bccb-5908db3c707e"), "Add" },
+                { new Guid("9a7124c3-59d4-4589-a953-6d9706271c85"), "Apply" },
+                { new Guid("e2c24f60-294e-408a-bfb4-6ca188280c29"), "Cancel" },
+                { new Guid("152bddd0-8cd5-4822-a943-8ec104ea3d05"), "Clear" },
+                { new Guid("33924e2d-cc5f-483b-908f-96703a037b50"), "Close" },
+                { new Guid("0d0d600b-2f2c-4159-b3a1-e4863dd33f6c"), "Copy" },
+                { new Guid("3bb7f4ca-2ddb-47bf-8cae-4e2ae5bc1897"), "Create" },
+                { new Guid("e03b6216-eaaa-40ca-bfb1-3eb0a5a79612"), "Delete" },
+                { new Guid("816fa60a-1755-424b-ae1d-3b18f22e8ae0"), "Remove" },
+                { new Guid("be2b805b-a349-452e-95b0-264b29bade0b"), "Save" },
+                { new Guid("87e8276c-68bd-4769-8c35-cb6bd19a0161"), "Access token" },
+                { new Guid("756c258f-9d7f-476b-9fb8-ec59866f3f20"), "Browse…" },
+                { new Guid("875e12f0-a6e0-4ca7-afb9-95d2ce181e55"), "Connect" },
+                { new Guid("b11971f7-707f-48e1-b646-a8d34c51cb17"), "Connecting…" },
+                { new Guid("893f08a6-dd78-4546-a390-fb908ca749ef"), "Not a valid project id" },
+                { new Guid("93275320-f537-4087-9562-1d6feb1f723c"), "No folder selected" },
+                { new Guid("1e67457f-96df-4615-92d8-be36b8cc6316"), "the project's unique id" },
+                { new Guid("7c5a3db7-75cc-47ea-b440-6e51e8fb8b55"), "Project ID" },
+                { new Guid("684bb6a1-4f84-423b-b2dc-beab518f6db6"), "Server URL" },
+                { new Guid("fa1879a0-b5f0-4e2a-8f52-18b130817f13"), "a folder named after the project is created here" },
+                { new Guid("a8c0752c-0955-4d37-9240-6cc57268485d"), "Store in" },
+                { new Guid("4bdb5afa-def8-44af-9d1d-626727927fc8"), "Download an online project from the bot" },
+                { new Guid("cc37e2da-6682-4f79-837e-580d131c7e1f"), "Connect to server" },
+                { new Guid("1499b31c-5fc6-474d-879e-151b7e3c123a"), "Paste your access token…" },
+                { new Guid("b1845d25-de95-4d53-a5b9-01df0c9ccc17"), "Username" },
+                { new Guid("b16ecebf-aaec-40f5-83ba-c9332b0fd3f5"), "Access token" },
+                { new Guid("997eade4-5403-4082-a6f2-82e8b8eaea4c"), "Sign in" },
+                { new Guid("bf093b04-7ab3-4f02-934e-7a1bbce78c47"), "Sign in to project" },
+                { new Guid("288fad56-6f48-4b40-9f2b-f5732e14cdb6"), "Paste your access token…" },
+                { new Guid("02bbf48f-adfc-4b9d-a7ef-d83a0dc853c3"), "Username" },
+                { new Guid("0fbc5545-5465-44d6-96ff-45dc2bcd28b0"), "Create project" },
+                { new Guid("7fcebbfb-2d8f-4f4b-836f-cad9386c8bb3"), "optional" },
+                { new Guid("91ad4124-e683-4656-923b-497e6c3df6e0"), "Description" },
+                { new Guid("9af7ee9c-e57f-427c-8cf9-950766d31f61"), "A short description of the project…" },
+                { new Guid("c5eae098-68e1-4104-9292-0bf0751f6902"), "Only lowercase letters, numbers and hyphens" },
+                { new Guid("d8308c7b-1921-4029-acb6-dab3f49aeefd"), "Main language" },
+                { new Guid("a899cdc9-1703-49f5-b8a8-6f0d7b79663e"), "No languages found" },
+                { new Guid("38a8f91b-f97c-443a-8383-8444ae859fe7"), "Project name" },
+                { new Guid("67cf2b88-af58-449b-8454-aa7e98ad8195"), "Search language…" },
+                { new Guid("d08ed8ef-ed9f-44fd-b2a2-ed52ed3ca4f8"), "used in file names and APIs" },
+                { new Guid("f4813c17-0597-4233-a46f-f7eb3b71975a"), "Slug" },
+                { new Guid("077198a3-7c03-4094-81b6-e9d03ab30033"), "New project" },
+                { new Guid("52c17803-c9c1-4d48-af5b-9e9172073e14"), "Connect to server…" },
+                { new Guid("050ea471-9d17-47f2-864d-ffca581fb832"), "Could not connect to the project. Please try again." },
+                { new Guid("b7da6add-e09b-4a3d-9452-858a64356556"), "Could not complete sign-in. Please try again." },
+                { new Guid("aa1c817c-4425-4fc3-824f-cf485a839e7f"), "{count} langs" },
+                { new Guid("57ad74e3-c60f-42ae-8179-cd0c1e9ee4d5"), "New project" },
+                { new Guid("1d254af0-2a78-4a06-bc92-492b305717d2"), "{keys} keys · {langs} langs · {edited}" },
+                { new Guid("27563d60-ba8c-42b5-ac87-ac4d446f3274"), "REMOTE" },
                 { new Guid("1a3055ee-b21f-4469-8278-705f66941544"), "Translate your game, together." },
+                { new Guid("84dbbf68-c08c-4a04-bdfe-f868b29b1072"), "{d}d ago" },
+                { new Guid("bbb55a65-c2cb-46f9-9808-6a9236d3d0ea"), "{h}h ago" },
+                { new Guid("f4437daa-7d14-4896-9546-f62bcac6eea8"), "just now" },
+                { new Guid("68affaa2-bb46-42e5-8479-f18e6470e41c"), "{m}m ago" },
+                { new Guid("d00958d6-c4eb-477c-8683-307ada6cb018"), "Clear" },
+                { new Guid("7a094527-9f9d-43a7-938d-ff33ddc83009"), "Projects you open will appear here so you can get back to them quickly." },
+                { new Guid("ab771190-3f51-4bb5-99c5-fb60dc689c34"), "No recent projects" },
+                { new Guid("9c6faf20-5168-4fca-bdc5-d627aca06b7d"), "Could not complete first sign-in. Please try again." },
+                { new Guid("f8d94a9a-80ca-408a-975d-5f12f86b1fcf"), "Could not open folder picker: {msg}" },
+                { new Guid("08f2e176-8e99-45f5-a8f4-12d395c719e5"), "Invalid project: {msg}" },
+                { new Guid("76021e7c-94c2-4f44-a245-2ae8352834b9"), "Failed to load project: {msg}" },
+                { new Guid("f45772dd-b1d6-4cf1-a539-582f42680f60"), "Username or access token is incorrect." },
+                { new Guid("11bd55e4-757b-4028-bfa2-21294b9615e4"), "Edit strings, propose alternatives, and let the community vote on the best translation for every key." },
+                { new Guid("c4ba5b89-bef3-440d-855f-4d8761019d4e"), "Opening…" },
+                { new Guid("d2f08e1d-62e5-475f-b060-d32ab54b4149"), "Open logs folder" },
+                { new Guid("903ec93c-0587-4848-b527-e3ca69dc4f19"), "Open project…" },
+                { new Guid("89b48e65-440b-4c03-8896-b22938f970ac"), "Recent projects" },
+                { new Guid("468f1c1a-07a7-4161-bbff-657b5113e9a1"), "Remove from recent" },
+                { new Guid("67c20eb1-24b8-447d-af7b-9ee1d65348da"), "COMMUNITY LOCALIZATION" },
+                { new Guid("dcf56384-6019-4b64-83b0-6a56b193a1fa"), "Update" },
+                { new Guid("7be256fc-d550-4b96-a514-30fb0f3bbbb2"), "Dismiss" },
+                { new Guid("a032b28a-68e9-4c7e-bc82-3f4a9be99780"), "Download" },
+                { new Guid("89173a4a-2d19-4161-ade2-2718d7c60569"), "The update could not be installed. Please try again later." },
+                { new Guid("3722296b-e377-4f53-9398-462fb0f5b192"), "Installing… {pct}%" },
+                { new Guid("906ed724-2642-421a-880d-55a5b5dc737c"), "Version {version} is available." },
+                { new Guid("97c5b538-57f8-4494-b0d3-5259aaa7a270"), "Update available" },
+                { new Guid("5515f6aa-058f-4f32-ad02-35f885be7da3"), "{name} will be removed from this browser." },
+                { new Guid("9a80d7d1-4d7e-4c0d-b0ad-7d022e40fb65"), "Delete permanently" },
+                { new Guid("3e6d33b2-722e-4dac-8c08-159f9d57e399"), "Delete project?" },
+                { new Guid("f01e1ccc-a9bd-4268-9fc9-a859ca8a6660"), "Delete from this browser" },
+                { new Guid("952dff65-e853-4f8d-bfe7-917ebf81733c"), "This project lives only in this browser — deleting it is permanent and cannot be undone. Download a copy (.zip) first if you want to keep it." },
+                { new Guid("9ac8635a-0bc1-401e-8d91-b8eca5d1b069"), "Download a copy (.zip)" },
+                { new Guid("1d41c0ff-d423-4d24-a67b-692de569d781"), "Create a new project or import a .zip to get started. They're saved in this browser." },
+                { new Guid("49107305-a749-4686-bb3c-a5f9cadbcfbf"), "No projects yet" },
+                { new Guid("e2ec9e62-4d01-4fa0-aee6-e292e40760e3"), "Delete failed: {msg}" },
+                { new Guid("ec9ff8a5-c109-4e37-943b-e212f21b91e3"), "Export failed: {msg}" },
+                { new Guid("c423827e-3ef0-47b5-ae64-11f12d854d7f"), "Import failed: {msg}" },
+                { new Guid("0b8b534b-5a48-4282-b200-cbc1e3a4cf8b"), "Failed to open project: {msg}" },
+                { new Guid("5e83115b-3542-4da0-bc38-e4710963eedd"), "Could not read stored projects: {msg}" },
+                { new Guid("bab2efcc-0176-4665-bd9c-232b204abf07"), "Import .zip…" },
+                { new Guid("b1102c9c-af17-4459-b796-b4cdfa7980d7"), "Edit strings, propose alternatives, and let the community vote on the best translation for every key — right in your browser." },
+                { new Guid("d2a22345-2378-4736-a255-b8ad50c0f870"), "COMMUNITY LOCALIZATION · WEB" },
+                { new Guid("15cb3a7b-0b95-4fe7-beb8-fb8d763b1b85"), "Working…" },
+                { new Guid("acc6b66f-0a1c-463e-a05d-b6bf22632463"), "Your projects" },
+                { new Guid("096c54fa-2c5c-4849-b1bb-75a80edc6179"), "Sorry, the content you are looking for does not exist." },
+                { new Guid("49cdd01f-c40e-45d9-b69f-841bd48c43e6"), "Not Found" },
+                { new Guid("503299d7-a2b3-4853-b5ba-86ace87b9204"), "Sorry, the content you are looking for does not exist." },
+                { new Guid("7abe65ba-b325-4b11-8090-d1057d2a3b02"), "Not Found" },
+                { new Guid("bc46fbe4-e8cd-4ae8-b330-f7e8359ef867"), "Comments · {language}" },
+                { new Guid("4b58c48c-be44-470f-a434-41ba070233de"), "Created {date}" },
+                { new Guid("ad66d73b-7af4-4cbd-986b-b6be8b8ae62a"), "Delete key?" },
+                { new Guid("a6114c61-be66-4f5b-a728-99ccdcf4c888"), "Select a key to start translating" },
+                { new Guid("e16fda06-95e9-470c-ab11-a356ae1494ae"), "Key comments" },
+                { new Guid("77e71efc-ad9d-4839-971d-fe50d625b981"), "Approved" },
+                { new Guid("f9c610b8-dddb-4ba9-b9bc-616e7dcdf786"), "Draft" },
+                { new Guid("c4d6d8ae-cda6-48b7-b909-479fd8c7bba3"), "Needs review" },
+                { new Guid("f3fdf355-c644-4099-aa15-c4c824461503"), "Suggested" },
+                { new Guid("c441e3a8-d808-4a22-98a7-ad04c7ee9993"), "Untranslated" },
+                { new Guid("b947f37e-c597-4729-a291-44646a86b164"), "Created" },
+                { new Guid("582404d3-e67b-4ad3-a878-68a2cae61355"), "Delete key" },
+                { new Guid("862341bc-7494-437e-acaf-212eff5a3228"), "Last updated" },
+                { new Guid("1a5ed001-a2bd-4de2-86de-d7a72f7f2e72"), "Updated {date}" },
+                { new Guid("e9643cc5-06af-448a-85ec-27050c7d3ffb"), "Add flag" },
+                { new Guid("c0ddfdde-597b-47df-9406-2639721b0139"), "Disputed" },
+                { new Guid("7a408eda-181f-4654-9ff9-798456ca0f6a"), "Do not translate" },
+                { new Guid("1dcfba12-919d-46d0-b431-a2639314b322"), "In progress" },
+                { new Guid("26a3e576-bd31-4e85-a9f2-91e372bcdb6b"), "Needs review" },
+                { new Guid("eb2dd4da-796e-4914-83dc-7d31c188efc1"), "Outdated" },
+                { new Guid("d260c1ed-ef01-4a94-85bc-8bb499ec7fa7"), "optional" },
+                { new Guid("ad446372-8111-4e80-bf24-ffb813665057"), "Flag type" },
+                { new Guid("ac54979f-fe8e-4d0a-b434-7bf6f243e77d"), "Note" },
+                { new Guid("d2ea1b32-7eb7-4535-a4cc-3b9377839b67"), "Why is this flagged…" },
+                { new Guid("19223423-1b22-423a-9964-8966f6bb10e7"), "Add tag" },
+                { new Guid("88b3fa3a-9a48-4785-b744-95f12527f314"), "Create \"{query}\"" },
+                { new Guid("fb84c52e-c5d6-41a9-9749-56d95e872e77"), "No matching tags." },
+                { new Guid("d5f1c4c2-acfa-46cd-9855-38bc505d31b3"), "Search or create a tag…" },
+                { new Guid("6a4c1c83-c9a4-4357-96bf-ae92f07ca0eb"), "Add a comment…" },
+                { new Guid("89a4cb1d-ac8b-4916-baa3-97b9430365b5"), "Delete comment" },
+                { new Guid("4d1ebcf9-f0d3-4a3a-84d8-41cbd1cd6fb0"), "Post" },
+                { new Guid("934506e3-d69e-4e12-866d-98bb8c150e37"), "Unknown" },
+                { new Guid("4fdbc56e-1467-4479-b875-0c68b3544c8d"), "Conflict" },
+                { new Guid("2f5bd0d5-1df1-46dd-9e8e-b26b3e4c3295"), "Current source" },
+                { new Guid("bec5ec44-fb98-442b-a499-0df387a13fa7"), "Someone else changed this translation on the server since your edit. Choose which version to keep." },
+                { new Guid("8582f732-4c09-41b2-92dc-84bdcef10ed5"), "This translation was edited on the server" },
+                { new Guid("1c57a357-b0de-4b87-9f2c-f974eed5e926"), "(empty)" },
+                { new Guid("f3cdd157-8f5e-45cb-8851-ef513862af3c"), "Keep mine" },
+                { new Guid("d81c58db-bf6c-4690-bc05-53b6b3150b1b"), "— overwrite the server's version on your next push." },
+                { new Guid("3b9ddf42-3d94-4122-8ea2-43814a91f07f"), "Keep server" },
+                { new Guid("13b5ec43-04a5-42af-a608-6b3c1cb5834c"), "— discard your edit." },
+                { new Guid("0174c292-aa50-4561-9d73-38d06acfb618"), "On the server now" },
+                { new Guid("735cf192-e853-4e3a-9b27-6ebb53f59e24"), "The source text changed on the server since you wrote this translation, so it may no longer match. Choose how to proceed." },
+                { new Guid("b9cc9035-680d-45d3-8a2a-ed981496cb1b"), "Source changed on the server" },
+                { new Guid("daf5b1de-6282-44cf-b006-844776536f81"), "Suggest mine" },
+                { new Guid("6100e3e8-0245-40cd-978c-e26a6d362e5d"), "— keep the server's version and add yours as a suggestion to vote on." },
+                { new Guid("a7b3a768-606c-426d-abf6-c1f40ee76eb6"), "Your edit" },
+                { new Guid("a5cef90d-445c-48da-afa8-fbec86981ffe"), "Your translation" },
+                { new Guid("7748d878-7a97-458a-a585-48fec2ea508d"), "Add a description…" },
+                { new Guid("e896efd2-def6-4e5f-957f-9655ccb8815d"), "No description." },
+                { new Guid("9dcbe992-206a-4e71-947a-54836c2589a4"), "Add a description for translators…" },
+                { new Guid("5a9b22d6-9696-4bac-908d-0fdae5b74a69"), "Disputed" },
+                { new Guid("61c18fe4-7999-4949-ac33-0a12e2524b65"), "Do not translate" },
+                { new Guid("e20876b3-99d4-49f9-a67d-9c7d1d0fd008"), "In progress" },
+                { new Guid("464d0e29-1e9a-4168-aeea-bcbe470e7bd3"), "Needs review" },
+                { new Guid("e09146ee-8d4e-4d3c-927e-3c7eee18119a"), "Outdated" },
+                { new Guid("4effc83f-fc00-4f07-8b6d-142f02a5a9c7"), "No note" },
+                { new Guid("8be5358c-eaad-4daa-9557-82c4bf6a1438"), "Add flag" },
+                { new Guid("e604ed14-3f5b-438e-8c9e-0796ae85ec2d"), "Current" },
+                { new Guid("80400e4c-a195-4364-abaa-7278cc48f4ef"), "Live" },
+                { new Guid("3991d023-da4b-40cc-b188-3ff060e7fdae"), "No source yet" },
+                { new Guid("1a8354ba-4cf1-4d8d-970a-429508f1e6f5"), "No translation yet" },
+                { new Guid("e59d34d4-be54-43ab-8258-f1721d9b10c8"), "Preview" },
+                { new Guid("f1f230e8-abbc-431e-9936-08d0071b871a"), "SRC" },
+                { new Guid("664d5cf7-8d3d-4544-864b-2565387a127d"), "Switch to Current (saved)" },
+                { new Guid("1ac55d54-5315-4aa4-8ec6-3b90c11d5e71"), "Switch to Live (draft)" },
+                { new Guid("5b190aac-2cbb-4382-8b37-2184dabaf6fc"), "Delete enum" },
+                { new Guid("926525c8-ab87-4fdd-8620-a45179129199"), "Description" },
+                { new Guid("5c1b84ab-8754-4fea-a918-983616d34821"), "Days of the week" },
+                { new Guid("2625fc9e-d0ad-4bf7-ad16-9bc4a5862ccd"), "Entries" },
+                { new Guid("0a5c56fa-9f8b-4384-bc8b-df2cee32e274"), "Monday" },
+                { new Guid("9564fcf9-1a00-4a57-9f02-54a1394d8e36"), "Enums" },
+                { new Guid("089e621b-985e-4ceb-a47d-3483013f3b0a"), "Name" },
+                { new Guid("18aa05a1-c4e2-4b07-9fa8-7f6f535e96f6"), "WeekDay" },
+                { new Guid("fc209a3f-7d21-4aaf-932e-6a7d0291dcd5"), "No entries. Add at least one." },
+                { new Guid("2dfbbe85-69db-4c8c-9fea-4e68bb563353"), "No enums yet." },
+                { new Guid("d798060a-19e3-44b6-84ff-a9a244dfba41"), "optional" },
+                { new Guid("9237a61e-20b3-4c70-9bf7-b5c593939397"), "Project enums" },
+                { new Guid("943c1eb3-cb94-46e7-b050-b03ff34a674f"), "Select an enum to edit it." },
+                { new Guid("f8804229-510d-4352-877e-f3a27056da2d"), "Unnamed" },
+                { new Guid("26a7255a-74ea-408b-b084-1816b58911c7"), "Accept" },
+                { new Guid("d9b6522a-70af-4a1a-906d-c77bd95b2ed1"), "Comment" },
+                { new Guid("d2e68a9d-de82-41bc-8fff-39c6c8ed6b26"), "{count} {count:plural:comment|comments}" },
+                { new Guid("6fe8fe63-e185-4b68-af0a-a596da3b9703"), "Community suggestions" },
+                { new Guid("def8290a-b1ca-4708-9d4e-9f7cf0e0980a"), "Discussion" },
+                { new Guid("9a5b33c4-0b3a-4bc5-ac0d-494fa3ec0421"), "Reject" },
+                { new Guid("8aaae0a5-2196-4ac6-938e-d6450ee1e4e9"), "Unknown" },
+                { new Guid("ecf3b9f8-7308-4101-acef-1b8a096306fa"), "No tags" },
+                { new Guid("4cc11e84-71ab-4543-8136-7242b0ab6bcd"), "{placeholders} supported" },
+                { new Guid("94fcd0bd-7ff7-40d4-9632-b145ceef2aef"), "Reset" },
+                { new Guid("86c46198-0c06-4561-9dd3-0ac1294759d7"), "Save source" },
+                { new Guid("1e35bcb7-e1ba-458f-a71f-4636653f2fe8"), "Save translation" },
+                { new Guid("7ff2f14b-39ff-4eca-8ccc-8230b14e1676"), "Source · {lang}" },
+                { new Guid("46c91245-48f1-4931-bd0a-a88b79b44f51"), "Source matched" },
+                { new Guid("af8706bf-fd48-4743-a37a-612eccd07682"), "read-only — switch to {lang} to edit" },
+                { new Guid("79160b68-c847-4659-994b-33c056d58236"), "Source text…" },
+                { new Guid("e1905637-8593-40c8-a4fb-ce068cf5af37"), "Source has changed since this translation was last saved." },
+                { new Guid("1f08f3f5-bc0f-4d6e-bdb8-f3e20d9bb62d"), "Suggest" },
+                { new Guid("dc29ac48-3359-4f38-bb74-8b3ef9d37d93"), "Translation · {lang}" },
+                { new Guid("572a7a72-d866-408c-98ea-ff6134f4600a"), "Type your translation…" },
+                { new Guid("5d5ad38e-01e2-4e60-82a1-f7d7aab821cf"), "Add variable" },
+                { new Guid("9de56e78-9ecf-4c58-b1d5-7334bed09b92"), "comma-separated" },
+                { new Guid("33ee34b1-be89-486d-9df9-5564ce8efc93"), "Default preview value" },
+                { new Guid("6905123e-eae3-4be6-9081-e91c7357525d"), "Done" },
+                { new Guid("77c716f0-d548-45c6-ba7b-a8260332b5b6"), "Edit enums" },
+                { new Guid("39851e6b-6bcd-49d8-8274-f018f0ed63a5"), "Edit variable" },
+                { new Guid("189b2151-d030-4d7b-933f-7684bbd2b127"), "Enum" },
+                { new Guid("cc680b73-ece4-4a48-bf1c-58945962d025"), "int value" },
+                { new Guid("2a9cff81-30b4-469d-a660-56cf8f5ff013"), "Name" },
+                { new Guid("054e5409-fe57-44ff-93cb-30c0ec75344d"), "No variables declared for this key." },
+                { new Guid("09730a33-4b51-462b-9643-679c03d02b23"), "Reset to default preview value" },
+                { new Guid("2da51882-920e-432a-bfec-90a06f2cb138"), "— select enum —" },
+                { new Guid("a3d3f465-735c-4053-b1ba-288ca0934e2a"), "Type" },
+                { new Guid("762a7b6e-390e-4e2a-b1ee-15311d6199ab"), "Variables" },
+                { new Guid("167fd80e-94d4-45be-b58a-1a83253a5f6f"), "Add key" },
+                { new Guid("eb800faf-2008-4da4-ae3e-328278656283"), "Done" },
+                { new Guid("5539ca78-a0f4-43fe-8600-4865caeadd76"), "Edit key" },
+                { new Guid("ff0a077e-b4e3-4f3a-aa0d-22c73ce74864"), "Edit keys" },
+                { new Guid("aeed5c2f-68a7-4fe2-a031-28e5ddc2f24d"), "No keys match." },
+                { new Guid("e4f16d99-41a9-4ab9-a094-9fecfaf4da8e"), "{count} pending suggestion(s)" },
+                { new Guid("9dbb892d-0d5c-4486-97ff-aeae6b6f4109"), "Search keys…" },
+                { new Guid("8badb48a-cfd5-4927-8e49-fd4179e11095"), "All" },
+                { new Guid("68d1c7f8-3454-4640-a3d6-b0df23f87e37"), "Needs review" },
+                { new Guid("e77dd3ab-abea-450c-b258-2d16d50e31fd"), "Untranslated" },
+                { new Guid("17536fcf-a0e6-4521-b06b-2e3cf33d720f"), "Add category" },
+                { new Guid("b32e5965-bfa2-454b-9a77-29b4cfde5b8e"), "All categories" },
+                { new Guid("f65a10fe-fb27-4e4b-81a2-94a1a9e48180"), "Cannot delete: category still has keys" },
+                { new Guid("448f9221-5b49-49e4-8122-e41df5b9da08"), "Collapse" },
+                { new Guid("e5551c63-06b4-4ea0-9b67-14e5a76fb254"), "Collapse all" },
+                { new Guid("465c8445-4caf-40fe-9399-9c7639eca6b7"), "Delete category" },
+                { new Guid("6c617c54-a633-4a78-a5af-13842c13d95c"), "Edit category" },
+                { new Guid("88c01523-77aa-452a-b151-7cdb22061777"), "Expand" },
+                { new Guid("ec11b549-2b79-4b0d-af6e-437a5d11ad9e"), "Expand all" },
+                { new Guid("73cf71f2-7b00-4534-8e0e-0ce662d9f698"), "Filter by category" },
+                { new Guid("6385c868-8dcf-46c6-a84b-a74563cc7493"), "{count} categories" },
+                { new Guid("5556b903-e8d1-4e47-9579-de67046d5653"), "No categories yet." },
+                { new Guid("d1253dd1-4e19-4a8d-ae20-b2b5e2ecf9a5"), "1 category" },
+                { new Guid("ec775001-cc74-4c82-b5bc-76f4bd4c0bdc"), "Right-click to select only this category" },
+                { new Guid("c56ddf0d-122a-4e8d-a99f-22b5c2826802"), "Category name" },
+                { new Guid("c7582742-a16a-468a-a069-c4d3945b3793"), "Create category" },
+                { new Guid("26392e1f-931a-4b3c-a39b-169d4fa03874"), "Description" },
+                { new Guid("e6ba4566-14a6-4529-947f-342a3420cb6f"), "What kind of keys live here…" },
+                { new Guid("d4071eef-cac7-4db9-abe1-7b9de4793eb4"), "Edit category" },
+                { new Guid("2243e6a5-534f-47a9-9a58-0ddfa2e53d10"), "Menu" },
+                { new Guid("a5c2de6d-d563-4e73-bc11-99327dfe7373"), "New category" },
+                { new Guid("a3f65a68-8c20-42b9-8b2d-5abd4f5bc131"), "No categories found" },
+                { new Guid("2e5c39e8-a9b4-414c-9a10-6496b41843a3"), "None" },
+                { new Guid("30b792c5-7f10-4bdc-a54d-e1d13ef5ac6b"), "optional" },
+                { new Guid("81878841-955e-4cf8-bc7c-6ed4ae7402fd"), "Parent category" },
+                { new Guid("7c5df515-ef18-471e-a5da-c9033d42b319"), "Save changes" },
+                { new Guid("99b4ee20-142d-4776-acf6-9167f36efd0b"), "Search category…" },
+                { new Guid("134b9092-0898-4326-8af6-8e8bfee6e622"), "Category" },
+                { new Guid("f4507971-aeaa-4cd8-aa5e-63da4ba6159b"), "Create key" },
+                { new Guid("ce7f5d4d-c59f-4410-b313-07430613cadd"), "A key with this name already exists in this category" },
+                { new Guid("0321fbe0-a18d-481b-8559-10fd7c186246"), "Edit key" },
+                { new Guid("1793715d-54a2-409f-b367-044fb2973608"), "Full key" },
+                { new Guid("f9ca5ebe-b3d6-45bd-a5d8-8aa1cc20af1a"), "Only letters, numbers and \"_\" are allowed" },
+                { new Guid("0cc6f2b1-0c52-45fc-9457-0b3d7e52d61e"), "Key name" },
+                { new Guid("811f4dc2-dc85-48bd-a853-312d124e4d8f"), "letters, numbers and underscore only" },
+                { new Guid("186a972d-dca8-4079-81b4-6c529acf19c3"), "button_save" },
+                { new Guid("6ce9b0e9-f901-4ca5-9d90-af3813941a86"), "Max length" },
+                { new Guid("eb8718b9-1889-4d48-ba25-6957817e5563"), "0 = no limit" },
+                { new Guid("9abeea1f-f51e-41b1-b800-2fef7b03f751"), "A key must belong to a category. Create at least one category from the Keys column before adding a key." },
+                { new Guid("96103801-406a-4bce-b391-026796164241"), "New key" },
+                { new Guid("45e89284-5c66-49f3-bac6-3d0302179aad"), "No categories found. Create one from the Keys column first." },
+                { new Guid("45c820b6-dfa7-4ba4-b19e-f71843ab0b24"), "No categories yet" },
+                { new Guid("449d5b6e-6d9d-45d0-a0a0-76f0c30e1300"), "Save changes" },
+                { new Guid("ad8b83d5-fc70-4a38-b23e-21c5bb098b9a"), "Search category…" },
+                { new Guid("63500517-881e-4cd2-abab-9585917074f4"), "All flags & tags" },
+                { new Guid("0fc924f1-21f7-4fb5-81fb-c515485b7975"), "Filter by flag & tag" },
+                { new Guid("12d6f2a0-20c9-4ed8-92bd-691cfa118100"), "Disputed" },
+                { new Guid("3d701ef1-9cd9-442c-867e-88d327d61b14"), "Do not translate" },
+                { new Guid("b85d7315-ff5d-4c16-b876-542ca7901933"), "In progress" },
+                { new Guid("b12aac87-7e41-45b6-9008-8c8db25e38d9"), "Needs review" },
+                { new Guid("a4ebb350-9ba8-4f7b-ab2d-69f84c491178"), "Outdated" },
+                { new Guid("da6af03b-a33a-41f2-843a-477df4895ce6"), "Flags" },
+                { new Guid("d9d01119-f016-4a61-8f54-b7294b7079e6"), "{count} filters" },
+                { new Guid("49e38f6d-93df-4f11-8e69-3e4f2a46c8b2"), "No tags yet." },
+                { new Guid("517b6e13-956f-4602-a3e0-2e5e91788e41"), "Tags" },
+                { new Guid("863ac37e-2b1b-47ae-bc09-5d0544562469"), "Add language" },
+                { new Guid("89ca3bed-91cb-4d2d-b774-5eaef210ff75"), "Add sub-language" },
+                { new Guid("f5c254f6-0870-4d4c-a6fc-ee236f7c5de9"), "Done" },
+                { new Guid("a36eb222-dfa6-4ac1-9212-25ec14d8c945"), "Edit languages" },
+                { new Guid("6dd507b4-17b2-4889-b587-cbb8f89caeb6"), "No results." },
+                { new Guid("c3d6dcb2-4969-43e5-b711-24a3e9e23c49"), "Remove language" },
+                { new Guid("86f6e20f-016a-4c3e-ac18-11d7e6dca956"), "Search by name or code…" },
+                { new Guid("e0889943-3b1c-43ad-a51a-3f00506245d3"), "Search languages…" },
+                { new Guid("7f71331a-12ab-4f0e-a6c5-ca2eb738415c"), "SRC" },
+                { new Guid("ca73b55f-ae9a-43e1-a6e2-dcbdfe823e44"), "SUB" },
+                { new Guid("cacc71f6-82bc-450e-b94d-5ab8b3b7d1a1"), "tag e.g. simple" },
+                { new Guid("80a0cdd6-1360-4958-b08f-5d795bfaeb60"), "Drag to resize" },
+                { new Guid("a6e0256f-5d61-455b-83b8-14d74fe99d9d"), "No project open." },
+                { new Guid("527530d2-e7b7-4d1a-87a2-e9ea70919cad"), "All local changes are on the server" },
+                { new Guid("5a2478bf-98e5-4ac0-b550-98f9d1b835bc"), "Back to projects" },
+                { new Guid("fecb3b17-f9a6-4f5b-8216-8baa6ac264b4"), "{count} change(s) not pushed to the server yet" },
+                { new Guid("5e80ce32-f4f8-460d-bdd1-e7003ee878bb"), "{count} change(s) waiting to be applied" },
+                { new Guid("e3f0efe1-624f-4924-b3a5-b69c45bedb8a"), "Committed" },
+                { new Guid("0b02def1-44c0-44f2-ad2e-50bcd9c1dbb8"), "conflict" },
+                { new Guid("c60c9580-9241-441a-a3fa-ac359a1456f4"), "conflicts" },
+                { new Guid("d838e320-7017-4ca0-b018-9371b959d1e8"), " · {count} conflict(s)" },
+                { new Guid("0917b810-5de4-4ba7-b2c7-6243f0d0ec73"), "Export (Excel or C#)" },
+                { new Guid("30b8c4b0-d4bb-4f68-9304-a5fba50a9108"), "Import from Excel" },
+                { new Guid("48be4d23-b792-44b3-9a1f-c3ce867fabd2"), "Nothing to redo" },
+                { new Guid("eb37102d-a715-434a-8e49-49275fc2cd36"), "Nothing to undo" },
+                { new Guid("0c9fbf57-a5f3-49a0-97f2-d62329e8f146"), "Offline project" },
+                { new Guid("98600075-05fb-46d7-b9c7-3166504581f5"), "Push" },
+                { new Guid("8c503240-62c0-4526-89a8-68db53f5c975"), "Push changes to server" },
+                { new Guid("0845fe05-77b8-4b39-b6eb-c88be59f2bf1"), "Pushed" },
+                { new Guid("5e0876e0-11bd-45a9-bcbc-8a9f6e043eb4"), "Push failed" },
+                { new Guid("9ebc9094-61f4-4336-a7bf-f02812a69afd"), "Pushing…" },
+                { new Guid("c2ff4e6c-3d11-44c7-90d1-7d503121cfe6"), "The push was rejected by the server. Sync and try again." },
+                { new Guid("a4658160-51e4-42e8-83cd-d2fa13c9d658"), "The push was rejected because the server has newer changes. The latest server version has been pulled in — resolve each conflict below, then push again." },
+                { new Guid("230248f5-1080-4f12-9085-d7b74527cd3f"), "Push rejected — resolve {count} conflict(s)" },
+                { new Guid("944fecef-05fb-4612-90be-05e235591364"), "Recent changes" },
+                { new Guid("8b202286-6b83-49f8-9910-2373bcbbbfa6"), "Redo {label} (Ctrl+Y)" },
+                { new Guid("f175ca73-adbb-4539-bf38-c7221c9cf1da"), "Resolve conflicts before pushing" },
+                { new Guid("7716e324-4c32-4eb0-a3e3-b59402b0bf63"), "Resolve {count} conflict(s) first" },
+                { new Guid("2bfd52ed-d836-49f9-ba61-3d503347aa8f"), "Resynced" },
+                { new Guid("6f3ea200-8650-4e6a-b8eb-22749176be18"), "Saved" },
+                { new Guid("b1e8e09d-2336-4cc6-849f-377766b2a543"), "See what the last sync changed" },
+                { new Guid("2a52d299-5035-4f81-b3f0-10383e305b6a"), "You need to sign in on this device before you can push." },
+                { new Guid("c5b90b2c-dbca-4bb3-a884-505668570418"), "Sign in required" },
+                { new Guid("5da20e13-532c-450b-a437-0a960203318a"), "Sync" },
+                { new Guid("5aa4e327-a7e5-42e2-9b3c-28e454266f74"), "Synced {count} file(s)" },
+                { new Guid("cec0eaae-97b5-4cc3-81b5-1add18b86323"), "Sync failed" },
+                { new Guid("aeeab8f1-0cd0-41ae-b49d-e72034c016a7"), "Sync from server" },
+                { new Guid("647beb0b-fa74-4c56-b6e7-52640b13445c"), "Syncing…" },
+                { new Guid("12238c1e-dd1a-4fe4-b8e1-625e0cb98bd7"), "Translating into" },
+                { new Guid("7f8e43b8-af99-402f-9b2a-ff613ee677d7"), "Uncommitted" },
+                { new Guid("71f02591-9833-42dd-b076-55ebb8e69f76"), "Uncommitted changes" },
+                { new Guid("5a8f18ab-1c5b-44b9-9f64-bf5d959bc8c6"), "Uncommitted ({count})" },
+                { new Guid("d144db50-baf3-471c-93df-1bae7d88da6f"), "Uncommitted mode — no changes to apply" },
+                { new Guid("37c40d7d-fd90-4032-b36c-b3587a92066a"), "Undo {label} (Ctrl+Z)" },
+                { new Guid("cfd65add-08f9-4697-a597-2c61c62c6cab"), "Unsaved" },
+                { new Guid("2ba3f20f-ed96-4cbe-82b6-ca23620a9e0e"), "Up to date" },
+                { new Guid("e39dd6b6-b888-414d-a2bb-8e7b25235ebe"), "Discard & leave" },
+                { new Guid("a02e0b40-0bca-4ad2-b048-e6f68b80b372"), "Save & leave" },
+                { new Guid("f7f5444d-7535-4ba7-b958-ec6002534659"), "Unsaved changes" },
+                { new Guid("af4b03d8-81ca-4026-b67a-921852411243"), "You have unsaved changes. If you leave now, those changes will be lost." },
+                { new Guid("73f823ec-8666-445c-80c6-9991c24e96cc"), "Can't push" },
+                { new Guid("a2608ee9-10e3-4dab-852d-1b69acccf22a"), "These changes clash with newer edits already on the server. Open each one to choose how to resolve it, then push again." },
+                { new Guid("37f1a4fb-3cf9-4b31-8959-5cdd92435599"), "conflict" },
+                { new Guid("c377644f-2fc4-4fe7-88e0-8bb0cbfd8d79"), "edited" },
+                { new Guid("83cdad18-4e76-40dc-8387-a74307b75cde"), "source" },
+                { new Guid("223a50cf-6f7e-45fb-a08d-5b9c19700c2a"), "No conflicts — you're good to push." },
+                { new Guid("cf561e0f-14a5-47f0-b6ac-f25548f13c9e"), "{count} conflicts to resolve" },
+                { new Guid("92eb062a-705a-42dc-a313-bc451a3dab99"), "{count} conflict to resolve" },
+                { new Guid("dd78da08-6dd1-4695-ab84-409d4ff2fe13"), "categories created" },
+                { new Guid("2987f8aa-6f26-4098-ac71-fc9117b4a8a6"), "Choose file…" },
+                { new Guid("d1ad35e8-93d0-484f-92e1-db8db68ce4b6"), "Create keys missing from the project" },
+                { new Guid("af29b774-5196-4640-92b0-20357ad66e4b"), "Select an .xlsx exported from this project. Rows are matched by KeyId; cells that still match their #hash are skipped." },
+                { new Guid("f30d8ce5-78fc-4ffc-924d-a8b72e482812"), "Deselect all" },
+                { new Guid("d51ea656-3af3-4347-b7a0-eb7b699c1b4f"), "Direct text" },
+                { new Guid("3faaa0c6-8a46-41da-9a99-2fcb9219d2bc"), "Done" },
+                { new Guid("2cfb4be7-e14e-4267-bf69-f93f89d55a21"), "Changed cells overwrite the approved translation directly." },
+                { new Guid("06fb1917-5d4e-414a-9fdf-fc2191232b6e"), "Changed cells become suggestions to review and approve." },
+                { new Guid("12c1cee6-af45-4afd-aab9-3eb0675d8719"), "Import another" },
+                { new Guid("ae4add2d-7d16-4c8a-b14b-d6b78e9e7210"), "Import failed: {msg}" },
+                { new Guid("0372ac81-5980-458a-b6a1-e718dbcc01ce"), "Importing…" },
+                { new Guid("26a14d09-e292-49d6-a20f-63183149d050"), "keys created" },
+                { new Guid("3011241e-3316-4953-9567-626f08ea96f9"), "keys updated" },
+                { new Guid("2c08894a-cd9a-49cc-b027-ac64420e1c6d"), "rows skipped" },
+                { new Guid("ecac9e0f-c05b-44a2-ae7b-f76c8d231c0a"), "Select all" },
+                { new Guid("977cf38f-83b5-4c77-a986-3d94c2d80f47"), "Suggestions" },
+                { new Guid("bdba7e29-c268-4337-81bb-401fcd507ac0"), "suggestions added" },
+                { new Guid("b4ae14bf-d612-4936-a135-cfabd59935b8"), "Import from Excel" },
+                { new Guid("18213b6d-1852-47dc-a176-87da349e77bc"), "Translations import as" },
+                { new Guid("5db95506-930a-4113-b58b-3d66d90de19d"), "translations set" },
+                { new Guid("23befafd-4bca-4d99-a2fa-c88863ce361a"), "Update categories" },
+                { new Guid("4c951756-b71c-46da-8e1e-2962a9cf8faf"), "— creates missing" },
+                { new Guid("d98f5fd2-791b-4ce3-a535-ee158f9c3718"), "Update descriptions" },
+                { new Guid("7e52b478-ddab-4a50-a4a7-7faa5dd5d072"), "Update from sheet" },
+                { new Guid("1a81cc3a-abae-4c71-8215-98ab51f19c32"), "Update max length" },
+                { new Guid("4105b9cc-5934-4df7-b4f2-9ebe7d253456"), "Update source text" },
+                { new Guid("24ef4aaa-5b15-4198-a05a-ca2fcec0aa15"), "Update tags" },
+                { new Guid("68b3edef-0a63-4f89-8658-f3651ddc6785"), "Class name" },
+                { new Guid("4a437a52-75f5-4ccf-b381-01a32a858b34"), "Localization" },
+                { new Guid("9d8f3dc8-67a9-47ac-9f0a-a64c2c508095"), "Columns" },
+                { new Guid("349d944e-1e22-4526-9847-008e0fdd9692"), "C# class" },
+                { new Guid("9f8d44ac-9837-42fc-b4de-58815b181369"), "Generates one static class of key ids (grouped by category) plus a translations table and a Get(language, keyId, values) lookup." },
+                { new Guid("fe72ec2e-0e27-442f-a51f-d51f47b32a0a"), "C# script" },
+                { new Guid("5650a6bd-e289-49cd-93de-a5d4ad0aa249"), "Deselect all" },
+                { new Guid("df145087-d921-4079-8611-176ba1dc1e2b"), "Excel" },
+                { new Guid("1355f4e2-f836-45e5-9bae-f2dc7327245c"), "Exclude" },
+                { new Guid("3f5212a5-19e0-48e8-bdff-5b0244c3e0e2"), "Export" },
+                { new Guid("57f1f105-0517-4215-bc7b-c5cf180257e3"), "Exporting…" },
+                { new Guid("7024be67-045c-49d1-a700-10af5e170dd5"), "Disputed" },
+                { new Guid("194aaa0b-12ad-43fa-a3ff-4ce30305d195"), "Do not translate" },
+                { new Guid("264ef196-e98a-49a6-8cca-f241120cca4b"), "In progress" },
+                { new Guid("39b21bc1-e34d-4993-bc17-9373ece9b87a"), "Needs review" },
+                { new Guid("96bbdb78-7548-4691-a6f9-882c749ac1d6"), "Outdated" },
+                { new Guid("87238420-ede5-4e20-a297-2b865c0dae0b"), "Flags" },
+                { new Guid("017cc979-b123-4473-8313-2b58c912d27d"), "Exclude drops keys that carry the flag; Include keeps them." },
+                { new Guid("34288984-12b5-48b9-928d-8da939dd77ae"), "Format" },
+                { new Guid("17c45454-98c0-4ba7-966e-7e67bab52b79"), "Include" },
+                { new Guid("065c7ec1-3c65-4115-8552-9d6401be40e1"), "{matching} of {total} keys" },
+                { new Guid("1c912d41-81b6-46d2-8591-483cb5ce7b1e"), "Languages" },
+                { new Guid("7e22309d-9785-46c4-bc8a-ae7d50de7fe0"), "Namespace" },
+                { new Guid("641cbcbf-07ae-478a-b807-936c37d1bf94"), "e.g. MyGame.Loc" },
+                { new Guid("2e3d3e76-528c-4235-a511-c37c522ce9b1"), "No flags" },
+                { new Guid("b6c152ee-4ae8-49aa-81c4-2dd354717a59"), "No tags" },
+                { new Guid("de909cf3-8ff4-433b-b74b-75d1a62a51f8"), "(optional)" },
+                { new Guid("2ca1517c-3ba3-4dac-8f6a-21ca589b81e6"), "Select all" },
+                { new Guid("727e6309-2051-4f4c-9263-953104403574"), "source" },
+                { new Guid("cc2e38d2-0399-4d98-8acb-22dc53168a12"), "Tags" },
+                { new Guid("9cb1c983-c259-4147-aac7-ce76b5e7b482"), "Add a Tags column listing each key's tags" },
+                { new Guid("6bcb8803-ac32-4b96-8a0a-6261b869f878"), "Export" },
+                { new Guid("74624a55-4701-4be0-8035-43e0301b6db2"), "commented" },
+                { new Guid("93255c12-5cac-48f8-a33b-535c02858495"), "{count}d" },
+                { new Guid("46eb829f-108a-4a8c-b844-3d1a077e7a70"), "{count}h" },
+                { new Guid("af5724ae-aa5c-4d01-b20c-dc052676fd3b"), "just now" },
+                { new Guid("b31fb788-97dc-42fe-b85d-06a3a4ba705d"), "Mentions" },
+                { new Guid("75f5520d-caf9-4371-a58d-a3a1231aaf8d"), "{count}m" },
+                { new Guid("d56ed0d6-d62e-47f6-ad5c-58def9126551"), "No one has mentioned you yet." },
+                { new Guid("8c70bf3d-45b2-4d0d-9145-f5c1eebe18de"), "(removed key)" },
+                { new Guid("094abec3-1780-40d2-95e7-595f0dde898f"), "replied" },
+                { new Guid("8377f9f6-0eae-40c8-b7a6-2860eba75336"), "suggested" },
+                { new Guid("7962cad5-a25b-48b5-b0d7-9dd5a7ecb9c8"), "Unknown" },
+                { new Guid("5621e245-4945-4ee5-acc4-9222c8982448"), "Clear the list" },
+                { new Guid("1bbf2ff7-dd3f-4538-b003-dca6bc5e1584"), "Nothing new from the last sync." },
+                { new Guid("24840b51-779e-4efc-b1f8-aa4704120a88"), "These are the changes the last sync pulled in from the server. Click a key to open it." },
+                { new Guid("4ac28dc1-93e2-4834-9ad5-a40b3b4bfbb9"), "Other changes" },
+                { new Guid("26b7aa25-1fd2-4fbb-80b0-fb17980bee68"), "(removed key)" },
+                { new Guid("d77e3ac1-45ba-491b-aed1-05195d57511d"), "Recent changes" },
+                { new Guid("c6af3ae2-b205-463d-82af-452a6ea57961"), "Apply every change to the project files" },
+                { new Guid("28e61c6d-c7a9-4a4b-b328-b0564a538709"), "Change data" },
+                { new Guid("68478f77-4c66-404b-92fe-ff3990f17fc8"), "Confirm remove" },
+                { new Guid("8fbf86b2-cadc-420b-b44b-8514ce45181b"), "{count} changes conflict with newer server edits — sync and resolve before pushing." },
+                { new Guid("8d9f585c-9fbd-497d-a037-ef990c2e7350"), "{count} change conflicts with newer server edits — sync and resolve before pushing." },
+                { new Guid("0dd7be2b-4a74-469d-9c4b-2793108aee04"), "conflict" },
+                { new Guid("b158893e-af9f-4f54-b9a8-2261bf842a93"), "Conflicts with a newer server edit" },
+                { new Guid("f7bf4236-9bb2-418b-8f3f-4c61258d1919"), "Discard" },
+                { new Guid("ae2ccb11-45c8-4f4b-ae60-bec18d0fce43"), "Discard all" },
+                { new Guid("9d855fc9-3cec-4881-9068-1e1f127e9976"), "Discard all?" },
+                { new Guid("655e2975-02fa-4ed4-b125-4689b7c3921f"), "No uncommitted changes." },
+                { new Guid("80f2926c-b3f7-4a2d-8c40-b1788858b8ff"), "Apply or discard all changes to turn this off." },
+                { new Guid("d94e5831-f19a-48ed-9092-1b7d0d17de71"), "Stage edits as changes you apply in a batch." },
+                { new Guid("d96fdd5c-1636-4f44-ae2e-a03f81fc557e"), "Edits are staged until you apply them." },
+                { new Guid("943a9350-cbb3-4ddb-879f-e5ff0d13266f"), "Prev dest hash" },
+                { new Guid("f45730b2-10c9-40b3-a93a-0d210edf35fe"), "Prev source hash" },
+                { new Guid("2ae7e553-bb66-4133-9d89-5cfbb910185a"), "Remove this change" },
+                { new Guid("36d803f0-db6d-4bbc-bfa8-d1e2dbd67e29"), "Sub ID" },
+                { new Guid("27028395-62ef-4bf6-8f6c-9ad741fb1267"), "Uncommitted changes" },
+                { new Guid("5ca4c424-36b0-4204-bd8d-a3c06da3261e"), "Apply or discard all changes before turning this off" },
+                { new Guid("784fffd5-27bf-442b-b5a1-e9fdc13a6aab"), "Uncommitted mode" },
+                { new Guid("dbecfa19-b54b-4320-8d79-e308b750dd50"), "{name}'s token was reset. Share this one-time token with them over a secure channel; they'll sign in with it once and then set their own." },
+                { new Guid("9ec0f1a4-6ea5-4a75-98ff-f2ad70dddd16"), "Access token reset" },
+                { new Guid("e085f173-3583-448c-a61f-ffb1059717ea"), "Add member" },
+                { new Guid("139dd36c-fe2c-46b5-b260-ce9b5e3cac12"), "admin" },
+                { new Guid("221cc835-cd72-47ba-a4a8-2a03ac8399a2"), "Admin — full access" },
+                { new Guid("78d390f7-c3b2-496a-bd39-9776139529b6"), "Banned" },
+                { new Guid("fd402441-59d9-439e-8761-af83e116a25b"), "banned" },
+                { new Guid("fef70823-17d4-4a45-9760-2c791f04ead6"), "blocks this member from contributing" },
+                { new Guid("61a429f3-3b2f-4c1d-aee1-39ee75e6fa5b"), "Clear" },
+                { new Guid("603f4bd9-1b8c-4032-a3be-80f7f36a80c5"), "+ old comments?" },
+                { new Guid("0aba43fa-6cbd-42f4-ba57-01fd4a8e2f10"), "Cleared {count} comment(s)." },
+                { new Guid("abbd83b8-ebcb-4aed-b1b1-4e6f6c2c6871"), "Clear old comments" },
+                { new Guid("a7905401-2b46-4f2a-bd55-a0929a504a0b"), "Collaborators" },
+                { new Guid("48c83c6d-b579-4432-aeab-9d545a4711d9"), "Comment maintenance" },
+                { new Guid("9e8b7d7c-42a6-4748-88ac-81d30b921272"), "Delete every comment (on keys, translations and suggestions) older than the chosen age." },
+                { new Guid("2025f22b-6fe8-486c-b56d-f20b0ef6e4f6"), "Could not regenerate your token. Please try again." },
+                { new Guid("298bb011-e3e3-4a17-bdf5-c9ad9f784072"), "day" },
+                { new Guid("2ad4195d-ebec-430d-9c73-1c576b30f556"), "days" },
+                { new Guid("8f791802-cede-488e-abff-d968c7cc3030"), "Delete member" },
+                { new Guid("5c97b3b1-8575-45d6-a808-c27e75db141d"), "Delete {name}?" },
+                { new Guid("cc9d7c46-aeb2-44f4-869b-b287d1e38fa7"), "Edit member" },
+                { new Guid("ea96b097-1e02-49cf-8f99-c85186cea498"), "Members" },
+                { new Guid("d47ee9fd-101e-48fb-b8b8-1ffe71d29fa2"), "Share this one-time token with {name} over a secure channel. They'll sign in with it once and then set their own token." },
+                { new Guid("05b95e1c-fab8-46a5-bb18-893f5158cabe"), "Member sign-in token" },
+                { new Guid("b02f136e-76f5-4469-b880-0402f4cb0b6d"), "month" },
+                { new Guid("1bd34883-f832-4404-9ab6-58292b6731c5"), "months" },
+                { new Guid("82060ddd-fc52-451a-a30d-09e263bb1b28"), "Your previous token no longer works. Copy this one and keep it safe — you'll use it to sign in from now on." },
+                { new Guid("537c9a2d-64b4-4061-b252-ba0ec79f7271"), "New access token" },
+                { new Guid("a775cb8d-56a6-43f8-8a87-936dd48fa263"), "No comments were old enough to clear." },
+                { new Guid("fce83416-52a0-4673-8250-066ede23e2c2"), "This project has no languages yet." },
+                { new Guid("531ccb83-de2b-4752-9538-0e1c0fd7f1ee"), "No members yet." },
+                { new Guid("9db2caa1-b700-448d-b351-6ad0fa7d82df"), "No review languages" },
+                { new Guid("c9079826-f955-4e7a-9b25-5e73fb6ad18a"), "Regenerate my access token" },
+                { new Guid("367799e7-6748-4a3b-b148-273ab447b150"), "Reset access token" },
+                { new Guid("4adb2595-febb-4cdb-a4a0-4a3b8940bcff"), "Review languages" },
+                { new Guid("5c656748-2c1b-4a18-afa9-f552034d7dc5"), "languages this member can review" },
+                { new Guid("af54d19f-cb57-41c5-b237-b6ad7be2cf8e"), "Save changes" },
+                { new Guid("dea5a715-68b7-4c25-b3b3-0119b9e8a4cc"), "Username" },
+                { new Guid("9be3ef35-6e7d-4ed7-bcb9-22875868c4da"), "jane.doe" },
+                { new Guid("8f81caa2-0538-4388-b524-c06131e48248"), "you" },
             } },
         };
 

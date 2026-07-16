@@ -1,0 +1,25 @@
+{
+  "Id": "37f1a4fb-3cf9-4b31-8959-5cdd92435599",
+  "CategoryId": "a2cb7dcb-e988-4f12-8c8d-77b9a4c7af84",
+  "KeyName": "kindConflict",
+  "Description": "Generic tag shown on an otherwise-uncategorized conflict.",
+  "CreatedAt": "2026-07-16T12:48:41.5597743Z",
+  "UpdatedAt": "2026-07-16T12:48:41.559775Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "fa9e1d22205ad852b0dc9509ec4e31644e88742c4dfce93c08f011fee1cd8a1a",
+      "Text": "conflict",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5597784Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

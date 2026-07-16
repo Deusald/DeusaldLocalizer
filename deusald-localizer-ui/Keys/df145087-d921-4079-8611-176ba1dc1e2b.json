@@ -1,0 +1,25 @@
+{
+  "Id": "df145087-d921-4079-8611-176ba1dc1e2b",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "excel",
+  "Description": "Format toggle button for Excel export.",
+  "CreatedAt": "2026-07-16T12:48:41.5606671Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5606678Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "48d53635551c8fd4564251d49f4e6eba58c2774469144e4346310955fbadbf4c",
+      "Text": "Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5606696Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,5 +1,6 @@
 @namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 @if (_Conflict is not null)
 {
@@ -16,33 +17,33 @@
             <div class="crb-panel crb-panel-server">
                 <span class="crb-panel-label">@_LeftLabel</span>
                 <div class="crb-panel-text @(string.IsNullOrEmpty(_LeftText) ? "crb-panel-empty" : "")">
-                    @(string.IsNullOrEmpty(_LeftText) ? "(empty)" : _LeftText)
+                    @(string.IsNullOrEmpty(_LeftText) ? Loc.T(Localization.Translate.KeyDetail.ConflictResolution.empty) : _LeftText)
                 </div>
             </div>
             <div class="crb-panel crb-panel-mine">
                 <span class="crb-panel-label">@_RightLabel</span>
                 <div class="crb-panel-text @(string.IsNullOrEmpty(_RightText) ? "crb-panel-empty" : "")">
-                    @(string.IsNullOrEmpty(_RightText) ? "(empty)" : _RightText)
+                    @(string.IsNullOrEmpty(_RightText) ? Loc.T(Localization.Translate.KeyDetail.ConflictResolution.empty) : _RightText)
                 </div>
             </div>
         </div>
 
         <div class="crb-actions">
             <button class="crb-btn crb-btn-primary" @onclick="() => Resolve(ConflictResolution.KeepMine)" disabled="@_Busy">
-                Keep mine
+                @Loc.T(Localization.Translate.KeyDetail.ConflictResolution.keepMine)
             </button>
             <button class="crb-btn crb-btn-accent" @onclick="() => Resolve(ConflictResolution.SuggestMine)" disabled="@_Busy">
-                Suggest mine
+                @Loc.T(Localization.Translate.KeyDetail.ConflictResolution.suggestMine)
             </button>
             <button class="crb-btn crb-btn-ghost" @onclick="() => Resolve(ConflictResolution.KeepServer)" disabled="@_Busy">
-                Keep server
+                @Loc.T(Localization.Translate.KeyDetail.ConflictResolution.keepServer)
             </button>
         </div>
 
         <ul class="crb-hints">
-            <li><strong>Keep mine</strong> — overwrite the server's version on your next push.</li>
-            <li><strong>Suggest mine</strong> — keep the server's version and add yours as a suggestion to vote on.</li>
-            <li><strong>Keep server</strong> — discard your edit.</li>
+            <li><strong>@Loc.T(Localization.Translate.KeyDetail.ConflictResolution.keepMine)</strong> @Loc.T(Localization.Translate.KeyDetail.ConflictResolution.keepMineHint)</li>
+            <li><strong>@Loc.T(Localization.Translate.KeyDetail.ConflictResolution.suggestMine)</strong> @Loc.T(Localization.Translate.KeyDetail.ConflictResolution.suggestMineHint)</li>
+            <li><strong>@Loc.T(Localization.Translate.KeyDetail.ConflictResolution.keepServer)</strong> @Loc.T(Localization.Translate.KeyDetail.ConflictResolution.keepServerHint)</li>
         </ul>
 
     </div>
@@ -65,22 +66,22 @@
 
     private string _HeaderTitle => _Conflict?.Type switch
     {
-        EntryConflictType.SourceChanged => "Source changed on the server",
-        EntryConflictType.DestChanged   => "This translation was edited on the server",
-        _                               => "Conflict",
+        EntryConflictType.SourceChanged => Loc.T(Localization.Translate.KeyDetail.ConflictResolution.sourceChangedTitle),
+        EntryConflictType.DestChanged   => Loc.T(Localization.Translate.KeyDetail.ConflictResolution.destChangedTitle),
+        _                               => Loc.T(Localization.Translate.KeyDetail.ConflictResolution.conflictTitle),
     };
 
     private string _Description => _Conflict?.Type switch
     {
-        EntryConflictType.SourceChanged => "The source text changed on the server since you wrote this translation, so it may no longer match. Choose how to proceed.",
-        EntryConflictType.DestChanged   => "Someone else changed this translation on the server since your edit. Choose which version to keep.",
+        EntryConflictType.SourceChanged => Loc.T(Localization.Translate.KeyDetail.ConflictResolution.sourceChangedDesc),
+        EntryConflictType.DestChanged   => Loc.T(Localization.Translate.KeyDetail.ConflictResolution.destChangedDesc),
         _                               => "",
     };
 
-    private string _LeftLabel => _IsSourceConflict ? "Current source" : "On the server now";
+    private string _LeftLabel => _IsSourceConflict ? Loc.T(Localization.Translate.KeyDetail.ConflictResolution.currentSourceLabel) : Loc.T(Localization.Translate.KeyDetail.ConflictResolution.onServerNowLabel);
     private string _LeftText  => _IsSourceConflict ? _SourceText : _ServerText;
 
-    private string _RightLabel => _IsSourceConflict ? "Your translation" : "Your edit";
+    private string _RightLabel => _IsSourceConflict ? Loc.T(Localization.Translate.KeyDetail.ConflictResolution.yourTranslationLabel) : Loc.T(Localization.Translate.KeyDetail.ConflictResolution.yourEditLabel);
     private string _RightText  => _MineText;
 
     private async Task Resolve(ConflictResolution resolution)

@@ -1,0 +1,25 @@
+{
+  "Id": "a775cb8d-56a6-43f8-8a87-936dd48fa263",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "noCommentsOldEnough",
+  "Description": "Result message when no comments matched the age cutoff.",
+  "CreatedAt": "2026-07-16T12:48:41.5595348Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5595355Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "37462710ac21bcfa792614ba5be633f9edbcb8b94207f9f556d99edf6d8faeb8",
+      "Text": "No comments were old enough to clear.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5595374Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

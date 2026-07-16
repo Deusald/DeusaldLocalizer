@@ -1,0 +1,25 @@
+{
+  "Id": "448f9221-5b49-49e4-8122-e41df5b9da08",
+  "CategoryId": "36be6be4-7cc0-460c-bb6c-42351c6571e1",
+  "KeyName": "collapse",
+  "Description": "Tooltip for collapsing an expanded category node.",
+  "CreatedAt": "2026-07-16T12:48:41.5571851Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5571862Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "be6eb1fc3b05bf9dceebad2eac7841d1b2f40bda9aa2da34df8ca22af02bc3ed",
+      "Text": "Collapse",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5571904Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

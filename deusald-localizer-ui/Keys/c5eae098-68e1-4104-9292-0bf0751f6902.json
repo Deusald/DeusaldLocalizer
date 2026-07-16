@@ -1,0 +1,25 @@
+{
+  "Id": "c5eae098-68e1-4104-9292-0bf0751f6902",
+  "CategoryId": "37037b9b-7934-487b-9401-8cca236150a6",
+  "KeyName": "invalidSlug",
+  "Description": "Validation error for an invalid slug",
+  "CreatedAt": "2026-07-16T12:48:41.5615088Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5615095Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "cab9d57b26717e7678aff9f31e47d20c7abd47ead0342ca7704c9c184fce3c45",
+      "Text": "Only lowercase letters, numbers and hyphens",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5615117Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

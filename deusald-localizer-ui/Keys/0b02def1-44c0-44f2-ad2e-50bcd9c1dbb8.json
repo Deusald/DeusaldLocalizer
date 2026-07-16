@@ -1,0 +1,25 @@
+{
+  "Id": "0b02def1-44c0-44f2-ad2e-50bcd9c1dbb8",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "conflict",
+  "Description": "Singular noun for one sync conflict, used in a count pill.",
+  "CreatedAt": "2026-07-16T12:48:41.5588509Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5588515Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "fa9e1d22205ad852b0dc9509ec4e31644e88742c4dfce93c08f011fee1cd8a1a",
+      "Text": "conflict",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5588533Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

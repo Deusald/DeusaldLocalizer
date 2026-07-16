@@ -1,0 +1,25 @@
+{
+  "Id": "f45730b2-10c9-40b3-a93a-0d210edf35fe",
+  "CategoryId": "264f533d-3094-433d-9429-c82dd532173e",
+  "KeyName": "prevSourceHash",
+  "Description": "Detail row label for previous source hash.",
+  "CreatedAt": "2026-07-16T12:48:41.5602103Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5602109Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e4df7502d1df11dc280b2cd2f72dba3584d3faa91abc57ef5c7362d47d3f111a",
+      "Text": "Prev source hash",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5602157Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "1bbf2ff7-dd3f-4538-b003-dca6bc5e1584",
+  "CategoryId": "2bae53f6-dd89-4848-9852-03b36cde096b",
+  "KeyName": "emptyState",
+  "Description": "Empty-state text when the last sync pulled nothing.",
+  "CreatedAt": "2026-07-16T12:48:41.5602571Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5602578Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "fd55635d29afd8d4e2639b3f97510fbefcb055da3fd51be6680c16c4099471b0",
+      "Text": "Nothing new from the last sync.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5602596Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

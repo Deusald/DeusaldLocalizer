@@ -1,0 +1,25 @@
+{
+  "Id": "647beb0b-fa74-4c56-b6e7-52640b13445c",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "syncing",
+  "Description": "Status message shown while a sync is in progress.",
+  "CreatedAt": "2026-07-16T12:48:41.5590161Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5590167Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "8a046cc90ab0a981f95cbf2c9c609309e0cfda272d8c01fdffecdb8286877e91",
+      "Text": "Syncing…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5590186Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

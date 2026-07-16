@@ -63,6 +63,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<IExcelInterop, MauiExcelInterop>();
         builder.Services.AddSingleton<ITextFileExporter, MauiTextFileExporter>();
         builder.Services.AddSingleton<RecentProjectsStore>();
+        builder.Services.AddSingleton<UiLocalizationService>();
         builder.Services.AddSingleton<ProjectStateService>();
 
         return builder.Build();

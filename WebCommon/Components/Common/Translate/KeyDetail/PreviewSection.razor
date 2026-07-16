@@ -1,19 +1,20 @@
 ﻿@namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 <div class="ps-root">
     <div class="ps-header">
-        <span class="ps-label">Preview</span>
-        <button class="ps-mode-btn" @onclick="ToggleMode" title="@(_LiveMode ? "Switch to Current (saved)" : "Switch to Live (draft)")">
+        <span class="ps-label">@Loc.T(Localization.Translate.KeyDetail.Preview.preview)</span>
+        <button class="ps-mode-btn" @onclick="ToggleMode" title="@(_LiveMode ? Loc.T(Localization.Translate.KeyDetail.Preview.switchToCurrent) : Loc.T(Localization.Translate.KeyDetail.Preview.switchToLive))">
             <i class="bi @(_LiveMode ? "bi-broadcast" : "bi-check-circle")"></i>
-            @(_LiveMode ? "Live" : "Current")
+            @(_LiveMode ? Loc.T(Localization.Translate.KeyDetail.Preview.live) : Loc.T(Localization.Translate.KeyDetail.Preview.current))
         </button>
     </div>
     <div class="ps-frame">
         <div class="ps-row">
-            <span class="ps-row-tag ps-row-tag-source">SRC</span>
+            <span class="ps-row-tag ps-row-tag-source">@Loc.T(Localization.Translate.KeyDetail.Preview.sourceTag)</span>
             <span class="ps-row-text @(string.IsNullOrEmpty(_RenderedSource) ? "ps-row-text-empty" : "")">
-                @(string.IsNullOrEmpty(_RenderedSource) ? (MarkupString)"No source yet" : (MarkupString)PreviewHtmlSanitizer.ToSafeHtml(_RenderedSource))
+                @(string.IsNullOrEmpty(_RenderedSource) ? (MarkupString)Loc.T(Localization.Translate.KeyDetail.Preview.noSource) : (MarkupString)PreviewHtmlSanitizer.ToSafeHtml(_RenderedSource))
             </span>
         </div>
         @if (!_IsSourceLanguageSelected)
@@ -21,7 +22,7 @@
             <div class="ps-row">
                 <span class="ps-row-tag ps-row-tag-translation">@SelectedLanguage</span>
                 <span class="ps-row-text @(string.IsNullOrEmpty(_RenderedTranslation) ? "ps-row-text-empty" : "")">
-                    @(string.IsNullOrEmpty(_RenderedTranslation) ? (MarkupString)"No translation yet" : (MarkupString)PreviewHtmlSanitizer.ToSafeHtml(_RenderedTranslation))
+                    @(string.IsNullOrEmpty(_RenderedTranslation) ? (MarkupString)Loc.T(Localization.Translate.KeyDetail.Preview.noTranslation) : (MarkupString)PreviewHtmlSanitizer.ToSafeHtml(_RenderedTranslation))
                 </span>
             </div>
         }

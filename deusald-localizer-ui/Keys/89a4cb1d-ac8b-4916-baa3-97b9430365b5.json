@@ -1,0 +1,25 @@
+{
+  "Id": "89a4cb1d-ac8b-4916-baa3-97b9430365b5",
+  "CategoryId": "1e3d2684-8ef9-4d86-8bab-569ea5856c31",
+  "KeyName": "deleteComment",
+  "Description": "Tooltip on the delete-comment button",
+  "CreatedAt": "2026-07-16T12:48:41.5587278Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5587285Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e43811a170283c8ebe08b698097e8064f2cd53355ade98b43633378c695bbbad",
+      "Text": "Delete comment",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5587372Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

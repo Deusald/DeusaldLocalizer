@@ -1,0 +1,25 @@
+{
+  "Id": "49cdd01f-c40e-45d9-b69f-841bd48c43e6",
+  "CategoryId": "d913c149-254f-4aca-8f7c-957352fd3716",
+  "KeyName": "heading",
+  "Description": "Heading of the desktop client not-found page",
+  "CreatedAt": "2026-07-16T12:48:41.5616542Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5616549Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+      "Text": "Not Found",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5616567Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

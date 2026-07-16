@@ -1,0 +1,25 @@
+{
+  "Id": "b9cc9035-680d-45d3-8a2a-ed981496cb1b",
+  "CategoryId": "c5c73cc7-4494-470a-bcfc-ef45e25e0957",
+  "KeyName": "sourceChangedTitle",
+  "Description": "Conflict header when the source drifted",
+  "CreatedAt": "2026-07-16T12:48:41.5586485Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5586492Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "61aed12a625743583a35c5974397dbe3a08bc2969fa60ef387a7a78e716a5d1a",
+      "Text": "Source changed on the server",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5586519Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

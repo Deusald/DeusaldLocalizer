@@ -1,0 +1,25 @@
+{
+  "Id": "fc209a3f-7d21-4aaf-932e-6a7d0291dcd5",
+  "CategoryId": "f4418ae5-cb67-4794-b968-ed395d6b3148",
+  "KeyName": "noEntries",
+  "Description": "Empty state when the enum has no entries",
+  "CreatedAt": "2026-07-16T12:48:41.5585695Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5585702Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "6d6ff433b1be72606369ae3c2fb5484a934943fc554b5bd9ba3f1241ec23e252",
+      "Text": "No entries. Add at least one.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5585722Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

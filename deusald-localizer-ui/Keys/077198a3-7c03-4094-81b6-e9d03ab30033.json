@@ -1,0 +1,25 @@
+{
+  "Id": "077198a3-7c03-4094-81b6-e9d03ab30033",
+  "CategoryId": "37037b9b-7934-487b-9401-8cca236150a6",
+  "KeyName": "title",
+  "Description": "Title of the new project modal",
+  "CreatedAt": "2026-07-16T12:48:41.5614524Z",
+  "UpdatedAt": "2026-07-16T12:48:41.561453Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a41eb2bf7245d3bcca0c66f7b9a2c8b30a6cf975fc4bed8297811b2777956280",
+      "Text": "New project",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.561455Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

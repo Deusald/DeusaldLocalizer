@@ -1,0 +1,25 @@
+{
+  "Id": "9abeea1f-f51e-41b1-b800-2fef7b03f751",
+  "CategoryId": "9dc99630-09e1-4188-8d05-b279fbb54584",
+  "KeyName": "mustBelongToCategory",
+  "Description": "Warning body explaining that a category is required before adding a key.",
+  "CreatedAt": "2026-07-16T12:48:41.5575423Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5575429Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "b5a8c4e17fa8313a55f2497ff493157dc5bb05ebdb767fbb01ca25c540aa8c3d",
+      "Text": "A key must belong to a category. Create at least one category from the Keys column before adding a key.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5575451Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "089e621b-985e-4ceb-a47d-3483013f3b0a",
+  "CategoryId": "f4418ae5-cb67-4794-b968-ed395d6b3148",
+  "KeyName": "name",
+  "Description": "Label for the enum name field",
+  "CreatedAt": "2026-07-16T12:48:41.5585041Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5585048Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50",
+      "Text": "Name",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5585084Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

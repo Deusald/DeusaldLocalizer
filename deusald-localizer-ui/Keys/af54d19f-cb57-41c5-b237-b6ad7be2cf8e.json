@@ -1,0 +1,25 @@
+{
+  "Id": "af54d19f-cb57-41c5-b237-b6ad7be2cf8e",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "saveChanges",
+  "Description": "Confirm button label when editing an existing member.",
+  "CreatedAt": "2026-07-16T12:48:41.5593272Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5593279Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "dd0ae7a5cbcf233968657563dce34639e681861e2df6d3f845c08d49981c0999",
+      "Text": "Save changes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5593297Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "af29b774-5196-4640-92b0-20357ad66e4b",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "desc",
+  "Description": "Description of how Excel import works.",
+  "CreatedAt": "2026-07-16T12:48:41.56032Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5603206Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "8f229d3640de4e79a82cd84e978d76f7fc67962a69d776fcf05fbc8d653f76b8",
+      "Text": "Select an .xlsx exported from this project. Rows are matched by KeyId; cells that still match their #hash are skipped.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5603231Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

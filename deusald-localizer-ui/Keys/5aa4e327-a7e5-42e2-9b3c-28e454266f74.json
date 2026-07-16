@@ -1,0 +1,33 @@
+{
+  "Id": "5aa4e327-a7e5-42e2-9b3c-28e454266f74",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "syncedFiles",
+  "Description": "Sync result message reporting how many files changed.",
+  "CreatedAt": "2026-07-16T12:48:41.5590474Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5590483Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "8d9d1be1-c105-4aac-a126-05b89afe2178",
+      "Name": "count",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "5"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "9c31c3fdd3a658d09d12576f5d7c40d48ff60d600f39c8af7563b2263ae492ac",
+      "Text": "Synced {count} file(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5590555Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

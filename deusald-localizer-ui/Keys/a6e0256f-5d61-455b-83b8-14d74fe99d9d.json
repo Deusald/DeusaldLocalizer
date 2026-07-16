@@ -1,0 +1,25 @@
+{
+  "Id": "a6e0256f-5d61-455b-83b8-14d74fe99d9d",
+  "CategoryId": "c2ad17b5-de6f-43fe-bbc4-6052bdc6f47b",
+  "KeyName": "noProjectOpen",
+  "Description": "Empty state shown on the translate page when no project is open",
+  "CreatedAt": "2026-07-16T12:48:41.5616042Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5616049Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a80c18fe4f9caff97b5220151334182db2393db13b70fc20b92d924db9942d6e",
+      "Text": "No project open.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5616068Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

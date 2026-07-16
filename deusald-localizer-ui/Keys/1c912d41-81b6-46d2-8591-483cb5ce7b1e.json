@@ -1,0 +1,25 @@
+{
+  "Id": "1c912d41-81b6-46d2-8591-483cb5ce7b1e",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "languages",
+  "Description": "Section title for language selection.",
+  "CreatedAt": "2026-07-16T12:48:41.560869Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5608697Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "318655cea4bd2096fbfad433d7c019bac40750d1a456fc34d366df41fcc77197",
+      "Text": "Languages",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5608717Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

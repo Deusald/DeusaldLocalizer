@@ -1,0 +1,25 @@
+{
+  "Id": "7a408eda-181f-4654-9ff9-798456ca0f6a",
+  "CategoryId": "30c64139-dcb5-4421-b6b0-72b5ab393ccd",
+  "KeyName": "flagDoNotTranslate",
+  "Description": "Selectable flag type label: Do not translate.",
+  "CreatedAt": "2026-07-16T12:48:41.5579059Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5579065Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "0ff0b408c3d7c557c4c1f19a866eea82b8eeeed657ba4e6db01f83dad1a55d62",
+      "Text": "Do not translate",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5579113Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

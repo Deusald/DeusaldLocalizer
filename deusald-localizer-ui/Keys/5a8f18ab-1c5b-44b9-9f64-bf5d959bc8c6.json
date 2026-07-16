@@ -1,0 +1,33 @@
+{
+  "Id": "5a8f18ab-1c5b-44b9-9f64-bf5d959bc8c6",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "uncommittedCount",
+  "Description": "Uncommitted-mode status pill label with a pending-change count.",
+  "CreatedAt": "2026-07-16T12:48:41.5589965Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5589972Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "53df1fee-a38c-454b-9e0e-748e5391712d",
+      "Name": "count",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "3"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "58d42fde96d27052210e44f92eaff991f8cd01fabfaaf51ca84c8a2232507127",
+      "Text": "Uncommitted ({count})",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5590032Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

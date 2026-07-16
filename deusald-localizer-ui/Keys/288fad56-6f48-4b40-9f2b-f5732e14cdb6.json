@@ -1,0 +1,25 @@
+{
+  "Id": "288fad56-6f48-4b40-9f2b-f5732e14cdb6",
+  "CategoryId": "03bb89a1-af8c-447d-a2f0-201c17dca044",
+  "KeyName": "tokenPlaceholder",
+  "Description": "Placeholder for the access token input",
+  "CreatedAt": "2026-07-16T12:48:41.561429Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5614296Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "f7eee1e9ccda63085f7f1dd495aa7e629f24898f0ce7a0ebf1c0c0d8be2810d9",
+      "Text": "Paste your access token…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5614317Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

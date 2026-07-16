@@ -1,0 +1,25 @@
+{
+  "Id": "735cf192-e853-4e3a-9b27-6ebb53f59e24",
+  "CategoryId": "c5c73cc7-4494-470a-bcfc-ef45e25e0957",
+  "KeyName": "sourceChangedDesc",
+  "Description": "Conflict description for a source-changed conflict",
+  "CreatedAt": "2026-07-16T12:48:41.5586756Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5586762Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c79f54ab65e0decdc98bf1aaf9e08cdcbf712cbf67cf8714c406b34fb0506d64",
+      "Text": "The source text changed on the server since you wrote this translation, so it may no longer match. Choose how to proceed.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5586783Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

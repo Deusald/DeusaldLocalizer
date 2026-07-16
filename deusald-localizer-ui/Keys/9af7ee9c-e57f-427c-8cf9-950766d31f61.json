@@ -1,0 +1,25 @@
+{
+  "Id": "9af7ee9c-e57f-427c-8cf9-950766d31f61",
+  "CategoryId": "37037b9b-7934-487b-9401-8cca236150a6",
+  "KeyName": "descriptionPlaceholder",
+  "Description": "Placeholder for the description textarea",
+  "CreatedAt": "2026-07-16T12:48:41.5615788Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5615794Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "cde2e3621245bfa72487696af7bc15508b0e176b2550b83ce4f1861b1bd7d673",
+      "Text": "A short description of the project…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5615814Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

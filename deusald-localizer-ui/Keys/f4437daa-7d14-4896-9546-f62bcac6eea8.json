@@ -1,0 +1,25 @@
+{
+  "Id": "f4437daa-7d14-4896-9546-f62bcac6eea8",
+  "CategoryId": "03687f98-0a54-4914-a0e2-992f681adff4",
+  "KeyName": "timeJustNow",
+  "Description": "Relative time: less than two minutes ago.",
+  "CreatedAt": "2026-07-16T12:19:57.5420006Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5561997Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "7ddb44d8a533a7535d85cedddf35d7f3414632ad4e10a0d7ca697723e1d97993",
+      "Text": "just now",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5562107Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

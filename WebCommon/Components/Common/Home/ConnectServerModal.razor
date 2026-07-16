@@ -1,5 +1,6 @@
 @namespace DeusaldLocalizerWeb.Components.Common
 @inject IProjectLocationService _LocationPicker
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -9,10 +10,10 @@
 
         <div class="csm-header">
             <div>
-                <div class="csm-title">Connect to server</div>
-                <div class="csm-subtitle">Download an online project from the bot</div>
+                <div class="csm-title">@Loc.T(Localization.Common.ConnectServer.title)</div>
+                <div class="csm-subtitle">@Loc.T(Localization.Common.ConnectServer.subtitle)</div>
             </div>
-            <button class="csm-close" @onclick="Cancel" title="Close" disabled="@_Busy">
+            <button class="csm-close" @onclick="Cancel" title="@Loc.T(Localization.Common.Buttons.close)" disabled="@_Busy">
                 <i class="bi bi-x-lg"></i>
             </button>
         </div>
@@ -21,7 +22,7 @@
 
             @* ── Server URL ────────────────────────────────────────────── *@
             <div class="csm-field">
-                <label class="csm-label">Server URL</label>
+                <label class="csm-label">@Loc.T(Localization.Common.ConnectServer.serverUrlLabel)</label>
                 <input class="csm-input csm-input-mono" type="text"
                        placeholder="https://bot.example.com"
                        @bind="_ApiUrl" @bind:event="oninput" disabled="@_Busy"/>
@@ -30,29 +31,29 @@
             @* ── Project ID ────────────────────────────────────────────── *@
             <div class="csm-field">
                 <label class="csm-label">
-                    Project ID
-                    <span class="csm-label-hint">the project's unique id</span>
+                    @Loc.T(Localization.Common.ConnectServer.projectIdLabel)
+                    <span class="csm-label-hint">@Loc.T(Localization.Common.ConnectServer.projectIdHint)</span>
                 </label>
                 <input class="csm-input csm-input-mono" type="text"
                        placeholder="00000000-0000-0000-0000-000000000000"
                        @bind="_ProjectId" @bind:event="oninput" disabled="@_Busy"/>
                 @if (!string.IsNullOrEmpty(_ProjectId) && !Guid.TryParse(_ProjectId, out _))
                 {
-                    <div class="csm-field-error">Not a valid project id</div>
+                    <div class="csm-field-error">@Loc.T(Localization.Common.ConnectServer.invalidProjectId)</div>
                 }
             </div>
 
             @* ── Username ──────────────────────────────────────────────── *@
             <div class="csm-field">
-                <label class="csm-label">Username</label>
+                <label class="csm-label">@Loc.T(Localization.Common.ConnectServer.usernameLabel)</label>
                 <input class="csm-input" type="text" placeholder="jane.doe"
                        @bind="_Username" @bind:event="oninput" disabled="@_Busy"/>
             </div>
 
             @* ── Access token ──────────────────────────────────────────── *@
             <div class="csm-field">
-                <label class="csm-label">Access token</label>
-                <input class="csm-input" type="password" placeholder="Paste your access token…"
+                <label class="csm-label">@Loc.T(Localization.Common.ConnectServer.accessTokenLabel)</label>
+                <input class="csm-input" type="password" placeholder="@Loc.T(Localization.Common.ConnectServer.tokenPlaceholder)"
                        @bind="_Token" @bind:event="oninput" disabled="@_Busy"/>
             </div>
 
@@ -63,15 +64,15 @@
             {
                 <div class="csm-field">
                     <label class="csm-label">
-                        Store in
-                        <span class="csm-label-hint">a folder named after the project is created here</span>
+                        @Loc.T(Localization.Common.ConnectServer.storeInLabel)
+                        <span class="csm-label-hint">@Loc.T(Localization.Common.ConnectServer.storeInHint)</span>
                     </label>
                     <div class="csm-location">
                         <span class="csm-location-path @(string.IsNullOrEmpty(_Location) ? "csm-location-empty" : "")">
-                            @(string.IsNullOrEmpty(_Location) ? "No folder selected" : _Location)
+                            @(string.IsNullOrEmpty(_Location) ? Loc.T(Localization.Common.ConnectServer.noFolderSelected) : _Location)
                         </span>
                         <button class="csm-btn csm-btn-ghost csm-btn-sm" @onclick="Browse" disabled="@_Busy">
-                            <i class="bi bi-folder2-open"></i> Browse…
+                            <i class="bi bi-folder2-open"></i> @Loc.T(Localization.Common.ConnectServer.browseButton)
                         </button>
                     </div>
                 </div>
@@ -87,16 +88,16 @@
         </div>
 
         <div class="csm-footer">
-            <button class="csm-btn csm-btn-ghost" @onclick="Cancel" disabled="@_Busy">Cancel</button>
+            <button class="csm-btn csm-btn-ghost" @onclick="Cancel" disabled="@_Busy">@Loc.T(Localization.Common.Buttons.cancel)</button>
             <button class="csm-btn csm-btn-primary" @onclick="Confirm" disabled="@(!_CanConfirm || _Busy)">
                 @if (_Busy)
                 {
                     <span class="dl-spinner" style="width:14px;height:14px;flex-shrink:0;"></span>
-                    <span>Connecting…</span>
+                    <span>@Loc.T(Localization.Common.ConnectServer.connecting)</span>
                 }
                 else
                 {
-                    <span>Connect</span>
+                    <span>@Loc.T(Localization.Common.ConnectServer.connectButton)</span>
                 }
             </button>
         </div>

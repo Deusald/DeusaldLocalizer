@@ -24,6 +24,7 @@ builder.Services.AddScoped<IProjectLocationService, WebProjectLocationService>()
 builder.Services.AddScoped<IExcelInterop, WebExcelInterop>();
 builder.Services.AddScoped<ITextFileExporter, WebTextFileExporter>();
 builder.Services.AddScoped<RecentProjectsStore>();
+builder.Services.AddScoped<UiLocalizationService>();
 
 // Session state (one per app in WASM)
 builder.Services.AddScoped<ProjectStateService>();

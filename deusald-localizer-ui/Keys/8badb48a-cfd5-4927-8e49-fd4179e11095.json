@@ -1,0 +1,25 @@
+{
+  "Id": "8badb48a-cfd5-4927-8e49-fd4179e11095",
+  "CategoryId": "6473eabd-696a-4b05-b6e8-b76a62ed6aab",
+  "KeyName": "tabAll",
+  "Description": "Tab showing all keys.",
+  "CreatedAt": "2026-07-16T12:48:41.5569861Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5569871Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a52ace420f2175d08b1577a1bea5445e36801229c074ef9ed6c55a73401fd9c2",
+      "Text": "All",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5569914Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

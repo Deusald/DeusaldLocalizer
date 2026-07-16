@@ -1,0 +1,25 @@
+{
+  "Id": "bdba7e29-c268-4337-81bb-401fcd507ac0",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "suggestionsAdded",
+  "Description": "Result stat label for suggestions added.",
+  "CreatedAt": "2026-07-16T12:48:41.5605675Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5605682Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "05354c35e5e359dffd47ce09465f8ab2a197c02ef26559d2577f5609075a7338",
+      "Text": "suggestions added",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5605701Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

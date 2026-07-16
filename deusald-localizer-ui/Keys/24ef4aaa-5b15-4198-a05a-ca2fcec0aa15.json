@@ -1,0 +1,25 @@
+{
+  "Id": "24ef4aaa-5b15-4198-a05a-ca2fcec0aa15",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "updateTags",
+  "Description": "Checkbox label to update tags.",
+  "CreatedAt": "2026-07-16T12:48:41.5604076Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5604082Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "f8f758727160d182359452a1fbec18f92ae5ac99d1f5763298fcc0783eee3691",
+      "Text": "Update tags",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.560413Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

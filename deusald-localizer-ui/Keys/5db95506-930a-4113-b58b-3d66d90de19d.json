@@ -1,0 +1,25 @@
+{
+  "Id": "5db95506-930a-4113-b58b-3d66d90de19d",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "translationsSet",
+  "Description": "Result stat label for translations set.",
+  "CreatedAt": "2026-07-16T12:48:41.5605569Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5605576Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "4ca4ca99140b22d80ee0669ddea18d6ba730501136be950d2794b40d615c31d4",
+      "Text": "translations set",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5605599Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

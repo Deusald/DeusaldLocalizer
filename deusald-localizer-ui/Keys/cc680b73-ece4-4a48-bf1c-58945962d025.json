@@ -1,0 +1,25 @@
+{
+  "Id": "cc680b73-ece4-4a48-bf1c-58945962d025",
+  "CategoryId": "5b3ad005-8ece-4230-9f44-a060455ce216",
+  "KeyName": "intValueHint",
+  "Description": "Hint that an enum preview value is an int",
+  "CreatedAt": "2026-07-16T12:48:41.5583645Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5583652Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a0e6a53cc1b4c5f0ba29c92c662aeb4fd5480347ddfe7044c19563a68774890b",
+      "Text": "int value",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5583671Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

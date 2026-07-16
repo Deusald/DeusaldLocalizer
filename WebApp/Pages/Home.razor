@@ -6,6 +6,7 @@
 @inject WebProjectArchive    _Archive
 @inject IAuthTokenStore      _AuthTokens
 @inject NavigationManager    _Nav
+@inject UiLocalizationService Loc
 
 <PageTitle>Deusald Localizer</PageTitle>
 
@@ -22,12 +23,12 @@
                 </div>
                 <div>
                     <div class="home-logo-text-name">Deusald Localizer</div>
-                    <div class="home-logo-text-sub">COMMUNITY LOCALIZATION · WEB</div>
+                    <div class="home-logo-text-sub">@Loc.T(Localization.Home.Web.tagline)</div>
                 </div>
             </div>
 
-            <h1 class="home-headline">Translate your game,<br/>together.</h1>
-            <p class="home-sub">Edit strings, propose alternatives, and let the community vote on the best translation for every key — right in your browser.</p>
+            <h1 class="home-headline">@Loc.T(Localization.Home.subtitle)</h1>
+            <p class="home-sub">@Loc.T(Localization.Home.Web.intro)</p>
         </div>
 
         <div>
@@ -42,25 +43,25 @@
             <div class="home-actions">
                 <button class="home-btn home-btn-primary" @onclick="OpenNewProjectModal" disabled="@_IsBusy">
                     <span class="home-btn-icon">+</span>
-                    <span>New project</span>
+                    <span>@Loc.T(Localization.Home.newProject)</span>
                 </button>
 
                 <button class="home-btn home-btn-secondary" @onclick="ImportZip" disabled="@_IsBusy">
                     @if (_IsBusy)
                     {
                         <span class="dl-spinner" style="width:14px;height:14px;flex-shrink:0;"></span>
-                        <span>Working…</span>
+                        <span>@Loc.T(Localization.Home.Web.working)</span>
                     }
                     else
                     {
                         <span class="home-btn-icon"><i class="bi bi-file-earmark-zip"></i></span>
-                        <span>Import .zip…</span>
+                        <span>@Loc.T(Localization.Home.Web.importZip)</span>
                     }
                 </button>
 
                 <button class="home-btn home-btn-secondary" @onclick="OpenConnectModal" disabled="@_IsBusy">
                     <span class="home-btn-dot"></span>
-                    <span>Connect to server…</span>
+                    <span>@Loc.T(Localization.Home.connectServer)</span>
                 </button>
             </div>
 
@@ -71,6 +72,8 @@
                     <span class="home-version-sep">·</span>
                     <span class="home-version-hash">@BuildInfo.CommitHash</span>
                 }
+                <span class="home-version-sep">·</span>
+                <LanguagePicker/>
             </div>
         </div>
     </div>
@@ -78,14 +81,14 @@
     @* ── Right panel ──────────────────────────────────────────────────── *@
     <div class="home-right">
         <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;">
-            <div class="home-recents-label" style="margin-bottom:0;">Your projects</div>
+            <div class="home-recents-label" style="margin-bottom:0;">@Loc.T(Localization.Home.Web.yourProjects)</div>
         </div>
 
         @if (_Projects.Count == 0)
         {
             <div class="home-empty">
-                <div class="home-empty-title">No projects yet</div>
-                <div class="home-empty-sub">Create a new project or import a <code>.zip</code><br/>to get started. They're saved in this browser.</div>
+                <div class="home-empty-title">@Loc.T(Localization.Home.Web.emptyTitle)</div>
+                <div class="home-empty-sub">@Loc.T(Localization.Home.Web.emptySub)</div>
             </div>
         }
         else
@@ -98,7 +101,12 @@
                     string         initial = p.Name.Length > 0 ? p.Name[0].ToString().ToUpper() : "P";
                     string         swatch  = swatches[x % swatches.Length];
                     string meta = p.KeyCount > 0
-                                      ? $"{p.KeyCount} keys · {p.LangCount} langs · {LastEditedLabel(p.UpdatedAt)}"
+                                      ? Loc.T(Localization.Home.projectMeta, new Dictionary<string, object>
+                                        {
+                                            ["keys"]   = p.KeyCount,
+                                            ["langs"]  = p.LangCount,
+                                            ["edited"] = LastEditedLabel(p.UpdatedAt),
+                                        })
                                       : LastEditedLabel(p.UpdatedAt);
 
                     <div class="home-recent-item-wrap">
@@ -109,7 +117,7 @@
                                     <span class="home-recent-name">@p.Name</span>
                                     @if (p.IsOnline)
                                     {
-                                        <span class="home-recent-tag-remote">REMOTE</span>
+                                        <span class="home-recent-tag-remote">@Loc.T(Localization.Home.remoteTag)</span>
                                     }
                                 </div>
                                 <div class="home-recent-sub">@meta</div>
@@ -118,7 +126,7 @@
                             {
                                 <div class="home-recent-progress">
                                     <div class="home-recent-progress-top">
-                                        <span>@p.LangCount langs</span>
+                                        <span>@Loc.T(Localization.Home.langCount, new Dictionary<string, object> { ["count"] = p.LangCount })</span>
                                         <span class="home-recent-progress-pct">@p.TranslationPct%</span>
                                     </div>
                                     <div class="home-recent-progress-bar">
@@ -131,13 +139,13 @@
                         <button class="home-recent-remove home-recent-export"
                                 @onclick="() => ExportProject(p)"
                                 disabled="@_IsBusy"
-                                title="Download a copy (.zip)">
+                                title="@Loc.T(Localization.Home.Web.downloadTooltip)">
                             <i class="bi bi-download"></i>
                         </button>
                         <button class="home-recent-remove home-recent-delete"
                                 @onclick="() => AskDelete(p)"
                                 disabled="@_IsBusy"
-                                title="Delete from this browser">
+                                title="@Loc.T(Localization.Home.Web.deleteTooltip)">
                             <i class="bi bi-x"></i>
                         </button>
                     </div>
@@ -161,21 +169,18 @@
         <div class="home-confirm-backdrop" @onclick="CancelDelete"></div>
         <div class="home-confirm-box" @onclick:stopPropagation="true">
             <div class="home-confirm-header">
-                <span class="home-confirm-title">Delete project?</span>
+                <span class="home-confirm-title">@Loc.T(Localization.Home.Web.deleteTitle)</span>
             </div>
             <div class="home-confirm-body">
-                <strong>@_PendingDelete.Name</strong> will be removed from this browser.
+                @Loc.T(Localization.Home.Web.deleteBody, new Dictionary<string, object> { ["name"] = _PendingDelete.Name })
             </div>
             <div class="home-confirm-warn">
                 <i class="bi bi-exclamation-triangle-fill"></i>
-                <span>
-                    This project lives only in this browser — deleting it is permanent and
-                    cannot be undone. Download a copy (.zip) first if you want to keep it.
-                </span>
+                <span>@Loc.T(Localization.Home.Web.deleteWarn)</span>
             </div>
             <div class="home-confirm-footer">
-                <button class="home-confirm-btn home-confirm-btn-ghost" @onclick="CancelDelete" disabled="@_IsBusy">Cancel</button>
-                <button class="home-confirm-btn home-confirm-btn-danger" @onclick="ConfirmDelete" disabled="@_IsBusy">Delete permanently</button>
+                <button class="home-confirm-btn home-confirm-btn-ghost" @onclick="CancelDelete" disabled="@_IsBusy">@Loc.T(Localization.Common.Buttons.cancel)</button>
+                <button class="home-confirm-btn home-confirm-btn-danger" @onclick="ConfirmDelete" disabled="@_IsBusy">@Loc.T(Localization.Home.Web.deleteConfirm)</button>
             </div>
         </div>
     }
@@ -258,18 +263,18 @@
         }
         catch (Exception ex)
         {
-            _ErrorMessage = $"Could not read stored projects: {ex.Message}";
+            _ErrorMessage = Loc.T(Localization.Home.Web.errReadProjects, new Dictionary<string, object> { ["msg"] = ex.Message });
         }
     }
 
     /// <summary>Mirrors <c>RecentProjectEntry.LastEditedLabel</c> so web cards read like the desktop ones.</summary>
-    private static string LastEditedLabel(DateTime lastEdited)
+    private string LastEditedLabel(DateTime lastEdited)
     {
         TimeSpan diff = DateTime.Now - lastEdited;
-        if (diff.TotalMinutes < 2) return "just now";
-        if (diff.TotalHours < 1) return $"{(int)diff.TotalMinutes}m ago";
-        if (diff.TotalDays < 1) return $"{(int)diff.TotalHours}h ago";
-        if (diff.TotalDays < 7) return $"{(int)diff.TotalDays}d ago";
+        if (diff.TotalMinutes < 2) return Loc.T(Localization.Home.timeJustNow);
+        if (diff.TotalHours < 1) return Loc.T(Localization.Home.timeMinutes, new Dictionary<string, object> { ["m"] = (int)diff.TotalMinutes });
+        if (diff.TotalDays < 1) return Loc.T(Localization.Home.timeHours, new Dictionary<string, object> { ["h"] = (int)diff.TotalHours });
+        if (diff.TotalDays < 7) return Loc.T(Localization.Home.timeDays, new Dictionary<string, object> { ["d"] = (int)diff.TotalDays });
         return lastEdited.ToString("MMM d");
     }
 
@@ -294,7 +299,7 @@
         }
         catch (Exception ex)
         {
-            _ErrorMessage = $"Failed to open project: {ex.Message}";
+            _ErrorMessage = Loc.T(Localization.Home.Web.errOpen, new Dictionary<string, object> { ["msg"] = ex.Message });
             _IsBusy       = false;
         }
     }
@@ -330,7 +335,7 @@
 
         if (result.Error != null || result.Project is null || result.Location is null || result.Member is null)
         {
-            _ConnectModal?.ShowError(result.Error ?? "Could not connect to the project. Please try again.");
+            _ConnectModal?.ShowError(result.Error ?? Loc.T(Localization.Home.errConnect));
             return;
         }
 
@@ -346,7 +351,7 @@
 
             if (rotation.RawToken == null)
             {
-                _ConnectModal?.ShowError(rotation.Error ?? "Could not complete sign-in. Please try again.");
+                _ConnectModal?.ShowError(rotation.Error ?? Loc.T(Localization.Home.errSignIn));
                 return;
             }
 
@@ -356,8 +361,7 @@
             _ConnectModal?.Hide();
             StateHasChanged();
 
-            _AccessTokenModal?.Show(rotation.RawToken, "Your access token",
-                "This is your new sign-in token. Copy it now and keep it safe — you'll use it to sign in from now on.");
+            _AccessTokenModal?.Show(rotation.RawToken, Loc.T(Localization.Common.AccessToken.newTokenTitle), Loc.T(Localization.Common.AccessToken.newTokenBody));
             return; // FinalizeLoad runs once the user closes the token modal
         }
 
@@ -399,7 +403,7 @@
         }
         catch (Exception ex)
         {
-            _ErrorMessage = $"Import failed: {ex.Message}";
+            _ErrorMessage = Loc.T(Localization.Home.Web.errImport, new Dictionary<string, object> { ["msg"] = ex.Message });
             _IsBusy       = false;
         }
     }
@@ -413,7 +417,7 @@
         }
         catch (Exception ex)
         {
-            _ErrorMessage = $"Export failed: {ex.Message}";
+            _ErrorMessage = Loc.T(Localization.Home.Web.errExport, new Dictionary<string, object> { ["msg"] = ex.Message });
         }
     }
 
@@ -438,7 +442,7 @@
         }
         catch (Exception ex)
         {
-            _ErrorMessage = $"Delete failed: {ex.Message}";
+            _ErrorMessage = Loc.T(Localization.Home.Web.errDelete, new Dictionary<string, object> { ["msg"] = ex.Message });
         }
         finally
         {

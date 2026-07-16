@@ -1,0 +1,25 @@
+{
+  "Id": "93275320-f537-4087-9562-1d6feb1f723c",
+  "CategoryId": "f49bf397-0eaa-4bcf-8fe7-0022c70b016e",
+  "KeyName": "noFolderSelected",
+  "Description": "Placeholder text when no storage folder has been picked",
+  "CreatedAt": "2026-07-16T12:48:41.5612813Z",
+  "UpdatedAt": "2026-07-16T12:48:41.561282Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "d987e033568e0872f83a002eee163fe324d00b61cf462e31b5da182f538da8c6",
+      "Text": "No folder selected",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.561284Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

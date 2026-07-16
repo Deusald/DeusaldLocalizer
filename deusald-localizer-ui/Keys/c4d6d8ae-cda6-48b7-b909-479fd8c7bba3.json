@@ -1,0 +1,25 @@
+{
+  "Id": "c4d6d8ae-cda6-48b7-b909-479fd8c7bba3",
+  "CategoryId": "8e09b7d9-6f39-43ce-9e26-89f6748618eb",
+  "KeyName": "statusNeedsReview",
+  "Description": "Key status tag: translation needs review.",
+  "CreatedAt": "2026-07-16T12:48:41.557722Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5577226Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "07297fa94a997d0f807bd37c61993a8821ca406b5e4498e4f0759e50ab154dd4",
+      "Text": "Needs review",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5577274Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

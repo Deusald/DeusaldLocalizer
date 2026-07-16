@@ -1,0 +1,25 @@
+{
+  "Id": "7748d878-7a97-458a-a585-48fec2ea508d",
+  "CategoryId": "9f62ee59-bded-49f3-a41a-89242b97973e",
+  "KeyName": "addDescription",
+  "Description": "Clickable prompt shown to admins when a key has no description.",
+  "CreatedAt": "2026-07-16T12:48:41.5577658Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5577664Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c7200c2863966d7fb00d06f90adc1ae81f529851a72a49f6f2d611f78e8f5d20",
+      "Text": "Add a description…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5577712Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "664d5cf7-8d3d-4544-864b-2565387a127d",
+  "CategoryId": "dfd57dc6-94be-4540-b323-8ee6ac2cf59d",
+  "KeyName": "switchToCurrent",
+  "Description": "Tooltip on the preview-mode toggle when in live mode",
+  "CreatedAt": "2026-07-16T12:48:41.5582072Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5582078Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "43af61dcfc50c5adf24d380e7fc4121647b811530d9ddada0e2df4afe617b928",
+      "Text": "Switch to Current (saved)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5582126Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

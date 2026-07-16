@@ -1,0 +1,25 @@
+{
+  "Id": "89ca3bed-91cb-4d2d-b774-5eaef210ff75",
+  "CategoryId": "9b12f931-a241-469d-983d-8dbcf3378439",
+  "KeyName": "addSubLanguage",
+  "Description": "Tooltip for the button that adds a sub-language variant.",
+  "CreatedAt": "2026-07-16T12:48:41.5568742Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5568751Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "4cad81ddfe5f8bd341eb2d751fb4cb1e3c6147b696b8f3919c39be411c026c60",
+      "Text": "Add sub-language",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5568793Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

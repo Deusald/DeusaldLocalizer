@@ -1,0 +1,25 @@
+{
+  "Id": "b6c152ee-4ae8-49aa-81c4-2dd354717a59",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "noTags",
+  "Description": "Row label for keys that carry no tags.",
+  "CreatedAt": "2026-07-16T12:48:41.5608142Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5608148Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "147e6bba4382967505b88e720b211ff39956c100e6c9e0b25aa3dcea88332572",
+      "Text": "No tags",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5608211Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

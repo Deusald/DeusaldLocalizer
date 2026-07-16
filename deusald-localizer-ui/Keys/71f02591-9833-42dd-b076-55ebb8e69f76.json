@@ -1,0 +1,25 @@
+{
+  "Id": "71f02591-9833-42dd-b076-55ebb8e69f76",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "uncommittedChanges",
+  "Description": "Tooltip on the button that opens the uncommitted changes modal.",
+  "CreatedAt": "2026-07-16T12:48:41.5590083Z",
+  "UpdatedAt": "2026-07-16T12:48:41.559009Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a388bd2d373c39832003ef3699f39ff89d2c1ebb5c936f1ab8ed4e49f478daef",
+      "Text": "Uncommitted changes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5590109Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

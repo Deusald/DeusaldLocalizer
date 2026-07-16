@@ -1,0 +1,25 @@
+{
+  "Id": "6100e3e8-0245-40cd-978c-e26a6d362e5d",
+  "CategoryId": "c5c73cc7-4494-470a-bcfc-ef45e25e0957",
+  "KeyName": "suggestMineHint",
+  "Description": "Hint explaining the Suggest mine option",
+  "CreatedAt": "2026-07-16T12:48:41.5586298Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5586305Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "89366d5bb47cc149c822a42f8a7d555f4efa903654ffc48abbaa0b20521e7fe9",
+      "Text": "— keep the server's version and add yours as a suggestion to vote on.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5586357Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

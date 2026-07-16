@@ -1,0 +1,25 @@
+{
+  "Id": "26392e1f-931a-4b3c-a39b-169d4fa03874",
+  "CategoryId": "2c815bf8-7ba9-4641-a921-c0b38f3e5e84",
+  "KeyName": "description",
+  "Description": "Label for the category description field.",
+  "CreatedAt": "2026-07-16T12:48:41.5574891Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5574899Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "526e0087cc3f254d9f86f6c7d8e23d954c4dfda2b312efc29194ae8a860106ba",
+      "Text": "Description",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.557492Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

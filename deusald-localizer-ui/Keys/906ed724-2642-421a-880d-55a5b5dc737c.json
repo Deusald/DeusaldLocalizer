@@ -1,0 +1,33 @@
+{
+  "Id": "906ed724-2642-421a-880d-55a5b5dc737c",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "updateSub",
+  "Description": "Update banner sub-line naming the new version (desktop).",
+  "CreatedAt": "2026-07-16T12:29:28.079409Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5565494Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "f4920a3f-0e4b-4ad5-8f02-0d1ebae03094",
+      "Name": "version",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "1.4.0"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "9b632d16e11beab2ccf9173b93edbc5298bbedb52571ecadf7c69a20cb9c0d69",
+      "Text": "Version {version} is available.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5565564Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

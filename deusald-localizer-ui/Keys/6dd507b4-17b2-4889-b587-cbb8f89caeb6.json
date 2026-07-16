@@ -1,0 +1,25 @@
+{
+  "Id": "6dd507b4-17b2-4889-b587-cbb8f89caeb6",
+  "CategoryId": "9b12f931-a241-469d-983d-8dbcf3378439",
+  "KeyName": "noResults",
+  "Description": "Empty state when no languages match the search.",
+  "CreatedAt": "2026-07-16T12:48:41.5569469Z",
+  "UpdatedAt": "2026-07-16T12:48:41.556948Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c9a4ff4843dbab2bcd5477b72f59872bfcad51dd85d558b4bc1d95a8a0897374",
+      "Text": "No results.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5569685Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

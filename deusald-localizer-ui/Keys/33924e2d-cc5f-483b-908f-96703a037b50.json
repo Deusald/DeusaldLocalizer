@@ -1,0 +1,25 @@
+{
+  "Id": "33924e2d-cc5f-483b-908f-96703a037b50",
+  "CategoryId": "fd8aa94b-0386-4858-b6a5-47b035bcc6a4",
+  "KeyName": "close",
+  "Description": "Generic Close button, reused across dialogs.",
+  "CreatedAt": "2026-07-16T12:48:41.5567167Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5567192Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed",
+      "Text": "Close",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.556725Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

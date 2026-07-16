@@ -1,0 +1,33 @@
+{
+  "Id": "3722296b-e377-4f53-9398-462fb0f5b192",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "updateInstalling",
+  "Description": "Update button label while installing (desktop).",
+  "CreatedAt": "2026-07-16T12:29:28.079434Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5565738Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "e8bbcb52-3159-4b0a-870e-99bd992d9f3b",
+      "Name": "pct",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "42"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "6f7b95d3a96b7dac0452f14df7f265e1af80a90e8e3c7d96c9dcfe10e814e996",
+      "Text": "Installing… {pct}%",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5565807Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

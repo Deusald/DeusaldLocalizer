@@ -1,0 +1,33 @@
+{
+  "Id": "37c40d7d-fd90-4032-b36c-b3587a92066a",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "undoLabel",
+  "Description": "Undo button tooltip naming the action to be undone.",
+  "CreatedAt": "2026-07-16T12:48:41.5588836Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5588843Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "341ff83e-6877-47a7-96c1-c2bf935a0fbb",
+      "Name": "label",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "Rename key"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "caaecb964244327090ff76780817ae0d0e2f4cc4adb7d0cef8a906bba71f17fb",
+      "Text": "Undo {label} (Ctrl+Z)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5588904Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

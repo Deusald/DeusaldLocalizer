@@ -1,0 +1,25 @@
+{
+  "Id": "6c617c54-a633-4a78-a5af-13842c13d95c",
+  "CategoryId": "36be6be4-7cc0-460c-bb6c-42351c6571e1",
+  "KeyName": "editCategory",
+  "Description": "Tooltip for the edit-category button.",
+  "CreatedAt": "2026-07-16T12:48:41.5572031Z",
+  "UpdatedAt": "2026-07-16T12:48:41.557204Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "21610dd6f1db38ba1d55be436d5531e79df529e673e072d90481e5bab89bb7b6",
+      "Text": "Edit category",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5572075Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

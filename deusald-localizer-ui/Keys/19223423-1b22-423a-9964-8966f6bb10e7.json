@@ -1,0 +1,25 @@
+{
+  "Id": "19223423-1b22-423a-9964-8966f6bb10e7",
+  "CategoryId": "ee7edd8f-42cd-4345-806e-6e23f1fb5526",
+  "KeyName": "addTag",
+  "Description": "Title of the add-tag modal.",
+  "CreatedAt": "2026-07-16T12:48:41.5579298Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5579305Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "3e10b08cc874514175b51ba372ff955b27e2817963bc53ab489344968d5a472d",
+      "Text": "Add tag",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5579352Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

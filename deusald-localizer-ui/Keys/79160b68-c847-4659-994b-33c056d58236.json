@@ -1,0 +1,25 @@
+{
+  "Id": "79160b68-c847-4659-994b-33c056d58236",
+  "CategoryId": "55d39161-3461-4f3a-8e53-91f35c3f12ca",
+  "KeyName": "sourceTextPlaceholder",
+  "Description": "Placeholder for the source text area",
+  "CreatedAt": "2026-07-16T12:48:41.5579814Z",
+  "UpdatedAt": "2026-07-16T12:48:41.557982Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "fb47d1c45c9eec281483ff0d0567595589b837e9d07f4efe25c33eb54be21dca",
+      "Text": "Source text…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5579868Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

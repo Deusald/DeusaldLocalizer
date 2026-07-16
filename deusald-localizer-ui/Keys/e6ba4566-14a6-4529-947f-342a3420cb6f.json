@@ -1,0 +1,25 @@
+{
+  "Id": "e6ba4566-14a6-4529-947f-342a3420cb6f",
+  "CategoryId": "2c815bf8-7ba9-4641-a921-c0b38f3e5e84",
+  "KeyName": "descriptionPlaceholder",
+  "Description": "Placeholder for the category description textarea.",
+  "CreatedAt": "2026-07-16T12:48:41.5574952Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5574959Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "f6d0a9cdacf660fcb73b9ee2cda99d542b0a89c9a8bae8d405e0047d33bbb212",
+      "Text": "What kind of keys live here…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5574979Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

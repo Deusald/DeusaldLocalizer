@@ -1,0 +1,25 @@
+{
+  "Id": "48c83c6d-b579-4432-aeab-9d545a4711d9",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "commentMaintenance",
+  "Description": "Section label for the comment cleanup tools.",
+  "CreatedAt": "2026-07-16T12:48:41.5594412Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5594419Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e1d35b1361c32c6f60237724b9961f0e7c1bb92f8950a30ea47a0cf83460bc8d",
+      "Text": "Comment maintenance",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5594437Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

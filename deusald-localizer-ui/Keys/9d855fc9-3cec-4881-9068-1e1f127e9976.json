@@ -1,0 +1,25 @@
+{
+  "Id": "9d855fc9-3cec-4881-9068-1e1f127e9976",
+  "CategoryId": "264f533d-3094-433d-9429-c82dd532173e",
+  "KeyName": "discardAllConfirm",
+  "Description": "Confirmation prompt label before discarding all pending changes.",
+  "CreatedAt": "2026-07-16T12:48:41.5599715Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5599721Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "04c37f6dc050d29e869030441b6f8365e71983eb089f9f5336f9dcc6992ab30b",
+      "Text": "Discard all?",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.559974Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

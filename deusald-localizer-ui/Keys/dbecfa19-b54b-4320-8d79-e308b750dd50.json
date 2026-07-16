@@ -1,0 +1,33 @@
+{
+  "Id": "dbecfa19-b54b-4320-8d79-e308b750dd50",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "accessTokenResetBody",
+  "Description": "Body of the modal shown after an admin resets a member's token.",
+  "CreatedAt": "2026-07-16T12:48:41.5596643Z",
+  "UpdatedAt": "2026-07-16T12:48:41.559665Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "e3d3171f-6a80-4ae6-bcae-9147322a249d",
+      "Name": "name",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "jane.doe"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "9c9a042359a80db248edf9036a953b48ebd01383354f618409c96b49bd58b2ba",
+      "Text": "{name}'s token was reset. Share this one-time token with them over a secure channel; they'll sign in with it once and then set their own.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5596698Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

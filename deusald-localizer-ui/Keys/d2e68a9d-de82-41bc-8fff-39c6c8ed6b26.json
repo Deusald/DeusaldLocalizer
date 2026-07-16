@@ -1,0 +1,33 @@
+{
+  "Id": "d2e68a9d-de82-41bc-8fff-39c6c8ed6b26",
+  "CategoryId": "4462b26f-cf56-48cb-a50a-33a2f49aa7c6",
+  "KeyName": "commentsCount",
+  "Description": "Count of comments on a suggestion",
+  "CreatedAt": "2026-07-16T12:48:41.5584219Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5584226Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "c00a5e96-3e4a-4b8c-a468-fa45291c1962",
+      "Name": "count",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "3"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a8bd100abe1f6fc77df9d86644142ae9152bf6c82d2aef86e37f5cf6fac75724",
+      "Text": "{count} {count:plural:comment|comments}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5584291Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

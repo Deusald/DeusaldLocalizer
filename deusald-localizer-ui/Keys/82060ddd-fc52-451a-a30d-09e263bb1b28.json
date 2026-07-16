@@ -1,0 +1,25 @@
+{
+  "Id": "82060ddd-fc52-451a-a30d-09e263bb1b28",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "newAccessTokenBody",
+  "Description": "Body of the modal showing the user's freshly regenerated token.",
+  "CreatedAt": "2026-07-16T12:48:41.5596418Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5596424Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "21d90940db84a9e615221fb9e029f245d0ac6531c2bcd4b032de4f2a2edfa1b0",
+      "Text": "Your previous token no longer works. Copy this one and keep it safe — you'll use it to sign in from now on.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5596483Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

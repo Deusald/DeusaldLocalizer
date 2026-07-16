@@ -1,0 +1,25 @@
+{
+  "Id": "b1102c9c-af17-4459-b796-b4cdfa7980d7",
+  "CategoryId": "30585d1a-f1da-488a-ab89-97f090f732f4",
+  "KeyName": "intro",
+  "Description": "Home page intro paragraph (web).",
+  "CreatedAt": "2026-07-16T12:29:28.079292Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5563425Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "7b85e27db39614cbc6feaeb161a320fae8a6e10c634757a8e0c2250a8bd0c377",
+      "Text": "Edit strings, propose alternatives, and let the community vote on the best translation for every key — right in your browser.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5563544Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

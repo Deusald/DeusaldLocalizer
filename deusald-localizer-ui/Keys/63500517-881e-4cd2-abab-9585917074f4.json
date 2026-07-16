@@ -1,0 +1,25 @@
+{
+  "Id": "63500517-881e-4cd2-abab-9585917074f4",
+  "CategoryId": "9ca886bc-c432-4416-b763-a8787c88c05a",
+  "KeyName": "allFlagsTags",
+  "Description": "Filter trigger label when no flag or tag is selected.",
+  "CreatedAt": "2026-07-16T12:48:41.5573735Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5573743Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "4184237763890177c6549d57447c4666143119129743f223e889331858da9ebe",
+      "Text": "All flags & tags",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5573761Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

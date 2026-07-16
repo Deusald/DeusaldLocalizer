@@ -1,0 +1,25 @@
+{
+  "Id": "73f823ec-8666-445c-80c6-9991c24e96cc",
+  "CategoryId": "a2cb7dcb-e988-4f12-8c8d-77b9a4c7af84",
+  "KeyName": "cantPush",
+  "Description": "Conflicts modal title when a push is blocked but there are no listed conflicts.",
+  "CreatedAt": "2026-07-16T12:48:41.5597146Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5597156Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c9b843533e8a4082fd82fd6aab6cc60a2077d89c6e716624dfe07804a11c7f64",
+      "Text": "Can't push",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.559719Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

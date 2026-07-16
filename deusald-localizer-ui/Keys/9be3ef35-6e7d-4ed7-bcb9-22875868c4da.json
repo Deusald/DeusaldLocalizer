@@ -1,0 +1,25 @@
+{
+  "Id": "9be3ef35-6e7d-4ed7-bcb9-22875868c4da",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "usernamePlaceholder",
+  "Description": "Placeholder example shown in the username input.",
+  "CreatedAt": "2026-07-16T12:48:41.5592693Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5592699Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "d48722fc2e5ea8d2f4b54f8509312bb657f3396633ef60dc43370b5306b81ba9",
+      "Text": "jane.doe",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5592717Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

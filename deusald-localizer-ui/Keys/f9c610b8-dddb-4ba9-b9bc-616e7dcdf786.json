@@ -1,0 +1,25 @@
+{
+  "Id": "f9c610b8-dddb-4ba9-b9bc-616e7dcdf786",
+  "CategoryId": "8e09b7d9-6f39-43ce-9e26-89f6748618eb",
+  "KeyName": "statusDraft",
+  "Description": "Key status tag: draft translation.",
+  "CreatedAt": "2026-07-16T12:48:41.5577519Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5577526Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "ebf12ef47cf575b3ba9a3cc019c5310146fdac88f6d1be6618d6e91158c2f174",
+      "Text": "Draft",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5577546Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

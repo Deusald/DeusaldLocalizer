@@ -1,0 +1,25 @@
+{
+  "Id": "9dbb892d-0d5c-4486-97ff-aeae6b6f4109",
+  "CategoryId": "6473eabd-696a-4b05-b6e8-b76a62ed6aab",
+  "KeyName": "searchKeys",
+  "Description": "Placeholder for the key search box.",
+  "CreatedAt": "2026-07-16T12:48:41.5569763Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5569774Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "de973d355b143041a29eda922b13f1f35a8ad879994cd1125c883c9367ea45e1",
+      "Text": "Search keys…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5569825Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

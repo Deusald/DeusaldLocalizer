@@ -1,0 +1,25 @@
+{
+  "Id": "12238c1e-dd1a-4fe4-b8e1-625e0cb98bd7",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "translatingInto",
+  "Description": "Prefix label shown before the target language name in the top bar.",
+  "CreatedAt": "2026-07-16T12:48:41.5587818Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5587825Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "243eb2e8859cb888b15c98ec267c039664d5468c6aec087443b8fe358c4a792a",
+      "Text": "Translating into",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5587844Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

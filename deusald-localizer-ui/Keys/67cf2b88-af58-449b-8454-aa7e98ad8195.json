@@ -1,0 +1,25 @@
+{
+  "Id": "67cf2b88-af58-449b-8454-aa7e98ad8195",
+  "CategoryId": "37037b9b-7934-487b-9401-8cca236150a6",
+  "KeyName": "searchLanguagePlaceholder",
+  "Description": "Placeholder for the language search input",
+  "CreatedAt": "2026-07-16T12:48:41.5615342Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5615348Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "bd82c2438c06eca4705731e96647cc58b5282cfa311e47452e8d55c0b1a22a42",
+      "Text": "Search language…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5615369Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

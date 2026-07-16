@@ -1,0 +1,25 @@
+{
+  "Id": "b4ae14bf-d612-4936-a135-cfabd59935b8",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "title",
+  "Description": "Header title of the Excel import modal.",
+  "CreatedAt": "2026-07-16T12:48:41.5602993Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5602999Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a08120408397e0656f989341487855a68af1220425611a1022c2b758d20ddc3f",
+      "Text": "Import from Excel",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5603126Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

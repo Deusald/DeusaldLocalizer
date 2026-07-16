@@ -1,0 +1,25 @@
+{
+  "Id": "d9b6522a-70af-4a1a-906d-c77bd95b2ed1",
+  "CategoryId": "4462b26f-cf56-48cb-a50a-33a2f49aa7c6",
+  "KeyName": "comment",
+  "Description": "Toggle label when a suggestion has no comments",
+  "CreatedAt": "2026-07-16T12:48:41.5584339Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5584346Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "44f5e3fbec57be75ebfb2e42caf7f5ee1542f84748a0380b6f20238c4a257e1b",
+      "Text": "Comment",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5584366Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

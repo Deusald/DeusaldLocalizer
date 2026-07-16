@@ -1,0 +1,33 @@
+{
+  "Id": "1a5ed001-a2bd-4de2-86de-d7a72f7f2e72",
+  "CategoryId": "8e09b7d9-6f39-43ce-9e26-89f6748618eb",
+  "KeyName": "updatedOn",
+  "Description": "Shows the date a key was last updated.",
+  "CreatedAt": "2026-07-16T12:48:41.5576869Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5576876Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "e11c81c9-57bf-4f58-a500-d2f7039ce044",
+      "Name": "date",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "Jul 16, 2026"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "328a4d4c6ba2b1acfac3808c3ca8623f892b30f8088b7a0e4299abe560c0f98e",
+      "Text": "Updated {date}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.557691Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

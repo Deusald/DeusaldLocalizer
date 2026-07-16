@@ -1,0 +1,25 @@
+{
+  "Id": "0fc924f1-21f7-4fb5-81fb-c515485b7975",
+  "CategoryId": "9ca886bc-c432-4416-b763-a8787c88c05a",
+  "KeyName": "filterByFlagTag",
+  "Description": "Title of the flag and tag filter panel.",
+  "CreatedAt": "2026-07-16T12:48:41.5573465Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5573474Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "9737a4813b73c4f7f4ac374d9565471cecfe1eb23532b62e0b27876fe3163080",
+      "Text": "Filter by flag & tag",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5573503Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

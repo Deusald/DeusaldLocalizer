@@ -1,0 +1,33 @@
+{
+  "Id": "230248f5-1080-4f12-9085-d7b74527cd3f",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "pushRejectedResolve",
+  "Description": "Push result message when the server rejected the push due to conflicts.",
+  "CreatedAt": "2026-07-16T12:48:41.5591536Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5591543Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "31118d74-a396-418b-86ed-27c4958c95a2",
+      "Name": "count",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "2"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "84e8f5445279b1049dc126e700774fb0a85f117f1e6c5673c660f35385a03bff",
+      "Text": "Push rejected — resolve {count} conflict(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5591604Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

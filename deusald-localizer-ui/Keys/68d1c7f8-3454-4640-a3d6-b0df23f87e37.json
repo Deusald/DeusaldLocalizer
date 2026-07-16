@@ -1,0 +1,25 @@
+{
+  "Id": "68d1c7f8-3454-4640-a3d6-b0df23f87e37",
+  "CategoryId": "6473eabd-696a-4b05-b6e8-b76a62ed6aab",
+  "KeyName": "tabNeedsReview",
+  "Description": "Tab showing keys that need review.",
+  "CreatedAt": "2026-07-16T12:48:41.5570125Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5570134Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "07297fa94a997d0f807bd37c61993a8821ca406b5e4498e4f0759e50ab154dd4",
+      "Text": "Needs review",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5570173Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "d2a22345-2378-4736-a255-b8ad50c0f870",
+  "CategoryId": "30585d1a-f1da-488a-ab89-97f090f732f4",
+  "KeyName": "tagline",
+  "Description": "Tagline under the app logo (web).",
+  "CreatedAt": "2026-07-16T12:29:28.0792739Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5563285Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "da29b65c5f97dbab453b0e12df53372ef3b0414f3cb461251ccd957ca376ff07",
+      "Text": "COMMUNITY LOCALIZATION · WEB",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5563389Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "abbd83b8-ebcb-4aed-b1b1-4e6f6c2c6871",
+  "CategoryId": "b817e046-92dd-4bc1-b456-29fe56ddb38e",
+  "KeyName": "clearOldComments",
+  "Description": "Button that triggers clearing comments older than the chosen age.",
+  "CreatedAt": "2026-07-16T12:48:41.5595258Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5595265Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "2fc4449ac9d860578eb9a0cd74251e07d9cc1dd87b0d04deb6a3d98d0ee913e3",
+      "Text": "Clear old comments",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5595283Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

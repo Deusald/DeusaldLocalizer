@@ -1,0 +1,25 @@
+{
+  "Id": "a2608ee9-10e3-4dab-852d-1b69acccf22a",
+  "CategoryId": "a2cb7dcb-e988-4f12-8c8d-77b9a4c7af84",
+  "KeyName": "conflictsIntro",
+  "Description": "Intro paragraph explaining the conflict list.",
+  "CreatedAt": "2026-07-16T12:48:41.5597311Z",
+  "UpdatedAt": "2026-07-16T12:48:41.559732Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e419e60b7c33ad5618f85fb2c2963c29f7991ff710c2442e4484604be349f131",
+      "Text": "These changes clash with newer edits already on the server. Open each one to choose how to resolve it, then push again.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5597356Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,33 @@
+{
+  "Id": "e4f16d99-41a9-4ab9-a094-9fecfaf4da8e",
+  "CategoryId": "6473eabd-696a-4b05-b6e8-b76a62ed6aab",
+  "KeyName": "pendingSuggestions",
+  "Description": "Tooltip showing the number of pending suggestions on a key.",
+  "CreatedAt": "2026-07-16T12:48:41.5570456Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5570466Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "dc6bc8ba-c0ed-46f6-b69b-db9b04a966ed",
+      "Name": "count",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "3"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "fac11e19cde2ed2bd522e52ca2594e3b0771f8061842c76fedf7acd27973bd34",
+      "Text": "{count} pending suggestion(s)",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5570531Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

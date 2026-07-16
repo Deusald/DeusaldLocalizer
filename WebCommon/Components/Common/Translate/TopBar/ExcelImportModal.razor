@@ -1,6 +1,7 @@
 @namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
 @inject IExcelInterop       _Excel
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -9,7 +10,7 @@
     <div class="im-box" @onclick:stopPropagation="true">
 
         <div class="im-header">
-            <span class="im-title">Import from Excel</span>
+            <span class="im-title">@Loc.T(Localization.Translate.TopBar.ExcelImport.title)</span>
             <button class="im-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
         </div>
 
@@ -18,8 +19,7 @@
             @if (_Result == null && !_IsImporting)
             {
                 <div class="im-desc">
-                    Select an <code>.xlsx</code> exported from this project. Rows are matched by
-                    <strong>KeyId</strong>; cells that still match their <code>#hash</code> are skipped.
+                    @Loc.T(Localization.Translate.TopBar.ExcelImport.desc)
                 </div>
 
                 @if (_Error != null)
@@ -32,47 +32,47 @@
                 @* ── What to update ─────────────────────────────────────── *@
                 <div class="im-section">
                     <div class="im-section-header">
-                        <span class="im-section-title">Update from sheet</span>
+                        <span class="im-section-title">@Loc.T(Localization.Translate.TopBar.ExcelImport.updateFromSheet)</span>
                         <button class="im-linkbtn" @onclick="ToggleAll">
-                            @(_AllSelected ? "Deselect all" : "Select all")
+                            @(_AllSelected ? Loc.T(Localization.Translate.TopBar.ExcelImport.deselectAll) : Loc.T(Localization.Translate.TopBar.ExcelImport.selectAll))
                         </button>
                     </div>
-                    <label class="im-check"><input type="checkbox" @bind="_Options.CreateNewKeys"/><span>Create keys missing from the project</span></label>
-                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateCategories"/><span>Update categories <span class="im-check-hint">— creates missing</span></span></label>
-                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateDescriptions"/><span>Update descriptions</span></label>
-                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateTags"/><span>Update tags</span></label>
-                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateMaxLength"/><span>Update max length</span></label>
-                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateSourceText"/><span>Update source text</span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.CreateNewKeys"/><span>@Loc.T(Localization.Translate.TopBar.ExcelImport.createNewKeys)</span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateCategories"/><span>@Loc.T(Localization.Translate.TopBar.ExcelImport.updateCategories) <span class="im-check-hint">@Loc.T(Localization.Translate.TopBar.ExcelImport.updateCategoriesHint)</span></span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateDescriptions"/><span>@Loc.T(Localization.Translate.TopBar.ExcelImport.updateDescriptions)</span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateTags"/><span>@Loc.T(Localization.Translate.TopBar.ExcelImport.updateTags)</span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateMaxLength"/><span>@Loc.T(Localization.Translate.TopBar.ExcelImport.updateMaxLength)</span></label>
+                    <label class="im-check"><input type="checkbox" @bind="_Options.UpdateSourceText"/><span>@Loc.T(Localization.Translate.TopBar.ExcelImport.updateSourceText)</span></label>
                 </div>
 
                 @* ── How to import translations ─────────────────────────── *@
                 <div class="im-section">
-                    <span class="im-section-title">Translations import as</span>
+                    <span class="im-section-title">@Loc.T(Localization.Translate.TopBar.ExcelImport.translationsImportAs)</span>
                     <div class="im-seg">
                         <button class="im-seg-btn @(_Options.ImportAsSuggestions ? "active" : "")"
-                                @onclick="() => _Options.ImportAsSuggestions = true">Suggestions
+                                @onclick="() => _Options.ImportAsSuggestions = true">@Loc.T(Localization.Translate.TopBar.ExcelImport.suggestions)
                         </button>
                         <button class="im-seg-btn @(!_Options.ImportAsSuggestions ? "active" : "")"
-                                @onclick="() => _Options.ImportAsSuggestions = false">Direct text
+                                @onclick="() => _Options.ImportAsSuggestions = false">@Loc.T(Localization.Translate.TopBar.ExcelImport.directText)
                         </button>
                     </div>
                     <div class="im-section-hint">
                         @(_Options.ImportAsSuggestions
-                            ? "Changed cells become suggestions to review and approve."
-                            : "Changed cells overwrite the approved translation directly.")
+                            ? Loc.T(Localization.Translate.TopBar.ExcelImport.hintSuggestions)
+                            : Loc.T(Localization.Translate.TopBar.ExcelImport.hintDirect))
                     </div>
                 </div>
 
                 <button class="im-pick-btn" @onclick="PickAndImport">
                     <i class="bi bi-file-earmark-spreadsheet"></i>
-                    Choose file…
+                    @Loc.T(Localization.Translate.TopBar.ExcelImport.chooseFile)
                 </button>
             }
             else if (_IsImporting)
             {
                 <div class="im-progress">
                     <span class="im-spinner"></span>
-                    <span>Importing…</span>
+                    <span>@Loc.T(Localization.Translate.TopBar.ExcelImport.importing)</span>
                 </div>
             }
             else if (_Result != null)
@@ -80,24 +80,24 @@
                 <div class="im-result">
                     @if (_Result.KeysCreated > 0)
                     {
-                        <div class="im-stat"><span class="im-stat-value">@_Result.KeysCreated</span><span class="im-stat-label">keys created</span></div>
+                        <div class="im-stat"><span class="im-stat-value">@_Result.KeysCreated</span><span class="im-stat-label">@Loc.T(Localization.Translate.TopBar.ExcelImport.keysCreated)</span></div>
                     }
-                    <div class="im-stat"><span class="im-stat-value">@_Result.KeysUpdated</span><span class="im-stat-label">keys updated</span></div>
+                    <div class="im-stat"><span class="im-stat-value">@_Result.KeysUpdated</span><span class="im-stat-label">@Loc.T(Localization.Translate.TopBar.ExcelImport.keysUpdated)</span></div>
                     @if (_Result.TranslationsUpdated > 0)
                     {
-                        <div class="im-stat"><span class="im-stat-value">@_Result.TranslationsUpdated</span><span class="im-stat-label">translations set</span></div>
+                        <div class="im-stat"><span class="im-stat-value">@_Result.TranslationsUpdated</span><span class="im-stat-label">@Loc.T(Localization.Translate.TopBar.ExcelImport.translationsSet)</span></div>
                     }
                     @if (_Result.SuggestionsAdded > 0)
                     {
-                        <div class="im-stat"><span class="im-stat-value">@_Result.SuggestionsAdded</span><span class="im-stat-label">suggestions added</span></div>
+                        <div class="im-stat"><span class="im-stat-value">@_Result.SuggestionsAdded</span><span class="im-stat-label">@Loc.T(Localization.Translate.TopBar.ExcelImport.suggestionsAdded)</span></div>
                     }
                     @if (_Result.CategoriesCreated > 0)
                     {
-                        <div class="im-stat"><span class="im-stat-value">@_Result.CategoriesCreated</span><span class="im-stat-label">categories created</span></div>
+                        <div class="im-stat"><span class="im-stat-value">@_Result.CategoriesCreated</span><span class="im-stat-label">@Loc.T(Localization.Translate.TopBar.ExcelImport.categoriesCreated)</span></div>
                     }
                     @if (_Result.KeysSkipped > 0)
                     {
-                        <div class="im-stat im-stat-warn"><span class="im-stat-value">@_Result.KeysSkipped</span><span class="im-stat-label">rows skipped</span></div>
+                        <div class="im-stat im-stat-warn"><span class="im-stat-value">@_Result.KeysSkipped</span><span class="im-stat-label">@Loc.T(Localization.Translate.TopBar.ExcelImport.rowsSkipped)</span></div>
                     }
                 </div>
 
@@ -117,8 +117,8 @@
         @if (_Result != null)
         {
             <div class="im-footer">
-                <button class="im-btn im-btn-ghost" @onclick="Reset">Import another</button>
-                <button class="im-btn im-btn-primary" @onclick="Close">Done</button>
+                <button class="im-btn im-btn-ghost" @onclick="Reset">@Loc.T(Localization.Translate.TopBar.ExcelImport.importAnother)</button>
+                <button class="im-btn im-btn-primary" @onclick="Close">@Loc.T(Localization.Translate.TopBar.ExcelImport.done)</button>
             </div>
         }
 
@@ -193,7 +193,7 @@
         }
         catch (Exception ex)
         {
-            _Error = $"Import failed: {ex.Message}";
+            _Error = Loc.T(Localization.Translate.TopBar.ExcelImport.importFailed, new Dictionary<string, object> { ["msg"] = ex.Message });
         }
         finally
         {

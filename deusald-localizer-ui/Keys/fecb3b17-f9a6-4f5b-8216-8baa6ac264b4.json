@@ -1,0 +1,33 @@
+{
+  "Id": "fecb3b17-f9a6-4f5b-8216-8baa6ac264b4",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "changesNotPushed",
+  "Description": "Tooltip on the uncommitted status pill for an online project.",
+  "CreatedAt": "2026-07-16T12:48:41.5589502Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5589509Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "d83b5cfe-1a9c-43f4-9d78-e1bd61b31077",
+      "Name": "count",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "3"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "6bbbb1d58e82beae3f187ba2519b9f9034075b41034cb4fbc0bbd8217c7c2f76",
+      "Text": "{count} change(s) not pushed to the server yet",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5589547Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

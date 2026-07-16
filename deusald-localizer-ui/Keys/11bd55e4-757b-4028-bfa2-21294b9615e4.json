@@ -1,0 +1,25 @@
+{
+  "Id": "11bd55e4-757b-4028-bfa2-21294b9615e4",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "intro",
+  "Description": "Home page intro paragraph (desktop).",
+  "CreatedAt": "2026-07-16T12:29:28.0794003Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5565261Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "b27b63023828f0023843ffdfd25d8fd22114b3b40ddb9173e8f6f40bb1a67b15",
+      "Text": "Edit strings, propose alternatives, and let the community vote on the best translation for every key.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5565415Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

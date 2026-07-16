@@ -1,0 +1,33 @@
+{
+  "Id": "c423827e-3ef0-47b5-ae64-11f12d854d7f",
+  "CategoryId": "30585d1a-f1da-488a-ab89-97f090f732f4",
+  "KeyName": "errImport",
+  "Description": "Error when a .zip import fails (web).",
+  "CreatedAt": "2026-07-16T12:29:28.0793735Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5564668Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "c9820d2b-e588-40f9-a8c8-dbc4b5235f96",
+      "Name": "msg",
+      "Type": "String",
+      "EnumId": null,
+      "DefaultPreviewValue": "bad archive"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "49822a69e47058c3d4f80f9b5d1f1723e961753912c602566ca16701b62927b7",
+      "Text": "Import failed: {msg}",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5564727Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

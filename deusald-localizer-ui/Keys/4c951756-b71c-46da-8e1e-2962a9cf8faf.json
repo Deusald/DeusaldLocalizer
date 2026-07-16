@@ -1,0 +1,25 @@
+{
+  "Id": "4c951756-b71c-46da-8e1e-2962a9cf8faf",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "updateCategoriesHint",
+  "Description": "Inline hint next to the update categories checkbox.",
+  "CreatedAt": "2026-07-16T12:48:41.5603875Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5603882Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "89a08629cab2cf29b95bab9326b0792c7ff5096170c2de76112f1376a98d9593",
+      "Text": "— creates missing",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5603902Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

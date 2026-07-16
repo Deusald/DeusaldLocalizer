@@ -1,0 +1,33 @@
+{
+  "Id": "68affaa2-bb46-42e5-8479-f18e6470e41c",
+  "CategoryId": "03687f98-0a54-4914-a0e2-992f681adff4",
+  "KeyName": "timeMinutes",
+  "Description": "Relative time in minutes.",
+  "CreatedAt": "2026-07-16T12:19:57.5420111Z",
+  "UpdatedAt": "2026-07-16T12:48:41.556212Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "053e86a6-91dc-47c0-9c20-6780d0783701",
+      "Name": "m",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "5"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "7e5eb4f5807907dc86259352177a3e2b8df738e4f05d052c63ea90733a4e7199",
+      "Text": "{m}m ago",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5562182Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

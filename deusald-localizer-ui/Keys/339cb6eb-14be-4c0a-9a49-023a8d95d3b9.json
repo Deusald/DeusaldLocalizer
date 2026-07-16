@@ -1,0 +1,25 @@
+{
+  "Id": "339cb6eb-14be-4c0a-9a49-023a8d95d3b9",
+  "CategoryId": "2e826da4-29a0-4ff1-a798-975f5401d6ab",
+  "KeyName": "newTokenTitle",
+  "Description": "Title shown when a freshly rotated access token is displayed.",
+  "CreatedAt": "2026-07-16T12:19:57.5421974Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5568094Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "0f88f7d749c6c69e46a48c6d35aa9e03b6b89644a81b971c93c9b9fa5cd33f37",
+      "Text": "Your access token",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5568227Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

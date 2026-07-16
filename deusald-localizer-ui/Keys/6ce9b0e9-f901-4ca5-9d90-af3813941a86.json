@@ -1,0 +1,25 @@
+{
+  "Id": "6ce9b0e9-f901-4ca5-9d90-af3813941a86",
+  "CategoryId": "9dc99630-09e1-4188-8d05-b279fbb54584",
+  "KeyName": "maxLength",
+  "Description": "Label for the max length input.",
+  "CreatedAt": "2026-07-16T12:48:41.5576168Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5576175Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "49be2ab095c0c1a88822a834711743191dd9af4d925f6005aaa25a6e7da6cb08",
+      "Text": "Max length",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5576195Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

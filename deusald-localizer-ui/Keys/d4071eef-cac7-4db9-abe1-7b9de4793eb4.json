@@ -1,0 +1,25 @@
+{
+  "Id": "d4071eef-cac7-4db9-abe1-7b9de4793eb4",
+  "CategoryId": "2c815bf8-7ba9-4641-a921-c0b38f3e5e84",
+  "KeyName": "editCategory",
+  "Description": "Modal title when editing a category.",
+  "CreatedAt": "2026-07-16T12:48:41.5574297Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5574303Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "21610dd6f1db38ba1d55be436d5531e79df529e673e072d90481e5bab89bb7b6",
+      "Text": "Edit category",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5574322Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,25 @@
+{
+  "Id": "f9ca5ebe-b3d6-45bd-a5d8-8aa1cc20af1a",
+  "CategoryId": "9dc99630-09e1-4188-8d05-b279fbb54584",
+  "KeyName": "invalidKeyName",
+  "Description": "Validation error for an invalid key name.",
+  "CreatedAt": "2026-07-16T12:48:41.5575726Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5575732Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "46a397170246df664c5c02158ae0f9aa30e910bd762a31dec53fef3725532219",
+      "Text": "Only letters, numbers and \"_\" are allowed",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5575751Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

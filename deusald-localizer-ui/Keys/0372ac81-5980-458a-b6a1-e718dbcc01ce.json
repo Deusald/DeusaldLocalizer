@@ -1,0 +1,25 @@
+{
+  "Id": "0372ac81-5980-458a-b6a1-e718dbcc01ce",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "importing",
+  "Description": "Progress text while importing.",
+  "CreatedAt": "2026-07-16T12:48:41.5605181Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5605188Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00",
+      "Text": "Importing…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5605207Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

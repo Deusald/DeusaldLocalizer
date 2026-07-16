@@ -1,0 +1,25 @@
+{
+  "Id": "57f1f105-0517-4215-bc7b-c5cf180257e3",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "exporting",
+  "Description": "Text shown on the export button while exporting.",
+  "CreatedAt": "2026-07-16T12:48:41.5609312Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5609319Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a2dd9cbb7013bb70fc7a4e5f3df1335bc1dd3e221592c9fef817d367341c39f4",
+      "Text": "Exporting…",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5609339Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

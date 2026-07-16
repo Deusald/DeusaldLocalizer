@@ -1,0 +1,40 @@
+{
+  "Id": "065c7ec1-3c65-4115-8552-9d6401be40e1",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "keyCount",
+  "Description": "Footer count of matching vs total keys.",
+  "CreatedAt": "2026-07-16T12:48:41.5609142Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5609149Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "39b15a59-9b64-424e-8876-1f645c9009f1",
+      "Name": "matching",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "12"
+    },
+    {
+      "Id": "9b237462-664d-4b59-8717-8cda584dd817",
+      "Name": "total",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "40"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "df76ef264d2b1995ac7892754150557d8866ab3311b294d889ee6d03bc42f6e6",
+      "Text": "{matching} of {total} keys",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5609231Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

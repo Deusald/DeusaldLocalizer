@@ -1,0 +1,25 @@
+{
+  "Id": "fe72ec2e-0e27-442f-a51f-d51f47b32a0a",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "csharpScript",
+  "Description": "Format toggle button for C# script export.",
+  "CreatedAt": "2026-07-16T12:48:41.5606774Z",
+  "UpdatedAt": "2026-07-16T12:48:41.560678Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "1885c7e8974cf44619cdc4aabe4a80e37744b99109f12c23fee07c0d9ddda95b",
+      "Text": "C# script",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5606799Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

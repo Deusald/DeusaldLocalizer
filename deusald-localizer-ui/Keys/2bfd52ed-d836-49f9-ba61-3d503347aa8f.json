@@ -1,0 +1,25 @@
+{
+  "Id": "2bfd52ed-d836-49f9-ba61-3d503347aa8f",
+  "CategoryId": "5cddf8c9-240b-4d94-8bb2-5d3944826c39",
+  "KeyName": "resynced",
+  "Description": "Sync result message after a full resync.",
+  "CreatedAt": "2026-07-16T12:48:41.5590609Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5590615Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "3a349df1921ddfa5a052cc583ad1bf5f8c4a37353a3c7a0c8e4cd114d7033369",
+      "Text": "Resynced",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5590635Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

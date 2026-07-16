@@ -1,0 +1,25 @@
+{
+  "Id": "27028395-62ef-4bf6-8f6c-9ad741fb1267",
+  "CategoryId": "264f533d-3094-433d-9429-c82dd532173e",
+  "KeyName": "title",
+  "Description": "Header title of the uncommitted changes modal.",
+  "CreatedAt": "2026-07-16T12:48:41.5599618Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5599625Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a388bd2d373c39832003ef3699f39ff89d2c1ebb5c936f1ab8ed4e49f478daef",
+      "Text": "Uncommitted changes",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5599645Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

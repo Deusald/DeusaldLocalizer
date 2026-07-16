@@ -1,0 +1,25 @@
+{
+  "Id": "977cf38f-83b5-4c77-a986-3d94c2d80f47",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "suggestions",
+  "Description": "Segment button: import translations as suggestions.",
+  "CreatedAt": "2026-07-16T12:48:41.560462Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5604627Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "16c1d601fc66950402ca8d54257acea0f5d21be1e00b9eb99224e436da66c950",
+      "Text": "Suggestions",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5604645Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

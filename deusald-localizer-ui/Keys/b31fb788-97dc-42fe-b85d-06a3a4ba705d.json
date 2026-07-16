@@ -1,0 +1,25 @@
+{
+  "Id": "b31fb788-97dc-42fe-b85d-06a3a4ba705d",
+  "CategoryId": "acf8559f-68d0-4fad-8a1f-17ebe5c6afc8",
+  "KeyName": "mentions",
+  "Description": "Bell button tooltip and notifications panel header.",
+  "CreatedAt": "2026-07-16T12:48:41.5598415Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5598421Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "6f32e692ede03567b0539f2001b94ed58fbb6e3bd02fa11c5b2e933b1104d36b",
+      "Text": "Mentions",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5598441Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

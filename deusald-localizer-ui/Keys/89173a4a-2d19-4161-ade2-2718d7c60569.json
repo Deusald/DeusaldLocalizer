@@ -1,0 +1,25 @@
+{
+  "Id": "89173a4a-2d19-4161-ade2-2718d7c60569",
+  "CategoryId": "d38894c5-997f-4701-a89f-cc57c7dae233",
+  "KeyName": "updateFailed",
+  "Description": "Error when an in-place update fails (desktop).",
+  "CreatedAt": "2026-07-16T12:29:28.0794495Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5565942Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e1de91d94ce8a730e01373f0b6da3148af3552db5eca71e307efff3e47327870",
+      "Text": "The update could not be installed. Please try again later.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5565985Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

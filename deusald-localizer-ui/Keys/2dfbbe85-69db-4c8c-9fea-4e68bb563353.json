@@ -1,0 +1,25 @@
+{
+  "Id": "2dfbbe85-69db-4c8c-9fea-4e68bb563353",
+  "CategoryId": "f4418ae5-cb67-4794-b968-ed395d6b3148",
+  "KeyName": "noEnums",
+  "Description": "Empty state when the project has no enums",
+  "CreatedAt": "2026-07-16T12:48:41.5584893Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5584899Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "bafa7d331377d19bd6686c5d0c8544b7aedb4089d14c92be05d363736875deab",
+      "Text": "No enums yet.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5584919Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

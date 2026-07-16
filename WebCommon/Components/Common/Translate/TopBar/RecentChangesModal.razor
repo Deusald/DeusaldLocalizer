@@ -1,5 +1,6 @@
 @namespace DeusaldLocalizerWeb.Components.Common
 @inject ProjectStateService _ProjectState
+@inject UiLocalizationService Loc
 
 @if (_Visible)
 {
@@ -10,13 +11,13 @@
         <div class="rcm-header">
             <div class="rcm-header-left">
                 <i class="bi bi-arrow-repeat rcm-header-icon"></i>
-                <span class="rcm-title">Recent changes</span>
+                <span class="rcm-title">@Loc.T(Localization.Translate.TopBar.RecentChanges.title)</span>
                 <span class="rcm-count">@_Changes.Count</span>
             </div>
             <div class="rcm-header-actions">
                 @if (_Changes.Count > 0)
                 {
-                    <button class="rcm-clear" @onclick="ClearAll" title="Clear the list">Clear</button>
+                    <button class="rcm-clear" @onclick="ClearAll" title="@Loc.T(Localization.Translate.TopBar.RecentChanges.clearTitle)">@Loc.T(Localization.Common.Buttons.clear)</button>
                 }
                 <button class="rcm-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
             </div>
@@ -28,12 +29,12 @@
             {
                 <div class="rcm-empty">
                     <i class="bi bi-check-circle rcm-empty-icon"></i>
-                    <span>Nothing new from the last sync.</span>
+                    <span>@Loc.T(Localization.Translate.TopBar.RecentChanges.emptyState)</span>
                 </div>
             }
             else
             {
-                <p class="rcm-intro">These are the changes the last sync pulled in from the server. Click a key to open it.</p>
+                <p class="rcm-intro">@Loc.T(Localization.Translate.TopBar.RecentChanges.intro)</p>
 
                 @foreach (KeyGroup group in _KeyGroups)
                 {
@@ -56,7 +57,7 @@
 
                 @if (_OtherChanges.Count > 0)
                 {
-                    <div class="rcm-other-label">Other changes</div>
+                    <div class="rcm-other-label">@Loc.T(Localization.Translate.TopBar.RecentChanges.otherChanges)</div>
                     @foreach (PullChange change in _OtherChanges)
                     {
                         <div class="rcm-other-item">
@@ -145,7 +146,7 @@
     {
         LocProject          project = _ProjectState.CurrentProject!;
         LocLocalizationKey? key     = project.Keys.Find(k => k.Id == keyId);
-        if (key == null) return "(removed key)";
+        if (key == null) return Loc.T(Localization.Translate.TopBar.RecentChanges.removedKey);
 
         LocCategory? cat = project.Categories.Find(c => c.Id == key.CategoryId);
         if (cat == null) return key.KeyName;

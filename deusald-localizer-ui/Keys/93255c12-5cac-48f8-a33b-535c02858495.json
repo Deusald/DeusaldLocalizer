@@ -1,0 +1,33 @@
+{
+  "Id": "93255c12-5cac-48f8-a33b-535c02858495",
+  "CategoryId": "acf8559f-68d0-4fad-8a1f-17ebe5c6afc8",
+  "KeyName": "daysAgo",
+  "Description": "Compact relative time in days.",
+  "CreatedAt": "2026-07-16T12:48:41.5599373Z",
+  "UpdatedAt": "2026-07-16T12:48:41.559938Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [
+    {
+      "Id": "8c1a56dd-a945-4977-97b3-6b677353df06",
+      "Name": "count",
+      "Type": "Int",
+      "EnumId": null,
+      "DefaultPreviewValue": "6"
+    }
+  ],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "a41248a59b7cb787b6a20b965a4ddec878af38977d5c99e292752236dfdfbdfe",
+      "Text": "{count}d",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.5599411Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

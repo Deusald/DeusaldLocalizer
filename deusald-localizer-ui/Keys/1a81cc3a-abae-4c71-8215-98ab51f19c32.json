@@ -1,0 +1,25 @@
+{
+  "Id": "1a81cc3a-abae-4c71-8215-98ab51f19c32",
+  "CategoryId": "c1e72e50-1e0a-4f01-b1c8-2e9fd8e3e345",
+  "KeyName": "updateMaxLength",
+  "Description": "Checkbox label to update max length.",
+  "CreatedAt": "2026-07-16T12:48:41.5604204Z",
+  "UpdatedAt": "2026-07-16T12:48:41.5604211Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e1de518b1372461dfd7475f7ea04374bf1b3c99f64808413a7e10b8d1effc32b",
+      "Text": "Update max length",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T12:48:41.560423Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}
