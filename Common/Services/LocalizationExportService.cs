@@ -205,7 +205,23 @@ namespace DeusaldLocalizerCommon
             else if (key.Tags.Any(t => options.ExcludeTags.Contains(t)))
                 return false;
 
+            // Modified-after: drop keys untouched since the cutoff.
+            if (options.ModifiedAfter.HasValue && !ModifiedAfter(key, options.ModifiedAfter.Value))
+                return false;
+
             return true;
+        }
+
+        /// <summary>
+        /// True when the key, or any of its translations, was updated at or after <paramref name="cutoff"/>.
+        /// </summary>
+        internal static bool ModifiedAfter(LocLocalizationKey key, System.DateTime cutoff)
+        {
+            if (key.UpdatedAt >= cutoff) return true;
+            foreach (LocKeyTranslation translation in key.Translations)
+                if (translation.UpdatedAt >= cutoff)
+                    return true;
+            return false;
         }
 
         internal static string FullKeyName(LocLocalizationKey key, LocProject project)

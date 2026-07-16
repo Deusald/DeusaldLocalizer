@@ -1,0 +1,35 @@
+{
+  "Id": "f54da464-e2a8-43df-9d71-0cb267793f02",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "modifiedAfter",
+  "Description": "Section title for the modified-after date filter.",
+  "CreatedAt": "2026-07-16T14:00:00.0000000Z",
+  "UpdatedAt": "2026-07-16T14:00:00.0000000Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "36fa72c543043b8f39102756de22b973c2de35c094793148161391015459fcb7",
+      "Text": "Modified after",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T14:00:00.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "36fa72c543043b8f39102756de22b973c2de35c094793148161391015459fcb7",
+      "Text": "Zmodyfikowane po",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T14:00:00.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

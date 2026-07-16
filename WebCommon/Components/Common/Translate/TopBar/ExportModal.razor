@@ -2,6 +2,7 @@
 @inject ProjectStateService _ProjectState
 @inject IExcelInterop       _Excel
 @inject ITextFileExporter   _TextFile
+@inject IPreferencesStore   _Prefs
 @inject UiLocalizationService Loc
 
 @if (_Visible)
@@ -91,6 +92,19 @@
                 }
             </div>
 
+            @* ── Modified after ─────────────────────────────────────── *@
+            <div class="ex-section">
+                <div class="ex-section-header">
+                    <span class="ex-section-title">@Loc.T(Localization.Translate.TopBar.Export.modifiedAfter)</span>
+                    @if (_ModifiedAfter != null)
+                    {
+                        <button class="ex-linkbtn" @onclick="() => _ModifiedAfter = null">@Loc.T(Localization.Translate.TopBar.Export.modifiedAfterClear)</button>
+                    }
+                </div>
+                <div class="ex-section-hint">@Loc.T(Localization.Translate.TopBar.Export.modifiedAfterHint)</div>
+                <input type="date" class="ex-input" @bind="_ModifiedAfter"/>
+            </div>
+
             @* ── Columns (Excel only) ───────────────────────────────── *@
             @if (_Format == ExportFormat.Excel)
             {
@@ -159,9 +173,10 @@
     private bool _Visible;
     private bool _IsExporting;
 
-    private ExportFormat _Format    = ExportFormat.Excel;
-    private string       _ClassName = "Localization";
-    private string       _Namespace = "";
+    private ExportFormat _Format        = ExportFormat.Excel;
+    private string       _ClassName     = "Localization";
+    private string       _Namespace     = "";
+    private DateTime?    _ModifiedAfter;
 
     // true = Exclude, false = Include. Every flag/tag is included by default.
     private Dictionary<FlagType, bool> _FlagExcluded = new();
@@ -208,8 +223,11 @@
     public void Show()
     {
         _Format            = ExportFormat.Excel;
-        _ClassName         = DefaultClassName();
-        _Namespace         = "";
+        // Pre-fill from the last C# export (stored locally per project) when available, else the defaults.
+        string savedClass  = _Prefs.Get(ExportClassKey, "");
+        _ClassName         = string.IsNullOrWhiteSpace(savedClass) ? DefaultClassName() : savedClass;
+        _Namespace         = _Prefs.Get(ExportNamespaceKey, "");
+        _ModifiedAfter     = null;
         _FlagExcluded      = _AllFlagTypes.ToDictionary(t => t, t => _DefaultExcludedFlags.Contains(t));
         _TagExcluded       = _AllTags.ToDictionary(t => t, _ => false, StringComparer.OrdinalIgnoreCase);
         _NoFlagsExcluded   = false;
@@ -266,6 +284,11 @@
         else if (key.Tags.Any(t => _TagExcluded.TryGetValue(t, out bool ex) && ex))
             return false;
 
+        if (_ModifiedAfter is DateTime cutoff
+         && key.UpdatedAt < cutoff
+         && key.Translations.All(t => t.UpdatedAt < cutoff))
+            return false;
+
         return true;
     }
 
@@ -275,7 +298,8 @@
         {
             IncludeNoFlags    = !_NoFlagsExcluded,
             IncludeNoTags     = !_NoTagsExcluded,
-            IncludeTagsColumn = _IncludeTagsColumn
+            IncludeTagsColumn = _IncludeTagsColumn,
+            ModifiedAfter     = _ModifiedAfter
         };
         foreach (KeyValuePair<FlagType, bool> f in _FlagExcluded)
             if (f.Value)
@@ -304,6 +328,7 @@
                 string source   = CSharpExportService.ExportToString(project, _ClassName, _Namespace, options);
                 string fileName = $"{CSharpExportService.ClassFileName(_ClassName)}.cs";
                 await _TextFile.SaveTextAsync(fileName, source);
+                RememberCSharpExport();
             }
             else
             {
@@ -322,6 +347,18 @@
             _IsExporting = false;
             StateHasChanged();
         }
+    }
+
+    // Local settings keys, namespaced per project id. Kept out of the synced metadata.json so the values
+    // survive on online projects, where sync overwrites metadata from the server.
+    private string ExportClassKey     => $"loc:ExportClass:{_ProjectState.CurrentProject!.Metadata.Id}";
+    private string ExportNamespaceKey => $"loc:ExportNamespace:{_ProjectState.CurrentProject!.Metadata.Id}";
+
+    // Remember the class/namespace of this C# export so the next one pre-fills them.
+    private void RememberCSharpExport()
+    {
+        _Prefs.Set(ExportClassKey, _ClassName);
+        _Prefs.Set(ExportNamespaceKey, _Namespace ?? "");
     }
 
     private string DefaultClassName()

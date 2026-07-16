@@ -1,0 +1,35 @@
+{
+  "Id": "fcbba6e7-cbd0-44e6-b64f-6f6959302417",
+  "CategoryId": "5deb465a-e24c-4c88-8b76-d795edd9108a",
+  "KeyName": "modifiedAfterHint",
+  "Description": "Hint explaining the modified-after date filter.",
+  "CreatedAt": "2026-07-16T14:00:00.0000000Z",
+  "UpdatedAt": "2026-07-16T14:00:00.0000000Z",
+  "MaxLength": 0,
+  "Tags": [],
+  "Flags": [],
+  "Variables": [],
+  "Translations": [
+    {
+      "LanguageId": "en-US",
+      "BaseTextHash": "e5692b19f1377aed19e36516a7d69b55581f03f6d5fc694d3dc0ccdcc6c1c8e8",
+      "Text": "Only export keys changed on or after this date. Leave empty to export everything.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T14:00:00.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pl-PL",
+      "BaseTextHash": "e5692b19f1377aed19e36516a7d69b55581f03f6d5fc694d3dc0ccdcc6c1c8e8",
+      "Text": "Eksportuj tylko klucze zmienione w tym dniu lub po nim. Pozostaw puste, aby wyeksportować wszystko.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T14:00:00.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    }
+  ],
+  "Comments": []
+}

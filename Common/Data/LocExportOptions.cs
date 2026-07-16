@@ -29,6 +29,13 @@ namespace DeusaldLocalizerCommon
         /// <summary>When true, a "Tags" column listing each key's tags is written.</summary>
         public bool IncludeTagsColumn { get; set; }
 
+        /// <summary>
+        /// When set, only keys modified on or after this instant are exported. A key counts as
+        /// modified when its own <see cref="LocLocalizationKey.UpdatedAt"/> or any of its
+        /// translations' <see cref="LocKeyTranslation.UpdatedAt"/> is at or after the cutoff.
+        /// </summary>
+        public DateTime? ModifiedAfter { get; set; }
+
         public List<string> Languages { get; } = new();
     }
 }

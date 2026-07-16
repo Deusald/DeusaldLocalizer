@@ -961,6 +961,12 @@ namespace DeusaldLocalizerWeb
                     public static readonly Guid keyCount = new Guid("065c7ec1-3c65-4115-8552-9d6401be40e1");
                     /// <summary>Section title for language selection.</summary>
                     public static readonly Guid languages = new Guid("1c912d41-81b6-46d2-8591-483cb5ce7b1e");
+                    /// <summary>Section title for the modified-after date filter.</summary>
+                    public static readonly Guid modifiedAfter = new Guid("f54da464-e2a8-43df-9d71-0cb267793f02");
+                    /// <summary>Link button that clears the modified-after date.</summary>
+                    public static readonly Guid modifiedAfterClear = new Guid("f5ba0c5a-5756-49ef-ab2d-11855e49db29");
+                    /// <summary>Hint explaining the modified-after date filter.</summary>
+                    public static readonly Guid modifiedAfterHint = new Guid("fcbba6e7-cbd0-44e6-b64f-6f6959302417");
                     /// <summary>Field label for the generated namespace.</summary>
                     public static readonly Guid namespaceLabel = new Guid("7e22309d-9785-46c4-bc8a-ae7d50de7fe0");
                     /// <summary>Placeholder example for the namespace field.</summary>
@@ -1561,6 +1567,9 @@ namespace DeusaldLocalizerWeb
                 { new Guid("17c45454-98c0-4ba7-966e-7e67bab52b79"), "Include" },
                 { new Guid("065c7ec1-3c65-4115-8552-9d6401be40e1"), "{matching} of {total} keys" },
                 { new Guid("1c912d41-81b6-46d2-8591-483cb5ce7b1e"), "Languages" },
+                { new Guid("f54da464-e2a8-43df-9d71-0cb267793f02"), "Modified after" },
+                { new Guid("f5ba0c5a-5756-49ef-ab2d-11855e49db29"), "Clear" },
+                { new Guid("fcbba6e7-cbd0-44e6-b64f-6f6959302417"), "Only export keys changed on or after this date. Leave empty to export everything." },
                 { new Guid("7e22309d-9785-46c4-bc8a-ae7d50de7fe0"), "Namespace" },
                 { new Guid("641cbcbf-07ae-478a-b807-936c37d1bf94"), "e.g. MyGame.Loc" },
                 { new Guid("2e3d3e76-528c-4235-a511-c37c522ce9b1"), "No flags" },
@@ -2051,6 +2060,9 @@ namespace DeusaldLocalizerWeb
                 { new Guid("17c45454-98c0-4ba7-966e-7e67bab52b79"), "Uwzględnij" },
                 { new Guid("065c7ec1-3c65-4115-8552-9d6401be40e1"), "{matching} z {total} kluczy" },
                 { new Guid("1c912d41-81b6-46d2-8591-483cb5ce7b1e"), "Języki" },
+                { new Guid("f54da464-e2a8-43df-9d71-0cb267793f02"), "Zmodyfikowane po" },
+                { new Guid("f5ba0c5a-5756-49ef-ab2d-11855e49db29"), "Wyczyść" },
+                { new Guid("fcbba6e7-cbd0-44e6-b64f-6f6959302417"), "Eksportuj tylko klucze zmienione w tym dniu lub po nim. Pozostaw puste, aby wyeksportować wszystko." },
                 { new Guid("7e22309d-9785-46c4-bc8a-ae7d50de7fe0"), "Przestrzeń nazw" },
                 { new Guid("641cbcbf-07ae-478a-b807-936c37d1bf94"), "np. MyGame.Loc" },
                 { new Guid("2e3d3e76-528c-4235-a511-c37c522ce9b1"), "Brak flag" },
