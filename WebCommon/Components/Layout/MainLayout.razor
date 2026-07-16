@@ -1,6 +1,4 @@
 @inherits LayoutComponentBase
-@implements IDisposable
-@inject UiLocalizationService Loc
 
 <div class="app-layout">
 
@@ -10,11 +8,5 @@
 
 </div>
 
-@code {
-    // Re-render the whole layout subtree when the UI language changes.
-    protected override void OnInitialized() => Loc.CultureChanged += OnCultureChanged;
-
-    private void OnCultureChanged() => InvokeAsync(StateHasChanged);
-
-    public void Dispose() => Loc.CultureChanged -= OnCultureChanged;
-}
+@* UI-language changes are handled per page via LocalizedComponentBase: a layout re-render does not
+   cascade into @Body, so the refresh subscription lives on the routed page, not here. *@

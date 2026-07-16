@@ -5,8 +5,7 @@
 @inject NavigationManager   _Nav
 @inject RecentProjectsStore _Recents
 @inject IAuthTokenStore     _AuthTokens
-@inject UiLocalizationService Loc
-@implements IDisposable
+@inherits LocalizedComponentBase
 
 <div class="home-root">
 
@@ -237,6 +236,7 @@
 
     protected override void OnInitialized()
     {
+        base.OnInitialized();
         _ProjectState.ProjectChanged += OnProjectChanged;
         _RecentProjects              =  _Recents.LoadRecentProjects();
         _                            =  CheckForUpdateAsync();
@@ -281,7 +281,11 @@
         }
     }
 
-    public void Dispose() => _ProjectState.ProjectChanged -= OnProjectChanged;
+    public override void Dispose()
+    {
+        _ProjectState.ProjectChanged -= OnProjectChanged;
+        base.Dispose();
+    }
 
     private void OnProjectChanged() => InvokeAsync(StateHasChanged);
 

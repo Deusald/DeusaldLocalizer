@@ -1,9 +1,8 @@
 ﻿@page "/translate"
 @layout EmptyLayout
-@implements IDisposable
+@inherits LocalizedComponentBase
 @inject ProjectStateService _ProjectState
 @inject IJSRuntime _Js
-@inject UiLocalizationService Loc
 
 @if (!_ProjectState.HasProject)
 {
@@ -43,6 +42,7 @@
 
     protected override void OnInitialized()
     {
+        base.OnInitialized();
         LocProject project = _ProjectState.CurrentProject!;
         _SelectedLanguage              =  project.Metadata.MainLanguageId;
         _ProjectState.OpenKeyRequested += OnOpenKeyRequested;
@@ -56,9 +56,10 @@
         InvokeAsync(StateHasChanged);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         _ProjectState.OpenKeyRequested -= OnOpenKeyRequested;
+        base.Dispose();
     }
 
     private async Task StartKeysResize(PointerEventArgs e)
