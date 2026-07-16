@@ -13,7 +13,13 @@
                 <span class="rcm-title">Recent changes</span>
                 <span class="rcm-count">@_Changes.Count</span>
             </div>
-            <button class="rcm-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+            <div class="rcm-header-actions">
+                @if (_Changes.Count > 0)
+                {
+                    <button class="rcm-clear" @onclick="ClearAll" title="Clear the list">Clear</button>
+                }
+                <button class="rcm-close" @onclick="Close"><i class="bi bi-x-lg"></i></button>
+            </div>
         </div>
 
         <div class="rcm-body">
@@ -32,7 +38,7 @@
                 @foreach (KeyGroup group in _KeyGroups)
                 {
                     KeyGroup g = group;
-                    <button class="rcm-item" @onclick="() => OpenKey(g)">
+                    <button class="rcm-item @(_Visited.Contains(g.KeyId) ? "rcm-visited" : "")" @onclick="() => OpenKey(g)">
                         <span class="rcm-item-main">
                             <span class="rcm-item-key">@g.KeyName</span>
                             <span class="rcm-item-tags">
@@ -67,7 +73,9 @@
 }
 
 @code {
-    private bool _Visible;
+    private bool                       _Visible;
+    private readonly HashSet<Guid>     _Visited = new(); // keys the user already clicked through to (dimmed)
+    private IReadOnlyList<PullChange>? _TrackedList;      // identity of the list _Visited was built against
 
     private sealed class KeyGroup
     {
@@ -98,14 +106,28 @@
     /// <summary>Opens the modal to browse the changes brought in by the last sync.</summary>
     public void Show()
     {
+        // A new sync replaces LastPullChanges with a fresh list — reset the "already visited" dimming then.
+        if (!ReferenceEquals(_TrackedList, _Changes))
+        {
+            _Visited.Clear();
+            _TrackedList = _Changes;
+        }
         _Visible = true;
         StateHasChanged();
     }
 
     private void Close() => _Visible = false;
 
+    private void ClearAll()
+    {
+        _Visited.Clear();
+        _ProjectState.ClearPullChanges();
+        _Visible = false;
+    }
+
     private void OpenKey(KeyGroup group)
     {
+        _Visited.Add(group.KeyId);
         _Visible = false;
         _ProjectState.RequestOpenKey(group.KeyId, group.Language);
     }

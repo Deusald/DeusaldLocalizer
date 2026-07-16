@@ -15,6 +15,8 @@ public enum MentionSource
 [PublicAPI]
 public sealed class MentionNotification
 {
+    /// <summary>Stable id of the underlying comment or suggestion — used to track what the user has seen.</summary>
+    public Guid          Id         { get; set; }
     public Guid          KeyId      { get; set; }
     public string        LanguageId { get; set; } = "";
     public MentionSource Source     { get; set; }
@@ -55,6 +57,7 @@ public static class MentionNotifications
                     if (suggestion.AuthorId != userId && MentionParser.MentionsUser(suggestion.Text, username, known))
                         result.Add(new MentionNotification
                         {
+                            Id         = suggestion.Id,
                             KeyId      = key.Id,
                             LanguageId = translation.LanguageId,
                             Source     = MentionSource.Suggestion,
@@ -82,6 +85,7 @@ public static class MentionNotifications
 
         result.Add(new MentionNotification
         {
+            Id         = comment.Id,
             KeyId      = keyId,
             LanguageId = languageId,
             Source     = source,

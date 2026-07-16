@@ -191,7 +191,13 @@ public partial class ProjectStateService(
     /// reloads the project, then re-validates the pending uncommitted changes against the new
     /// state. Detected conflicts are stored in <see cref="SyncConflicts"/> and block pushing.
     /// </summary>
-    public async Task<SyncOperationResult> SyncAsync()
+    /// <summary>
+    /// Pulls the latest server state into the local files. <paramref name="recordPullChanges"/> controls
+    /// whether the diff of what arrived is recorded into <see cref="LastPullChanges"/> for the "Recent
+    /// changes" button — a user-initiated sync records it, but a sync triggered internally by a push must
+    /// not, or the user would see their own just-pushed changes listed as if they were new from others.
+    /// </summary>
+    public async Task<SyncOperationResult> SyncAsync(bool recordPullChanges = true)
     {
         if (CurrentProject is null || string.IsNullOrEmpty(CurrentProjectPath))
             return new SyncOperationResult { Outcome = SyncOutcome.Failed, Error = "No project is open." };
@@ -245,13 +251,15 @@ public partial class ProjectStateService(
         // Snapshot the pre-pull committed base so we can tell the user what the pull changed. _SyncBaseline
         // is a clean, pending-free state and RebuildWorkingCopyAsync reassigns it to a fresh object, so this
         // reference stays valid; it can be null on the first sync after load, in which case read from disk.
-        LocProject oldBase = _SyncBaseline ?? await ProjectFileService.OpenAsync(_CurrentStore);
+        LocProject? oldBase = recordPullChanges ? (_SyncBaseline ?? await ProjectFileService.OpenAsync(_CurrentStore)) : null;
 
         await ApplyServerFilesAsync(_CurrentStore, response);
 
         await RebuildWorkingCopyAsync(pending);
 
-        LastPullChanges = PullChangeSummaryService.Diff(oldBase, _SyncBaseline!);
+        // Leave LastPullChanges untouched for push-triggered syncs so a prior real sync's list survives.
+        if (recordPullChanges)
+            LastPullChanges = PullChangeSummaryService.Diff(oldBase!, _SyncBaseline!);
 
         ProjectChanged?.Invoke();
         ProjectDataChanged?.Invoke();
@@ -262,6 +270,13 @@ public partial class ProjectStateService(
             ChangedFiles = response.ChangedFiles.Count + response.DeletedFiles.Count,
             Conflicts    = _SyncConflicts.Count,
         };
+    }
+
+    /// <summary>Empties the "Recent changes" list (the user dismissed it) and refreshes any watchers.</summary>
+    public void ClearPullChanges()
+    {
+        LastPullChanges = [];
+        ProjectDataChanged?.Invoke();
     }
 
     /// <summary>
@@ -306,7 +321,7 @@ public partial class ProjectStateService(
                 // haven't pulled that newer state yet — so we can't show the server version or validate
                 // against it. Sync now: it pulls the server state, discards any of our edits that turned
                 // out identical to the server's, and flags the genuine conflicts against a fresh baseline.
-                await SyncAsync();
+                await SyncAsync(recordPullChanges: false);
 
                 if (_SyncConflicts.Count == 0)
                 {
@@ -335,7 +350,9 @@ public partial class ProjectStateService(
                 await ProjectFileService.ClearUncommittedChangesAsync(_CurrentStore);
                 MarkClean();
 
-                await SyncAsync();
+                // recordPullChanges: false — this sync only pulls our own just-pushed commits, which must
+                // not appear in "Recent changes" (that is for changes others made that we haven't seen).
+                await SyncAsync(recordPullChanges: false);
 
                 return new PushOperationResult { Outcome = PushOutcome.Success };
 
@@ -437,7 +454,7 @@ public partial class ProjectStateService(
         await ProjectFileService.WriteEntityForChangeAsync(CurrentProject, _CurrentStore, change);
         await authTokens.SaveAsync(CurrentProject.Metadata.Id, CurrentProjectPath!, CurrentUser.UserId, newToken);
 
-        await SyncAsync();
+        await SyncAsync(recordPullChanges: false);
 
         return new InitialTokenResult { RawToken = newToken };
     }

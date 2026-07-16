@@ -37,7 +37,7 @@
                     @foreach (MentionNotification notification in _Notifications)
                     {
                         MentionNotification n      = notification;
-                        bool                unread = n.CreatedAt > _PanelSince;
+                        bool                unread = _UnseenAtOpen.Contains(n.Id);
                         <button class="nb-item @(unread ? "nb-unread" : "")" @onclick="() => Open(n)">
                             <span class="nb-avatar" style="background:@AvatarColor(n.AuthorId)">@Initial(AuthorName(n.AuthorId))</span>
                             <span class="nb-body">
@@ -60,22 +60,22 @@
 @code {
     private bool                      _Open;
     private List<MentionNotification> _Notifications = new();
-    private DateTime                  _LastSeen;    // persisted "read up to" marker
-    private DateTime                  _PanelSince;  // marker captured when the panel was opened (for highlight)
+    private HashSet<Guid>             _Seen         = new(); // ids the user has already looked at (persisted)
+    private HashSet<Guid>             _UnseenAtOpen = new(); // ids that were unseen when the panel was opened (highlight)
 
-    private int _UnreadCount => _Notifications.Count(n => n.CreatedAt > _LastSeen);
+    private int _UnreadCount => _Notifications.Count(n => !_Seen.Contains(n.Id));
 
     protected override void OnInitialized()
     {
         _ProjectState.ProjectChanged     += OnProjectChanged;
         _ProjectState.ProjectDataChanged += Refresh;
-        LoadLastSeen();
+        LoadSeen();
         Rebuild();
     }
 
     private void OnProjectChanged()
     {
-        LoadLastSeen();
+        LoadSeen();
         Refresh();
     }
 
@@ -100,8 +100,9 @@
         _Open = !_Open;
         if (_Open)
         {
-            _PanelSince = _LastSeen; // remember what was unread so the panel can still highlight it
-            MarkSeen();              // clear the badge and persist immediately
+            // Remember which ids were unseen so the panel can still highlight them, then mark everything seen.
+            _UnseenAtOpen = _Notifications.Where(n => !_Seen.Contains(n.Id)).Select(n => n.Id).ToHashSet();
+            MarkSeen();
         }
     }
 
@@ -116,25 +117,29 @@
         _ProjectState.RequestOpenKey(n.KeyId, lang);
     }
 
-    // ── Last-seen (local, per project + user) ──────────────────────────────────
+    // ── Seen ids (local, per project + user) ───────────────────────────────────
+    // Tracked by id rather than a timestamp so a comment authored before the user's last visit but only
+    // now synced in still counts as unseen.
 
     private string _SeenKey =>
         $"notif-seen:{_ProjectState.CurrentProject!.Metadata.Id}:{_ProjectState.CurrentUser.UserId}";
 
-    private void LoadLastSeen()
+    private void LoadSeen()
     {
-        if (_ProjectState.CurrentProject is null) { _LastSeen = DateTime.MinValue; return; }
+        if (_ProjectState.CurrentProject is null) { _Seen = new HashSet<Guid>(); return; }
         string raw = _Prefs.Get(_SeenKey, "");
-        _LastSeen = DateTime.TryParse(raw, null, System.Globalization.DateTimeStyles.AdjustToUniversal | System.Globalization.DateTimeStyles.AssumeUniversal, out DateTime parsed)
-                        ? parsed
-                        : DateTime.MinValue;
+        _Seen = raw.Split(',', StringSplitOptions.RemoveEmptyEntries)
+                   .Select(s => Guid.TryParse(s, out Guid g) ? g : Guid.Empty)
+                   .Where(g => g != Guid.Empty)
+                   .ToHashSet();
     }
 
     private void MarkSeen()
     {
         if (_ProjectState.CurrentProject is null) return;
-        _LastSeen = DateTime.UtcNow;
-        _Prefs.Set(_SeenKey, _LastSeen.ToString("o"));
+        // Replace with exactly the currently-relevant ids so the stored set stays bounded.
+        _Seen = _Notifications.Select(n => n.Id).ToHashSet();
+        _Prefs.Set(_SeenKey, string.Join(",", _Seen));
     }
 
     // ── Display helpers ────────────────────────────────────────────────────────
