@@ -3,20 +3,28 @@
 @inject UiLocalizationService Loc
 
 @* Compact UI-language switcher. Hidden until the generated data carries more than one language,
-   so it only appears once the app itself has been translated into a second language. *@
+   so it only appears once the app itself has been translated into a second language.
+   Opens a centered modal instead of an anchored dropdown, so it never overflows the viewport
+   when the trigger sits near the bottom edge. *@
 @if (_Languages.Count > 1)
 {
-    <div class="lp-root">
-        <button class="lp-btn" @onclick="Toggle" @onclick:stopPropagation="true" title="@_CurrentLabel">
-            <i class="bi bi-translate"></i>
-            <span class="lp-code">@Loc.CurrentLanguage</span>
-            <i class="bi bi-chevron-down lp-caret"></i>
-        </button>
+    <button class="lp-btn" @onclick="Open" title="@_CurrentLabel">
+        <i class="bi bi-translate"></i>
+        <span class="lp-code">@Loc.CurrentLanguage</span>
+        <i class="bi bi-chevron-down lp-caret"></i>
+    </button>
 
-        @if (_Open)
-        {
-            <div class="lp-backdrop" @onclick="Close"></div>
-            <div class="lp-menu" @onclick:stopPropagation="true">
+    @if (_Open)
+    {
+        <div class="lp-backdrop" @onclick="Close"></div>
+        <div class="lp-modal" @onclick:stopPropagation="true">
+            <div class="lp-header">
+                <span class="lp-header-title"><i class="bi bi-translate"></i></span>
+                <button class="lp-close" @onclick="Close" title="@Loc.T(Localization.Common.Buttons.close)">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="lp-list">
                 @foreach (string lang in _Languages)
                 {
                     string lg = lang;
@@ -26,8 +34,8 @@
                     </button>
                 }
             </div>
-        }
-    </div>
+        </div>
+    }
 }
 
 @code {
@@ -41,7 +49,7 @@
 
     private void OnCultureChanged() => InvokeAsync(StateHasChanged);
 
-    private void Toggle() => _Open = !_Open;
+    private void Open() => _Open = true;
 
     private void Close() => _Open = false;
 
