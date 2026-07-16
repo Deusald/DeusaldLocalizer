@@ -4,7 +4,7 @@
   "KeyName": "modifiedAfterHint",
   "Description": "Hint explaining the modified-after date filter.",
   "CreatedAt": "2026-07-16T14:00:00.0000000Z",
-  "UpdatedAt": "2026-07-16T14:00:00.0000000Z",
+  "UpdatedAt": "2026-07-16T20:47:11.0000000Z",
   "MaxLength": 0,
   "Tags": [],
   "Flags": [],
@@ -27,6 +27,116 @@
       "Status": "Approved",
       "SourceChanged": false,
       "UpdatedAt": "2026-07-16T14:00:00.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "cs-CZ",
+      "BaseTextHash": "e5692b19f1377aed19e36516a7d69b55581f03f6d5fc694d3dc0ccdcc6c1c8e8",
+      "Text": "Exportovat pouze klíče změněné v tento den nebo později. Ponechte prázdné pro export všeho.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:47:11.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "de-DE",
+      "BaseTextHash": "e5692b19f1377aed19e36516a7d69b55581f03f6d5fc694d3dc0ccdcc6c1c8e8",
+      "Text": "Nur Schlüssel exportieren, die an oder nach diesem Datum geändert wurden. Leer lassen, um alles zu exportieren.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:47:11.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "es-ES",
+      "BaseTextHash": "e5692b19f1377aed19e36516a7d69b55581f03f6d5fc694d3dc0ccdcc6c1c8e8",
+      "Text": "Exportar solo las claves modificadas en esta fecha o después. Déjalo vacío para exportar todo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:47:11.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "fr-FR",
+      "BaseTextHash": "e5692b19f1377aed19e36516a7d69b55581f03f6d5fc694d3dc0ccdcc6c1c8e8",
+      "Text": "Exporter uniquement les clés modifiées à partir de cette date. Laisser vide pour tout exporter.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:47:11.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "it-IT",
+      "BaseTextHash": "e5692b19f1377aed19e36516a7d69b55581f03f6d5fc694d3dc0ccdcc6c1c8e8",
+      "Text": "Esporta solo le chiavi modificate a partire da questa data. Lascia vuoto per esportare tutto.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:47:11.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ja-JP",
+      "BaseTextHash": "e5692b19f1377aed19e36516a7d69b55581f03f6d5fc694d3dc0ccdcc6c1c8e8",
+      "Text": "この日付以降に変更されたキーのみをエクスポートします。すべてをエクスポートするには空欄のままにしてください。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:47:11.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ko-KR",
+      "BaseTextHash": "e5692b19f1377aed19e36516a7d69b55581f03f6d5fc694d3dc0ccdcc6c1c8e8",
+      "Text": "이 날짜 이후에 변경된 키만 내보냅니다. 모두 내보내려면 비워 두세요.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:47:11.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "pt-BR",
+      "BaseTextHash": "e5692b19f1377aed19e36516a7d69b55581f03f6d5fc694d3dc0ccdcc6c1c8e8",
+      "Text": "Exportar apenas as chaves alteradas nesta data ou depois. Deixe em branco para exportar tudo.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:47:11.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "ru-RU",
+      "BaseTextHash": "e5692b19f1377aed19e36516a7d69b55581f03f6d5fc694d3dc0ccdcc6c1c8e8",
+      "Text": "Экспортировать только ключи, изменённые в этот день или позже. Оставьте пустым, чтобы экспортировать всё.",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:47:11.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hans",
+      "BaseTextHash": "e5692b19f1377aed19e36516a7d69b55581f03f6d5fc694d3dc0ccdcc6c1c8e8",
+      "Text": "仅导出在此日期或之后更改的键。留空则导出全部。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:47:11.0000000Z",
+      "Suggestions": [],
+      "Comments": []
+    },
+    {
+      "LanguageId": "zh-Hant",
+      "BaseTextHash": "e5692b19f1377aed19e36516a7d69b55581f03f6d5fc694d3dc0ccdcc6c1c8e8",
+      "Text": "僅匯出在此日期或之後變更的鍵。留空則匯出全部。",
+      "Status": "Approved",
+      "SourceChanged": false,
+      "UpdatedAt": "2026-07-16T20:47:11.0000000Z",
       "Suggestions": [],
       "Comments": []
     }
