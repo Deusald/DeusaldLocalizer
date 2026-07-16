@@ -43,7 +43,7 @@
     @if (_CanComment)
     {
         <div class="ct-compose">
-            <MentionTextArea Value="_Draft" ValueChanged="@(v => _Draft = v)" Members="_MemberNames"
+            <MentionTextArea Value="@_Draft" ValueChanged="@(v => _Draft = v)" Members="_MemberNames"
                              CssClass="ct-input" Rows="1" Placeholder="Add a comment…"/>
             <button class="ct-post" @onclick="Post" disabled="@string.IsNullOrWhiteSpace(_Draft)">Post</button>
         </div>

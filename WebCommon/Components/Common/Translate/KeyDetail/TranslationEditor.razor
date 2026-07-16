@@ -10,7 +10,7 @@
                 <label class="te-label">Source · @_SourceLangCode</label>
                 <span class="te-hint">{placeholders} supported</span>
             </div>
-            <MentionTextArea Value="_SourceDraft" ValueChanged="@(v => _SourceDraft = v)" AfterInput="NotifyDraftChanged"
+            <MentionTextArea Value="@_SourceDraft" ValueChanged="@(v => _SourceDraft = v)" AfterInput="NotifyDraftChanged"
                              Members="_MemberNames"
                              CssClass="@_SourceCssClass"
                              Readonly="@(!_CanEditSource && !_CanEditTranslation)"
@@ -69,7 +69,7 @@
                 <label class="te-label">Translation · @SelectedLanguage</label>
                 <span class="te-hint">{placeholders} supported</span>
             </div>
-            <MentionTextArea Value="_TranslationDraft" ValueChanged="@(v => _TranslationDraft = v)" AfterInput="NotifyDraftChanged"
+            <MentionTextArea Value="@_TranslationDraft" ValueChanged="@(v => _TranslationDraft = v)" AfterInput="NotifyDraftChanged"
                              Members="_MemberNames"
                              CssClass="@_TranslationCssClass"
                              Readonly="@(!_CanEditTranslation)"
