@@ -100,3 +100,10 @@
     border-radius: 50%; animation: ex-spin .65s linear infinite;
 }
 @keyframes ex-spin { to { transform: rotate(360deg); } }
+
+/* ── Progress bar (shown while exporting) ─────────────────────────────────── */
+
+.ex-progress { display: flex; align-items: center; gap: 10px; padding: 12px 20px 0; }
+.ex-progress-bar { flex: 1; height: 6px; background: #13141a; border: 1px solid #20212a; border-radius: 4px; overflow: hidden; }
+.ex-progress-fill { height: 100%; background: #5b6cff; border-radius: 4px; transition: width .15s ease; }
+.ex-progress-pct { font-size: 12px; color: #7a7b83; min-width: 34px; text-align: right; font-variant-numeric: tabular-nums; }

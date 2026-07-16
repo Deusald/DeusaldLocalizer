@@ -56,7 +56,11 @@
 .im-seg-btn:hover { color: #d6d6db; background: #1e1f28; }
 .im-seg-btn.active { color: #fff; background: #3a3b46; }
 
-.im-progress { display: flex; align-items: center; gap: 10px; padding: 8px 0; font-size: 13px; color: #8a8b93; }
+.im-progress { display: flex; flex-direction: column; gap: 10px; padding: 8px 0; font-size: 13px; color: #8a8b93; }
+.im-progress-head { display: flex; align-items: center; gap: 10px; }
+.im-progress-pct { margin-left: auto; font-variant-numeric: tabular-nums; color: #7a7b83; }
+.im-progress-bar { height: 6px; background: #13141a; border: 1px solid #20212a; border-radius: 4px; overflow: hidden; }
+.im-progress-fill { height: 100%; background: #5b6cff; border-radius: 4px; transition: width .15s ease; }
 
 .im-spinner {
     display: inline-block; width: 16px; height: 16px;

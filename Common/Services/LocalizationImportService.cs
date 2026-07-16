@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using ClosedXML.Excel;
 
 namespace DeusaldLocalizerCommon
@@ -71,8 +72,13 @@ namespace DeusaldLocalizerCommon
     /// </summary>
     public static class LocalizationImportService
     {
-        public static ImportResult ImportFromStream(Stream stream, LocProject project, Guid authorId,
-                                                    LocImportOptions? options = null)
+        /// <summary>
+        /// Reads and applies the xlsx. <paramref name="onProgress"/>, when supplied, is invoked with a
+        /// 0..1 fraction as rows are processed; the method yields after each report so a single-threaded
+        /// (WASM) caller can repaint a progress bar between chunks of work.
+        /// </summary>
+        public static async Task<ImportResult> ImportFromStreamAsync(Stream stream, LocProject project, Guid authorId,
+                                                                    LocImportOptions? options = null, Action<double>? onProgress = null)
         {
             options ??= new LocImportOptions();
 
@@ -156,8 +162,18 @@ namespace DeusaldLocalizerCommon
 
             // ── Process data rows ───────────────────────────────────────────
             int lastRow = sheet.LastRowUsed()?.RowNumber() ?? 1;
+            int total   = lastRow - 1;
+            int chunk   = total > 0 ? Math.Max(1, total / 100) : 1;
             for (int row = 2; row <= lastRow; row++)
+            {
                 ProcessRow(ctx, row);
+                if (onProgress != null && (row - 2) % chunk == 0)
+                {
+                    onProgress((double)(row - 1) / lastRow);
+                    await Task.Yield();
+                }
+            }
+            onProgress?.Invoke(1.0);
 
             ctx.Result.Changes = ctx.Changes;
             return ctx.Result;

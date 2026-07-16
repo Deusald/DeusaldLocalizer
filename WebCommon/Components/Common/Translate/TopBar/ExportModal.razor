@@ -143,6 +143,16 @@
 
         </div>
 
+        @if (_IsExporting)
+        {
+            <div class="ex-progress">
+                <div class="ex-progress-bar">
+                    <div class="ex-progress-fill" style="width: @(((int)(_Progress * 100)).ToString(System.Globalization.CultureInfo.InvariantCulture))%"></div>
+                </div>
+                <span class="ex-progress-pct">@(((int)(_Progress * 100)))%</span>
+            </div>
+        }
+
         <div class="ex-footer">
             <span class="ex-count">@Loc.T(Localization.Translate.TopBar.Export.keyCount, new Dictionary<string, object> { ["matching"] = _MatchingKeyCount, ["total"] = _TotalKeyCount })</span>
             <div class="ex-footer-actions">
@@ -170,8 +180,9 @@
 @code {
     private enum ExportFormat { Excel, CSharp }
 
-    private bool _Visible;
-    private bool _IsExporting;
+    private bool   _Visible;
+    private bool   _IsExporting;
+    private double _Progress;
 
     private ExportFormat _Format        = ExportFormat.Excel;
     private string       _ClassName     = "Localization";
@@ -235,6 +246,7 @@
         _IncludeTagsColumn = false;
         _SelectedLangs     = new HashSet<string>(_AllLanguages);
         _IsExporting       = false;
+        _Progress          = 0;
         _Visible           = true;
         StateHasChanged();
     }
@@ -317,7 +329,16 @@
     {
         if (_IsExporting || !CanExport) return;
         _IsExporting = true;
+        _Progress    = 0;
         StateHasChanged();
+        await Task.Yield(); // let the progress bar paint before the heavy work starts
+        // WASM is single-threaded, so the export services yield periodically and report a 0..1
+        // fraction through this callback, which repaints the bar between chunks of work.
+        Action<double> report = p =>
+                                {
+                                    _Progress = p;
+                                    StateHasChanged();
+                                };
         try
         {
             LocProject       project = _ProjectState.CurrentProject!;
@@ -325,14 +346,14 @@
 
             if (_Format == ExportFormat.CSharp)
             {
-                string source   = CSharpExportService.ExportToString(project, _ClassName, _Namespace, options);
+                string source   = await CSharpExportService.ExportToStringAsync(project, _ClassName, _Namespace, options, report);
                 string fileName = $"{CSharpExportService.ClassFileName(_ClassName)}.cs";
                 await _TextFile.SaveTextAsync(fileName, source);
                 RememberCSharpExport();
             }
             else
             {
-                using MemoryStream stream = LocalizationExportService.ExportToStream(project, options);
+                using MemoryStream stream = await LocalizationExportService.ExportToStreamAsync(project, options, report);
                 string fileName = $"{(string.IsNullOrEmpty(project.Metadata.Slug) ? "export" : project.Metadata.Slug)}-translations.xlsx";
                 await _Excel.SaveXlsxAsync(fileName, stream);
             }

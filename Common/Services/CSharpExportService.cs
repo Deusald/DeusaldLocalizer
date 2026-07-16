@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Security;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DeusaldLocalizerCommon
 {
@@ -39,8 +40,8 @@ namespace DeusaldLocalizerCommon
         /// <param name="className">Name of the generated wrapper class (sanitized to a valid identifier).</param>
         /// <param name="namespaceName">Optional namespace to wrap the class in; null/blank emits no namespace.</param>
         /// <param name="options">Optional flag/tag/language filter, shared with the Excel export.</param>
-        public static string ExportToString(LocProject project, string className, string? namespaceName = null,
-                                            LocExportOptions? options = null)
+        public static async Task<string> ExportToStringAsync(LocProject project, string className, string? namespaceName = null,
+                                                             LocExportOptions? options = null, Action<double>? onProgress = null)
         {
             string safeClass = SanitizeIdentifier(className, "Localization");
             string? safeNs   = string.IsNullOrWhiteSpace(namespaceName) ? null : SanitizeNamespace(namespaceName!);
@@ -70,10 +71,16 @@ namespace DeusaldLocalizerCommon
             // ── Key-id class tree ───────────────────────────────────────────
             Node root = BuildTree(project, exportedKeys);
             AppendNode(sb, root, classLevel + 1, seedReserved: true);
+            // Tree building spans 0..0.3; the translations dictionary is the bulk of the work.
+            if (onProgress != null)
+            {
+                onProgress(0.3);
+                await Task.Yield();
+            }
 
             // ── Translations dictionary ─────────────────────────────────────
             sb.Append('\n');
-            AppendTranslations(sb, classLevel + 1, languages, exportedKeys, project);
+            await AppendTranslationsAsync(sb, classLevel + 1, languages, exportedKeys, project, onProgress);
 
             // ── Lookup method ───────────────────────────────────────────────
             sb.Append('\n');
@@ -83,6 +90,7 @@ namespace DeusaldLocalizerCommon
             if (safeNs != null)
                 sb.Append("}\n");
 
+            onProgress?.Invoke(1.0);
             return sb.ToString();
         }
 
@@ -138,8 +146,8 @@ namespace DeusaldLocalizerCommon
             }
         }
 
-        private static void AppendTranslations(StringBuilder sb, int level, List<string> languages,
-                                               List<LocLocalizationKey> keys, LocProject project)
+        private static async Task AppendTranslationsAsync(StringBuilder sb, int level, List<string> languages,
+                                                          List<LocLocalizationKey> keys, LocProject project, Action<double>? onProgress)
         {
             string i0 = Indent(level);
             string i1 = Indent(level + 1);
@@ -150,6 +158,11 @@ namespace DeusaldLocalizerCommon
               .Append("public static readonly Dictionary<string, Dictionary<Guid, string>> Translations = new Dictionary<string, Dictionary<Guid, string>>\n");
             sb.Append(i0).Append("{\n");
 
+            // Every language×key cell is one unit; report over 0.3..0.95 so the earlier tree phase and
+            // the trailing Get() method leave room at both ends of the bar.
+            int totalUnits = Math.Max(1, languages.Count * keys.Count);
+            int chunk      = Math.Max(1, totalUnits / 100);
+            int done       = 0;
             foreach (string lang in languages)
             {
                 sb.Append(i1).Append("{ ").Append(ToLiteral(lang)).Append(", new Dictionary<Guid, string>\n");
@@ -164,6 +177,13 @@ namespace DeusaldLocalizerCommon
                       .Append("\"), ")
                       .Append(ToLiteral(text))
                       .Append(" },\n");
+
+                    done++;
+                    if (onProgress != null && done % chunk == 0)
+                    {
+                        onProgress(0.3 + 0.65 * done / totalUnits);
+                        await Task.Yield();
+                    }
                 }
                 sb.Append(i1).Append("} },\n");
             }

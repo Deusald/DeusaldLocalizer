@@ -65,7 +65,8 @@ namespace DeusaldLocalizerWeb
             {
                 int totalSlots = project.Keys.Count * project.Metadata.Languages.Count;
                 int translated = project.TotalNumberOfApprovedKeys();
-                pct = totalSlots > 0 ? (int)Math.Round(translated * 100.0 / totalSlots) : 0;
+                // Floor so 100% shows only when every slot is translated, not when rounding up from 99.5%.
+                pct = totalSlots > 0 ? (int)Math.Floor(translated * 100.0 / totalSlots) : 0;
             }
 
             projects.RemoveAll(r => r.Path == location);

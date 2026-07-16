@@ -180,7 +180,8 @@
         int        keyCount = project.Keys.Count;
         if (keyCount == 0) return 0;
         int translated = project.GetNumberOfApprovedKeys(code);
-        return (int)Math.Round(translated * 100.0 / keyCount);
+        // Floor so 100% shows only when every key is translated, not when rounding up from 99.5%.
+        return (int)Math.Floor(translated * 100.0 / keyCount);
     }
 
     private void EnterAddMode()

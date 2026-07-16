@@ -71,8 +71,14 @@
             else if (_IsImporting)
             {
                 <div class="im-progress">
-                    <span class="im-spinner"></span>
-                    <span>@Loc.T(Localization.Translate.TopBar.ExcelImport.importing)</span>
+                    <div class="im-progress-head">
+                        <span class="im-spinner"></span>
+                        <span>@Loc.T(Localization.Translate.TopBar.ExcelImport.importing)</span>
+                        <span class="im-progress-pct">@(((int)(_Progress * 100)))%</span>
+                    </div>
+                    <div class="im-progress-bar">
+                        <div class="im-progress-fill" style="width: @(((int)(_Progress * 100)).ToString(System.Globalization.CultureInfo.InvariantCulture))%"></div>
+                    </div>
                 </div>
             }
             else if (_Result != null)
@@ -128,6 +134,7 @@
 @code {
     private bool             _Visible;
     private bool             _IsImporting;
+    private double           _Progress;
     private ImportResult?    _Result;
     private string?          _Error;
     private LocImportOptions _Options = new();
@@ -140,6 +147,7 @@
         _Result      = null;
         _Error       = null;
         _IsImporting = false;
+        _Progress    = 0;
         _Options     = new LocImportOptions();
         _Visible     = true;
         StateHasChanged();
@@ -152,6 +160,7 @@
         _Result      = null;
         _Error       = null;
         _IsImporting = false;
+        _Progress    = 0;
     }
 
     private void ToggleAll()
@@ -175,21 +184,40 @@
             if (picked == null) return;
 
             _IsImporting = true;
+            _Progress    = 0;
             StateHasChanged();
 
-            await Task.Yield(); // let the spinner render
+            await Task.Yield(); // let the progress bar render
 
             await using Stream stream = picked;
-            _Result = LocalizationImportService.ImportFromStream(
+            // WASM is single-threaded, so the import service yields periodically and reports a 0..1
+            // fraction; parsing the sheet occupies the first 90% of the bar.
+            _Result = await LocalizationImportService.ImportFromStreamAsync(
                 stream,
                 _ProjectState.CurrentProject!,
                 _ProjectState.CurrentUser.UserId,
-                _Options);
+                _Options,
+                p =>
+                {
+                    _Progress = p * 0.9;
+                    StateHasChanged();
+                });
 
             // Replay each mutation into the change log (in order) so it populates
-            // UncommitedChanges when online, marks keys dirty and flags the app dirty.
-            foreach (ImportedChange change in _Result.Changes)
-                RecordChange(change);
+            // UncommitedChanges when online, marks keys dirty and flags the app dirty. This is the
+            // final 10% of the bar; yield in chunks so it animates for large imports.
+            int total = _Result.Changes.Count;
+            int chunk = total > 0 ? Math.Max(1, total / 100) : 1;
+            for (int i = 0; i < total; ++i)
+            {
+                RecordChange(_Result.Changes[i]);
+                if (i % chunk == 0)
+                {
+                    _Progress = 0.9 + 0.1 * (i + 1) / total;
+                    StateHasChanged();
+                    await Task.Yield();
+                }
+            }
         }
         catch (Exception ex)
         {

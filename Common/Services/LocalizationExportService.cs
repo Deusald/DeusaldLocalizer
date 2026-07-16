@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using ClosedXML.Excel;
 
 namespace DeusaldLocalizerCommon
@@ -20,7 +22,13 @@ namespace DeusaldLocalizerCommon
         /// <summary>Header suffix that marks the per-language hash column (e.g. "en #hash").</summary>
         public const string HASH_HEADER_SUFFIX = " #hash";
 
-        public static MemoryStream ExportToStream(LocProject project, LocExportOptions? options = null)
+        /// <summary>
+        /// Builds the xlsx export. <paramref name="onProgress"/>, when supplied, is invoked with a
+        /// 0..1 fraction as rows are written; the method yields after each report so a single-threaded
+        /// (WASM) caller can repaint a progress bar between chunks of work.
+        /// </summary>
+        public static async Task<MemoryStream> ExportToStreamAsync(LocProject project, LocExportOptions? options = null,
+                                                                   Action<double>? onProgress = null)
         {
             using XLWorkbook wb    = new XLWorkbook();
             IXLWorksheet     sheet = wb.AddWorksheet("Translations");
@@ -71,8 +79,13 @@ namespace DeusaldLocalizerCommon
             IEnumerable<LocLocalizationKey> exportedKeys = project.Keys;
             if (options != null)
                 exportedKeys = exportedKeys.Where(k => PassesFilter(k, options));
-            foreach (LocLocalizationKey key in exportedKeys.OrderBy(k => FullKeyName(k, project)))
+            // Materialize once so we know the total up front for a determinate progress bar.
+            List<LocLocalizationKey> orderedKeys = exportedKeys.OrderBy(k => FullKeyName(k, project)).ToList();
+            int                      total       = orderedKeys.Count;
+            int                      chunk       = total > 0 ? Math.Max(1, total / 100) : 1;
+            for (int index = 0; index < total; ++index)
             {
+                LocLocalizationKey key = orderedKeys[index];
                 // Get the source translation's BaseTextHash as "SourceHash"
                 LocKeyTranslation? sourceTrans = key.Translations
                                                     .Find(t => t.LanguageId == project.Metadata.MainLanguageId);
@@ -96,6 +109,13 @@ namespace DeusaldLocalizerCommon
                 }
 
                 row++;
+
+                // Row building spans 0..0.9; saving the workbook takes the remainder.
+                if (onProgress != null && index % chunk == 0)
+                {
+                    onProgress(0.9 * (index + 1) / total);
+                    await Task.Yield();
+                }
             }
 
             // ── Column widths ───────────────────────────────────────────────
@@ -156,9 +176,16 @@ namespace DeusaldLocalizerCommon
             }
 
             // ── Save to stream ───────────────────────────────────────────────
+            // Show "almost done" and yield once so the bar paints before the (unchunkable) save.
+            if (onProgress != null)
+            {
+                onProgress(0.95);
+                await Task.Yield();
+            }
             MemoryStream stream = new MemoryStream();
             wb.SaveAs(stream);
             stream.Position = 0;
+            onProgress?.Invoke(1.0);
             return stream;
         }
 
