@@ -13,7 +13,7 @@
     <!-- NuGet package metadata -->
     <PropertyGroup>
         <PackageId>DeusaldLocalizerCommon</PackageId>
-        <Version>1.8.9</Version>
+        <Version>2.0.10</Version>
         <Authors>Deusald</Authors>
         <Company>Deusald</Company>
         <Description>Shared domain models, persistence, and business/sync logic for Deusald Localizer, a community localization tool for games. Consumable by external readers such as a Unity importer.</Description>
