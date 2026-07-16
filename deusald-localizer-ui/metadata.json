@@ -1,0 +1,17 @@
+{
+  "Id": "4ecfc505-f1f6-4e6a-8ea6-2347264b7c7b",
+  "Name": "Deusald Localizer UI",
+  "Slug": "deusald-localizer-ui",
+  "Description": "",
+  "ApiUrl": "",
+  "UncommittedMode": false,
+  "MainLanguageId": "en-US",
+  "SyncId": "b28f981c-bff0-4232-b214-ce3ee3065556",
+  "UpdatedAt": "2026-07-16T12:04:18.3849509Z",
+  "FormatVersion": 1,
+  "Languages": [
+    "en-US"
+  ],
+  "IsOnline": false,
+  "UsesUncommittedChanges": false
+}
