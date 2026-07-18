@@ -180,14 +180,14 @@
         return string.Join("/", parts);
     }
 
-    public void Show()
+    public void Show(LocCategory? preselectedParent = null)
     {
         _Name              = "";
         _Description       = "";
         _ParentQuery       = "";
         _ParentOpen        = false;
         _SuppressBlurClose = false;
-        _SelectedParent    = null;
+        _SelectedParent    = preselectedParent;
         _EditingCategory   = null;
         _Visible           = true;
         StateHasChanged();

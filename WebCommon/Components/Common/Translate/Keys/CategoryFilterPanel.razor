@@ -70,8 +70,10 @@
                             }
                             <button class="cfp-item @(active ? "active" : "")"
                                     title="@Loc.T(Localization.Translate.Keys.CategoryFilter.rightClickSelectOnly)"
-                                    @onclick="() => Toggle(cat.Id)"
-                                    @oncontextmenu="() => ToggleSingle(cat.Id)"
+                                    @onclick="() => SelectOnly(cat.Id)"
+                                    @onauxclick="e => OnAuxClick(e, cat.Id)"
+                                    @onauxclick:preventDefault="true"
+                                    @oncontextmenu="() => SelectSubtree(cat.Id)"
                                     @oncontextmenu:preventDefault="true">
                                 <span class="cfp-item-check">@(active ? "✓" : "")</span>
                                 <span class="cfp-item-name">@cat.Name</span>
@@ -99,7 +101,7 @@
 
             @if (_IsAdmin)
             {
-                <button class="cfp-add-btn" @onclick="() => _NewCategoryModal?.Show()">
+                <button class="cfp-add-btn" @onclick="() => _NewCategoryModal?.Show(_ActiveParentCategory)">
                     <i class="bi bi-plus-lg"></i> @Loc.T(Localization.Translate.Keys.CategoryFilter.addCategory)
                 </button>
             }
@@ -118,9 +120,16 @@
     private bool              _Expanded;
     private NewCategoryModal? _NewCategoryModal;
     private Guid?             _HoveredId;
+    private Guid?             _ActiveCategoryId;
     private HashSet<Guid>     _Collapsed = new();
 
     private bool _IsAdmin => _ProjectState.CurrentUser.IsAdmin;
+
+    /// <summary>The most recently selected category, preselected as the parent when adding a new category.</summary>
+    private LocCategory? _ActiveParentCategory =>
+        _ActiveCategoryId == null
+            ? null
+            : _ProjectState.CurrentProject!.Categories.Find(c => c.Id == _ActiveCategoryId);
 
     private bool CategoryHasKeys(Guid categoryId) =>
         _ProjectState.CurrentProject!.Keys.Any(k => k.CategoryId == categoryId);
@@ -132,6 +141,8 @@
         LocProject project = _ProjectState.CurrentProject!;
         project.Categories.Remove(category);
         _ProjectState.RecordCategoryRemoved(category);
+
+        if (_ActiveCategoryId == category.Id) _ActiveCategoryId = null;
 
         if (SelectedCategoryIds.Contains(category.Id))
         {
@@ -242,34 +253,41 @@
         return string.Join("/", parts);
     }
 
-    private async Task Toggle(Guid id)
+    /// <summary>Left click: select only this category, deselecting everything else.</summary>
+    private async Task SelectOnly(Guid id)
     {
-        HashSet<Guid> next    = new HashSet<Guid>(SelectedCategoryIds);
-        List<Guid>    subtree = SubtreeIds(id);
-        bool          turnOn  = !next.Contains(id);
-
-        if (turnOn) next.UnionWith(subtree);
-        else next.ExceptWith(subtree);
-
-        await OnChanged.InvokeAsync(next);
-        await OnActiveCategoryChanged.InvokeAsync(turnOn ? id : (Guid?)null);
+        _ActiveCategoryId = id;
+        await OnChanged.InvokeAsync(new HashSet<Guid> { id });
+        await OnActiveCategoryChanged.InvokeAsync(id);
     }
 
-    /// <summary>Toggles only the clicked category, ignoring its descendants (right-click).</summary>
-    private async Task ToggleSingle(Guid id)
+    /// <summary>Middle click: toggle this category in the selection, leaving the others untouched.</summary>
+    private async Task OnAuxClick(MouseEventArgs e, Guid id)
     {
+        if (e.Button != 1) return; // middle button only
+
         HashSet<Guid> next   = new HashSet<Guid>(SelectedCategoryIds);
         bool          turnOn = !next.Contains(id);
 
         if (turnOn) next.Add(id);
         else next.Remove(id);
 
+        _ActiveCategoryId = turnOn ? id : (Guid?)null;
         await OnChanged.InvokeAsync(next);
-        await OnActiveCategoryChanged.InvokeAsync(turnOn ? id : (Guid?)null);
+        await OnActiveCategoryChanged.InvokeAsync(_ActiveCategoryId);
+    }
+
+    /// <summary>Right click: select this category together with all of its descendants, deselecting everything else.</summary>
+    private async Task SelectSubtree(Guid id)
+    {
+        _ActiveCategoryId = id;
+        await OnChanged.InvokeAsync(new HashSet<Guid>(SubtreeIds(id)));
+        await OnActiveCategoryChanged.InvokeAsync(id);
     }
 
     private async Task ClearAll()
     {
+        _ActiveCategoryId = null;
         await OnChanged.InvokeAsync(new HashSet<Guid>());
         await OnActiveCategoryChanged.InvokeAsync(null);
     }
