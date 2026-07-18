@@ -70,10 +70,8 @@
                             }
                             <button class="cfp-item @(active ? "active" : "")"
                                     title="@Loc.T(Localization.Translate.Keys.CategoryFilter.rightClickSelectOnly)"
-                                    @onclick="() => SelectOnly(cat.Id)"
-                                    @onauxclick="e => OnAuxClick(e, cat.Id)"
-                                    @onauxclick:preventDefault="true"
-                                    @oncontextmenu="() => SelectSubtree(cat.Id)"
+                                    @onclick="e => OnItemClick(e, cat.Id)"
+                                    @oncontextmenu="e => OnItemContextMenu(e, cat.Id)"
                                     @oncontextmenu:preventDefault="true">
                                 <span class="cfp-item-check">@(active ? "✓" : "")</span>
                                 <span class="cfp-item-name">@cat.Name</span>
@@ -253,7 +251,11 @@
         return string.Join("/", parts);
     }
 
-    /// <summary>Left click: select only this category, deselecting everything else.</summary>
+    /// <summary>Left click selects only this category; ctrl+click toggles it additively.</summary>
+    private Task OnItemClick(MouseEventArgs e, Guid id) =>
+        e.CtrlKey ? ToggleAdditive(id) : SelectOnly(id);
+
+    /// <summary>Select only this category, deselecting everything else.</summary>
     private async Task SelectOnly(Guid id)
     {
         _ActiveCategoryId = id;
@@ -261,11 +263,9 @@
         await OnActiveCategoryChanged.InvokeAsync(id);
     }
 
-    /// <summary>Middle click: toggle this category in the selection, leaving the others untouched.</summary>
-    private async Task OnAuxClick(MouseEventArgs e, Guid id)
+    /// <summary>Ctrl+click: toggle this category in the selection, leaving the others untouched.</summary>
+    private async Task ToggleAdditive(Guid id)
     {
-        if (e.Button != 1) return; // middle button only
-
         HashSet<Guid> next   = new HashSet<Guid>(SelectedCategoryIds);
         bool          turnOn = !next.Contains(id);
 
@@ -277,11 +277,26 @@
         await OnActiveCategoryChanged.InvokeAsync(_ActiveCategoryId);
     }
 
-    /// <summary>Right click: select this category together with all of its descendants, deselecting everything else.</summary>
+    /// <summary>Right click selects this category and its descendants; ctrl+right click adds them additively.</summary>
+    private Task OnItemContextMenu(MouseEventArgs e, Guid id) =>
+        e.CtrlKey ? AddSubtree(id) : SelectSubtree(id);
+
+    /// <summary>Select this category together with all of its descendants, deselecting everything else.</summary>
     private async Task SelectSubtree(Guid id)
     {
         _ActiveCategoryId = id;
         await OnChanged.InvokeAsync(new HashSet<Guid>(SubtreeIds(id)));
+        await OnActiveCategoryChanged.InvokeAsync(id);
+    }
+
+    /// <summary>Ctrl+right click: add this category and its descendants to the selection, leaving the others untouched.</summary>
+    private async Task AddSubtree(Guid id)
+    {
+        HashSet<Guid> next = new HashSet<Guid>(SelectedCategoryIds);
+        next.UnionWith(SubtreeIds(id));
+
+        _ActiveCategoryId = id;
+        await OnChanged.InvokeAsync(next);
         await OnActiveCategoryChanged.InvokeAsync(id);
     }
 
